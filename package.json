@@ -1,0 +1,31 @@
+{
+  "name": "Front-End-Seed-Lite",
+  "version": "1.0.0",
+  "description": "前端開發底板 (包含 CSS.Next 和 JS.Next)",
+  "scripts": {
+    "start": "cd src && lite-server"
+  },
+  "keywords": [],
+  "author": "陳彥澄",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-es2015-rollup": "^1.2.0",
+    "cssnano": "^3.8.0",
+    "eslint": "^3.9.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-postcss": "^6.2.0",
+    "imagemin-pngquant": "^5.0.0",
+    "postcss-cssnext": "^2.8.0",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-commonjs": "^5.0.5",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-postcss": "^0.2.0",
+    "rollup-plugin-uglify": "^1.0.1",
+    "rollup-stream": "^1.14.0",
+    "rucksack-css": "^0.8.6",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

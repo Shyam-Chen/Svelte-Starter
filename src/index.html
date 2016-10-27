@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>標題</title>
+    <style>
+      .md-loader > .spinner {
+        stroke: #3f51b5;  /* 換成你要的顏色 */
+      }
+      .md-loader { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+      .md-loader > .spinner { animation: rotation-on 1.4s linear infinite; }
+      .md-loader > .spinner > .circle { stroke-dasharray: 187; stroke-dashoffset: 0; transform-origin: center; animation: turn-on 1.4s ease-in-out infinite;}
+      @keyframes rotation-on { 0% { transform: rotate(0); } 100% { transform: rotate(270deg); } }
+      @keyframes turn-on { 0% { stroke-dashoffset: 187; } 50% { stroke-dashoffset: 46.75; transform: rotate(135deg); } 100% { stroke-dashoffset: 187; transform: rotate(450deg); } }
+    </style>
+  </head>
+  <body onload="first()">
+    <div class="md-loader">
+      <svg width="65px" height="65px" view-box="0 0 66 66" xmlns="http://www.w3.org/2000/svg" class="spinner">
+        <circle fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30" class="circle"></circle>
+      </svg>
+    </div>
+
+    <div id="navigation"></div>
+    <div id="app"></div>
+
+    <script src="./main.js"></script>
+    <script src="./vendor.js"></script>
+  </body>
+</html>
