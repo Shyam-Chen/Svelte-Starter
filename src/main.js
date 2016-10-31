@@ -5,28 +5,26 @@ import { $jq } from './components/helpers/query';
 
 import { loadHome, loadAbout } from './components/navigation/navigation';
 
+window.addEventListener('popstate', function() {
+  // e.state is equal to the data-attribute of the last image we clicked
+});
+
 window.onload = () => {
   Promise.all([
-    load('./components/navigation/navigation.html'),
-
     load('./pages/home/home.html'),
-    load('./components/foo/foo.html')
+    load('./components/navigation/navigation.html')
   ])
   .then((data) => {
-    const navigation = $jq('#navigation');
-    navigation.innerHTML = data[0];
 
-    $jq('#home').onclick = loadHome;
-    $jq('#about').onclick = loadAbout;
 
     const app = $jq('#app');
-    app.innerHTML = data[1];
+    app.innerHTML = data[0];
     history.pushState({ }, 'Home', '/');
 
-    const foo = $jq('#foo');
-    foo.innerHTML = data[2];
+    const navigation = $jq('#navigation');
+    navigation.innerHTML = data[1];
 
-    const loader = $jq('.md-loader');
-    loader.style.display = 'none';
+    $jq('#home').addEventListener('click', loadHome, false);
+    $jq('#about').addEventListener('click', loadAbout, false);
   });
 };
