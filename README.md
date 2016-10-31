@@ -1,7 +1,5 @@
 # Vanilla Starter Kit
 
-**專案主要是使用 Gulp + Rollup**
-
 ## ToDo List
 * HTML 靜態分析使用 HTMLHint
 * CSS 靜態分析使用 StyleLint
@@ -13,18 +11,18 @@
 
 ## 如何使用?
 
-1) 安裝 [Node](https://nodejs.org/en/)
-
-2) 下載此[樣板](https://github.com/Shyam-Chen/Front-End-Seed/archive/master.zip)
-
-或者使用 `git clone`
-
-3) 安裝相依套件
+1) 複製底板
 ```bash
-$ yarn install  # or npm install
+$ git clone --depth 1 https://github.com/Shyam-Chen/Vanilla-Starter-Kit.git <PROJECT_NAME>
+$ cd <PROJECT_NAME>
 ```
 
-4) 執行應用程式
+2) 安裝相依套件
 ```bash
-$ yarn start  # or npm start
+$ npm install
+```
+
+3) 執行應用程式
+```bash
+$ npm start
 ```

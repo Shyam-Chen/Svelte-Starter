@@ -9,6 +9,7 @@
   "author": "陳彥澄",
   "license": "MIT",
   "dependencies": {
+    "firebase": "^3.5.2",
     "material-design-lite": "^1.2.1"
   },
   "devDependencies": {
