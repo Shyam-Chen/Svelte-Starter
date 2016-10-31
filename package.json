@@ -1,13 +1,16 @@
 {
-  "name": "Front-End-Seed-Lite",
+  "name": "Vanilla-Starter-Kit",
   "version": "1.0.0",
-  "description": "前端開發底板 (包含 CSS.Next 和 JS.Next)",
+  "description": "A boilerplate for Vanilla, Material, and Firebase.",
   "scripts": {
-    "start": "gulp && cd dist && lite-server"
+    "start": "gulp"
   },
   "keywords": [],
   "author": "陳彥澄",
   "license": "MIT",
+  "dependencies": {
+    "material-design-lite": "^1.2.1"
+  },
   "devDependencies": {
     "babel-plugin-external-helpers": "^6.18.0",
     "babel-preset-es2015-rollup": "^1.2.0",
@@ -28,8 +31,5 @@
     "rucksack-css": "^0.8.6",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
-  },
-  "dependencies": {
-    "material-design-lite": "^1.2.1"
   }
 }

@@ -1,3 +1,5 @@
+// ToDo: 需要重構
+
 import { load } from '../helpers/load';
 
 export const loadHome = () => {
@@ -8,7 +10,7 @@ export const loadHome = () => {
   .then((data) => {
     const app = document.querySelector('#app');
     app.innerHTML = data[0];
-    history.pushState({ }, 'Home', 'home');
+      history.pushState({ }, 'Home', '/');
 
     const foo = document.querySelector('#foo');
     foo.innerHTML = data[1];

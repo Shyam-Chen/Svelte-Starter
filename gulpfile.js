@@ -17,6 +17,9 @@ const cssnano = require('cssnano');
 const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 
+const browserSync = require('browser-sync');
+const history = require('connect-history-api-fallback');
+
 const SOURCE_ROOT = path.join(__dirname, 'src');
 const DIST_ROOT = path.join(__dirname, 'dist');
 
@@ -27,7 +30,8 @@ gulp.task('copy', () => {
   return gulp.src([
       path.join(SOURCE_ROOT, '**/*.html')
     ])
-    .pipe(gulp.dest(DIST_ROOT));
+    .pipe(gulp.dest(DIST_ROOT))
+    .pipe(browserSync.stream());
 });
 
 
@@ -53,7 +57,8 @@ gulp.task('main', () => {
     })
     .pipe(source('main.js'))
     .pipe(buffer())
-    .pipe(gulp.dest(DIST_ROOT));
+    .pipe(gulp.dest(DIST_ROOT))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('vendor', () => {
@@ -92,15 +97,26 @@ gulp.task('images', () => {
 });
 
 gulp.task('watch', () => {
+  gulp.watch([
+    path.join(SOURCE_ROOT, '**/*.html')
+  ], ['copy']);
 
+  gulp.watch([
+    path.join(SOURCE_ROOT, '**/*.js')
+  ], ['main']);
 });
 
 gulp.task('serve', () => {
-
+  browserSync({
+    server: {
+      baseDir: DIST_ROOT,
+      middleware: [history()]
+    }
+  });
 });
 
 // gulp.task('default', () => {
 
 // });
 
-gulp.task('default', ['copy', 'vendor', 'main']);
+gulp.task('default', ['copy', 'vendor', 'main', 'serve', 'watch']);

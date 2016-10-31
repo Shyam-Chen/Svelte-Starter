@@ -1,9 +1,8 @@
-# Front End Seed Lite
+# Vanilla Starter Kit
 
 **專案主要是使用 Gulp + Rollup**
 
 ## ToDo List
-* 瀏覽器自動開啟和刷新使用 BrowserSync
 * HTML 靜態分析使用 HTMLHint
 * CSS 靜態分析使用 StyleLint
 * 測試框架使用 Jasmine

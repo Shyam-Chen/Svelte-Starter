@@ -1,3 +1,5 @@
+// ToDo: 需要重構
+
 import { load } from './components/helpers/load';
 import { $jq } from './components/helpers/query';
 
@@ -19,7 +21,7 @@ window.onload = () => {
 
     const app = $jq('#app');
     app.innerHTML = data[1];
-    history.pushState({ }, 'Home', 'home');
+    history.pushState({ }, 'Home', '/');
 
     const foo = $jq('#foo');
     foo.innerHTML = data[2];
