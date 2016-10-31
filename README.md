@@ -9,20 +9,20 @@
 * 持續整合使用 Travis (包含自動化佈署到 Firebase 上)
 * 輕量級虛擬化使用 Docker
 
-## 如何使用?
+## How to use?
 
-1) 複製底板
+1) Clone this Boilerplate
 ```bash
 $ git clone --depth 1 https://github.com/Shyam-Chen/Vanilla-Starter-Kit.git <PROJECT_NAME>
 $ cd <PROJECT_NAME>
 ```
 
-2) 安裝相依套件
+2) Install Dependencies
 ```bash
 $ npm install
 ```
 
-3) 執行應用程式
+3) Run the Application
 ```bash
 $ npm start
 ```

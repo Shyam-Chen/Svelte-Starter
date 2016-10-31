@@ -4,13 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>標題</title>
+    <title>Vanilla Starter Kit</title>
     <style>
-      .md-loader > .spinner {
-        stroke: #3f51b5;  /* 換成你要的顏色 */
-      }
       .md-loader { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-      .md-loader > .spinner { animation: rotation-on 1.4s linear infinite; }
+      .md-loader > .spinner { stroke: #3f51b5; animation: rotation-on 1.4s linear infinite; }
       .md-loader > .spinner > .circle { stroke-dasharray: 187; stroke-dashoffset: 0; transform-origin: center; animation: turn-on 1.4s ease-in-out infinite;}
       @keyframes rotation-on { 0% { transform: rotate(0); } 100% { transform: rotate(270deg); } }
       @keyframes turn-on { 0% { stroke-dashoffset: 187; } 50% { stroke-dashoffset: 46.75; transform: rotate(135deg); } 100% { stroke-dashoffset: 187; transform: rotate(450deg); } }

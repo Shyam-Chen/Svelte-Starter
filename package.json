@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "A boilerplate for Vanilla, Material, and Firebase.",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "reset": "git reset --hard HEAD && git clean -df"
   },
-  "keywords": [],
+  "keywords": [
+    "Vanilla",
+    "Material",
+    "Firebase"
+  ],
   "author": "陳彥澄",
   "license": "MIT",
   "dependencies": {

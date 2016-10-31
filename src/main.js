@@ -5,9 +5,9 @@ import { $jq } from './components/helpers/query';
 
 import { loadHome, loadAbout } from './components/navigation/navigation';
 
-window.addEventListener('popstate', function() {
-  // e.state is equal to the data-attribute of the last image we clicked
-});
+window.onpopstate = () => {
+
+};
 
 window.onload = () => {
   Promise.all([
@@ -15,8 +15,6 @@ window.onload = () => {
     load('./components/navigation/navigation.html')
   ])
   .then((data) => {
-
-
     const app = $jq('#app');
     app.innerHTML = data[0];
     history.pushState({ }, 'Home', '/');

@@ -27,9 +27,7 @@ const DIST_ROOT = path.join(__dirname, 'dist');
 // ToDo: 原始碼映射
 
 gulp.task('copy', () => {
-  return gulp.src([
-      path.join(SOURCE_ROOT, '**/*.html')
-    ])
+  return gulp.src(path.join(SOURCE_ROOT, '**/*.html'))
     .pipe(gulp.dest(DIST_ROOT))
     .pipe(browserSync.stream());
 });
@@ -44,7 +42,7 @@ gulp.task('main', () => {
         babel(),
         resolve({ jsnext: true, browser: true }),
         commonjs(),
-        //uglify(),
+        uglify(),
         postcss({
           plugins: [
             cssnext({ warnForDuplicates: false }),
@@ -66,7 +64,6 @@ gulp.task('vendor', () => {
       entry: path.join(SOURCE_ROOT, 'vendor.js'),
       format: 'iife',
       plugins: [
-        // babel(),  // Error
         resolve({ jsnext: true, browser: true }),
         commonjs(),
         uglify(),
@@ -93,7 +90,7 @@ gulp.task('images', () => {
       svgoPlugins: [{ removeViewBox: false }],
       use: [pngquant()]
     }))
-    .pipe(gulp.dest('src/images'));
+    .pipe(gulp.dest(DIST_ROOT));
 });
 
 gulp.task('watch', () => {
