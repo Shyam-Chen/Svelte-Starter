@@ -4,10 +4,11 @@
 
 ## ToDo List
 * 瀏覽器自動開啟和刷新使用 BrowserSync
-* HTML 靜態分析使用 HTMLLint
-* CSS 靜態分析使用 CSSLint
-* 單元測試使用 Jasmine 和 Karma
-* 端對端測試使用 Jasmine 和 Protractor (使用 `browser.driver`)
+* HTML 靜態分析使用 HTMLHint
+* CSS 靜態分析使用 StyleLint
+* 測試框架使用 Jasmine
+* 單元測試執行使用 Karma
+* 端對端測試執行使用 Protractor (使用 `browser.driver`)
 * 持續整合使用 Travis (包含自動化佈署到 Firebase 上)
 * 輕量級虛擬化使用 Docker
 
