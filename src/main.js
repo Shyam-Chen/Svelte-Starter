@@ -1,4 +1,10 @@
+import './pages/home/home';
+import './pages/about/about';
+
+
 // ToDo: 需要重構
+
+
 
 import { load } from './components/helpers/load';
 import { $jq } from './components/helpers/query';

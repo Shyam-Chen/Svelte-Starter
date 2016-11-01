@@ -37,12 +37,8 @@ gulp.task('copy', () => {
 gulp.task('main', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'main.js'),
-      format: 'cjs',
+      format: 'iife',
       plugins: [
-        babel(),
-        resolve({ jsnext: true, browser: true }),
-        commonjs(),
-        uglify(),
         postcss({
           plugins: [
             cssnext({ warnForDuplicates: false }),
@@ -50,7 +46,12 @@ gulp.task('main', () => {
             cssnano()
           ],
           extensions: ['.css']
-        })
+        }),
+        babel(),
+        resolve({ jsnext: true, browser: true }),
+        commonjs(),
+        uglify()
+
       ]
     })
     .pipe(source('main.js'))
