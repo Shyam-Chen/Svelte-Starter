@@ -1,6 +1,10 @@
 const gulp = require('gulp');
 const path = require('path');
 
+const changed = require('gulp-changed');
+
+const htmlmin = require('gulp-htmlmin');
+
 const rollup = require('rollup-stream');
 const babel = require('rollup-plugin-babel');
 const resolve = require('rollup-plugin-node-resolve');
@@ -23,17 +27,17 @@ const history = require('connect-history-api-fallback');
 const SOURCE_ROOT = path.join(__dirname, 'src');
 const DIST_ROOT = path.join(__dirname, 'dist');
 
-
-// ToDo: 原始碼映射
-
-gulp.task('copy', () => {
+gulp.task('view', () => {
   return gulp.src(path.join(SOURCE_ROOT, '**/*.html'))
+    .pipe(changed(DIST_ROOT))
+    .pipe(htmlmin())
     .pipe(gulp.dest(DIST_ROOT))
     .pipe(browserSync.stream());
 });
 
-
-// ToDo: 合併串流
+// ToDo: 原始碼映射
+// ToDo: 合併串流 (main & vendor)
+// ToDo: 加入快取
 gulp.task('main', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'main.js'),
@@ -82,9 +86,9 @@ gulp.task('vendor', () => {
     .pipe(gulp.dest(DIST_ROOT));
 });
 
-gulp.task('images', () => {
-  gulp
-    .src('src/assets/images/**/*.{gif,jpeg,jpg,png,svg}')
+// ToDo: 只傳遞新的檔案
+gulp.task('image', () => {
+  return gulp.src('src/assets/images/**/*.{gif,jpeg,jpg,png,svg}')
     .pipe(imagemin({
       progressive: true,
       svgoPlugins: [{ removeViewBox: false }],
@@ -93,10 +97,23 @@ gulp.task('images', () => {
     .pipe(gulp.dest(DIST_ROOT));
 });
 
+// ToDo: ...
+gulp.task('font', () => {
+  return gulp.src('src/assets/fonts/**/*.{eot,svg,ttf,woff,woff2}')
+    .pipe();
+});
+
+// ToDo: ...
+gulp.task('data', () => {
+  return gulp.src('src/assets/datas/**/*.json')
+    .pipe();
+});
+
+// ToDo: 將 `build` 放入
 gulp.task('watch', () => {
   gulp.watch([
     path.join(SOURCE_ROOT, '**/*.html')
-  ], ['copy']);
+  ], ['view']);
 
   gulp.watch([
     path.join(SOURCE_ROOT, '**/*.js')
@@ -104,7 +121,7 @@ gulp.task('watch', () => {
 });
 
 gulp.task('serve', () => {
-  browserSync({
+  return browserSync({
     server: {
       baseDir: DIST_ROOT,
       middleware: [history()]
@@ -112,8 +129,5 @@ gulp.task('serve', () => {
   });
 });
 
-// gulp.task('default', () => {
-
-// });
-
-gulp.task('default', ['copy', 'vendor', 'main', 'serve', 'watch']);
+// ToDo: 任務佇列
+gulp.task('default', ['view', 'vendor', 'main', 'serve', 'watch']);
