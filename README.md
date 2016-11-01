@@ -1,15 +1,22 @@
 # Vanilla Starter Kit
 
 ## ToDo List
-* HTML 靜態分析使用 HTMLHint
-* CSS 靜態分析使用 StyleLint
+* 國際化使用 I18next
+* 分析使用 Google Analytics (含 SPA 處理)
 * 測試框架使用 Jasmine
 * 單元測試執行使用 Karma
-* 端對端測試執行使用 Protractor (使用 `browser.driver`)
-* 持續整合使用 Travis (包含自動化佈署到 Firebase 上)
+* 端對端測試執行使用 Protractor (使用 `browser.driver` 語法)
+* 持續整合使用 Travis (含自動佈署到 Firebase 上)
 * 輕量級虛擬化使用 Docker
 
-## How to use?
+## Key Features
+* Vanilla, Material, and Firebase
+* Linux, Atom, Git, Yarn, and Docker
+* HTML, CSS, JavaScript, HTMLHint, StyleLint, and ESLint
+* Gulp, Rollup, PostCSS, Babel, and BrowserSync
+* Jasmine, Karma, Protractor, and Travis
+
+## Getting Started
 
 1) Clone this Boilerplate
 ```bash
