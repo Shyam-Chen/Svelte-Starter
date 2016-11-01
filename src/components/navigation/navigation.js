@@ -18,6 +18,7 @@ export const loadHome = () => {
     navigation.innerHTML = data[1];
     $jq('#home').addEventListener('click', loadHome);
     $jq('#about').addEventListener('click', loadAbout);
+    componentHandler.upgradeAllRegistered();
   });
 };
 
@@ -35,5 +36,6 @@ export const loadAbout = () => {
     navigation.innerHTML = data[1];
     $jq('#home').addEventListener('click', loadHome);
     $jq('#about').addEventListener('click', loadAbout);
+    componentHandler.upgradeAllRegistered();
   });
 };

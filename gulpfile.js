@@ -69,7 +69,7 @@ gulp.task('vendor', () => {
         uglify(),
         postcss({
           plugins: [
-            cssnext(),
+            cssnext({ warnForDuplicates: false }),
             rucksack({ fallbacks: true, autoprefixer: true }),
             cssnano()
           ],
