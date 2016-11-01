@@ -51,7 +51,6 @@ gulp.task('main', () => {
         resolve({ jsnext: true, browser: true }),
         commonjs(),
         uglify()
-
       ]
     })
     .pipe(source('main.js'))
@@ -65,9 +64,6 @@ gulp.task('vendor', () => {
       entry: path.join(SOURCE_ROOT, 'vendor.js'),
       format: 'iife',
       plugins: [
-        resolve({ jsnext: true, browser: true }),
-        commonjs(),
-        uglify(),
         postcss({
           plugins: [
             cssnext({ warnForDuplicates: false }),
@@ -75,7 +71,10 @@ gulp.task('vendor', () => {
             cssnano()
           ],
           extensions: ['.css']
-        })
+        }),
+        resolve({ jsnext: true, browser: true }),
+        commonjs(),
+        uglify()
       ]
     })
     .pipe(source('vendor.js'))
