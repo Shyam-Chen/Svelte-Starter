@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A boilerplate for Vanilla, Material, and Firebase.",
   "scripts": {
-    "start": "gulp",
+    "start": "rimraf dist && gulp",
     "clean": "rimraf dist",
     "reset": "git reset --hard HEAD && git clean -df",
     "reinstall": "yarn cache clean && git clean -dfx -e '.*' && yarn install"
@@ -17,7 +17,8 @@
   "license": "MIT",
   "dependencies": {
     "firebase": "^3.5.2",
-    "material-design-lite": "^1.2.1"
+    "material-design-lite": "^1.2.1",
+    "page": "^1.7.1"
   },
   "devDependencies": {
     "babel-plugin-external-helpers": "^6.18.0",

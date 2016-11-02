@@ -44,7 +44,7 @@ gulp.task('view', () => {
 gulp.task('vendor', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'vendor.js'),
-      format: 'iife',
+      format: 'es',
       plugins: [
         postcss({ plugins: [cssnano()] }),
         resolve({ jsnext: true, browser: true }),
@@ -133,5 +133,5 @@ gulp.task('serve', () => {
 });
 
 gulp.task('default', (done) => {
-  return runsequence('build', 'watch', 'serve', done)
+  return runsequence('build', 'watch', 'serve', done);
 });

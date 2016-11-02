@@ -6,7 +6,8 @@
     "node": true
   },
   "globals": {
-    "componentHandler": true
+    "componentHandler": true,
+    "page": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {
