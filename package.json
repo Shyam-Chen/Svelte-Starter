@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "A boilerplate for Vanilla, Material, and Firebase.",
   "scripts": {
-    "start": "rimraf dist && gulp",
+    "start": "gulp",
+    "test": "karma start",
     "clean": "rimraf dist",
     "reset": "git reset --hard HEAD && git clean -df",
     "reinstall": "yarn cache clean && git clean -dfx -e '.*' && yarn install"
@@ -30,6 +31,12 @@
     "gulp-htmlmin": "^3.0.0",
     "gulp-imagemin": "^3.0.3",
     "imagemin-pngquant": "^5.0.0",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-mocha-reporter": "^2.2.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "phantomjs-prebuilt": "^2.1.13",
     "postcss-cssnext": "^2.8.0",
     "rimraf": "^2.5.4",
     "rollup-plugin-async": "^1.1.0",
