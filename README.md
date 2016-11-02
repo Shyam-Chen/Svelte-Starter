@@ -1,6 +1,7 @@
 # Vanilla Starter Kit
 
 ## ToDo List
+* 路由使用 Page
 * 國際化使用 I18next
 * 分析使用 Google Analytics (含 SPA 處理)
 * 測試框架使用 Jasmine

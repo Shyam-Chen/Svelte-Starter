@@ -30,29 +30,13 @@ const DIST_ROOT = path.join(__dirname, 'dist');
 
 gulp.task('view', () => {
   return gulp.src(path.join(SOURCE_ROOT, '**/*.html'))
-    .pipe(htmlmin({ collapseWhitespace: true, removeAttributeQuotes: true, removeComments: true, minifyCSS: true, minifyJS: true }))
-    .pipe(gulp.dest(DIST_ROOT))
-    .pipe(browsersync.stream());
-});
-
-// ToDo: 原始碼映射
-// ToDo: 合併串流 (main & vendor)
-// ToDo: 加入快取
-gulp.task('main', () => {
-  return rollup({
-      entry: path.join(SOURCE_ROOT, 'main.js'),
-      format: 'iife',
-      plugins: [
-        postcss({ plugins: [cssnext({ warnForDuplicates: false }), rucksack({ fallbacks: true, autoprefixer: true }), cssnano()] }),
-        babel(),
-        asyncfunc(),
-        resolve({ jsnext: true, browser: true }),
-        commonjs(),
-        uglify()
-      ]
-    })
-    .pipe(source('main.js'))
-    .pipe(buffer())
+    .pipe(htmlmin({
+      collapseWhitespace: true,
+      removeAttributeQuotes: true,
+      removeComments: true,
+      minifyCSS: true,
+      minifyJS: true
+    }))
     .pipe(gulp.dest(DIST_ROOT))
     .pipe(browsersync.stream());
 });
@@ -73,33 +57,69 @@ gulp.task('vendor', () => {
     .pipe(gulp.dest(DIST_ROOT));
 });
 
+// ToDo: 原始碼映射
+// ToDo: 合併串流 (main & vendor)
+// ToDo: 加入快取
+// ToDo: 錯誤處理
+gulp.task('main', () => {
+  return rollup({
+      entry: path.join(SOURCE_ROOT, 'main.js'),
+      format: 'iife',
+      plugins: [
+        postcss({
+          plugins: [
+            cssnext({ warnForDuplicates: false }),
+            rucksack({ fallbacks: true, autoprefixer: true }),
+            cssnano()
+          ]
+        }),
+        babel(),
+        asyncfunc(),
+        resolve({ jsnext: true, browser: true }),
+        commonjs(),
+        uglify()
+      ]
+    })
+    .pipe(source('main.js'))
+    .pipe(buffer())
+    .pipe(gulp.dest(DIST_ROOT))
+    .pipe(browsersync.stream());
+});
+
 // ToDo: 只傳遞新的檔案
 gulp.task('image', () => {
   return gulp.src('src/assets/images/**/*.{gif,jpeg,jpg,png,svg}')
-    .pipe(imagemin({ progressive: true, svgoPlugins: [{ removeViewBox: false }], use: [pngquant()] }))
-    .pipe(gulp.dest(DIST_ROOT));
+    .pipe(imagemin({
+      progressive: true,
+      svgoPlugins: [{ removeViewBox: false }],
+      use: [pngquant()]
+    }))
+    .pipe(gulp.dest(path.join(DIST_ROOT, 'assets/images')));
 });
 
-// ToDo: ...
 gulp.task('font', () => {
   return gulp.src('src/assets/fonts/**/*.{eot,svg,ttf,woff,woff2}')
-    .pipe();
+    .pipe(gulp.dest(path.join(DIST_ROOT, 'assets/fonts')));
 });
 
-// ToDo: ...
 gulp.task('data', () => {
   return gulp.src('src/assets/datas/**/*.json')
-    .pipe();
+    .pipe(gulp.dest(path.join(DIST_ROOT, 'assets/datas')));
 });
 
-// ToDo: 將 `build` 放入
+gulp.task('build', [
+  'view', 'vendor', 'main',
+  'image', 'font', 'data'
+]);
+
+// ToDo: ...
 gulp.task('watch', () => {
   gulp.watch([
     path.join(SOURCE_ROOT, '**/*.html')
   ], ['view']);
 
   gulp.watch([
-    path.join(SOURCE_ROOT, '**/*.js')
+    path.join(SOURCE_ROOT, '**/*.{js,css}')
   ], ['main']);
 });
 
@@ -113,5 +133,5 @@ gulp.task('serve', () => {
 });
 
 gulp.task('default', (done) => {
-  return runsequence(['view', 'vendor', 'main'], 'serve', 'watch', done)
+  return runsequence('build', 'watch', 'serve', done)
 });

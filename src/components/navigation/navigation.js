@@ -1,8 +1,4 @@
-// ToDo: 需要重構
-
-import { load } from '../helpers/load';
-
-import { $jq } from '../helpers/query';
+import { load, query } from '../utils';
 
 export const loadHome = () => {
   Promise.all([
@@ -10,14 +6,15 @@ export const loadHome = () => {
     load('./components/navigation/navigation.html')
   ])
   .then((data) => {
-    const app = $jq('#app');
+    const app = query('#app');
     app.innerHTML = data[0];
     history.pushState({ }, 'Home', '/');
 
-    const navigation = $jq('#navigation');
+    const navigation = query('#navigation');
     navigation.innerHTML = data[1];
-    $jq('#home').addEventListener('click', loadHome);
-    $jq('#about').addEventListener('click', loadAbout);
+    query('#home').onclick = loadHome;
+    query('#about').onclick = loadAbout;
+
     componentHandler.upgradeAllRegistered();
   });
 };
@@ -32,10 +29,11 @@ export const loadAbout = () => {
     app.innerHTML = data[0];
     history.pushState({ }, 'About', 'about');
 
-    const navigation = $jq('#navigation');
+    const navigation = query('#navigation');
     navigation.innerHTML = data[1];
-    $jq('#home').addEventListener('click', loadHome);
-    $jq('#about').addEventListener('click', loadAbout);
+    query('#home').onclick = loadHome;
+    query('#about').onclick = loadAbout;
+
     componentHandler.upgradeAllRegistered();
   });
 };

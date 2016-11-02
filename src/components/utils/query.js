@@ -1,3 +1,3 @@
-export const $jq = (selector) => {
+export const query = (selector) => {
   return document.querySelector(selector);
 };
