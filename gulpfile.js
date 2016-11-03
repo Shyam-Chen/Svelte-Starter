@@ -1,6 +1,9 @@
 const gulp = require('gulp');
 const path = require('path');
 
+const changed = require('gulp-changed');
+const newer = require('gulp-newer');
+
 const htmlmin = require('gulp-htmlmin');
 
 const rollup = require('rollup-stream');
@@ -30,6 +33,7 @@ const DIST_ROOT = path.join(__dirname, 'dist');
 
 gulp.task('view', () => {
   return gulp.src(path.join(SOURCE_ROOT, '**/*.html'))
+    .pipe(changed(DIST_ROOT))
     .pipe(htmlmin({
       collapseWhitespace: true,
       removeAttributeQuotes: true,
@@ -58,7 +62,6 @@ gulp.task('vendor', () => {
 });
 
 // ToDo: 原始碼映射
-// ToDo: 合併串流 (main & vendor)
 // ToDo: 加入快取
 // ToDo: 錯誤處理
 gulp.task('main', () => {
@@ -86,15 +89,16 @@ gulp.task('main', () => {
     .pipe(browsersync.stream());
 });
 
-// ToDo: 只傳遞新的檔案
 gulp.task('image', () => {
+  let dest = path.join(DIST_ROOT, 'assets/images');
   return gulp.src('src/assets/images/**/*.{gif,jpeg,jpg,png,svg}')
+    .pipe(newer(dest))
     .pipe(imagemin({
       progressive: true,
       svgoPlugins: [{ removeViewBox: false }],
       use: [pngquant()]
     }))
-    .pipe(gulp.dest(path.join(DIST_ROOT, 'assets/images')));
+    .pipe(gulp.dest(dest));
 });
 
 gulp.task('font', () => {
@@ -119,8 +123,16 @@ gulp.task('watch', () => {
   ], ['view']);
 
   gulp.watch([
+    path.join(SOURCE_ROOT, 'vendor.js')
+  ], ['vendor']);
+
+  gulp.watch([
     path.join(SOURCE_ROOT, '**/*.{js,css}')
   ], ['main']);
+
+  gulp.watch([
+    'src/assets/images/**/*.{gif,jpeg,jpg,png,svg}'
+  ], ['image']);
 });
 
 gulp.task('serve', () => {

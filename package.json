@@ -5,6 +5,8 @@
   "scripts": {
     "start": "gulp",
     "test": "karma start",
+    "dev": "rimraf dist && gulp",
+    "prod": "rimraf dist && gulp build",
     "clean": "rimraf dist",
     "reset": "git reset --hard HEAD && git clean -df",
     "reinstall": "yarn cache clean && git clean -dfx -e '.*' && yarn install"
@@ -28,8 +30,10 @@
     "connect-history-api-fallback": "^1.3.0",
     "cssnano": "^3.8.0",
     "gulp": "^3.9.1",
+    "gulp-changed": "^1.3.2",
     "gulp-htmlmin": "^3.0.0",
     "gulp-imagemin": "^3.0.3",
+    "gulp-newer": "^1.3.0",
     "imagemin-pngquant": "^5.0.0",
     "jasmine-core": "^2.5.2",
     "karma": "^1.3.0",
