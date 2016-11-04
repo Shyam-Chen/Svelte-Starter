@@ -3,10 +3,23 @@ export const load = (file) => {
     const xhr = new XMLHttpRequest();
     xhr.open('get', file);
     xhr.onload = () => {
-      let status = xhr.status;
+      const status = xhr.status;
       status === 200 ? resolve(xhr.response) : reject(status);
     };
     xhr.send();
     return xhr.responseText;
   });
+};
+
+export const loadFont = (url) => {
+  const xhr = new XMLHttpRequest();
+  xhr.open('get', url);
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      const style = document.createElement('style');
+      style.innerHTML = xhr.responseText;
+      document.head.appendChild(style);
+    }
+  };
+  xhr.send();
 };
