@@ -1,22 +1,22 @@
-# Vanilla Starter Kit
+# Vanilla Starter Kit (alpha)
+
+[Live Demo](https://test-1498d.firebaseapp.com/)
 
 * Build system using **Gulp** and **Rollup** for working.
-* **CSS.Next** and **JS.Next** (Include async functions) support.
+* **CSS.Next** and **JS.Next** syntax support.
+* **ECMAScript** built-in objects support (Thanks for [Core-JS](core-js)).
+* **HTML5** built-in objects support (Thanks for [Modernizr-HTML5](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills)).
+* **Node.js** built-in objects support (Thanks for [Rollup-Node](https://github.com/calvinmetcalf/rollup-plugin-node-builtins)).
 * Routing with **Page** (Easy to use).
 * I18n with **I18nextify** (Easy to use).
 * Development and production builds.
 * Development server with **BrowserSync**.
 * Unit tests with **Jasmine** and **Karma**.
-* End-to-end tests with **Protractor**.
-
-## ToDo List
-* 國際化使用 I18nextify
-* 分析使用 Google Analytics (含 SPA 處理)
-* 測試架構排放思考
-* 測試框架使用 Jasmine
-* 單元測試執行使用 Karma
-* 端對端測試執行使用 Protractor (使用 `browser.driver` 語法)
-* 開發、測試和佈署 in Docker on Firebase
+* End-to-end tests with **Protractor** (Use `browser.driver`).
+* Version control with **Git**.
+* Fast and determinsitic builds with **Yarn**.
+* Virtual machine with **Docker** and **Compose**.
+* Continuous Integration and Continous Delivery with **Travis**.
 
 ## Project Status
 [![Build Status](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)

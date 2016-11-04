@@ -4,7 +4,7 @@ module.exports = (config) => {
     basePath: '',
     frameworks: ['jasmine'],
     files: [
-      'test/**/*.js'
+      'test-deprecated/**/*.js'
     ],
     exclude: [],
     reporters: ['mocha'],

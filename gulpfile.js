@@ -9,6 +9,8 @@ const htmlmin = require('gulp-htmlmin');
 const rollup = require('rollup-stream');
 const babel = require('rollup-plugin-babel');
 const asyncfunc = require('rollup-plugin-async');
+const globals = require('rollup-plugin-node-globals');
+const builtins = require('rollup-plugin-node-builtins');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
 const uglify = require('rollup-plugin-uglify');
@@ -18,6 +20,7 @@ const buffer = require('vinyl-buffer');
 const postcss = require('rollup-plugin-postcss');
 const cssnext = require('postcss-cssnext');
 const rucksack = require('rucksack-css');
+const comment = require('postcss-comment');
 const cssnano = require('cssnano');
 
 const imagemin = require('gulp-imagemin');
@@ -73,11 +76,14 @@ gulp.task('main', () => {
           plugins: [
             cssnext({ warnForDuplicates: false }),
             rucksack({ fallbacks: true, autoprefixer: true }),
+            // comment(),
             cssnano()
           ]
         }),
         babel(),
         asyncfunc(),
+        globals(),
+        builtins(),
         resolve({ jsnext: true, browser: true }),
         commonjs(),
         uglify()

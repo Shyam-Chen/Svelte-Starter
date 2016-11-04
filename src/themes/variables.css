@@ -1,0 +1,18 @@
+:root {
+  // @apply --colored-theme;
+  --colored-theme: {
+    color: #F3E5F5;
+    background: #AB47BC;
+    &:hover {
+      background: #AB47BC;
+    }
+    & .mdl-ripple {
+      background: #F3E5F5;
+    }
+  };
+
+  // @apply --accent-theme;
+  --accent-theme: {
+    // ...
+  };
+}
