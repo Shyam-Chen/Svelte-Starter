@@ -4,19 +4,13 @@ module.exports = (config) => {
     basePath: '',
     frameworks: ['jasmine'],
     files: [
-      'test-deprecated/**/*.js'
+      'src/**/*.spec.js'
     ],
     exclude: [],
     reporters: ['mocha'],
     port: 9876,
     colors: true,
     autoWatch: false,
-    /*customLaunchers: {
-      Chrome_no_sandbox: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
-    },*/
     browsers: ['PhantomJS'],
     singleRun: true,
     concurrency: Infinity
