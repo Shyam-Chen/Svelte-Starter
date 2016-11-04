@@ -1,0 +1,19 @@
+:root {
+  --purple-50: #F3E5F5;
+  --purple-400: #AB47BC;
+
+  --colored-theme: {
+    color: var(--purple-50);
+    background: var(--purple-400);
+    &:hover {
+      background: var(--purple-400);
+    }
+    & .mdl-ripple {
+      background: var(--purple-50);
+    }
+  };
+
+  --accent-theme: {
+    // ...
+  };
+}
