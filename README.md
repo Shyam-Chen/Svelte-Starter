@@ -25,7 +25,7 @@ This seed repository provides the following features:
 * [ ] Unit tests with **Jasmine** and **Karma**.
 * [ ] End-to-end tests with **Protractor** (Use `browser.driver`).
 * [x] Version control with **Git**.
-* [ ] Fast and determinsitic builds with **Yarn**.
+* [x] Fast and determinsitic builds with **Yarn**.
 * [ ] Virtual machine with **Docker** and **Compose**.
 * [ ] Continuous Integration and Continous Delivery with **Travis**.
 
@@ -39,10 +39,10 @@ $ cd <PROJECT_NAME>
 
 2) Install Dependencies
 ```bash
-$ npm install
+$ yarn install
 ```
 
 3) Run the Application
 ```bash
-$ npm start
+$ yarn start
 ```
