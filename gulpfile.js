@@ -8,8 +8,16 @@ const plumber = require('gulp-plumber');
 const htmlmin = require('gulp-htmlmin');
 
 const rollup = require('rollup-stream');
+
+const postcss = require('rollup-plugin-postcss');
+const cssnext = require('postcss-cssnext');
+const rucksack = require('rucksack-css');
+// const comment = require('postcss-comment');
+const cssnano = require('cssnano');
+
 const babel = require('rollup-plugin-babel');
-const asyncfunc = require('rollup-plugin-async');
+// const asyncfunc = require('rollup-plugin-async');
+const inject = require('rollup-plugin-inject');
 const globals = require('rollup-plugin-node-globals');
 const builtins = require('rollup-plugin-node-builtins');
 const resolve = require('rollup-plugin-node-resolve');
@@ -17,12 +25,6 @@ const commonjs = require('rollup-plugin-commonjs');
 const uglify = require('rollup-plugin-uglify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
-
-const postcss = require('rollup-plugin-postcss');
-const cssnext = require('postcss-cssnext');
-const rucksack = require('rucksack-css');
-const comment = require('postcss-comment');
-const cssnano = require('cssnano');
 
 const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
@@ -84,7 +86,11 @@ gulp.task('main', () => {
           ]
         }),
         babel(),
-        asyncfunc(),
+        inject({
+          // page: 'page', // Error
+          firebase: 'firebase'
+        }),
+        // asyncfunc(),
         globals(),
         builtins(),
         resolve({ jsnext: true, browser: true }),

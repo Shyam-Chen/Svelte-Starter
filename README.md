@@ -10,11 +10,11 @@
 This seed repository provides the following features:
 * [x] Start coding vanilla **HTML/CSS/JavaScript** right now.
 * [x] UI components with **Material Design Lite** (Without any library).
-* [x] Back-end service with **Firebase**.
+* [ ] Back-end service with **Firebase** (*Error*).
 * [x] Build system using **Gulp** and **Rollup** for working.
 * [x] **CSS.Next** and **JS.Next** syntax support (Thanks for PostCSS and Babel).
 * [x] Exponentiation operator support.
-* [x] Async functions support (*Error*).
+* [ ] Async functions support (*Error*).
 * [x] **ECMAScript** built-in support (Thanks for Core-JS).
 * [ ] **HTML5** built-in support (Thanks for Modernizr-HTML5).
 * [x] **Node.js** built-in support (Thanks for Rollup-Node).
