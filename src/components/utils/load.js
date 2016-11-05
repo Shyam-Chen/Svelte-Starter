@@ -1,3 +1,5 @@
+// TODO: Time Rejected
+
 export const load = (file) => {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();

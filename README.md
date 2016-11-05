@@ -13,10 +13,11 @@ This seed repository provides the following features:
 * [x] Back-end service with **Firebase**.
 * [x] Build system using **Gulp** and **Rollup** for working.
 * [x] **CSS.Next** and **JS.Next** syntax support (Thanks for PostCSS and Babel).
-* [x] Async functions support (You don't need TypeScript).
-* [ ] **ECMAScript** built-in objects support (Thanks for Core-JS).
-* [ ] **HTML5** built-in objects support (Thanks for Modernizr-HTML5).
-* [x] **Node.js** built-in objects support (Thanks for Rollup-Node).
+* [x] Exponentiation operator support.
+* [x] Async functions support (*Error*).
+* [x] **ECMAScript** built-in support (Thanks for Core-JS).
+* [ ] **HTML5** built-in support (Thanks for Modernizr-HTML5).
+* [x] **Node.js** built-in support (Thanks for Rollup-Node).
 * [x] Routing with **Page** (Easy to use).
 * [ ] I18n with **I18nextify** (Easy to use).
 * [ ] Development and production builds.
