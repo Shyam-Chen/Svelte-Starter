@@ -1,18 +1,6 @@
 import { loadHome, loadAbout } from './components/navigation/navigation.js';
 
-import { load, query } from './components/utils';
-
-const load404 = () => {
-  Promise.all([
-      load('./pages/404/404.html'),
-      load('./components/navigation/navigation.html')
-    ])
-    .then((data) => {
-      query('#app').innerHTML = data[0];
-      query('#navigation').innerHTML = data[1];
-      componentHandler.upgradeAllRegistered();
-    });
-};
+import { load404 } from './pages/404';
 
 page('/', loadHome);
 page('/about', loadAbout);

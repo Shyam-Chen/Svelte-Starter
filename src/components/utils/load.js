@@ -1,4 +1,8 @@
-// TODO: Time Rejected
+export const timeoutRejected = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => reject(new Error('Request Timeout.')), 5000);
+  });
+};
 
 export const load = (file) => {
   return new Promise((resolve, reject) => {
