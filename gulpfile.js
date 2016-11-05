@@ -3,6 +3,7 @@ const path = require('path');
 
 const changed = require('gulp-changed');
 const newer = require('gulp-newer');
+const plumber = require('gulp-plumber');
 
 const htmlmin = require('gulp-htmlmin');
 
@@ -36,6 +37,7 @@ const DIST_ROOT = path.join(__dirname, 'dist');
 
 gulp.task('view', () => {
   return gulp.src(path.join(SOURCE_ROOT, '**/*.html'))
+    .pipe(plumber())
     .pipe(changed(DIST_ROOT))
     .pipe(htmlmin({
       collapseWhitespace: true,
@@ -59,6 +61,7 @@ gulp.task('vendor', () => {
         uglify()
       ]
     })
+    .pipe(plumber())
     .pipe(source('vendor.js'))
     .pipe(buffer())
     .pipe(gulp.dest(DIST_ROOT));
@@ -89,6 +92,7 @@ gulp.task('main', () => {
         uglify()
       ]
     })
+    .pipe(plumber())
     .pipe(source('main.js'))
     .pipe(buffer())
     .pipe(gulp.dest(DIST_ROOT))
@@ -96,15 +100,15 @@ gulp.task('main', () => {
 });
 
 gulp.task('image', () => {
-  let dest = path.join(DIST_ROOT, 'assets/images');
   return gulp.src('src/assets/images/**/*.{gif,jpeg,jpg,png,svg}')
-    .pipe(newer(dest))
+    .pipe(plumber())
+    .pipe(newer(path.join(DIST_ROOT, 'assets/images')))
     .pipe(imagemin({
       progressive: true,
       svgoPlugins: [{ removeViewBox: false }],
       use: [pngquant()]
     }))
-    .pipe(gulp.dest(dest));
+    .pipe(gulp.dest(path.join(DIST_ROOT, 'assets/images')));
 });
 
 gulp.task('font', () => {

@@ -1,4 +1,4 @@
-# Vanilla Starter Kit (alpha)
+# Vanilla Starter Kit (Alpha)
 
 > A boilerplate for Vanilla, Material, and Firebase. ([Live Demo](https://test-1498d.firebaseapp.com/))
 

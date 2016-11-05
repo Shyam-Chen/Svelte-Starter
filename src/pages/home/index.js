@@ -1,2 +1,3 @@
 import './home.css';
-import './home.js';
+
+export * from './home';
