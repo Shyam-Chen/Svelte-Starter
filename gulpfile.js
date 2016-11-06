@@ -88,7 +88,7 @@ gulp.task('main', () => {
         babel(),
         inject({
           // page: 'page', // Error
-          firebase: 'firebase'
+          // firebase: 'firebase'
         }),
         // asyncfunc(),
         globals(),

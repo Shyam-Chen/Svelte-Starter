@@ -9,8 +9,8 @@
 
 This seed repository provides the following features:
 * [x] Start coding vanilla **HTML/CSS/JavaScript** right now.
-* [x] UI components with **Material**.
-* [ ] Back-end service with **Firebase**.
+* [x] UI components with **Material** (TODO: Use CDN).
+* [x] Back-end service with **Firebase** (TODO: Use CDN).
 * [x] Build system using **Gulp** and **Rollup** for working.
 * [x] **CSS.Next** and **JS.Next** syntax support.
 * [x] Exponentiation operator support.
@@ -21,9 +21,9 @@ This seed repository provides the following features:
 * [ ] Internationalization with **I18nextify** (Easy to use).
 * [x] Development server with **BrowserSync**.
 * [x] Static code analyzer with **HTMLHint**, **StyleLint**, and **ESLint**.
-* [ ] Testing framework with **Jasmine**.
+* [x] Testing framework with **Jasmine**.
 * [ ] Unit tests with **Karma**.
-* [ ] End-to-end tests with **Protractor** (Use `browser.driver`).
+* [x] End-to-end tests with **Protractor** (Use `browser.driver`).
 * [x] Version control with **Git**.
 * [x] Fast and determinsitic builds with **Yarn**.
 * [ ] Virtual machine with **Docker** and **Compose**.

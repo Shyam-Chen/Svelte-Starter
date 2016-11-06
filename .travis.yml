@@ -1,3 +1,4 @@
+# TODO: Dockerfile
 language: node_js
 node_js: stable
 
@@ -9,3 +10,8 @@ cache:
 script:
   - npm test
   - npm run e2e
+
+# Docker first
+# after_success:
+  # - docker-compose exec app npm run ...
+  # - docker-compose exec app firebase deploy --token ${FIREBASE_TOKEN}
