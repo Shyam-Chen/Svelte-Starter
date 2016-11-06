@@ -8,3 +8,4 @@ cache:
 
 script:
   - npm test
+  - npm run e2e

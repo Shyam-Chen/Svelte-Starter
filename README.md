@@ -9,21 +9,20 @@
 
 This seed repository provides the following features:
 * [x] Start coding vanilla **HTML/CSS/JavaScript** right now.
-* [x] UI components with **Material Design Lite** (Without any library).
-* [ ] Back-end service with **Firebase** (*Error*).
+* [x] UI components with **Material**.
+* [ ] Back-end service with **Firebase**.
 * [x] Build system using **Gulp** and **Rollup** for working.
-* [x] **CSS.Next** and **JS.Next** syntax support (Thanks for PostCSS and Babel).
+* [x] **CSS.Next** and **JS.Next** syntax support.
 * [x] Exponentiation operator support.
-* [ ] Async functions support (*Error*).
-* [x] **ECMAScript** built-in support (Thanks for Core-JS).
-* [ ] **HTML5** built-in support (Thanks for Modernizr-HTML5).
-* [x] **Node.js** built-in support (Thanks for Rollup-Node).
+* [ ] Async functions support.
+* [x] **ES2015** built-in support.
+* [x] **Node.js** built-in support.
 * [x] Routing with **Page** (Easy to use).
-* [ ] I18n with **I18nextify** (Easy to use).
-* [ ] Development and production builds.
+* [ ] Internationalization with **I18nextify** (Easy to use).
 * [x] Development server with **BrowserSync**.
 * [x] Static code analyzer with **HTMLHint**, **StyleLint**, and **ESLint**.
-* [ ] Unit tests with **Jasmine** and **Karma**.
+* [ ] Testing framework with **Jasmine**.
+* [ ] Unit tests with **Karma**.
 * [ ] End-to-end tests with **Protractor** (Use `browser.driver`).
 * [x] Version control with **Git**.
 * [x] Fast and determinsitic builds with **Yarn**.

@@ -1,4 +1,3 @@
-// ToDo: karma-rollup-plugin
 module.exports = (config) => {
   config.set({
     basePath: '',
@@ -7,6 +6,12 @@ module.exports = (config) => {
       'src/**/*.spec.js'
     ],
     exclude: [],
+    // preprocessors: {
+    //  'src/**/*.spec.js': ['rollup']
+    // },
+    // rollupPreprocessor: {
+
+    // },
     reporters: ['mocha'],
     port: 9876,
     colors: true,
