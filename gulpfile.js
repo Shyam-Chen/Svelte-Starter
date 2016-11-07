@@ -4,6 +4,7 @@ const path = require('path');
 const changed = require('gulp-changed');
 const newer = require('gulp-newer');
 const plumber = require('gulp-plumber');
+const notify = require('gulp-notify');
 
 const htmlmin = require('gulp-htmlmin');
 
@@ -37,6 +38,21 @@ const runsequence = require('run-sequence');
 
 const SOURCE_ROOT = path.join(__dirname, 'src');
 const DIST_ROOT = path.join(__dirname, 'dist');
+
+// TODO: prod mode
+class CompileError {
+  static handle(err) {
+    let args = Array.from(arguments);
+
+    notify.onError({
+        title: 'Compile Error',
+        message: `\r\n${err.message}`
+      })
+      .apply(this, args);
+
+    this.emit('end');
+  }
+}
 
 gulp.task('view', () => {
   return gulp.src(path.join(SOURCE_ROOT, '**/*.html'))
@@ -101,7 +117,7 @@ gulp.task('main', () => {
         uglify()
       ]
     })
-    // .pipe(plumber())  // Not working, TODO: .on('error')
+    .on('error', CompileError.handle)
     .pipe(source('main.js'))
     .pipe(buffer())
     .pipe(gulp.dest(DIST_ROOT))
