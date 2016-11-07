@@ -18,8 +18,6 @@ const comment = require('postcss-comment');
 const cssnano = require('cssnano');
 
 const babel = require('rollup-plugin-babel');
-// const asyncfunc = require('rollup-plugin-async');
-const inject = require('rollup-plugin-inject');
 const globals = require('rollup-plugin-node-globals');
 const builtins = require('rollup-plugin-node-builtins');
 const resolve = require('rollup-plugin-node-resolve');
@@ -106,11 +104,6 @@ gulp.task('main', () => {
           ]
         }),
         babel(),
-        inject({
-          // page: 'page',  // Error
-          // firebase: 'firebase'  // Error
-        }),
-        // asyncfunc(),
         globals(),
         builtins(),
         resolve({ jsnext: true, browser: true }),

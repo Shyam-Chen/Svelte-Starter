@@ -11,18 +11,16 @@ This repository provides the following features:
 * [x] Start coding vanilla **HTML/CSS/JS** right now.
 * [x] Build system using **Gulp** and **Rollup** for working.
 * [x] UI components with **Material**.
-* [x] Back-end service with **Firebase** (*Error*).
+* [x] Back-end service with **Firebase**.
 * [x] **CSS.Next** and **JS.Next** syntax support.
-* [x] Exponentiation operator support.
-* [ ] Async functions support (*Error*).
 * [x] **Node.js** built-in support.
-* [x] Routing with **Page** (TODO: Refact).
+* [x] Routing with **Page**.
 * [ ] Internationalization with **I18next** (TODO: Example).
 * [x] Development server with **BrowserSync**.
 * [x] Static code analyzer with **HTMLHint**, **StyleLint**, and **ESLint**.
 * [x] Testing framework with **Jasmine**.
 * [ ] Unit tests with **Karma** (TODO: Rollup).
-* [x] End-to-end tests with **Protractor** (TODO: Use `browser.driver`, Babel).
+* [ ] End-to-end tests with **Protractor** (TODO: Use `browser.driver`, Babel).
 * [x] Version control with **Git**.
 * [x] Fast and determinsitic builds with **Yarn**.
 * [x] Virtual machine with **Docker** and **Compose**.
