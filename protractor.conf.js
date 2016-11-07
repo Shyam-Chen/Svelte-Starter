@@ -1,5 +1,6 @@
 const SpecReporter = require('jasmine-spec-reporter');
 
+// TODO: History API fallback
 exports.config = {
   specs: [
     './src/**/*.e2e-spec.js'
@@ -14,6 +15,12 @@ exports.config = {
   onPrepare() {
     jasmine.getEnv()
       .addReporter(new SpecReporter({ displayStacktrace: true }));
+
+    global.dv = browser.driver;
+
+    global.isAngularSite = (flag) => {
+      browser.ignoreSynchronization = !flag;
+    };
   },
   framework: 'jasmine',
   jasmineNodeOpts: {

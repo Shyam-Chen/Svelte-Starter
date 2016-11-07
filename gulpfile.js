@@ -147,7 +147,6 @@ gulp.task('build', [
   'image', 'font', 'data'
 ]);
 
-// TODO: ...
 gulp.task('watch', () => {
   gulp.watch([
     path.join(SOURCE_ROOT, '**/*.html')
@@ -157,6 +156,7 @@ gulp.task('watch', () => {
     path.join(SOURCE_ROOT, 'vendor.js')
   ], ['vendor']);
 
+  // TODO: 排除 spec 和 e2e-spec
   gulp.watch([
     path.join(SOURCE_ROOT, '**/*.{js,css}')
   ], ['main']);

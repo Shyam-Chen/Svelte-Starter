@@ -26,6 +26,11 @@ This repository provides the following features:
 * [x] Virtual machine with **Docker** and **Compose**.
 * [x] Continuous Integration and Continous Delivery with **Travis**.
 
+Known issues:
+* Firebase and Rollup
+* Async functions
+* E2E tests example
+
 ## Getting Started
 
 ### Clone this Boilerplate
