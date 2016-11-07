@@ -1,13 +1,8 @@
-describe('Home', function() {
+describe('Home', () => {
 
-
-  it('should add a todo', function() {
-
+  it('should add a todo', () => {
     dv.get('/');
-
-
-    expect(dv.findElement(by.id('home')).getText()).toEqual('Home');
-
-    });
+    expect(dv.findElement(by.id('#home')).getText()).toEqual('Home');
+  });
 
 });

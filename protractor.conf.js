@@ -1,6 +1,6 @@
 const SpecReporter = require('jasmine-spec-reporter');
 
-// TODO: History API fallback
+// TODO: History API fallback (CI)
 exports.config = {
   specs: [
     './src/**/*.e2e-spec.js'
@@ -13,6 +13,8 @@ exports.config = {
   },
   baseUrl: 'http://localhost:9876/',
   onPrepare() {
+    require("babel-core/register")({ presets: ["latest"] });
+
     jasmine.getEnv()
       .addReporter(new SpecReporter({ displayStacktrace: true }));
 

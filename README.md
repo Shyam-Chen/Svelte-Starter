@@ -20,7 +20,7 @@ This repository provides the following features:
 * [x] Static code analyzer with **HTMLHint**, **StyleLint**, and **ESLint**.
 * [x] Testing framework with **Jasmine**.
 * [ ] Unit tests with **Karma** (TODO: Rollup).
-* [ ] End-to-end tests with **Protractor** (TODO: Use `browser.driver`, Babel).
+* [ ] End-to-end tests with **Protractor** (TODO: Example).
 * [x] Version control with **Git**.
 * [x] Fast and determinsitic builds with **Yarn**.
 * [x] Virtual machine with **Docker** and **Compose**.
@@ -29,7 +29,6 @@ This repository provides the following features:
 Known issues:
 * Firebase and Rollup
 * Async functions
-* E2E tests example
 
 ## Getting Started
 
