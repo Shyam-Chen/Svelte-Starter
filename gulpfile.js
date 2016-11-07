@@ -11,8 +11,9 @@ const rollup = require('rollup-stream');
 
 const postcss = require('rollup-plugin-postcss');
 const cssnext = require('postcss-cssnext');
+const extend = require('postcss-extend')
 const rucksack = require('rucksack-css');
-// const comment = require('postcss-comment');
+const comment = require('postcss-comment');
 const cssnano = require('cssnano');
 
 const babel = require('rollup-plugin-babel');
@@ -79,17 +80,18 @@ gulp.task('main', () => {
       format: 'iife',
       plugins: [
         postcss({
+          parser: comment,
           plugins: [
             cssnext({ warnForDuplicates: false }),
+            extend(),
             rucksack({ fallbacks: true, autoprefixer: true }),
-            // comment(),
             cssnano()
           ]
         }),
         babel(),
         inject({
-          // page: 'page', // Error
-          // firebase: 'firebase'
+          // page: 'page',  // Error
+          // firebase: 'firebase'  // Error
         }),
         // asyncfunc(),
         globals(),
@@ -99,7 +101,7 @@ gulp.task('main', () => {
         uglify()
       ]
     })
-    .pipe(plumber())
+    // .pipe(plumber())  // Not working, TODO: .on('error')
     .pipe(source('main.js'))
     .pipe(buffer())
     .pipe(gulp.dest(DIST_ROOT))
@@ -118,11 +120,13 @@ gulp.task('image', () => {
     .pipe(gulp.dest(path.join(DIST_ROOT, 'assets/images')));
 });
 
+// TODO: ...
 gulp.task('font', () => {
   return gulp.src('src/assets/fonts/**/*.{eot,svg,ttf,woff,woff2}')
     .pipe(gulp.dest(path.join(DIST_ROOT, 'assets/fonts')));
 });
 
+// TODO: ...
 gulp.task('data', () => {
   return gulp.src('src/assets/datas/**/*.json')
     .pipe(gulp.dest(path.join(DIST_ROOT, 'assets/datas')));

@@ -15,6 +15,8 @@ This repository provides the following features:
 * [x] **CSS.Next** and **JS.Next** syntax support.
 * [x] Exponentiation operator support.
 * [ ] Async functions support (*Error*).
+* [ ] ~~CSS modules~~ (Having a problem?) | BEM? | OOCSS?.
+* [x] ~~JS namespaces~~ | ~~JS Classes~~ (Tree-shaking class methods?) | Functional JavaScript.
 * [x] **ES2015** built-in support.
 * [x] **Node.js** built-in support.
 * [x] Routing with **Page** (TODO: Refact).
