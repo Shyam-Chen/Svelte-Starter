@@ -14,11 +14,11 @@ This seed repository provides the following features:
 * [x] Build system using **Gulp** and **Rollup** for working.
 * [x] **CSS.Next** and **JS.Next** syntax support.
 * [x] Exponentiation operator support.
-* [ ] Async functions support.
+* [ ] Async functions support (*Error*).
 * [x] **ES2015** built-in support.
 * [x] **Node.js** built-in support.
-* [x] Routing with **Page** (Easy to use).
-* [ ] Internationalization with **I18nextify** (Easy to use).
+* [x] Routing with **Page** (Refact).
+* [ ] Internationalization with **I18next** (TODO).
 * [x] Development server with **BrowserSync**.
 * [x] Static code analyzer with **HTMLHint**, **StyleLint**, and **ESLint**.
 * [x] Testing framework with **Jasmine**.

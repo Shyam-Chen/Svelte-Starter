@@ -1,17 +1,15 @@
-# TODO: Dockerfile
-language: node_js
-node_js: stable
+os: linux
 
-sudo: false
+sudo: required
+services: docker
 
-cache:
-  directories: node_modules
+before_install:
+  - docker-compose up -d
 
 script:
-  - npm test
-  - npm run e2e
+  - docker-compose exec app npm test
+  - docker-compose exec app npm run e2e
 
-# Docker first
 # after_success:
-  # - docker-compose exec app npm run ...
+  # - docker-compose exec app npm run prod
   # - docker-compose exec app firebase deploy --token ${FIREBASE_TOKEN}

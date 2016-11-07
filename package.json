@@ -23,6 +23,7 @@
   "dependencies": {
     "core-js": "^2.4.1",
     "firebase": "^3.5.2",
+    "i18next": "^3.4.4",
     "material-design-lite": "^1.2.1",
     "page": "^1.7.1"
   },
