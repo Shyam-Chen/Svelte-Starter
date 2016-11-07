@@ -54,6 +54,7 @@ class CompileError {
   }
 }
 
+// For traditional websites
 gulp.task('view', () => {
   return gulp.src(path.join(SOURCE_ROOT, '**/*.html'))
     .pipe(plumber())
@@ -87,9 +88,9 @@ gulp.task('vendor', () => {
     .pipe(gulp.dest(DIST_ROOT));
 });
 
-// ToDo: 原始碼映射
-// ToDo: 加入快取
-// ToDo: 錯誤處理
+// TODO: 原始碼映射
+// TODO: 加入快取
+// TODO: 模板快取
 gulp.task('main', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'main.js'),
@@ -153,7 +154,7 @@ gulp.task('build', [
   'image', 'font', 'data'
 ]);
 
-// ToDo: ...
+// TODO: ...
 gulp.task('watch', () => {
   gulp.watch([
     path.join(SOURCE_ROOT, '**/*.html')

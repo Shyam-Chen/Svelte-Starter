@@ -10,14 +10,11 @@
 This repository provides the following features:
 * [x] Start coding vanilla **HTML/CSS/JS** right now.
 * [x] Build system using **Gulp** and **Rollup** for working.
-* [x] UI components with **Material** (TODO: Refact).
-* [x] Back-end service with **Firebase** (TODO: Refact).
+* [x] UI components with **Material**.
+* [x] Back-end service with **Firebase** (*Error*).
 * [x] **CSS.Next** and **JS.Next** syntax support.
 * [x] Exponentiation operator support.
 * [ ] Async functions support (*Error*).
-* [ ] ~~CSS modules~~ (Having a problem?) | BEM? | OOCSS?.
-* [x] ~~JS namespaces~~ | ~~JS Classes~~ (Tree-shaking class methods?) | Functional JavaScript.
-* [x] **ES2015** built-in support.
 * [x] **Node.js** built-in support.
 * [x] Routing with **Page** (TODO: Refact).
 * [ ] Internationalization with **I18next** (TODO: Example).
@@ -33,21 +30,21 @@ This repository provides the following features:
 
 ## Getting Started
 
-1. Clone this Boilerplate
-  ```bash
-  $ git clone --depth 1 https://github.com/Shyam-Chen/Vanilla-Starter-Kit.git <PROJECT_NAME>
-  $ cd <PROJECT_NAME>
-  ```
+### Clone this Boilerplate
+```bash
+$ git clone --depth 1 https://github.com/Shyam-Chen/Vanilla-Starter-Kit.git <PROJECT_NAME>
+$ cd <PROJECT_NAME>
+```
 
-2. Install Dependencies
-  ```bash
-  $ yarn install
-  ```
+### Install Dependencies
+```bash
+$ yarn install
+```
 
-3. Run the Application
-  ```bash
-  $ yarn start
-  ```
+### Run the Application
+```bash
+$ yarn start
+```
 
 ## Using Docker
 
