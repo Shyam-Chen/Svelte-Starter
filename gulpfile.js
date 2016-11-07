@@ -56,6 +56,7 @@ gulp.task('vendor', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'vendor.js'),
       format: 'es',
+      treeshake: false,
       plugins: [
         postcss({ plugins: [cssnano()] }),
         resolve({ jsnext: true, browser: true }),
