@@ -7,7 +7,7 @@
 [![Dependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit)
 [![devDependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit?type=dev)
 
-This seed repository provides the following features:
+This repository provides the following features:
 * [x] Start coding vanilla **HTML/CSS/JS** right now.
 * [x] Build system using **Gulp** and **Rollup** for working.
 * [x] UI components with **Material** (TODO: Refact).
@@ -18,12 +18,12 @@ This seed repository provides the following features:
 * [x] **ES2015** built-in support.
 * [x] **Node.js** built-in support.
 * [x] Routing with **Page** (TODO: Refact).
-* [ ] Internationalization with **I18next** (TODO).
+* [ ] Internationalization with **I18next** (TODO: Example).
 * [x] Development server with **BrowserSync**.
 * [x] Static code analyzer with **HTMLHint**, **StyleLint**, and **ESLint**.
 * [x] Testing framework with **Jasmine**.
-* [ ] Unit tests with **Karma**.
-* [x] End-to-end tests with **Protractor** (Use `browser.driver`).
+* [ ] Unit tests with **Karma** (TODO: Rollup).
+* [x] End-to-end tests with **Protractor** (TODO: Use `browser.driver`, Babel).
 * [x] Version control with **Git**.
 * [x] Fast and determinsitic builds with **Yarn**.
 * [x] Virtual machine with **Docker** and **Compose**.
@@ -31,18 +31,54 @@ This seed repository provides the following features:
 
 ## Getting Started
 
-1) Clone this Boilerplate
+1. Clone this Boilerplate
+  ```bash
+  $ git clone --depth 1 https://github.com/Shyam-Chen/Vanilla-Starter-Kit.git <PROJECT_NAME>
+  $ cd <PROJECT_NAME>
+  ```
+
+2. Install Dependencies
+  ```bash
+  $ yarn install
+  ```
+
+3. Run the Application
+  ```bash
+  $ yarn start
+  ```
+
+## Using Docker
+
+### Run the Application
 ```bash
-$ git clone --depth 1 https://github.com/Shyam-Chen/Vanilla-Starter-Kit.git <PROJECT_NAME>
-$ cd <PROJECT_NAME>
+$ docker build -t vanilla-starter-kit .
+$ docker run -it -p 3000:3000 --name app vanilla-starter-kit
 ```
 
-2) Install Dependencies
+### Run the Application with Compose
 ```bash
-$ yarn install
+$ docker-compose up
 ```
 
-3) Run the Application
+## Other Commands
+
+### Test the Application
 ```bash
-$ yarn start
+$ yarn test
+$ yarn run e2e
+```
+
+### Clean the Application
+```bash
+$ yarn run clean
+```
+
+### Reset the Application
+```bash
+$ yarn run reset
+```
+
+### Reinstall the Application
+```bash
+$ yarn run reinstall
 ```
