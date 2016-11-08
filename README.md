@@ -30,6 +30,16 @@ Known issues:
 * Firebase and Rollup
 * Async functions
 
+Resources:
+* Learning Material Design Lite ([GO](https://webdesign.tutsplus.com/series/learning-material-design-lite--cms-888))
+* Firebase by Example ([GO](https://github.com/firebase/quickstart-js))
+* Learning ES2015 (GO)
+* Learning Block Element Modifier (GO)
+* Learning Functional Programming (GO)
+* Learning Node.js (GO)
+* Learning Jasmine (GO)
+* Learning WebDriverJS (GO)
+
 ## Getting Started
 
 ### Clone this Boilerplate
