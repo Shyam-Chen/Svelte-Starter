@@ -14,15 +14,9 @@ exports.config = {
   baseUrl: 'http://localhost:9876/',
   onPrepare() {
     require("babel-core/register")({ presets: ["latest"] });
-
-    jasmine.getEnv()
-      .addReporter(new SpecReporter({ displayStacktrace: true }));
-
+    jasmine.getEnv().addReporter(new SpecReporter({ displayStacktrace: true }));
     global.dv = browser.driver;
-
-    global.isAngularSite = (flag) => {
-      browser.ignoreSynchronization = !flag;
-    };
+    browser.ignoreSynchronization = false;
   },
   framework: 'jasmine',
   jasmineNodeOpts: {

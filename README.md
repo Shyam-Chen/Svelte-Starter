@@ -20,7 +20,7 @@ This repository provides the following features:
 * [x] Static code analyzer with **HTMLHint**, **StyleLint**, and **ESLint**.
 * [x] Testing framework with **Jasmine**.
 * [ ] Unit tests with **Karma** (TODO: Rollup).
-* [ ] End-to-end tests with **Protractor** (TODO: Example).
+* [x] End-to-end tests with **Protractor** (TODO: CI).
 * [x] Version control with **Git**.
 * [x] Fast and determinsitic builds with **Yarn**.
 * [x] Virtual machine with **Docker** and **Compose**.
@@ -63,9 +63,24 @@ $ docker-compose up
 
 ## Other Commands
 
-### Test the Application
+```bash
+$ yarn run dev
+
+$ yarn run dev-watch  # TODO
+```
+
 ```bash
 $ yarn test
+
+$ yarn run test-watch  # TODO
+```
+
+```bash
+$ yarn run prod
+```
+
+```bash
+$ yarn run prod-serve  # TODO
 $ yarn run e2e
 ```
 
