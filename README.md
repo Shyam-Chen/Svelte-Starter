@@ -7,7 +7,7 @@
 [![Dependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit)
 [![devDependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit?type=dev)
 
-This repository provides the following features:
+This seed repository provides the following features:
 * [x] Start coding vanilla **HTML/CSS/JS** right now.
 * [x] Build system using **Gulp** and **Rollup** for working.
 * [x] UI components with **Material**.
@@ -26,19 +26,16 @@ This repository provides the following features:
 * [x] Virtual machine with **Docker** and **Compose**.
 * [x] Continuous Integration and Continous Delivery with **Travis**.
 
-Known issues:
-* Firebase and Rollup
-* Async functions
-
-Resources:
+The following help resources to use this seed repository:
 * Learning Material Design Lite ([GO](https://webdesign.tutsplus.com/series/learning-material-design-lite--cms-888))
-* Firebase by Example ([GO](https://github.com/firebase/quickstart-js))
-* Learning ES2015 (GO)
-* Learning Block Element Modifier (GO)
-* Learning Functional Programming (GO)
-* Learning Node.js (GO)
-* Learning Jasmine (GO)
-* Learning WebDriverJS (GO)
+* Learning Firebase ([GO](https://github.com/firebase/quickstart-js))
+* Learning CSS.Next ([GO](http://cssnext.io/features/))
+* Learning ES2015 ([GO](http://exploringjs.com/es6/index.html), book)
+* Learning Block Element Modifier ([GO](https://css-tricks.com/bem-101/))
+* Learning Functional Programming ([GO](https://www.packtpub.com/web-development/functional-programming-javascript), book, $)
+* Learning Node.js ([GO](http://shop.oreilly.com/product/0636920046936.do), book, $)
+* Learning Jasmine ([GO](https://www.packtpub.com/web-development/jasmine-javascript-testing-second-edition), book, $)
+* Learning WebDriverJS ([GO](https://www.packtpub.com/books/content/testing-ui-using-webdriverjs))
 
 ## Getting Started
 
