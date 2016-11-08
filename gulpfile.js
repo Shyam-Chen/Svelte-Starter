@@ -156,7 +156,7 @@ gulp.task('watch', () => {
     path.join(SOURCE_ROOT, 'vendor.js')
   ], ['vendor']);
 
-  // TODO: 排除 spec 和 e2e-spec
+  // TODO: 排除 vendor、spec 和 e2e-spec
   gulp.watch([
     path.join(SOURCE_ROOT, '**/*.{js,css}')
   ], ['main']);
