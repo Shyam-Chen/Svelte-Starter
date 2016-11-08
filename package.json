@@ -1,29 +1,37 @@
 {
   "name": "Vanilla-Starter-Kit",
   "version": "1.0.0",
-  "description": "A boilerplate for Vanilla, Material, and Firebase.",
+  "description": "A boilerplate for vanilla HTML/CSS/JS, Gulp, and Rollup.",
   "scripts": {
     "start": "gulp",
-    "test": "karma start",
-    "pree2e": "webdriver-manager update",
-    "e2e": "protractor",
     "dev": "rimraf dist && gulp",
+    "dev-watch": "",
+    "test": "karma start",
+    "test-watch": "",
     "prod": "rimraf dist && gulp build",
+    "e2e": "protractor",
+    "webdriver": "webdriver-manager update",
     "clean": "rimraf dist",
     "reset": "git reset --hard HEAD && git clean -df",
     "reinstall": "yarn cache clean && git clean -dfx -e '.*' && yarn install"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shyam-Chen/Vanilla-Starter-Kit.git"
+  },
   "keywords": [
-    "Vanilla",
-    "Material",
-    "Firebase"
+    "Vanilla"
   ],
   "author": "陳彥澄",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Shyam-Chen/Vanilla-Starter-Kit/issues"
+  },
+  "homepage": "https://github.com/Shyam-Chen/Vanilla-Starter-Kit#readme",
   "dependencies": {
     "core-js": "^2.4.1",
     "firebase": "^3.5.2",
-    "i18next": "^3.4.4",
+    "i18nextify": "^1.0.0",
     "material-design-lite": "^1.2.1",
     "page": "^1.7.1"
   },

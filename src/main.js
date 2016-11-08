@@ -29,32 +29,3 @@ page('/', loadHome);
 page('/about', loadAbout);
 page('*', load404);
 page();
-
-// TODO: JSON
-const resources = {
-  "en": {
-    "translation": {
-      "title": "title"
-    }
-  },
-  "zh": {
-    "translation": {
-      "title": "標題"
-    }
-  }
-};
-
-i18next.init({
-  lng: 'en',
-  resources: {
-    en: {
-      translation: {
-        "key": "hello world"
-      }
-    }
-  }
-}, (err, t) => {
-  // initialized and ready to go!
-  const hw = i18next.t('key');
-  console.log(hw);  // hw = 'hello world'
-});
