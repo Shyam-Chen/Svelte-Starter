@@ -19,7 +19,7 @@ This repository provides the following features:
 * [x] Development server with **BrowserSync**.
 * [x] Static code analyzer with **HTMLHint**, **StyleLint**, and **ESLint**.
 * [x] Testing framework with **Jasmine**.
-* [ ] Unit tests with **Karma** (TODO: Rollup).
+* [x] Unit tests with **Karma**.
 * [x] End-to-end tests with **Protractor** (TODO: CI).
 * [x] Version control with **Git**.
 * [x] Fast and determinsitic builds with **Yarn**.

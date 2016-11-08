@@ -1,9 +1,10 @@
-describe('Home', function() {
+import { qq } from './home';
 
-  it('O', function() {
-    var foo = 0;
-    foo += 1;
-    expect(foo).toEqual(1);
+describe('Home', () => {
+
+  it('OOOOOOO', () => {
+
+    expect(qq).not.toThrow();
   });
 
 });
