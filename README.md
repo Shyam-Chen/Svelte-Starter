@@ -28,17 +28,18 @@ This seed repository provides the following features:
 * [x] Continuous Integration and Continous Delivery with **Travis**.
 
 The following helpful resources to use this seed repository:
-* Learning Material ([GO](https://webdesign.tutsplus.com/series/learning-material-design-lite--cms-888))
-* Learning Firebase ([GO](https://github.com/firebase/quickstart-js))
-* Learning CSS.Next ([GO](http://cssnext.io/features/))
+* Learning Material ([GO](https://webdesign.tutsplus.com/series/learning-material-design-lite--cms-888), article)
+* Learning Firebase ([GO](https://github.com/firebase/quickstart-js), example)
+* Learning CSS.Next ([GO](http://cssnext.io/features/), article)
 * Learning JS.Next ([GO-1](http://exploringjs.com/es6/index.html), [GO-2](https://leanpub.com/understandinges6/read), book)
-* Learning Page.js ([GO](https://github.com/visionmedia/page.js/tree/master/examples))
-* Learning I18nextify ([GO](https://github.com/i18next/i18nextify/tree/master/example))
-* Learning Block Element Modifier ([GO](https://css-tricks.com/bem-101/))
+* Learning Page.js ([GO](https://github.com/visionmedia/page.js/tree/master/examples), example)
+* Learning I18nextify ([GO](https://github.com/i18next/i18nextify/tree/master/example), example)
+* Learning Chart.js ([GO](https://www.sitepoint.com/introduction-chart-js-2-0-six-examples/), article)
+* Learning Block Element Modifier ([GO](https://css-tricks.com/bem-101/), article)
 * Learning Functional Programming ([GO](https://www.packtpub.com/web-development/functional-programming-javascript), book, $)
 * Learning Node.js ([GO](http://shop.oreilly.com/product/0636920046936.do), book, $)
 * Learning Jasmine ([GO](https://www.packtpub.com/web-development/jasmine-javascript-testing-second-edition), book, $)
-* Learning WebDriverJS ([GO](https://www.packtpub.com/books/content/testing-ui-using-webdriverjs))
+* Learning WebDriverJS ([GO](https://www.packtpub.com/books/content/testing-ui-using-webdriverjs), article)
 
 ## Getting Started
 
@@ -88,11 +89,8 @@ $ yarn run prod
 ```
 
 ```bash
-$ yarn run e2e  # TODO: with Gulp
-```
-
-```bash
-$ yarn run webdriver
+# Pre - yarn run prod && yarn run webdriver
+$ yarn run e2e
 ```
 
 ```bash

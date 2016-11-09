@@ -64,7 +64,6 @@
     "postcss-comment": "^1.0.3",
     "postcss-cssnext": "^2.8.0",
     "postcss-extend": "^1.0.5",
-    "protractor": "^4.0.10",
     "rimraf": "^2.5.4",
     "rollup-plugin-babel": "^2.6.1",
     "rollup-plugin-commonjs": "^5.0.5",
