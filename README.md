@@ -16,6 +16,7 @@ This seed repository provides the following features:
 * [x] **Node.js** built-in support.
 * [x] Routing with **Page.js**.
 * [ ] Internationalization with **I18nextify**.
+* [ ] Data visualization with **D3.js**.
 * [x] Development server with **BrowserSync**.
 * [x] Static code analyzer with **HTMLHint**, **StyleLint**, and **ESLint**.
 * [x] Testing framework with **Jasmine**.

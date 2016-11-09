@@ -38,7 +38,7 @@ const SOURCE_ROOT = path.join(__dirname, 'src');
 const DIST_ROOT = path.join(__dirname, 'dist');
 
 // TODO: prod mode
-class CompileError {
+export class CompileError {
   static handle(err) {
     let args = Array.from(arguments);
 
@@ -50,6 +50,22 @@ class CompileError {
 
     this.emit('end');
   }
+}
+// TODO: ...
+export class E2E {
+  /*static server(port, dir) {
+    let app = express();
+    let root = resolve(process.cwd(), dir);
+
+    app.use(express.static(root));
+    app.use(expressHistory('index.html', { root }));
+
+    return new Promise((resolve, reject) => {
+      let server = app.listen(port, () => {
+        resolve(server);
+      });
+    });
+  }*/
 }
 
 // For traditional websites
