@@ -1,16 +1,17 @@
 // Home
+:root {
+  --foo-x: #000000;
+
+  --bar-x: {
+    color: #ffffff;
+    background: #000000;
+  };
+}
+
 .home {
-  background: #eee;
+  // ...
 }
 
 .home-title {
-  
-}
-
-.home-title--img {
-
-}
-
-.home-title--text {
-
+  // ...
 }

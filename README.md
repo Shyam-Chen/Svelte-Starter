@@ -1,4 +1,4 @@
-# Vanilla Starter Kit (Alpha)
+# Vanilla Starter Kit (Beta)
 
 > A boilerplate for vanilla HTML/CSS/JS, Gulp, and Rollup. ([Live Demo](https://test-1498d.firebaseapp.com/))
 
@@ -21,7 +21,7 @@ This seed repository provides the following features:
 * [x] Static code analyzer with **HTMLHint**, **StyleLint**, and **ESLint**.
 * [x] Testing framework with **Jasmine**.
 * [x] Unit tests with **Karma**.
-* [ ] End-to-end tests with **Protractor** (TODO: continuous integration).
+* [x] End-to-end tests with **Protractor**.
 * [x] Version control with **Git**.
 * [x] Fast and determinsitic builds with **Yarn**.
 * [x] Virtual machine with **Docker** and **Compose**.

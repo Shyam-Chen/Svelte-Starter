@@ -34,6 +34,10 @@ const history = require('connect-history-api-fallback');
 
 const runsequence = require('run-sequence');
 
+const express = require('express');
+const expressHistory = require('express-history-api-fallback');
+const gProtractor = require('gulp-protractor');
+
 const SOURCE_ROOT = path.join(__dirname, 'src');
 const DIST_ROOT = path.join(__dirname, 'dist');
 
@@ -53,9 +57,9 @@ class CompileError {
 }
 // TODO: ...
 class E2E {
-  /*static server(port, dir) {
+  server(port, dir) {
     let app = express();
-    let root = resolve(process.cwd(), dir);
+    let root = path.resolve(process.cwd(), dir);
 
     app.use(express.static(root));
     app.use(expressHistory('index.html', { root }));
@@ -65,7 +69,7 @@ class E2E {
         resolve(server);
       });
     });
-  }*/
+  }
 }
 
 // For traditional websites
@@ -189,6 +193,22 @@ gulp.task('serve', () => {
       middleware: [history()]
     }
   });
+});
+
+
+
+gulp.task('webdriver', gProtractor.webdriver_update);
+
+gulp.task('e2e', (done) => {
+  new E2E()
+    .server(3000, DIST_ROOT)
+    .then((server) => {
+      gulp
+        .src('./src/**/*.e2e-spec.js')
+        .pipe(gProtractor.protractor({ configFile: 'protractor.conf.js' }))
+        .on('error', (error) => { throw error; })
+        .on('end', () => { server.close(done); });
+    });
 });
 
 gulp.task('default', (done) => {

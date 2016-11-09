@@ -8,7 +8,9 @@ before_install:
 
 script:
   - docker-compose exec app npm test
-  # - docker-compose exec app npm run e2e
+  - docker-compose exec app npm run prod
+  - docker-compose exec app npm run webdriver
+  - docker-compose exec app npm run  e2e
 
 after_success:
   - docker-compose exec app npm run prod
