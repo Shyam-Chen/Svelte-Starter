@@ -201,7 +201,7 @@ gulp.task('webdriver', gProtractor.webdriver_update);
 
 gulp.task('e2e', (done) => {
   new E2E()
-    .server(4000, DIST_ROOT)
+    .server(3000, DIST_ROOT)
     .then((server) => {
       gulp
         .src('./src/**/*.e2e-spec.js')
