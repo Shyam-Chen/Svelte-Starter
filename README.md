@@ -16,12 +16,12 @@ This seed repository provides the following features:
 * [x] **Node.js** built-in support.
 * [x] Routing with **Page.js**.
 * [ ] Internationalization with **I18nextify**.
-* [ ] Data visualization with **Chart.js**.
+* [x] Data visualization with **Chart.js**.
 * [x] Development server with **BrowserSync**.
 * [x] Static code analyzer with **HTMLHint**, **StyleLint**, and **ESLint**.
 * [x] Testing framework with **Jasmine**.
 * [x] Unit tests with **Karma**.
-* [ ] End-to-end tests with **Protractor** (TODO: CI).
+* [ ] End-to-end tests with **Protractor** (TODO: continuous integration).
 * [x] Version control with **Git**.
 * [x] Fast and determinsitic builds with **Yarn**.
 * [x] Virtual machine with **Docker** and **Compose**.
