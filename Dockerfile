@@ -19,6 +19,6 @@ ENTRYPOINT ["/Vanilla-Starter-Kit/protractor.sh"]
 RUN npm install && \
     npm install -g firebase-tools
 
-EXPOSE 3000 9876
+EXPOSE 3000 4000 9876
 
 CMD [ "npm", "start" ]
