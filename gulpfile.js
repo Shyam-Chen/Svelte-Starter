@@ -38,7 +38,7 @@ const SOURCE_ROOT = path.join(__dirname, 'src');
 const DIST_ROOT = path.join(__dirname, 'dist');
 
 // TODO: prod mode
-export class CompileError {
+class CompileError {
   static handle(err) {
     let args = Array.from(arguments);
 
@@ -52,7 +52,7 @@ export class CompileError {
   }
 }
 // TODO: ...
-export class E2E {
+class E2E {
   /*static server(port, dir) {
     let app = express();
     let root = resolve(process.cwd(), dir);
@@ -87,11 +87,11 @@ gulp.task('view', () => {
 gulp.task('vendor', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'vendor.js'),
-      format: 'es',
+      format: 'cjs',
       treeshake: false,
       plugins: [
         postcss({ plugins: [cssnano()] }),
-        resolve({ jsnext: true, browser: true }),
+        resolve({ jsnext: false, browser: true }),
         commonjs(),
         uglify()
       ]

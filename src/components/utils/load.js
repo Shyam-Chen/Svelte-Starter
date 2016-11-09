@@ -7,7 +7,7 @@ export const timeoutRejected = () => {
 export const load = (file) => {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
-    xhr.open('get', file);
+    xhr.open('get', file, false);
     xhr.onload = () => {
       const status = xhr.status;
       status === 200 ? resolve(xhr.response) : reject(status);
