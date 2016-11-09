@@ -7,7 +7,7 @@
     "dev": "rimraf dist && gulp",
     "dev-watch": "echo \"TODO\"",
     "test": "karma start",
-    "test-watch": "echo \"TODO\"",
+    "test-watch": "karma start --no-single-run",
     "prod": "rimraf dist && gulp build",
     "e2e": "gulp e2e",
     "webdriver": "gulp webdriver",

@@ -81,7 +81,7 @@ $ yarn run dev-watch  # TODO
 
 ```bash
 $ yarn run test
-$ yarn run test-watch  # TODO
+$ yarn run test-watch
 ```
 
 ```bash

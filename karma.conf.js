@@ -28,7 +28,7 @@ module.exports = (config) => {
     reporters: ['mocha'],
     port: 9876,
     colors: true,
-    autoWatch: false,
+    autoWatch: true,
     browsers: ['PhantomJS'],
     singleRun: true,
     concurrency: Infinity
