@@ -23,3 +23,14 @@ page('/', loadHome);
 page('/about', loadAbout);
 page('*', load404);
 page();
+
+var translation = window.i18nextify.init({
+        debug: false,
+        saveMissing: true,
+        namespace: 'translation',
+        // namespaceFromPath: true,
+        ns: ['common'],
+        ignoreIds: ['ignoreMeId'],
+        ignoreClasses: ['ignoreMeClass'],
+        //autorun: false
+      });

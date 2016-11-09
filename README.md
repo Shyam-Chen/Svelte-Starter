@@ -15,7 +15,7 @@ This seed repository provides the following features:
 * [x] **CSS.Next** and **JS.Next** syntax support.
 * [x] **Node.js** built-in support.
 * [x] Routing with **Page.js**.
-* [ ] Internationalization with **I18nextify**.
+* [ ] Globalization with **[Searching...]**.
 * [x] Data visualization with **Chart.js**.
 * [x] Development server with **BrowserSync**.
 * [x] Static code analyzer with **HTMLHint**, **StyleLint**, and **ESLint**.

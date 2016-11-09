@@ -32,7 +32,6 @@
     "chart.js": "^2.3.0",
     "core-js": "^2.4.1",
     "firebase": "^3.5.2",
-    "i18nextify": "^1.0.2",
     "material-design-lite": "^1.2.1",
     "page": "^1.7.1"
   },
