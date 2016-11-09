@@ -11,11 +11,10 @@ exports.config = {
     'phantomjs.binary.path': require('phantomjs-prebuilt').path,
     'phantomjs.ghostdriver.cli.args': ['--loglevel=DEBUG']
   },
-  baseUrl: 'http://localhost:9876/',
   onPrepare() {
     require("babel-core/register")({ presets: ["latest"] });
     jasmine.getEnv().addReporter(new SpecReporter({ displayStacktrace: true }));
-    global.dv = browser.driver;
+    global.webdriver = browser.driver;
     browser.ignoreSynchronization = false;
   },
   framework: 'jasmine',

@@ -1,8 +1,8 @@
 describe('Home', () => {
 
   it('O', () => {
-    dv.get('http://localhost:3000/');
-    expect(dv.findElement(by.css('.home')).getText()).toEqual('Home');
+    webdriver.get('http://localhost:9876/');
+    expect(webdriver.findElement(by.css('.home')).getText()).toEqual('Home');
   });
 
 });
