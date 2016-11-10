@@ -23,7 +23,7 @@ This seed repository provides the following features:
 * [x] Version control with **Git**.
 * [x] Fast and determinsitic builds with **Yarn**.
 * [x] Virtual machine with **Docker** and **Compose**.
-* [x] Continuous Integration and Continous Delivery with **Travis**.
+* [x] Continuous integration and deployment with **Travis**.
 
 The following helpful resources to use this seed repository:
 * Learning Material ([GO](https://webdesign.tutsplus.com/series/learning-material-design-lite--cms-888), article)
