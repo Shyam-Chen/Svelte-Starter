@@ -22,6 +22,7 @@ const globals = require('rollup-plugin-node-globals');
 const builtins = require('rollup-plugin-node-builtins');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
+const replace = require('rollup-plugin-replace');
 const uglify = require('rollup-plugin-uglify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
@@ -91,17 +92,18 @@ gulp.task('view', () => {
 gulp.task('vendor', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'vendor.js'),
-      format: 'es',
+      format: 'cjs',
+      useStrict: false,
       treeshake: false,
       plugins: [
         postcss({ plugins: [cssnano()] }),
-        // babel(),
         resolve({ jsnext: true, browser: true }),
         commonjs(),
+        replace({ eval: '[eval][0]' }),
         uglify()
       ]
     })
-    .pipe(plumber())
+    .on('error', CompileError.handle)
     .pipe(source('vendor.js'))
     .pipe(buffer())
     .pipe(gulp.dest(DIST_ROOT));
