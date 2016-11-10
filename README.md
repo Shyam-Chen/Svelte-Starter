@@ -26,46 +26,50 @@ This seed repository provides the following features:
 * [x] Continuous integration and deployment with **Travis**.
 
 The following helpful resources to use this seed repository:
+* Learning CSS.Next ([GO](http://cssnext.io/features/), article)
+* Learning JS.Next ([GO](http://exploringjs.com/es6/index.html), book)
+* Learning Node.js ([GO](http://shop.oreilly.com/product/0636920046936.do), book, $)
 * Learning Material ([GO](https://webdesign.tutsplus.com/series/learning-material-design-lite--cms-888), article)
 * Learning Firebase ([GO](https://github.com/firebase/quickstart-js), example)
-* Learning CSS.Next ([GO](http://cssnext.io/features/), article)
-* Learning JS.Next ([GO-1](http://exploringjs.com/es6/index.html), [GO-2](https://leanpub.com/understandinges6/read), book)
 * Learning Page.js ([GO](https://github.com/visionmedia/page.js/tree/master/examples), example)
 * Learning CSS Block Element Modifier ([GO](https://css-tricks.com/bem-101/), article)
 * Learning JS Functional Programming ([GO](https://www.packtpub.com/web-development/functional-programming-javascript), book, $)
-* Learning Node.js ([GO](http://shop.oreilly.com/product/0636920046936.do), book, $)
 * Learning Jasmine ([GO](https://www.packtpub.com/web-development/jasmine-javascript-testing-second-edition), book, $)
-* Learning WebDriverJS ([GO](https://www.packtpub.com/books/content/testing-ui-using-webdriverjs), article)
+* Learning WebDriver ([GO](https://www.packtpub.com/books/content/testing-ui-using-webdriverjs), article)
 
 ## Getting Started
 
-### Clone this Boilerplate
+1) Clone this Boilerplate
 ```bash
 $ git clone --depth 1 https://github.com/Shyam-Chen/Vanilla-Starter-Kit.git <PROJECT_NAME>
 $ cd <PROJECT_NAME>
 ```
 
-### Install Dependencies
+2) Install Dependencies
 ```bash
 $ yarn install
 ```
 
-### Run the Application
+3) Run the Application
 ```bash
 $ yarn start
 ```
 
 ## Using Docker
 
-### Run the Application
+1) Build the Image
 ```bash
 $ docker build -t vanilla-starter-kit .
+```
+
+2) Run the Container
+```bash
 $ docker run -it -p 3000:3000 --name app vanilla-starter-kit
 ```
 
-### Run the Application with Compose
+3) Or use Compose
 ```bash
-$ docker-compose up
+$ docker-compose up  # equivalent to steps one and two
 ```
 
 ## Other Commands
@@ -102,4 +106,4 @@ $ yarn run reinstall
 
 ## ToDo List
 * [ ] Home Page (MDL & Firebase CRUD example)
-* [ ] About Page (Seed Project features)
+* [ ] About Page (Seed project features)
