@@ -1,6 +1,7 @@
 const SpecReporter = require('jasmine-spec-reporter');
+const phantomjs = require('phantomjs-prebuilt');
+const babel = require('babel-core/register');
 
-// TODO: History API fallback (CI)
 exports.config = {
   specs: [
     './src/**/*.e2e-spec.js'
@@ -8,11 +9,11 @@ exports.config = {
   exclude: [],
   capabilities: {
     'browserName': 'phantomjs',
-    'phantomjs.binary.path': require('phantomjs-prebuilt').path,
+    'phantomjs.binary.path': phantomjs.path,
     'phantomjs.ghostdriver.cli.args': ['--loglevel=DEBUG']
   },
   onPrepare() {
-    require("babel-core/register")({ presets: ["latest"] });
+    babel({ presets: ["latest"] });
     jasmine.getEnv().addReporter(new SpecReporter({ displayStacktrace: true }));
     global.webdriver = browser.driver;
     browser.ignoreSynchronization = false;

@@ -31,13 +31,13 @@ const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 
 const browsersync = require('browser-sync');
-const history = require('connect-history-api-fallback');
-
-const runsequence = require('run-sequence');
+const connectHistory = require('connect-history-api-fallback');
 
 const express = require('express');
 const expressHistory = require('express-history-api-fallback');
 const gProtractor = require('gulp-protractor');
+
+const runsequence = require('run-sequence');
 
 const SOURCE_ROOT = path.join(__dirname, 'src');
 const DIST_ROOT = path.join(__dirname, 'dist');
@@ -73,7 +73,6 @@ class E2E {
   }
 }
 
-// For traditional websites
 gulp.task('view', () => {
   return gulp.src(path.join(SOURCE_ROOT, '**/*.html'))
     .pipe(plumber())
@@ -193,12 +192,10 @@ gulp.task('serve', () => {
   return browsersync({
     server: {
       baseDir: DIST_ROOT,
-      middleware: [history()]
+      middleware: [connectHistory()]
     }
   });
 });
-
-
 
 gulp.task('webdriver', gProtractor.webdriver_update);
 

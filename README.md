@@ -99,3 +99,7 @@ $ yarn run reset
 ```bash
 $ yarn run reinstall
 ```
+
+## ToDo List
+* [ ] Home Page (MDL & Firebase CRUD example)
+* [ ] About Page (Seed Project features)
