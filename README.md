@@ -11,7 +11,6 @@ This seed repository provides the following features:
 * [x] Start coding vanilla **HTML/CSS/JS** right now.
 * [x] Build system using **Gulp** and **Rollup** for working.
 * [x] **CSS.Next** and **JS.Next** syntax support.
-* [x] **Node.js** built-in support.
 * [x] UI components with **Material**.
 * [x] Back-end service with **Firebase**.
 * [x] Routing and navigation with **Page.js**.
@@ -27,13 +26,12 @@ This seed repository provides the following features:
 
 The following helpful resources to use this seed repository:
 * Learning CSS.Next ([GO](http://cssnext.io/features/), article)
+* Learning CSS Block Element Modifier ([GO](https://css-tricks.com/bem-101/), article)
 * Learning JS.Next ([GO](http://exploringjs.com/es6/index.html), book)
-* Learning Node.js ([GO](http://shop.oreilly.com/product/0636920046936.do), book, $)
+* Learning JS Functional Programming ([GO](https://www.packtpub.com/web-development/functional-programming-javascript), book, $)
 * Learning Material ([GO](https://webdesign.tutsplus.com/series/learning-material-design-lite--cms-888), article)
 * Learning Firebase ([GO](https://github.com/firebase/quickstart-js), example)
 * Learning Page.js ([GO](https://github.com/visionmedia/page.js/tree/master/examples), example)
-* Learning CSS Block Element Modifier ([GO](https://css-tricks.com/bem-101/), article)
-* Learning JS Functional Programming ([GO](https://www.packtpub.com/web-development/functional-programming-javascript), book, $)
 * Learning Jasmine ([GO](https://www.packtpub.com/web-development/jasmine-javascript-testing-second-edition), book, $)
 * Learning WebDriver ([GO](https://www.packtpub.com/books/content/testing-ui-using-webdriverjs), article)
 

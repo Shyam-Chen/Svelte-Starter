@@ -13,7 +13,7 @@ exports.config = {
     'phantomjs.ghostdriver.cli.args': ['--loglevel=DEBUG']
   },
   onPrepare() {
-    babel({ presets: ["latest"] });
+    babel({ presets: ['latest'] });
     jasmine.getEnv().addReporter(new SpecReporter({ displayStacktrace: true }));
     global.webdriver = browser.driver;
     browser.ignoreSynchronization = false;

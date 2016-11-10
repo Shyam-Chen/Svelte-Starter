@@ -42,6 +42,8 @@ const runsequence = require('run-sequence');
 const SOURCE_ROOT = path.join(__dirname, 'src');
 const DIST_ROOT = path.join(__dirname, 'dist');
 
+// TODO: linter (HTML/CSS/JS)
+
 // TODO: prod mode
 class CompileError {
   static handle(err) {
@@ -217,4 +219,8 @@ gulp.task('default', (done) => {
 
 gulp.task('dev-watch', (done) => {
   return runsequence('build', 'watch', done);
+});
+
+gulp.task('ci', (done) => {
+  // return runsequence('', '', '', done);
 });
