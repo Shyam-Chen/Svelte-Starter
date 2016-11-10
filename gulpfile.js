@@ -111,7 +111,6 @@ gulp.task('vendor', () => {
 
 // TODO: 原始碼映射
 // TODO: 加入快取
-// TODO: 模板快取
 gulp.task('main', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'main.js'),
@@ -166,7 +165,8 @@ gulp.task('data', () => {
 });
 
 gulp.task('build', [
-  'view', 'vendor', 'main',
+  'view', // 'vendor',
+  'main',
   'image', 'font', 'data'
 ]);
 
@@ -175,9 +175,9 @@ gulp.task('watch', () => {
     path.join(SOURCE_ROOT, '**/*.html')
   ], ['view']);
 
-  gulp.watch([
-    path.join(SOURCE_ROOT, 'vendor.js')
-  ], ['vendor']);
+  // gulp.watch([
+  //   path.join(SOURCE_ROOT, 'vendor.js')
+  // ], ['vendor']);
 
   // TODO: 排除 vendor、spec 和 e2e-spec
   gulp.watch([

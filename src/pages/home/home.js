@@ -14,7 +14,3 @@ export const loadHome = () => {
       console.error(err);
     });
 };
-
-export const qq = () => {
-  return 1 + 1;
-};

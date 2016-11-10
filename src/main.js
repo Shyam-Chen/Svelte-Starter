@@ -1,6 +1,5 @@
-import { loadAbout } from './components/navigation/navigation.js';
-
 import { loadHome } from './pages/home';
+import { loadAbout } from './pages/about';
 import { load404 } from './pages/404';
 
 

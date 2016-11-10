@@ -1,2 +1,3 @@
 import './navigation.css';
-import './navigation.js';
+
+export * from './navigation';
