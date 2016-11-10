@@ -14,9 +14,7 @@ This seed repository provides the following features:
 * [x] Back-end service with **Firebase**.
 * [x] **CSS.Next** and **JS.Next** syntax support.
 * [x] **Node.js** built-in support.
-* [x] Routing with **Page.js**.
-* [ ] Globalization with **[Searching...]**.
-* [x] Data visualization with **Chart.js**.
+* [x] Routing and navigation with **Page.js**.
 * [x] Development server with **BrowserSync**.
 * [x] Static code analyzer with **HTMLHint**, **StyleLint**, and **ESLint**.
 * [x] Testing framework with **Jasmine**.
@@ -33,10 +31,8 @@ The following helpful resources to use this seed repository:
 * Learning CSS.Next ([GO](http://cssnext.io/features/), article)
 * Learning JS.Next ([GO-1](http://exploringjs.com/es6/index.html), [GO-2](https://leanpub.com/understandinges6/read), book)
 * Learning Page.js ([GO](https://github.com/visionmedia/page.js/tree/master/examples), example)
-* Learning I18nextify ([GO](https://github.com/i18next/i18nextify/tree/master/example), example)
-* Learning Chart.js ([GO](https://www.sitepoint.com/introduction-chart-js-2-0-six-examples/), article)
-* Learning Block Element Modifier ([GO](https://css-tricks.com/bem-101/), article)
-* Learning Functional Programming ([GO](https://www.packtpub.com/web-development/functional-programming-javascript), book, $)
+* Learning CSS Block Element Modifier ([GO](https://css-tricks.com/bem-101/), article)
+* Learning JS Functional Programming ([GO](https://www.packtpub.com/web-development/functional-programming-javascript), book, $)
 * Learning Node.js ([GO](http://shop.oreilly.com/product/0636920046936.do), book, $)
 * Learning Jasmine ([GO](https://www.packtpub.com/web-development/jasmine-javascript-testing-second-edition), book, $)
 * Learning WebDriverJS ([GO](https://www.packtpub.com/books/content/testing-ui-using-webdriverjs), article)

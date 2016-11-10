@@ -5,14 +5,14 @@ import { load404 } from './pages/404';
 
 
 
-  const config = {
-    apiKey: process.env.API_KEY || 'AIzaSyDvaaNIb1KvegzUP2EtgxjxzcxG_T36wQI',
-    authDomain: process.env.AUTH_DOMAIN || 'test-1498d.firebaseapp.com',
-    databaseURL: process.env.DATABASE_URL || 'https://test-1498d.firebaseio.com',
-    storageBucket: process.env.STORAGE_BUCKET || 'test-1498d.appspot.com',
-    messagingSenderId: process.env.MESSAGING_SENDER_ID || '642330827186'
-  };
-  firebase.initializeApp(config);
+const config = {
+  apiKey: process.env.API_KEY || 'AIzaSyDvaaNIb1KvegzUP2EtgxjxzcxG_T36wQI',
+  authDomain: process.env.AUTH_DOMAIN || 'test-1498d.firebaseapp.com',
+  databaseURL: process.env.DATABASE_URL || 'https://test-1498d.firebaseio.com',
+  storageBucket: process.env.STORAGE_BUCKET || 'test-1498d.appspot.com',
+  messagingSenderId: process.env.MESSAGING_SENDER_ID || '642330827186'
+};
+firebase.initializeApp(config);
 
 
 const rootRef = firebase.database().ref();
@@ -23,14 +23,3 @@ page('/', loadHome);
 page('/about', loadAbout);
 page('*', load404);
 page();
-
-var translation = window.i18nextify.init({
-        debug: false,
-        saveMissing: true,
-        namespace: 'translation',
-        // namespaceFromPath: true,
-        ns: ['common'],
-        ignoreIds: ['ignoreMeId'],
-        ignoreClasses: ['ignoreMeClass'],
-        //autorun: false
-      });

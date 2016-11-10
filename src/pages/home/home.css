@@ -1,6 +1,6 @@
 // Home
 :root {
-  --foo-x: #000000;
+  --foo-x: blue;
 
   --bar-x: {
     color: #ffffff;
@@ -9,9 +9,7 @@
 }
 
 .home {
-  // ...
-}
-
-.home-title {
-  // ...
+  &-title {
+    color: var(--foo-x);
+  }
 }

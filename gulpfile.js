@@ -91,11 +91,12 @@ gulp.task('view', () => {
 gulp.task('vendor', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'vendor.js'),
-      format: 'cjs',
+      format: 'es',
       treeshake: false,
       plugins: [
         postcss({ plugins: [cssnano()] }),
-        resolve({ jsnext: false, browser: true }),
+        // babel(),
+        resolve({ jsnext: true, browser: true }),
         commonjs(),
         uglify()
       ]
