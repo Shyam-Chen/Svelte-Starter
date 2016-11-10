@@ -29,7 +29,6 @@
   },
   "homepage": "https://github.com/Shyam-Chen/Vanilla-Starter-Kit#readme",
   "dependencies": {
-    "chart.js": "^2.3.0",
     "core-js": "^2.4.1",
     "firebase": "^3.5.2",
     "material-design-lite": "^1.2.1",
