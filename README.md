@@ -10,10 +10,10 @@
 This seed repository provides the following features:
 * [x] Start coding vanilla **HTML/CSS/JS** right now.
 * [x] Build system using **Gulp** and **Rollup** for working.
-* [x] UI components with **Material**.
-* [x] Back-end service with **Firebase**.
 * [x] **CSS.Next** and **JS.Next** syntax support.
 * [x] **Node.js** built-in support.
+* [x] UI components with **Material**.
+* [x] Back-end service with **Firebase**.
 * [x] Routing and navigation with **Page.js**.
 * [x] Development server with **BrowserSync**.
 * [x] Static code analyzer with **HTMLHint**, **StyleLint**, and **ESLint**.
@@ -72,12 +72,12 @@ $ docker-compose up
 
 ```bash
 $ yarn run dev
-$ yarn run dev-watch  # TODO
+$ yarn run dev-watch  # no serve
 ```
 
 ```bash
 $ yarn run test
-$ yarn run test-watch
+$ yarn run test-watch  # no single run
 ```
 
 ```bash
@@ -85,8 +85,7 @@ $ yarn run prod
 ```
 
 ```bash
-# Pre - yarn run prod && yarn run webdriver
-$ yarn run e2e
+$ yarn run e2e  # pre: yarn run prod && yarn run webdriver
 ```
 
 ```bash

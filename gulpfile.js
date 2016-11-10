@@ -217,3 +217,7 @@ gulp.task('e2e', (done) => {
 gulp.task('default', (done) => {
   return runsequence('build', 'watch', 'serve', done);
 });
+
+gulp.task('dev-watch', (done) => {
+  return runsequence('build', 'watch', done);
+});
