@@ -90,10 +90,10 @@ gulp.task('view', () => {
     .pipe(browsersync.stream());
 });
 
-gulp.task('vendor', () => {
+/*gulp.task('vendor', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'vendor.js'),
-      format: 'cjs',
+      format: 'iife',
       useStrict: false,
       treeshake: false,
       plugins: [
@@ -108,10 +108,10 @@ gulp.task('vendor', () => {
     .pipe(source('vendor.js'))
     .pipe(buffer())
     .pipe(gulp.dest(DIST_ROOT));
-});
+});*/
 
-// TODO: 原始碼映射
-// TODO: 加入快取
+// TODO: 原始碼映射 (dev mode)
+// TODO: 加入快取 (dev mode)
 gulp.task('main', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'main.js'),
@@ -143,7 +143,6 @@ gulp.task('main', () => {
 
 gulp.task('image', () => {
   return gulp.src('src/assets/images/**/*.{gif,jpeg,jpg,png,svg}')
-    .pipe(plumber())
     .pipe(newer(path.join(DIST_ROOT, 'assets/images')))
     .pipe(imagemin({
       progressive: true,
@@ -156,18 +155,19 @@ gulp.task('image', () => {
 // TODO: ...
 gulp.task('font', () => {
   return gulp.src('src/assets/fonts/**/*.{eot,svg,ttf,woff,woff2}')
+    .pipe(newer(path.join(DIST_ROOT, 'assets/fonts')))
     .pipe(gulp.dest(path.join(DIST_ROOT, 'assets/fonts')));
 });
 
 // TODO: ...
 gulp.task('data', () => {
-  return gulp.src('src/assets/datas/**/*.json')
+  return gulp.src('src/assets/datas/**/*.{json,xml}')
+    .pipe(newer(path.join(DIST_ROOT, 'assets/datas')))
     .pipe(gulp.dest(path.join(DIST_ROOT, 'assets/datas')));
 });
 
 gulp.task('build', [
-  'view', // 'vendor',
-  'main',
+  'view', 'main',
   'image', 'font', 'data'
 ]);
 
@@ -176,18 +176,22 @@ gulp.task('watch', () => {
     path.join(SOURCE_ROOT, '**/*.html')
   ], ['view']);
 
-  // gulp.watch([
-  //   path.join(SOURCE_ROOT, 'vendor.js')
-  // ], ['vendor']);
-
-  // TODO: 排除 vendor、spec 和 e2e-spec
   gulp.watch([
-    path.join(SOURCE_ROOT, '**/*.{js,css}')
+    path.join(SOURCE_ROOT, '**/*.{js,css}'),
+    '!' + path.join(SOURCE_ROOT, '**/*.{spec.js,e2e-spec.js}')
   ], ['main']);
 
   gulp.watch([
     'src/assets/images/**/*.{gif,jpeg,jpg,png,svg}'
   ], ['image']);
+
+  gulp.watch([
+    'src/assets/fonts/**/*.{eot,svg,ttf,woff,woff2}'
+  ], ['font']);
+
+  gulp.watch([
+    'src/assets/datas/**/*.{json,xml}'
+  ], ['data']);
 });
 
 gulp.task('serve', () => {
@@ -213,14 +217,10 @@ gulp.task('e2e', (done) => {
     });
 });
 
-gulp.task('default', (done) => {
+gulp.task('dev', (done) => {
   return runsequence('build', 'watch', 'serve', done);
 });
 
 gulp.task('dev-watch', (done) => {
   return runsequence('build', 'watch', done);
-});
-
-gulp.task('ci', (done) => {
-  // return runsequence('', '', '', done);
 });

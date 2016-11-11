@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A boilerplate for vanilla HTML/CSS/JS, Gulp, and Rollup.",
   "scripts": {
-    "start": "gulp",
-    "dev": "rimraf dist && gulp",
+    "start": "gulp dev",
+    "dev": "rimraf dist && gulp dev",
     "dev-watch": "rimraf dist && gulp dev-watch",
     "test": "karma start",
     "test-watch": "karma start --no-single-run",
