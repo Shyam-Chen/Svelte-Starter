@@ -117,9 +117,9 @@ gulp.task('view', () => {
 
 // TODO: 原始碼映射 (dev mode)
 // TODO: 加入快取 (dev mode)
-gulp.task('main', () => {
+gulp.task('app', () => {
   return rollup({
-      entry: path.join(SOURCE_ROOT, 'main.js'),
+      entry: path.join(SOURCE_ROOT, 'app.js'),
       format: 'iife',
       plugins: [
         html(),
@@ -141,7 +141,7 @@ gulp.task('main', () => {
       ]
     })
     .on('error', CompileError.handle)
-    .pipe(source('main.js'))
+    .pipe(source('app.js'))
     .pipe(buffer())
     .pipe(gulp.dest(DIST_ROOT))
     .pipe(browsersync.stream());
@@ -173,7 +173,7 @@ gulp.task('data', () => {
 });
 
 gulp.task('build', [
-  'view', 'main',
+  'view', 'app',
   'image', 'font', 'data'
 ]);
 
@@ -185,7 +185,7 @@ gulp.task('watch', () => {
   gulp.watch([
     path.join(SOURCE_ROOT, '**/*.{css,js}'),
     `!${path.join(SOURCE_ROOT, '**/*.{spec.js,e2e-spec.js}')}`
-  ], ['main']);
+  ], ['app']);
 
   gulp.watch([
     path.join(SOURCE_ROOT, IMAGES_ROOT, '**/*.{gif,jpeg,jpg,png,svg}')
