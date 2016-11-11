@@ -1,7 +1,13 @@
-import { load, query } from '../../components/utils';
+import about from './about.html';
+import navigation from '../../components/navigation/navigation.html';
+
+import { query } from '../../components/utils';
 
 export const loadAbout = () => {
-  Promise.all([
+  query('#app').innerHTML = about;
+  query('#navigation').innerHTML = navigation;
+  componentHandler.upgradeAllRegistered();
+  /*Promise.all([
       load('./pages/about/about.html'),
       load('../../components/navigation/navigation.html')
     ])
@@ -12,5 +18,5 @@ export const loadAbout = () => {
     })
     .catch((err) => {
       console.error(err);
-    });
+    });*/
 };

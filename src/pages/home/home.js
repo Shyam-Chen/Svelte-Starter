@@ -1,16 +1,20 @@
-import { load, query } from '../../components/utils';
+import home from './home.html';
+import navigation from '../../components/navigation/navigation.html';
+
+import { query } from '../../components/utils';
 
 export const loadHome = () => {
-  Promise.all([
-      load('./pages/home/home.html'),
+  query('#app').innerHTML = home;
+  query('#navigation').innerHTML = navigation;
+  componentHandler.upgradeAllRegistered();
+  /*Promise.all([
       load('../../components/navigation/navigation.html')
     ])
     .then((data) => {
-      query('#app').innerHTML = data[0];
-      query('#navigation').innerHTML = data[1];
+      query('#navigation').innerHTML = data[0];
       componentHandler.upgradeAllRegistered();
     })
     .catch((err) => {
       console.error(err);
-    });
+    });*/
 };

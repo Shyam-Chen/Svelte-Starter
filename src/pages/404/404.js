@@ -1,7 +1,10 @@
-import { load, query } from '../../components/utils';
+import notFound from './404.html';
+
+import { query } from '../../components/utils';
 
 export const load404 = () => {
-  Promise.all([
+  query('#app').innerHTML = notFound;
+  /*Promise.all([
       load('./pages/404/404.html')
     ])
     .then((data) => {
@@ -10,5 +13,5 @@ export const load404 = () => {
     })
     .catch((err) => {
       console.error(err);
-    });
+    });*/
 };

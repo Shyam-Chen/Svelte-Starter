@@ -7,6 +7,7 @@ const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 
 const htmlmin = require('gulp-htmlmin');
+const html = require('rollup-plugin-html');
 
 const rollup = require('rollup-stream');
 
@@ -80,7 +81,7 @@ class E2E {
 }
 
 gulp.task('view', () => {
-  return gulp.src(path.join(SOURCE_ROOT, '**/*.html'))
+  return gulp.src(path.join(SOURCE_ROOT, 'index.html'))
     .pipe(plumber())
     .pipe(changed(DIST_ROOT))
     .pipe(htmlmin({
@@ -121,6 +122,7 @@ gulp.task('main', () => {
       entry: path.join(SOURCE_ROOT, 'main.js'),
       format: 'iife',
       plugins: [
+        html(),
         postcss({
           parser: comment,
           plugins: [
