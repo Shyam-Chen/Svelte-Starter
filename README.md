@@ -1,6 +1,6 @@
 # Vanilla Starter Kit (Beta)
 
-> A boilerplate for vanilla HTML/CSS/JS, Gulp, and Rollup. ([Live Demo](https://test-1498d.firebaseapp.com/))
+> A single-page application boilerplate for Vanilla, Material, Firebase, Gulp, Rollup, PostCSS, and Babel. ([Live Demo](https://test-1498d.firebaseapp.com/))
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
  //
@@ -8,12 +8,14 @@
 [![devDependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit?type=dev)
 
 This seed repository provides the following features:
-* [x] Start coding vanilla **HTML/CSS/JS** right now.
-* [x] Build system using **Gulp** and **Rollup** for working.
-* [x] **CSS.Next** and **JS.Next** syntax support.
+* [x] Start coding **Vanilla HTML/CSS/JS** right now.
 * [x] UI components with **Material**.
 * [x] Back-end service with **Firebase**.
 * [x] Routing and navigation with **Page.js**.
+* [x] Build system with **Gulp**.
+* [x] Module bundler with **Rollup**.
+* [x] Future CSS features with **PostCSS**.
+* [x] Next generation JS with **Babel**.
 * [x] Development server with **BrowserSync**.
 * [x] Static code analyzer with **HTMLHint**, **StyleLint**, and **ESLint**.
 * [x] Testing framework with **Jasmine**.
@@ -23,17 +25,6 @@ This seed repository provides the following features:
 * [x] Fast and determinsitic builds with **Yarn**.
 * [x] Virtual machine with **Docker** and **Compose**.
 * [x] Continuous integration and deployment with **Travis**.
-
-The following helpful resources to use this seed repository:
-* Learning CSS.Next ([GO](http://cssnext.io/features/), article)
-* Learning CSS Block Element Modifier ([GO](https://css-tricks.com/bem-101/), article)
-* Learning JS.Next ([GO](http://exploringjs.com/es6/index.html), book)
-* Learning JS Functional Programming ([GO](https://www.packtpub.com/web-development/functional-programming-javascript), book, $)
-* Learning Material ([GO](https://webdesign.tutsplus.com/series/learning-material-design-lite--cms-888), article)
-* Learning Firebase ([GO](https://github.com/firebase/quickstart-js), example)
-* Learning Page.js ([GO](https://github.com/visionmedia/page.js/tree/master/examples), example)
-* Learning Jasmine ([GO](https://www.packtpub.com/web-development/jasmine-javascript-testing-second-edition), book, $)
-* Learning WebDriver ([GO](https://www.packtpub.com/books/content/testing-ui-using-webdriverjs), article)
 
 ## Getting Started
 

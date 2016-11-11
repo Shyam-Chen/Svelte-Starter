@@ -1,7 +1,7 @@
 {
   "name": "Vanilla-Starter-Kit",
   "version": "1.0.0",
-  "description": "A boilerplate for vanilla HTML/CSS/JS, Gulp, and Rollup.",
+  "description": "A single-page application boilerplate for Vanilla, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.",
   "scripts": {
     "start": "gulp dev",
     "dev": "rimraf dist && gulp dev",
