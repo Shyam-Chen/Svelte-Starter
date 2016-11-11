@@ -1,19 +1,42 @@
-<div id="navigation"></div>
-
-<div class="mdl-grid">
-
-  <p class="mdl-color--pink-50 home" style="padding: 2rem">
-    Home
-  </p>
-
-  <div class="mdl-color--pink-100 mdl-shadow--3dp" style="padding: 2rem">
-    <p class="mdl-color-text--pink-700">
-      Start coding vanilla HTML/CSS/JavaScript right now.
-    </p>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Title</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="/">Home</a>
+        <a class="mdl-navigation__link" href="/about">About</a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Title</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="/">Home</a>
+      <a class="mdl-navigation__link" href="/about">About</a>
+    </nav>
   </div>
+  <main class="mdl-layout__content">
 
-  <p class="home-title">
-    A single-page application boilerplate for Vanilla, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.
-  </p>
+    <p class="mdl-color--pink-50 home" style="padding: 2rem">
+      Home
+    </p>
 
+    <div class="mdl-color--pink-100 mdl-shadow--3dp" style="padding: 2rem">
+      <p class="mdl-color-text--pink-700">
+        Start coding vanilla HTML/CSS/JavaScript right now.
+      </p>
+    </div>
+
+    <p class="home-title">
+      A single-page application boilerplate for Vanilla, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.
+    </p>
+
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  Button
+</button>
+  </main>
 </div>

@@ -2,8 +2,6 @@ import { loadHome } from './pages/home';
 import { loadAbout } from './pages/about';
 import { load404 } from './pages/404';
 
-
-
 const config = {
   apiKey: process.env.API_KEY || 'AIzaSyDvaaNIb1KvegzUP2EtgxjxzcxG_T36wQI',
   authDomain: process.env.AUTH_DOMAIN || 'test-1498d.firebaseapp.com',
@@ -13,9 +11,7 @@ const config = {
 };
 firebase.initializeApp(config);
 
-
 const rootRef = firebase.database().ref();
-
 console.log(rootRef);
 
 page('/', loadHome);
