@@ -179,11 +179,11 @@ gulp.task('build', [
 
 gulp.task('watch', () => {
   gulp.watch([
-    path.join(SOURCE_ROOT, '**/*.html')
+    path.join(SOURCE_ROOT, 'index.html')
   ], ['view']);
 
   gulp.watch([
-    path.join(SOURCE_ROOT, '**/*.{css,js}'),
+    path.join(SOURCE_ROOT, '**/*.{html,css,js}'),
     `!${path.join(SOURCE_ROOT, '**/*.{spec.js,e2e-spec.js}')}`
   ], ['app']);
 
