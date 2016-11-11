@@ -42,6 +42,10 @@ const runsequence = require('run-sequence');
 const SOURCE_ROOT = path.join(__dirname, 'src');
 const DIST_ROOT = path.join(__dirname, 'dist');
 
+const IMAGES_ROOT = path.join('assets', 'images');
+const FONTS_ROOT = path.join('assets', 'fonts');
+const DATAS_ROOT = path.join('assets', 'datas');
+
 // TODO: linter (HTML/CSS/JS)
 
 // TODO: prod mode
@@ -142,28 +146,28 @@ gulp.task('main', () => {
 });
 
 gulp.task('image', () => {
-  return gulp.src('src/assets/images/**/*.{gif,jpeg,jpg,png,svg}')
-    .pipe(newer(path.join(DIST_ROOT, 'assets/images')))
+  return gulp.src(path.join(SOURCE_ROOT, IMAGES_ROOT, '**/*.{gif,jpeg,jpg,png,svg}'))
+    .pipe(newer(path.join(DIST_ROOT, IMAGES_ROOT)))
     .pipe(imagemin({
       progressive: true,
       svgoPlugins: [{ removeViewBox: false }],
       use: [pngquant()]
     }))
-    .pipe(gulp.dest(path.join(DIST_ROOT, 'assets/images')));
+    .pipe(gulp.dest(path.join(DIST_ROOT, IMAGES_ROOT)));
 });
 
 // TODO: ...
 gulp.task('font', () => {
-  return gulp.src('src/assets/fonts/**/*.{eot,svg,ttf,woff,woff2}')
-    .pipe(newer(path.join(DIST_ROOT, 'assets/fonts')))
-    .pipe(gulp.dest(path.join(DIST_ROOT, 'assets/fonts')));
+  return gulp.src(path.join(SOURCE_ROOT, FONTS_ROOT, '**/*.{eot,svg,ttf,woff,woff2}'))
+    .pipe(newer(path.join(DIST_ROOT, FONTS_ROOT)))
+    .pipe(gulp.dest(path.join(DIST_ROOT, FONTS_ROOT)));
 });
 
 // TODO: ...
 gulp.task('data', () => {
-  return gulp.src('src/assets/datas/**/*.{json,xml}')
-    .pipe(newer(path.join(DIST_ROOT, 'assets/datas')))
-    .pipe(gulp.dest(path.join(DIST_ROOT, 'assets/datas')));
+  return gulp.src(path.join(SOURCE_ROOT, DATAS_ROOT, '**/*.{json,xml}'))
+    .pipe(newer(path.join(DIST_ROOT, DATAS_ROOT)))
+    .pipe(gulp.dest(path.join(DIST_ROOT, DATAS_ROOT)));
 });
 
 gulp.task('build', [
@@ -177,20 +181,20 @@ gulp.task('watch', () => {
   ], ['view']);
 
   gulp.watch([
-    path.join(SOURCE_ROOT, '**/*.{js,css}'),
-    '!' + path.join(SOURCE_ROOT, '**/*.{spec.js,e2e-spec.js}')
+    path.join(SOURCE_ROOT, '**/*.{css,js}'),
+    `!${path.join(SOURCE_ROOT, '**/*.{spec.js,e2e-spec.js}')}`
   ], ['main']);
 
   gulp.watch([
-    'src/assets/images/**/*.{gif,jpeg,jpg,png,svg}'
+    path.join(SOURCE_ROOT, IMAGES_ROOT, '**/*.{gif,jpeg,jpg,png,svg}')
   ], ['image']);
 
   gulp.watch([
-    'src/assets/fonts/**/*.{eot,svg,ttf,woff,woff2}'
+    path.join(SOURCE_ROOT, FONTS_ROOT, '**/*.{eot,svg,ttf,woff,woff2}')
   ], ['font']);
 
   gulp.watch([
-    'src/assets/datas/**/*.{json,xml}'
+    path.join(SOURCE_ROOT, DATAS_ROOT, '**/*.{json,xml}')
   ], ['data']);
 });
 
@@ -209,8 +213,7 @@ gulp.task('e2e', (done) => {
   new E2E()
     .server(9876, DIST_ROOT)
     .then((server) => {
-      gulp
-        .src('./src/**/*.e2e-spec.js')
+      gulp.src(path.join(SOURCE_ROOT, '**/*.e2e-spec.js'))
         .pipe(gProtractor.protractor({ configFile: 'protractor.conf.js' }))
         .on('error', (error) => { throw error; })
         .on('end', () => { server.close(done); });

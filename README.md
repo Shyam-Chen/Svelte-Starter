@@ -26,6 +26,10 @@ This seed repository provides the following features:
 * [x] Virtual machine with **Docker** and **Compose**.
 * [x] Continuous integration and deployment with **Travis**.
 
+Thing about with ...
+* [rollup-plugin-html](https://github.com/bdadam/rollup-plugin-html)
+* ...
+
 ## Getting Started
 
 1) Clone this Boilerplate
