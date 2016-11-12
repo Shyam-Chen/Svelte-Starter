@@ -1,9 +1,10 @@
 import about from './about.html';
-// import navigation from '../../components/navigation/navigation.html';
+import layout from '../../components/layout/layout.html';
 
 import { query } from '../../components/utils';
 
 export const loadAbout = () => {
-  query('#app').innerHTML = about;
+  query('#app').innerHTML = layout;
+  query('#page').innerHTML = about;
   componentHandler.upgradeAllRegistered();
 };
