@@ -1,10 +1,3 @@
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Lora Bold Italic'), local('Lora-BoldItalic'), url(http://themes.googleusercontent.com/static/fonts/lora/v7/_IxjUs2lbQSu0MyFEAfa7T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-}
-
 body {
   font-family: 'Lora', serif;
 }

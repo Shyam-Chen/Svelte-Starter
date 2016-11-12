@@ -4,6 +4,9 @@ import { loadHome } from './pages/home';
 import { loadAbout } from './pages/about';
 import { load404 } from './pages/404';
 
+
+import { loadFont } from './components/utils';
+
 const config = {
   apiKey: process.env.API_KEY || 'AIzaSyDvaaNIb1KvegzUP2EtgxjxzcxG_T36wQI',
   authDomain: process.env.AUTH_DOMAIN || 'test-1498d.firebaseapp.com',
@@ -15,6 +18,8 @@ firebase.initializeApp(config);
 
 const rootRef = firebase.database().ref();
 console.log(rootRef);
+
+loadFont('https://fonts.googleapis.com/css?family=Lora:700i');
 
 page('/', loadHome);
 page('/about', loadAbout);
