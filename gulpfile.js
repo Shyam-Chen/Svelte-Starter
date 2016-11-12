@@ -31,6 +31,9 @@ const buffer = require('vinyl-buffer');
 const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 
+const image = require('rollup-plugin-image');
+const json = require('rollup-plugin-json');
+
 const browsersync = require('browser-sync');
 const connectHistory = require('connect-history-api-fallback');
 
@@ -137,7 +140,9 @@ gulp.task('app', () => {
         builtins(),
         resolve({ jsnext: true, browser: true }),
         commonjs(),
-        uglify()
+        uglify(),
+        image(),
+        json()
       ]
     })
     .on('error', CompileError.handle)
@@ -159,22 +164,24 @@ gulp.task('image', () => {
 });
 
 // TODO: ...
-gulp.task('font', () => {
-  return gulp.src(path.join(SOURCE_ROOT, FONTS_ROOT, '**/*.{eot,svg,ttf,woff,woff2}'))
-    .pipe(newer(path.join(DIST_ROOT, FONTS_ROOT)))
-    .pipe(gulp.dest(path.join(DIST_ROOT, FONTS_ROOT)));
-});
+// gulp.task('font', () => {
+//   return gulp.src(path.join(SOURCE_ROOT, FONTS_ROOT, '**/*.{eot,svg,ttf,woff,woff2}'))
+//   .pipe(newer(path.join(DIST_ROOT, FONTS_ROOT)))
+//   .pipe(gulp.dest(path.join(DIST_ROOT, FONTS_ROOT)));
+// });
 
 // TODO: ...
 gulp.task('data', () => {
   return gulp.src(path.join(SOURCE_ROOT, DATAS_ROOT, '**/*.{json,xml}'))
-    .pipe(newer(path.join(DIST_ROOT, DATAS_ROOT)))
-    .pipe(gulp.dest(path.join(DIST_ROOT, DATAS_ROOT)));
+  .pipe(newer(path.join(DIST_ROOT, DATAS_ROOT)))
+  .pipe(gulp.dest(path.join(DIST_ROOT, DATAS_ROOT)));
 });
 
 gulp.task('build', [
   'view', 'app',
-  'image', 'font', 'data'
+  // 'image',
+  // 'font',
+  // 'data'
 ]);
 
 gulp.task('watch', () => {
@@ -187,17 +194,17 @@ gulp.task('watch', () => {
     `!${path.join(SOURCE_ROOT, '**/*.{spec.js,e2e-spec.js}')}`
   ], ['app']);
 
-  gulp.watch([
-    path.join(SOURCE_ROOT, IMAGES_ROOT, '**/*.{gif,jpeg,jpg,png,svg}')
-  ], ['image']);
+  // gulp.watch([
+  //   path.join(SOURCE_ROOT, IMAGES_ROOT, '**/*.{gif,jpeg,jpg,png,svg}')
+  // ], ['image']);
 
-  gulp.watch([
-    path.join(SOURCE_ROOT, FONTS_ROOT, '**/*.{eot,svg,ttf,woff,woff2}')
-  ], ['font']);
+  // gulp.watch([
+  //   path.join(SOURCE_ROOT, FONTS_ROOT, '**/*.{eot,svg,ttf,woff,woff2}')
+  // ], ['font']);
 
-  gulp.watch([
-    path.join(SOURCE_ROOT, DATAS_ROOT, '**/*.{json,xml}')
-  ], ['data']);
+  // gulp.watch([
+  //   path.join(SOURCE_ROOT, DATAS_ROOT, '**/*.{json,xml}')
+  // ], ['data']);
 });
 
 gulp.task('serve', () => {
