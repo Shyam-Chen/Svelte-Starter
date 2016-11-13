@@ -59,6 +59,7 @@
     "karma-rollup-plugin": "^0.2.4",
     "phantomjs-prebuilt": "^2.1.13",
     "postcss-comment": "^1.0.3",
+    "postcss-conditionals": "^2.0.3",
     "postcss-cssnext": "^2.8.0",
     "postcss-extend": "^1.0.5",
     "rimraf": "^2.5.4",

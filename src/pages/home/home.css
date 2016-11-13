@@ -1,0 +1,9 @@
+.test {
+  @if 3 > 5 {
+    background: green;
+  } @else if false {
+    background: blue;
+  } @else {
+    background: pink;
+  }
+}
