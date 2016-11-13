@@ -29,7 +29,6 @@
   },
   "homepage": "https://github.com/Shyam-Chen/Vanilla-Starter-Kit#readme",
   "dependencies": {
-    "core-js": "^2.4.1",
     "firebase": "^3.5.2",
     "material-design-lite": "^1.2.1",
     "page": "^1.7.1"
@@ -49,6 +48,7 @@
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-protractor": "^3.0.0",
+    "gulp-sourcemaps": "^2.2.0",
     "imagemin-pngquant": "^5.0.0",
     "jasmine-core": "^2.5.2",
     "jasmine-spec-reporter": "^2.7.0",

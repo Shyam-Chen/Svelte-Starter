@@ -21,6 +21,8 @@ console.log(rootRef);
 
 loadFont('https://fonts.googleapis.com/css?family=Lora:700i');
 
+console.log(123);
+
 page('/', loadHome);
 page('/about', loadAbout);
 page('*', load404);

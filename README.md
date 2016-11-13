@@ -11,7 +11,7 @@ This seed repository provides the following features:
 * [x] Start coding **Vanilla HTML/CSS/JS** right now.
 * [x] UI components with **Material**.
 * [x] Back-end service with **Firebase**.
-* [x] Routing and navigation with **Page.js**.
+* [x] Routing and navigation with **Page**.
 * [x] Build system with **Gulp**.
 * [x] Module bundler with **Rollup**.
 * [x] Future CSS features with **PostCSS**.
@@ -27,9 +27,15 @@ This seed repository provides the following features:
 * [x] Continuous integration and deployment with **Travis**.
 
 The following helpful resources to use this seed repository:
+* [ ] Material
+* [ ] Firebase
+* [ ] Page
+* [ ] CSS.Next
+* [ ] JS.Next
 * [x] CSS with Block Element Modifier ([GO](http://getbem.com/)).
 * [x] Functional Programming in JavaScript ([GO](https://github.com/getify/Functional-Light-JS)).
-* [ ] ...
+* [ ] Jasmine.
+* [ ] WebDriverJS.
 
 ## Getting Started
 
