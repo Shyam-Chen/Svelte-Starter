@@ -83,7 +83,15 @@ class E2E {
   }
 }
 
-gulp.task('view', () => {
+gulp.task('copy', () => {
+  return gulp.src([
+      path.join(SOURCE_ROOT, 'favicon.ico'),
+      path.join(SOURCE_ROOT, 'robots.txt')
+    ])
+    .pipe(gulp.dest(DIST_ROOT));
+});
+
+gulp.task('index', () => {
   return gulp.src(path.join(SOURCE_ROOT, 'index.html'))
     .pipe(plumber())
     .pipe(changed(DIST_ROOT))
@@ -177,17 +185,14 @@ gulp.task('data', () => {
   .pipe(gulp.dest(path.join(DIST_ROOT, DATAS_ROOT)));
 });
 
-gulp.task('build', [
-  'view', 'app',
-  // 'image',
-  // 'font',
-  // 'data'
-]);
+gulp.task('build', ['copy', 'index', 'app']);
+
+
 
 gulp.task('watch', () => {
   gulp.watch([
     path.join(SOURCE_ROOT, 'index.html')
-  ], ['view']);
+  ], ['index']);
 
   gulp.watch([
     path.join(SOURCE_ROOT, '**/*.{html,css,js}'),

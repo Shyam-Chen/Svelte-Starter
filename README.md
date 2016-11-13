@@ -29,6 +29,7 @@ This seed repository provides the following features:
 The following helpful resources to use this seed repository:
 * [x] CSS with Block Element Modifier ([GO](http://getbem.com/)).
 * [x] Functional Programming in JavaScript ([GO](https://github.com/getify/Functional-Light-JS)).
+* [ ] ...
 
 ## Getting Started
 
