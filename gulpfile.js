@@ -17,6 +17,8 @@ const extend = require('postcss-extend')
 const rucksack = require('rucksack-css');
 const comment = require('postcss-comment');
 const conditionals = require('postcss-conditionals');
+const forFromTo = require('postcss-for');
+const eachIn = require('postcss-each');
 const cssnano = require('cssnano');
 
 const babel = require('rollup-plugin-babel');
@@ -142,6 +144,8 @@ gulp.task('app', () => {
             extend(),
             rucksack({ fallbacks: true, autoprefixer: true }),
             conditionals(),
+            forFromTo(),
+            eachIn(),
             cssnano()
           ]
         }),
