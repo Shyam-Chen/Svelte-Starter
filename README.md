@@ -26,6 +26,10 @@ This seed repository provides the following features:
 * [x] Virtual machine with **Docker** and **Compose**.
 * [x] Continuous integration and deployment with **Travis**.
 
+The following helpful resources to use this seed repository:
+* [x] CSS with Block Element Modifier ([GO](http://getbem.com/)).
+* [x] Functional Programming in JavaScript ([GO](https://github.com/getify/Functional-Light-JS)).
+
 ## Getting Started
 
 1) Clone this Boilerplate
