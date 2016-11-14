@@ -12,6 +12,7 @@ This seed repository provides the following features:
 * [x] UI components with **Material**.
 * [x] Back-end service with **Firebase**.
 * [x] Routing and navigation with **Page**.
+* [x] Utility functions with **Lodash**.
 * [x] Build system with **Gulp**.
 * [x] Module bundler with **Rollup**.
 * [x] Future CSS features with **PostCSS**.
@@ -25,17 +26,6 @@ This seed repository provides the following features:
 * [x] Fast and determinsitic builds with **Yarn**.
 * [x] Virtual machine with **Docker** and **Compose**.
 * [x] Continuous integration and deployment with **Travis**.
-
-The following helpful resources to use this seed repository:
-* [x] Learning Material Design Lite - [GO](https://webdesign.tutsplus.com/series/learning-material-design-lite--cms-888).
-* [x] A Look at the New Firebase - [GO](https://scotch.io/bar-talk/a-look-at-the-new-firebase-a-powerful-google-platform).
-* [x] Page by Example - [GO](https://github.com/visionmedia/page.js/tree/master/examples).
-* [x] CSS.Next Features - [GO](http://cssnext.io/features/).
-* [x] Exploring JS.Next - [GO](http://exploringjs.com/es6/index.html).
-* [x] CSS with Block Element Modifier - [GO](http://getbem.com/).
-* [x] Functional Programming in JavaScript - [GO](https://github.com/getify/Functional-Light-JS).
-* [x] Introduction to Jasmine - [GO](https://jasmine.github.io/edge/introduction).
-* [x] Testing a UI using WebDriverJS - [GO](https://www.packtpub.com/books/content/testing-ui-using-webdriverjs).
 
 ## Getting Started
 

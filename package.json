@@ -32,8 +32,7 @@
     "firebase": "^3.6.0",
     "lodash-es": "^4.17.0",
     "material-design-lite": "^1.2.1",
-    "page": "^1.7.1",
-    "rxjs": "^5.0.0-rc.2"
+    "page": "^1.7.1"
   },
   "devDependencies": {
     "babel-plugin-external-helpers": "^6.18.0",
