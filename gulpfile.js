@@ -15,7 +15,7 @@ const html = require('rollup-plugin-html');
 const postcss = require('rollup-plugin-postcss');
 const cssnext = require('postcss-cssnext');
 const rucksack = require('rucksack-css');
-const extend = require('postcss-extend')
+const extend = require('postcss-extend');
 const comment = require('postcss-comment');
 const conditionals = require('postcss-conditionals');
 const forFromTo = require('postcss-for');
@@ -136,14 +136,14 @@ gulp.task('app', () => {
             cssnano()
           ]
         }),
+        json(),
         babel(),
         globals(),
         builtins(),
         resolve({ jsnext: true, browser: true }),
         commonjs(),
         uglify(),
-        image(),
-        json()
+        image()
       ]
     })
     .on('bundle', (bundle) => { cache = bundle; })

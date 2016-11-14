@@ -7,21 +7,14 @@ import { load404 } from './pages/404';
 
 import { loadFont } from './components/utils';
 
-const config = {
-  apiKey: process.env.API_KEY || 'AIzaSyDvaaNIb1KvegzUP2EtgxjxzcxG_T36wQI',
-  authDomain: process.env.AUTH_DOMAIN || 'test-1498d.firebaseapp.com',
-  databaseURL: process.env.DATABASE_URL || 'https://test-1498d.firebaseio.com',
-  storageBucket: process.env.STORAGE_BUCKET || 'test-1498d.appspot.com',
-  messagingSenderId: process.env.MESSAGING_SENDER_ID || '642330827186'
-};
-firebase.initializeApp(config);
+import firebaseConfig from './assets/datas/firebase.config.json';
+
+firebase.initializeApp(firebaseConfig);
 
 const rootRef = firebase.database().ref();
 console.log(rootRef);
 
 loadFont('https://fonts.googleapis.com/css?family=Lora:700i');
-
-console.log(123);
 
 page('/', loadHome);
 page('/about', loadAbout);
