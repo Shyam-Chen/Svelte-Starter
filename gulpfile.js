@@ -137,13 +137,13 @@ gulp.task('app', () => {
           ]
         }),
         json(),
-        babel(),
+        image(),
         globals(),
         builtins(),
         resolve({ jsnext: true, browser: true }),
         commonjs(),
-        uglify(),
-        image()
+        babel(),
+        uglify()
       ]
     })
     .on('bundle', (bundle) => { cache = bundle; })
