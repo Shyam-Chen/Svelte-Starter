@@ -27,15 +27,15 @@ This seed repository provides the following features:
 * [x] Continuous integration and deployment with **Travis**.
 
 The following helpful resources to use this seed repository:
-* [ ] Material
-* [ ] Firebase
-* [ ] Page
-* [ ] CSS.Next
-* [ ] JS.Next
-* [x] CSS with Block Element Modifier ([GO](http://getbem.com/)).
-* [x] Functional Programming in JavaScript ([GO](https://github.com/getify/Functional-Light-JS)).
-* [ ] Jasmine.
-* [ ] WebDriverJS.
+* [x] Learning Material Design Lite - [GO](https://webdesign.tutsplus.com/series/learning-material-design-lite--cms-888).
+* [x] A Look at the New Firebase - [GO](https://scotch.io/bar-talk/a-look-at-the-new-firebase-a-powerful-google-platform).
+* [x] Page by Example - [GO](https://github.com/visionmedia/page.js/tree/master/examples).
+* [x] CSS.Next Features - [GO](http://cssnext.io/features/).
+* [x] Exploring JS.Next - [GO](http://exploringjs.com/es6/index.html).
+* [x] CSS with Block Element Modifier - [GO](http://getbem.com/).
+* [x] Functional Programming in JavaScript - [GO](https://github.com/getify/Functional-Light-JS).
+* [x] Introduction to Jasmine - [GO](https://jasmine.github.io/edge/introduction).
+* [x] Testing a UI using WebDriverJS - [GO](https://www.packtpub.com/books/content/testing-ui-using-webdriverjs).
 
 ## Getting Started
 
@@ -103,7 +103,3 @@ $ yarn run reset
 ```bash
 $ yarn run reinstall
 ```
-
-## ToDo List
-* [ ] Home Page (MDL & Firebase CRUD example)
-* [ ] About Page (Seed project features)
