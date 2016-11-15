@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/Shyam-Chen/Vanilla-Starter-Kit#readme",
   "dependencies": {
+    "core-js": "^2.4.1",
     "firebase": "^3.6.0",
     "lodash-es": "^4.17.0",
     "material-design-lite": "^1.2.1",

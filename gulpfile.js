@@ -159,8 +159,6 @@ gulp.task('app', () => {
 gulp.task('vendor', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'vendor.js'),
-      format: 'es',
-      // useStrict: false,
       treeshake: false,
       plugins: [
         postcss({ plugins: [cssnano()] }),
@@ -178,30 +176,25 @@ gulp.task('vendor', () => {
     .pipe(gulp.dest(DIST_ROOT));
 });
 
-// gulp.task('image', () => {
-//   return gulp.src(path.join(SOURCE_ROOT, IMAGES_ROOT, '**/*.{gif,jpeg,jpg,png,svg}'))
-//     .pipe(newer(path.join(DIST_ROOT, IMAGES_ROOT)))
-//     .pipe(imagemin({
-//       progressive: true,
-//       svgoPlugins: [{ removeViewBox: false }],
-//       use: [pngquant()]
-//     }))
-//     .pipe(gulp.dest(path.join(DIST_ROOT, IMAGES_ROOT)));
-// });
+gulp.task('polyfills', () => {
+  return rollup({
+      entry: path.join(SOURCE_ROOT, 'polyfills.js'),
+      treeshake: false,
+      plugins: [
+        globals(),
+        builtins(),
+        resolve({ jsnext: true, browser: true }),
+        commonjs(),
+        uglify()
+      ]
+    })
+    .on('error', CompileError.handle)
+    .pipe(source('polyfills.js'))
+    .pipe(buffer())
+    .pipe(gulp.dest(DIST_ROOT));
+});
 
-// gulp.task('font', () => {
-//   return gulp.src(path.join(SOURCE_ROOT, FONTS_ROOT, '**/*.{eot,svg,ttf,woff,woff2}'))
-//   .pipe(newer(path.join(DIST_ROOT, FONTS_ROOT)))
-//   .pipe(gulp.dest(path.join(DIST_ROOT, FONTS_ROOT)));
-// });
-
-// gulp.task('data', () => {
-//   return gulp.src(path.join(SOURCE_ROOT, DATAS_ROOT, '**/*.{json,xml}'))
-//   .pipe(newer(path.join(DIST_ROOT, DATAS_ROOT)))
-//   .pipe(gulp.dest(path.join(DIST_ROOT, DATAS_ROOT)));
-// });
-
-gulp.task('build', ['copy', 'index', 'vendor', 'app']);
+gulp.task('build', ['copy', 'index', 'polyfills', 'vendor', 'app']);
 
 gulp.task('watch', () => {
   gulp.watch([
