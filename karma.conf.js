@@ -1,3 +1,18 @@
+const html = require('rollup-plugin-html');
+
+const postcss = require('rollup-plugin-postcss');
+const cssnext = require('postcss-cssnext');
+const rucksack = require('rucksack-css');
+const extend = require('postcss-extend');
+const comment = require('postcss-comment');
+const conditionals = require('postcss-conditionals');
+const forFromTo = require('postcss-for');
+const eachIn = require('postcss-each');
+const cssnano = require('cssnano');
+
+const image = require('rollup-plugin-image');
+const json = require('rollup-plugin-json');
+
 const babel = require('rollup-plugin-babel');
 const globals = require('rollup-plugin-node-globals');
 const builtins = require('rollup-plugin-node-builtins');
@@ -18,11 +33,32 @@ module.exports = (config) => {
     rollupPreprocessor: {
       format: 'iife',
       plugins: [
-        babel(),
+        html({
+          htmlMinifierOptions: {
+            collapseWhitespace: true,
+            removeAttributeQuotes: true,
+            removeComments: true
+          }
+        }),
+        postcss({
+          parser: comment,
+          plugins: [
+            cssnext({ warnForDuplicates: false }),
+            rucksack({ fallbacks: true, autoprefixer: true }),
+            extend(),
+            conditionals(),
+            forFromTo(),
+            eachIn(),
+            cssnano()
+          ]
+        }),
+        json(),
+        image(),
         globals(),
         builtins(),
         resolve({ jsnext: true, browser: true }),
-        commonjs()
+        commonjs(),
+        babel()
       ]
     },
     reporters: ['mocha'],
