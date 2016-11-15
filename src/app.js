@@ -7,7 +7,14 @@ import { load404 } from './pages/404';
 /*
  * Lodash example:
  */
-import { defaults, partition, add, sum } from 'lodash-es';
+// import all
+// import { defaults, partition, add, sum } from 'lodash-es';
+
+// import a single
+import defaults from 'lodash-es/defaults';
+import partition from 'lodash-es/partition';
+import add from 'lodash-es/add';
+import sum from 'lodash-es/sum';
 console.log(defaults({ 'a': 1 }, { 'a': 3, 'b': 2 }));
 console.log(partition([1, 2, 3, 4], n => n % 2));
 console.log(add(6, 4)::sum([3, 2]));
