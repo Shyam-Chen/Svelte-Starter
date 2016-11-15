@@ -1,13 +1,15 @@
-import { query } from './query';
+import { query, queryAll } from './query';
 
 describe('Query', () => {
 
-  it('O', () => {
+  it('not toThrow', () => {
     expect(query).not.toThrow();
+    expect(queryAll).not.toThrow();
   });
 
-  it('OO', () => {
+  it('not toBeNull', () => {
     expect(query).not.toBeNull();
+    expect(queryAll).not.toBeNull();
   });
 
 });

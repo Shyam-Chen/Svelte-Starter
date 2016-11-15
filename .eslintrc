@@ -3,13 +3,13 @@
     "browser": true,
     "commonjs": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "jasmine": true
   },
   "globals": {
     "componentHandler": true,
     "firebase": true,
-    "page": true,
-    "jasmine": true
+    "page": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {
