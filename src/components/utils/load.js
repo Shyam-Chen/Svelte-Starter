@@ -16,3 +16,16 @@ export const timeoutRejected = () => {
     setTimeout(() => reject(new Error('Request Timeout.')), 5000);
   });
 };
+
+export const loadFont = (url) => {
+  const xhr = new XMLHttpRequest();
+  xhr.open('get', url);
+  xhr.onreadystatechange = () => {
+    if (xhr.status === 200 && xhr.readyState === 4) {
+      const style = document.createElement('style');
+      style.innerHTML = xhr.responseText;
+      document.head.appendChild(style);
+    }
+  };
+  xhr.send();
+};
