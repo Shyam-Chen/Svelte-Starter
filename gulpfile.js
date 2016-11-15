@@ -27,7 +27,7 @@ const globals = require('rollup-plugin-node-globals');
 const builtins = require('rollup-plugin-node-builtins');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
-// const replace = require('rollup-plugin-replace');
+const replace = require('rollup-plugin-replace');
 const uglify = require('rollup-plugin-uglify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
@@ -156,25 +156,27 @@ gulp.task('app', () => {
     .pipe(browsersync.stream());
 });
 
-// gulp.task('vendor', () => {
-//   return rollup({
-//       entry: path.join(SOURCE_ROOT, 'vendor.js'),
-//       format: 'iife',
-//       useStrict: false,
-//       treeshake: false,
-//       plugins: [
-//         postcss({ plugins: [cssnano()] }),
-//         resolve({ jsnext: true, browser: true }),
-//         commonjs(),
-//         replace({ eval: '[eval][0]' }),
-//         uglify()
-//       ]
-//     })
-//     .on('error', CompileError.handle)
-//     .pipe(source('vendor.js'))
-//     .pipe(buffer())
-//     .pipe(gulp.dest(DIST_ROOT));
-// });
+gulp.task('vendor', () => {
+  return rollup({
+      entry: path.join(SOURCE_ROOT, 'vendor.js'),
+      format: 'es',
+      // useStrict: false,
+      treeshake: false,
+      plugins: [
+        // postcss({ plugins: [cssnano()] }),
+        globals(),
+        builtins(),
+        resolve({ jsnext: true, browser: true }),
+        commonjs(),
+        replace({ eval: '[eval][0]' }),
+        uglify()
+      ]
+    })
+    .on('error', CompileError.handle)
+    .pipe(source('vendor.js'))
+    .pipe(buffer())
+    .pipe(gulp.dest(DIST_ROOT));
+});
 
 // gulp.task('image', () => {
 //   return gulp.src(path.join(SOURCE_ROOT, IMAGES_ROOT, '**/*.{gif,jpeg,jpg,png,svg}'))
@@ -199,7 +201,7 @@ gulp.task('app', () => {
 //   .pipe(gulp.dest(path.join(DIST_ROOT, DATAS_ROOT)));
 // });
 
-gulp.task('build', ['copy', 'index', 'app']);
+gulp.task('build', ['copy', 'index', 'vendor', 'app']);
 
 gulp.task('watch', () => {
   gulp.watch([
