@@ -163,7 +163,7 @@ gulp.task('vendor', () => {
       // useStrict: false,
       treeshake: false,
       plugins: [
-        // postcss({ plugins: [cssnano()] }),
+        postcss({ plugins: [cssnano()] }),
         globals(),
         builtins(),
         resolve({ jsnext: true, browser: true }),
