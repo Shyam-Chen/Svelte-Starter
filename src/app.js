@@ -4,13 +4,6 @@ import { loadHome } from './pages/home';
 import { loadAbout } from './pages/about';
 import { load404 } from './pages/404';
 
-/*
- * Lodash example:
- */
-// import all
-// import { defaults, partition, add, sum } from 'lodash-es';
-
-// import a single
 import defaults from 'lodash-es/defaults';
 import partition from 'lodash-es/partition';
 import add from 'lodash-es/add';
@@ -25,8 +18,24 @@ const rootRef = firebase.database().ref();
 const path = rootRef.root.toString();
 console.log(path);
 
-import { loadFont } from './components/utils';
-loadFont('https://fonts.googleapis.com/css?family=Lora:700i');
+import { load } from './components/utils';
+Promise.all([
+    load('https://fonts.googleapis.com/icon?family=Material+Icons'),
+    load('https://fonts.googleapis.com/css?family=Lora:700is')
+  ])
+  .then((data) => {
+    const materialIcons = document.createElement('style');
+    materialIcons.innerHTML = data[0];
+    document.head.appendChild(materialIcons);
+
+    const lora700is = document.createElement('style');
+    lora700is.innerHTML = data[1];
+    document.head.appendChild(lora700is);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+
 
 page('/', loadHome);
 page('/about', loadAbout);
