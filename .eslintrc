@@ -9,7 +9,9 @@
   "globals": {
     "componentHandler": true,
     "firebase": true,
-    "page": true
+    "page": true,
+    "webdriver": true,
+    "by": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {

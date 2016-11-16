@@ -1,8 +1,12 @@
 describe('Home', () => {
 
-  it('O', () => {
+  beforeEach(() => {
     webdriver.get('http://localhost:9876/');
-    expect(webdriver.findElement(by.css('.home')).getText()).toEqual('Home');
+  });
+
+  it('getText toEqual', () => {
+    let el = webdriver.findElement(by.css('#page p:nth-child(1)'));
+    expect(el.getText()).toEqual('Home');
   });
 
 });
