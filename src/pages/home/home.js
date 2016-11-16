@@ -10,13 +10,16 @@ import vanilla from '../../assets/images/vanilla.png';
 export const loadHome = () => {
   query('#app').innerHTML = layoutTpl;
   query('#page').innerHTML = template(home)({
-    'HOME': 'Home Page',
-    'FOO': style.foo,
-    'style': {
-      'test': style.test,
-      'title': style.title
+    HOME: 'Home Page',
+    FOO: style.foo,
+    style: {
+      test: style.test,
+      title: style.title
+    },
+    vanilla: {
+      src: vanilla.src,
+      alt: 'Vanilla'
     }
   });
-  query('#vanilla').appendChild(vanilla);
   componentHandler.upgradeAllRegistered();
 };
