@@ -1,20 +1,21 @@
 import template from 'lodash-es/template';
 
 import { query } from '../../components/utils';
-import { layoutTpl } from '../../components/layout';
+import { layout } from '../../components/layout';
 
-import home from './home.html';
-import style from './home.css';
+import homeTpl from './home.html';
+import homeStyl from './home.css';
+
 import vanilla from '../../assets/images/vanilla.png';
 
 export const loadHome = () => {
-  query('#app').innerHTML = layoutTpl;
-  query('#page').innerHTML = template(home)({
+  query('#app').innerHTML = layout;
+  query('#page').innerHTML = template(homeTpl)({
     HOME: 'Home Page',
-    FOO: style.foo,
+    FOO: homeStyl.foo,
     style: {
-      test: style.test,
-      title: style.title
+      test: homeStyl.test,
+      title: homeStyl.title
     },
     vanilla: {
       src: vanilla.src,
