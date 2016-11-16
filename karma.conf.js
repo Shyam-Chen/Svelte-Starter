@@ -1,6 +1,7 @@
 const html = require('rollup-plugin-html');
 
 const postcss = require('rollup-plugin-postcss');
+const modules = require('postcss-modules');
 const cssnext = require('postcss-cssnext');
 const rucksack = require('rucksack-css');
 const extend = require('postcss-extend');
@@ -19,6 +20,7 @@ const builtins = require('rollup-plugin-node-builtins');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
 
+let cssExportMap = {};
 module.exports = (config) => {
   config.set({
     basePath: '',
@@ -43,6 +45,11 @@ module.exports = (config) => {
         postcss({
           parser: comment,
           plugins: [
+            modules({
+              getJSON(id, tokens) {
+                cssExportMap[id] = tokens;
+              }
+            }),
             cssnext({ warnForDuplicates: false }),
             rucksack({ fallbacks: true, autoprefixer: true }),
             extend(),
@@ -50,7 +57,10 @@ module.exports = (config) => {
             forFromTo(),
             eachIn(),
             cssnano()
-          ]
+          ],
+          getExport(id) {
+            return cssExportMap[id];
+          }
         }),
         json(),
         image(),

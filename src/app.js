@@ -1,4 +1,4 @@
-import './_global.css';
+import './themes/global.css';
 
 import firebaseConfig from './assets/datas/firebase.config.json';
 
@@ -24,7 +24,7 @@ loadFont('https://fonts.googleapis.com/css?family=Lora:700is')
 //     const materialIcons = document.createElement('style');
 //     materialIcons.innerHTML = data[0];
 //     document.head.appendChild(materialIcons);
-// 
+//
 //     const lora700is = document.createElement('style');
 //     lora700is.innerHTML = data[1];
 //     document.head.appendChild(lora700is);

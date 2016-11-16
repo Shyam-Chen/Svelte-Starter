@@ -2,7 +2,6 @@ const gulp = require('gulp');
 const path = require('path');
 
 const changed = require('gulp-changed');
-// const newer = require('gulp-newer');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const sourcemaps = require('gulp-sourcemaps');
@@ -13,6 +12,7 @@ const rollup = require('rollup-stream');
 const html = require('rollup-plugin-html');
 
 const postcss = require('rollup-plugin-postcss');
+const modules = require('postcss-modules');
 const cssnext = require('postcss-cssnext');
 const rucksack = require('rucksack-css');
 const extend = require('postcss-extend');
@@ -21,6 +21,9 @@ const conditionals = require('postcss-conditionals');
 const forFromTo = require('postcss-for');
 const eachIn = require('postcss-each');
 const cssnano = require('cssnano');
+
+const image = require('rollup-plugin-image');
+const json = require('rollup-plugin-json');
 
 const babel = require('rollup-plugin-babel');
 const globals = require('rollup-plugin-node-globals');
@@ -31,12 +34,6 @@ const replace = require('rollup-plugin-replace');
 const uglify = require('rollup-plugin-uglify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
-
-// const imagemin = require('gulp-imagemin');
-// const pngquant = require('imagemin-pngquant');
-
-const image = require('rollup-plugin-image');
-const json = require('rollup-plugin-json');
 
 const browsersync = require('browser-sync');
 const connectHistory = require('connect-history-api-fallback');
@@ -110,6 +107,7 @@ gulp.task('index', () => {
 });
 
 let cache;
+let cssExportMap = {};
 gulp.task('app', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'app.js'),
@@ -127,6 +125,11 @@ gulp.task('app', () => {
         postcss({
           parser: comment,
           plugins: [
+            modules({
+              getJSON(id, tokens) {
+                cssExportMap[id] = tokens;
+              }
+            }),
             cssnext({ warnForDuplicates: false }),
             rucksack({ fallbacks: true, autoprefixer: true }),
             extend(),
@@ -134,7 +137,10 @@ gulp.task('app', () => {
             forFromTo(),
             eachIn(),
             cssnano()
-          ]
+          ],
+          getExport(id) {
+            return cssExportMap[id];
+          }
         }),
         json(),
         image(),
