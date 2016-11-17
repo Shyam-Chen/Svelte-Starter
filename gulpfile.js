@@ -1,16 +1,19 @@
-const gulp = require('gulp');
 const path = require('path');
 
-const changed = require('gulp-changed');
-const plumber = require('gulp-plumber');
+const gulp = require('gulp');
+const util = require('gulp-util');
 const notify = require('gulp-notify');
-const sourcemaps = require('gulp-sourcemaps');
+const plumber = require('gulp-plumber');
+const changed = require('gulp-changed');
 const htmlmin = require('gulp-htmlmin');
+const sourcemaps = require('gulp-sourcemaps');
+const htmlhint = require("gulp-htmlhint");
+const stylelint = require('gulp-stylelint');
+const eslint = require('gulp-eslint');
+const protractor = require('gulp-protractor');
 
 const rollup = require('rollup-stream');
-
 const html = require('rollup-plugin-html');
-
 const postcss = require('rollup-plugin-postcss');
 const modules = require('postcss-modules');
 const cssnext = require('postcss-cssnext');
@@ -21,10 +24,8 @@ const conditionals = require('postcss-conditionals');
 const forFromTo = require('postcss-for');
 const eachIn = require('postcss-each');
 const cssnano = require('cssnano');
-
 const image = require('rollup-plugin-image');
 const json = require('rollup-plugin-json');
-
 const babel = require('rollup-plugin-babel');
 const globals = require('rollup-plugin-node-globals');
 const builtins = require('rollup-plugin-node-builtins');
@@ -37,11 +38,8 @@ const buffer = require('vinyl-buffer');
 
 const browsersync = require('browser-sync');
 const connectHistory = require('connect-history-api-fallback');
-
 const express = require('express');
 const expressHistory = require('express-history-api-fallback');
-const gProtractor = require('gulp-protractor');
-
 const runsequence = require('run-sequence');
 
 const SOURCE_ROOT = path.join(__dirname, 'src');
@@ -50,20 +48,23 @@ const DIST_ROOT = path.join(__dirname, 'dist');
 const IMAGES_ROOT = path.join('assets', 'images');
 const DATAS_ROOT = path.join('assets', 'datas');
 
-// TODO: dev/prod mode
-// TODO: linter (HTML/CSS/JS)
-
 class CompileError {
   static handle(err) {
-    let args = Array.from(arguments);
+    let self = this;
+    if (util.env.type === 'dev') {
+      let args = Array.from(arguments);
 
-    notify.onError({
-        title: 'Compile Error',
-        message: `\r\n${err.message}`
-      })
-      .apply(this, args);
+      notify.onError({
+          title: 'Compile Error',
+          message: `\r\n${err.message}`
+        })
+        .apply(this, args);
 
-    this.emit('end');
+      self.emit('end');
+    } else {
+      util.log(`${util.colors.red(err)}`);
+      process.exit(1);
+    }
   }
 }
 
@@ -88,7 +89,10 @@ gulp.task('copy', () => {
       path.join(SOURCE_ROOT, 'favicon.ico'),
       path.join(SOURCE_ROOT, 'robots.txt')
     ])
-    .pipe(gulp.dest(DIST_ROOT));
+    .pipe(plumber())
+    .pipe(changed(DIST_ROOT))
+    .pipe(gulp.dest(DIST_ROOT))
+    .pipe(browsersync.stream());
 });
 
 gulp.task('index', () => {
@@ -142,8 +146,8 @@ gulp.task('app', () => {
             return cssExportMap[id];
           }
         }),
-        json(),
         image(),
+        json(),
         globals(),
         builtins(),
         resolve({ jsnext: true, browser: true }),
@@ -216,6 +220,9 @@ gulp.task('watch', () => {
     path.join(SOURCE_ROOT, '**/*.{html,css,js}'),
     path.join(SOURCE_ROOT, IMAGES_ROOT, '**/*.{gif,jpeg,jpg,png,svg}'),
     path.join(SOURCE_ROOT, DATAS_ROOT, '**/*.json'),
+    `!${path.join(SOURCE_ROOT, 'index.html')}`,
+    `!${path.join(SOURCE_ROOT, 'polyfills.js')}`,
+    `!${path.join(SOURCE_ROOT, 'vendor.js')}`,
     `!${path.join(SOURCE_ROOT, '**/*.{spec.js,e2e-spec.js}')}`
   ], ['app']);
 });
@@ -229,14 +236,30 @@ gulp.task('serve', () => {
   });
 });
 
-gulp.task('webdriver', gProtractor.webdriver_update);
+gulp.task('lint-html', () => {
+  return gulp.src(path.join(SOURCE_ROOT, '**/*.html'))
+    .pipe(htmlhint('.htmlhintrc'))
+    .pipe(htmlhint.reporter());
+});
+
+gulp.task('lint-css', () => {
+
+});
+
+gulp.task('lint-js', () => {
+
+});
+
+gulp.task('lint', ['lint-html', 'lint-css', 'lint-js']);
+
+gulp.task('webdriver', protractor.webdriver_update);
 
 gulp.task('e2e', (done) => {
   new EndToEnd()
     .server(9876, DIST_ROOT)
     .then((server) => {
       gulp.src(path.join(SOURCE_ROOT, '**/*.e2e-spec.js'))
-        .pipe(gProtractor.protractor({ configFile: 'protractor.conf.js' }))
+        .pipe(protractor.protractor({ configFile: 'protractor.conf.js' }))
         .on('error', (error) => { throw error; })
         .on('end', () => { server.close(done); });
     });
