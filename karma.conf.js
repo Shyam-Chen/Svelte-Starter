@@ -1,24 +1,18 @@
 const html = require('rollup-plugin-html');
-
 const postcss = require('rollup-plugin-postcss');
+const scss = require('postcss-scss');
 const modules = require('postcss-modules');
+const precss = require('precss');
 const cssnext = require('postcss-cssnext');
 const rucksack = require('rucksack-css');
-const extend = require('postcss-extend');
-const comment = require('postcss-comment');
-const conditionals = require('postcss-conditionals');
-const forFromTo = require('postcss-for');
-const eachIn = require('postcss-each');
 const cssnano = require('cssnano');
-
 const image = require('rollup-plugin-image');
 const json = require('rollup-plugin-json');
-
-const babel = require('rollup-plugin-babel');
 const globals = require('rollup-plugin-node-globals');
 const builtins = require('rollup-plugin-node-builtins');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
+const babel = require('rollup-plugin-babel');
 
 let cssExportMap = {};
 module.exports = (config) => {
@@ -43,27 +37,18 @@ module.exports = (config) => {
           }
         }),
         postcss({
-          parser: comment,
+          parser: scss,
           plugins: [
-            modules({
-              getJSON(id, tokens) {
-                cssExportMap[id] = tokens;
-              }
-            }),
+            modules({ getJSON(id, tokens) { cssExportMap[id] = tokens; } }),
+            precss(),
             cssnext({ warnForDuplicates: false }),
             rucksack({ fallbacks: true, autoprefixer: true }),
-            extend(),
-            conditionals(),
-            forFromTo(),
-            eachIn(),
             cssnano()
           ],
-          getExport(id) {
-            return cssExportMap[id];
-          }
+          getExport(id) { return cssExportMap[id]; }
         }),
-        json(),
         image(),
+        json(),
         globals(),
         builtins(),
         resolve({ jsnext: true, browser: true }),
