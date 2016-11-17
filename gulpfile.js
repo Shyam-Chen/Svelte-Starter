@@ -116,7 +116,7 @@ gulp.task('app', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'app.js'),
       format: 'iife',
-      sourceMap: true,
+      sourceMap: util.env.type === 'dev' ? true : false,
       cache: cache,
       plugins: [
         html({
@@ -153,15 +153,15 @@ gulp.task('app', () => {
         resolve({ jsnext: true, browser: true }),
         commonjs(),
         babel(),
-        uglify()
+        (util.env.type === 'prod' ? uglify() : util.noop())
       ]
     })
     .on('bundle', (bundle) => { cache = bundle; })
     .on('error', CompileError.handle)
     .pipe(source('app.js'))
     .pipe(buffer())
-    .pipe(sourcemaps.init({ loadMaps: true }))
-    .pipe(sourcemaps.write('./'))
+    .pipe(util.env.type === 'dev' ? sourcemaps.init({ loadMaps: true }) : util.noop())
+    .pipe(util.env.type === 'dev' ? sourcemaps.write('./') : util.noop())
     .pipe(gulp.dest(DIST_ROOT))
     .pipe(browsersync.stream());
 });

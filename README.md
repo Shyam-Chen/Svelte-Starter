@@ -45,6 +45,12 @@ $ yarn install
 $ yarn start
 ```
 
+4) Stay up-to-date
+```bash
+$ git remote add upstream https://github.com/Shyam-Chen/Vanilla-Starter-Kit.git
+$ git pull upstream master
+```
+
 ## Using Docker
 
 1) Build the Image
