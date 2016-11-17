@@ -243,11 +243,21 @@ gulp.task('lint-html', () => {
 });
 
 gulp.task('lint-css', () => {
-
+  return gulp.src(path.join(SOURCE_ROOT, '**/*.css'))
+    .pipe(stylelint({
+      reporters: [{
+        formatter: 'string', console: true
+      }]
+    }));
 });
 
 gulp.task('lint-js', () => {
-
+  return gulp.src(path.join(SOURCE_ROOT, '**/*.js'))
+    .pipe(eslint({
+      useEslintrc: true
+    }))
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
 });
 
 gulp.task('lint', ['lint-html', 'lint-css', 'lint-js']);

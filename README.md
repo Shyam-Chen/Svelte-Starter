@@ -79,7 +79,7 @@ $ yarn run prod
 ```
 
 ```bash
-$ yarn run e2e  # pre: yarn run prod && yarn run webdriver
+$ yarn run e2e  # pre: yarn run webdriver
 ```
 
 ```bash
