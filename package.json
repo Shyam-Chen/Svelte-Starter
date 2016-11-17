@@ -1,7 +1,7 @@
 {
   "name": "Vanilla-Starter-Kit",
   "version": "1.0.0",
-  "description": "A single-page application boilerplate for Vanilla, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.",
+  "description": "A single-page application boilerplate for Vanilla HTML/CSS/JS, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.",
   "scripts": {
     "start": "gulp dev --type dev",
     "dev": "rimraf dist && gulp dev --type dev",
@@ -63,6 +63,7 @@
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-rollup-plugin": "^0.2.4",
     "phantomjs-prebuilt": "^2.1.13",
+    "postcss-comment": "^1.0.3",
     "postcss-cssnext": "^2.8.0",
     "postcss-modules": "^0.5.2",
     "postcss-scss": "^0.4.0",

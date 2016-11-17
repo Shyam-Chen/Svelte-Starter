@@ -15,9 +15,8 @@ const protractor = require('gulp-protractor');
 const rollup = require('rollup-stream');
 const html = require('rollup-plugin-html');
 const postcss = require('rollup-plugin-postcss');
-const scss = require('postcss-scss');
+const comment = require('postcss-comment');
 const modules = require('postcss-modules');
-const precss = require('precss');
 const cssnext = require('postcss-cssnext');
 const rucksack = require('rucksack-css');
 const cssnano = require('cssnano');
@@ -116,18 +115,11 @@ gulp.task('app', () => {
       sourceMap: util.env.type === 'dev' ? true : false,
       cache: cache,
       plugins: [
-        html({
-          htmlMinifierOptions: {
-            collapseWhitespace: true,
-            removeAttributeQuotes: true,
-            removeComments: true
-          }
-        }),
+        (util.env.type === 'prod' ? html({ htmlMinifierOptions: { collapseWhitespace: true, removeAttributeQuotes: true, removeComments: true } }) : html()),
         postcss({
-          parser: scss,
+          parser: comment,
           plugins: [
             modules({ getJSON(id, tokens) { cssExportMap[id] = tokens; } }),
-            precss(),
             cssnext({ warnForDuplicates: false }),
             rucksack({ fallbacks: true, autoprefixer: true }),
             cssnano()
@@ -157,7 +149,6 @@ gulp.task('app', () => {
 gulp.task('vendor', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'vendor.js'),
-      treeshake: false,
       plugins: [
         postcss({ plugins: [cssnano()] }),
         globals(),
@@ -177,7 +168,6 @@ gulp.task('vendor', () => {
 gulp.task('polyfills', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'polyfills.js'),
-      treeshake: false,
       plugins: [
         globals(),
         builtins(),

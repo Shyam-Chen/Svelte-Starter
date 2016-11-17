@@ -1,11 +1,5 @@
 .test {
-  @if 3 > 5 {
-    background: green;
-  } @else if false {
-    background: blue;
-  } @else {
-    background: pink;
-  }
+  background: pink;
 }
 
 .foo {
@@ -14,4 +8,5 @@
 
 .title {
   background: #FFC107;
+  padding: 3rem;
 }
