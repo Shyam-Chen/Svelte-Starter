@@ -106,8 +106,7 @@ gulp.task('index', () => {
     .pipe(browsersync.stream());
 });
 
-let cache;
-let cssExportMap = {};
+let [cache, cssExportMap] = [undefined, {}];
 gulp.task('app', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'app.js'),
@@ -115,7 +114,13 @@ gulp.task('app', () => {
       sourceMap: util.env.type === 'dev' ? true : false,
       cache: cache,
       plugins: [
-        (util.env.type === 'prod' ? html({ htmlMinifierOptions: { collapseWhitespace: true, removeAttributeQuotes: true, removeComments: true } }) : html()),
+        html({
+          htmlMinifierOptions: {
+            collapseWhitespace: true,
+            removeAttributeQuotes: true,
+            removeComments: true
+          }
+        }),
         postcss({
           parser: comment,
           plugins: [
