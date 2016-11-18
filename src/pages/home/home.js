@@ -14,7 +14,8 @@ import homeStyl from './home.css';
 import homeData from './home.json';
 import homeDataZh from './home-zh.json';
 
-export const loadHome = () => {
+
+export const common = (data = {}) => {
   query('#app').innerHTML = layout;
   query('#page').innerHTML = template(homeTpl, {
     'imports': {
@@ -23,18 +24,14 @@ export const loadHome = () => {
       'material': material,
       'firebase': firebase
     }
-  })(homeData);
+  })(data);
   componentHandler.upgradeAllRegistered();
 };
 
+export const loadHome = () => {
+  common(homeData);
+};
+
 export const loadHomeZh = () => {
-  query('#app').innerHTML = layout;
-  query('#page').innerHTML = template(homeTpl, {
-    'imports': {
-      'style': homeStyl,
-      'vanilla': vanilla,
-      'material': material
-    }
-  })(homeDataZh);
-  componentHandler.upgradeAllRegistered();
+  common(homeDataZh);
 };
