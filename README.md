@@ -12,6 +12,7 @@ This seed repository provides the following features:
 * [x] UI components with **Material**.
 * [x] Back-end service with **Firebase**.
 * [x] Routing and navigation with **Page**.
+* [x] Data visualization with **Chart**.
 * [x] Render templates with **Lodash**.
 * [x] Build system with **Gulp**.
 * [x] Module bundler with **Rollup**.

@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/Shyam-Chen/Vanilla-Starter-Kit#readme",
   "dependencies": {
+    "chart.js": "^2.4.0",
     "core-js": "^2.4.1",
     "firebase": "^3.6.0",
     "lodash-es": "^4.17.0",
@@ -37,6 +38,7 @@
     "page": "^1.7.1"
   },
   "devDependencies": {
+    "babel-plugin-external-helpers": "^6.18.0",
     "babel-preset-latest": "^6.16.0",
     "browser-sync": "^2.17.5",
     "connect-history-api-fallback": "^1.3.0",
