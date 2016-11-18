@@ -14,7 +14,7 @@ const path = rootRef.root.toString();
 console.log(path);
 
 loadFont('https://fonts.googleapis.com/icon?family=Material+Icons');
-loadFont('https://fonts.googleapis.com/css?family=Lora:700is')
+loadFont('https://fonts.googleapis.com/css?family=Lora')
 
 // Promise.all([
 //     load('https://fonts.googleapis.com/icon?family=Material+Icons'),

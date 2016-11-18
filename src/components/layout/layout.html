@@ -7,6 +7,13 @@
         <a class="mdl-navigation__link" href="/"><%= LINK_1 %></a>
         <a class="mdl-navigation__link" href="/about"><%= LINK_2 %></a>
       </nav>
+      <button id="menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">language</i>
+      </button>
+      <div class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-lower-right">
+        <a href="/" class="mdl-menu__item">English</a>
+        <a href="/zh" class="mdl-menu__item">中文</a>
+      </div>
     </div>
   </header>
   <div class="mdl-layout__drawer">
