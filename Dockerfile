@@ -10,8 +10,7 @@ RUN curl -sL https://deb.nodesource.com/setup_$NODE.x | bash - && \
     apt-get update && \
     apt-get install -y nodejs openjdk-7-jre-headless
 
-RUN npm install && \
-    npm install -g firebase-tools
+RUN npm install
 
 EXPOSE 3000 9876
 

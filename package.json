@@ -13,7 +13,8 @@
     "webdriver": "gulp webdriver",
     "clean": "rimraf dist",
     "reset": "git reset --hard HEAD && git clean -df",
-    "reinstall": "yarn cache clean && git clean -dfx -e '.*' && yarn install"
+    "reinstall": "yarn cache clean && git clean -dfx -e '.*' && yarn install",
+    "deploy": "firebase deploy"
   },
   "repository": {
     "type": "git",
@@ -42,6 +43,7 @@
     "cssnano": "^3.8.0",
     "express": "^4.14.0",
     "express-history-api-fallback": "^2.0.0",
+    "firebase-tools": "^3.1.0",
     "gulp": "^3.9.1",
     "gulp-changed": "^1.3.2",
     "gulp-eslint": "^3.0.1",
