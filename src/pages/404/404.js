@@ -5,7 +5,7 @@ import notFoundStyle from './404.css';
 
 import { query } from '../../components/utils';
 
-export const notFoundOpts = {
+export const tplOpts = {
   text: '404',
   style: {
     page: notFoundStyle.page,
@@ -14,5 +14,5 @@ export const notFoundOpts = {
 };
 
 export const load404 = () => {
-  query('#app').innerHTML = template(notFoundTpl)(notFoundOpts);
+  query('#app').innerHTML = template(notFoundTpl)(tplOpts);
 };
