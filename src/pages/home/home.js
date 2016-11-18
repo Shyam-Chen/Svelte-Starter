@@ -14,24 +14,26 @@ import homeStyl from './home.css';
 import homeData from './home.json';
 import homeDataZh from './home-zh.json';
 
+// If you have different styles and pictures for different languages.
+const imports = {
+  'imports': {
+    'style': homeStyl,
+    'vanilla': vanilla,
+    'material': material,
+    'firebase': firebase
+  }
+};
 
-export const common = (data = {}) => {
+export const common = (imports = null, datas = {}) => {
   query('#app').innerHTML = layout;
-  query('#page').innerHTML = template(homeTpl, {
-    'imports': {
-      'style': homeStyl,
-      'vanilla': vanilla,
-      'material': material,
-      'firebase': firebase
-    }
-  })(data);
+  query('#page').innerHTML = template(homeTpl, imports)(datas);
   componentHandler.upgradeAllRegistered();
 };
 
 export const loadHome = () => {
-  common(homeData);
+  common(imports, homeData);
 };
 
 export const loadHomeZh = () => {
-  common(homeDataZh);
+  common(imports, homeDataZh);
 };
