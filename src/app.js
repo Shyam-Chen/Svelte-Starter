@@ -2,7 +2,7 @@ import './themes/global.css';
 
 import firebaseConfig from './assets/datas/firebase.config.json';
 
-import { loadHome } from './pages/home';
+import { loadHome, loadHomeZh } from './pages/home';
 import { loadAbout } from './pages/about';
 import { load404 } from './pages/404';
 
@@ -33,7 +33,9 @@ loadFont('https://fonts.googleapis.com/css?family=Lora:700is')
 //     console.error(err);
 //   });
 
+// TODO: query-string
 page('/', loadHome);
+page('/zh', loadHomeZh);
 page('/about', loadAbout);
 page('*', load404);
 page();

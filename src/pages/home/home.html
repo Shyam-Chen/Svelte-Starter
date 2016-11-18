@@ -1,5 +1,5 @@
 <p class="mdl-color--pink-50">
-  Home
+  <%= HOME %>
 </p>
 
 <div class="mdl-color--pink-100 mdl-shadow--3dp">
@@ -8,16 +8,18 @@
   </p>
 </div>
 
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-  Button
-</button>
+<a href="<%= H %>" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  <%= LANG %>
+</a>
 
 <p class="<%= style.test %>">
-  <%= HOME %>
+  CSS Modules 1
 </p>
 
 <p class="<%= style.title %>">
-  CSS Modules
+  CSS Modules 2
 </p>
 
-<img src="<%= vanilla.src %>" alt="<%= vanilla.alt %>">
+<img src="<%= vanilla.src %>" alt="Vanilla">
+
+<img src="<%= material.src %>" alt="Material">
