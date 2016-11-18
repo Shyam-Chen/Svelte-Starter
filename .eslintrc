@@ -1,17 +1,17 @@
 {
   "env": {
     "browser": true,
+    "node": true,
     "commonjs": true,
     "es6": true,
-    "node": true,
-    "jasmine": true
+    "jasmine": true,
+    "protractor": true
   },
   "globals": {
     "componentHandler": true,
     "firebase": true,
     "page": true,
-    "webdriver": true,
-    "by": true
+    "webdriver": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {
