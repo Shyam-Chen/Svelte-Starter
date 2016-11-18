@@ -1,8 +1,7 @@
 const html = require('rollup-plugin-html');
 const postcss = require('rollup-plugin-postcss');
-const scss = require('postcss-scss');
+const comment = require('postcss-comment');
 const modules = require('postcss-modules');
-const precss = require('precss');
 const cssnext = require('postcss-cssnext');
 const rucksack = require('rucksack-css');
 const cssnano = require('cssnano');
@@ -37,10 +36,9 @@ module.exports = (config) => {
           }
         }),
         postcss({
-          parser: scss,
+          parser: comment,
           plugins: [
             modules({ getJSON(id, tokens) { cssExportMap[id] = tokens; } }),
-            precss(),
             cssnext({ warnForDuplicates: false }),
             rucksack({ fallbacks: true, autoprefixer: true }),
             cssnano()

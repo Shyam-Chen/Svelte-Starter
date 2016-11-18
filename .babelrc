@@ -7,9 +7,5 @@
         }
       }
     ]
-  ],
-  "plugins": [
-    "external-helpers",
-    "transform-function-bind"
   ]
 }
