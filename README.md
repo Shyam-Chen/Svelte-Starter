@@ -1,11 +1,13 @@
 # Vanilla Starter Kit (Beta)
 
-> A single-page application boilerplate for Vanilla, Material, Firebase, Gulp, Rollup, PostCSS, and Babel. ([Live Demo](https://test-1498d.firebaseapp.com/))
+> A single-page application boilerplate for Vanilla HTML/CSS/JS, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
  //
 [![Dependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit)
 [![devDependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit?type=dev)
+
+[Live Demo](https://test-1498d.firebaseapp.com/)
 
 This seed repository provides the following features:
 * [x] Start coding **Vanilla HTML/CSS/JS** right now.
@@ -19,13 +21,15 @@ This seed repository provides the following features:
 * [x] Future CSS features with **PostCSS**.
 * [x] Next generation JS with **Babel**.
 * [x] Development server with **BrowserSync**.
-* [x] Static code analyzer with **HTMLHint**, **StyleLint**, and **ESLint**.
+* [x] HTML static code analyzer with **HTMLHint**.
+* [x] CSS static code analyzer with **StyleLint**.
+* [x] JS static code analyzer with **ESLint**.
 * [x] Testing framework with **Jasmine**.
 * [x] Unit tests with **Karma**.
 * [x] End-to-end tests with **Protractor**.
 * [x] Version control with **Git**.
 * [x] Fast and determinsitic builds with **Yarn**.
-* [x] Virtual machine with **Docker** and **Compose**.
+* [x] Virtual machine with **Docker**.
 * [x] Continuous integration and deployment with **Travis**.
 
 ## Getting Started
