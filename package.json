@@ -10,6 +10,7 @@
     "test-watch": "karma start --no-single-run",
     "prod": "rimraf dist && gulp build --type prod",
     "e2e": "gulp e2e",
+    "lint": "gulp lint",
     "webdriver": "gulp webdriver",
     "clean": "rimraf dist",
     "reset": "git reset --hard HEAD && git clean -df",

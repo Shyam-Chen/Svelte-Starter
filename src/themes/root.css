@@ -1,10 +1,12 @@
 :root {
 
-  --deep_purple-500: #673AB7;  // use `var(--deep_purple-500)`
+  // use `var(--deep_purple-500)`
+  --deep_purple-500: #673AB7;
 
+  // use `@apply --danger-theme`
   --danger-theme: {
     color: #FFFFFF;
     background-color: #F44336;
-  };  // use `@apply --danger-theme;``
+  };
 
 }
