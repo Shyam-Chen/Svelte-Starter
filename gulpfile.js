@@ -111,7 +111,7 @@ gulp.task('app', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'app.js'),
       format: 'iife',
-      sourceMap: util.env.type === 'dev' ? true : false,
+      sourceMap: util.env.type === 'dev' && true,
       cache: cache,
       plugins: [
         html({
@@ -138,6 +138,7 @@ gulp.task('app', () => {
         resolve({ jsnext: true, browser: true }),
         commonjs(),
         babel(),
+        replace({ ENV: util.env.type }),
         (util.env.type === 'prod' ? uglify() : util.noop())
       ]
     })

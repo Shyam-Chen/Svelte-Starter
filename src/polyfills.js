@@ -1,2 +1,2 @@
 import 'core-js/client/shim';
-import 'intl/dist/Intl';
+// import 'intl/dist/Intl';
