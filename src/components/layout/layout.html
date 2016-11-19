@@ -4,8 +4,10 @@
       <span class="mdl-layout-title"><%= TITLE %></span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" href="/"><%= LINK_1 %></a>
-        <a class="mdl-navigation__link" href="/about"><%= LINK_2 %></a>
+        <% const iterable = new Map([['/', 'Home'], ['/about', 'About']]); %>
+        <% for (let [key, value] of iterable) { %>
+          <a class="mdl-navigation__link" href="<%- key %>"><%- value %></a>
+        <% } %>
       </nav>
       <button id="menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">language</i>
@@ -19,7 +21,7 @@
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title"><%= TITLE %></span>
     <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="/"><%= LINK_1 %></a>
+      <a class="mdl-navigation__link" href="<%= LINK_HREF %>"><%= LINK_NAME %></a>
       <a class="mdl-navigation__link" href="/about"><%= LINK_2 %></a>
     </nav>
   </div>

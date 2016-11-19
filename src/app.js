@@ -33,7 +33,7 @@ loadFont('https://fonts.googleapis.com/css?family=Lora')
 //     console.error(err);
 //   });
 
-// TODO: query-string
+
 page('/', loadHome);
 page('/zh', loadHomeZh);
 page('/about', loadAbout);
