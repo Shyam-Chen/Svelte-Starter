@@ -4,9 +4,7 @@ import layoutTpl from './layout.html';
 
 export const tplOpts = {
   'TITLE': 'Vanilla',
-  'LINK_HREF': '/',
-  'LINK_NAME': 'Home',
-  'LINK_2': 'About'
+  'LINK': [['/', 'Home'], ['/about', 'About']]
 };
 
 export const layout = template(layoutTpl)(tplOpts);
