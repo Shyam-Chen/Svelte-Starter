@@ -13,8 +13,8 @@ export const loadAbout = () => {
   new Chart(query('#color-bar-chart'), {
     type: 'bar',
     data: {
-      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-      datasets: [colorData]
+      labels: ["ECMAScript", "HTML5", "Node.js", "Cordova"],
+      datasets: colorData
     },
     options: {
       scales: {
