@@ -21,11 +21,13 @@ const commom = () => {
 export const loadAbout = () => {
   query('#app').innerHTML = layout;
   query('#page').innerHTML = template(about)({ ABOUT: 'About' });
+  query('#zh').onclick = () => { page.redirect('/about/zh'); };
   commom();
 };
 
 export const loadAboutZh = () => {
   query('#app').innerHTML = layoutZh;
   query('#page').innerHTML = template(about)({ ABOUT: '關於' });
+  query('#en').onclick = () => { page.redirect('/about'); };
   commom();
 };

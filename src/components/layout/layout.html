@@ -13,7 +13,7 @@
       </button>
       <div class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-lower-right">
         <% for (let [HREF, NAME] of LANG) { %>
-          <a href="<%- HREF %>" class="mdl-menu__item"><%- NAME %></a>
+          <a href="javascript:void(0)" id="<%- HREF %>" class="mdl-menu__item"><%- NAME %></a>
         <% } %>
       </div>
     </div>
