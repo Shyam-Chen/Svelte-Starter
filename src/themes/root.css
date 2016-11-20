@@ -1,12 +1,18 @@
-:root {
-
-  // use `var(--deep_purple-500)`
-  --deep_purple-500: #673AB7;
-
-  // use `@apply --danger-theme`
-  --danger-theme: {
-    color: #FFFFFF;
-    background-color: #F44336;
-  };
-
-}
+/**
+ * @example
+ * :root {
+ *   --deep_purple-500: #673AB7;
+ *   --danger-theme: {
+ *     color: #FFFFFF;
+ *     background-color: #F44336;
+ *   };
+ * }
+ *
+ * .foo {
+ *   color: var(--deep_purple-500);
+ * }
+ *
+ * .bar {
+ *   @apply --danger-theme;
+ * }
+ */
