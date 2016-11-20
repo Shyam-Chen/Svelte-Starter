@@ -16,7 +16,8 @@ exports.config = {
     babel({ presets: ['latest'] });
     jasmine.getEnv().addReporter(new SpecReporter({ displayStacktrace: true }));
     global.webdriver = browser.driver;
-    browser.ignoreSynchronization = false;
+    webdriver.ignoreSynchronization = true;
+    webdriver.manage().window().setSize(1366, 768);
   },
   framework: 'jasmine',
   jasmineNodeOpts: {

@@ -8,9 +8,9 @@ describe('About', () => {
     expect(webdriver.getCurrentUrl()).toMatch('/about');
   });
 
-  // it('getText toEqual', () => {
-  //   let el = webdriver.findElement(by.css('#page p:nth-child(1)'));
-  //   expect(el.getText()).toEqual('About');
-  // });
+  it('getText toEqual', () => {
+    let el = webdriver.findElement(by.css('#page p:nth-child(1)'));
+    expect(el.getText()).toEqual('About');
+  });
 
 });
