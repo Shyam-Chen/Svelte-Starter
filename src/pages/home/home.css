@@ -1,8 +1,9 @@
-.test {
+.foo {
   background: pink;
+  padding: 1rem;
 }
 
-.title {
+.bar {
   background: #FFC107;
-  padding: 3rem;
+  padding: 1rem;
 }

@@ -12,8 +12,9 @@
         <i class="material-icons">language</i>
       </button>
       <div class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-lower-right">
-        <a href="/" class="mdl-menu__item">English</a>
-        <a href="/zh" class="mdl-menu__item">中文</a>
+        <% for (let [HREF, NAME] of LANG) { %>
+          <a href="<%- HREF %>" class="mdl-menu__item"><%- NAME %></a>
+        <% } %>
       </div>
     </div>
   </header>

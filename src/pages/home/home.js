@@ -3,7 +3,7 @@ import template from 'lodash-es/template';
 
 // Components and Assets
 import { query } from '../../components/utils';
-import { layout } from '../../components/layout';
+import { layout, layoutZh } from '../../components/layout';
 import vanilla from '../../assets/images/vanilla.png';
 import material from '../../assets/images/material.png';
 import firebase from '../../assets/images/firebase.png';
@@ -25,15 +25,16 @@ const imports = {
 };
 
 export const common = (imports = null, datas = {}) => {
-  query('#app').innerHTML = layout;
   query('#page').innerHTML = template(homeTpl, imports)(datas);
   componentHandler.upgradeAllRegistered();
 };
 
 export const loadHome = () => {
+  query('#app').innerHTML = layout;
   common(imports, homeData);
 };
 
 export const loadHomeZh = () => {
+  query('#app').innerHTML = layoutZh;
   common(imports, homeDataZh);
 };
