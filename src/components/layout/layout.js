@@ -2,6 +2,7 @@ import template from 'lodash-es/template';
 
 import layoutTpl from './layout.html';
 
+// TODO: ...
 export const tplOpts = {
   'TITLE': 'Vanilla',
   'LINK': [['/', 'Home'], ['/about', 'About']],
