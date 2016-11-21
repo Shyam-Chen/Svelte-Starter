@@ -23,13 +23,13 @@ const commom = () => {
 export const loadAbout = () => {
   query('#app').innerHTML = layout;
   query('#page').innerHTML = template(about)({ ABOUT: 'About' });
-  query('#zh').onclick = () => { page.redirect('/about/zh'); };
+  query('#zh').onclick = () => { page.redirect('/zh/about'); };
   commom();
 };
 
 export const loadAboutZh = () => {
   query('#app').innerHTML = layoutZh;
   query('#page').innerHTML = template(about)({ ABOUT: '關於' });
-  query('#en').onclick = () => { page.redirect('/about'); };
+  query('#en').onclick = () => { page.redirect('/en/about'); };
   commom();
 };

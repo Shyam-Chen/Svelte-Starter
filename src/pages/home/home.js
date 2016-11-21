@@ -33,12 +33,12 @@ export const common = (imports = null, datas = {}) => {
 
 export const loadHome = () => {
   query('#app').innerHTML = layout;
-  query('#zh').onclick = () => { page.redirect('/zh'); };
+  query('#zh').onclick = () => { page.redirect('/zh/home'); };
   common(imports, homeData);
 };
 
 export const loadHomeZh = () => {
   query('#app').innerHTML = layoutZh;
-  query('#en').onclick = () => { page.redirect('/'); };
+  query('#en').onclick = () => { page.redirect('/en/home'); };
   common(imports, homeDataZh);
 };

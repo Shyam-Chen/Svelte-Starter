@@ -13,17 +13,11 @@ firebase.initializeApp(firebaseConfig);
 loadFont('https://fonts.googleapis.com/icon?family=Material+Icons');
 loadFont('https://fonts.googleapis.com/css?family=Lora');
 
-// if (/zh/.test(navigator.language)) {
-//   page('/', loadHomeZh);
-//   page('/about', loadAboutZh);
-// } else {
-//   page('/', loadHome);
-//   page('/about', loadAbout);
-// }
+/zh/.test(navigator.language) ? page('/', loadHomeZh) : page('/', loadHome);
 
-page('/', loadHome);
-page('/zh', loadHomeZh);
-page('/about', loadAbout);
-page('/about/zh', loadAboutZh);
+page('/en/home', loadHome);
+page('/zh/home', loadHomeZh);
+page('/en/about', loadAbout);
+page('/zh/about', loadAboutZh);
 page('*', load404);
 page();
