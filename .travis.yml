@@ -8,7 +8,10 @@ node_js: stable
 
 env:
   matrix:
-    - MODE=docker
+    - MODE=docker-build
+    - MODE=docker-lint
+    - MODE=docker-unit
+    - MODE=docker-e2e
     - MODE=coveralls
     # - MODE=saucelabs
 
@@ -16,17 +19,16 @@ env:
 #   sauce_connect: true
 
 before_install:
-  - if [[ "$MODE" == "docker" ]]; then docker-compose up -d; fi
+  - if [[ "$MODE" == "docker-build" ]] || [[ "$MODE" == "docker-lint" ]] || [[ "$MODE" == "docker-unit" ]] || [[ "$MODE" == "docker-e2e" ]]; then docker-compose up -d; fi
 
 script:
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run webdriver; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run prod; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run lint; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run test; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run e2e; fi
+  - if [[ "$MODE" == "docker-e2e" ]]; then docker-compose exec app npm run webdriver; fi
+  - if [[ "$MODE" == "docker-build" ]] || [[ "$MODE" == "docker-e2e" ]]; then docker-compose exec app npm run prod; fi
+  - if [[ "$MODE" == "docker-lint" ]]; then docker-compose exec app npm run lint; fi
+  - if [[ "$MODE" == "docker-unit" ]]; then docker-compose exec app npm run test; fi
+  - if [[ "$MODE" == "docker-e2e" ]]; then docker-compose exec app npm run e2e; fi
   - if [[ "$MODE" == "coveralls" ]]; then npm test; fi
 
 after_success:
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run prod; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run deploy -- --token ${FIREBASE_TOKEN}; fi
+  - if [[ "$MODE" == "docker-build" ]]; then docker-compose exec app npm run deploy -- --token ${FIREBASE_TOKEN}; fi
   - if [[ "$MODE" == "coveralls" ]]; then npm run coveralls; fi

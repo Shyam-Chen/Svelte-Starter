@@ -15,9 +15,7 @@ RUN curl -sL https://deb.nodesource.com/setup_$NODE.x | bash - && \
     nodejs xvfb chromium libgconf-2-4 openjdk-7-jre-headless && \
     rm -rf /var/lib/apt/lists/*
 
-RUN chmod a+x entrypoint.sh
-
-ENTRYPOINT ["/Vanilla-Starter-Kit/entrypoint.sh"]
+RUN Xvfb :99.0 -ac -screen 0 1366x768x16 -nolisten tcp &
 
 RUN npm install
 
