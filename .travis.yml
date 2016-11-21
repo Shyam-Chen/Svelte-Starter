@@ -1,19 +1,24 @@
-os: linux
-
-sudo: required
-services: docker
-
-language: node_js
-node_js: stable
-
-env:
-  matrix:
-    - MODE=docker-build
-    - MODE=docker-lint
-    - MODE=docker-unit
-    - MODE=docker-e2e
-    - MODE=coveralls
-    # - MODE=saucelabs
+matrix:
+  include:
+    - env: MODE=docker-build
+      os: linux
+      sudo: required
+      services: docker
+    - env: MODE=docker-lint
+      os: linux
+      sudo: required
+      services: docker
+    - env: MODE=docker-unit
+      os: linux
+      sudo: required
+      services: docker
+    - env: MODE=docker-e2e
+      os: linux
+      sudo: required
+      services: docker
+    - env: MODE=coveralls
+      language: node_js
+      node_js: stable
 
 # addons:
 #   sauce_connect: true
