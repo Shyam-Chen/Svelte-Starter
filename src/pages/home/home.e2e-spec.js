@@ -1,16 +1,12 @@
 describe('Home', () => {
 
   beforeEach(() => {
-    webdriver.get('http://localhost:9876/');
+    webdriver.get('http://localhost:9876/en/home');
   });
 
-  it('getCurrentUrl toMatch', () => {
-    expect(webdriver.getCurrentUrl()).toMatch('/');
+  it('getText toEqual', () => {
+    let el = webdriver.findElement(by.css('#page p:nth-child(1)'));
+    expect(el.getText()).toEqual('Home');
   });
-
-  // it('getText toEqual', () => {
-  //   let el = webdriver.findElement(by.css('#page p:nth-child(1)'));
-  //   expect(el.getText()).toEqual('Home');
-  // });
 
 });

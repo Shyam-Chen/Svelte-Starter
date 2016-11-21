@@ -35,15 +35,7 @@ This seed repository provides the following features:
 * [x] Virtual machine with **Docker**.
 * [x] Continuous integration and deployment with **Travis**.
 * [x] Coverage stats online with **Coveralls**.
-
-Chrome
-Firefox
-Safari
-Edge
-IE
-
-Android
-iOS
+* [ ] Cross browser test with **Sauce Labs**.
 
 ## Getting Started
 

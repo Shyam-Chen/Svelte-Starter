@@ -8,10 +8,10 @@
           <a class="mdl-navigation__link" href="<%- HREF %>"><%- NAME %></a>
         <% } %>
       </nav>
-      <button id="menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
+      <button id="language" class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">language</i>
       </button>
-      <div class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-lower-right">
+      <div class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="language">
         <% for (let [HREF, NAME] of LANG) { %>
           <a href="javascript:void 0" id="<%- HREF %>" class="mdl-menu__item"><%- NAME %></a>
         <% } %>
