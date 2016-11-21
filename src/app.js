@@ -19,5 +19,6 @@ page('/en/home', loadHome);
 page('/zh/home', loadHomeZh);
 page('/en/about', loadAbout);
 page('/zh/about', loadAboutZh);
+
 page('*', load404);
 page();

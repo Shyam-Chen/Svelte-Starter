@@ -11,10 +11,10 @@
 
 This seed repository provides the following features:
 * [x] Start coding **Vanilla HTML/CSS/JS** right now.
-* [x] UI components with **Material Design Lite**.
+* [x] UI components with **Material**.
 * [x] Back-end service with **Firebase**.
-* [ ] Routing and navigation with **Universal Router**.
-* [ ] Internationalization with **Intl**.
+* [x] Routing and navigation with **Page**.
+* [x] Internationalization with **Intl**.
 * [x] Data visualization with **Chart**.
 * [x] Render templates with **Lodash**.
 * [x] Build system with **Gulp**.

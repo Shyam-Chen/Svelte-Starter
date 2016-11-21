@@ -174,6 +174,7 @@ gulp.task('vendor', () => {
 gulp.task('polyfills', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'polyfills.js'),
+      context: 'window',
       plugins: [
         globals(),
         builtins(),
