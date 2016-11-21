@@ -2,13 +2,22 @@ FROM buildpack-deps:jessie
 
 ENV app /Vanilla-Starter-Kit
 ENV NODE 7
+ENV DEBIAN_FRONTEND noninteractive
+ENV DISPLAY :99.0
+ENV CHROME_BIN /usr/bin/chromium
 
 WORKDIR ${app}
 ADD . $app
 
 RUN curl -sL https://deb.nodesource.com/setup_$NODE.x | bash - && \
     apt-get update && \
-    apt-get install -y nodejs xvfb openjdk-7-jre-headless
+    apt-get install -y \
+    nodejs xvfb chromium libgconf-2-4 openjdk-7-jre-headless && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN chmod a+x entrypoint.sh
+
+ENTRYPOINT ["/Vanilla-Starter-Kit/entrypoint.sh"]
 
 RUN npm install
 

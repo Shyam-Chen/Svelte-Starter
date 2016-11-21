@@ -36,6 +36,15 @@ This seed repository provides the following features:
 * [x] Continuous integration and deployment with **Travis**.
 * [x] Coverage stats online with **Coveralls**.
 
+Chrome
+Firefox
+Safari
+Edge
+IE
+
+Android
+iOS
+
 ## Getting Started
 
 1) Clone this Boilerplate

@@ -1,17 +1,20 @@
 const SpecReporter = require('jasmine-spec-reporter');
-const phantomjs = require('phantomjs-prebuilt');
+/// const phantomjs = require('phantomjs-prebuilt');
 const babel = require('babel-core/register');
 
 exports.config = {
+  directConnect: true,
   specs: [
     './src/**/*.e2e-spec.js'
   ],
   exclude: [],
   capabilities: {
     'browserName': 'chrome',
-    'phantomjs.binary.path': phantomjs.path,
-    'phantomjs.ghostdriver.cli.args': ['--loglevel=DEBUG']
+    'chromeOptions': {
+      'args': ['no-sandbox']
+    }
   },
+  baseUrl: 'http://localhost:9876/',
   onPrepare() {
     babel({ presets: ['latest'] });
     jasmine.getEnv().addReporter(new SpecReporter({ displayStacktrace: true }));
