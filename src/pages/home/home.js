@@ -1,9 +1,11 @@
 // Third party
 import template from 'lodash-es/template';
 
-// Components and Assets
+// Components
 import { query } from '../../components/utils';
 import { layout, layoutZh } from '../../components/layout';
+
+// Assets
 import vanilla from '../../assets/images/vanilla.png';
 import material from '../../assets/images/material.png';
 import firebase from '../../assets/images/firebase.png';

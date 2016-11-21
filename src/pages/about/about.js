@@ -1,10 +1,12 @@
 // Third party
 import template from 'lodash-es/template';
 
-// Components and Assets
+// Components
 import { query } from '../../components/utils';
 import { layout, layoutZh } from '../../components/layout';
-import colorData from '../../assets/datas/color-bar-chart.json';
+
+// Assets
+import jsData from '../../assets/datas/js-bar-chart.json';
 
 // About
 import about from './about.html';
@@ -12,7 +14,7 @@ import about from './about.html';
 const commom = () => {
   new Chart(query('#color-bar-chart'), {
     type: 'bar',
-    data: { labels: ['ECMAScript', 'HTML5', 'Node.js', 'Cordova'], datasets: colorData },
+    data: jsData,
     options: { scales: { yAxes: [{ ticks: { beginAtZero:true } }] } }
   });
   componentHandler.upgradeAllRegistered();

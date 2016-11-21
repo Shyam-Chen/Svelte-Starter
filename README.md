@@ -11,16 +11,17 @@
 
 This seed repository provides the following features:
 * [x] Start coding **Vanilla HTML/CSS/JS** right now.
-* [x] UI components with **Material**.
+* [x] UI components with **Material Design Lite**.
 * [x] Back-end service with **Firebase**.
-* [x] Routing and navigation with **Page**.
+* [ ] Routing and navigation with **Universal Router**.
+* [ ] Internationalization with **Intl**.
 * [x] Data visualization with **Chart**.
 * [x] Render templates with **Lodash**.
 * [x] Build system with **Gulp**.
 * [x] Module bundler with **Rollup**.
 * [x] Future CSS features with **PostCSS**.
 * [x] Next generation JS with **Babel**.
-* [x] Development server with **BrowserSync**.
+* [x] Development server with **Browsersync**.
 * [x] HTML static code analyzer with **HTMLHint**.
 * [x] CSS static code analyzer with **StyleLint**.
 * [x] JS static code analyzer with **ESLint**.

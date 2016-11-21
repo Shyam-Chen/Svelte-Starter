@@ -13,7 +13,6 @@ firebase.initializeApp(firebaseConfig);
 loadFont('https://fonts.googleapis.com/icon?family=Material+Icons');
 loadFont('https://fonts.googleapis.com/css?family=Lora');
 
-// TODO: ...
 // if (/zh/.test(navigator.language)) {
 //   page('/', loadHomeZh);
 //   page('/about', loadAboutZh);

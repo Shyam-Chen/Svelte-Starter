@@ -37,7 +37,8 @@
     "intl": "^1.2.5",
     "lodash-es": "^4.17.2",
     "material-design-lite": "^1.2.1",
-    "page": "^1.7.1"
+    "page": "^1.7.1",
+    "universal-router": "^2.0.0"
   },
   "devDependencies": {
     "babel-plugin-external-helpers": "^6.18.0",
