@@ -6,27 +6,27 @@ services: docker
 language: node_js
 node_js: stable
 
-# env:
-#   matrix:
-#     - CI_MODE=docker
-#     - CI_MODE=coveralls
-#     - CI_MODE=saucelabs
+env:
+  matrix:
+    - MODE=docker
+    - MODE=coveralls
+    # - MODE=saucelabs
 
 # addons:
 #   sauce_connect: true
 
 before_install:
-  - docker-compose up -d
+  - if [[ "$MODE" == "docker" ]]; then docker-compose up -d; fi
 
 script:
-  - docker-compose exec app npm run webdriver
-  - docker-compose exec app npm run prod
-  - docker-compose exec app npm run lint
-  - docker-compose exec app npm run test
-  - docker-compose exec app npm run e2e
-  - npm test
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run webdriver; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run prod; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run lint; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run test; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run e2e; fi
+  - if [[ "$MODE" == "coveralls" ]]; then npm test; fi
 
 after_success:
-  - docker-compose exec app npm run prod
-  - docker-compose exec app npm run deploy -- --token ${FIREBASE_TOKEN}
-  - npm run coveralls
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run prod; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run deploy -- --token ${FIREBASE_TOKEN}; fi
+  - if [[ "$MODE" == "coveralls" ]]; then npm run coveralls; fi
