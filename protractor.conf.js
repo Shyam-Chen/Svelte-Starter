@@ -8,7 +8,7 @@ exports.config = {
   ],
   exclude: [],
   capabilities: {
-    'browserName': 'phantomjs',
+    'browserName': 'chrome',
     'phantomjs.binary.path': phantomjs.path,
     'phantomjs.ghostdriver.cli.args': ['--loglevel=DEBUG']
   },

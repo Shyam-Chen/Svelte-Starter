@@ -8,7 +8,7 @@ ADD . $app
 
 RUN curl -sL https://deb.nodesource.com/setup_$NODE.x | bash - && \
     apt-get update && \
-    apt-get install -y nodejs openjdk-7-jre-headless
+    apt-get install -y nodejs xvfb openjdk-7-jre-headless
 
 RUN npm install
 
