@@ -3,9 +3,14 @@ os: linux
 sudo: required
 services: docker
 
+language: node_js
+node_js: stable
+
+# addons:
+#   sauce_connect: true
+
 before_install:
   - docker-compose up -d
-  # - docker-compose exec app Xvfb :99.0 -ac -screen scn 1366x768x16 &
 
 script:
   - docker-compose exec app npm run webdriver
@@ -13,8 +18,9 @@ script:
   - docker-compose exec app npm run lint
   - docker-compose exec app npm run test
   - docker-compose exec app npm run e2e
+  - npm test
 
 after_success:
   - docker-compose exec app npm run prod
   - docker-compose exec app npm run deploy -- --token ${FIREBASE_TOKEN}
-  - docker-compose exec app npm run coveralls -- --token ${COVERALLS_REPO_TOKEN}
+  - npm run coveralls
