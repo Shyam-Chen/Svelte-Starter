@@ -16,3 +16,4 @@ script:
 after_success:
   - docker-compose exec app npm run prod
   - docker-compose exec app npm run deploy -- --token ${FIREBASE_TOKEN}
+  - docker-compose exec app npm run coveralls

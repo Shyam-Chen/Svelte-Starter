@@ -12,21 +12,22 @@ const builtins = require('rollup-plugin-node-builtins');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
 const babel = require('rollup-plugin-babel');
+const istanbul = require('rollup-plugin-istanbul');
 
 let cssExportMap = {};
 module.exports = (config) => {
   config.set({
-    basePath: '',
     frameworks: ['jasmine'],
     files: [
-      'src/**/*.spec.js'
+      './src/**/*.spec.js'
     ],
     exclude: [],
     preprocessors: {
-      'src/**/*.spec.js': ['rollup']
+      './src/**/*.spec.js': ['rollup']
     },
     rollupPreprocessor: {
       format: 'iife',
+      sourceMap: 'inline',
       plugins: [
         html({
           htmlMinifierOptions: {
@@ -51,10 +52,20 @@ module.exports = (config) => {
         builtins(),
         resolve({ jsnext: true, browser: true }),
         commonjs(),
-        babel()
+        babel(),
+        istanbul({ exclude: ['./src/**/*.spec.js'] })
       ]
     },
-    reporters: ['mocha'],
+    reporters: ['mocha', 'coverage'],
+    coverageReporter: {
+      dir: 'coverage',
+      reporters: [
+        { type: 'text-summary' },
+        { type: 'json', subdir: '.', file: 'coverage-final.json' },
+        { type: 'html' },
+        { type: 'lcov' }
+      ]
+    },
     port: 9876,
     colors: true,
     autoWatch: true,
