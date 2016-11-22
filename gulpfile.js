@@ -7,7 +7,7 @@ const plumber = require('gulp-plumber');
 const changed = require('gulp-changed');
 const htmlmin = require('gulp-htmlmin');
 const sourcemaps = require('gulp-sourcemaps');
-const htmlhint = require("gulp-htmlhint");
+const htmlhint = require('gulp-htmlhint');
 const stylelint = require('gulp-stylelint');
 const eslint = require('gulp-eslint');
 const protractor = require('gulp-protractor');
@@ -112,7 +112,7 @@ gulp.task('app', () => {
       entry: path.join(SOURCE_ROOT, 'app.js'),
       format: 'iife',
       sourceMap: util.env.type === 'dev' && true,
-      cache: cache,
+      cache,
       plugins: [
         html({
           htmlMinifierOptions: {

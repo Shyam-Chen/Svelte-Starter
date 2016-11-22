@@ -5,9 +5,10 @@
 [![Build Status](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
 [![Codacy Badge](https://img.shields.io/badge/quality-A-brightgreen.svg)](https://www.codacy.com/app/shyamchen1994/Vanilla-Starter-Kit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Shyam-Chen/Vanilla-Starter-Kit&amp;utm_campaign=Badge_Grade)
 [![Coverage Status](https://coveralls.io/repos/github/Shyam-Chen/Vanilla-Starter-Kit/badge.svg?branch=master)](https://coveralls.io/github/Shyam-Chen/Vanilla-Starter-Kit?branch=master)
- //
 [![Dependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit)
 [![devDependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit?type=dev)
+
+[![Build Status](https://saucelabs.com/browser-matrix/Shyam-Chen.svg)](https://saucelabs.com/beta/builds/d2a3dc92e6b749bda5c11ba395be2f7c)
 
 [Live Demo](https://test-1498d.firebaseapp.com/)
 
