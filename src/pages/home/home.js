@@ -26,6 +26,11 @@ const imports = {
   }
 };
 
+/**
+ * @example
+ * query('#page').innerHTML = template(homeTpl, imports)(datas);
+ */
+
 export const common = (imports = null, datas = {}) => {
   query('#page').innerHTML = template(homeTpl, imports)(datas);
   componentHandler.upgradeAllRegistered();

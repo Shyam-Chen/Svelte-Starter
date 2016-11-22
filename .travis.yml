@@ -35,7 +35,7 @@ script:
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run lint; fi
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run test; fi
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run e2e; fi
-  - if [[ "$MODE" == "lint" ]]; then npm lint; fi
+  - if [[ "$MODE" == "lint" ]]; then npm run lint; fi
   - if [[ "$MODE" == "unit" ]]; then npm test; fi
 
 after_success:

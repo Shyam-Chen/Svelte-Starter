@@ -3,7 +3,7 @@
 > A single-page application boilerplate for Vanilla HTML/CSS/JS, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/241a499d156240cca85b7e3de290d910)](https://www.codacy.com/app/shyamchen1994/Vanilla-Starter-Kit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Shyam-Chen/Vanilla-Starter-Kit&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://img.shields.io/badge/quality-A-brightgreen.svg)](https://www.codacy.com/app/shyamchen1994/Vanilla-Starter-Kit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Shyam-Chen/Vanilla-Starter-Kit&amp;utm_campaign=Badge_Grade)
 [![Coverage Status](https://coveralls.io/repos/github/Shyam-Chen/Vanilla-Starter-Kit/badge.svg?branch=master)](https://coveralls.io/github/Shyam-Chen/Vanilla-Starter-Kit?branch=master)
  //
 [![Dependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit)
