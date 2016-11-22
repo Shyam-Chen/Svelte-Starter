@@ -6,7 +6,6 @@ matrix:
       services: docker
       language: node_js
       node_js: stable
-      install: false
     - env: MODE=lint
       os: linux
       sudo: false
@@ -17,17 +16,19 @@ matrix:
       sudo: false
       language: node_js
       node_js: stable
-    # - env: MODE=e2e
-    #   os: linux
-    #   sudo: false
-    #   language: node_js
-    #   node_js: stable
-
-# addons:
-#   sauce_connect: true
+    - env: MODE=e2e
+      os: linux
+      sudo: false
+      language: node_js
+      node_js: stable
+      addons:
+        sauce_connect: true
 
 before_install:
   - if [[ "$MODE" == "docker" ]]; then docker-compose up -d; fi
+
+before_script:
+  - export DISPLAY=:99.0
 
 script:
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run webdriver; fi
@@ -37,6 +38,9 @@ script:
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run e2e; fi
   - if [[ "$MODE" == "lint" ]]; then npm run lint; fi
   - if [[ "$MODE" == "unit" ]]; then npm test; fi
+  - if [[ "$MODE" == "e2e" ]]; then npm run webdriver; fi
+  - if [[ "$MODE" == "e2e" ]]; then npm run prod; fi
+  - if [[ "$MODE" == "e2e" ]]; then npm run e2e; fi
 
 after_success:
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run deploy -- --token ${FIREBASE_TOKEN}; fi

@@ -38,27 +38,37 @@ if (process.env.TRAVIS) {
       'browserName': 'chrome',
       'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
       'build': process.env.TRAVIS_BUILD_NUMBER,
-      'name': 'Vanilla-Starter-Kit'
-    // }, {
-    //   'browserName': 'firefox',
-    //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    //   'build': process.env.TRAVIS_BUILD_NUMBER,
-    //   'name': 'Vanilla-Starter-Kit'
-    // }, {
-    //   'browserName': 'MicrosoftEdge',
-    //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    //   'build': process.env.TRAVIS_BUILD_NUMBER,
-    //   'name': 'Vanilla-Starter-Kit'
-    // }, {
-    //   'browserName': 'safari',
-    //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    //   'build': process.env.TRAVIS_BUILD_NUMBER,
-    //   'name': 'Vanilla-Starter-Kit'
-    // }, {
-    //   'browserName': 'internet explorer',
-    //   'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    //   'build': process.env.TRAVIS_BUILD_NUMBER,
-    //   'name': 'Vanilla-Starter-Kit'
+      'name': 'Chrome'
+    }, {
+      'browserName': 'firefox',
+      'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+      'build': process.env.TRAVIS_BUILD_NUMBER,
+      'name': 'Firefox'
+    }, {
+      'browserName': 'MicrosoftEdge',
+      'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+      'build': process.env.TRAVIS_BUILD_NUMBER,
+      'name': 'Edge'
+    }, {
+      'browserName': 'safari',
+      'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+      'build': process.env.TRAVIS_BUILD_NUMBER,
+      'name': 'Safari'
+    }, {
+      'browserName': 'internet explorer',
+      'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+      'build': process.env.TRAVIS_BUILD_NUMBER,
+      'name': 'IE'
+    },{
+      'browserName': 'android',
+      'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+      'build': process.env.TRAVIS_BUILD_NUMBER,
+      'name': 'Android'
+    }, {
+      'browserName': 'iphone',
+      'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+      'build': process.env.TRAVIS_BUILD_NUMBER,
+      'name': 'iOS'
     }
   ];
 }
