@@ -112,3 +112,7 @@ $ yarn run reset
 ```bash
 $ yarn run reinstall
 ```
+
+## Help Wanted
+* Using Yarn with Docker.
+* Fix `gulp-protractor` error on Travis (MODE: e2e) - `spawn webdriver-manager ENOENT`.

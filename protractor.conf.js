@@ -1,5 +1,4 @@
 const SpecReporter = require('jasmine-spec-reporter');
-/// const phantomjs = require('phantomjs-prebuilt');
 const babel = require('babel-core/register');
 
 const config = {
@@ -20,7 +19,7 @@ const config = {
     jasmine.getEnv().addReporter(new SpecReporter({ displayStacktrace: true }));
     global.webdriver = browser.driver;
     webdriver.ignoreSynchronization = true;
-    webdriver.manage().window().setSize(1366, 768);
+    webdriver.manage().window().setSize(1280, 1024);
   },
   framework: 'jasmine',
   jasmineNodeOpts: {
@@ -31,6 +30,8 @@ const config = {
 };
 
 if (process.env.TRAVIS) {
+  config.directConnect = false;
+  config.capabilities = {};
   config.sauceUser = process.env.SAUCE_USERNAME;
   config.sauceKey = process.env.SAUCE_ACCESS_KEY;
   config.multiCapabilities = [

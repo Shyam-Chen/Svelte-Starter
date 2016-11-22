@@ -23,7 +23,9 @@ matrix:
       language: node_js
       node_js: stable
       addons:
-        sauce_connect: true
+        sauce_connect:
+          username: ${SAUCE_USERNAME}
+          access_key: ${SAUCE_ACCESS_KEY}
 
 before_install:
   - if [[ "$MODE" == "docker" ]]; then docker-compose up -d; fi
