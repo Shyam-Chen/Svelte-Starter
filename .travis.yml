@@ -1,39 +1,43 @@
 matrix:
   include:
-    - env: MODE=docker-build
+    - env: MODE=docker
       os: linux
       sudo: required
       services: docker
-    - env: MODE=docker-lint
-      os: linux
-      sudo: required
-      services: docker
-    - env: MODE=docker-unit
-      os: linux
-      sudo: required
-      services: docker
-    - env: MODE=docker-e2e
-      os: linux
-      sudo: required
-      services: docker
-    - env: MODE=coveralls
       language: node_js
       node_js: stable
+      install: false
+    - env: MODE=lint
+      os: linux
+      sudo: false
+      language: node_js
+      node_js: stable
+    - env: MODE=unit
+      os: linux
+      sudo: false
+      language: node_js
+      node_js: stable
+    # - env: MODE=e2e
+    #   os: linux
+    #   sudo: false
+    #   language: node_js
+    #   node_js: stable
 
 # addons:
 #   sauce_connect: true
 
 before_install:
-  - if [[ "$MODE" == "docker-build" ]] || [[ "$MODE" == "docker-lint" ]] || [[ "$MODE" == "docker-unit" ]] || [[ "$MODE" == "docker-e2e" ]]; then docker-compose up -d; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose up -d; fi
 
 script:
-  - if [[ "$MODE" == "docker-e2e" ]]; then docker-compose exec app npm run webdriver; fi
-  - if [[ "$MODE" == "docker-build" ]] || [[ "$MODE" == "docker-e2e" ]]; then docker-compose exec app npm run prod; fi
-  - if [[ "$MODE" == "docker-lint" ]]; then docker-compose exec app npm run lint; fi
-  - if [[ "$MODE" == "docker-unit" ]]; then docker-compose exec app npm run test; fi
-  - if [[ "$MODE" == "docker-e2e" ]]; then docker-compose exec app npm run e2e; fi
-  - if [[ "$MODE" == "coveralls" ]]; then npm test; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run webdriver; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run prod; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run lint; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run test; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run e2e; fi
+  - if [[ "$MODE" == "lint" ]]; then npm lint; fi
+  - if [[ "$MODE" == "unit" ]]; then npm test; fi
 
 after_success:
-  - if [[ "$MODE" == "docker-build" ]]; then docker-compose exec app npm run deploy -- --token ${FIREBASE_TOKEN}; fi
-  - if [[ "$MODE" == "coveralls" ]]; then npm run coveralls; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run deploy -- --token ${FIREBASE_TOKEN}; fi
+  - if [[ "$MODE" == "unit" ]]; then npm run coveralls; fi
