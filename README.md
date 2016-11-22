@@ -38,7 +38,7 @@ This seed repository provides the following features:
 * [x] Continuous integration and deployment with **Travis**.
 * [x] Code reviews and analytics with **Codacy**.
 * [x] Test coverage history and statistics with **Coveralls**.
-* [ ] Cross browser test with **Sauce Labs**.
+* [ ] Cross browser testing with **Sauce Labs**.
 
 ## Getting Started
 
