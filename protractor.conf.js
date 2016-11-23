@@ -31,7 +31,7 @@ const config = {
 
 if (process.env.TRAVIS) {
   config.directConnect = false;
-  config.capabilities = {};
+  config.capabilities = false;
   config.sauceUser = process.env.SAUCE_USERNAME;
   config.sauceKey = process.env.SAUCE_ACCESS_KEY;
   config.multiCapabilities = [

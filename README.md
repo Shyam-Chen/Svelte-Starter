@@ -3,7 +3,7 @@
 > A single-page application boilerplate for Vanilla HTML/CSS/JS, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
-[![Codacy Badge](https://img.shields.io/badge/quality-A-brightgreen.svg)](https://www.codacy.com/app/shyamchen1994/Vanilla-Starter-Kit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Shyam-Chen/Vanilla-Starter-Kit&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://img.shields.io/badge/quality-standard-brightgreen.svg)](https://www.codacy.com/app/shyamchen1994/Vanilla-Starter-Kit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Shyam-Chen/Vanilla-Starter-Kit&amp;utm_campaign=Badge_Grade)
 [![Coverage Status](https://coveralls.io/repos/github/Shyam-Chen/Vanilla-Starter-Kit/badge.svg?branch=master)](https://coveralls.io/github/Shyam-Chen/Vanilla-Starter-Kit?branch=master)
 [![Dependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit)
 [![devDependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit?type=dev)
@@ -24,7 +24,7 @@ This seed repository provides the following features:
 * [x] Module bundler with **Rollup**.
 * [x] Future CSS features with **PostCSS**.
 * [x] Next generation JS with **Babel**.
-* [x] Development server with **Browsersync**.
+* [x] Development server with **BrowserSync**.
 * [x] HTML static code analyzer with **HTMLHint**.
 * [x] CSS static code analyzer with **StyleLint**.
 * [x] JS static code analyzer with **ESLint**.
@@ -38,7 +38,7 @@ This seed repository provides the following features:
 * [x] Continuous integration and deployment with **Travis**.
 * [x] Code reviews and analytics with **Codacy**.
 * [x] Test coverage history and statistics with **Coveralls**.
-* [ ] Cross browser testing with **Sauce Labs**.
+* [ ] Cross browser testing with **BrowserStack**.
 
 ## Getting Started
 
@@ -112,7 +112,3 @@ $ yarn run reset
 ```bash
 $ yarn run reinstall
 ```
-
-## Help Wanted
-* Using Yarn with Docker.
-* Fix `gulp-protractor` error on Travis (MODE: e2e) - `spawn webdriver-manager ENOENT`.
