@@ -1,31 +1,37 @@
+language: node_js
+
 matrix:
   include:
     - env: MODE=docker
       os: linux
       sudo: required
       services: docker
-      language: node_js
       node_js: stable
       install: true
     - env: MODE=lint
       os: linux
       sudo: false
-      language: node_js
       node_js: stable
     - env: MODE=unit
       os: linux
       sudo: false
-      language: node_js
-      node_js: stable
-    - env: MODE=e2e
-      os: linux
-      sudo: false
-      language: node_js
       node_js: stable
       addons:
         sauce_connect:
           username: ${SAUCE_USERNAME}
           access_key: ${SAUCE_ACCESS_KEY}
+    - env: MODE=e2e
+      os: linux
+      sudo: false
+      node_js: stable
+      install: true
+      addons:
+        sauce_connect:
+          username: ${SAUCE_USERNAME}
+          access_key: ${SAUCE_ACCESS_KEY}
+  allow_failures:
+    - env: MODE=unit
+    - env: MODE=e2e
 
 before_install:
   - if [[ "$MODE" == "docker" ]]; then docker-compose up -d; fi
@@ -35,6 +41,7 @@ before_install:
 before_script:
   - if [[ "$MODE" == "unit" ]]; then sh -e /etc/init.d/xvfb start; fi
   - if [[ "$MODE" == "e2e" ]]; then nohup bash -c "webdriver-manager start 2>&1 &"; fi
+  - if [[ "$MODE" == "e2e" ]]; then npm install; fi
 
 script:
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run webdriver; fi
@@ -44,7 +51,7 @@ script:
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run e2e; fi
   - if [[ "$MODE" == "lint" ]]; then npm run lint; fi
   - if [[ "$MODE" == "unit" ]]; then npm test; fi
-  # - if [[ "$MODE" == "e2e" ]]; then npm run webdriver; fi
+  - if [[ "$MODE" == "e2e" ]]; then npm run webdriver; fi
   - if [[ "$MODE" == "e2e" ]]; then npm run prod; fi
   # - if [[ "$MODE" == "e2e" ]]; then npm run e2e; fi
 

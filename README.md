@@ -5,11 +5,14 @@
 [![Build Status](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
 [![Codacy Badge](https://img.shields.io/badge/quality-standard-brightgreen.svg)](https://www.codacy.com/app/shyamchen1994/Vanilla-Starter-Kit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Shyam-Chen/Vanilla-Starter-Kit&amp;utm_campaign=Badge_Grade)
 [![Coverage Status](https://coveralls.io/repos/github/Shyam-Chen/Vanilla-Starter-Kit/badge.svg?branch=master)](https://coveralls.io/github/Shyam-Chen/Vanilla-Starter-Kit?branch=master)
-[![Build Status](https://img.shields.io/badge/chrome-passing-brightgreen.svg)](https://saucelabs.com/beta/builds/ad6ab049f9de43c6be84393313b42267)
 [![Dependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit)
 [![devDependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit?type=dev)
 
+[![Build Status](https://saucelabs.com/browser-matrix/Shyam-Chen.svg)](https://saucelabs.com/beta/builds/08dbd04c562248a5a9bd1c26d5a421ce)
+
 [Live Demo](https://test-1498d.firebaseapp.com/)
+
+[Slim Version](https://github.com/Shyam-Chen/Vanilla-Starter-Kit/tree/slim)
 
 This seed repository provides the following features:
 * [x] Start coding **Vanilla HTML/CSS/JS** right now.
@@ -35,6 +38,9 @@ This seed repository provides the following features:
 * [x] Fast and determinsitic builds with **Yarn**.
 * [x] Virtual machine with **Docker**.
 * [x] Continuous integration and deployment with **Travis**.
+* [x] Code reviews and analytics with **Codacy**.
+* [x] Test coverage history and statistics with **Coveralls**.
+* [x] Cross browser testing with **Sauce Labs**.
 
 ## Getting Started
 

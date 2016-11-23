@@ -22,6 +22,9 @@ ENTRYPOINT ["/Vanilla-Starter-Kit/scripts/window.sh"]
 # RUN curl -o- -L https://yarnpkg.com/install.sh | bash
 # RUN yarn
 
+# RUN npm install yarn -g
+# RUN yarn
+
 RUN npm install
 
 EXPOSE 3000 9876
