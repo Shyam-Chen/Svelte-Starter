@@ -69,7 +69,13 @@ module.exports = (config) => {
     port: 9876,
     colors: true,
     autoWatch: true,
-    browsers: ['PhantomJS'],
+    customLaunchers: {
+      Chrome_no_sandbox: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
+    browsers: ['Chrome_no_sandbox'],
     singleRun: true,
     concurrency: Infinity
   });

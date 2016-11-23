@@ -29,6 +29,12 @@ matrix:
 
 before_install:
   - if [[ "$MODE" == "docker" ]]; then docker-compose up -d; fi
+  - if [[ "$MODE" == "unit" ]]; then export CHROME_BIN=chromium-browser; fi
+  - if [[ "$MODE" == "unit" ]]; then export DISPLAY=:99.0; fi
+
+before_script:
+  - if [[ "$MODE" == "unit" ]]; then sh -e /etc/init.d/xvfb start; fi
+  - if [[ "$MODE" == "e2e" ]]; then nohup bash -c "webdriver-manager start 2>&1 &"; fi
 
 script:
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run webdriver; fi

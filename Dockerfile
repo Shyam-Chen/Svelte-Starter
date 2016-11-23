@@ -4,6 +4,7 @@ ENV app /Vanilla-Starter-Kit
 ENV NODE 7
 ENV DEBIAN_FRONTEND noninteractive
 ENV DISPLAY :99.0
+ENV CHROME_BIN /usr/bin/chromium
 
 WORKDIR ${app}
 ADD . $app
@@ -17,6 +18,9 @@ RUN curl -sL https://deb.nodesource.com/setup_$NODE.x | bash - && \
 RUN chmod a+x scripts/window.sh
 
 ENTRYPOINT ["/Vanilla-Starter-Kit/scripts/window.sh"]
+
+# RUN curl -o- -L https://yarnpkg.com/install.sh | bash
+# RUN yarn
 
 RUN npm install
 

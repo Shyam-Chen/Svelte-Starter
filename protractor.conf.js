@@ -30,48 +30,9 @@ const config = {
 };
 
 if (process.env.TRAVIS) {
-  config.directConnect = false;
-  config.capabilities = false;
-  config.sauceUser = process.env.SAUCE_USERNAME;
-  config.sauceKey = process.env.SAUCE_ACCESS_KEY;
-  config.multiCapabilities = [
-    {
-      'browserName': 'chrome',
-      'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-      'build': process.env.TRAVIS_BUILD_NUMBER,
-      'name': 'Chrome'
-    }, {
-      'browserName': 'firefox',
-      'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-      'build': process.env.TRAVIS_BUILD_NUMBER,
-      'name': 'Firefox'
-    }, {
-      'browserName': 'MicrosoftEdge',
-      'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-      'build': process.env.TRAVIS_BUILD_NUMBER,
-      'name': 'Edge'
-    }, {
-      'browserName': 'safari',
-      'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-      'build': process.env.TRAVIS_BUILD_NUMBER,
-      'name': 'Safari'
-    }, {
-      'browserName': 'internet explorer',
-      'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-      'build': process.env.TRAVIS_BUILD_NUMBER,
-      'name': 'IE'
-    },{
-      'browserName': 'android',
-      'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-      'build': process.env.TRAVIS_BUILD_NUMBER,
-      'name': 'Android'
-    }, {
-      'browserName': 'iphone',
-      'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-      'build': process.env.TRAVIS_BUILD_NUMBER,
-      'name': 'iOS'
-    }
-  ];
+  config.capabilities = {
+    browserName: 'firefox'
+  };
 }
 
 exports.config = config;
