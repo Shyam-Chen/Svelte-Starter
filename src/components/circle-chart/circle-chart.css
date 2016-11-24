@@ -1,0 +1,20 @@
+:global .circle-chart {
+  &-svg {
+    transform: rotate(-90deg);
+  }
+  &-background {
+    fill: none;
+    stroke: rgba(255, 255, 255, .5);
+  }
+  &-progress {
+    fill: none;
+    stroke: #000;
+    stroke-dasharray: 100 100;
+    stroke-dashoffset: 100;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s ease-in-out;
+  }
+  &-text {
+    text-align: center;
+  }
+}

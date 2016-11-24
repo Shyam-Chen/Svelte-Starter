@@ -4,6 +4,7 @@ import template from 'lodash-es/template';
 // Components
 import { query } from '../../components/utils';
 import { layout, layoutZh } from '../../components/layout';
+import { circleChart } from '../../components/circle-chart';
 
 // Assets
 import jsData from '../../assets/datas/js-bar-chart.json';
@@ -17,6 +18,10 @@ const commom = () => {
     data: jsData,
     options: { scales: { yAxes: [{ ticks: { beginAtZero:true } }] } }
   });
+  circleChart('#cc1', 22);
+  circleChart('#cc2', 75, '#AD1457', 300, 'Vanilla');
+  circleChart('#cc3', 55, null, 120);
+  circleChart('#cc4', 88, '#009688');
   componentHandler.upgradeAllRegistered();
 };
 
