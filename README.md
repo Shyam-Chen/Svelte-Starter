@@ -3,7 +3,7 @@
 > A single-page application boilerplate for Vanilla HTML/CSS/JS, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
-[![Codacy Badge](https://img.shields.io/badge/quality-standard-brightgreen.svg)](https://www.codacy.com/app/shyamchen1994/Vanilla-Starter-Kit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Shyam-Chen/Vanilla-Starter-Kit&amp;utm_campaign=Badge_Grade)
+[![Code Climate](https://codeclimate.com/github/Shyam-Chen/Vanilla-Starter-Kit/badges/gpa.svg)](https://codeclimate.com/github/Shyam-Chen/Vanilla-Starter-Kit)
 [![Coverage Status](https://coveralls.io/repos/github/Shyam-Chen/Vanilla-Starter-Kit/badge.svg?branch=master)](https://coveralls.io/github/Shyam-Chen/Vanilla-Starter-Kit?branch=master)
 [![Dependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit)
 [![devDependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit?type=dev)
@@ -38,7 +38,7 @@ This seed repository provides the following features:
 * [x] Fast and determinsitic builds with **Yarn**.
 * [x] Virtual machine with **Docker**.
 * [x] Continuous integration and deployment with **Travis**.
-* [x] Code reviews and analytics with **Codacy**.
+* [x] Code reviews and analytics with **Code Climate**.
 * [x] Test coverage history and statistics with **Coveralls**.
 * [x] Cross browser testing with **Sauce Labs**.
 

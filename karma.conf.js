@@ -14,41 +14,6 @@ const commonjs = require('rollup-plugin-commonjs');
 const babel = require('rollup-plugin-babel');
 const istanbul = require('rollup-plugin-istanbul');
 
-const sl =
-  {
-    sl_chrome: {
-      base: 'SauceLabs',
-      browserName: 'chrome',
-      platform: 'Windows 7'
-    },
-    sl_firefox: {
-      base: 'SauceLabs',
-      browserName: 'firefox',
-      platform: 'Windows 7'
-    },
-    sl_edge: {
-      base: 'SauceLabs',
-      browserName: 'MicrosoftEdge'
-    },
-    sl_safari: {
-      base: 'SauceLabs',
-      browserName: 'safari',
-      platform: 'OS X 10.10'
-    },
-    sl_android: {
-      base: 'SauceLabs',
-      browserName: 'android'
-    },
-    sl_iphone: {
-      base: 'SauceLabs',
-      browserName: 'iphone'
-    },
-    sl_ie: {
-      base: 'SauceLabs',
-      browserName: 'internet explorer'
-    }
-  };
-
 let cssExportMap = {};
 const config = {
     frameworks: ['jasmine'],
@@ -90,15 +55,9 @@ const config = {
         istanbul({ exclude: ['./src/**/*.spec.js'] })
       ]
     },
-    reporters: ['mocha', 'coverage', 'saucelabs'],
+    reporters: ['mocha', 'coverage'],
     coverageReporter: {
-      dir: 'coverage',
-      reporters: [
-        { type: 'text-summary' },
-        { type: 'json', subdir: '.', file: 'coverage-final.json' },
-        { type: 'html' },
-        { type: 'lcov' }
-      ]
+      reporters: [{ type: 'text-summary' }]
     },
     port: 9876,
     colors: true,
@@ -115,10 +74,25 @@ const config = {
 };
 
 if (process.env.TRAVIS) {
+  const sl = {
+    sl_chrome: { base: 'SauceLabs', browserName: 'chrome', platform: 'Windows 7' },
+    sl_firefox: { base: 'SauceLabs', browserName: 'firefox', platform: 'Windows 7' },
+    sl_edge: { base: 'SauceLabs', browserName: 'MicrosoftEdge' },
+    sl_safari: { base: 'SauceLabs', browserName: 'safari', platform: 'OS X 10.10' },
+    sl_android: { base: 'SauceLabs', browserName: 'android' },
+    sl_iphone: { base: 'SauceLabs', browserName: 'iphone' },
+    sl_ie: { base: 'SauceLabs', browserName: 'internet explorer' }
+  };
+
+  config.reporters = ['mocha', 'coverage', 'saucelabs'];
+  config.coverageReporter = {
+    dir: 'coverage',
+    reporters: [{ type: 'lcov' }]
+  };
   config.sauceLabs = {
-    testName: 'Test',
+    testName: 'Unit Tests',
     tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
-    build: 'TRAVIS #' + process.env.TRAVIS_BUILD_NUMBER + ' (' + process.env.TRAVIS_BUILD_ID + ')',
+    build: `TRAVIS #${process.env.TRAVIS_BUILD_NUMBER} (${process.env.TRAVIS_BUILD_ID})`,
     retryLimit: 3,
     startConnect: false,
     recordScreenshots: true,
