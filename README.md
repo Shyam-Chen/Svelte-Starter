@@ -12,8 +12,6 @@
 
 [Live Demo](https://test-1498d.firebaseapp.com/)
 
-[Slim Version](https://github.com/Shyam-Chen/Vanilla-Starter-Kit/tree/slim)
-
 This seed repository provides the following features:
 * [x] Start coding **Vanilla HTML/CSS/JS** right now.
 * [x] UI components with **Material**.
@@ -37,9 +35,10 @@ This seed repository provides the following features:
 * [x] Version control with **Git**.
 * [x] Fast and determinsitic builds with **Yarn**.
 * [x] Virtual machine with **Docker**.
-* [x] Continuous integration and deployment with **Travis**.
+* [x] Continuous integration and delivery with **Travis**.
 * [x] Code reviews and analytics with **Code Climate**.
 * [x] Test coverage history and statistics with **Coveralls**.
+* [x] Dependency management with **David**.
 * [x] Cross browser testing with **Sauce Labs**.
 
 ## Getting Started
@@ -88,29 +87,19 @@ $ docker-compose up  # equivalent to steps one and two
 ```bash
 $ yarn run dev
 $ yarn run dev-watch  # no serve
-```
 
-```bash
 $ yarn run test
 $ yarn run test-watch  # no single run
-```
 
-```bash
 $ yarn run prod
-```
 
-```bash
 $ yarn run e2e  # pre: yarn run webdriver
-```
 
-```bash
+$ yarn run lint
+
 $ yarn run clean
-```
 
-```bash
 $ yarn run reset
-```
 
-```bash
 $ yarn run reinstall
 ```

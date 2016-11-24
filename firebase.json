@@ -12,11 +12,19 @@
     ],
     "headers": [
       {
-        "source": "**",
+        "source" : "**/*.@(eot|svg|ttf|woff|woff2|font.css)",
+        "headers" : [
+          {
+            "key" : "Access-Control-Allow-Origin",
+            "value" : "*"
+          }
+        ]
+      }, {
+        "source": "**/*.@(gif|jpeg|jpg|png|svg)",
         "headers": [
           {
-            "key": "Cache-Control",
-            "value": "no-cache"
+            "key" : "Cache-Control",
+            "value" : "max-age=7200"
           }
         ]
       }
