@@ -13,7 +13,6 @@ const config = {
       'args': ['no-sandbox']
     }
   },
-  allScriptsTimeout: 11000,
   baseUrl: 'http://localhost:9876/',
   onPrepare() {
     babel({ presets: ['latest'] });
@@ -31,6 +30,12 @@ const config = {
 };
 
 if (process.env.TRAVIS) {
+  config.capabilities = {
+    browserName: 'firefox'
+  };
+}
+
+/*if (process.env.TRAVIS) {
   config.directConnect = false;
   config.capabilities = false;
   config.sauceUser = process.env.SAUCE_USERNAME;
@@ -73,6 +78,6 @@ if (process.env.TRAVIS) {
       'name': 'iOS'
     }
   ];
-}
+}*/
 
 exports.config = config;

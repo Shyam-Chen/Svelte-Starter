@@ -84,13 +84,21 @@ if (process.env.TRAVIS) {
     sl_iphone: { base: 'SauceLabs', browserName: 'iphone' },
     sl_ie: { base: 'SauceLabs', browserName: 'internet explorer' }
   };
-
-  config.reporters = ['mocha', 'coverage', 'saucelabs'];
+ */
+  config.reporters = [
+    'mocha', 'coverage'
+    // , 'saucelabs'
+  ];
   config.coverageReporter = {
     dir: 'coverage',
-    reporters: [{ type: 'lcov' }]
+    reporters: [
+      { type: 'text-summary' },
+      { type: 'json', subdir: '.', file: 'coverage-final.json' },
+      { type: 'html' },
+      { type: 'lcov' }
+    ]
   };
-  config.sauceLabs = {
+  /*config.sauceLabs = {
     testName: 'Unit Tests',
     tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
     build: `TRAVIS #${process.env.TRAVIS_BUILD_NUMBER} (${process.env.TRAVIS_BUILD_ID})`,
