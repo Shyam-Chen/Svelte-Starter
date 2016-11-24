@@ -74,6 +74,7 @@ const config = {
 };
 
 if (process.env.TRAVIS) {
+  /*
   const sl = {
     sl_chrome: { base: 'SauceLabs', browserName: 'chrome', platform: 'Windows 7' },
     sl_firefox: { base: 'SauceLabs', browserName: 'firefox', platform: 'Windows 7' },
@@ -102,6 +103,7 @@ if (process.env.TRAVIS) {
   config.browsers = Object.keys(sl);
   config.captureTimeout = 300000;
   config.browserNoActivityTimeout = 300000;
+  */
 }
 
 module.exports = (_config) => {

@@ -46,10 +46,10 @@ before_script:
 script:
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run webdriver; fi
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run prod; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run lint; fi
+  # - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run lint; fi
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run test; fi
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run e2e; fi
-  - if [[ "$MODE" == "lint" ]]; then npm run lint; fi
+  # - if [[ "$MODE" == "lint" ]]; then npm run lint; fi
   - if [[ "$MODE" == "unit" ]]; then npm test; fi
   - if [[ "$MODE" == "e2e" ]]; then npm run webdriver; fi
   - if [[ "$MODE" == "e2e" ]]; then npm run prod; fi

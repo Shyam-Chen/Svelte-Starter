@@ -3,7 +3,7 @@ import template from 'lodash-es/template';
 import notFoundTpl from './404.html';
 import notFoundStyle from './404.css';
 
-import { query } from '../../components/utils';
+import { query } from '../../utils';
 
 export const tplOpts = {
   text: '404',

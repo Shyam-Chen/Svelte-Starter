@@ -2,7 +2,7 @@
 import template from 'lodash-es/template';
 
 // Components
-import { query } from '../../components/utils';
+import { query } from '../../utils';
 import { layout, layoutZh } from '../../components/layout';
 
 // Assets
