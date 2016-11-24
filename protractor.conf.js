@@ -29,12 +29,6 @@ const config = {
   }
 };
 
-if (process.env.TRAVIS) {
-  config.capabilities = {
-    browserName: 'firefox'
-  };
-}
-
 /*if (process.env.TRAVIS) {
   config.directConnect = false;
   config.capabilities = false;
@@ -42,11 +36,6 @@ if (process.env.TRAVIS) {
   config.sauceKey = process.env.SAUCE_ACCESS_KEY;
   config.multiCapabilities = [
     {
-      'browserName': 'chrome',
-      'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-      'build': process.env.TRAVIS_BUILD_NUMBER,
-      'name': 'Chrome'
-    }, {
       'browserName': 'firefox',
       'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
       'build': process.env.TRAVIS_BUILD_NUMBER,

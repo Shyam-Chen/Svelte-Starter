@@ -52,7 +52,7 @@ const config = {
         resolve({ jsnext: true, browser: true }),
         commonjs(),
         babel(),
-        istanbul({ exclude: ['./src/**/*.spec.js'] })
+        istanbul({ exclude: ['./src/**/*.spec.js', 'node_modules/**'] })
       ]
     },
     reporters: ['mocha', 'coverage'],
@@ -76,7 +76,6 @@ const config = {
 if (process.env.TRAVIS) {
   /*
   const sl = {
-    sl_chrome: { base: 'SauceLabs', browserName: 'chrome', platform: 'Windows 7' },
     sl_firefox: { base: 'SauceLabs', browserName: 'firefox', platform: 'Windows 7' },
     sl_edge: { base: 'SauceLabs', browserName: 'MicrosoftEdge' },
     sl_safari: { base: 'SauceLabs', browserName: 'safari', platform: 'OS X 10.10' },
@@ -85,19 +84,15 @@ if (process.env.TRAVIS) {
     sl_ie: { base: 'SauceLabs', browserName: 'internet explorer' }
   };
  */
-  config.reporters = [
-    'mocha', 'coverage'
-    // , 'saucelabs'
-  ];
   config.coverageReporter = {
     dir: 'coverage',
     reporters: [
-      { type: 'text-summary' },
       { type: 'json', subdir: '.', file: 'coverage-final.json' },
       { type: 'html' },
       { type: 'lcov' }
     ]
   };
+  // config.reporters = ['mocha', 'coverage', 'saucelabs'];
   /*config.sauceLabs = {
     testName: 'Unit Tests',
     tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,

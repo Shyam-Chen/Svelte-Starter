@@ -8,6 +8,9 @@
     "no-empty-source": null,
     "no-extra-semicolons": null,
     "no-invalid-double-slash-comments": null,
-    "property-no-unknown": null
+    "number-leading-zero": "never",
+    "property-no-unknown": null,
+    "rule-nested-empty-line-before": null,
+    "selector-pseudo-class-no-unknown": null
   }
 }
