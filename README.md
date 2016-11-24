@@ -36,10 +36,6 @@ This seed repository provides the following features:
 * [x] Fast and determinsitic builds with **Yarn**.
 * [x] Virtual machine with **Docker**.
 * [x] Continuous integration and delivery with **Travis**.
-* [x] Code reviews and analytics with **Code Climate**.
-* [x] Test coverage history and statistics with **Coveralls**.
-* [x] Dependency management with **David**.
-* [x] Cross browser testing with **Sauce Labs**.
 
 ## Getting Started
 
