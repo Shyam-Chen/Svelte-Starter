@@ -5,5 +5,18 @@
 
 .bar {
   background: #FFC107;
-  padding: 1rem;
+  padding: 3rem;
 }
+
+/* or
+:local {
+  .foo {
+    background: pink;
+    padding: 1rem;
+  }
+  .bar {
+    background: #FFC107;
+    padding: 3rem;
+  }
+}
+*/
