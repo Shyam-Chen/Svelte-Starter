@@ -8,6 +8,10 @@ matrix:
       services: docker
       node_js: stable
       install: true
+    - env: MODE=prod
+      os: linux
+      sudo: false
+      node_js: stable
     - env: MODE=lint
       os: linux
       sudo: false
@@ -26,6 +30,7 @@ matrix:
       addons:
         firefox: "45.0"
   allow_failures:
+    - env: MODE=prod
     - env: MODE=lint
     - env: MODE=unit
     - env: MODE=e2e
@@ -47,6 +52,7 @@ script:
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run lint; fi
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run test; fi
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run e2e; fi
+  - if [[ "$MODE" == "prod" ]]; then yarn run prod; fi
   - if [[ "$MODE" == "lint" ]]; then yarn run lint; fi
   - if [[ "$MODE" == "unit" ]]; then yarn run test; fi
   - if [[ "$MODE" == "e2e" ]]; then npm run e2e; fi
