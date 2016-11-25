@@ -1,13 +1,13 @@
 FROM buildpack-deps:jessie
 
-ENV app /Vanilla-Starter-Kit
+ENV HOME /Vanilla-Starter-Kit
 ENV NODE 7
 ENV DEBIAN_FRONTEND noninteractive
 ENV DISPLAY :99.0
 ENV CHROME_BIN /usr/bin/chromium
 
-WORKDIR ${app}
-ADD . $app
+WORKDIR ${HOME}
+ADD . $HOME
 
 RUN curl -sL https://deb.nodesource.com/setup_$NODE.x | bash - && \
     apt-get update && \
@@ -19,12 +19,10 @@ RUN chmod a+x scripts/window.sh
 
 ENTRYPOINT ["/Vanilla-Starter-Kit/scripts/window.sh"]
 
-# RUN curl -o- -L https://yarnpkg.com/install.sh | bash
-# RUN yarn
+RUN curl -o- -L https://yarnpkg.com/install.sh | bash
+ENV PATH $HOME/.yarn/bin:$PATH
 
-# RUN npm install yarn -g
-# RUN yarn
-
+# RUN yarn install
 RUN npm install
 
 EXPOSE 3000 9876
