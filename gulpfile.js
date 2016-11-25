@@ -254,7 +254,9 @@ gulp.task('e2e', (done) => {
     .server(9876, DIST_ROOT)
     .then((server) => {
       gulp.src(path.join(SOURCE_ROOT, '**/*.e2e-spec.js'))
-        .pipe(protractor.protractor({ configFile: 'protractor.conf.js' }))
+        .pipe(protractor.protractor({
+          configFile: util.env.type === 'labs' ? 'saucelabs.conf.js' : 'protractor.conf.js'
+        }))
         .on('error', (error) => { throw error; })
         .on('end', () => { server.close(done); });
     });

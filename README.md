@@ -5,10 +5,9 @@
 [![Build Status](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
 [![Code Climate](https://codeclimate.com/github/Shyam-Chen/Vanilla-Starter-Kit/badges/gpa.svg)](https://codeclimate.com/github/Shyam-Chen/Vanilla-Starter-Kit)
 [![Coverage Status](https://coveralls.io/repos/github/Shyam-Chen/Vanilla-Starter-Kit/badge.svg?branch=master)](https://coveralls.io/github/Shyam-Chen/Vanilla-Starter-Kit?branch=master)
+[![Build Status](https://saucelabs.com/buildstatus/Shyam-Chen)](https://saucelabs.com/beta/builds/654cbdd362c4445a808613a03d804ae0)
 [![Dependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit)
 [![devDependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit?type=dev)
-
-[![Build Status](https://saucelabs.com/browser-matrix/Shyam-Chen.svg)](https://saucelabs.com/beta/builds/08dbd04c562248a5a9bd1c26d5a421ce)
 
 [Live Demo](https://test-1498d.firebaseapp.com/)
 
@@ -38,8 +37,8 @@ This seed repository provides the following features:
 * [x] Continuous integration and delivery with **Travis**.
 * [x] Automated code reviews and analytics with **Code Climate**.
 * [x] Test coverage history and statistics with **Coveralls**.
+* [x] Cross browser testing with **Sauce Labs**.
 * [x] Dependency management with **David**.
-* [ ] Cross browser testing with **Sauce Labs**.
 
 ## Getting Started
 

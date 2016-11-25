@@ -8,10 +8,6 @@ matrix:
       services: docker
       node_js: stable
       install: true
-    - env: MODE=prod
-      os: linux
-      sudo: false
-      node_js: stable
     - env: MODE=lint
       os: linux
       sudo: false
@@ -29,33 +25,40 @@ matrix:
       install: true
       addons:
         firefox: "45.0"
+    - env: MODE=labs
+      os: linux
+      sudo: false
+      node_js: stable
+      install: true
+      addons:
+        sauce_connect: true
   allow_failures:
-    - env: MODE=prod
     - env: MODE=lint
     - env: MODE=unit
     - env: MODE=e2e
+    - env: MODE=labs
 
 before_install:
   - if [[ "$MODE" == "docker" ]]; then docker-compose up -d; fi
   - if [[ "$MODE" == "unit" ]] || [[ "$MODE" == "e2e" ]]; then export DISPLAY=:99.0; fi
 
 before_script:
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run webdriver; fi
-  - if [[ "$MODE" == "e2e" ]]; then npm install; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run webdriver; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run prod; fi
+  - if [[ "$MODE" == "e2e" ]] || [[ "$MODE" == "labs" ]]; then npm install; fi
   - if [[ "$MODE" == "unit" ]] || [[ "$MODE" == "e2e" ]]; then sh -e /etc/init.d/xvfb start; fi
   - if [[ "$MODE" == "unit" ]]; then yarn add karma-firefox-launcher --dev; fi
   - if [[ "$MODE" == "e2e" ]]; then nohup bash -c "webdriver-manager start 2>&1 &"; fi
-  - if [[ "$MODE" == "e2e" ]]; then npm run webdriver && npm run prod; fi
+  - if [[ "$MODE" == "e2e" ]] || [[ "$MODE" == "labs" ]]; then npm run webdriver && npm run prod; fi
 
 script:
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run prod; fi
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run lint; fi
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run test; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run e2e; fi
-  - if [[ "$MODE" == "prod" ]]; then yarn run prod; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run e2e; fi
   - if [[ "$MODE" == "lint" ]]; then yarn run lint; fi
   - if [[ "$MODE" == "unit" ]]; then yarn run test; fi
   - if [[ "$MODE" == "e2e" ]]; then npm run e2e; fi
+  - if [[ "$MODE" == "labs" ]]; then npm run labs; fi
 
 after_success:
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run deploy -- --token ${FIREBASE_TOKEN}; fi
