@@ -16,7 +16,6 @@ import homeStyl from './home.css';
 import homeData from './home.json';
 import homeDataZh from './home-zh.json';
 
-// If you have different styles and pictures for different languages.
 const imports = {
   'imports': {
     'style': homeStyl,
@@ -25,11 +24,6 @@ const imports = {
     'firebase': firebase
   }
 };
-
-/**
- * @example
- * query('#page').innerHTML = template(homeTpl, imports)(datas);
- */
 
 export const common = (imports = null, datas = {}) => {
   query('#page').innerHTML = template(homeTpl, imports)(datas);

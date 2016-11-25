@@ -8,4 +8,8 @@ describe('Load', () => {
     // jasmine.Ajax.uninstall();
   });
 
+  it('toBe', () => {
+    expect(true).toBe(true);
+  });
+
 });
