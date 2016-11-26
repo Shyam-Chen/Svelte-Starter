@@ -3,7 +3,7 @@ import template from 'lodash-es/template';
 import layoutTpl from './layout.html';
 
 // TODO: ...
-export const tplOpts = {
+export const tplOptsEn = {
   'TITLE': 'Vanilla',
   'LINK': [['/en/home', 'Home'], ['/en/about', 'About']],
   'LANG': [['en', 'English'], ['zh', '中文']]
@@ -15,5 +15,5 @@ export const tplOptsZh = {
   'LANG': [['en', 'English'], ['zh', '中文']]
 };
 
-export const layout = template(layoutTpl)(tplOpts);
+export const layoutEn = template(layoutTpl)(tplOptsEn);
 export const layoutZh = template(layoutTpl)(tplOptsZh);

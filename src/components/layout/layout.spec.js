@@ -1,7 +1,24 @@
+import template from 'lodash-es/template';
+
 import layoutTpl from './layout.html';
-import { tplOpts, tplOptsZh, layout, layoutZh } from './layout';
+import { tplOptsEn, tplOptsZh, layoutEn, layoutZh } from './layout';
 
 describe('Layout', () => {
+
+  let tplOptsSpec, tplOptsZhSpec;
+  beforeEach(() => {
+    tplOptsSpec = {
+      'TITLE': 'Vanilla',
+      'LINK': [['/en/home', 'Home'], ['/en/about', 'About']],
+      'LANG': [['en', 'English'], ['zh', '中文']]
+    };
+
+    tplOptsZhSpec = {
+      'TITLE': '香草',
+      'LINK': [['/zh/home', '首頁'], ['/zh/about', '關於']],
+      'LANG': [['en', 'English'], ['zh', '中文']]
+    };
+  });
 
   it('toMatch', () => {
     expect(layoutTpl).toMatch(/mdl-layout--fixed-header/);
@@ -9,27 +26,31 @@ describe('Layout', () => {
   });
 
   it('toEqual', () => {
-    expect(tplOpts).toEqual({
-      'TITLE': 'Vanilla',
-      'LINK': [['/en/home', 'Home'], ['/en/about', 'About']],
-      'LANG': [['en', 'English'], ['zh', '中文']]
-    });
+    expect(tplOptsEn).toEqual(tplOptsSpec);
   });
 
   it('toEqual', () => {
-    expect(tplOptsZh).toEqual({
-      'TITLE': '香草',
-      'LINK': [['/zh/home', '首頁'], ['/zh/about', '關於']],
-      'LANG': [['en', 'English'], ['zh', '中文']]
-    });
+    expect(tplOptsZh).toEqual(tplOptsZhSpec);
   });
 
   it('toBeDefined', () => {
-    expect(layout).toBeDefined();
+    expect(layoutEn).toBeDefined();
+  });
+
+  it('toBe', () => {
+    expect(layoutEn).toBe(template(layoutTpl)(tplOptsSpec));
   });
 
   it('toBeDefined', () => {
     expect(layoutZh).toBeDefined();
+  });
+
+  it('toBe', () => {
+    expect(layoutZh).toBe(template(layoutTpl)(tplOptsZhSpec));
+  });
+
+  it('toMatch', () => {
+    expect(layoutZh).toMatch(/首頁/);
   });
 
 });
