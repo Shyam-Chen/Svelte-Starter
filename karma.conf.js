@@ -75,14 +75,7 @@ const config = {
 
 if (process.env.TRAVIS) {
   config.browsers = ['Firefox'];
-  config.coverageReporter = {
-    dir: 'coverage',
-    reporters: [
-      { type: 'json', subdir: '.', file: 'coverage-final.json' },
-      { type: 'html' },
-      { type: 'lcov' }
-    ]
-  };
+  config.coverageReporter = { dir: 'coverage', reporters: [{ type: 'lcov' }]};
 }
 
 module.exports = (_config) => { _config.set(config); };

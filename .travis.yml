@@ -62,6 +62,7 @@ script:
 
 after_success:
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run deploy -- --token ${FIREBASE_TOKEN}; fi
+  - if [[ "$MODE" == "unit" ]]; then yarn run coveralls; fi
 
 # deploy:
 #   provider: script
