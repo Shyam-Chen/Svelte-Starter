@@ -30,8 +30,8 @@ matrix:
       sudo: false
       node_js: stable
       install: true
-      addons:
-        sauce_connect: true
+      # addons:
+      #   sauce_connect: true
   allow_failures:
     - env: MODE=lint
     - env: MODE=unit
