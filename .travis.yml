@@ -30,8 +30,10 @@ matrix:
       sudo: false
       node_js: stable
       install: true
-      # addons:
-      #   sauce_connect: true
+      addons:
+        browserstack:
+          username: ${BROWSERSTACK_USERNAME}
+          access_key: ${BROWSERSTACK_ACCESS_KEY}
   allow_failures:
     - env: MODE=lint
     - env: MODE=unit
