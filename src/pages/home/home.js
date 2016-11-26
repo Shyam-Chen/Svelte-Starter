@@ -3,7 +3,7 @@ import template from 'lodash-es/template';
 
 // Components
 import { query } from '../../utils';
-import { layout, layoutZh } from '../../components/layout';
+import { layoutEn, layoutZh } from '../../components/layout';
 
 // Assets
 import vanilla from '../../assets/images/vanilla.png';
@@ -31,7 +31,7 @@ export const common = (imports = null, datas = {}) => {
 };
 
 export const loadHome = () => {
-  query('#app').innerHTML = layout;
+  query('#app').innerHTML = layoutEn;
   query('#zh').onclick = () => { page.redirect('/zh/home'); };
   common(imports, homeData);
 };

@@ -3,7 +3,7 @@ import template from 'lodash-es/template';
 
 // Components
 import { query } from '../../utils';
-import { layout, layoutZh } from '../../components/layout';
+import { layoutEn, layoutZh } from '../../components/layout';
 import { circleChart } from '../../components/circle-chart';
 
 // Assets
@@ -26,7 +26,7 @@ const commom = () => {
 };
 
 export const loadAbout = () => {
-  query('#app').innerHTML = layout;
+  query('#app').innerHTML = layoutEn;
   query('#page').innerHTML = template(about)({ ABOUT: 'About' });
   query('#zh').onclick = () => { page.redirect('/zh/about'); };
   commom();
