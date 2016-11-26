@@ -1,5 +1,4 @@
 import tpl from './circle-chart.html';
-import { circleChart } from './circle-chart';
 
 describe('Circle-Chart', () => {
 
@@ -10,10 +9,6 @@ describe('Circle-Chart', () => {
     expect(tpl).toMatch(/circle-chart-progress/);
     expect(tpl).toMatch(/circle-chart-js_progress/);
     expect(tpl).toMatch(/circle-chart-text/);
-  });
-
-  it('toBeDefined', () => {
-    expect(circleChart).toBeDefined();
   });
 
 });
