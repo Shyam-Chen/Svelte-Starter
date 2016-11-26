@@ -37,7 +37,7 @@ This seed repository provides the following features:
 * [x] Continuous integration and delivery with **Travis**.
 * [x] Automated code reviews and analytics with **Code Climate**.
 * [x] Test coverage history and statistics with **Coveralls**.
-* [x] Cross browser testing with **Sauce Labs**.
+* [x] Cross browser testing with **BrowserStack**.
 * [x] Dependency management with **David**.
 
 ## Getting Started

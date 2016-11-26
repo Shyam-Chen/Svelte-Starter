@@ -1,17 +1,12 @@
-const SpecReporter = require('jasmine-spec-reporter');
 const babel = require('babel-core/register');
 
 const config = {
-  specs: [
-    './src/**/*.e2e-spec.js'
-  ],
+  specs: ['./src/**/*.e2e-spec.js'],
   exclude: [],
   onPrepare() {
     babel({ presets: ['latest'] });
-    jasmine.getEnv().addReporter(new SpecReporter({ displayStacktrace: true }));
     global.webdriver = browser.driver;
     webdriver.ignoreSynchronization = true;
-    webdriver.manage().window().setSize(1280, 1024);
   },
   framework: 'jasmine',
   jasmineNodeOpts: {
