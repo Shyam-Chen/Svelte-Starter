@@ -15,9 +15,9 @@ This seed repository provides the following features:
 * [x] UI components with **Material**.
 * [x] Back-end service with **Firebase**.
 * [x] Routing and navigation with **Page**.
+* [x] Render templates with **Lodash**.
 * [x] Internationalization with **Intl**.
 * [x] Data visualization with **Chart**.
-* [x] Render templates with **Lodash**.
 * [x] Build system with **Gulp**.
 * [x] Module bundler with **Rollup**.
 * [x] Future CSS features with **PostCSS**.
@@ -33,7 +33,6 @@ This seed repository provides the following features:
 * [x] Version control with **Git**.
 * [x] Fast and determinsitic builds with **Yarn**.
 * [x] Virtual machine with **Docker**.
-* [x] Continuous integration and delivery with **Travis**.
 
 ## Getting Started
 
