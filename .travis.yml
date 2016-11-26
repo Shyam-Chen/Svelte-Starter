@@ -25,20 +25,17 @@ matrix:
       install: true
       addons:
         firefox: "45.0"
-    - env: MODE=labs
-      os: linux
-      sudo: false
-      node_js: stable
-      install: true
-      # addons:
-      #   browserstack:
-      #     username: ${BROWSERSTACK_USERNAME}
-      #     access_key: ${BROWSERSTACK_ACCESS_KEY}
+    # - env: MODE=labs
+    #   os: linux
+    #   sudo: false
+    #   node_js: stable
+    #   install: true
+    #   addons:
+    #     browserstack:
+    #       username: ${BROWSERSTACK_USERNAME}
+    #       access_key: ${BROWSERSTACK_ACCESS_KEY}
   allow_failures:
-    - env: MODE=lint
-    - env: MODE=unit
-    - env: MODE=e2e
-    - env: MODE=labs
+    # - env: MODE=labs
 
 before_install:
   - if [[ "$MODE" == "docker" ]]; then docker-compose up -d; fi
@@ -47,11 +44,12 @@ before_install:
 before_script:
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run webdriver; fi
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run prod; fi
-  - if [[ "$MODE" == "e2e" ]] || [[ "$MODE" == "labs" ]]; then npm install; fi
   - if [[ "$MODE" == "unit" ]] || [[ "$MODE" == "e2e" ]]; then sh -e /etc/init.d/xvfb start; fi
   - if [[ "$MODE" == "unit" ]]; then yarn add karma-firefox-launcher --dev; fi
+  - if [[ "$MODE" == "e2e" ]]; then npm install; fi
   - if [[ "$MODE" == "e2e" ]]; then nohup bash -c "webdriver-manager start 2>&1 &"; fi
-  - if [[ "$MODE" == "e2e" ]] || [[ "$MODE" == "labs" ]]; then npm run webdriver && npm run prod; fi
+  - if [[ "$MODE" == "e2e" ]]; then npm run webdriver; fi
+  - if [[ "$MODE" == "e2e" ]]; then npm run prod; fi
 
 script:
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run lint; fi
@@ -62,12 +60,12 @@ script:
   - if [[ "$MODE" == "e2e" ]]; then npm run e2e; fi
   # - if [[ "$MODE" == "labs" ]]; then npm run labs; fi
 
-# after_success:
-#   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run deploy -- --token ${FIREBASE_TOKEN}; fi
+after_success:
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run deploy -- --token ${FIREBASE_TOKEN}; fi
 
-deploy:
-  provider: script
-  script: scripts/deploy.sh
-  on:
-    branch: master
-    condition: $MODE = docker
+# deploy:
+#   provider: script
+#   script: scripts/deploy.sh
+#   on:
+#     branch: master
+#     condition: $MODE = docker
