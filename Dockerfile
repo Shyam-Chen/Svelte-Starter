@@ -16,16 +16,12 @@ RUN curl -sL https://deb.nodesource.com/setup_$NODE.x | bash - && \
     rm -rf /var/lib/apt/lists/*
 
 RUN chmod a+x scripts/window.sh
-
 ENTRYPOINT ["/Vanilla-Starter-Kit/scripts/window.sh"]
 
 RUN curl -o- -L https://yarnpkg.com/install.sh | bash
 ENV PATH $HOME/.yarn/bin:$PATH
 
-RUN git --version && \
-    yarn --version
-
-# RUN yarn install
+# RUN yarn install  # e2e bug
 RUN npm install
 
 EXPOSE 3000 9876
