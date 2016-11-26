@@ -30,10 +30,10 @@ matrix:
       sudo: false
       node_js: stable
       install: true
-      addons:
-        browserstack:
-          username: ${BROWSERSTACK_USERNAME}
-          access_key: ${BROWSERSTACK_ACCESS_KEY}
+      # addons:
+      #   browserstack:
+      #     username: ${BROWSERSTACK_USERNAME}
+      #     access_key: ${BROWSERSTACK_ACCESS_KEY}
   allow_failures:
     - env: MODE=lint
     - env: MODE=unit
@@ -60,8 +60,14 @@ script:
   - if [[ "$MODE" == "lint" ]]; then yarn run lint; fi
   - if [[ "$MODE" == "unit" ]]; then yarn run test; fi
   - if [[ "$MODE" == "e2e" ]]; then npm run e2e; fi
-  - if [[ "$MODE" == "labs" ]]; then npm run labs; fi
+  # - if [[ "$MODE" == "labs" ]]; then npm run labs; fi
 
-after_success:
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run deploy -- --token ${FIREBASE_TOKEN}; fi
-  - if [[ "$MODE" == "unit" ]]; then yarn run coveralls; fi
+# after_success:
+#   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run deploy -- --token ${FIREBASE_TOKEN}; fi
+
+deploy:
+  provider: script
+  script: scripts/deploy.sh
+  on:
+    branch: master
+    condition: $MODE = docker
