@@ -3,12 +3,16 @@
 > A single-page application boilerplate for Vanilla HTML/CSS/JS, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
-[![Quality Status](https://img.shields.io/badge/quality-standard-brightgreen.svg)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
 [![Coverage Status](https://coveralls.io/repos/github/Shyam-Chen/Vanilla-Starter-Kit/badge.svg?branch=master)](https://coveralls.io/github/Shyam-Chen/Vanilla-Starter-Kit?branch=master)
-[![Chrome Status](https://img.shields.io/badge/chrome-passing-brightgreen.svg)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
-[![Firefox Status](https://img.shields.io/badge/firefox-passing-brightgreen.svg)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
 [![Dependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit)
 [![devDependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit?type=dev)
+
+[![Chrome Status](https://img.shields.io/badge/Chrome-passing-brightgreen.svg)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
+[![Firefox Status](https://img.shields.io/badge/Firefox-passing-brightgreen.svg)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
+[![Edge Status](https://img.shields.io/badge/Edge-passing-brightgreen.svg)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
+[![Safari Status](https://img.shields.io/badge/Safari-passing-brightgreen.svg)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
+[![Android Status](https://img.shields.io/badge/Android-passing-brightgreen.svg)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
+[![iPhone Status](https://img.shields.io/badge/iPhone-passing-brightgreen.svg)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
 
 [Live Demo](https://test-1498d.firebaseapp.com/)
 
@@ -30,7 +34,6 @@ This seed repository provides the following features:
 * [x] JS static code analyzer with **ESLint**.
 * [x] Testing framework with **Jasmine**.
 * [x] Unit tests with **Karma**.
-* [x] Code coverage with **Istanbul**.
 * [x] End-to-end tests with **Protractor**.
 * [x] Version control with **Git**.
 * [x] Fast and determinsitic builds with **Yarn**.

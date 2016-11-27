@@ -20,6 +20,7 @@ exports.config = {
     'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY,
     'build': process.env.TRAVIS_BUILD_NUMBER,
     'name': 'E2E Tests',
+    'browserstack.local': true,
     'browserstack.debug': 'true'
   },
   multiCapabilities: [
@@ -43,12 +44,6 @@ exports.config = {
       'browserName': 'iPhone',
       'platform': 'MAC',
       'device': 'iPhone 6'
-    }, {
-      'os': 'Windows',
-      'os_version': '7',
-      'browserName': 'IE',
-      'browser_version': '11.0',
-      'resolution': '1280x1024'
     }
   ]
 };

@@ -247,6 +247,10 @@ gulp.task('lint-js', () => {
 
 gulp.task('lint', ['lint-html', 'lint-css', 'lint-js']);
 
+gulp.task('unit', () => {
+  // ...
+});
+
 gulp.task('webdriver', protractor.webdriver_update);
 
 gulp.task('e2e', (done) => {

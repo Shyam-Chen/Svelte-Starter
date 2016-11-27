@@ -12,7 +12,6 @@ const builtins = require('rollup-plugin-node-builtins');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
 const babel = require('rollup-plugin-babel');
-const istanbul = require('rollup-plugin-istanbul');
 
 let cssExportMap = {};
 const config = {
@@ -51,14 +50,10 @@ const config = {
       builtins(),
       resolve({ jsnext: true, browser: true }),
       commonjs(),
-      babel(),
-      istanbul({ exclude: ['./src/**/*.spec.js', 'node_modules/**'] })
+      babel()
     ]
   },
-  reporters: ['mocha', 'coverage'],
-  coverageReporter: {
-    reporters: [{ type: 'text-summary' }]
-  },
+  reporters: ['mocha'],
   port: 9876,
   colors: true,
   autoWatch: true,
@@ -74,7 +69,10 @@ const config = {
 };
 
 if (process.env.TRAVIS) {
+  const istanbul = require('rollup-plugin-istanbul');
+  config.rollupPreprocessor.plugins.push(istanbul({ exclude: ['./src/**/*.spec.js', 'node_modules/**'] }));
   config.browsers = ['Firefox'];
+  config.reporters.push('coverage');
   config.coverageReporter = { dir: 'coverage', reporters: [{ type: 'lcov' }]};
 }
 
