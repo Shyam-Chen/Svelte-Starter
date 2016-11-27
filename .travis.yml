@@ -31,7 +31,10 @@ matrix:
       node_js: stable
       install: true
       addons:
-        browserstack: true
+        browserstack:
+          username: ${BROWSERSTACK_USERNAME}
+          access_key:
+            secure: ${BROWSERSTACK_ACCESS_KEY}
   allow_failures:
     - env: MODE=labs
 

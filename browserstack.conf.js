@@ -28,7 +28,7 @@ exports.config = {
       'os': 'Windows',
       'os_version': '10',
       'browserName': 'Edge',
-      'browser_version': '14.0',
+      'browser_version': '13.0',
       'resolution': '1280x1024'
     }, {
       'os': 'OS X',
