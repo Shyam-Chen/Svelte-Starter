@@ -95,3 +95,26 @@ $ yarn run reset
 
 $ yarn run reinstall
 ```
+
+***
+
+## Using BrowserStack ($, 100 mins free)
+
+```js
+// browserstack.conf.js
+[...]
+  commonCapabilities: {
+    'browserstack.user': process.env.BROWSERSTACK_USERNAME || '<USERNAME>',
+    'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY || '<ACCESS_KEY>',
+    'build': process.env.TRAVIS_BUILD_NUMBER || '<PROJECT_NAME>',
+    'name': 'E2E Tests',
+    'browserstack.local': true,
+    'browserstack.debug': 'true'
+  },
+[...]
+```
+```bash
+$ yarn run webdriver
+$ yarn run prod
+$ yarn run labs
+```

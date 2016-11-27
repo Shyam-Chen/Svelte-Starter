@@ -63,6 +63,6 @@ script:
 
 after_success:
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run prod; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run deploy -- --token ${FIREBASE_TOKEN}; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run deploy -- --token ${FIREBASE_TOKEN}; fi
   - if [[ "$MODE" == "unit" ]]; then yarn add coveralls --dev; fi
   - if [[ "$MODE" == "unit" ]]; then cat coverage/**/lcov.info | coveralls; fi
