@@ -137,7 +137,7 @@ gulp.task('app', () => {
         builtins(),
         resolve({ jsnext: true, browser: true }),
         commonjs(),
-        babel(),
+        babel({ exclude: 'node_modules/**' }),
         replace({ ENV: util.env.type }),
         (util.env.type === 'prod' ? uglify() : util.noop())
       ]
