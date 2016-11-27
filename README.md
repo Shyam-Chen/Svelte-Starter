@@ -7,13 +7,6 @@
 [![Dependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit)
 [![devDependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit?type=dev)
 
-[![Chrome Status](https://img.shields.io/badge/Chrome-passing-brightgreen.svg)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
-[![Firefox Status](https://img.shields.io/badge/Firefox-passing-brightgreen.svg)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
-[![Edge Status](https://img.shields.io/badge/Edge-passing-brightgreen.svg)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
-[![Safari Status](https://img.shields.io/badge/Safari-passing-brightgreen.svg)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
-[![Android Status](https://img.shields.io/badge/Android-passing-brightgreen.svg)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
-[![iPhone Status](https://img.shields.io/badge/iPhone-passing-brightgreen.svg)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
-
 [Live Demo](https://test-1498d.firebaseapp.com/)
 
 This seed repository provides the following features:
