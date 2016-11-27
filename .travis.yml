@@ -30,6 +30,8 @@ matrix:
       sudo: false
       node_js: stable
       install: true
+      addons:
+        browserstack: true
   allow_failures:
     - env: MODE=labs
 
