@@ -1,19 +1,34 @@
-<p class="mdl-color-text--pink-700">
-  <%= ABOUT %>
-</p>
-
-<div class="foo">
-  This seed repository provides the following features:<br>
-  Start coding Vanilla HTML/CSS/JS right now.
+<div class="mdl-grid" style="justify-content: center">
+  <h2 class="mdl-color-text--blue-900"><%= ABOUT %></h2>
 </div>
 
-<div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--6-col">
-    <canvas id="color-bar-chart"></canvas>
+<div class="mdl-grid" style="justify-content: center">
+  <div class="mdl-cell mdl-cell--5-col">
+    <ul class="demo-list-item mdl-list mdl-shadow--2dp">
+      <li class="mdl-list__item">
+        <b class="mdl-list__item-primary-content">
+          <%= LIST.TITLE %>
+        </b>
+      </li>
+      <li class="mdl-list__item">
+        <% let INDEX = 1; %>
+        <span class="mdl-list__item-primary-content"><%- INDEX++ %>. <%= LIST.ITEM %></span>
+      </li>
+      <li class="mdl-list__item">
+        <span class="mdl-list__item-primary-content">Continuous integration and delivery with Travis.</span>
+      </li>
+    </ul>
   </div>
 </div>
 
-<div id="cc1"></div>
-<div id="cc2"></div>
-<div id="cc3"></div>
-<div id="cc4"></div>
+<div class="mdl-grid" style="justify-content: center">
+  <div class="mdl-cell mdl-cell--6-col">
+    <canvas id="js-bar-chart"></canvas>
+  </div>
+</div>
+
+<div class="mdl-grid" style="justify-content: center">
+  <div class="mdl-cell mdl-cell--4-col">
+    <canvas id="skill-radar-chart"></canvas>
+  </div>
+</div>
