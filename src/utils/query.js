@@ -1,3 +1,3 @@
-export const query = (selector) => {
-  return document.querySelector(selector);
+export const query = (selector = 'body') => {
+  return document.querySelector(`${selector}`);
 };

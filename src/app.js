@@ -6,8 +6,6 @@ import { loadHome, loadHomeZh } from './pages/home';
 import { loadAbout, loadAboutZh } from './pages/about';
 import { load404 } from './pages/404';
 
-// import { loadFont } from './utils';
-
 firebase.initializeApp(firebaseConfig);
 
 // loadFont('https://fonts.googleapis.com/icon?family=Material+Icons');

@@ -7,7 +7,7 @@ describe('Query', () => {
   });
 
   it('should be able to work properly', () => {
-    expect(query('body')).toBe(document.querySelector('body'));
+    expect(query()).toBe(document.querySelector('body'));
     expect(query('#foo')).toBe(document.querySelector('#foo'));
     expect(query('.foo')).toBe(document.querySelector('.foo'));
   });
