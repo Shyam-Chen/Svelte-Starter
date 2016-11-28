@@ -6,7 +6,12 @@
       "Start coding Vanilla HTML/CSS/JS right now",
       "UI components with Material.",
       "Back-end service with Firebase.",
-      "Routing and navigation with Page."
+      "Routing and navigation with Page.",
+      "Render templates with Lodash.",
+      "Internationalization with Intl.",
+      "Data visualization with Chart.",
+      "Build system with Gulp.",
+      "Module bundler with Rollup."
     ]
   }
 }

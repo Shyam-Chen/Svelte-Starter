@@ -41,9 +41,6 @@ const runsequence = require('run-sequence');
 const SOURCE_ROOT = path.join(__dirname, 'src');
 const DIST_ROOT = path.join(__dirname, 'dist');
 
-const IMAGES_ROOT = path.join('assets', 'images');
-const DATAS_ROOT = path.join('assets', 'datas');
-
 class CompileError {
   static handle(err) {
     let self = this;
@@ -203,8 +200,8 @@ gulp.task('watch', () => {
 
   gulp.watch([
     path.join(SOURCE_ROOT, '**/*.{html,css,js}'),
-    path.join(SOURCE_ROOT, IMAGES_ROOT, '**/*.{gif,jpeg,jpg,png,svg}'),
-    path.join(SOURCE_ROOT, DATAS_ROOT, '**/*.json'),
+    path.join(SOURCE_ROOT, '**/*.{gif,jpeg,jpg,png,svg}'),
+    path.join(SOURCE_ROOT, '**/*.json'),
     `!${path.join(SOURCE_ROOT, 'index.html')}`,
     `!${path.join(SOURCE_ROOT, 'polyfills.js')}`,
     `!${path.join(SOURCE_ROOT, 'vendor.js')}`,

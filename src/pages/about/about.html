@@ -10,13 +10,11 @@
           <%= LIST.TITLE %>
         </b>
       </li>
-      <li class="mdl-list__item">
-        <% let INDEX = 1; %>
-        <span class="mdl-list__item-primary-content"><%- INDEX++ %>. <%= LIST.ITEM %></span>
-      </li>
-      <li class="mdl-list__item">
-        <span class="mdl-list__item-primary-content">Continuous integration and delivery with Travis.</span>
-      </li>
+      <% for (let item of LIST.ITEM.entries()) { %>
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content"><%- item[0] + 1 %>. <%- item[1] %></span>
+        </li>
+      <% } %>
     </ul>
   </div>
 </div>
