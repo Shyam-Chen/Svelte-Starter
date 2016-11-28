@@ -189,7 +189,7 @@ gulp.task('polyfills', () => {
     .pipe(gulp.dest(DIST_ROOT));
 });
 
-gulp.task('build', ['copy', 'index', 'polyfills', 'vendor', 'app']);
+gulp.task('build', ['copy', 'index', 'app', 'vendor', 'polyfills']);
 
 gulp.task('watch', () => {
   gulp.watch([
@@ -210,6 +210,14 @@ gulp.task('watch', () => {
     `!${path.join(SOURCE_ROOT, 'vendor.js')}`,
     `!${path.join(SOURCE_ROOT, '**/*.{spec.js,e2e-spec.js}')}`
   ], ['app']);
+
+  gulp.watch([
+    path.join(SOURCE_ROOT, 'vendor.js')
+  ], ['vendor']);
+
+  gulp.watch([
+    path.join(SOURCE_ROOT, 'polyfills.js')
+  ], ['polyfills']);
 });
 
 gulp.task('serve', () => {

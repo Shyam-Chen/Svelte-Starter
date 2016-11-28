@@ -100,6 +100,7 @@ $ yarn run reinstall
 
 ## Using BrowserStack ($, 100 mins free)
 
+1) Set the BrowserStack
 ```js
 // browserstack.conf.js
 [...]
@@ -107,14 +108,22 @@ $ yarn run reinstall
     'browserstack.user': process.env.BROWSERSTACK_USERNAME || '<USERNAME>',
     'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY || '<ACCESS_KEY>',
     'build': process.env.TRAVIS_BUILD_NUMBER || '<PROJECT_NAME>',
-    'name': 'E2E Tests',
     'browserstack.local': true,
     'browserstack.debug': 'true'
   },
 [...]
 ```
+
+2) Run the test
 ```bash
+# pre
 $ yarn run webdriver
-$ yarn run prod
+$ yarn run prod || yarn run dev-watch
+
+# main
 $ yarn run labs
 ```
+
+3) set environment variables in Travis
+
+`BROWSERSTACK_USERNAME` `BROWSERSTACK_ACCESS_KEY`

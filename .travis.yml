@@ -31,24 +31,25 @@ matrix:
       node_js: stable
       install: true
       addons:
-        browserstack:
-          username: ${BROWSERSTACK_USERNAME}
-          access_key:
-            secure: ${BROWSERSTACK_ACCESS_KEY}
+      browserstack:
+        username: ${BROWSERSTACK_USERNAME}
+        access_key:
+          secure: ${BROWSERSTACK_ACCESS_KEY}
+        forcelocal: true
   allow_failures:
     - env: MODE=labs
 
 before_install:
   - if [[ "$MODE" == "docker" ]]; then docker-compose up -d; fi
-  - if [[ "$MODE" == "unit" ]] || [[ "$MODE" == "e2e" ]]; then export DISPLAY=:99.0; fi
+  - if [[ "$MODE" == "unit" ]] || [[ "$MODE" == "e2e" ]] || [[ "$MODE" == "labs" ]]; then export DISPLAY=:99.0; fi
 
 before_script:
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run webdriver; fi
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run prod; fi
-  - if [[ "$MODE" == "unit" ]] || [[ "$MODE" == "e2e" ]]; then sh -e /etc/init.d/xvfb start; fi
+  - if [[ "$MODE" == "unit" ]] || [[ "$MODE" == "e2e" ]] || [[ "$MODE" == "labs" ]]; then sh -e /etc/init.d/xvfb start; fi
   - if [[ "$MODE" == "unit" ]]; then yarn add rollup-plugin-istanbul karma-firefox-launcher karma-coverage --dev; fi
   - if [[ "$MODE" == "e2e" ]] || [[ "$MODE" == "labs" ]]; then npm install; fi
-  - if [[ "$MODE" == "e2e" ]]; then nohup bash -c "webdriver-manager start 2>&1 &"; fi
+  - if [[ "$MODE" == "e2e" ]] || [[ "$MODE" == "labs" ]]; then nohup bash -c "webdriver-manager start 2>&1 &"; fi
   - if [[ "$MODE" == "e2e" ]] || [[ "$MODE" == "labs" ]]; then npm run webdriver; fi
   - if [[ "$MODE" == "e2e" ]] || [[ "$MODE" == "labs" ]]; then npm run prod; fi
 

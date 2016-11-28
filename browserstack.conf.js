@@ -19,7 +19,6 @@ exports.config = {
     'browserstack.user': process.env.BROWSERSTACK_USERNAME,
     'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY,
     'build': process.env.TRAVIS_BUILD_NUMBER,
-    'name': 'E2E Tests',
     'browserstack.local': true,
     'browserstack.debug': 'true'
   },
