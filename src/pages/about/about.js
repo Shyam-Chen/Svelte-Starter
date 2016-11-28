@@ -36,6 +36,20 @@ const commom = () => {
           "data": [90, 50, 75, 80, 50, 33, 85, 75, 80]
         }
       ]
+    },
+    options: {
+      legend: {
+        position: 'top'
+      },
+      title: {
+        display: true,
+        text: 'Skill Radar Chart'
+      },
+      scale: {
+        ticks: {
+          beginAtZero: true
+        }
+      }
     }
   });
   componentHandler.upgradeAllRegistered();
