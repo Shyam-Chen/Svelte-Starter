@@ -123,7 +123,3 @@ $ yarn run prod || yarn run dev-watch
 # main
 $ yarn run labs
 ```
-
-3) set environment variables in Travis
-
-`BROWSERSTACK_USERNAME` `BROWSERSTACK_ACCESS_KEY`
