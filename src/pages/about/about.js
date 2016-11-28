@@ -16,7 +16,8 @@ import tplOptsZh from './langs/zh.json';
 const commom = () => {
   new Chart(query('#js-bar-chart'), {
     type: 'bar',
-    data: jsData
+    data: jsData,
+    options: { scales: { yAxes: [{ ticks: { beginAtZero: true } }] } }
   });
 
   new Chart(query('#skill-radar-chart'), {
