@@ -35,7 +35,6 @@ matrix:
         username: ${BROWSERSTACK_USERNAME}
         access_key:
           secure: ${BROWSERSTACK_ACCESS_KEY}
-        forcelocal: true
   allow_failures:
     - env: MODE=labs
 

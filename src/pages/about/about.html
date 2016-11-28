@@ -12,7 +12,9 @@
       </li>
       <% for (let item of LIST.ITEM.entries()) { %>
         <li class="mdl-list__item">
-          <span class="mdl-list__item-primary-content"><%- item[0] + 1 %>. <%- item[1] %></span>
+          <span class="mdl-list__item-primary-content">
+            &nbsp;&nbsp;<%- item[0] + 1 %>. <%- item[1] %>
+          </span>
         </li>
       <% } %>
     </ul>

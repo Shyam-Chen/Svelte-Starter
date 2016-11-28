@@ -11,7 +11,20 @@
       "Internationalization with Intl.",
       "Data visualization with Chart.",
       "Build system with Gulp.",
-      "Module bundler with Rollup."
+      "Module bundler with Rollup.",
+      "Future CSS features with PostCSS.",
+      "Next generation JS with Babel.",
+      "Development server with BrowserSync.",
+      "HTML static code analyzer with HTMLHint.",
+      "CSS static code analyzer with StyleLint.",
+      "JS static code analyzer with ESLint.",
+      "Testing framework with Jasmine.",
+      "Unit tests with Karma.",
+      "End-to-end tests with Protractor.",
+      "Version control with Git.",
+      "Fast and deterministic builds with Yarn.",
+      "Virtual machine with Docker.",
+      "Continuous integration and delivery with Travis."
     ]
   }
 }

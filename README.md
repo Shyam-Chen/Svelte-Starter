@@ -29,7 +29,7 @@ This seed repository provides the following features:
 * [x] Unit tests with **Karma**.
 * [x] End-to-end tests with **Protractor**.
 * [x] Version control with **Git**.
-* [x] Fast and determinsitic builds with **Yarn**.
+* [x] Fast and deterministic builds with **Yarn**.
 * [x] Virtual machine with **Docker**.
 * [x] Continuous integration and delivery with **Travis**.
 
