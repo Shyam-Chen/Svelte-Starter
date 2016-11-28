@@ -6,8 +6,8 @@ describe('Load', () => {
     expect(load).not.toThrow();
   });
 
-  it('not toBeUndefined', () => {
-    expect(load('../assets/datas/firebase.config.json')).not.toBeUndefined();
+  it('toBeDefined', () => {
+    expect(load('../assets/datas/firebase.config.json')).toBeDefined();
   });
 
 });

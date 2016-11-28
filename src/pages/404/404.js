@@ -1,18 +1,14 @@
 import template from 'lodash-es/template';
 
-import notFoundTpl from './404.html';
-import notFoundStyle from './404.css';
-
 import { query } from '../../utils';
 
-export const tplOpts = {
-  text: '404',
-  style: {
-    page: notFoundStyle.page,
-    text: notFoundStyle.text
-  }
-};
+import notFoundTpl from './404.html';
+import notFoundStyl from './404.css';
 
 export const load404 = () => {
-  query('#app').innerHTML = template(notFoundTpl)(tplOpts);
+  query('#app').innerHTML = template(notFoundTpl, {
+    'imports': { 'style': notFoundStyl }
+  })({
+    text: '404'
+  });
 };
