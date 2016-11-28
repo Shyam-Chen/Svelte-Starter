@@ -1,15 +1,13 @@
+import { load } from './load';
+
 describe('Load', () => {
 
-  beforeEach(() => {
-    // jasmine.Ajax.install();
+  it('not toThrow', () => {
+    expect(load).not.toThrow();
   });
 
-  afterEach(() => {
-    // jasmine.Ajax.uninstall();
-  });
-
-  it('toBe', () => {
-    expect(true).toBe(true);
+  it('not toBeUndefined', () => {
+    expect(load('../assets/datas/firebase.config.json')).not.toBeUndefined();
   });
 
 });
