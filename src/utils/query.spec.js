@@ -1,15 +1,15 @@
-import { query, queryAll } from './query';
+import { query } from './query';
 
 describe('Query', () => {
 
-  it('not toThrow', () => {
+  it('should not throw an error', () => {
     expect(query).not.toThrow();
-    expect(queryAll).not.toThrow();
   });
 
-  it('not toBeNull', () => {
-    expect(query).not.toBeNull();
-    expect(queryAll).not.toBeNull();
+  it('should be able to work properly', () => {
+    expect(query('body')).toBe(document.querySelector('body'));
+    expect(query('#foo')).toBe(document.querySelector('#foo'));
+    expect(query('.foo')).toBe(document.querySelector('.foo'));
   });
 
 });

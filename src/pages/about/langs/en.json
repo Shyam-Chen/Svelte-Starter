@@ -1,0 +1,12 @@
+{
+  "ABOUT": "About",
+  "LIST": {
+    "TITLE": "This seed repository provides the following features:",
+    "ITEM": [
+      "Start coding Vanilla HTML/CSS/JS right now",
+      "UI components with Material.",
+      "Back-end service with Firebase.",
+      "Routing and navigation with Page."
+    ]
+  }
+}
