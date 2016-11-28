@@ -108,7 +108,7 @@ $ yarn run reinstall
     'browserstack.user': process.env.BROWSERSTACK_USERNAME || '<USERNAME>',
     'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY || '<ACCESS_KEY>',
     'build': process.env.TRAVIS_BUILD_NUMBER || '<PROJECT_NAME>',
-    'browserstack.local': true,
+    'browserstack.local': 'true',
     'browserstack.debug': 'true'
   },
 [...]
@@ -118,7 +118,7 @@ $ yarn run reinstall
 ```bash
 # pre
 $ yarn run webdriver
-$ yarn run prod || yarn run dev-watch
+$ yarn run prod
 
 # main
 $ yarn run labs

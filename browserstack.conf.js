@@ -16,10 +16,10 @@ exports.config = {
   },
   seleniumAddress: 'http://hub-cloud.browserstack.com/wd/hub',
   commonCapabilities: {
-    'browserstack.user': process.env.BROWSERSTACK_USERNAME,
-    'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY,
-    'build': process.env.TRAVIS_BUILD_NUMBER,
-    'browserstack.local': true,
+    'browserstack.user': process.env.BROWSERSTACK_USERNAME || '<USERNAME>',
+    'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY || '<ACCESS_KEY>',
+    'build': process.env.TRAVIS_BUILD_NUMBER || '<PROJECT_NAME>',
+    'browserstack.local': 'true',
     'browserstack.debug': 'true'
   },
   multiCapabilities: [
