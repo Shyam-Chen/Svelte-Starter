@@ -96,6 +96,20 @@ $ yarn run reset
 $ yarn run reinstall
 ```
 
+## Folder
+* Pages
+  * Create a new folder for each page
+* Themes
+  * Variables and Mixins here
+  * Global style here
+* Components
+  * Type - 1: Compiled + Data
+  * Type - 2: Only Compiled
+* Utils
+  * All the functions here
+* Assets
+  * Images and Datas here
+
 ***
 
 ## Using BrowserStack ($, 100 mins free)
