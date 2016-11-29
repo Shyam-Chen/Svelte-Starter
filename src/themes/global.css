@@ -1,1 +1,13 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+:global .mdl-grid--center {
+  justify-content: center;
+}
+
+:global .mdl-cell--center {
+  text-align: center;
+}
+
+:global .mdl-cell--right {
+  text-align: right;
+}

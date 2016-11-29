@@ -1,0 +1,8 @@
+{
+  "HOME": "Home",
+  "VANILLA": {
+    "TITLE": "Welcome to Vanilla",
+    "CONTENT": "A single-page application boilerplate for Vanilla HTML/CSS/JS, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.",
+    "BUTTON": "Get Started"
+  }
+}

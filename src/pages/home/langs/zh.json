@@ -1,0 +1,8 @@
+{
+  "HOME": "首頁",
+  "VANILLA": {
+    "TITLE": "歡迎來到香草",
+    "CONTENT": "Vanilla HTML/CSS/JS、Material、Firebase、Gulp、Rollup、PostCSS 和 Babel 的單頁應用程式底板",
+    "BUTTON": "開始"
+  }
+}

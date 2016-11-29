@@ -7,21 +7,19 @@ import { layoutEn, layoutZh } from '../../components/layout';
 
 // Assets
 import vanilla from '../../assets/images/vanilla.png';
-import material from '../../assets/images/material.png';
-import firebase from '../../assets/images/firebase.png';
 
 // Home
 import homeTpl from './home.html';
 import homeStyl from './home.css';
-import homeData from './home.json';
-import homeDataZh from './home-zh.json';
+import homeDataLangEn from './langs/en.json';
+import homeDataLangZh from './langs/zh.json';
 
-const imports = {
+export const imports = {
   'imports': {
     'style': homeStyl,
-    'vanilla': vanilla,
-    'material': material,
-    'firebase': firebase
+    'image': {
+      'vanilla': vanilla.src
+    }
   }
 };
 
@@ -33,11 +31,11 @@ export const common = (imports = null, datas = {}) => {
 export const loadHome = () => {
   query('#app').innerHTML = layoutEn;
   query('#zh').onclick = () => { page.redirect('/zh/home'); };
-  common(imports, homeData);
+  common(imports, homeDataLangEn);
 };
 
 export const loadHomeZh = () => {
   query('#app').innerHTML = layoutZh;
   query('#en').onclick = () => { page.redirect('/en/home'); };
-  common(imports, homeDataZh);
+  common(imports, homeDataLangZh);
 };

@@ -1,28 +1,25 @@
-<p class="mdl-color--pink-50">
-  <%= HOME %>
-</p>
-
-<div class="mdl-color--pink-100 mdl-shadow--2dp">
-  <p class="mdl-color-text--pink-700">
-    A single-page application boilerplate for Vanilla HTML/CSS/JS, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.
-  </p>
-  <p>
-    Angular - Web app framework<br>
-    Ionic - Mobile app framework<br>
-    Express - Node app framework
-  </p>
+<div class="mdl-grid mdl-grid--center">
+  <h2 class="mdl-color-text--blue-900"><%= HOME %></h2>
 </div>
 
-<p class="<%= style.foo %>">
-  CSS Modules
-</p>
+<div class="mdl-grid mdl-grid--center">
 
-<p class="<%= style.bar %>">
-  CSS Modules
-</p>
+  <div class="mdl-cell mdl-cell--center mdl-cell--2-col">
+    <img src="<%= image.vanilla %>" alt="Vanilla">
+  </div>
 
-<img src="<%= vanilla.src %>" alt="Vanilla" style="height: 10rem">
+  <div class="mdl-cell--middle mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text"><%= VANILLA.TITLE %></h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <%= VANILLA.CONTENT %>
+    </div>
+    <div class="mdl-card__actions mdl-card--border mdl-cell--right">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        <%= VANILLA.BUTTON %>
+      </a>
+    </div>
+  </div>
 
-<img src="<%= material.src %>" alt="Material" style="height: 10rem">
-
-<img src="<%= firebase.src %>" alt="Material" style="height: 10rem">
+</div>
