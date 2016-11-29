@@ -1,5 +1,17 @@
+/*
+ * WIP
+ */
+
+import template from 'lodash-es/template';
+
+import slideshowTpl from './slideshow.html';
+import slideshowStyl from './slideshow.css';
+
+export const slideshowCompiled = template(slideshowTpl, { 'imports': { 'style': slideshowStyl }});
+
 let slideIndex = 0;
-export const slideshow =  () => {
+let action;
+const slideshow =  () => {
   let slides = document.querySelectorAll('[data-slideshow]');
 
   for (let i = 0; i < slides.length; i++) {
@@ -15,7 +27,24 @@ export const slideshow =  () => {
   slides[slideIndex - 1].style.display = 'block';
 
   if (slides.length > 1) {
-    setTimeout(slideshow, 3333);
+    action = setTimeout(slideshow, 1000);
   }
 
+
+};
+
+// Use
+// slideshow();
+
+let active = false;
+export const addSlideshowAction = () => {
+  if (active === false) {
+    slideshow();
+    active = true;
+  }
+};
+
+export const removeSlideshowAction = () => {
+  clearTimeout(action);
+  active = false;
 };
