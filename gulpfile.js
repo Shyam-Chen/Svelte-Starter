@@ -121,9 +121,9 @@ gulp.task('app', () => {
         postcss({
           parser: comment,
           plugins: [
-            modules({ getJSON(id, tokens) { cssExportMap[id] = tokens; } }),
             cssnext({ warnForDuplicates: false }),
             rucksack({ autoprefixer: true }),
+            modules({ getJSON(id, tokens) { cssExportMap[id] = tokens; } }),
             cssnano()
           ],
           getExport(id) { return cssExportMap[id]; }

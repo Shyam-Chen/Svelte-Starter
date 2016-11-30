@@ -29,7 +29,7 @@ export const slideshow = () => {
   slides[slideIndex - 1].style.display = 'block';
 
   if (slides.length > 1) {
-    slideAction = setTimeout(slideshow, 1000);
+    slideAction = setTimeout(slideshow, 2500);
   }
 };
 
