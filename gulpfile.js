@@ -34,6 +34,7 @@ const buffer = require('vinyl-buffer');
 
 const browsersync = require('browser-sync');
 const connectHistory = require('connect-history-api-fallback');
+const Karma = require('karma');
 const express = require('express');
 const expressHistory = require('express-history-api-fallback');
 const runsequence = require('run-sequence');
@@ -61,7 +62,7 @@ class CompileError {
   }
 }
 
-class EndToEnd {
+class Protractor {
   server(port, dir) {
     let app = express();
     let root = path.resolve(process.cwd(), dir);
@@ -108,6 +109,7 @@ gulp.task('app', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'app.js'),
       format: 'iife',
+      context: 'window',
       sourceMap: util.env.type === 'dev' && true,
       cache,
       plugins: [
@@ -152,6 +154,7 @@ gulp.task('app', () => {
 gulp.task('vendor', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'vendor.js'),
+      context: 'window',
       plugins: [
         postcss({ plugins: [cssnano()] }),
         globals(),
@@ -252,14 +255,16 @@ gulp.task('lint-js', () => {
 
 gulp.task('lint', ['lint-html', 'lint-css', 'lint-js']);
 
-gulp.task('unit', () => {
-  // ...
+gulp.task('unit', (done) => {
+  new Karma.Server({
+    configFile: path.join(__dirname, 'karma.conf.js')
+  }, done).start();
 });
 
 gulp.task('webdriver', protractor.webdriver_update);
 
 gulp.task('e2e', (done) => {
-  new EndToEnd()
+  new Protractor()
     .server(9876, DIST_ROOT)
     .then((server) => {
       gulp.src(path.join(SOURCE_ROOT, '**/*.e2e-spec.js'))
