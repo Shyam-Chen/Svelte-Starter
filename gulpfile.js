@@ -31,7 +31,7 @@ const express = require('express');
 const expressHistory = require('express-history-api-fallback');
 const runsequence = require('run-sequence');
 
-const plugins = require('./rollup.plugin');
+const plugins = require('./rollup.conf');
 
 const SOURCE_ROOT = path.join(__dirname, 'src');
 const DIST_ROOT = path.join(__dirname, 'dist');

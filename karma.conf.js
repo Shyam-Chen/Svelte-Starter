@@ -1,4 +1,4 @@
-const plugins = require('./rollup.plugin');
+const plugins = require('./rollup.conf');
 
 module.exports = (config) => {
   config.set({
