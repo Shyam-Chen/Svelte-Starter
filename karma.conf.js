@@ -71,9 +71,6 @@ module.exports = (config) => {
   });
 
   if (process.env.TRAVIS) {
-    config.rollupPreprocessor.plugins.push(require('rollup-plugin-istanbul')({ exclude: ['./src/**/*.spec.js', 'node_modules/**'] }));
     config.browsers = ['Firefox'];
-    config.reporters.push('coverage');
-    config.coverageReporter = { dir: 'coverage', reporters: [{ type: 'lcov' }]};
   }
 };

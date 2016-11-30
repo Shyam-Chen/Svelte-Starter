@@ -3,7 +3,7 @@
 > A single-page application boilerplate for Vanilla HTML/CSS/JS, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
-[![Coverage Status](https://coveralls.io/repos/github/Shyam-Chen/Vanilla-Starter-Kit/badge.svg?branch=master)](https://coveralls.io/github/Shyam-Chen/Vanilla-Starter-Kit?branch=master)
+ //
 [![Dependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit)
 [![devDependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit?type=dev)
 
@@ -98,42 +98,14 @@ $ yarn run reinstall
 
 ## Folder
 * Pages
-  * Create a new folder for each page
+  * One folder for one page
 * Themes
-  * Variables and Mixins here
-  * Global style here
+  * Variables and Mixins here (`root.css`)
+  * Global style here (`global.css`)
 * Components
-  * Type - 1: Compiled + Data
-  * Type - 2: Only Compiled
+  * Shared: Compiled + Data
+  * Reused: Only Compiled
 * Utils
   * All the functions here
 * Assets
   * Images and Datas here
-
-***
-
-## Using BrowserStack ($, 100 mins free)
-
-1) Set the BrowserStack
-```js
-// browserstack.conf.js
-[...]
-  commonCapabilities: {
-    'browserstack.user': process.env.BROWSERSTACK_USERNAME || '<USERNAME>',
-    'browserstack.key': process.env.BROWSERSTACK_ACCESS_KEY || '<ACCESS_KEY>',
-    'build': process.env.TRAVIS_BUILD_NUMBER || '<PROJECT_NAME>',
-    'browserstack.local': 'true',
-    'browserstack.debug': 'true'
-  },
-[...]
-```
-
-2) Run the test
-```bash
-# pre
-$ yarn run webdriver
-$ yarn run prod
-
-# main
-$ yarn run labs
-```
