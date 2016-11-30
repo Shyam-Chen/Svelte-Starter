@@ -4,9 +4,11 @@ import template from 'lodash-es/template';
 // Components
 import { query } from '../../utils';
 import { layoutEn, layoutZh } from '../../components/layout';
+import { slideshowCompiled, slideshow } from '../../components/slideshow';
 
 // Assets
 import vanilla from '../../assets/images/vanilla.png';
+import lodash from '../../assets/images/lodash.png';
 
 // Home
 import homeTpl from './home.html';
@@ -25,6 +27,13 @@ export const imports = {
 
 export const common = (imports = null, datas = {}) => {
   query('#page').innerHTML = template(homeTpl, imports)(datas);
+  query('#demo').innerHTML = slideshowCompiled({
+    "SLIDESHOW": [
+      [vanilla.src, 'Vanilla'],
+      [lodash.src, 'Lodash']
+    ]
+  });
+  slideshow();
   componentHandler.upgradeAllRegistered();
 };
 

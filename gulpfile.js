@@ -123,7 +123,7 @@ gulp.task('app', () => {
           plugins: [
             modules({ getJSON(id, tokens) { cssExportMap[id] = tokens; } }),
             cssnext({ warnForDuplicates: false }),
-            rucksack({ fallbacks: true, autoprefixer: true }),
+            rucksack({ autoprefixer: true }),
             cssnano()
           ],
           getExport(id) { return cssExportMap[id]; }

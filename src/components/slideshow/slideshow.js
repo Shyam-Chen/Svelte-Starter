@@ -9,10 +9,11 @@ import template from 'lodash-es/template';
 import slideshowTpl from './slideshow.html';
 import slideshowStyl from './slideshow.css';
 
+let [slideIndex, slideAction, slideActive] = [0, undefined, false];
+
 export const slideshowCompiled = template(slideshowTpl, { 'imports': { 'style': slideshowStyl }});
 
-let [slideIndex, slideAction, slideActive] = [0, undefined, false];
-const slideshow =  () => {
+export const slideshow = () => {
   let slides = document.querySelectorAll('[data-slideshow]');
 
   for (let i = 0; i < slides.length; i++) {
@@ -30,7 +31,6 @@ const slideshow =  () => {
   if (slides.length > 1) {
     slideAction = setTimeout(slideshow, 1000);
   }
-
 };
 
 export const addSlideActive = () => {

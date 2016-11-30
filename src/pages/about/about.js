@@ -38,18 +38,9 @@ const commom = () => {
       ]
     },
     options: {
-      legend: {
-        position: 'top'
-      },
-      title: {
-        display: true,
-        text: 'Skill Radar Chart'
-      },
-      scale: {
-        ticks: {
-          beginAtZero: true
-        }
-      }
+      legend: { position: 'top' },
+      title: { display: true, text: 'Skill Radar Chart' },
+      scale: { ticks: { beginAtZero: true } }
     }
   });
   componentHandler.upgradeAllRegistered();

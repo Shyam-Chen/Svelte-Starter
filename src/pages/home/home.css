@@ -4,19 +4,5 @@
 }
 
 .bar {
-  background: #FFC107;
-  padding: 3rem;
+  color: red;
 }
-
-/* or
-:local {
-  .foo {
-    background: pink;
-    padding: 1rem;
-  }
-  .bar {
-    background: #FFC107;
-    padding: 3rem;
-  }
-}
-*/
