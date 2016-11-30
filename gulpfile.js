@@ -13,20 +13,12 @@ const eslint = require('gulp-eslint');
 const protractor = require('gulp-protractor');
 
 const rollup = require('rollup-stream');
-const html = require('rollup-plugin-html');
 const postcss = require('rollup-plugin-postcss');
-const comment = require('postcss-comment');
-const modules = require('postcss-modules');
-const cssnext = require('postcss-cssnext');
-const rucksack = require('rucksack-css');
 const cssnano = require('cssnano');
-const image = require('rollup-plugin-image');
-const json = require('rollup-plugin-json');
 const globals = require('rollup-plugin-node-globals');
 const builtins = require('rollup-plugin-node-builtins');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
-const babel = require('rollup-plugin-babel');
 const replace = require('rollup-plugin-replace');
 const uglify = require('rollup-plugin-uglify');
 const source = require('vinyl-source-stream');
@@ -38,6 +30,8 @@ const Karma = require('karma');
 const express = require('express');
 const expressHistory = require('express-history-api-fallback');
 const runsequence = require('run-sequence');
+
+const plugins = require('./rollup.plugin');
 
 const SOURCE_ROOT = path.join(__dirname, 'src');
 const DIST_ROOT = path.join(__dirname, 'dist');
@@ -104,42 +98,17 @@ gulp.task('index', () => {
     .pipe(browsersync.stream());
 });
 
-let [cache, cssExportMap] = [undefined, {}];
 gulp.task('app', () => {
+  let cache;
   return rollup({
       entry: path.join(SOURCE_ROOT, 'app.js'),
       format: 'iife',
       context: 'window',
       sourceMap: util.env.type === 'dev' && true,
       cache,
-      plugins: [
-        html({
-          htmlMinifierOptions: {
-            collapseWhitespace: true,
-            removeAttributeQuotes: true,
-            removeComments: true
-          }
-        }),
-        postcss({
-          parser: comment,
-          plugins: [
-            cssnext({ warnForDuplicates: false }),
-            rucksack({ autoprefixer: true }),
-            modules({ getJSON(id, tokens) { cssExportMap[id] = tokens; } }),
-            cssnano()
-          ],
-          getExport(id) { return cssExportMap[id]; }
-        }),
-        image(),
-        json(),
-        globals(),
-        builtins(),
-        resolve({ jsnext: true, browser: true }),
-        commonjs(),
-        babel({ exclude: 'node_modules/**' }),
-        replace({ ENV: util.env.type }),
+      plugins: plugins.concat([
         (util.env.type === 'prod' ? uglify() : util.noop())
-      ]
+      ])
     })
     .on('bundle', (bundle) => { cache = bundle; })
     .on('error', CompileError.handle)
@@ -268,9 +237,7 @@ gulp.task('e2e', (done) => {
     .server(9876, DIST_ROOT)
     .then((server) => {
       gulp.src(path.join(SOURCE_ROOT, '**/*.e2e-spec.js'))
-        .pipe(protractor.protractor({
-          configFile: util.env.type === 'labs' ? 'browserstack.conf.js' : 'protractor.conf.js'
-        }))
+        .pipe(protractor.protractor({ configFile: 'protractor.conf.js' }))
         .on('error', (error) => { throw error; })
         .on('end', () => { server.close(done); });
     });
