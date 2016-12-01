@@ -3,7 +3,6 @@ import template from 'lodash-es/template';
 import forEach from 'lodash-es/forEach';
 
 // Components
-import { query } from '../../utils';
 import { layoutEn, layoutZh } from '../../components/layout';
 
 // Assets
@@ -21,13 +20,13 @@ const imports = {
 };
 
 const commom = () => {
-  new Chart(query('#js-bar-chart'), {
+  new Chart(document.querySelector('#js-bar-chart'), {
     type: 'bar',
     data: jsData,
     options: { scales: { yAxes: [{ ticks: { beginAtZero: true } }] } }
   });
 
-  new Chart(query('#skill-radar-chart'), {
+  new Chart(document.querySelector('#skill-radar-chart'), {
     type: 'radar',
     data: {
       "labels": ["HTML", "CSS", "JS", "Angular", "Express", "Ionic", "Pug", "Stylus", "TypeScript"],
@@ -54,15 +53,15 @@ const commom = () => {
 };
 
 export const ABOUT_EN = () => {
-  query('#app').innerHTML = layoutEn;
-  query('#page').innerHTML = template(about, imports)(tplOptsEn);
-  query('#zh').onclick = () => { page.redirect('/zh/about'); };
+  document.querySelector('#app').innerHTML = layoutEn;
+  document.querySelector('#page').innerHTML = template(about, imports)(tplOptsEn);
+  document.querySelector('#zh').onclick = () => { page.redirect('/zh/about'); };
   commom();
 };
 
 export const ABOUT_ZH = () => {
-  query('#app').innerHTML = layoutZh;
-  query('#page').innerHTML = template(about, imports)(tplOptsZh);
-  query('#en').onclick = () => { page.redirect('/en/about'); };
+  document.querySelector('#app').innerHTML = layoutZh;
+  document.querySelector('#page').innerHTML = template(about, imports)(tplOptsZh);
+  document.querySelector('#en').onclick = () => { page.redirect('/en/about'); };
   commom();
 };

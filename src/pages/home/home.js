@@ -2,7 +2,6 @@
 import template from 'lodash-es/template';
 
 // Components
-import { query } from '../../utils';
 import { layoutEn, layoutZh } from '../../components/layout';
 
 // Assets
@@ -24,18 +23,18 @@ export const imports = {
 };
 
 export const common = (imports = null, datas = {}) => {
-  query('#page').innerHTML = template(homeTpl, imports)(datas);
+  document.querySelector('#page').innerHTML = template(homeTpl, imports)(datas);
   componentHandler.upgradeAllRegistered();
 };
 
 export const HOME_EN = () => {
-  query('#app').innerHTML = layoutEn;
-  query('#zh').onclick = () => { page.redirect('/zh/home'); };
+  document.querySelector('#app').innerHTML = layoutEn;
+  document.querySelector('#zh').onclick = () => { page.redirect('/zh/home'); };
   common(imports, homeDataLangEn);
 };
 
 export const HOME_ZH = () => {
-  query('#app').innerHTML = layoutZh;
-  query('#en').onclick = () => { page.redirect('/en/home'); };
+  document.querySelector('#app').innerHTML = layoutZh;
+  document.querySelector('#en').onclick = () => { page.redirect('/en/home'); };
   common(imports, homeDataLangZh);
 };

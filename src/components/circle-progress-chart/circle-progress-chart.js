@@ -16,7 +16,7 @@ import styl from './circle-progress-chart.css';
  *
  * @example
  * import { circleProgressChartCompiled } from '../../components/circle-progress-chart';
- * query('#cpc').innerHTML = circleProgressChartCompiled({
+ * document.querySelector('#cpc').innerHTML = circleProgressChartCompiled({
  *   color: '#5C6BC0', percentage: 77, size: 222, thickness: 2.2
  * });
  *
