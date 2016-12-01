@@ -4,26 +4,41 @@
       <span class="mdl-layout-title"><%= TITLE %></span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <% forEach(LINK, function(item) { %>
+          <a class="mdl-navigation__link" href="<%- item[0] %>"><%- item[1] %></a>
+        <% }); %>
+        <!--
         <% for (let [HREF, NAME] of LINK) { %>
           <a class="mdl-navigation__link" href="<%- HREF %>"><%- NAME %></a>
         <% } %>
+        -->
       </nav>
       <button id="language" class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">language</i>
       </button>
       <div class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="language">
+        <% forEach(LANG, function(item) { %>
+          <a href="javascript:void 0" id="<%- item[0] %>" class="mdl-menu__item"><%- item[1] %></a>
+        <% }); %>
+        <!--
         <% for (let [ID, NAME] of LANG) { %>
           <a href="javascript:void 0" id="<%- ID %>" class="mdl-menu__item"><%- NAME %></a>
         <% } %>
+        -->
       </div>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title"><%= TITLE %></span>
     <nav class="mdl-navigation">
+      <% forEach(LINK, function(item) { %>
+        <a class="mdl-navigation__link" href="<%- item[0] %>"><%- item[1] %></a>
+      <% }); %>
+      <!--
       <% for (let [HREF, NAME] of LINK) { %>
         <a class="mdl-navigation__link" href="<%- HREF %>"><%- NAME %></a>
       <% } %>
+      -->
     </nav>
   </div>
   <main class="mdl-layout__content mdl-color--grey-100">

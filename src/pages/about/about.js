@@ -1,5 +1,6 @@
 // Third party
 import template from 'lodash-es/template';
+import forEach from 'lodash-es/forEach';
 
 // Components
 import { query } from '../../utils';
@@ -12,6 +13,12 @@ import jsData from '../../assets/datas/js-bar-chart.json';
 import about from './about.html';
 import tplOptsEn from './langs/en.json';
 import tplOptsZh from './langs/zh.json';
+
+const imports = {
+  'imports': {
+    forEach
+  }
+};
 
 const commom = () => {
   new Chart(query('#js-bar-chart'), {
@@ -48,14 +55,14 @@ const commom = () => {
 
 export const ABOUT_EN = () => {
   query('#app').innerHTML = layoutEn;
-  query('#page').innerHTML = template(about)(tplOptsEn);
+  query('#page').innerHTML = template(about, imports)(tplOptsEn);
   query('#zh').onclick = () => { page.redirect('/zh/about'); };
   commom();
 };
 
 export const ABOUT_ZH = () => {
   query('#app').innerHTML = layoutZh;
-  query('#page').innerHTML = template(about)(tplOptsZh);
+  query('#page').innerHTML = template(about, imports)(tplOptsZh);
   query('#en').onclick = () => { page.redirect('/en/about'); };
   commom();
 };
