@@ -7,6 +7,17 @@ import { ABOUT_EN, ABOUT_ZH } from './pages/about';
 
 import { notfound } from './pages/404';
 
+import { load } from './utils';
+
+Promise.all([
+    load('https://fonts.googleapis.com/icon?family=Material+Icons')
+  ])
+  .then((data) => {
+    const style = document.createElement('style');
+    style.innerHTML = data[0];
+    document.head.appendChild(style);
+  });
+
 firebase.initializeApp(firebaseConfig);
 
 // Intl.getCanonicalLocales(['en', 'zh']);
