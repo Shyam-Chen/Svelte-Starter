@@ -20,8 +20,6 @@ Promise.all([
 
 firebase.initializeApp(firebaseConfig);
 
-// Intl.getCanonicalLocales(['en', 'zh']);
-
 /zh/.test(navigator.language) ? page('/', HOME_ZH) : page('/', HOME_EN);
 
 page('/en/home', HOME_EN);

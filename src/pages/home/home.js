@@ -13,6 +13,7 @@ import homeStyl from './home.css';
 import homeDataLangEn from './langs/en.json';
 import homeDataLangZh from './langs/zh.json';
 
+
 export const imports = {
   'imports': {
     'style': homeStyl,
@@ -30,11 +31,13 @@ export const common = (imports = null, datas = {}) => {
 export const HOME_EN = () => {
   document.querySelector('#app').innerHTML = layoutEn;
   document.querySelector('#zh').onclick = () => { page.redirect('/zh/home'); };
+  imports.imports.TODAY = new Intl.DateTimeFormat('en').format(new Date());
   common(imports, homeDataLangEn);
 };
 
 export const HOME_ZH = () => {
   document.querySelector('#app').innerHTML = layoutZh;
   document.querySelector('#en').onclick = () => { page.redirect('/en/home'); };
+  imports.imports.TODAY = new Intl.DateTimeFormat('zh').format(new Date());
   common(imports, homeDataLangZh);
 };
