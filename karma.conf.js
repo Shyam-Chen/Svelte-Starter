@@ -24,12 +24,13 @@ module.exports = (config) => {
         flags: ['--no-sandbox']
       }
     },
-    browsers: ['Chrome_no_sandbox'],
+    // browsers: ['Chrome_no_sandbox'],
+    browsers: ['PhantomJS'],
     singleRun: true,
     concurrency: Infinity
   });
 
-  if (process.env.TRAVIS) {
-    config.browsers = ['Firefox'];
-  }
+  // if (process.env.TRAVIS) {
+  //   config.browsers = ['Firefox'];
+  // }
 };

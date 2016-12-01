@@ -2,16 +2,21 @@ const SpecReporter = require('jasmine-spec-reporter');
 const babel = require('babel-core/register');
 
 const config = {
-  directConnect: true,
+  // directConnect: true,
   specs: [
     './src/**/*.e2e-spec.js'
   ],
   exclude: [],
+  // capabilities: {
+  //   'browserName': 'chrome',
+  //   'chromeOptions': {
+  //     'args': ['no-sandbox']
+  //   }
+  // },
   capabilities: {
-    'browserName': 'chrome',
-    'chromeOptions': {
-      'args': ['no-sandbox']
-    }
+  'browserName': 'phantomjs',
+  'phantomjs.binary.path': require('phantomjs-prebuilt').path,
+  'phantomjs.ghostdriver.cli.args': ['--loglevel=DEBUG']
   },
   baseUrl: 'http://localhost:9876/',
   onPrepare() {
@@ -29,10 +34,10 @@ const config = {
   }
 };
 
-if (process.env.TRAVIS) {
-  config.capabilities = {
-    browserName: 'firefox'
-  };
-}
+// if (process.env.TRAVIS) {
+//   config.capabilities = {
+//     browserName: 'firefox'
+//   };
+// }
 
 exports.config = config;
