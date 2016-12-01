@@ -28,13 +28,13 @@ export const common = (imports = null, datas = {}) => {
   componentHandler.upgradeAllRegistered();
 };
 
-export const loadHome = () => {
+export const HOME_EN = () => {
   query('#app').innerHTML = layoutEn;
   query('#zh').onclick = () => { page.redirect('/zh/home'); };
   common(imports, homeDataLangEn);
 };
 
-export const loadHomeZh = () => {
+export const HOME_ZH = () => {
   query('#app').innerHTML = layoutZh;
   query('#en').onclick = () => { page.redirect('/en/home'); };
   common(imports, homeDataLangZh);

@@ -46,14 +46,14 @@ const commom = () => {
   componentHandler.upgradeAllRegistered();
 };
 
-export const loadAbout = () => {
+export const ABOUT_EN = () => {
   query('#app').innerHTML = layoutEn;
   query('#page').innerHTML = template(about)(tplOptsEn);
   query('#zh').onclick = () => { page.redirect('/zh/about'); };
   commom();
 };
 
-export const loadAboutZh = () => {
+export const ABOUT_ZH = () => {
   query('#app').innerHTML = layoutZh;
   query('#page').innerHTML = template(about)(tplOptsZh);
   query('#en').onclick = () => { page.redirect('/en/about'); };

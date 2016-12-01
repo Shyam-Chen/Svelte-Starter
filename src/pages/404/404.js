@@ -2,12 +2,12 @@ import template from 'lodash-es/template';
 
 import { query } from '../../utils';
 
-import notFoundTpl from './404.html';
-import notFoundStyl from './404.css';
+import tpl from './404.html';
+import styl from './404.css';
 
-export const load404 = () => {
-  query('#app').innerHTML = template(notFoundTpl, {
-    'imports': { 'style': notFoundStyl }
+export const notfound = () => {
+  query('#app').innerHTML = template(tpl, {
+    'imports': { 'style': styl }
   })({
     text: '404'
   });
