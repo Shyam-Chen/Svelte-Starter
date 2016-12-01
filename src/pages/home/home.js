@@ -4,13 +4,9 @@ import template from 'lodash-es/template';
 // Components
 import { query } from '../../utils';
 import { layoutEn, layoutZh } from '../../components/layout';
-import { slideshowCompiled, addSlideActive } from '../../components/slideshow';
 
 // Assets
 import vanilla from '../../assets/images/vanilla.png';
-import r from '../../assets/images/r.png';
-import g from '../../assets/images/g.png';
-import b from '../../assets/images/b.png';
 
 // Home
 import homeTpl from './home.html';
@@ -29,14 +25,6 @@ export const imports = {
 
 export const common = (imports = null, datas = {}) => {
   query('#page').innerHTML = template(homeTpl, imports)(datas);
-  query('#demo').innerHTML = slideshowCompiled({
-    "SLIDESHOW": [
-      [r.src, 'Red'],
-      [g.src, 'Green'],
-      [b.src, 'Blue']
-    ]
-  });
-  addSlideActive();
   componentHandler.upgradeAllRegistered();
 };
 

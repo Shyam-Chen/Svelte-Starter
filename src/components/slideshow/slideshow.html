@@ -1,9 +1,0 @@
-<div class="<%= style.slideshow %>">
-  <% for (let item of SLIDESHOW.entries()) { %>
-    <div data-slideshow class="<%= style.slideshowItem %> <%= style.slideshowItemFade %>">
-      <div class="<%= style.slideshowNumber %>"><%- item[0] + 1 %> / <%- SLIDESHOW.length %></div>
-      <img src="<%- item[1][0] %>" alt="<%- item[1][1] %>" class="<%= style.slideshowImage %>">
-      <div class="<%= style.slideshowText %>"><%- item[1][1] %></div>
-    </div>
-  <% } %>
-</div>
