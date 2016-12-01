@@ -8,9 +8,6 @@ import { load404 } from './pages/404';
 
 firebase.initializeApp(firebaseConfig);
 
-// loadFont('https://fonts.googleapis.com/icon?family=Material+Icons');
-// loadFont('https://fonts.googleapis.com/css?family=Lora');
-
 // Intl.getCanonicalLocales(['en', 'zh']);
 
 /zh/.test(navigator.language) ? page('/', loadHomeZh) : page('/', loadHome);

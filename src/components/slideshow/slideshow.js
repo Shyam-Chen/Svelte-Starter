@@ -1,9 +1,4 @@
-/**
- * @example
- *
- * step 1. query('#demo').innerHTML = slideshowCompiled(<TEMPLATE_DATA>);
- * setp 2. slideshow();
- */
+// bug
 import template from 'lodash-es/template';
 
 import slideshowTpl from './slideshow.html';
