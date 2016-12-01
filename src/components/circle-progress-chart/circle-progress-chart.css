@@ -1,6 +1,6 @@
 .container {
-  position: relative;
   margin: 1rem auto;
+  position: relative;
 }
 
 .circle {
@@ -22,9 +22,9 @@
 }
 
 .text {
-  position: absolute;
   left: 0;
+  position: absolute;
+  text-align: center;
   top: 45%;
   width: 100%;
-  text-align: center;
 }
