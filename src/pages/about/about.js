@@ -4,6 +4,7 @@ import forEach from 'lodash-es/forEach';
 
 // Components
 import { layoutEn, layoutZh } from '../../components/layout';
+import { circleProgressChartCompiled } from '../../components/circle-progress-chart';
 
 // Assets
 import jsData from '../../assets/datas/js-bar-chart.json';
@@ -23,31 +24,21 @@ const commom = () => {
   new Chart(document.querySelector('#js-bar-chart'), {
     type: 'bar',
     data: jsData,
-    options: { scales: { yAxes: [{ ticks: { beginAtZero: true } }] } }
+    options: {
+      scales: { yAxes: [{ ticks: { beginAtZero: true } }] },
+      title: { display: true, text: 'Vanilla JS' },
+    }
+  });
+  document.querySelector('#html').innerHTML = circleProgressChartCompiled({
+    color: '#FF7043', percentage: 85, size: 222, text: 'HTML', thickness: 2.2,
   });
 
-  new Chart(document.querySelector('#skill-radar-chart'), {
-    type: 'radar',
-    data: {
-      "labels": ["HTML", "CSS", "JS", "Angular", "Express", "Ionic", "Pug", "Stylus", "TypeScript"],
-      "datasets": [
-        {
-          "label": "Skills",
-          "backgroundColor": "rgba(179, 181, 198, .2)",
-          "borderColor": "rgba(179, 181, 198, 1)",
-          "pointBackgroundColor": "rgba(179, 181, 198, 1)",
-          "pointBorderColor": "rgba(255, 255, 255, 1)",
-          "pointHoverBackgroundColor": "rgba(255, 255, 255, 1)",
-          "pointHoverBorderColor": "rgba(179, 181, 198, 1)",
-          "data": [90, 50, 75, 80, 50, 33, 85, 75, 80]
-        }
-      ]
-    },
-    options: {
-      legend: { position: 'top' },
-      title: { display: true, text: 'Skill Radar Chart' },
-      scale: { ticks: { beginAtZero: true } }
-    }
+  document.querySelector('#css').innerHTML = circleProgressChartCompiled({
+    color: '#42A5F5', percentage: 60, size: 222, text: 'CSS', thickness: 2.2,
+  });
+
+  document.querySelector('#js').innerHTML = circleProgressChartCompiled({
+    color: '#FFCA28', percentage: 75, size: 222, text: 'JS', thickness: 2.2,
   });
   componentHandler.upgradeAllRegistered();
 };

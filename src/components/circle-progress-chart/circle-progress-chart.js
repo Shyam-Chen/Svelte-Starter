@@ -12,12 +12,13 @@ import styl from './circle-progress-chart.css';
  * @param {string} color - color of circle and text
  * @param {number} percentage - percentage of chart information
  * @param {number} size - size of chart
+ * @param {string} text - text of chart
  * @param {number} thickness - thickness of line
  *
  * @example
  * import { circleProgressChartCompiled } from '../../components/circle-progress-chart';
  * document.querySelector('#cpc').innerHTML = circleProgressChartCompiled({
- *   color: '#5C6BC0', percentage: 77, size: 222, thickness: 2.2
+ *   color: '#5C6BC0', percentage: 77, size: 222, text: 'HTML', thickness: 2.2,
  * });
  *
  * <div id="cpc"></div>

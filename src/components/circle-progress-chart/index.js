@@ -1,1 +1,1 @@
-export * from './slideshow';
+export * from './circle-progress-chart';
