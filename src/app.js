@@ -1,14 +1,15 @@
 import './themes/global.css';
 
+import { load } from './utils';
 import firebaseConfig from './assets/datas/firebase.config.json';
 
 import { HOME_EN, HOME_ZH } from './pages/home';
 import { ABOUT_EN, ABOUT_ZH } from './pages/about';
-
 import { notfound } from './pages/404';
 
-import { load } from './utils';
-
+/**
+ * @name Material
+ */
 Promise.all([
     load('https://fonts.googleapis.com/icon?family=Material+Icons')
   ])
@@ -18,8 +19,14 @@ Promise.all([
     document.head.appendChild(style);
   });
 
+/**
+ * @name Firebase
+ */
 firebase.initializeApp(firebaseConfig);
 
+/**
+ * @name Page
+ */
 /zh/.test(navigator.language) ? page('/', HOME_ZH) : page('/', HOME_EN);
 
 page('/en/home', HOME_EN);
@@ -29,4 +36,5 @@ page('/zh/home', HOME_ZH);
 page('/zh/about', ABOUT_ZH);
 
 page('*', notfound);
+
 page();
