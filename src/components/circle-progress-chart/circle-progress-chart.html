@@ -3,5 +3,6 @@
     <circle cx="16" cy="16" r="15.9155" class="<%= style.background %>" style="stroke-width:<%= thickness %>px"></circle>
     <circle cx="16" cy="16" r="15.9155" class="<%= style.progress %>" style="stroke:<%= color %>; stroke-width:<%= thickness %>px; stroke-dashoffset:<%- 100 - percentage %>"></circle>
   </svg>
-  <div class="<%= style.text %>" style="font-size:<%- size * .2 %>px; color:<%= color %>"><%= text %></div>
+  <div class="<%= style.text %>" style="font-size:<%- size * .2 %>px; color:<%= color %>"><%= percentage %>%</div>
+  <div class="<%= style.title %>" style="font-size:<%- size * .15 %>px; color:<%= color %>"><%= text %></div>
 </div>
