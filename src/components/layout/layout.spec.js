@@ -1,11 +1,11 @@
 import template from 'lodash-es/template';
 import forEach from 'lodash-es/forEach';
 
-import layoutTpl from './layout.html';
+import tpl from './layout.html';
 import tplOptsEn from './langs/en.json';
 import tplOptsZh from './langs/zh.json';
 
-import { layoutEn, layoutZh } from './layout';
+import { LAYOUT_EN, LAYOUT_ZH } from './layout';
 
 describe('Layout', () => {
 
@@ -27,15 +27,15 @@ describe('Layout', () => {
 
   describe('Template', () => {
     it('should be used `fixed-header`', () => {
-      expect(layoutTpl).toMatch(/mdl-layout--fixed-header/);
-      expect(layoutTpl).not.toMatch(/mdl-layout--fixed-drawer/);
+      expect(tpl).toMatch(/mdl-layout--fixed-header/);
+      expect(tpl).not.toMatch(/mdl-layout--fixed-drawer/);
     });
 
     it('should be a constant', () => {
-      // expect(layoutTpl).toMatch(/<%= TITLE %>/);
-      // expect(layoutTpl).toMatch(/<%- HREF %>/);
-      // expect(layoutTpl).toMatch(/<%- NAME %>/);
-      // expect(layoutTpl).toMatch(/<%- ID %>/);
+      // expect(tpl).toMatch(/<%= TITLE %>/);
+      // expect(tpl).toMatch(/<%- HREF %>/);
+      // expect(tpl).toMatch(/<%- NAME %>/);
+      // expect(tpl).toMatch(/<%- ID %>/);
     });
   });
 
@@ -50,19 +50,19 @@ describe('Layout', () => {
   });
 
   it('should exist - `layout-en`', () => {
-    expect(layoutEn).toBeDefined();
+    expect(LAYOUT_EN).toBeDefined();
   });
 
   it('should work properly - `layout-en`', () => {
-    expect(layoutEn).toBe(template(layoutTpl, imports)(tplOptsEnSpec));
+    expect(LAYOUT_EN).toBe(template(tpl, imports)(tplOptsEnSpec));
   });
 
   it('should exist - `layout-zh`', () => {
-    expect(layoutZh).toBeDefined();
+    expect(LAYOUT_ZH).toBeDefined();
   });
 
   it('should work properly - `layout-zh`', () => {
-    expect(layoutZh).toBe(template(layoutTpl, imports)(tplOptsZhSpec));
+    expect(LAYOUT_ZH).toBe(template(tpl, imports)(tplOptsZhSpec));
   });
 
 });

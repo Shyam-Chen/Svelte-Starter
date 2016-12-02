@@ -1,11 +1,12 @@
 import template from 'lodash-es/template';
 import forEach from 'lodash-es/forEach';
 
-import layoutTpl from './layout.html';
-import tplOptsEn from './langs/en.json';
-import tplOptsZh from './langs/zh.json';
+import tpl from './layout.html';
+// import styl from './layout.css';
+import langsEn from './langs/en.json';
+import langsZh from './langs/zh.json';
 
 const imports = { 'imports': { forEach } };
 
-export const layoutEn = template(layoutTpl, imports)(tplOptsEn);
-export const layoutZh = template(layoutTpl, imports)(tplOptsZh);
+export const LAYOUT_EN = template(tpl, imports)(langsEn);
+export const LAYOUT_ZH = template(tpl, imports)(langsZh);

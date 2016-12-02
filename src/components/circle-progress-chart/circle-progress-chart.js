@@ -4,7 +4,7 @@ import template from 'lodash-es/template';
  * @private
  */
 import tpl from './circle-progress-chart.html';
-import styl from './circle-progress-chart.css';
+import style from './circle-progress-chart.css';
 
 /**
  * @exports
@@ -16,11 +16,13 @@ import styl from './circle-progress-chart.css';
  * @param {number} thickness - thickness of line
  *
  * @example
+ * // JS
  * import { circleProgressChartCompiled } from '../../components/circle-progress-chart';
  * document.querySelector('#cpc').innerHTML = circleProgressChartCompiled({
- *   color: '#5C6BC0', percentage: 77, size: 222, text: 'HTML', thickness: 2.2,
+ *   color: '#5C6BC0', percentage: 77, size: 222, text: 'Vanilla', thickness: 2.2
  * });
  *
+ * // HTML
  * <div id="cpc"></div>
  */
-export const circleProgressChartCompiled = template(tpl, { 'imports': { 'style': styl } });
+export const circleProgressChartCompiled = template(tpl, { 'imports': { style } });
