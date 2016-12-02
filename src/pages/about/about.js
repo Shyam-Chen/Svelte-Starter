@@ -36,7 +36,7 @@ const commom = () => {
   });
 
   document.querySelector('#js').innerHTML = circleProgressChartCompiled({
-    color: '#FFCA28', percentage: 75, size: 222, text: 'JS', thickness: 2.2
+    color: '#FFCA28', percentage: 75, size: 222, text: 'JavaScript', thickness: 2.2
   });
 
   componentHandler.upgradeAllRegistered();

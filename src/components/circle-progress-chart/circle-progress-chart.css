@@ -1,5 +1,5 @@
 .container {
-  margin: 1rem auto;
+  margin: 1rem auto 15%;
   position: relative;
 }
 
@@ -33,6 +33,6 @@
   left: 0;
   position: absolute;
   text-align: center;
-  top: -15%;
+  bottom: -15%;
   width: 100%;
 }
