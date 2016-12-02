@@ -1,5 +1,15 @@
+:root {
+  --outside: 20%;
+  --text: {
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  };
+}
+
 .container {
-  margin: 1rem auto 15%;
+  margin: 1rem auto var(--outside);
   position: relative;
 }
 
@@ -21,18 +31,12 @@
   transition: stroke-dashoffset 1s ease-in-out;
 }
 
-.text {
-  left: 0;
-  position: absolute;
-  text-align: center;
+.percentage {
+  @apply --text;
   top: 45%;
-  width: 100%;
 }
 
 .title {
-  left: 0;
-  position: absolute;
-  text-align: center;
-  bottom: -15%;
-  width: 100%;
+  @apply --text;
+  bottom: -var(--outside);
 }
