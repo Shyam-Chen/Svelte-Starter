@@ -1,27 +1,26 @@
 // Third party
-import template from 'lodash-es/template';
-import forEach from 'lodash-es/forEach';
+import _template from 'lodash-es/template';
+import _forEach from 'lodash-es/forEach';
 
 // Components
 import { LAYOUT_EN, LAYOUT_ZH } from '../../components/layout';
 import { circleProgressChartCompiled } from '../../components/circle-progress-chart';
 
 // Assets
-import jsData from '../../assets/datas/js-bar-chart.json';
+import jsBarChart from '../../assets/datas/js-bar-chart.json';
 
 // About
-import about from './about.html';
-import tplOptsEn from './langs/en.json';
-import tplOptsZh from './langs/zh.json';
+import template from './about.html';
+import style from './about.css';
+import LANGS_EN from './langs/en.json';
+import LANGS_ZH from './langs/zh.json';
 
-const imports = {
-  'imports': { forEach }
-};
+const imports = { 'imports': { _forEach, style } };
 
 const commom = () => {
   new Chart(document.querySelector('#js-bar-chart'), {
     type: 'bar',
-    data: jsData,
+    data: jsBarChart,
     options: {
       scales: { yAxes: [{ ticks: { beginAtZero: true } }] },
       title: { display: true, text: 'Vanilla JS' },
@@ -45,14 +44,14 @@ const commom = () => {
 
 export const ABOUT_EN = () => {
   document.querySelector('#app').innerHTML = LAYOUT_EN;
-  document.querySelector('#page').innerHTML = template(about, imports)(tplOptsEn);
+  document.querySelector('#page').innerHTML = _template(template, imports)(LANGS_EN);
   document.querySelector('#zh').onclick = () => { page.redirect('/zh/about'); };
   commom();
 };
 
 export const ABOUT_ZH = () => {
   document.querySelector('#app').innerHTML = LAYOUT_ZH;
-  document.querySelector('#page').innerHTML = template(about, imports)(tplOptsZh);
+  document.querySelector('#page').innerHTML = _template(template, imports)(LANGS_ZH);
   document.querySelector('#en').onclick = () => { page.redirect('/en/about'); };
   commom();
 };

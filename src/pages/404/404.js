@@ -1,11 +1,11 @@
-import template from 'lodash-es/template';
+import _template from 'lodash-es/template';
 
-import tpl from './404.html';
-import styl from './404.css';
+import template from './404.html';
+import style from './404.css';
 
 export const notfound = () => {
-  document.querySelector('#app').innerHTML = template(tpl, {
-    'imports': { 'style': styl }
+  document.querySelector('#app').innerHTML = _template(template, {
+    'imports': { style }
   })({
     text: '404'
   });

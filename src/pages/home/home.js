@@ -1,5 +1,5 @@
 // Third party
-import template from 'lodash-es/template';
+import _template from 'lodash-es/template';
 
 // Components
 import { LAYOUT_EN, LAYOUT_ZH } from '../../components/layout';
@@ -8,13 +8,12 @@ import { LAYOUT_EN, LAYOUT_ZH } from '../../components/layout';
 import vanilla from '../../assets/images/vanilla.png';
 
 // Home
-import tpl from './home.html';
+import template from './home.html';
 import style from './home.css';
 import homeDataLangEn from './langs/en.json';
 import homeDataLangZh from './langs/zh.json';
 
-
-export const imports = {
+const imports = {
   'imports': {
     style,
     'image': {
@@ -23,8 +22,8 @@ export const imports = {
   }
 };
 
-export const common = (imports = null, datas = {}) => {
-  document.querySelector('#page').innerHTML = template(tpl, imports)(datas);
+const common = (imports = null, datas = {}) => {
+  document.querySelector('#page').innerHTML = _template(template, imports)(datas);
   componentHandler.upgradeAllRegistered();
 };
 
