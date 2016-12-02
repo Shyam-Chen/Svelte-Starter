@@ -1,5 +1,11 @@
 :root {
   --outside: 20%;
+
+  --circle: {
+    fill: none;
+    stroke-width: 2.2;
+  };
+
   --text: {
     left: 0;
     position: absolute;
@@ -18,17 +24,15 @@
 }
 
 .background {
-  fill: none;
+  @apply --circle;
   stroke: rgba(255, 255, 255, .5);
+
 }
 
 .progress {
-  fill: none;
-  stroke: #000;
+  @apply --circle;
   stroke-dasharray: 100 100;
-  stroke-dashoffset: 100;
   stroke-linecap: round;
-  transition: stroke-dashoffset 1s ease-in-out;
 }
 
 .percentage {

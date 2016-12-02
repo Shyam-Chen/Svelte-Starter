@@ -28,15 +28,18 @@ const commom = () => {
   });
 
   document.querySelector('#html').innerHTML = circleProgressChartCompiled({
-    color: '#FF7043', percentage: 85, size: 222, title: 'HTML', thickness: 2.2
+    color: '#FF7043', percentage: 85, size: 222,
+    title: 'HTML'
   });
 
   document.querySelector('#css').innerHTML = circleProgressChartCompiled({
-    color: '#42A5F5', percentage: 60, size: 222, title: 'CSS', thickness: 2.2
+    color: '#42A5F5', percentage: 60, size: 222,
+    title: 'CSS'
   });
 
   document.querySelector('#js').innerHTML = circleProgressChartCompiled({
-    color: '#FFCA28', percentage: 75, size: 222, title: 'JavaScript', thickness: 2.2
+    color: '#FFCA28', percentage: 75, size: 222,
+    title: 'JS'
   });
 
   componentHandler.upgradeAllRegistered();

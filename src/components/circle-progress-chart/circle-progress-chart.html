@@ -1,11 +1,11 @@
 <div class="<%= style.container %>" style="width:<%= size %>px; height:<%= size %>px">
   <svg viewBox="-1 -1 34 34" class="<%= style.circle %>">
-    <circle cx="16" cy="16" r="15.9155" class="<%= style.background %>" style="stroke-width:<%= thickness %>px"></circle>
-    <circle cx="16" cy="16" r="15.9155" class="<%= style.progress %>" style="stroke:<%= color %>; stroke-width:<%= thickness %>px; stroke-dashoffset:<%- 100 - percentage %>"></circle>
+    <circle cx="16" cy="16" r="15.9155" class="<%= style.background %>"></circle>
+    <circle cx="16" cy="16" r="15.9155" class="<%= style.progress %>" style="stroke:<%= color %>; stroke-dashoffset:<%- 100 - percentage %>"></circle>
   </svg>
   <div class="<%= style.percentage %>" style="font-size:<%- size * .2 %>px; color:<%= color %>"><%= percentage %>%</div>
   <% var title; %>
-  <% if (title != undefined) { %>
+  <% if (title !== undefined) { %>
     <div class="<%= style.title %>" style="font-size:<%- size * .15 %>px; color:<%= color %>"><%- title %></div>
   <% } %>
 </div>
