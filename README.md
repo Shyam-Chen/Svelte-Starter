@@ -69,43 +69,35 @@ $ docker build -t vanilla-starter-kit .
 $ docker run -it -p 3000:3000 --name app vanilla-starter-kit
 ```
 
-3) Or use Compose
+3) Just Compose
 ```bash
-$ docker-compose up  # equivalent to steps one and two
+$ docker-compose up
 ```
 
 ## Other Commands
 
 ```bash
 $ yarn run dev
-$ yarn run dev-watch  # no serve
+$ yarn run dev-watch
 
 $ yarn run test
-$ yarn run test-watch  # no single run
+$ yarn run test-watch
 
 $ yarn run prod
-
-$ yarn run e2e  # pre: yarn run webdriver
-
-$ yarn run lint
+$ yarn run e2e
 
 $ yarn run clean
-
 $ yarn run reset
-
 $ yarn run reinstall
 ```
 
 ## Folder
-* Pages
+* `pages`
   * One folder for one page
-* Themes
-  * Variables and Mixins here (`root.css`)
-  * Global style here (`global.css`)
-* Components
+* `components`
   * Shared: Compiled + Data
   * Reused: Only Compiled
-* Utils
+* `utils`
   * All the functions here
-* Assets
+* `assets`
   * Images and Datas here

@@ -15,7 +15,6 @@
     "clean": "rimraf dist",
     "reset": "git reset --hard HEAD && git clean -df",
     "reinstall": "yarn cache clean && git clean -dfx -e '.*' && yarn install",
-    "labs": "gulp e2e --type labs",
     "deploy": "firebase deploy"
   },
   "repository": {
