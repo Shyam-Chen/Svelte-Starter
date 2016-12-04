@@ -1,5 +1,6 @@
-const SpecReporter = require('jasmine-spec-reporter');
+const phantomjs = require('phantomjs-prebuilt');
 const babel = require('babel-core/register');
+const SpecReporter = require('jasmine-spec-reporter');
 
 const config = {
   // directConnect: true,
@@ -14,9 +15,9 @@ const config = {
   //   }
   // },
   capabilities: {
-  'browserName': 'phantomjs',
-  'phantomjs.binary.path': require('phantomjs-prebuilt').path,
-  'phantomjs.ghostdriver.cli.args': ['--loglevel=DEBUG']
+    'browserName': 'phantomjs',
+    'phantomjs.binary.path': phantomjs.path,
+    'phantomjs.ghostdriver.cli.args': ['--loglevel=DEBUG']
   },
   baseUrl: 'http://localhost:9876/',
   onPrepare() {

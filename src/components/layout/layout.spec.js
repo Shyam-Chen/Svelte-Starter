@@ -1,7 +1,8 @@
-import template from 'lodash-es/template';
-import forEach from 'lodash-es/forEach';
+import _template from 'lodash-es/template';
+import _forEach from 'lodash-es/forEach';
 
-import tpl from './layout.html';
+import template from './layout.html';
+import style from './layout.css';
 import tplOptsEn from './langs/en.json';
 import tplOptsZh from './langs/zh.json';
 
@@ -11,7 +12,7 @@ describe('Layout', () => {
 
   let tplOptsEnSpec, tplOptsZhSpec, imports;
   beforeEach(() => {
-    imports = { 'imports': { forEach } };
+    imports = { 'imports': { _forEach, style } };
     tplOptsEnSpec = {
       "TITLE": "Vanilla",
       "LINK": [["/en/home", "Home"], ["/en/about", "About"]],
@@ -27,15 +28,15 @@ describe('Layout', () => {
 
   describe('Template', () => {
     it('should be used `fixed-header`', () => {
-      expect(tpl).toMatch(/mdl-layout--fixed-header/);
-      expect(tpl).not.toMatch(/mdl-layout--fixed-drawer/);
+      expect(template).toMatch(/mdl-layout--fixed-header/);
+      expect(template).not.toMatch(/mdl-layout--fixed-drawer/);
     });
 
     it('should be a constant', () => {
-      // expect(tpl).toMatch(/<%= TITLE %>/);
-      // expect(tpl).toMatch(/<%- HREF %>/);
-      // expect(tpl).toMatch(/<%- NAME %>/);
-      // expect(tpl).toMatch(/<%- ID %>/);
+      // expect(template).toMatch(/<%= TITLE %>/);
+      // expect(template).toMatch(/<%- HREF %>/);
+      // expect(template).toMatch(/<%- NAME %>/);
+      // expect(template).toMatch(/<%- ID %>/);
     });
   });
 
@@ -54,7 +55,7 @@ describe('Layout', () => {
   });
 
   it('should work properly - `layout-en`', () => {
-    expect(LAYOUT_EN).toBe(template(tpl, imports)(tplOptsEnSpec));
+    expect(LAYOUT_EN).toBe(_template(template, imports)(tplOptsEnSpec));
   });
 
   it('should exist - `layout-zh`', () => {
@@ -62,7 +63,7 @@ describe('Layout', () => {
   });
 
   it('should work properly - `layout-zh`', () => {
-    expect(LAYOUT_ZH).toBe(template(tpl, imports)(tplOptsZhSpec));
+    expect(LAYOUT_ZH).toBe(_template(template, imports)(tplOptsZhSpec));
   });
 
 });

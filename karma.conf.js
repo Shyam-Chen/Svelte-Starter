@@ -3,6 +3,7 @@ const plugins = require('./rollup.conf');
 module.exports = (config) => {
   config.set({
     frameworks: ['jasmine'],
+    // TODO: shim
     files: ['./src/**/*.spec.js'],
     exclude: [],
     preprocessors: {
@@ -18,12 +19,12 @@ module.exports = (config) => {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    customLaunchers: {
-      Chrome_no_sandbox: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
-    },
+    // customLaunchers: {
+    //   Chrome_no_sandbox: {
+    //     base: 'Chrome',
+    //     flags: ['--no-sandbox']
+    //   }
+    // },
     // browsers: ['Chrome_no_sandbox'],
     browsers: ['PhantomJS'],
     singleRun: true,

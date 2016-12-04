@@ -1,9 +1,9 @@
-import template from 'lodash-es/template';
+import _template from 'lodash-es/template';
 
 /**
  * @private
  */
-import tpl from './circle-progress-chart.html';
+import template from './circle-progress-chart.html';
 import style from './circle-progress-chart.css';
 
 /**
@@ -24,4 +24,4 @@ import style from './circle-progress-chart.css';
  * // HTML
  * <div id="cpc"></div>
  */
-export const circleProgressChartCompiled = template(tpl, { 'imports': { style } });
+export const circleProgressChartCompiled = _template(template, { 'imports': { style } });
