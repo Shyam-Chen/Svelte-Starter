@@ -28,6 +28,8 @@ const common = (imports = null, datas = {}) => {
 };
 
 export const HOME_EN = () => {
+  document.title = 'Vanilla - Home';
+  document.querySelector('[name=description]').content = 'A single-page application boilerplate for Vanilla HTML/CSS/JS, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.';
   document.querySelector('#app').innerHTML = LAYOUT_EN;
   document.querySelector('#zh').onclick = () => { page.redirect('/zh/home'); };
   imports.imports.TODAY = new Intl.DateTimeFormat('en').format(new Date());
@@ -35,6 +37,8 @@ export const HOME_EN = () => {
 };
 
 export const HOME_ZH = () => {
+  document.title = '香草 - 首頁';
+  document.querySelector('[name=description]').content = 'Vanilla HTML/CSS/JS、Material、Firebase、Gulp、Rollup、PostCSS 和 Babel 的單頁應用程式底板';
   document.querySelector('#app').innerHTML = LAYOUT_ZH;
   document.querySelector('#en').onclick = () => { page.redirect('/en/home'); };
   imports.imports.TODAY = new Intl.DateTimeFormat('zh').format(new Date());

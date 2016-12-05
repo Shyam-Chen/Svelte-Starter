@@ -27,7 +27,13 @@ firebase.initializeApp(firebaseConfig);
 /**
  * @name Page
  */
-/zh/.test(navigator.language) ? page('/', HOME_ZH) : page('/', HOME_EN);
+switch (true) {
+  case /zh/.test(navigator.language):
+    page('/', HOME_ZH);
+    break;
+  default:
+    page('/', HOME_EN);
+}
 
 page('/en/home', HOME_EN);
 page('/en/about', ABOUT_EN);
