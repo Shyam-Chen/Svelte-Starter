@@ -30,7 +30,7 @@ const commom = () => {
 
 export const ABOUT_EN = () => {
   document.title = 'Vanilla - About';
-  document.querySelector('[name=description]').content = 'A single-page application boilerplate for Vanilla HTML/CSS/JS, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.';
+  document.querySelector('meta[name=description]').content = 'A single-page application boilerplate for Vanilla HTML/CSS/JS, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.';
   document.querySelector('#app').innerHTML = LAYOUT_EN;
   document.querySelector('#page').innerHTML = _template(template, imports)(LANGS_EN);
   document.querySelector('#zh').onclick = () => { page.redirect('/zh/about'); };
@@ -39,7 +39,7 @@ export const ABOUT_EN = () => {
 
 export const ABOUT_ZH = () => {
   document.title = '香草 - 關於';
-  document.querySelector('[name=description]').content = 'Vanilla HTML/CSS/JS、Material、Firebase、Gulp、Rollup、PostCSS 和 Babel 的單頁應用程式底板';
+  document.querySelector('meta[name=description]').content = 'Vanilla HTML/CSS/JS、Material、Firebase、Gulp、Rollup、PostCSS 和 Babel 的單頁應用程式底板';
   document.querySelector('#app').innerHTML = LAYOUT_ZH;
   document.querySelector('#page').innerHTML = _template(template, imports)(LANGS_ZH);
   document.querySelector('#en').onclick = () => { page.redirect('/en/about'); };
