@@ -3,9 +3,9 @@ import _template from 'lodash-es/template';
 import template from './file-upload.html';
 import style from './file-upload.css';
 
-const view = _template(template, { 'imports': { style } });
+const compiled = _template(template, { 'imports': { style } });
 
-const controller = (name) => {
+const action = (name) => {
   const input = document.querySelector(`input[data-file-upload=${name}]`);
 	let label	= input.nextElementSibling;
 	let labelVal = label.innerHTML;
@@ -33,6 +33,6 @@ const controller = (name) => {
  * <div id="file-upload"></div>
  */
 export const fileUpload = (name, text) => {
-  document.querySelector(`#${name}`).innerHTML = view({ name, text });
-  controller(name);
+  document.querySelector(`#${name}`).innerHTML = compiled({ name, text });
+  action(name);
 };
