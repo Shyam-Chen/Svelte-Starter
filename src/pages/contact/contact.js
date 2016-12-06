@@ -11,6 +11,7 @@ import _template from 'lodash-es/template';
 
 // Components
 import { LAYOUT_EN, LAYOUT_ZH } from '../../components/layout';
+import { fileUpload } from '../../components/file-upload';
 
 // Utils
 import { site } from '../../utils';
@@ -21,23 +22,6 @@ import style from './contact.css';
 import LANGS_EN from './langs/en.json';
 import LANGS_ZH from './langs/zh.json';
 
-const common = () => {
-  const input = document.querySelector('#file-upload');
-	let label	= input.nextElementSibling;
-	let labelVal = label.innerHTML;
-	input.addEventListener('change', (e) => {
-		let fileName = '';
-    fileName = e.target.value.split('\\').pop();
-    if (fileName) {
-			label.querySelector('span').innerHTML = fileName;
-		} else {
-			label.innerHTML = labelVal;
-    }
-	});
-
-  componentHandler.upgradeAllRegistered();
-};
-
 export const CONTACT_EN = () => {
   site('en');
 
@@ -46,7 +30,9 @@ export const CONTACT_EN = () => {
 
   document.querySelector('#page').innerHTML = _template(template, { 'imports': { style } })(LANGS_EN);
 
-	common();
+  fileUpload('contact-image', 'Choose a file');
+
+	componentHandler.upgradeAllRegistered();
 };
 
 export const CONTACT_ZH = () => {
@@ -57,5 +43,7 @@ export const CONTACT_ZH = () => {
 
   document.querySelector('#page').innerHTML = _template(template, { 'imports': { style } })(LANGS_ZH);
 
-  common();
+  fileUpload('contact-image', '選擇一個檔案');
+
+  componentHandler.upgradeAllRegistered();
 };

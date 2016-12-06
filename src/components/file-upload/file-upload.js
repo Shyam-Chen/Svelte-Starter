@@ -3,9 +3,9 @@ import _template from 'lodash-es/template';
 import template from './file-upload.html';
 import style from './file-upload.css';
 
-const fileUploadView = _template(template, { 'imports': { style } });
+const view = _template(template, { 'imports': { style } });
 
-const fileUploadCtrl = (name) => {
+const controller = (name) => {
   const input = document.querySelector(`input[data-file-upload=${name}]`);
 	let label	= input.nextElementSibling;
 	let labelVal = label.innerHTML;
@@ -20,17 +20,19 @@ const fileUploadCtrl = (name) => {
 	});
 };
 
-export const fileUpload = (name, text) => {
-  document.querySelector(`#${name}`).innerHTML = fileUploadView({ name, text });
-  fileUploadCtrl(name);
-};
-
 /**
+ * @param {string} name
+ * @param {string} text
+ *
  * @example
  * // js
  * import { fileUpload } from '../../components/file-upload';
- * fileUpload('fu', 'Choose a file');
+ * fileUpload('file-upload', 'Choose a file');
  *
  * // html
- * <div id="fu"></div>
+ * <div id="file-upload"></div>
  */
+export const fileUpload = (name, text) => {
+  document.querySelector(`#${name}`).innerHTML = view({ name, text });
+  controller(name);
+};
