@@ -30,7 +30,7 @@ const commom = () => {
 };
 
 export const ABOUT_EN = () => {
-  site('en', 'Vanilla - About', 'A single-page application boilerplate for Vanilla HTML/CSS/JS, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.');
+  site('en');
   document.querySelector('#app').innerHTML = LAYOUT_EN;
   document.querySelector('#page').innerHTML = _template(template, imports)(LANGS_EN);
   document.querySelector('#zh').onclick = () => page.redirect('/zh/about');
@@ -38,7 +38,7 @@ export const ABOUT_EN = () => {
 };
 
 export const ABOUT_ZH = () => {
-  site('zh', '香草 - 關於', 'Vanilla HTML/CSS/JS、Material、Firebase、Gulp、Rollup、PostCSS 和 Babel 的單頁應用程式底板。');
+  site('zh');
   document.querySelector('#app').innerHTML = LAYOUT_ZH;
   document.querySelector('#page').innerHTML = _template(template, imports)(LANGS_ZH);
   document.querySelector('#en').onclick = () => page.redirect('/en/about');

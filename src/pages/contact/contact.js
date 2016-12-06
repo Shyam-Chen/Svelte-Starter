@@ -22,7 +22,7 @@ import LANGS_EN from './langs/en.json';
 import LANGS_ZH from './langs/zh.json';
 
 export const CONTACT_EN = () => {
-  site('en', 'Vanilla - Contact', 'A single-page application boilerplate for Vanilla HTML/CSS/JS, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.');
+  site('en');
   document.querySelector('#app').innerHTML = LAYOUT_EN;
   document.querySelector('#zh').onclick = () => page.redirect('/zh/contact');
   document.querySelector('#page').innerHTML = _template(template, { 'imports': { style } })(LANGS_EN);
@@ -30,7 +30,7 @@ export const CONTACT_EN = () => {
 };
 
 export const CONTACT_ZH = () => {
-  site('zh', 'Vanilla - 聯繫', 'Vanilla HTML/CSS/JS、Material、Firebase、Gulp、Rollup、PostCSS 和 Babel 的單頁應用程式底板。');
+  site('zh');
   document.querySelector('#app').innerHTML = LAYOUT_ZH;
   document.querySelector('#en').onclick = () => page.redirect('/en/contact');
   document.querySelector('#page').innerHTML = _template(template, { 'imports': { style } })(LANGS_ZH);

@@ -17,10 +17,11 @@ import LANGS_EN from './langs/en.json';
 import LANGS_ZH from './langs/zh.json';
 
 export const HOME_EN = () => {
-  site('en', 'Vanilla - Home', 'A single-page application boilerplate for Vanilla HTML/CSS/JS, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.');
+  site('en');
+
   document.querySelector('#app').innerHTML = LAYOUT_EN;
-  // TODO: in layout
   document.querySelector('#zh').onclick = () => page.redirect('/zh/home');
+
   document.querySelector('#page').innerHTML = _template(template, {
     'imports': {
       style,
@@ -28,13 +29,16 @@ export const HOME_EN = () => {
       'TODAY': new Intl.DateTimeFormat('en').format(new Date())
     }
   })(LANGS_EN);
+
   componentHandler.upgradeAllRegistered();
 };
 
 export const HOME_ZH = () => {
-  site('zh', '香草 - 首頁', 'Vanilla HTML/CSS/JS、Material、Firebase、Gulp、Rollup、PostCSS 和 Babel 的單頁應用程式底板。');
+  site('zh');
+
   document.querySelector('#app').innerHTML = LAYOUT_ZH;
   document.querySelector('#en').onclick = () => page.redirect('/en/home');
+
   document.querySelector('#page').innerHTML = _template(template, {
     'imports': {
       style,
@@ -44,5 +48,6 @@ export const HOME_ZH = () => {
       'TODAY': new Intl.DateTimeFormat('zh').format(new Date())
     }
   })(LANGS_ZH);
+
   componentHandler.upgradeAllRegistered();
 };
