@@ -34,7 +34,7 @@ const runsequence = require('run-sequence');
 const plugins = require('./rollup.conf');
 
 const SOURCE_ROOT = path.join(__dirname, 'src');
-const DIST_ROOT = path.join(__dirname, 'dist');
+const DIST_ROOT = path.join(__dirname, 'public');
 
 class CompileError {
   static handle(err) {
