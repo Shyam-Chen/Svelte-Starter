@@ -21,18 +21,41 @@ import style from './contact.css';
 import LANGS_EN from './langs/en.json';
 import LANGS_ZH from './langs/zh.json';
 
+const common = () => {
+  const input = document.querySelector('#file-upload');
+	let label	= input.nextElementSibling;
+	let labelVal = label.innerHTML;
+	input.addEventListener('change', (e) => {
+		let fileName = '';
+    fileName = e.target.value.split('\\').pop();
+    if (fileName) {
+			label.querySelector('span').innerHTML = fileName;
+		} else {
+			label.innerHTML = labelVal;
+    }
+	});
+
+  componentHandler.upgradeAllRegistered();
+};
+
 export const CONTACT_EN = () => {
   site('en');
+
   document.querySelector('#app').innerHTML = LAYOUT_EN;
   document.querySelector('#zh').onclick = () => page.redirect('/zh/contact');
+
   document.querySelector('#page').innerHTML = _template(template, { 'imports': { style } })(LANGS_EN);
-  componentHandler.upgradeAllRegistered();
+
+	common();
 };
 
 export const CONTACT_ZH = () => {
   site('zh');
+
   document.querySelector('#app').innerHTML = LAYOUT_ZH;
   document.querySelector('#en').onclick = () => page.redirect('/en/contact');
+
   document.querySelector('#page').innerHTML = _template(template, { 'imports': { style } })(LANGS_ZH);
-  componentHandler.upgradeAllRegistered();
+
+  common();
 };

@@ -1,0 +1,28 @@
+:global .inputfile {
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+:global .inputfile + label {
+  max-width: 80%;
+  font-size: 1.25rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: .625rem 1.25rem;
+}
+
+:global .inputfile + label {
+  color: #3F51B5;
+  border: 2px solid currentColor;
+}
+
+:global .inputfile:focus + label,
+:global .inputfile.has-focus + label,
+:global .inputfile + label:hover {
+  color: #303F9F;
+}
