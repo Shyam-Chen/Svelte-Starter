@@ -92,12 +92,7 @@ $ yarn run reinstall
 ```
 
 ## Folder
-* `pages`
-  * One folder for one page
-* `components`
-  * Shared: Compiled + Data
-  * Reused: Only Compiled
-* `utils`
-  * All the functions here
-* `assets`
-  * Images and Datas here
+* `pages` - One folder for one page
+* `components` - Shared components (compiled + data) or Reusable components (only compiled)
+* `utils` - All the functions here
+* `assets` - Images and Datas here
