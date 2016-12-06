@@ -8,10 +8,8 @@ import style from './layout.css';
 import LANGS_EN from './langs/en.json';
 import LANGS_ZH from './langs/zh.json';
 
-const imports = { 'imports': { _forEach, style } };
-
-const LAYOUT_EN = _template(template, imports)(LANGS_EN);
-const LAYOUT_ZH = _template(template, imports)(LANGS_ZH);
+const LAYOUT_EN = _template(template, { 'imports': { _forEach, style } })(LANGS_EN);
+const LAYOUT_ZH = _template(template, { 'imports': { _forEach, style } })(LANGS_ZH);
 
 export const layout = (lang, page) => {
   switch (lang) {
