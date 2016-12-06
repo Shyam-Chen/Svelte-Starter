@@ -2,10 +2,7 @@
 import _template from 'lodash-es/template';
 
 // Components
-import { LAYOUT_EN, LAYOUT_ZH } from '../../components/layout';
-
-// Utils
-import { site } from '../../utils';
+import { layout } from '../../components/layout';
 
 // Assets
 import vanilla from '../../assets/images/vanilla.png';
@@ -17,10 +14,7 @@ import LANGS_EN from './langs/en.json';
 import LANGS_ZH from './langs/zh.json';
 
 export const HOME_EN = () => {
-  site('en');
-
-  document.querySelector('#app').innerHTML = LAYOUT_EN;
-  document.querySelector('#zh').onclick = () => page.redirect('/zh/home');
+  layout('en', 'home');
 
   document.querySelector('#page').innerHTML = _template(template, {
     'imports': {
@@ -34,10 +28,7 @@ export const HOME_EN = () => {
 };
 
 export const HOME_ZH = () => {
-  site('zh');
-
-  document.querySelector('#app').innerHTML = LAYOUT_ZH;
-  document.querySelector('#en').onclick = () => page.redirect('/en/home');
+  layout('zh', 'home');
 
   document.querySelector('#page').innerHTML = _template(template, {
     'imports': {

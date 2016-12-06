@@ -13,9 +13,6 @@ import _template from 'lodash-es/template';
 import { layout } from '../../components/layout';
 import { fileUpload } from '../../components/file-upload';
 
-// Utils
-import { site } from '../../utils';
-
 // Main
 import template from './contact.html';
 import style from './contact.css';
@@ -23,9 +20,7 @@ import LANGS_EN from './langs/en.json';
 import LANGS_ZH from './langs/zh.json';
 
 export const CONTACT_EN = () => {
-  site('en');
-
-  layout('en', 'contact')
+  layout('en', 'contact');
 
   document.querySelector('#page').innerHTML = _template(template, { 'imports': { style } })(LANGS_EN);
 
@@ -35,9 +30,7 @@ export const CONTACT_EN = () => {
 };
 
 export const CONTACT_ZH = () => {
-  site('zh');
-
-  layout('zh', 'contact')
+  layout('zh', 'contact');
 
   document.querySelector('#page').innerHTML = _template(template, { 'imports': { style } })(LANGS_ZH);
 
