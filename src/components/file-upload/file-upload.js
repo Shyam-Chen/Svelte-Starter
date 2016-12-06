@@ -3,10 +3,10 @@ import _template from 'lodash-es/template';
 import template from './file-upload.html';
 import style from './file-upload.css';
 
-export const fileUploadCompiled  = _template(template, { 'imports': { style } });
+const fileUploadView = _template(template, { 'imports': { style } });
 
-export const fileUploadCtrl = (number) => {
-  const input = document.querySelector(`[data-file-upload=${number}]`);
+const fileUploadCtrl = (name) => {
+  const input = document.querySelector(`input[data-file-upload=${name}]`);
 	let label	= input.nextElementSibling;
 	let labelVal = label.innerHTML;
 	input.addEventListener('change', (event) => {
@@ -19,3 +19,18 @@ export const fileUploadCtrl = (number) => {
     }
 	});
 };
+
+export const fileUpload = (name, text) => {
+  document.querySelector(`#${name}`).innerHTML = fileUploadView({ name, text });
+  fileUploadCtrl(name);
+};
+
+/**
+ * @example
+ * // js
+ * import { fileUpload } from '../../components/file-upload';
+ * fileUpload('fu', 'Choose a file');
+ *
+ * // html
+ * <div id="fu"></div>
+ */

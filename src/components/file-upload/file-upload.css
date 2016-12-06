@@ -1,0 +1,27 @@
+.input {
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.input + label {
+  max-width: 80%;
+  font-size: 1.25rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: .625rem 1.25rem;
+}
+
+.input + label {
+  color: #3F51B5;
+  border: 2px solid currentColor;
+}
+
+.input:focus + label,
+.input + label:hover {
+  color: #303F9F;
+}
