@@ -1,3 +1,34 @@
 <div class="mdl-grid mdl-grid--center">
+  <h2 class="mdl-color-text--blue-900">Contact</h2>
+</div>
 
+<div class="mdl-grid mdl-grid--center">
+  <button id="sign-in-button" class="mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary">
+    <i class="material-icons">account_circle</i> Sign in with Google
+  </button>
+</div>
+
+<div class="mdl-grid mdl-grid--center">
+  <div class="mdl-cell mdl-cell--3-col">
+    <form class="mdl-grid mdl-grid--center">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="auth-name" value="Google DisplayName" readonly>
+        <label class="mdl-textfield__label" for="auth-name">Name</label>
+      </div>
+
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="file" id="send-image">
+        <label class="mdl-textfield__label" for="send-image">File</label>
+      </div>
+
+      <div class="mdl-textfield mdl-js-textfield">
+        <textarea class="mdl-textfield__input" type="text" rows= "3" id="content"></textarea>
+        <label class="mdl-textfield__label" for="content">Text lines...</label>
+      </div>
+
+      <button class="mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary">
+        Send <i class="material-icons">send</i>
+      </button>
+    </form>
+  </div>
 </div>

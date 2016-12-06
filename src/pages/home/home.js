@@ -19,6 +19,7 @@ import LANGS_ZH from './langs/zh.json';
 export const HOME_EN = () => {
   site('en', 'Vanilla - Home', 'A single-page application boilerplate for Vanilla HTML/CSS/JS, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.');
   document.querySelector('#app').innerHTML = LAYOUT_EN;
+  // TODO: in layout
   document.querySelector('#zh').onclick = () => page.redirect('/zh/home');
   document.querySelector('#page').innerHTML = _template(template, {
     'imports': {

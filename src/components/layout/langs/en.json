@@ -1,5 +1,9 @@
 {
   "TITLE": "Vanilla",
-  "LINK": [["/en/home", "Home"], ["/en/about", "About"]],
+  "LINK": [
+    ["/en/home", "Home"],
+    ["/en/about", "About"],
+    ["/en/contact", "Contact"]
+  ],
   "LANG": [["en", "English"], ["zh", "中文"]]
 }

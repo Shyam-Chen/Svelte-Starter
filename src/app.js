@@ -5,6 +5,7 @@ import firebaseConfig from './assets/datas/firebase.config.json';
 
 import { HOME_EN, HOME_ZH } from './pages/home';
 import { ABOUT_EN, ABOUT_ZH } from './pages/about';
+import { CONTACT_EN, CONTACT_ZH } from './pages/contact';
 import { notfound } from './pages/404';
 
 /**
@@ -35,11 +36,16 @@ switch (true) {
     page('/', HOME_EN);
 }
 
+// page('/:lang/home', HOME);
+// page('/:lang/about', ABOUT);
+
 page('/en/home', HOME_EN);
 page('/en/about', ABOUT_EN);
+page('/en/contact', CONTACT_EN);
 
 page('/zh/home', HOME_ZH);
 page('/zh/about', ABOUT_ZH);
+page('/zh/contact', CONTACT_ZH);
 
 page('*', notfound);
 
