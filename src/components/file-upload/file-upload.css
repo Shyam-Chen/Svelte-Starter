@@ -6,22 +6,25 @@
 }
 
 .input + label {
-  max-width: 80%;
-  font-size: 1.25rem;
+  max-width: 75%;
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
   display: inline-block;
   overflow: hidden;
-  padding: .625rem 1.25rem;
+  padding: .5rem;
 }
 
 .input + label {
   color: #3F51B5;
-  border: 2px solid currentColor;
+  border: 2px solid #3F51B5;
 }
 
 .input:focus + label,
 .input + label:hover {
-  color: #303F9F;
+  color: #1A237E;
+}
+
+.icon {
+  vertical-align: -.4rem;
 }

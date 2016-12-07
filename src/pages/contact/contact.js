@@ -19,7 +19,7 @@ import style from './contact.css';
 import LANGS_EN from './langs/en.json';
 import LANGS_ZH from './langs/zh.json';
 
-const common = () => {
+const contact = () => {
   const signInButton = document.querySelector('#sign-in-button');
   const signOutButton = document.querySelector('#sign-out-button');
   const content = document.querySelector('#content');
@@ -61,20 +61,16 @@ const common = () => {
 
 export const CONTACT_EN = () => {
   layout('en', 'contact');
-
   document.querySelector('#page').innerHTML = _template(template, { 'imports': { style } })(LANGS_EN);
-
   fileUpload('contact-image', 'Choose a file');
-common();
+  contact();
 	componentHandler.upgradeAllRegistered();
 };
 
 export const CONTACT_ZH = () => {
   layout('zh', 'contact');
-
   document.querySelector('#page').innerHTML = _template(template, { 'imports': { style } })(LANGS_ZH);
-
   fileUpload('contact-image', '選擇一個檔案');
-common();
+  contact();
   componentHandler.upgradeAllRegistered();
 };
