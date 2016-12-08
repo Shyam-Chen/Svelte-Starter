@@ -1,3 +1,5 @@
+const util = require('gulp-util');
+
 const html = require('rollup-plugin-html');
 const postcss = require('rollup-plugin-postcss');
 const comment = require('postcss-comment');
@@ -12,6 +14,7 @@ const builtins = require('rollup-plugin-node-builtins');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
 const babel = require('rollup-plugin-babel');
+const uglify = require('rollup-plugin-uglify');
 
 let cssExportMap = {};
 module.exports = [
@@ -53,5 +56,6 @@ module.exports = [
   commonjs(),
   babel({
     exclude: 'node_modules/**'
-  })
+  }),
+  (util.env.type === 'prod' ? uglify() : util.noop())
 ];

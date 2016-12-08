@@ -106,9 +106,7 @@ gulp.task('app', () => {
       context: 'window',
       sourceMap: util.env.type === 'dev' && true,
       cache,
-      plugins: plugins.concat([
-        (util.env.type === 'prod' ? uglify() : util.noop())
-      ])
+      plugins
     })
     .on('bundle', (bundle) => { cache = bundle; })
     .on('error', CompileError.handle)

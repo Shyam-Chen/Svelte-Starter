@@ -3,15 +3,9 @@ const plugins = require('./rollup.conf');
 module.exports = (config) => {
   config.set({
     frameworks: ['jasmine'],
-    files: [
-      { pattern: './src/polyfills.js', included: false, watched: false },
-      { pattern: './src/vendor.js', included: false, watched: false },
-      './src/**/*.spec.js'
-    ],
+    files: ['./src/**/*.spec.js'],
     exclude: [],
     preprocessors: {
-      './src/polyfills.js': ['rollup'],
-      './src/vendor.js': ['rollup'],
       './src/**/*.spec.js': ['rollup']
     },
     rollupPreprocessor: {
