@@ -1,3 +1,5 @@
+const path = require('path');
+
 const util = require('gulp-util');
 
 const html = require('rollup-plugin-html');
@@ -33,7 +35,7 @@ exports.app = [
         warnForDuplicates: false
       }),
       rucksack({
-        fallbacks: true,
+        fallbacks: false,
         autoprefixer: true
       }),
       modules({
@@ -61,20 +63,28 @@ exports.app = [
   (util.env.type === 'prod' ? uglify() : util.noop())
 ];
 
-exports.vendor = [
-  postcss({ plugins: [cssnano()] }),
-  globals(),
-  builtins(),
-  resolve({ jsnext: true, browser: true }),
-  commonjs(),
-  replace({ eval: '[eval][0]' }),
-  uglify()
-];
+exports.vendor = {
+  entry: path.join(__dirname, 'src', 'vendor.js'),
+  context: 'window',
+  plugins: [
+    postcss({ plugins: [cssnano()] }),
+    globals(),
+    builtins(),
+    resolve({ jsnext: true, browser: true }),
+    commonjs(),
+    replace({ eval: '[eval][0]' }),
+    uglify()
+  ]
+};
 
-exports.polyfills = [
-  globals(),
-  builtins(),
-  resolve({ jsnext: true, browser: true }),
-  commonjs(),
-  uglify()
-];
+exports.polyfills = {
+  entry: path.join(__dirname, 'src', 'polyfills.js'),
+  context: 'window',
+  plugins: [
+    globals(),
+    builtins(),
+    resolve({ jsnext: true, browser: true }),
+    commonjs(),
+    uglify()
+  ]
+};

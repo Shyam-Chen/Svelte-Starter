@@ -23,7 +23,7 @@ const express = require('express');
 const expressHistory = require('express-history-api-fallback');
 const runsequence = require('run-sequence');
 
-const plugins = require('./rollup.conf');
+const ROLLUP_CONFIG = require('./rollup.conf');
 
 const SOURCE_ROOT = path.join(__dirname, 'src');
 const DIST_ROOT = path.join(__dirname, 'public');
@@ -98,7 +98,7 @@ gulp.task('app', () => {
       context: 'window',
       sourceMap: util.env.type === 'dev' && true,
       cache,
-      plugins: plugins.app
+      plugins: ROLLUP_CONFIG.app
     })
     .on('bundle', (bundle) => { cache = bundle; })
     .on('error', CompileError.handle)
@@ -111,11 +111,7 @@ gulp.task('app', () => {
 });
 
 gulp.task('vendor', () => {
-  return rollup({
-      entry: path.join(SOURCE_ROOT, 'vendor.js'),
-      context: 'window',
-      plugins: plugins.vendor
-    })
+  return rollup(ROLLUP_CONFIG.vendor)
     .on('error', CompileError.handle)
     .pipe(source('vendor.js'))
     .pipe(buffer())
@@ -123,11 +119,7 @@ gulp.task('vendor', () => {
 });
 
 gulp.task('polyfills', () => {
-  return rollup({
-      entry: path.join(SOURCE_ROOT, 'polyfills.js'),
-      context: 'window',
-      plugins: plugins.polyfills
-    })
+  return rollup(ROLLUP_CONFIG.polyfills)
     .on('error', CompileError.handle)
     .pipe(source('polyfills.js'))
     .pipe(buffer())
