@@ -13,14 +13,6 @@ const eslint = require('gulp-eslint');
 const protractor = require('gulp-protractor');
 
 const rollup = require('rollup-stream');
-const postcss = require('rollup-plugin-postcss');
-const cssnano = require('cssnano');
-const globals = require('rollup-plugin-node-globals');
-const builtins = require('rollup-plugin-node-builtins');
-const resolve = require('rollup-plugin-node-resolve');
-const commonjs = require('rollup-plugin-commonjs');
-const replace = require('rollup-plugin-replace');
-const uglify = require('rollup-plugin-uglify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 
@@ -106,7 +98,7 @@ gulp.task('app', () => {
       context: 'window',
       sourceMap: util.env.type === 'dev' && true,
       cache,
-      plugins
+      plugins: plugins.app
     })
     .on('bundle', (bundle) => { cache = bundle; })
     .on('error', CompileError.handle)
@@ -122,15 +114,7 @@ gulp.task('vendor', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'vendor.js'),
       context: 'window',
-      plugins: [
-        postcss({ plugins: [cssnano()] }),
-        globals(),
-        builtins(),
-        resolve({ jsnext: true, browser: true }),
-        commonjs(),
-        replace({ eval: '[eval][0]' }),
-        uglify()
-      ]
+      plugins: plugins.vendor
     })
     .on('error', CompileError.handle)
     .pipe(source('vendor.js'))
@@ -142,13 +126,7 @@ gulp.task('polyfills', () => {
   return rollup({
       entry: path.join(SOURCE_ROOT, 'polyfills.js'),
       context: 'window',
-      plugins: [
-        globals(),
-        builtins(),
-        resolve({ jsnext: true, browser: true }),
-        commonjs(),
-        uglify()
-      ]
+      plugins: plugins.polyfills
     })
     .on('error', CompileError.handle)
     .pipe(source('polyfills.js'))

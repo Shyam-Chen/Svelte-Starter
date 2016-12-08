@@ -14,10 +14,11 @@ const builtins = require('rollup-plugin-node-builtins');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
 const babel = require('rollup-plugin-babel');
+const replace = require('rollup-plugin-replace');
 const uglify = require('rollup-plugin-uglify');
 
 let cssExportMap = {};
-module.exports = [
+exports.app = [
   html({
     htmlMinifierOptions: {
       collapseWhitespace: true,
@@ -58,4 +59,22 @@ module.exports = [
     exclude: 'node_modules/**'
   }),
   (util.env.type === 'prod' ? uglify() : util.noop())
+];
+
+exports.vendor = [
+  postcss({ plugins: [cssnano()] }),
+  globals(),
+  builtins(),
+  resolve({ jsnext: true, browser: true }),
+  commonjs(),
+  replace({ eval: '[eval][0]' }),
+  uglify()
+];
+
+exports.polyfills = [
+  globals(),
+  builtins(),
+  resolve({ jsnext: true, browser: true }),
+  commonjs(),
+  uglify()
 ];

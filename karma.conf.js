@@ -12,7 +12,7 @@ module.exports = (config) => {
       format: 'iife',
       context: 'window',
       sourceMap: 'inline',
-      plugins
+      plugins: plugins.app
     },
     reporters: ['mocha'],
     port: 9876,
