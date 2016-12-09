@@ -40,6 +40,7 @@
     "page": "^1.7.1"
   },
   "devDependencies": {
+    "babel-core": "^6.20.0",
     "babel-plugin-external-helpers": "^6.18.0",
     "babel-preset-latest": "^6.16.0",
     "browser-sync": "^2.18.2",

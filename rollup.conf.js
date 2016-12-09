@@ -58,7 +58,10 @@ exports.app = [
   }),
   commonjs(),
   babel({
-    exclude: 'node_modules/**'
+    presets: [['latest', { 'es2015': { 'modules': false } }]],
+    plugins: ['external-helpers'],
+    exclude: 'node_modules/**',
+    babelrc: false
   }),
   (util.env.type === 'prod' ? uglify() : util.noop())
 ];

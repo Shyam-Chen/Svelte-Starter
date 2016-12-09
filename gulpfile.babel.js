@@ -1,29 +1,29 @@
-const path = require('path');
+import path from 'path';
 
-const gulp = require('gulp');
-const util = require('gulp-util');
-const notify = require('gulp-notify');
-const plumber = require('gulp-plumber');
-const changed = require('gulp-changed');
-const htmlmin = require('gulp-htmlmin');
-const sourcemaps = require('gulp-sourcemaps');
-const htmlhint = require('gulp-htmlhint');
-const stylelint = require('gulp-stylelint');
-const eslint = require('gulp-eslint');
-const protractor = require('gulp-protractor');
+import gulp from 'gulp';
+import util from 'gulp-util';
+import notify from 'gulp-notify';
+import plumber from 'gulp-plumber';
+import changed from 'gulp-changed';
+import htmlmin from 'gulp-htmlmin';
+import sourcemaps from 'gulp-sourcemaps';
+import htmlhint from 'gulp-htmlhint';
+import stylelint from 'gulp-stylelint';
+import eslint from 'gulp-eslint';
+import protractor from 'gulp-protractor';
 
-const rollup = require('rollup-stream');
-const source = require('vinyl-source-stream');
-const buffer = require('vinyl-buffer');
+import rollup from 'rollup-stream';
+import source from 'vinyl-source-stream';
+import buffer from 'vinyl-buffer';
 
-const browsersync = require('browser-sync');
-const connectHistory = require('connect-history-api-fallback');
-const Karma = require('karma');
-const express = require('express');
-const expressHistory = require('express-history-api-fallback');
-const runsequence = require('run-sequence');
+import browsersync from 'browser-sync';
+import connectHistory from 'connect-history-api-fallback';
+import Karma from 'karma';
+import express from 'express';
+import expressHistory from 'express-history-api-fallback';
+import runsequence from 'run-sequence';
 
-const ROLLUP_CONFIG = require('./rollup.conf');
+import ROLLUP_CONFIG from './rollup.conf';
 
 const SOURCE_ROOT = path.join(__dirname, 'src');
 const DIST_ROOT = path.join(__dirname, 'public');
