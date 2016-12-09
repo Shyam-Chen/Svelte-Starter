@@ -194,7 +194,8 @@ gulp.task('lint', ['lint-html', 'lint-css', 'lint-js']);
 
 gulp.task('unit', (done) => {
   new Karma.Server({
-    configFile: join(__dirname, 'karma.conf.js')
+    configFile: join(__dirname, 'karma.conf.js'),
+    singleRun: util.env.type === 'watch' ? false : true
   }, done).start();
 });
 

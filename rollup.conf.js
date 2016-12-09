@@ -91,3 +91,5 @@ export const POLYFILLS_CONFIG = {
     uglify()
   ]
 };
+
+// TODO: TEST_CONFIG
