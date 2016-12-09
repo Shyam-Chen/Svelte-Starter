@@ -72,6 +72,7 @@
     "postcss-comment": "^1.0.3",
     "postcss-cssnext": "^2.8.0",
     "postcss-modules": "^0.5.2",
+    "protractor": "^4.0.12",
     "rimraf": "^2.5.4",
     "rollup-plugin-babel": "^2.6.1",
     "rollup-plugin-commonjs": "^5.0.5",
@@ -89,6 +90,7 @@
     "run-sequence": "^1.2.2",
     "stylelint-config-standard": "^15.0.0",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "webdriver-manager": "^10.2.10"
   }
 }
