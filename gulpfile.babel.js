@@ -1,4 +1,4 @@
-import path from 'path';
+import { join, resolve } from 'path';
 
 import gulp from 'gulp';
 import util from 'gulp-util';
@@ -23,10 +23,10 @@ import express from 'express';
 import expressHistory from 'express-history-api-fallback';
 import runsequence from 'run-sequence';
 
-import ROLLUP_CONFIG from './rollup.conf';
+import { APP_CONFIG, VENDOR_CONFIG, POLYFILLS_CONFIG } from './rollup.conf';
 
-const SOURCE_ROOT = path.join(__dirname, 'src');
-const DIST_ROOT = path.join(__dirname, 'public');
+const SOURCE_ROOT = join(__dirname, 'src');
+const DIST_ROOT = join(__dirname, 'public');
 
 class CompileError {
   static handle(err) {
@@ -51,7 +51,7 @@ class CompileError {
 class Protractor {
   server(port, dir) {
     let app = express();
-    let root = path.resolve(process.cwd(), dir);
+    let root = resolve(process.cwd(), dir);
 
     app.use(express.static(root));
     app.use(expressHistory('index.html', { root }));
@@ -66,8 +66,8 @@ class Protractor {
 
 gulp.task('copy', () => {
   return gulp.src([
-      path.join(SOURCE_ROOT, 'favicon.ico'),
-      path.join(SOURCE_ROOT, 'robots.txt')
+      join(SOURCE_ROOT, 'favicon.ico'),
+      join(SOURCE_ROOT, 'robots.txt')
     ])
     .pipe(plumber())
     .pipe(changed(DIST_ROOT))
@@ -76,7 +76,7 @@ gulp.task('copy', () => {
 });
 
 gulp.task('index', () => {
-  return gulp.src(path.join(SOURCE_ROOT, 'index.html'))
+  return gulp.src(join(SOURCE_ROOT, 'index.html'))
     .pipe(plumber())
     .pipe(changed(DIST_ROOT))
     .pipe(htmlmin({
@@ -93,12 +93,12 @@ gulp.task('index', () => {
 gulp.task('app', () => {
   let cache;
   return rollup({
-      entry: path.join(SOURCE_ROOT, 'app.js'),
+      entry: join(SOURCE_ROOT, 'app.js'),
       format: 'iife',
       context: 'window',
       sourceMap: util.env.type === 'dev' && true,
       cache,
-      plugins: ROLLUP_CONFIG.app
+      plugins: APP_CONFIG
     })
     .on('bundle', (bundle) => { cache = bundle; })
     .on('error', CompileError.handle)
@@ -111,7 +111,7 @@ gulp.task('app', () => {
 });
 
 gulp.task('vendor', () => {
-  return rollup(ROLLUP_CONFIG.vendor)
+  return rollup(VENDOR_CONFIG)
     .on('error', CompileError.handle)
     .pipe(source('vendor.js'))
     .pipe(buffer())
@@ -119,7 +119,7 @@ gulp.task('vendor', () => {
 });
 
 gulp.task('polyfills', () => {
-  return rollup(ROLLUP_CONFIG.polyfills)
+  return rollup(POLYFILLS_CONFIG)
     .on('error', CompileError.handle)
     .pipe(source('polyfills.js'))
     .pipe(buffer())
@@ -130,30 +130,30 @@ gulp.task('build', ['copy', 'index', 'app', 'vendor', 'polyfills']);
 
 gulp.task('watch', () => {
   gulp.watch([
-    path.join(SOURCE_ROOT, 'favicon.ico'),
-    path.join(SOURCE_ROOT, 'robots.txt')
+    join(SOURCE_ROOT, 'favicon.ico'),
+    join(SOURCE_ROOT, 'robots.txt')
   ], ['copy']);
 
   gulp.watch([
-    path.join(SOURCE_ROOT, 'index.html')
+    join(SOURCE_ROOT, 'index.html')
   ], ['index']);
 
   gulp.watch([
-    path.join(SOURCE_ROOT, '**/*.{html,css,js}'),
-    path.join(SOURCE_ROOT, '**/*.{gif,jpeg,jpg,png,svg}'),
-    path.join(SOURCE_ROOT, '**/*.json'),
-    `!${path.join(SOURCE_ROOT, 'index.html')}`,
-    `!${path.join(SOURCE_ROOT, 'polyfills.js')}`,
-    `!${path.join(SOURCE_ROOT, 'vendor.js')}`,
-    `!${path.join(SOURCE_ROOT, '**/*.{spec.js,e2e-spec.js}')}`
+    join(SOURCE_ROOT, '**/*.{html,css,js}'),
+    join(SOURCE_ROOT, '**/*.{gif,jpeg,jpg,png,svg}'),
+    join(SOURCE_ROOT, '**/*.json'),
+    `!${join(SOURCE_ROOT, 'index.html')}`,
+    `!${join(SOURCE_ROOT, 'polyfills.js')}`,
+    `!${join(SOURCE_ROOT, 'vendor.js')}`,
+    `!${join(SOURCE_ROOT, '**/*.{spec.js,e2e-spec.js}')}`
   ], ['app']);
 
   gulp.watch([
-    path.join(SOURCE_ROOT, 'vendor.js')
+    join(SOURCE_ROOT, 'vendor.js')
   ], ['vendor']);
 
   gulp.watch([
-    path.join(SOURCE_ROOT, 'polyfills.js')
+    join(SOURCE_ROOT, 'polyfills.js')
   ], ['polyfills']);
 });
 
@@ -167,13 +167,13 @@ gulp.task('serve', () => {
 });
 
 gulp.task('lint-html', () => {
-  return gulp.src(path.join(SOURCE_ROOT, '**/*.html'))
+  return gulp.src(join(SOURCE_ROOT, '**/*.html'))
     .pipe(htmlhint('.htmlhintrc'))
     .pipe(htmlhint.reporter());
 });
 
 gulp.task('lint-css', () => {
-  return gulp.src(path.join(SOURCE_ROOT, '**/*.css'))
+  return gulp.src(join(SOURCE_ROOT, '**/*.css'))
     .pipe(stylelint({
       reporters: [{
         formatter: 'string', console: true
@@ -182,7 +182,7 @@ gulp.task('lint-css', () => {
 });
 
 gulp.task('lint-js', () => {
-  return gulp.src(path.join(SOURCE_ROOT, '**/*.js'))
+  return gulp.src(join(SOURCE_ROOT, '**/*.js'))
     .pipe(eslint({
       useEslintrc: true
     }))
@@ -194,7 +194,7 @@ gulp.task('lint', ['lint-html', 'lint-css', 'lint-js']);
 
 gulp.task('unit', (done) => {
   new Karma.Server({
-    configFile: path.join(__dirname, 'karma.conf.js')
+    configFile: join(__dirname, 'karma.conf.js')
   }, done).start();
 });
 
@@ -204,7 +204,7 @@ gulp.task('e2e', (done) => {
   new Protractor()
     .server(9876, DIST_ROOT)
     .then((server) => {
-      gulp.src(path.join(SOURCE_ROOT, '**/*.e2e-spec.js'))
+      gulp.src(join(SOURCE_ROOT, '**/*.e2e-spec.js'))
         .pipe(protractor.protractor({ configFile: 'protractor.conf.js' }))
         .on('error', (error) => { throw error; })
         .on('end', () => { server.close(done); });

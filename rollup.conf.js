@@ -1,26 +1,26 @@
-const path = require('path');
+import { join } from 'path';
 
-const util = require('gulp-util');
+import util from 'gulp-util';
 
-const html = require('rollup-plugin-html');
-const postcss = require('rollup-plugin-postcss');
-const comment = require('postcss-comment');
-const modules = require('postcss-modules');
-const cssnext = require('postcss-cssnext');
-const rucksack = require('rucksack-css');
-const cssnano = require('cssnano');
-const image = require('rollup-plugin-image');
-const json = require('rollup-plugin-json');
-const globals = require('rollup-plugin-node-globals');
-const builtins = require('rollup-plugin-node-builtins');
-const resolve = require('rollup-plugin-node-resolve');
-const commonjs = require('rollup-plugin-commonjs');
-const babel = require('rollup-plugin-babel');
-const replace = require('rollup-plugin-replace');
-const uglify = require('rollup-plugin-uglify');
+import html from 'rollup-plugin-html';
+import postcss from 'rollup-plugin-postcss';
+import comment from 'postcss-comment';
+import modules from 'postcss-modules';
+import cssnext from 'postcss-cssnext';
+import rucksack from 'rucksack-css';
+import cssnano from 'cssnano';
+import image from 'rollup-plugin-image';
+import json from 'rollup-plugin-json';
+import globals from 'rollup-plugin-node-globals';
+import builtins from 'rollup-plugin-node-builtins';
+import resolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
+import babel from 'rollup-plugin-babel';
+import replace from 'rollup-plugin-replace';
+import uglify from 'rollup-plugin-uglify';
 
 let cssExportMap = {};
-exports.app = [
+export const APP_CONFIG = [
   html({
     htmlMinifierOptions: {
       collapseWhitespace: true,
@@ -66,8 +66,8 @@ exports.app = [
   (util.env.type === 'prod' ? uglify() : util.noop())
 ];
 
-exports.vendor = {
-  entry: path.join(__dirname, 'src', 'vendor.js'),
+export const VENDOR_CONFIG = {
+  entry: join(__dirname, 'src', 'vendor.js'),
   context: 'window',
   plugins: [
     postcss({ plugins: [cssnano()] }),
@@ -80,8 +80,8 @@ exports.vendor = {
   ]
 };
 
-exports.polyfills = {
-  entry: path.join(__dirname, 'src', 'polyfills.js'),
+export const POLYFILLS_CONFIG = {
+  entry: join(__dirname, 'src', 'polyfills.js'),
   context: 'window',
   plugins: [
     globals(),
