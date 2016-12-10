@@ -1,5 +1,4 @@
 import { join } from 'path';
-
 import gulp from 'gulp';
 import plumber from 'gulp-plumber';
 import changed from 'gulp-changed';

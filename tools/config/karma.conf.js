@@ -1,20 +1,15 @@
-const plugins = require('./rollup.conf');
+const rollupConf = require('./rollup.conf');
 
 module.exports = (config) => {
   config.set({
     basePath: '../..',
     frameworks: ['jasmine'],
-    files: ['./src/**/*.spec.js'],
+    files: ['src/**/*.spec.js'],
     exclude: [],
     preprocessors: {
-      './src/**/*.spec.js': ['rollup']
+      'src/**/*.spec.js': ['rollup']
     },
-    rollupPreprocessor: {
-      format: 'iife',
-      context: 'window',
-      sourceMap: 'inline',
-      plugins: plugins.APP_CONFIG
-    },
+    rollupPreprocessor: rollupConf.TEST_CONFIG,
     reporters: ['mocha'],
     port: 9876,
     colors: true,

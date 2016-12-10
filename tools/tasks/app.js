@@ -1,5 +1,3 @@
-import { join } from 'path';
-
 import gulp from 'gulp';
 import util from 'gulp-util';
 import sourcemaps from 'gulp-sourcemaps';
@@ -8,20 +6,14 @@ import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
 import { stream } from 'browser-sync';
 
-import { SOURCE_ROOT, DIST_ROOT } from '../constants';
+import { DIST_ROOT } from '../constants';
 import { APP_CONFIG } from '../config/rollup.conf';
 import { CompileError } from '../utils';
 
+let cache;
 gulp.task('app', () => {
-  let cache;
-  return rollup({
-      entry: join(SOURCE_ROOT, 'app.js'),
-      format: 'iife',
-      context: 'window',
-      sourceMap: util.env.type === 'dev' && true,
-      cache,
-      plugins: APP_CONFIG
-    })
+  APP_CONFIG.cache = cache;
+  return rollup(APP_CONFIG)
     .on('bundle', (bundle) => { cache = bundle; })
     .on('error', CompileError.handle)
     .pipe(source('app.js'))

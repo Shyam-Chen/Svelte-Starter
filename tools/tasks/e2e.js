@@ -1,5 +1,4 @@
 import { join } from 'path';
-
 import gulp from 'gulp';
 import { webdriver_update, protractor } from 'gulp-protractor';
 

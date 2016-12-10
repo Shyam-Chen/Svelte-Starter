@@ -27,14 +27,14 @@ matrix:
 
 before_install:
   - if [[ "$MODE" == "docker" ]]; then docker-compose up -d; fi
-  - if [[ "$MODE" == "unit" ]] || [[ "$MODE" == "e2e" ]]; then export DISPLAY=:99.0; fi
+  # - if [[ "$MODE" == "unit" ]] || [[ "$MODE" == "e2e" ]]; then export DISPLAY=:99.0; fi
 
 before_script:
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run webdriver; fi
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run prod; fi
-  - if [[ "$MODE" == "unit" ]] || [[ "$MODE" == "e2e" ]]; then sh -e /etc/init.d/xvfb start; fi
-  - if [[ "$MODE" == "unit" ]]; then yarn add karma-firefox-launcher --dev; fi
-  - if [[ "$MODE" == "e2e" ]]; then nohup bash -c "webdriver-manager start 2>&1 &"; fi
+  # - if [[ "$MODE" == "unit" ]] || [[ "$MODE" == "e2e" ]]; then sh -e /etc/init.d/xvfb start; fi
+  # - if [[ "$MODE" == "unit" ]]; then yarn add karma-firefox-launcher --dev; fi
+  # - if [[ "$MODE" == "e2e" ]]; then nohup bash -c "webdriver-manager start 2>&1 &"; fi
   - if [[ "$MODE" == "e2e" ]]; then yarn run webdriver; fi
   - if [[ "$MODE" == "e2e" ]]; then yarn run prod; fi
 

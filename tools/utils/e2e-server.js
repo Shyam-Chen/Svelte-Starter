@@ -1,5 +1,4 @@
 import { resolve } from 'path';
-
 import express from 'express';
 import history from 'express-history-api-fallback';
 

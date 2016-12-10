@@ -5,7 +5,7 @@ const SpecReporter = require('jasmine-spec-reporter');
 const config = {
   // directConnect: true,
   specs: [
-    './src/**/*.e2e-spec.js'
+    'src/**/*.e2e-spec.js'
   ],
   exclude: [],
   // capabilities: {
