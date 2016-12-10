@@ -1,5 +1,8 @@
 {
   "CONTACT": "聯繫",
-  "sign_in_button": "使用 Google 登入",
-  "sign_out_button": "登入"
+  "ACCOUNT": {
+    "SIGN_IN_BUTTON": "使用 Google 登入",
+    "SIGN_OUT_BUTTON": "登出"
+  },
+  "TITLE": "問我任何事"
 }

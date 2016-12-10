@@ -6,7 +6,7 @@ import notify from 'gulp-notify';
 import plumber from 'gulp-plumber';
 import changed from 'gulp-changed';
 import htmlmin from 'gulp-htmlmin';
-import sourcemaps from 'gulp-sourcemaps';
+// import sourcemaps from 'gulp-sourcemaps';
 import htmlhint from 'gulp-htmlhint';
 import stylelint from 'gulp-stylelint';
 import eslint from 'gulp-eslint';
@@ -23,7 +23,11 @@ import express from 'express';
 import expressHistory from 'express-history-api-fallback';
 import runsequence from 'run-sequence';
 
-import { APP_CONFIG, VENDOR_CONFIG, POLYFILLS_CONFIG } from './rollup.conf';
+import requiredir from 'require-dir';
+
+requiredir('./tools/tasks');
+
+import { VENDOR_CONFIG, POLYFILLS_CONFIG } from './rollup.conf';
 
 const SOURCE_ROOT = join(__dirname, 'src');
 const DIST_ROOT = join(__dirname, 'public');
@@ -64,17 +68,6 @@ class Protractor {
   }
 }
 
-gulp.task('copy', () => {
-  return gulp.src([
-      join(SOURCE_ROOT, 'favicon.ico'),
-      join(SOURCE_ROOT, 'robots.txt')
-    ])
-    .pipe(plumber())
-    .pipe(changed(DIST_ROOT))
-    .pipe(gulp.dest(DIST_ROOT))
-    .pipe(browsersync.stream());
-});
-
 gulp.task('index', () => {
   return gulp.src(join(SOURCE_ROOT, 'index.html'))
     .pipe(plumber())
@@ -86,26 +79,6 @@ gulp.task('index', () => {
       minifyCSS: true,
       minifyJS: true
     }))
-    .pipe(gulp.dest(DIST_ROOT))
-    .pipe(browsersync.stream());
-});
-
-gulp.task('app', () => {
-  let cache;
-  return rollup({
-      entry: join(SOURCE_ROOT, 'app.js'),
-      format: 'iife',
-      context: 'window',
-      sourceMap: util.env.type === 'dev' && true,
-      cache,
-      plugins: APP_CONFIG
-    })
-    .on('bundle', (bundle) => { cache = bundle; })
-    .on('error', CompileError.handle)
-    .pipe(source('app.js'))
-    .pipe(buffer())
-    .pipe(util.env.type === 'dev' ? sourcemaps.init({ loadMaps: true }) : util.noop())
-    .pipe(util.env.type === 'dev' ? sourcemaps.write('./') : util.noop())
     .pipe(gulp.dest(DIST_ROOT))
     .pipe(browsersync.stream());
 });

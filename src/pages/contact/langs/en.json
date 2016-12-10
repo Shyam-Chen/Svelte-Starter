@@ -1,5 +1,8 @@
 {
   "CONTACT": "Contact",
-  "sign_in_button": "Sign in with Google",
-  "sign_out_button": "Sign out"
+  "ACCOUNT": {
+    "SIGN_IN_BUTTON": "Sign in with Google",
+    "SIGN_OUT_BUTTON": "Sign out"
+  },
+  "TITLE": "Ask Me Anything"
 }

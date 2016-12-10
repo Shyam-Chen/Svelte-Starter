@@ -4,18 +4,18 @@
 
 <div class="mdl-grid mdl-grid--center">
   <button id="sign-in-button" class="mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary">
-    <i class="material-icons">account_circle</i> <%= sign_in_button %>
+    <i class="material-icons">account_circle</i> <%= ACCOUNT.SIGN_IN_BUTTON %>
   </button>
 
   <button id="sign-out-button" class="mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary">
-    <i class="material-icons">account_circle</i> <%= sign_out_button %>
+    <i class="material-icons">account_circle</i> <%= ACCOUNT.SIGN_OUT_BUTTON %>
   </button>
 </div>
 
 <div id="content" class="mdl-grid mdl-grid--center">
   <div class="mdl-card mdl-shadow--2dp">
     <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
-      <h2 class="mdl-card__title-text">Ask Me Anything</h2>
+      <h2 class="mdl-card__title-text"><%= TITLE %></h2>
     </div>
     <div class="mdl-card__supporting-text">
       <form action="#">
