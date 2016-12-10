@@ -67,7 +67,7 @@ export const APP_CONFIG = [
 ];
 
 export const VENDOR_CONFIG = {
-  entry: join(__dirname, 'src', 'vendor.js'),
+  entry: join('src', 'vendor.js'),
   context: 'window',
   plugins: [
     postcss({ plugins: [cssnano()] }),
@@ -81,7 +81,7 @@ export const VENDOR_CONFIG = {
 };
 
 export const POLYFILLS_CONFIG = {
-  entry: join(__dirname, 'src', 'polyfills.js'),
+  entry: join('src', 'polyfills.js'),
   context: 'window',
   plugins: [
     globals(),
