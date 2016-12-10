@@ -8,13 +8,14 @@ import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
 import { stream } from 'browser-sync';
 
+import { SOURCE_ROOT, DIST_ROOT } from '../constants';
 import { APP_CONFIG } from '../config/rollup.conf';
 import { CompileError } from '../utils';
 
 gulp.task('app', () => {
   let cache;
   return rollup({
-      entry: join('src', 'app.js'),
+      entry: join(SOURCE_ROOT, 'app.js'),
       format: 'iife',
       context: 'window',
       sourceMap: util.env.type === 'dev' && true,
@@ -27,6 +28,6 @@ gulp.task('app', () => {
     .pipe(buffer())
     .pipe(util.env.type === 'dev' ? sourcemaps.init({ loadMaps: true }) : util.noop())
     .pipe(util.env.type === 'dev' ? sourcemaps.write('./') : util.noop())
-    .pipe(gulp.dest('public'))
+    .pipe(gulp.dest(DIST_ROOT))
     .pipe(stream());
 });

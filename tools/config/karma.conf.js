@@ -2,6 +2,7 @@ const plugins = require('./rollup.conf');
 
 module.exports = (config) => {
   config.set({
+    basePath: '../..',
     frameworks: ['jasmine'],
     files: ['./src/**/*.spec.js'],
     exclude: [],

@@ -52,12 +52,7 @@ gulp.task('index', () => {
     .pipe(browsersync.stream());
 });
 
-gulp.task('unit', (done) => {
-  new Karma.Server({
-    configFile: join(__dirname, 'karma.conf.js'),
-    singleRun: util.env.type === 'watch' ? false : true
-  }, done).start();
-});
+
 
 gulp.task('e2e', (done) => {
   new Protractor()
