@@ -19,6 +19,8 @@ import babel from 'rollup-plugin-babel';
 import replace from 'rollup-plugin-replace';
 import uglify from 'rollup-plugin-uglify';
 
+import { SOURCE_ROOT } from '../constants';
+
 let cssExportMap = {};
 export const APP_CONFIG = [
   html({
@@ -67,7 +69,7 @@ export const APP_CONFIG = [
 ];
 
 export const VENDOR_CONFIG = {
-  entry: join('src', 'vendor.js'),
+  entry: join(SOURCE_ROOT, 'vendor.js'),
   context: 'window',
   plugins: [
     postcss({ plugins: [cssnano()] }),
@@ -81,7 +83,7 @@ export const VENDOR_CONFIG = {
 };
 
 export const POLYFILLS_CONFIG = {
-  entry: join('src', 'polyfills.js'),
+  entry: join(SOURCE_ROOT, 'polyfills.js'),
   context: 'window',
   plugins: [
     globals(),

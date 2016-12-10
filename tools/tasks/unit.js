@@ -1,5 +1,4 @@
 import { join } from 'path';
-
 import gulp from 'gulp';
 import util from 'gulp-util';
 import Karma from 'karma';

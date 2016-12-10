@@ -1,32 +1,33 @@
 import { join } from 'path';
-
 import gulp from 'gulp';
+
+import { SOURCE_ROOT } from '../constants';
 
 gulp.task('watch', () => {
   gulp.watch([
-    join('src', 'favicon.ico'),
-    join('src', 'robots.txt')
+    join(SOURCE_ROOT, 'favicon.ico'),
+    join(SOURCE_ROOT, 'robots.txt')
   ], ['copy']);
 
   gulp.watch([
-    join('src', 'index.html')
+    join(SOURCE_ROOT, 'index.html')
   ], ['index']);
 
   gulp.watch([
-    join('src', '**/*.{html,css,js}'),
-    join('src', '**/*.{gif,jpeg,jpg,png,svg}'),
-    join('src', '**/*.json'),
-    `!${join('src', 'index.html')}`,
-    `!${join('src', 'polyfills.js')}`,
-    `!${join('src', 'vendor.js')}`,
-    `!${join('src', '**/*.{spec.js,e2e-spec.js}')}`
+    join(SOURCE_ROOT, '**/*.{html,css,js}'),
+    join(SOURCE_ROOT, '**/*.{gif,jpeg,jpg,png,svg}'),
+    join(SOURCE_ROOT, '**/*.json'),
+    `!${join(SOURCE_ROOT, 'index.html')}`,
+    `!${join(SOURCE_ROOT, 'polyfills.js')}`,
+    `!${join(SOURCE_ROOT, 'vendor.js')}`,
+    `!${join(SOURCE_ROOT, '**/*.{spec.js,e2e-spec.js}')}`
   ], ['app']);
 
   gulp.watch([
-    join('src', 'vendor.js')
+    join(SOURCE_ROOT, 'vendor.js')
   ], ['vendor']);
 
   gulp.watch([
-    join('src', 'polyfills.js')
+    join(SOURCE_ROOT, 'polyfills.js')
   ], ['polyfills']);
 });
