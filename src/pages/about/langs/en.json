@@ -21,6 +21,8 @@
       "Testing framework with Jasmine.",
       "Unit tests with Karma.",
       "End-to-end tests with Protractor.",
+      "Operating system with Linux.",
+      "Text editor with Atom.",
       "Version control with Git.",
       "Fast and deterministic builds with Yarn.",
       "Virtual machine with Docker.",

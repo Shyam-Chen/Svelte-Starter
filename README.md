@@ -28,6 +28,8 @@ This seed repository provides the following features:
 * [x] Testing framework with **Jasmine**.
 * [x] Unit tests with **Karma**.
 * [x] End-to-end tests with **Protractor**.
+* [x] Operating system with **Linux**.
+* [x] Text editor with **Atom**.
 * [x] Version control with **Git**.
 * [x] Fast and deterministic builds with **Yarn**.
 * [x] Virtual machine with **Docker**.

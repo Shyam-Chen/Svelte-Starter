@@ -1,7 +1,7 @@
 {
   "ABOUT": "關於",
   "LIST": {
-    "TITLE": "此種子存儲庫提供以下功能：",
+    "TITLE": "此種子存儲庫提供以下特色：",
     "ITEM": [
       "現在開始編寫 Vanilla HTML/CSS/JS",
       "UI 元件使用 Material",
@@ -11,7 +11,7 @@
       "國際化使用 Intl",
       "資料視覺化使用 Chart",
       "建置系統使用 Gulp",
-      "模組打捆使用 Rollup",
+      "模組整合使用 Rollup",
       "未來的 CSS 特性使用 PostCSS",
       "下一代的 JS 使用 Babel",
       "開發用的伺服器使用 BrowserSync",
@@ -21,6 +21,8 @@
       "測試框架使用 Jasmine",
       "單元測試使用 Karma",
       "端對端測試使用 Protractor",
+      "作業系統使用 Linux",
+      "文字編輯器使用 Atom",
       "版本控制使用 Git",
       "快速且確定性的建置使用 Yarn",
       "虛擬機器使用 Docker",
