@@ -1,0 +1,2 @@
+@custom-media --small-viewport (max-width: 30rem);
+@custom-media --only-medium-screen (width >= 500px) and (width <= 1200px);

@@ -1,4 +1,4 @@
-import './app.css';
+import './styles/global.css';
 
 import { load } from './utils';
 import firebaseConfig from './assets/datas/firebase.config.json';

@@ -71,6 +71,7 @@
     "phantomjs-prebuilt": "^2.1.13",
     "postcss-comment": "^1.0.3",
     "postcss-cssnext": "^2.8.0",
+    "postcss-import": "^9.0.0",
     "postcss-modules": "^0.5.2",
     "protractor": "^4.0.12",
     "require-dir": "^0.3.1",

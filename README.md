@@ -92,9 +92,3 @@ $ yarn run clean
 $ yarn run reset
 $ yarn run reinstall
 ```
-
-## Folder
-* `pages` - One folder for one page
-* `components` - Shared/Reusable components here
-* `utils` - All the functions here
-* `assets` - Images and Datas here

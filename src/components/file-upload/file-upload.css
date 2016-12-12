@@ -1,29 +1,24 @@
-:root {
-  --theme: #3F51B5;
-}
+@import '../../styles/root.css';
 
-.input {
+.inputfile {
   opacity: 0;
   overflow: hidden;
   position: absolute;
   z-index: -1;
   & + label {
-    max-width: 75%;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     cursor: pointer;
     display: inline-block;
+    max-width: 75%;
     overflow: hidden;
     padding: .5rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     & > i {
       vertical-align: -.4rem;
     }
   }
-}
-
-.input {
   &:focus + label,
   & + label:hover {
-    color: var(--theme);
+    color: var(--primary);
   }
 }

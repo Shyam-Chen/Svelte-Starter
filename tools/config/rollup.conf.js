@@ -3,9 +3,10 @@ import util from 'gulp-util';
 import html from 'rollup-plugin-html';
 import postcss from 'rollup-plugin-postcss';
 import comment from 'postcss-comment';
-import modules from 'postcss-modules';
+import postcssimport from 'postcss-import';
 import cssnext from 'postcss-cssnext';
 import rucksack from 'rucksack-css';
+import modules from 'postcss-modules';
 import cssnano from 'cssnano';
 import image from 'rollup-plugin-image';
 import json from 'rollup-plugin-json';
@@ -37,6 +38,7 @@ export const APP_CONFIG = {
     postcss({
       parser: comment,
       plugins: [
+        postcssimport(),
         cssnext({ warnForDuplicates: false }),
         rucksack({ autoprefixer: true }),
         modules({ getJSON(id, tokens) { cssExportMap[id] = tokens; } }),
@@ -101,6 +103,7 @@ export const TEST_CONFIG = {
     postcss({
       parser: comment,
       plugins: [
+        postcssimport(),
         cssnext({ warnForDuplicates: false }),
         rucksack({ autoprefixer: true }),
         modules({ getJSON(id, tokens) { cssExportMap[id] = tokens; } }),
