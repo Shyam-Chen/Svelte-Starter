@@ -20,12 +20,16 @@
     <div class="mdl-card__supporting-text">
       <form action="#">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="username" value="Google DisplayName" readonly>
-          <label class="mdl-textfield__label" for="auth-name">Name</label>
+          <input class="mdl-textfield__input" type="text" id="username" value="Google Display Name" readonly>
+          <label class="mdl-textfield__label" for="username"><%= NAME %></label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="useremail" value="Google Email" readonly>
+          <label class="mdl-textfield__label" for="useremail"><%= EMAIL %></label>
         </div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
           <textarea class="mdl-textfield__input" type="text" rows= "3" id="content-text"></textarea>
-          <label class="mdl-textfield__label" for="content-text">Text lines...</label>
+          <label class="mdl-textfield__label" for="content-text"><%= COMMENT %></label>
         </div>
         <div class="mdl-textfield">
           <div id="contact-image"></div>
@@ -34,7 +38,7 @@
     </div>
     <div class="mdl-card__actions mdl-card--border mdl-cell--right">
       <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
-        Send <i class="material-icons">send</i>
+        <%= SEND %> <i class="material-icons">send</i>
       </button>
     </div>
   </div>

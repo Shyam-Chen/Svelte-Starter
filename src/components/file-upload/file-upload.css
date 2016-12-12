@@ -1,30 +1,29 @@
+:root {
+  --theme: #3F51B5;
+}
+
 .input {
   opacity: 0;
   overflow: hidden;
   position: absolute;
   z-index: -1;
+  & + label {
+    max-width: 75%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: .5rem;
+    & > i {
+      vertical-align: -.4rem;
+    }
+  }
 }
 
-.input + label {
-  max-width: 75%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  cursor: pointer;
-  display: inline-block;
-  overflow: hidden;
-  padding: .5rem;
-}
-
-.input + label {
-  color: #3F51B5;
-  border: 2px solid #3F51B5;
-}
-
-.input:focus + label,
-.input + label:hover {
-  color: #1A237E;
-}
-
-.icon {
-  vertical-align: -.4rem;
+.input {
+  &:focus + label,
+  & + label:hover {
+    color: var(--theme);
+  }
 }

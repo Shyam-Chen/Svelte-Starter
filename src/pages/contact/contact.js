@@ -34,6 +34,7 @@ const contact = () => {
       content.style.display = '';
       signOutButton.style.display = '';
       document.querySelector('#username').value = `${user.displayName}`;
+      document.querySelector('#useremail').value = `${user.email}`;
     } else {
       currentUID = null;
       signInButton.style.display = '';

@@ -1,9 +1,9 @@
 {
   "ABOUT": "關於",
   "LIST": {
-    "TITLE": "此種子存儲庫提供以下特色：",
+    "TITLE": "此種子存儲庫提供以下特點：",
     "ITEM": [
-      "現在開始編寫 Vanilla HTML/CSS/JS",
+      "現在開始編寫純 HTML/CSS/JS",
       "UI 元件使用 Material",
       "後端服務使用 Firebase",
       "路由和導覽使用 Page",
