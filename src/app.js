@@ -1,6 +1,6 @@
 import './styles/global.css';
 
-import { load } from './utils';
+import { load } from './functions';
 import firebaseConfig from './assets/datas/firebase.config.json';
 
 import { HOME_EN, HOME_ZH } from './pages/home';
@@ -38,6 +38,7 @@ switch (true) {
 
 // page('/:lang/home', HOME);
 // page('/:lang/about', ABOUT);
+// page('/:lang/contact', CONTACT);
 
 page('/en/home', HOME_EN);
 page('/en/about', ABOUT_EN);

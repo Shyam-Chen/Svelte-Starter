@@ -1,7 +1,7 @@
 import _template from 'lodash-es/template';
 import _forEach from 'lodash-es/forEach';
 
-import { site } from '../../utils';
+import { site } from '../../functions';
 
 import template from './layout.html';
 import style from './layout.css';
