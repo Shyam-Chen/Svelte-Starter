@@ -1,5 +1,5 @@
 {
-  "name": "Vanilla-Starter-Kit--Web",
+  "name": "Vanilla-Starter-Kit",
   "version": "1.0.0",
   "description": "A single-page application boilerplate for Vanilla HTML/CSS/JS, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.",
   "scripts": {
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shyam-Chen/Vanilla-Starter-Kit--Web.git"
+    "url": "git+https://github.com/Shyam-Chen/Vanilla-Starter-Kit.git"
   },
   "keywords": [
     "Vanilla"
@@ -27,9 +27,9 @@
   "author": "陳彥澄",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Shyam-Chen/Vanilla-Starter-Kit--Web/issues"
+    "url": "https://github.com/Shyam-Chen/Vanilla-Starter-Kit/issues"
   },
-  "homepage": "https://github.com/Shyam-Chen/Vanilla-Starter-Kit--Web#readme",
+  "homepage": "https://github.com/Shyam-Chen/Vanilla-Starter-Kit#readme",
   "dependencies": {
     "chart.js": "^2.4.0",
     "core-js": "^2.4.1",
