@@ -1,3 +1,11 @@
+/**
+ * @example
+ * load('...')
+ *   .then((data) => {
+ *     // ...
+ *   });
+ */
+
 export const load = (url) => {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();

@@ -17,6 +17,7 @@ export const layout = (lang, page) => {
       site('en');
       document.querySelector('#app').innerHTML = LAYOUT_EN;
       document.querySelector('#zh').href = `/zh/${page}`;
+      // document.querySelector('#page').innerHTML = x;
       break;
     case 'zh':
       site('zh');
