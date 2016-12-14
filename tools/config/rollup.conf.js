@@ -20,48 +20,55 @@ import uglify from 'rollup-plugin-uglify';
 
 import { SOURCE_ROOT } from '../constants';
 
-const cssExportMap = {};
+const htmlplugin = () => {
+  return html({
+    htmlMinifierOptions: {
+      collapseWhitespace: true,
+      removeAttributeQuotes: true,
+      removeComments: true
+    }
+  });
+};
+
+const cssplugin = () => {
+  const cssExportMap = {};
+  return postcss({
+    parser: comment,
+    plugins: [
+      postcssimport(),
+      cssnext({ warnForDuplicates: false }),
+      rucksack({ autoprefixer: true }),
+      modules({ getJSON(id, tokens) { cssExportMap[id] = tokens; } }),
+      cssnano()
+    ],
+    getExport(id) { return cssExportMap[id]; }
+  });
+};
+
+const plugins = [
+  htmlplugin(),
+  cssplugin(),
+  image(),
+  json(),
+  globals(),
+  builtins(),
+  resolve({ jsnext: true, browser: true }),
+  commonjs({ include: ['node_modules/lodash-es/**', 'node_modules/rxjs/**'] }),
+  babel({
+    presets: [['latest', { 'es2015': { 'modules': false } }]],
+    plugins: ['external-helpers'],
+    exclude: 'node_modules/**',
+    babelrc: false
+  }),
+  (util.env.type === 'prod' ? uglify() : util.noop())
+];
 
 export const APP_CONFIG = {
   entry: join(SOURCE_ROOT, 'app.js'),
   format: 'iife',
   context: 'window',
   sourceMap: util.env.type === 'dev' && true,
-  plugins: [
-    html({
-      htmlMinifierOptions: {
-        collapseWhitespace: true,
-        removeAttributeQuotes: true,
-        removeComments: true
-      }
-    }),
-    postcss({
-      parser: comment,
-      plugins: [
-        postcssimport(),
-        cssnext({ warnForDuplicates: false }),
-        rucksack({ autoprefixer: true }),
-        modules({ getJSON(id, tokens) { cssExportMap[id] = tokens; } }),
-        cssnano()
-      ],
-      getExport(id) { return cssExportMap[id]; }
-    }),
-    image(),
-    json(),
-    globals(),
-    builtins(),
-    resolve({ jsnext: true, browser: true }),
-    commonjs({
-      include: ['node_modules/lodash-es/**', 'node_modules/rxjs/**']
-    }),
-    babel({
-      presets: [['latest', { 'es2015': { 'modules': false } }]],
-      plugins: ['external-helpers'],
-      exclude: 'node_modules/**',
-      babelrc: false
-    }),
-    (util.env.type === 'prod' ? uglify() : util.noop())
-  ]
+  plugins
 };
 
 export const VENDOR_CONFIG = {
@@ -94,38 +101,5 @@ export const TEST_CONFIG = {
   format: 'iife',
   context: 'window',
   sourceMap: 'inline',
-  plugins: [
-    html({
-      htmlMinifierOptions: {
-        collapseWhitespace: true,
-        removeAttributeQuotes: true,
-        removeComments: true
-      }
-    }),
-    postcss({
-      parser: comment,
-      plugins: [
-        postcssimport(),
-        cssnext({ warnForDuplicates: false }),
-        rucksack({ autoprefixer: true }),
-        modules({ getJSON(id, tokens) { cssExportMap[id] = tokens; } }),
-        cssnano()
-      ],
-      getExport(id) { return cssExportMap[id]; }
-    }),
-    image(),
-    json(),
-    globals(),
-    builtins(),
-    resolve({ jsnext: true, browser: true }),
-    commonjs({
-      include: ['node_modules/lodash-es/**', 'node_modules/rxjs/**']
-    }),
-    babel({
-      presets: [['latest', { 'es2015': { 'modules': false } }]],
-      plugins: ['external-helpers'],
-      exclude: 'node_modules/**',
-      babelrc: false
-    })
-  ]
+  plugins
 };
