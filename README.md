@@ -10,30 +10,34 @@
 [Live Demo](https://test-1498d.firebaseapp.com/)
 
 This seed repository provides the following features:
-* [x] Start coding **Vanilla HTML/CSS/JS** right now.
+* ---------- **Primary Key** ----------
+* [x] Vanilla HTML/CSS/JS.
 * [x] Functional/Reactive programming.
 * [x] Material design components.
 * [x] Back-end services.
 * [x] Single-page application.
 * [x] Globalization.
 * [x] Data visualization.
-* [x] Build system with **Gulp**.
-* [x] Module bundler with **Rollup**.
-* [x] Future CSS features with **PostCSS**.
-* [x] Next generation JS with **Babel**.
-* [x] Development server with **BrowserSync**.
-* [x] HTML static code analyzer with **HTMLHint**.
-* [x] CSS static code analyzer with **StyleLint**.
-* [x] JS static code analyzer with **ESLint**.
-* [x] Testing framework with **Jasmine**.
-* [x] Unit tests with **Karma**.
-* [x] End-to-end tests with **Protractor**.
-* [x] Operating system with **Linux**.
-* [x] Text editor with **Atom**.
-* [x] Version control with **Git**.
-* [x] Fast and deterministic builds with **Yarn**.
-* [x] Virtual machine with **Docker**.
-* [x] Continuous integration and delivery with **Travis**.
+* ---------- **Dev Tools** ----------
+* [x] Build system with Gulp.
+* [x] Module bundler with Rollup.
+* [x] Future CSS features with PostCSS.
+* [x] Next generation JS with Babel.
+* [x] Development server with BrowserSync.
+* ---------- **Test Tools** ----------
+* [x] HTML static code analyzer with HTMLHint.
+* [x] CSS static code analyzer with StyleLint.
+* [x] JS static code analyzer with ESLint.
+* [x] Testing framework with Jasmine.
+* [x] Unit tests with Karma.
+* [x] End-to-end tests with Protractor.
+* ---------- **Environment** ----------
+* [x] Operating system with Linux.
+* [x] Text editor with Atom.
+* [x] Version control with Git.
+* [x] Fast and deterministic builds with Yarn.
+* [x] Containers with Docker.
+* [x] Continuous integration and delivery with Travis.
 
 ## Getting Started
 
