@@ -1,6 +1,6 @@
 # Vanilla Starter Kit (Beta)
 
-> A single-page application boilerplate for Vanilla HTML/CSS/JS, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.
+> A boilerplate for Vanilla, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
  //
@@ -11,13 +11,12 @@
 
 This seed repository provides the following features:
 * [x] Start coding **Vanilla HTML/CSS/JS** right now.
-* [x] Functional programming with **Lodash**.
-* [x] Reactive programming with **ReactiveX**.
-* [x] UI components with **Material**.
-* [x] Back-end service with **Firebase**.
-* [x] Routing and navigation with **Page**.
-* [x] Globalization with *TODO*.
-* [x] Data visualization with **Chart**.
+* [x] Functional/Reactive programming.
+* [x] Material design components.
+* [x] Back-end services.
+* [x] Single-page application.
+* [x] Globalization.
+* [x] Data visualization.
 * [x] Build system with **Gulp**.
 * [x] Module bundler with **Rollup**.
 * [x] Future CSS features with **PostCSS**.

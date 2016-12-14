@@ -26,7 +26,7 @@ Promise.all([
 firebase.initializeApp(firebaseConfig);
 
 /**
- * @name Page
+ * @deprecated
  */
 switch (true) {
   case /zh/.test(navigator.language):
