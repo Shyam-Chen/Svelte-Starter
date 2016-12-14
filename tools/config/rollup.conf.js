@@ -51,7 +51,9 @@ export const APP_CONFIG = {
     globals(),
     builtins(),
     resolve({ jsnext: true, browser: true }),
-    commonjs({ include: 'node_modules/lodash-es/**' }),
+    commonjs({
+      include: ['node_modules/lodash-es/**', 'node_modules/rxjs/**']
+    }),
     babel({
       presets: [['latest', { 'es2015': { 'modules': false } }]],
       plugins: ['external-helpers'],
@@ -116,7 +118,9 @@ export const TEST_CONFIG = {
     globals(),
     builtins(),
     resolve({ jsnext: true, browser: true }),
-    commonjs({ include: 'node_modules/lodash-es/**' }),
+    commonjs({
+      include: ['node_modules/lodash-es/**', 'node_modules/rxjs/**']
+    }),
     babel({
       presets: [['latest', { 'es2015': { 'modules': false } }]],
       plugins: ['external-helpers'],

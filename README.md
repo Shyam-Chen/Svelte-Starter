@@ -11,11 +11,12 @@
 
 This seed repository provides the following features:
 * [x] Start coding **Vanilla HTML/CSS/JS** right now.
+* [x] Functional programming with **Lodash**.
+* [x] Reactive programming with **ReactiveX**.
 * [x] UI components with **Material**.
 * [x] Back-end service with **Firebase**.
 * [x] Routing and navigation with **Page**.
-* [x] Render templates with **Lodash**.
-* [x] Internationalization with **Intl**.
+* [x] Globalization with *TODO*.
 * [x] Data visualization with **Chart**.
 * [x] Build system with **Gulp**.
 * [x] Module bundler with **Rollup**.
