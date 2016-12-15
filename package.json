@@ -40,7 +40,6 @@
     "lodash-es": "^4.17.2",
     "material-design-lite": "^1.2.1",
     "page": "^1.7.1",
-    "rxjs": "^5.0.1",
     "universal-router": "^2.0.0"
   },
   "devDependencies": {
