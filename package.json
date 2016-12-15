@@ -52,6 +52,9 @@
     "extends": "eslint:recommended",
     "parserOptions": {
       "sourceType": "module"
+    },
+    "rules": {
+      "arrow-spacing": ["error"]
     }
   },
   "dependencies": {
