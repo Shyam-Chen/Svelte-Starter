@@ -30,6 +30,30 @@
     "url": "https://github.com/Shyam-Chen/Vanilla-Starter-Kit/issues"
   },
   "homepage": "https://github.com/Shyam-Chen/Vanilla-Starter-Kit#readme",
+  "babel": {
+    "presets": ["latest"]
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true,
+      "commonjs": true,
+      "es6": true,
+      "jasmine": true,
+      "protractor": true
+    },
+    "globals": {
+      "componentHandler": true,
+      "firebase": true,
+      "page": true,
+      "Chart": true,
+      "webdriver": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "sourceType": "module"
+    }
+  },
   "dependencies": {
     "@reactivex/rxjs": "^5.0.1",
     "chart.js": "^2.4.0",

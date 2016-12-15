@@ -39,6 +39,13 @@ This seed repository provides the following features:
 * [x] Containers with Docker.
 * [x] Continuous integration and delivery with Travis.
 
+## TODO List
+* HTMLHint/StyleLint/ESLint configuration
+* Dialog polyfill
+* Migrate from `page.js` to `universal-router`
+* Firebase dynamic links (Await)
+* ...
+
 ## Getting Started
 
 1) Clone this Boilerplate

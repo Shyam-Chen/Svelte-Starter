@@ -45,21 +45,6 @@ const cssplugin = () => {
   });
 };
 
-class RollupRx {
-
-	constructor( options ){
-		this.options = options;
-	}
-
-	resolveId( id ){
-		if(id.startsWith('rxjs/')){
-			return `${__dirname}/../../node_modules/rxjs/${id.replace('rxjs/', '')}.js`;
-		}
-	}
-}
-
-const rollupRx = config => new RollupRx( config );
-
 const plugins = [
   htmlplugin(),
   cssplugin(),
@@ -67,7 +52,6 @@ const plugins = [
   json(),
   globals(),
   builtins(),
-  rollupRx(),
   resolve({ jsnext: true, browser: true }),
   commonjs({
     include: [
@@ -76,10 +60,10 @@ const plugins = [
     ]
   }),
   babel({
+    babelrc: false,
     presets: [['latest', { 'es2015': { 'modules': false } }]],
     plugins: ['external-helpers'],
-    exclude: 'node_modules/**',
-    babelrc: false
+    exclude: 'node_modules/**'
   }),
   (util.env.type === 'prod' ? uglify() : util.noop())
 ];
