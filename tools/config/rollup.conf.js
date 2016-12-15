@@ -45,6 +45,21 @@ const cssplugin = () => {
   });
 };
 
+class RollupRx {
+
+	constructor( options ){
+		this.options = options;
+	}
+
+	resolveId( id ){
+		if(id.startsWith('rxjs/')){
+			return `${__dirname}/../../node_modules/rxjs/${id.replace('rxjs/', '')}.js`;
+		}
+	}
+}
+
+const rollupRx = config => new RollupRx( config );
+
 const plugins = [
   htmlplugin(),
   cssplugin(),
@@ -52,8 +67,14 @@ const plugins = [
   json(),
   globals(),
   builtins(),
+  rollupRx(),
   resolve({ jsnext: true, browser: true }),
-  commonjs({ include: ['node_modules/lodash-es/**', 'node_modules/rxjs/**'] }),
+  commonjs({
+    include: [
+      'node_modules/lodash-es/**',
+      'node_modules/@reactivex/rxjs/dist/es6/**'
+    ]
+  }),
   babel({
     presets: [['latest', { 'es2015': { 'modules': false } }]],
     plugins: ['external-helpers'],

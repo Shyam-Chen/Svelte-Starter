@@ -8,6 +8,11 @@ import { ABOUT_EN, ABOUT_ZH } from './pages/about';
 import { CONTACT_EN, CONTACT_ZH } from './pages/contact';
 import { notfound } from './pages/404';
 
+import { Observable } from '@reactivex/rxjs/dist/es6/Observable';
+import '@reactivex/rxjs/dist/es6/add/observable/of';
+
+Observable.of(1,2,3);
+
 /**
  * @name Material
  */
