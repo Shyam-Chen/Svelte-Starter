@@ -1,6 +1,5 @@
 // Third party
 import _template from 'lodash-es/template';
-import _forEach from 'lodash-es/forEach';
 
 // Components
 import { layout } from '../../components/layout';
@@ -11,7 +10,7 @@ import style from './about.css';
 import LANGS_EN from './langs/en.json';
 import LANGS_ZH from './langs/zh.json';
 
-const imports = { 'imports': { _forEach, style } };
+const imports = { 'imports': { style } };
 
 const chart = () => {
   new Chart('myChart', {

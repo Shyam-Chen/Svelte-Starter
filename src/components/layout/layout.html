@@ -4,7 +4,7 @@
       <span class="mdl-layout-title"><%= TITLE %></span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <% _forEach(LINK, function(item) { %>
+        <% [].forEach.call(LINK, function(item) { %>
           <a class="mdl-navigation__link" href="<%- item[0] %>"><%- item[1] %></a>
         <% }); %>
         <!--
@@ -17,7 +17,7 @@
         <i class="material-icons">language</i>
       </button>
       <div class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="language">
-        <% _forEach(LANG, function(item) { %>
+        <% [].forEach.call(LANG, function(item) { %>
           <a href="javascript:void 0" id="<%- item[0] %>" class="mdl-menu__item"><%- item[1] %></a>
         <% }); %>
         <!--
@@ -31,7 +31,7 @@
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title"><%= TITLE %></span>
     <nav class="mdl-navigation">
-      <% _forEach(LINK, function(item) { %>
+      <% [].forEach.call(LINK, function(item) { %>
         <a class="mdl-navigation__link" href="<%- item[0] %>"><%- item[1] %></a>
       <% }); %>
       <!--
