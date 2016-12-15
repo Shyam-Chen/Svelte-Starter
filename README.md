@@ -1,6 +1,6 @@
 # Vanilla Starter Kit (Beta)
 
-> A boilerplate for Vanilla, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.
+> A boilerplate for Vanilla, Lodash, ReactiveX, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
  //
@@ -11,7 +11,7 @@
 
 This seed repository provides the following features:
 * ---------- **Primary Key** ----------
-* [x] Vanilla HTML/CSS/JS.
+* [x] Vanilla HTML/CSS/JavaScript.
 * [x] Functional/Reactive programming.
 * [x] Material design components.
 * [x] Back-end services.
@@ -22,12 +22,12 @@ This seed repository provides the following features:
 * [x] Build system with Gulp.
 * [x] Module bundler with Rollup.
 * [x] Future CSS features with PostCSS.
-* [x] Next generation JS with Babel.
+* [x] Next generation JavaScript with Babel.
 * [x] Development server with BrowserSync.
 * ---------- **Test Tools** ----------
 * [x] HTML static code analyzer with HTMLHint.
 * [x] CSS static code analyzer with StyleLint.
-* [x] JS static code analyzer with ESLint.
+* [x] JavaScript static code analyzer with ESLint.
 * [x] Testing framework with Jasmine.
 * [x] Unit tests with Karma.
 * [x] End-to-end tests with Protractor.

@@ -1,7 +1,7 @@
 {
   "name": "Vanilla-Starter-Kit",
   "version": "1.0.0",
-  "description": "A single-page application boilerplate for Vanilla HTML/CSS/JS, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.",
+  "description": "A boilerplate for Vanilla, Lodash, ReactiveX, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.",
   "scripts": {
     "start": "gulp dev --type dev",
     "dev": "rimraf public && gulp dev --type dev",
@@ -33,6 +33,7 @@
   "dependencies": {
     "chart.js": "^2.4.0",
     "core-js": "^2.4.1",
+    "dialog-polyfill": "^0.4.5",
     "firebase": "^3.6.1",
     "intl": "^1.2.5",
     "lodash-es": "^4.17.2",
