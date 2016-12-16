@@ -63,7 +63,7 @@ const contact = () => {
 export const CONTACT_EN = () => {
   layout('en', 'contact');
   document.querySelector('#page').innerHTML = _template(template, { 'imports': { style } })(LANGS_EN);
-  fileUpload('contact-image', 'Choose a file');
+  fileUpload('contact-image');
   contact();
 	componentHandler.upgradeAllRegistered();
 };
