@@ -14,9 +14,9 @@ This seed repository provides the following features:
 * [x] Pure HTML/CSS/JavaScript coding.
 * [x] Functional/Reactive programming.
 * [x] Material design components.
-* [x] Back-end services.
+* [x] Back-end cloud services.
 * [x] Single-page application.
-* [x] Globalization.
+* [x] Internationalization and localization.
 * [x] Data visualization.
 * ---------- **Dev Tools** ----------
 * [x] Build system with Gulp.
