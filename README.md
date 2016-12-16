@@ -41,9 +41,11 @@ This seed repository provides the following features:
 
 TODO List:
 * HTMLHint/StyleLint/ESLint configuration
-* Dialog polyfill
 * Migrate from `page.js` to `universal-router`
-* Firebase dynamic links (await)
+* Firebase dynamic links
+
+Known Issues:
+* Firebase `v3.6.x`
 
 Browser Support:
 * IE (10+)

@@ -39,7 +39,7 @@
     "chart.js": "^2.4.0",
     "core-js": "^2.4.1",
     "dialog-polyfill": "^0.4.5",
-    "firebase": "^3.5.3",
+    "firebase": "3.5.3",
     "intl": "^1.2.5",
     "lodash-es": "^4.17.2",
     "material-design-lite": "^1.2.1",
