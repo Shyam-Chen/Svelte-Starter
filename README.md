@@ -40,7 +40,9 @@ This seed repository provides the following features:
 * [x] Continuous integration with Travis.
 
 ## Known Issues
-* Firebase `v3.6.x`
+* SEO
+* Firebase - `v3.6.x`
+* Firebase - only the features
 
 ## Browser Support
 * IE (10+)

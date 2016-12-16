@@ -41,10 +41,6 @@ switch (true) {
     page('/', HOME_EN);
 }
 
-// page('/:lang/home', HOME);
-// page('/:lang/about', ABOUT);
-// page('/:lang/contact', CONTACT);
-
 page('/en/home', HOME_EN);
 page('/en/about', ABOUT_EN);
 page('/en/contact', CONTACT_EN);
