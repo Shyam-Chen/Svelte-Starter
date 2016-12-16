@@ -39,6 +39,9 @@ This seed repository provides the following features:
 * [x] Containers with Docker.
 * [x] Continuous integration with Travis.
 
+## TODO List
+* Service Workers
+
 ## Known Issues
 * SEO
 * Firebase - `v3.6.x`
@@ -51,6 +54,10 @@ This seed repository provides the following features:
 * Firefox
 * Chrome
 * Opera
+
+## PageSpeed Insights
+* Mobile - 89 / 100
+* Desktop - 95 / 100
 
 ## Getting Started
 
