@@ -12,6 +12,7 @@
     overflow: hidden;
     padding: .5rem;
     text-overflow: ellipsis;
+    transition: color .5s;
     white-space: nowrap;
     & > i {
       vertical-align: -.4rem;
