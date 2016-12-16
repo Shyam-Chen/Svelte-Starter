@@ -16,14 +16,14 @@ matrix:
       os: linux
       sudo: false
       node_js: stable
-      addons:
-        firefox: latest
+      # addons:
+      #   firefox: latest
     - env: MODE=e2e
       os: linux
       sudo: false
       node_js: stable
-      addons:
-        firefox: "45.0"
+      # addons:
+      #   firefox: "45.0"
 
 before_install:
   - if [[ "$MODE" == "docker" ]]; then docker-compose up -d; fi
