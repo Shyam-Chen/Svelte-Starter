@@ -45,7 +45,7 @@ const cssplugin = () => {
   });
 };
 
-const plugins = [
+const primaryPlugins = [
   htmlplugin(),
   cssplugin(),
   image(),
@@ -61,11 +61,21 @@ const plugins = [
   }),
   babel({
     babelrc: false,
-    presets: [['latest', { 'es2015': { 'modules': false } }]],
+    presets: [['latest', { es2015: { modules: false } }]],
     plugins: ['external-helpers'],
     exclude: 'node_modules/**'
   }),
   (util.env.type === 'prod' ? uglify() : util.noop())
+];
+
+const secondaryPlugins = [
+  postcss({ plugins: [cssnano()] }),
+  globals(),
+  builtins(),
+  resolve({ jsnext: true, browser: true }),
+  commonjs(),
+  replace({ eval: '[eval][0]' }),
+  uglify()
 ];
 
 export const APP_CONFIG = {
@@ -73,38 +83,24 @@ export const APP_CONFIG = {
   format: 'iife',
   context: 'window',
   sourceMap: util.env.type === 'dev' && true,
-  plugins
-};
-
-export const VENDOR_CONFIG = {
-  entry: join(SOURCE_ROOT, 'vendor.js'),
-  context: 'window',
-  plugins: [
-    postcss({ plugins: [cssnano()] }),
-    globals(),
-    builtins(),
-    resolve({ jsnext: true, browser: true }),
-    commonjs(),
-    replace({ eval: '[eval][0]' }),
-    uglify()
-  ]
-};
-
-export const POLYFILLS_CONFIG = {
-  entry: join(SOURCE_ROOT, 'polyfills.js'),
-  context: 'window',
-  plugins: [
-    globals(),
-    builtins(),
-    resolve({ jsnext: true, browser: true }),
-    commonjs(),
-    uglify()
-  ]
+  plugins: primaryPlugins
 };
 
 export const TEST_CONFIG = {
   format: 'iife',
   context: 'window',
   sourceMap: 'inline',
-  plugins
+  plugins: primaryPlugins
+};
+
+export const VENDOR_CONFIG = {
+  entry: join(SOURCE_ROOT, 'vendor.js'),
+  context: 'window',
+  plugins: secondaryPlugins
+};
+
+export const POLYFILLS_CONFIG = {
+  entry: join(SOURCE_ROOT, 'polyfills.js'),
+  context: 'window',
+  plugins: secondaryPlugins
 };
