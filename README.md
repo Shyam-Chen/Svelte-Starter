@@ -39,15 +39,10 @@ This seed repository provides the following features:
 * [x] Containers with Docker.
 * [x] Continuous integration with Travis.
 
-TODO List:
-* HTMLHint/StyleLint/ESLint configuration
-* Migrate from `page.js` to `universal-router`
-* Firebase dynamic links
-
-Known Issues:
+## Known Issues
 * Firebase `v3.6.x`
 
-Browser Support:
+## Browser Support
 * IE (10+)
 * Edge
 * Safari (8+)
