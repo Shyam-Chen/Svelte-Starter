@@ -3,21 +3,21 @@
   "LIST": {
     "TITLE": "此種子存儲庫提供以下特點：",
     "ITEM": [
-      "現在開始編寫純 HTML/CSS/JS",
-      "UI 元件使用 Material",
-      "後端服務使用 Firebase",
-      "路由和導覽使用 Page",
-      "渲染模板使用 Lodash",
-      "國際化使用 Intl",
-      "資料視覺化使用 Chart",
+      "純正的 HTML/CSS/JavaScript 編碼",
+      "函式型/反應式程式設計",
+      "原質化設計的元件",
+      "後端服務",
+      "單頁應用程式",
+      "全球化",
+      "資料視覺化",
       "建置系統使用 Gulp",
       "模組整合使用 Rollup",
       "未來的 CSS 特性使用 PostCSS",
-      "下一代的 JS 使用 Babel",
+      "下一代的 JavaScript 使用 Babel",
       "開發用的伺服器使用 BrowserSync",
       "HTML 的靜態程式碼分析使用 HTMLHint",
       "CSS 的靜態程式碼分析使用 StyleLint",
-      "JS 的靜態程式碼分析使用 ESLint",
+      "JavaScript 的靜態程式碼分析使用 ESLint",
       "測試框架使用 Jasmine",
       "單元測試使用 Karma",
       "端對端測試使用 Protractor",
@@ -25,8 +25,8 @@
       "文字編輯器使用 Atom",
       "版本控制使用 Git",
       "快速且確定性的建置使用 Yarn",
-      "虛擬機器使用 Docker",
-      "持續整合和交付使用 Travis"
+      "容器使用 Docker",
+      "持續整合使用 Travis"
     ]
   }
 }

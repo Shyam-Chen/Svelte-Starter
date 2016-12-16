@@ -11,7 +11,7 @@
 
 This seed repository provides the following features:
 * ---------- **Primary Key** ----------
-* [x] Vanilla HTML/CSS/JavaScript.
+* [x] Pure HTML/CSS/JavaScript coding.
 * [x] Functional/Reactive programming.
 * [x] Material design components.
 * [x] Back-end services.
@@ -37,7 +37,7 @@ This seed repository provides the following features:
 * [x] Version control with Git.
 * [x] Fast and deterministic builds with Yarn.
 * [x] Containers with Docker.
-* [x] Continuous integration and delivery with Travis.
+* [x] Continuous integration with Travis.
 
 TODO List:
 * HTMLHint/StyleLint/ESLint configuration
