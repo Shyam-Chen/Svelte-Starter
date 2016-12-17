@@ -1,6 +1,9 @@
 const description = document.querySelector('meta[name=description]');
 const keywords = document.querySelector('meta[name=keywords]');
 
+/**
+ * @deprecated
+ */
 export const site = (lang) => {
   document.documentElement.lang = lang;
   switch (lang) {

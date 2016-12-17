@@ -53,7 +53,7 @@ This seed repository provides the following features:
 ## Browser Support
 * IE (10+)
 * Edge
-* Safari (8+)
+* Safari
 * Firefox
 * Chrome
 * Opera

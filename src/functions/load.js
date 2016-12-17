@@ -1,4 +1,6 @@
 /**
+ * @param {string} url
+ *
  * @example
  * load('...')
  *   .then((data) => {
@@ -11,12 +13,13 @@ export const load = (url) => {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     xhr.onload = () => {
-      if (xhr.readyState === 4 && xhr.status === 200) {
+      if (xhr.status === 200) {
         resolve(xhr.response);
       } else {
         reject(new Error('Failed to load.'));
       }
     };
+    xhr.onerror = () => reject(new Error('Network Error.'));
     xhr.send();
     return xhr.responseText;
   });
