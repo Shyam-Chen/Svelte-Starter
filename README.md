@@ -1,11 +1,11 @@
-# Vanilla Starter Kit (Beta)
+# Web Starter Kit (Beta)
 
 > A boilerplate for Vanilla, Lodash, ReactiveX, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.
 
-[![Build Status](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Vanilla-Starter-Kit)
+[![Build Status](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit)
  //
-[![Dependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit)
-[![devDependency Status](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Starter-Kit?type=dev)
+[![Dependency Status](https://david-dm.org/Shyam-Chen/Web-Starter-Kit.svg)](https://david-dm.org/Shyam-Chen/Web-Starter-Kit)
+[![devDependency Status](https://david-dm.org/Shyam-Chen/Web-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Web-Starter-Kit?type=dev)
 
 [Live Demo](https://test-1498d.firebaseapp.com/)
 
@@ -41,11 +41,14 @@ This seed repository provides the following features:
 
 ## TODO List
 * Service Workers
+* Web App Manifest
+* Migrate from `page.js` to `universal-router`
+* ...
 
 ## Known Issues
-* SEO
-* Firebase - `v3.6.x`
-* Firebase - only the features
+* Firebase hosting SEO
+* Import Firebase `v3.6.x`
+* Import Firebase only the features
 
 ## Browser Support
 * IE (10+)
@@ -63,7 +66,7 @@ This seed repository provides the following features:
 
 1) Clone this Boilerplate
 ```bash
-$ git clone --depth 1 https://github.com/Shyam-Chen/Vanilla-Starter-Kit.git <PROJECT_NAME>
+$ git clone --depth 1 https://github.com/Shyam-Chen/Web-Starter-Kit.git <PROJECT_NAME>
 $ cd <PROJECT_NAME>
 ```
 
@@ -79,7 +82,7 @@ $ yarn start
 
 4) Stay up-to-date
 ```bash
-$ git remote add upstream https://github.com/Shyam-Chen/Vanilla-Starter-Kit.git
+$ git remote add upstream https://github.com/Shyam-Chen/Web-Starter-Kit.git
 $ git pull upstream master
 ```
 
@@ -87,12 +90,12 @@ $ git pull upstream master
 
 1) Build the Image
 ```bash
-$ docker build -t Vanilla-Starter-Kit .
+$ docker build -t Web-Starter-Kit .
 ```
 
 2) Run the Container
 ```bash
-$ docker run -it -p 3000:3000 --name app Vanilla-Starter-Kit
+$ docker run -it -p 3000:3000 --name app Web-Starter-Kit
 ```
 
 3) Just Compose

@@ -1,5 +1,5 @@
 {
-  "name": "Vanilla-Starter-Kit",
+  "name": "Web-Starter-Kit",
   "version": "1.0.0",
   "description": "A boilerplate for Vanilla, Lodash, ReactiveX, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.",
   "scripts": {
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shyam-Chen/Vanilla-Starter-Kit.git"
+    "url": "git+https://github.com/Shyam-Chen/Web-Starter-Kit.git"
   },
   "keywords": [
     "Vanilla",
@@ -28,9 +28,9 @@
   "author": "陳彥澄",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Shyam-Chen/Vanilla-Starter-Kit/issues"
+    "url": "https://github.com/Shyam-Chen/Web-Starter-Kit/issues"
   },
-  "homepage": "https://github.com/Shyam-Chen/Vanilla-Starter-Kit#readme",
+  "homepage": "https://github.com/Shyam-Chen/Web-Starter-Kit#readme",
   "babel": {
     "presets": ["latest"]
   },
