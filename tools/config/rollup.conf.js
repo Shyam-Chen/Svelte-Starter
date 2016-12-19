@@ -20,53 +20,55 @@ import uglify from 'rollup-plugin-uglify';
 
 import { SOURCE_ROOT } from '../constants';
 
-const htmlplugin = () => {
-  return html({
-    htmlMinifierOptions: {
-      collapseWhitespace: true,
-      removeAttributeQuotes: true,
-      removeComments: true
-    }
-  });
-};
+const primaryPlugins = () => {
+  const htmlplugin = () => {
+    return html({
+      htmlMinifierOptions: {
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+        removeComments: true
+      }
+    });
+  };
 
-const cssplugin = () => {
-  const cssExportMap = {};
-  return postcss({
-    parser: comment,
-    plugins: [
-      postcssimport(),
-      cssnext({ warnForDuplicates: false }),
-      rucksack({ autoprefixer: true }),
-      modules({ getJSON(id, tokens) { cssExportMap[id] = tokens; } }),
-      cssnano()
-    ],
-    getExport(id) { return cssExportMap[id]; }
-  });
-};
+  const cssplugin = () => {
+    const cssExportMap = {};
+    return postcss({
+      parser: comment,
+      plugins: [
+        postcssimport(),
+        cssnext({ warnForDuplicates: false }),
+        rucksack({ autoprefixer: true }),
+        modules({ getJSON(id, tokens) { cssExportMap[id] = tokens; } }),
+        cssnano()
+      ],
+      getExport(id) { return cssExportMap[id]; }
+    });
+  };
 
-const primaryPlugins = [
-  htmlplugin(),
-  cssplugin(),
-  image(),
-  json(),
-  globals(),
-  builtins(),
-  resolve({ jsnext: true, browser: true }),
-  commonjs({
-    include: [
-      'node_modules/lodash-es/**',
-      'node_modules/@reactivex/rxjs/dist/es6/**'
-    ]
-  }),
-  babel({
-    babelrc: false,
-    presets: [['latest', { es2015: { modules: false } }]],
-    plugins: ['external-helpers'],
-    exclude: 'node_modules/**'
-  }),
-  (util.env.type === 'prod' ? uglify() : util.noop())
-];
+  return [
+    htmlplugin(),
+    cssplugin(),
+    image(),
+    json(),
+    globals(),
+    builtins(),
+    resolve({ jsnext: true, browser: true }),
+    commonjs({
+      include: [
+        'node_modules/lodash-es/**',
+        'node_modules/@reactivex/rxjs/dist/es6/**'
+      ]
+    }),
+    babel({
+      babelrc: false,
+      presets: [['latest', { es2015: { modules: false } }]],
+      plugins: ['external-helpers'],
+      exclude: 'node_modules/**'
+    }),
+    (util.env.type === 'prod' ? uglify() : util.noop())
+  ];
+};
 
 const secondaryPlugins = [
   postcss({ plugins: [cssnano()] }),
@@ -83,14 +85,14 @@ export const APP_CONFIG = {
   format: 'iife',
   context: 'window',
   sourceMap: util.env.type === 'dev' && true,
-  plugins: primaryPlugins
+  plugins: primaryPlugins()
 };
 
 export const TEST_CONFIG = {
   format: 'iife',
   context: 'window',
   sourceMap: 'inline',
-  plugins: primaryPlugins
+  plugins: primaryPlugins()
 };
 
 export const VENDOR_CONFIG = {

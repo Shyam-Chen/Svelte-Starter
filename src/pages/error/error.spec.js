@@ -1,9 +1,9 @@
 import template from 'lodash-es/template';
 
-import tpl from './404.html';
-import styl from './404.css';
+import tpl from './error.html';
+import styl from './error.css';
 
-describe('404', () => {
+describe('Error', () => {
 
   it('toMatch', () => {
     expect(tpl).toMatch(/<%= text %>/);

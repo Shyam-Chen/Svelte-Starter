@@ -1,6 +1,6 @@
 # Web Starter Kit (Beta)
 
-> A boilerplate for Vanilla, Lodash, ReactiveX, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.
+> A boilerplate for Lodash, ReactiveX, Redux, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit)
  //
@@ -11,7 +11,7 @@
 
 This seed repository provides the following features:
 * ---------- **Primary Key** ----------
-* [x] Pure HTML/CSS/JavaScript coding.
+* [x] HTML/CSS/JavaScript coding.
 * [x] Functional/Reactive programming.
 * [x] Material design components.
 * [x] Back-end cloud services.
@@ -40,13 +40,14 @@ This seed repository provides the following features:
 * [x] Continuous integration with Travis.
 
 ## TODO List
+* Redux
+* Prerender.io (Node & Express)
 * Service Workers
 * Web App Manifest
 * Migrate from `page.js` to `universal-router`
 * ...
 
 ## Known Issues
-* Firebase hosting SEO
 * Import Firebase `v3.6.x`
 * Import Firebase only the features
 

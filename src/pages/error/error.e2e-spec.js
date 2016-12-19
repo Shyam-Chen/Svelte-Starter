@@ -1,4 +1,4 @@
-describe('404', () => {
+describe('Error', () => {
 
   it('should be 404 page - 1', () => {
     webdriver.get('http://localhost:9876/foo');
