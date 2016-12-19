@@ -41,18 +41,14 @@ This seed repository provides the following features:
 
 ## TODO List
 * Redux
-* Prerender.io (Node & Express)
+* Prerender
 * Service Workers
 * Web App Manifest
 * Migrate from `page.js` to `universal-router`
 * ...
 
-## Known Issues
-* Import Firebase `v3.6.x`
-* Import Firebase only the features
-
 ## Browser Support
-* IE (10+)
+* IE10+
 * Edge
 * Safari
 * Firefox

@@ -1,7 +1,7 @@
 {
   "name": "Web-Starter-Kit",
   "version": "1.0.0",
-  "description": "A boilerplate for Vanilla, Lodash, ReactiveX, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.",
+  "description": "A boilerplate for Lodash, ReactiveX, Redux, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.",
   "scripts": {
     "start": "gulp dev --type dev",
     "dev": "rimraf public && gulp dev --type dev",
@@ -41,7 +41,7 @@
     "chart.js": "^2.4.0",
     "core-js": "^2.4.1",
     "dialog-polyfill": "^0.4.5",
-    "firebase": "3.5.3",
+    "firebase": "3.6.3",
     "intl": "^1.2.5",
     "lodash-es": "^4.17.2",
     "material-design-lite": "^1.2.1",
@@ -83,6 +83,7 @@
     "postcss-cssnext": "^2.9.0",
     "postcss-import": "^9.0.0",
     "postcss-modules": "^0.5.2",
+    "prerender-node": "^2.6.0",
     "protractor": "^4.0.13",
     "require-dir": "^0.3.1",
     "rimraf": "^2.5.4",
