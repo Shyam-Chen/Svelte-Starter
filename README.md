@@ -13,9 +13,9 @@ This seed repository provides the following features:
 * ---------- **Primary Key** ----------
 * [x] HTML/CSS/JavaScript coding.
 * [x] Functional/Reactive programming.
-* [x] Material design components.
-* [x] Back-end cloud services.
-* [x] Single-page application.
+* [x] Material design user interface.
+* [x] Backend cloud services.
+* [ ] Progressive web application.
 * [x] Internationalization and localization.
 * [x] Data visualization.
 * ---------- **Dev Tools** ----------
@@ -41,10 +41,11 @@ This seed repository provides the following features:
 
 ## TODO List
 * Redux
-* Prerender
 * Service Workers
 * Web App Manifest
 * Migrate from `page.js` to `universal-router`
+* Migrate from `lodash-es/template` to Web Components
+* Migrate from `css-modules` to Web Components
 * ...
 
 ## Browser Support
