@@ -4,10 +4,5 @@ import requiredir from 'require-dir';
 
 requiredir('./tools/tasks');
 
-gulp.task('dev', (done) => {
-  return runsequence('build', 'watch', 'serve', done);
-});
-
-gulp.task('dev-watch', (done) => {
-  return runsequence('build', 'watch', done);
-});
+gulp.task('dev', (done) => runsequence('build', 'watch', 'serve', done));
+gulp.task('dev-watch', (done) => runsequence('build', 'watch', done));
