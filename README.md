@@ -18,6 +18,9 @@ This seed repository provides the following features:
 * [x] Backend cloud services with Firebase.
 * [x] Routing and navigation with Page.
 * [x] Data visualization with Chart.
+* [x] Single page application.
+* [ ] Universal web application.
+* [ ] Progressive web application.
 * ---------- **Dev Tools** ----------
 * [x] Build system with Gulp.
 * [x] Module bundler with Rollup.
