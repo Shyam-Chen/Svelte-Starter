@@ -11,14 +11,14 @@
 
 This seed repository provides the following features:
 * ---------- **Primary Key** ----------
-* [x] ~~Utility functions with Lodash.~~
-* [x] ~~Reactive Extensions with ReactiveX.~~
-* [ ] ~~State Container with Redux.~~
+* [x] Utility functions with Lodash.
+* [x] Reactive Extensions with ReactiveX.
+* [x] State Container with Redux.
 * [x] Material design components with Material.
-* [x] ~~Backend cloud services with Firebase.~~
+* [x] Backend cloud services with Firebase.
 * [x] ~~Routing and navigation with Page.~~
-* [ ] ~~Internationalization with I18next.~~
-* [x] ~~Data visualization with Chart.~~
+* [ ] Internationalization with I18next.
+* [x] Data visualization with Chart.
 * ---------- **Dev Tools** ----------
 * [x] Build system with Gulp.
 * [x] Module bundler with Rollup.
