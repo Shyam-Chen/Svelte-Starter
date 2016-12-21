@@ -12,15 +12,18 @@
 This seed repository provides the following features:
 * ---------- **Primary Key** ----------
 * [x] HTML/CSS/JavaScript coding.
-* [x] Functional/Reactive programming.
-* [x] Material design user interface.
-* [x] Backend cloud services.
-* [ ] Progressive web application.
-* [x] Internationalization and localization.
-* [x] Data visualization.
+* [x] Utility functions with Lodash.
+* [x] Reactive Extensions with ReactiveX.
+* [ ] State Container with Redux.
+* [x] Material design components with Material.
+* [x] Backend cloud services with Firebase.
+* [ ] Routing and navigation with Navigo.
+* [ ] Internationalization with I18next.
+* [x] Data visualization with Chart.
 * ---------- **Dev Tools** ----------
 * [x] Build system with Gulp.
 * [x] Module bundler with Rollup.
+* [ ] HTML transformations with PostHTML.
 * [x] Future CSS features with PostCSS.
 * [x] Next generation JavaScript with Babel.
 * [x] Development server with BrowserSync.
@@ -40,12 +43,8 @@ This seed repository provides the following features:
 * [x] Continuous integration with Travis.
 
 ## TODO List
-* Redux
 * Service Workers
 * Web App Manifest
-* Migrate from `page.js` to `universal-router`
-* Migrate from `lodash-es/template` to Web Components
-* Migrate from `css-modules` to Web Components
 * ...
 
 ## Browser Support
