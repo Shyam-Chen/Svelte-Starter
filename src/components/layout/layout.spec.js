@@ -1,5 +1,4 @@
 // import _template from 'lodash-es/template';
-// import _forEach from 'lodash-es/forEach';
 
 import template from './layout.html';
 

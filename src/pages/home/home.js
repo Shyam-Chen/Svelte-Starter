@@ -14,9 +14,7 @@ import LANGS_EN from './langs/en.json';
 import LANGS_ZH from './langs/zh.json';
 
 export const HOME_EN = () => {
-  layout('en', 'home');
-
-  document.querySelector('#page').innerHTML = _template(template, {
+  const content = _template(template, {
     'imports': {
       style,
       'image': { 'vanilla': vanilla.src },
@@ -24,13 +22,13 @@ export const HOME_EN = () => {
     }
   })(LANGS_EN);
 
+  layout('en', 'home', content);
+
   componentHandler.upgradeAllRegistered();
 };
 
 export const HOME_ZH = () => {
-  layout('zh', 'home');
-
-  document.querySelector('#page').innerHTML = _template(template, {
+  const content = _template(template, {
     'imports': {
       style,
       'image': {
@@ -39,6 +37,8 @@ export const HOME_ZH = () => {
       'TODAY': new Intl.DateTimeFormat('zh').format(new Date())
     }
   })(LANGS_ZH);
+
+  layout('zh', 'home', content);
 
   componentHandler.upgradeAllRegistered();
 };

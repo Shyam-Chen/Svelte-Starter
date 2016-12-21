@@ -41,15 +41,13 @@ const chart = () => {
 };
 
 export const ABOUT_EN = () => {
-  layout('en', 'about');
-  document.querySelector('#page').innerHTML = _template(template, imports)(LANGS_EN);
+  layout('en', 'about', _template(template, imports)(LANGS_EN));
   chart();
   componentHandler.upgradeAllRegistered();
 };
 
 export const ABOUT_ZH = () => {
-  layout('zh', 'about');
-  document.querySelector('#page').innerHTML = _template(template, imports)(LANGS_ZH);
+  layout('zh', 'about', _template(template, imports)(LANGS_ZH));
   chart();
   componentHandler.upgradeAllRegistered();
 };
