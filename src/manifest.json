@@ -1,0 +1,9 @@
+{
+  "name": "Web Starter Kit",
+  "short_name": "WSK",
+  "icons": [
+    { }
+  ],
+  "start_url": "/",
+  "display": "standalone"
+}

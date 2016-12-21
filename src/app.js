@@ -27,6 +27,30 @@ Promise.all([
 
 firebase.initializeApp(firebaseConfig);
 
+/*
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+    .then((registration) => {
+      registration.onupdatefound = () => {
+        if (navigator.serviceWorker.controller) {
+          let installingWorker = registration.installing;
+
+          installingWorker.onstatechange = () => {
+            switch (installingWorker.state) {
+              case 'installed':
+                // ...
+                break;
+              case 'redundant':
+                throw new Error('...');
+              default:
+            }
+          };
+        }
+      };
+    });
+}
+*/
+
 /**
  * @deprecated
  */

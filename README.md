@@ -16,8 +16,7 @@ This seed repository provides the following features:
 * [x] State Container with Redux.
 * [x] Material design components with Material.
 * [x] Backend cloud services with Firebase.
-* [x] ~~Routing and navigation with Page.~~
-* [ ] Internationalization with I18next.
+* [x] Routing and navigation with Page.
 * [x] Data visualization with Chart.
 * ---------- **Dev Tools** ----------
 * [x] Build system with Gulp.
@@ -40,10 +39,6 @@ This seed repository provides the following features:
 * [x] Fast and deterministic builds with Yarn.
 * [x] Containers with Docker.
 * [x] Continuous integration with Travis.
-
-## TODO List
-* Service Workers
-* Web App Manifest
 
 ## Browser Support
 * IE10+
