@@ -57,7 +57,8 @@ const primaryPlugins = () => {
     commonjs({
       include: [
         'node_modules/lodash-es/**',
-        'node_modules/@reactivex/rxjs/dist/es6/**'
+        'node_modules/@reactivex/rxjs/dist/es6/**',
+        'node_modules/redux/es/**'
       ]
     }),
     babel({

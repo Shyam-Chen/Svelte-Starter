@@ -11,7 +11,6 @@
 
 This seed repository provides the following features:
 * ---------- **Primary Key** ----------
-* [x] HTML/CSS/JavaScript coding.
 * [x] Utility functions with Lodash.
 * [x] Reactive Extensions with ReactiveX.
 * [ ] State Container with Redux.
