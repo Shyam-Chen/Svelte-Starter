@@ -37,6 +37,9 @@
     ]
   },
   "dependencies": {
+    "@material/button": "^0.1.0",
+    "@material/ripple": "^0.1.0",
+    "@material/select": "^0.1.0",
     "@reactivex/rxjs": "^5.0.1",
     "chart.js": "^2.4.0",
     "core-js": "^2.4.1",
