@@ -31,10 +31,14 @@ firebase.initializeApp(firebaseConfig);
           installingWorker.onstatechange = () => {
             switch (installingWorker.state) {
               case 'installed':
-                // ...
+                if (navigator.serviceWorker.controller) {
+                  console.log('New or updated content is available.');
+                } else {
+                  console.log('Content is now available offline!');
+                }
                 break;
               case 'redundant':
-                throw new Error('...');
+                throw new Error('The installing service worker became redundant.');
             }
           };
         }
