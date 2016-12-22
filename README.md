@@ -96,3 +96,10 @@ $ yarn run clean
 $ yarn run reset
 $ yarn run reinstall
 ```
+
+## Folder
+* `assets` - datas images fonts videos audios
+* `components` - shared reused
+* `functions` -
+* `pages`
+* `styles`
