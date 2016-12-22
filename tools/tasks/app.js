@@ -7,7 +7,7 @@ import buffer from 'vinyl-buffer';
 import { stream } from 'browser-sync';
 
 import { DIST_ROOT } from '../constants';
-import { APP_CONFIG } from '../config/rollup.conf';
+import { APP_CONFIG } from '../config/rollup.config';
 import { CompileError } from '../utils';
 
 let cache;
