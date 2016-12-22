@@ -12,7 +12,13 @@
         <i class="material-icons">language</i>
       </button>
       <div class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="language">
-        <% [].forEach.call(LANG, function(item) { %>
+        <% var languages = [
+          ["en", "English"],
+          ["ja", "日本語"],
+          ["zh-Hans", "中文 (简体)"],
+          ["zh-Hant", "中文 (繁體)"]
+        ]; %>
+        <% [].forEach.call(languages, function(item) { %>
           <a href="javascript:void 0" id="<%- item[0] %>" class="mdl-menu__item"><%- item[1] %></a>
         <% }); %>
       </div>

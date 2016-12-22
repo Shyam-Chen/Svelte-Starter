@@ -4,6 +4,5 @@
     ["/en/home", "Home"],
     ["/en/about", "About"],
     ["/en/contact", "Contact"]
-  ],
-  "LANG": [["en", "English"], ["zh", "中文"]]
+  ]
 }

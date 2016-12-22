@@ -1,6 +1,6 @@
 # Web Starter Kit (Beta)
 
-> A boilerplate for Lodash, ReactiveX, Redux, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.
+> A boilerplate for Lodash, ReactiveX, Redux, Material, Firebase, and Chart.
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit)
  //
