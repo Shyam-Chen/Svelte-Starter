@@ -12,8 +12,8 @@
 This seed repository provides the following features:
 * ---------- **Primary Key** ----------
 * [x] Utility functions with Lodash.
-* [x] Reactive Extensions with ReactiveX.
-* [x] State Container with Redux.
+* [x] Reactive extensions with ReactiveX.
+* [x] State container with Redux.
 * [x] Material design components with Material.
 * [x] Backend cloud services with Firebase.
 * [x] Data visualization with Chart.
