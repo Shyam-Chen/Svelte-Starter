@@ -1,15 +1,19 @@
-const rollupConf = require('./rollup.config');
+const rollupConfig = require('./rollup.config');
 
 module.exports = (config) => {
   config.set({
     basePath: '../..',
     frameworks: ['jasmine'],
-    files: ['src/**/*.spec.js'],
+    files: [
+      'public/polyfills.js',
+      'public/vendor.js',
+      'src/**/*.spec.js'
+    ],
     exclude: [],
     preprocessors: {
       'src/**/*.spec.js': ['rollup']
     },
-    rollupPreprocessor: rollupConf.TEST_CONFIG,
+    rollupPreprocessor: rollupConfig.TEST_CONFIG,
     reporters: ['mocha'],
     port: 9876,
     colors: true,

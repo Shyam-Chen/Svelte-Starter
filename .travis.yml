@@ -36,7 +36,7 @@ before_script:
   # - if [[ "$MODE" == "unit" ]]; then yarn add karma-firefox-launcher --dev; fi
   # - if [[ "$MODE" == "e2e" ]]; then nohup bash -c "webdriver-manager start 2>&1 &"; fi
   - if [[ "$MODE" == "e2e" ]]; then yarn run webdriver; fi
-  - if [[ "$MODE" == "e2e" ]]; then yarn run prod; fi
+  - if [[ "$MODE" == "unit" ]] || [[ "$MODE" == "e2e" ]]; then yarn run prod; fi
 
 script:
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run lint; fi
