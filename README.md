@@ -98,8 +98,12 @@ $ yarn run reinstall
 ```
 
 ## Folder
-* `assets` - datas images fonts videos audios
-* `components` - shared reused
-* `functions` -
-* `pages`
-* `styles`
+* ---------- 1 ----------
+* `pages` - pages, child pages
+* ---------- 2 ----------
+* `components` - shared reused ...
+* ---------- 3 ----------
+* `functions` - js, states ...
+* `styles` - css ...
+* ---------- 4 ----------
+* `assets` - datas images fonts videos audios ...
