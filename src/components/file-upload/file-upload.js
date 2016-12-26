@@ -1,9 +1,9 @@
-import _template from 'lodash-es/template';
+import { template } from 'lodash-es';
 
-import template from './file-upload.html';
+import tpl from './file-upload.html';
 import style from './file-upload.css';
 
-const compiled = _template(template, { 'imports': { style } });
+const compiled = template(tpl, { 'imports': { style } });
 
 const action = (name) => {
   const input = document.querySelector(`input[type=file]#_${name}`);

@@ -1,12 +1,12 @@
 // Third party
-import _template from 'lodash-es/template';
+import { template } from 'lodash-es';
 import { createStore } from 'redux/es';
 
 // Components
 import { layout } from '../../components/layout';
 
 // About
-import template from './about.html';
+import tpl from './about.html';
 import style from './about.css';
 import LANGS_EN from './langs/en.json';
 import LANGS_ZH from './langs/zh.json';
@@ -92,14 +92,14 @@ const counter = () => {
 };
 
 export const ABOUT_EN = () => {
-  layout('en', 'about', _template(template, imports)(LANGS_EN));
+  layout('en', 'about', template(tpl, imports)(LANGS_EN));
   chart();
   counter();
   componentHandler.upgradeAllRegistered();
 };
 
 export const ABOUT_ZH = () => {
-  layout('zh', 'about', _template(template, imports)(LANGS_ZH));
+  layout('zh', 'about', template(tpl, imports)(LANGS_ZH));
   chart();
   counter();
   componentHandler.upgradeAllRegistered();

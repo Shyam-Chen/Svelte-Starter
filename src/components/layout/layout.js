@@ -1,14 +1,14 @@
-import _template from 'lodash-es/template';
+import { template } from 'lodash-es';
 
 import { site } from '../../functions';
 
-import template from './layout.html';
+import tpl from './layout.html';
 import style from './layout.css';
 import LANGS_EN from './langs/en.json';
 import LANGS_ZH from './langs/zh-Hant.json';
 
-const LAYOUT_EN = _template(template, { 'imports': { style } })(LANGS_EN);
-const LAYOUT_ZH = _template(template, { 'imports': { style } })(LANGS_ZH);
+const LAYOUT_EN = template(tpl, { 'imports': { style } })(LANGS_EN);
+const LAYOUT_ZH = template(tpl, { 'imports': { style } })(LANGS_ZH);
 
 const app = document.querySelector('#app');
 

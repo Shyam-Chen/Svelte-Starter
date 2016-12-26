@@ -7,14 +7,14 @@
  */
 
  // Third party
-import _template from 'lodash-es/template';
+import { template } from 'lodash-es';
 
 // Components
 import { layout } from '../../components/layout';
 import { fileUpload } from '../../components/file-upload';
 
 // Main
-import template from './contact.html';
+import tpl from './contact.html';
 import style from './contact.css';
 import LANGS_EN from './langs/en.json';
 import LANGS_ZH from './langs/zh.json';
@@ -61,7 +61,7 @@ const contact = () => {
 };
 
 export const CONTACT_EN = () => {
-  const content = _template(template, { 'imports': { style } })(LANGS_EN);
+  const content = template(tpl, { 'imports': { style } })(LANGS_EN);
   layout('en', 'contact', content);
   fileUpload('contact-image');
   contact();
@@ -69,7 +69,7 @@ export const CONTACT_EN = () => {
 };
 
 export const CONTACT_ZH = () => {
-  const content = _template(template, { 'imports': { style } })(LANGS_ZH);
+  const content = template(tpl, { 'imports': { style } })(LANGS_ZH);
   layout('zh', 'contact', content);
   fileUpload('contact-image', '選擇一個檔案');
   contact();

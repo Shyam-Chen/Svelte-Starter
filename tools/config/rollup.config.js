@@ -58,14 +58,13 @@ const primaryPlugins = () => {
       include: [
         'node_modules/lodash-es/**',
         'node_modules/@reactivex/rxjs/dist/es6/**',
-        'node_modules/redux/es/**',
-        'node_modules/redux-observable/lib/**'
+        'node_modules/redux/es/**'
       ]
     }),
     babel({
       babelrc: false,
       presets: [['latest', { es2015: { modules: false } }]],
-      plugins: ['external-helpers'],
+      plugins: ['external-helpers', 'lodash'],
       exclude: 'node_modules/**'
     }),
     (util.env.type === 'prod' ? uglify() : util.noop())

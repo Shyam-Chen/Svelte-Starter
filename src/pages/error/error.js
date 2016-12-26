@@ -1,10 +1,10 @@
-import _template from 'lodash-es/template';
+import { template } from 'lodash-es';
 
-import template from './error.html';
+import tpl from './error.html';
 import style from './error.css';
 
 export const ERROR = () => {
-  document.querySelector('#app').innerHTML = _template(template, {
+  document.querySelector('#app').innerHTML = template(tpl, {
     'imports': { style }
   })({
     text: '404'

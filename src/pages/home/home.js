@@ -1,5 +1,5 @@
 // Third party
-import _template from 'lodash-es/template';
+import { template } from 'lodash-es';
 
 // Components
 import { layout } from '../../components/layout';
@@ -8,13 +8,13 @@ import { layout } from '../../components/layout';
 import vanilla from '../../assets/images/vanilla.png';
 
 // Main
-import template from './home.html';
+import tpl from './home.html';
 import style from './home.css';
 import LANGS_EN from './langs/en.json';
 import LANGS_ZH from './langs/zh.json';
 
 export const HOME_EN = () => {
-  const content = _template(template, {
+  const content = template(tpl, {
     'imports': {
       style,
       'image': { 'vanilla': vanilla.src },
@@ -28,7 +28,7 @@ export const HOME_EN = () => {
 };
 
 export const HOME_ZH = () => {
-  const content = _template(template, {
+  const content = template(tpl, {
     'imports': {
       style,
       'image': {
