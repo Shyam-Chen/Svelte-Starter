@@ -58,7 +58,8 @@ const primaryPlugins = () => {
       include: [
         'node_modules/lodash-es/**',
         'node_modules/@reactivex/rxjs/dist/es6/**',
-        'node_modules/redux/es/**'
+        'node_modules/redux/es/**',
+        'node_modules/redux-observable/lib/**'
       ]
     }),
     babel({
