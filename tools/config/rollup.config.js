@@ -77,20 +77,17 @@ const secondaryPlugins = [
   uglify()
 ];
 
-export const APP_CONFIG = {
-  entry: join(SOURCE_ROOT, 'app.js'),
-  format: 'iife',
-  context: 'window',
-  sourceMap: util.env.type === 'dev' && true,
-  plugins: primaryPlugins()
-};
-
 export const TEST_CONFIG = {
   format: 'iife',
   context: 'window',
   sourceMap: 'inline',
   plugins: primaryPlugins()
 };
+
+export const APP_CONFIG = Object.assign({}, TEST_CONFIG, {
+  entry: join(SOURCE_ROOT, 'app.js'),
+  sourceMap: util.env.type === 'dev' && true,
+});
 
 export const VENDOR_CONFIG = {
   entry: join(SOURCE_ROOT, 'vendor.js'),
