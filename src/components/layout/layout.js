@@ -5,7 +5,7 @@ import { site } from '../../scripts';
 import tpl from './layout.html';
 import style from './layout.css';
 import LANGS_EN from './langs/en.json';
-import LANGS_ZH from './langs/zh-Hant.json';
+import LANGS_ZH from './langs/zh.json';
 
 const LAYOUT_EN = template(tpl, { 'imports': { style } })(LANGS_EN);
 const LAYOUT_ZH = template(tpl, { 'imports': { style } })(LANGS_ZH);
@@ -17,7 +17,7 @@ export const layout = (lang, page, content) => {
     case 'en':
       site('en', 'Vanilla');
       app.innerHTML = LAYOUT_EN;
-      document.querySelector('#zh-Hant').href = `/zh-Hant/${page}`;
+      document.querySelector('#zh').href = `/zh/${page}`;
       document.querySelector('#page').innerHTML = content;
       break;
     case 'zh':

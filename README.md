@@ -11,33 +11,33 @@
 
 This seed repository provides the following features:
 * ---------- **Primary Key** ----------
-* [x] Utility functions with Lodash.
-* [x] Reactive extensions with ReactiveX.
-* [x] State container with Redux.
-* [x] User interface components with Material.
-* [x] Backend cloud services with Firebase.
-* [x] Data visualization with Chart.
+* [x] Utility functions with **Lodash**.
+* [x] Reactive extensions with **ReactiveX**.
+* [x] State container with **Redux**.
+* [x] User interface components with **Material**.
+* [x] Backend cloud services with **Firebase**.
+* [x] Data visualization with **Chart**.
 * ---------- **Dev Tools** ----------
-* [x] Build system with Gulp.
-* [x] Module bundler with Rollup.
-* [ ] HTML transformations with PostHTML.
-* [x] Future CSS features with PostCSS.
-* [x] Next generation JavaScript with Babel.
-* [x] Development server with BrowserSync.
+* [x] Build system with **Gulp**.
+* [x] Module bundler with **Rollup**.
+* [ ] HTML transformations with **PostHTML**.
+* [x] Future CSS features with **PostCSS**.
+* [x] Next generation JavaScript with **Babel**.
+* [x] Development server with **BrowserSync**.
 * ---------- **Test Tools** ----------
-* [x] HTML static code analyzer with HTMLHint.
-* [x] CSS static code analyzer with StyleLint.
-* [x] JavaScript static code analyzer with ESLint.
-* [x] Testing framework with Jasmine.
-* [x] Unit tests with Karma.
-* [x] End-to-end tests with Protractor.
+* [x] HTML static code analyzer with **HTMLHint**.
+* [x] CSS static code analyzer with **StyleLint**.
+* [x] JavaScript static code analyzer with **ESLint**.
+* [x] Testing framework with **Jasmine**.
+* [x] Unit tests with **Karma**.
+* [x] End-to-end tests with **Protractor**.
 * ---------- **Environment** ----------
-* [x] Operating system with Linux.
-* [x] Text editor with Atom.
-* [x] Version control with Git.
-* [x] Fast and deterministic builds with Yarn.
-* [x] Containers with Docker.
-* [x] Continuous integration with Travis.
+* [x] Operating system with **Linux**.
+* [x] Text editor with **Atom**.
+* [x] Version control with **Git**.
+* [x] Fast and deterministic builds with **Yarn**.
+* [x] Containers with **Docker**.
+* [x] Continuous integration with **Travis**.
 
 ## Getting Started
 
@@ -103,8 +103,8 @@ $ yarn run reinstall
 * ---------- 2 ----------
 * `components` - shared, reused ...
 * ---------- 3 ----------
-* `scripts` - js, states ...
+* `scripts` - js, functions, states ...
 * `styles` - css ...
 * `templates` - html ... (PostHTML)
 * ---------- 4 ----------
-* `assets` - datas, images, fonts, videos, audios ...
+* `assets` - datas, images, fonts, videos, audios, files ...

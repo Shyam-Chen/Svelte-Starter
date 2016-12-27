@@ -63,14 +63,9 @@ page('/en/home', HOME_EN);
 page('/en/about', ABOUT_EN);
 page('/en/contact', CONTACT_EN);
 
-// zh-Hans
-
-// zh-Hant
-page('/zh-Hant/home', HOME_ZH);
-page('/zh-Hant/about', ABOUT_ZH);
-page('/zh-Hant/contact', CONTACT_ZH);
-
-// ja
+page('/zh/home', HOME_ZH);
+page('/zh/about', ABOUT_ZH);
+page('/zh/contact', CONTACT_ZH);
 
 page('*', ERROR);
 
