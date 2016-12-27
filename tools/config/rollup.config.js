@@ -10,11 +10,11 @@ import modules from 'postcss-modules';
 import cssnano from 'cssnano';
 import image from 'rollup-plugin-image';
 import json from 'rollup-plugin-json';
+import babel from 'rollup-plugin-babel';
 import globals from 'rollup-plugin-node-globals';
 import builtins from 'rollup-plugin-node-builtins';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-import babel from 'rollup-plugin-babel';
 import replace from 'rollup-plugin-replace';
 import uglify from 'rollup-plugin-uglify';
 

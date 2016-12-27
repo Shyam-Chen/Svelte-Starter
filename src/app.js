@@ -1,29 +1,7 @@
-/**
- * @deprecated
- *
- * use rxjs
- */
-import { Observable } from '@reactivex/rxjs/dist/es6/Observable';
-import '@reactivex/rxjs/dist/es6/add/observable/of';
-
 import './styles/global.css';
 
 import { load } from './functions';
 import firebaseConfig from './assets/datas/firebase.config.json';
-
-const box = {
-  weight: 2,
-  getWeight() { return this.weight; },
-};
-
-const { getWeight } = box;
-box.getWeight(); // prints '2'
-
-const bigBox = { weight: 10 };
-bigBox::getWeight(); // prints '10'
-
-function add(val) { return this + val; }
-bigBox::getWeight()::add(5); // prints '15'
 
 /**
  * @name Initialization
@@ -64,8 +42,6 @@ firebase.initializeApp(firebaseConfig);
       };
     });
 }*/
-
-Observable.of(1,2,3);
 
 import { HOME_EN, HOME_ZH } from './pages/home';
 import { ABOUT_EN, ABOUT_ZH } from './pages/about';
