@@ -51,25 +51,17 @@ const primaryPlugins = () => {
     cssplugin(),
     image(),
     json(),
+    babel({
+      babelrc: false,
+      presets: [['latest', { es2015: { modules: false } }]],
+      plugins: ['external-helpers', 'lodash', 'transform-function-bind'],
+      exclude: 'node_modules/**'
+    }),
     globals(),
     builtins(),
     resolve({ jsnext: true, browser: true }),
     commonjs({
-      include: [
-        'node_modules/lodash-es/**',
-        'node_modules/@reactivex/rxjs/dist/es6/**',
-        'node_modules/redux/es/**',
-        'node_modules/redux-observable/lib/**'
-      ],
-      namedExports: {
-        'node_modules/redux-observable/lib/index.js': ['createEpicMiddleware', 'combineEpics']
-      }
-    }),
-    babel({
-      babelrc: false,
-      presets: [['latest', { es2015: { modules: false } }]],
-      plugins: ['external-helpers', 'lodash'],
-      exclude: 'node_modules/**'
+      include: 'node_modules/**'
     }),
     (util.env.type === 'prod' ? uglify() : util.noop())
   ];
