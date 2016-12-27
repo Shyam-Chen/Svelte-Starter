@@ -20,7 +20,7 @@ import uglify from 'rollup-plugin-uglify';
 
 import { SOURCE_ROOT } from '../constants';
 
-const primaryPlugins = () => {
+const plugins = () => {
   const htmlplugin = () => {
     return html({
       htmlMinifierOptions: {
@@ -67,21 +67,11 @@ const primaryPlugins = () => {
   ];
 };
 
-const secondaryPlugins = [
-  postcss({ plugins: [cssnano()] }),
-  globals(),
-  builtins(),
-  resolve({ jsnext: true, browser: true }),
-  commonjs(),
-  replace({ eval: '[eval][0]' }),
-  uglify()
-];
-
 export const TEST_CONFIG = {
   format: 'iife',
   context: 'window',
   sourceMap: 'inline',
-  plugins: primaryPlugins()
+  plugins: plugins()
 };
 
 export const APP_CONFIG = Object.assign({}, TEST_CONFIG, {
@@ -92,7 +82,15 @@ export const APP_CONFIG = Object.assign({}, TEST_CONFIG, {
 export const VENDOR_CONFIG = {
   entry: join(SOURCE_ROOT, 'vendor.js'),
   context: 'window',
-  plugins: secondaryPlugins
+  plugins: [
+    postcss({ plugins: [cssnano()] }),
+    globals(),
+    builtins(),
+    resolve({ jsnext: true, browser: true }),
+    commonjs(),
+    replace({ eval: '[eval][0]' }),
+    uglify()
+  ]
 };
 
 export const POLYFILLS_CONFIG = Object.assign({}, VENDOR_CONFIG, {
