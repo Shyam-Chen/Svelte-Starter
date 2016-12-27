@@ -98,8 +98,6 @@ export const VENDOR_CONFIG = {
   plugins: secondaryPlugins
 };
 
-export const POLYFILLS_CONFIG = {
-  entry: join(SOURCE_ROOT, 'polyfills.js'),
-  context: 'window',
-  plugins: secondaryPlugins
-};
+export const POLYFILLS_CONFIG = Object.assign({}, VENDOR_CONFIG, {
+  entry: join(SOURCE_ROOT, 'polyfills.js')
+});
