@@ -1,6 +1,6 @@
 import './styles/global.css';
 
-import { load } from './functions';
+import { load } from './scripts';
 import firebaseConfig from './assets/datas/firebase.config.json';
 
 /**

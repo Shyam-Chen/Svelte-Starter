@@ -1,6 +1,6 @@
 import { template } from 'lodash-es';
 
-import { site } from '../../functions';
+import { site } from '../../scripts';
 
 import tpl from './layout.html';
 import style from './layout.css';
