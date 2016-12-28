@@ -1,6 +1,6 @@
 # Web Starter Kit (Beta)
 
-> A boilerplate for Lodash, ReactiveX, Redux, Material, Firebase, and D3.
+> A boilerplate for Lodash, ReactiveX, Redux, Material, Firebase, and Chart.
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit)
  //
@@ -16,7 +16,7 @@ This seed repository provides the following features:
 * [x] State container with **Redux**.
 * [x] User interface components with **Material**.
 * [x] Backend cloud services with **Firebase**.
-* [ ] Data visualization with **D3**.
+* [x] Data visualization with **Chart**.
 * ---------- **Dev Tools** ----------
 * [x] Build system with **Gulp**.
 * [x] Module bundler with **Rollup**.
@@ -118,5 +118,4 @@ $ yarn run reinstall
 * Try it - `rxjs`, `redux-observable` ...
 * Migrate from `material-design-lite` to `@material/*` - Modular components
 * Individually installable `firebase` features - Modular components
-* Migrate from `chart.js` to `d3.js` - Modular components
 * ...
