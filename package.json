@@ -22,10 +22,9 @@
     "url": "git+https://github.com/Shyam-Chen/Web-Starter-Kit.git"
   },
   "keywords": [
-    "Vanilla",
-    "JS.Next"
+    "Vanilla"
   ],
-  "author": "陳彥澄",
+  "author": "Yen-cheng Chen, 陳彥澄",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Shyam-Chen/Web-Starter-Kit/issues"

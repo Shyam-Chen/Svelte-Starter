@@ -113,9 +113,17 @@ $ yarn run reinstall
 
 ## TODO List
 * Service Workers and Web App Manifest - Progressive web application
-* Async functions
+* Async functions (e2e first)
 * Migrate from `page.js` to `universal-router` - Universal web application
 * Try it - `rxjs`, `redux-observable` ...
 * Migrate from `material-design-lite` to `@material/*` - Modular components
 * Individually installable `firebase` features - Modular components
+* `chart.js` ...
 * ...
+
+## Next Steps
+* [Mobile-Starter-Kit][mobile] - Build cross platform mobile applications with web technologies.
+* [Desktop-Starter-Kit][desktop] - Build cross platform desktop applications with web technologies.
+
+[mobile]: https://github.com/Shyam-Chen/Mobile-Starter-Kit
+[desktop]: https://github.com/Shyam-Chen/Desktop-Starter-Kit
