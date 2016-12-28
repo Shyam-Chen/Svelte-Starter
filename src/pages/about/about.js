@@ -1,6 +1,19 @@
 // Third party
 import { template } from 'lodash-es';
-import { createStore } from 'redux/es';
+import { createStore } from 'redux';
+
+// Error
+// import { createEpicMiddleware, combineEpics } from 'redux-observable';
+
+// OK
+// import { Observable } from '@reactivex/rxjs/dist/es6/Observable';
+// import '@reactivex/rxjs/dist/es6/add/observable/of';
+// console.log( Observable.of(1, 2, 3) );
+
+// Error
+// import { Observable } from 'rxjs/Observable';
+// import { of } from 'rxjs/observable/of';
+// console.log( Observable::of(1, 2, 3) );
 
 // Components
 import { layout } from '../../components/layout';

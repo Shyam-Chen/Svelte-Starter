@@ -61,14 +61,18 @@ const plugins = () => {
     builtins(),
     resolve({ jsnext: true, browser: true }),
     commonjs({
-      include: 'node_modules/**'
+      include: 'node_modules/**',
+      namedExports: {
+        'node_modules/redux-observable/lib/index.js': ['createEpicMiddleware', 'combineEpics']
+      }
     }),
     (util.env.type === 'prod' ? uglify() : util.noop())
   ];
 };
 
 export const TEST_CONFIG = {
-  format: 'iife',
+  format: 'umd',
+  moduleName: 'main',
   context: 'window',
   sourceMap: 'inline',
   plugins: plugins()
