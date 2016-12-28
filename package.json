@@ -1,7 +1,7 @@
 {
   "name": "Web-Starter-Kit",
   "version": "1.0.0",
-  "description": "A boilerplate for Lodash, ReactiveX, Redux, Material, Firebase, and Chart.",
+  "description": "A boilerplate for Lodash, ReactiveX, Redux, Material, Firebase, and D3.",
   "scripts": {
     "start": "gulp dev --type dev",
     "dev": "rimraf public && gulp dev --type dev",

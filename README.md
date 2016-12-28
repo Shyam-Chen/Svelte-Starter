@@ -1,6 +1,6 @@
 # Web Starter Kit (Beta)
 
-> A boilerplate for Lodash, ReactiveX, Redux, Material, Firebase, and Chart.
+> A boilerplate for Lodash, ReactiveX, Redux, Material, Firebase, and D3.
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit)
  //
@@ -16,7 +16,7 @@ This seed repository provides the following features:
 * [x] State container with **Redux**.
 * [x] User interface components with **Material**.
 * [x] Backend cloud services with **Firebase**.
-* [x] Data visualization with **Chart**.
+* [ ] Data visualization with **D3**.
 * ---------- **Dev Tools** ----------
 * [x] Build system with **Gulp**.
 * [x] Module bundler with **Rollup**.
