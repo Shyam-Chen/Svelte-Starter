@@ -7,7 +7,7 @@
     "dev": "rimraf public && gulp dev --type dev",
     "dev-watch": "rimraf public && gulp dev-watch --type dev",
     "test": "gulp unit",
-    "test-watch": "gulp unit --type watch",
+    "test-watch": "gulp unit --watch true",
     "prod": "rimraf public && gulp build --type prod",
     "e2e": "gulp e2e",
     "lint": "gulp lint",
