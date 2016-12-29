@@ -6,6 +6,7 @@ import firebaseConfig from './assets/datas/firebase.config.json';
 /**
  * @name Initialization
  */
+// TODO: npm i material-design-icons -S
 Promise.all([
     load('https://fonts.googleapis.com/icon?family=Material+Icons')
   ])

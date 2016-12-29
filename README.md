@@ -113,11 +113,10 @@ $ yarn run reinstall
 
 ## TODO List
 * Service Workers and Web App Manifest - Progressive web application
-* Async functions (e2e first)
 * Migrate from `page.js` to `universal-router` - Universal web application
-* Try it - `rxjs`, `redux-observable` ...
+* Try it - `redux-observable`, `async/await` ...
 * Migrate from `material-design-lite` to `@material/*` - Modular components
-* Individually installable `firebase` features - Modular components
+* Import the Firebase features separately - Modular components
 * `chart.js` ...
 * ...
 

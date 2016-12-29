@@ -20,6 +20,16 @@ import uglify from 'rollup-plugin-uglify';
 
 import { SOURCE_ROOT } from '../constants';
 
+class ReactiveX {
+  resolveId(id) {
+    if (id.startsWith('rxjs/')) {
+      return `node_modules/@reactivex/rxjs/dist/es6/${id.replace('rxjs/', '')}.js`;
+    }
+  }
+}
+
+const reactivex = () => new ReactiveX();
+
 const plugins = () => {
   const htmlplugin = () => {
     return html({
@@ -51,6 +61,7 @@ const plugins = () => {
     cssplugin(),
     image(),
     json(),
+    reactivex(),
     babel({
       babelrc: false,
       presets: [['latest', { es2015: { modules: false } }]],
@@ -72,7 +83,6 @@ const plugins = () => {
 
 export const TEST_CONFIG = {
   format: 'umd',
-  moduleName: 'main',
   context: 'window',
   sourceMap: 'inline',
   plugins: plugins()
