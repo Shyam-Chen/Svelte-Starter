@@ -2,9 +2,9 @@
 import { template } from 'lodash-es';
 import { createStore } from 'redux';
 
-// Error
-// import { createEpicMiddleware } from 'redux-observable';
+// import { createEpicMiddleware, combineEpics } from '../../scripts/redux-observable';
 // console.info(createEpicMiddleware);
+// console.info(combineEpics);
 
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
