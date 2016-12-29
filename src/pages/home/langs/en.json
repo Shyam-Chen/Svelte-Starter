@@ -2,7 +2,7 @@
   "HOME": "Home",
   "VANILLA": {
     "TITLE": "Welcome to Vanilla",
-    "CONTENT": "A single-page application boilerplate for Vanilla HTML/CSS/JS, Material, Firebase, Gulp, Rollup, PostCSS, and Babel.",
+    "CONTENT": "A boilerplate for Lodash, ReactiveX, Redux, Material, Firebase, and Chart.",
     "BUTTON": "Get Started"
   }
 }
