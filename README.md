@@ -114,11 +114,11 @@ $ yarn run reinstall
 ## TODO List
 * Service Workers and Web App Manifest - Progressive web application
 * Migrate from `page.js` to `universal-router` - Universal web application
-* Try it - `redux-observable`, `async/await` ...
+* `redux-observable`, `async/await` ...
+* ------------------------------
 * Migrate from `material-design-lite` to `@material/*` - Modular components
 * Import the Firebase features separately - Modular components
-* `chart.js` ...
-* ...
+* `chart.js` - Import the Chart features separately [#2466](https://github.com/chartjs/Chart.js/issues/2466#issuecomment-265682059)
 
 ## Next Steps
 * [Mobile-Starter-Kit][mobile] - Build cross platform mobile applications with web technologies.
