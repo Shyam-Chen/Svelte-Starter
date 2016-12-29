@@ -1,14 +1,9 @@
 // Third party
 import { template } from 'lodash-es';
-import { createStore } from 'redux';
-
-// import { createEpicMiddleware, combineEpics } from '../../scripts/redux-observable';
-// console.info(createEpicMiddleware);
-// console.info(combineEpics);
-
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
-Observable::of(1, 2, 3);
+import { filter } from 'rxjs/operator/filter';
+import { map } from 'rxjs/operator/map';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
+import { createEpicMiddleware, combineEpics } from '../../scripts/redux-observable';
 
 // Components
 import { layout } from '../../components/layout';
@@ -49,66 +44,56 @@ const chart = () => {
   });
 };
 
-const counter = () => {
-  function counter(state, action) {
-    if (typeof state === 'undefined') return 0;
+const counterGo = () => {
+  const INCREMENT = 'INCREMENT';
+  const INCREMENT_IF_ODD = 'INCREMENT_IF_ODD';
 
+  const increment = () => ({ type: INCREMENT });
+  const incrementIfOdd = () => ({ type: INCREMENT_IF_ODD });
+
+  const counter = (state = 0, action) => {
     switch (action.type) {
-      case 'INCREMENT':
+      case INCREMENT:
         return state + 1;
-      case 'DECREMENT':
-        return state - 1;
+
       default:
         return state;
     }
-  }
+  };
 
-  let store = createStore(counter);
-  let valueEl = document.getElementById('value');
+  const rootReducer = combineReducers({ counter });
 
-  function render() {
-    valueEl.innerHTML = store.getState().toString();
-  }
+  const incrementIfOddEpic = (action$, store) =>
+    action$.ofType(INCREMENT_IF_ODD)
+      ::filter(() => store.getState().counter % 2 === 1)
+      ::map(increment);
 
-  render();
+  const rootEpic = combineEpics(incrementIfOddEpic);
+  const epicMiddleware = createEpicMiddleware(rootEpic);
+  const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
+
+  const render = () => {
+    const { counter } = store.getState();
+    document.querySelector('#value').innerHTML = counter;
+  };
 
   store.subscribe(render);
+  render();
 
-  document.getElementById('increment')
-    .addEventListener('click', function() {
-      store.dispatch({ type: 'INCREMENT' });
-    });
-
-  document.getElementById('decrement')
-    .addEventListener('click', function() {
-      store.dispatch({ type: 'DECREMENT' });
-    });
-
-  document.getElementById('incrementIfOdd')
-    .addEventListener('click', function() {
-      if (store.getState() % 2 !== 0) {
-        store.dispatch({ type: 'INCREMENT' });
-      }
-    });
-
-  document.getElementById('incrementAsync')
-    .addEventListener('click', function() {
-      setTimeout(function() {
-        store.dispatch({ type: 'INCREMENT' });
-      }, 1000);
-    });
+  document.querySelector('#increment').onclick = () => store.dispatch(increment());
+  document.querySelector('#incrementIfOdd').onclick = () => store.dispatch(incrementIfOdd());
 };
 
 export const ABOUT_EN = () => {
   layout('en', 'about', template(tpl, imports)(LANGS_EN));
   chart();
-  counter();
+  counterGo();
   componentHandler.upgradeAllRegistered();
 };
 
 export const ABOUT_ZH = () => {
   layout('zh', 'about', template(tpl, imports)(LANGS_ZH));
   chart();
-  counter();
+  counterGo();
   componentHandler.upgradeAllRegistered();
 };
