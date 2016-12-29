@@ -1,10 +1,10 @@
-import util from 'gulp-util';
+import { env, log, colors } from 'gulp-util';
 import notify from 'gulp-notify';
 
 export class CompileError {
   static handle(err) {
     let self = this;
-    if (util.env.type === 'dev') {
+    if (env.mode === 'dev') {
       let args = Array.from(arguments);
 
       notify.onError({
@@ -15,7 +15,7 @@ export class CompileError {
 
       self.emit('end');
     } else {
-      util.log(`${util.colors.red(err)}`);
+      log(`${colors.red(err)}`);
       process.exit(1);
     }
   }

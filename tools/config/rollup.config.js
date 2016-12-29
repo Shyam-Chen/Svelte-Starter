@@ -1,5 +1,5 @@
 import { join } from 'path';
-import util from 'gulp-util';
+import { env, noop } from 'gulp-util';
 import html from 'rollup-plugin-html';
 import postcss from 'rollup-plugin-postcss';
 import comment from 'postcss-comment';
@@ -66,7 +66,7 @@ const plugins = () => {
         'node_modules/redux-observable/lib/index.js': ['createEpicMiddleware', 'combineEpics']
       }
     }),
-    (util.env.type === 'prod' ? uglify() : util.noop())
+    (env.mode === 'prod' ? uglify() : noop())
   ];
 };
 
@@ -80,7 +80,7 @@ export const TEST_CONFIG = {
 
 export const APP_CONFIG = Object.assign({}, TEST_CONFIG, {
   entry: join(SOURCE_ROOT, 'app.js'),
-  sourceMap: util.env.type === 'dev' && true,
+  sourceMap: env.mode === 'dev' && true,
 });
 
 export const VENDOR_CONFIG = {

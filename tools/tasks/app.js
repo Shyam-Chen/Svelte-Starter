@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import util from 'gulp-util';
+import { env, noop } from 'gulp-util';
 import sourcemaps from 'gulp-sourcemaps';
 import rollup from 'rollup-stream';
 import source from 'vinyl-source-stream';
@@ -18,8 +18,8 @@ gulp.task('app', () => {
     .on('error', CompileError.handle)
     .pipe(source('app.js'))
     .pipe(buffer())
-    .pipe(util.env.type === 'dev' ? sourcemaps.init({ loadMaps: true }) : util.noop())
-    .pipe(util.env.type === 'dev' ? sourcemaps.write('./') : util.noop())
+    .pipe(env.mode === 'dev' ? sourcemaps.init({ loadMaps: true }) : noop())
+    .pipe(env.mode === 'dev' ? sourcemaps.write('./') : noop())
     .pipe(gulp.dest(DIST_ROOT))
     .pipe(stream());
 });
