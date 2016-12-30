@@ -11,7 +11,7 @@ let clickEvent = ('undefined' !== typeof document) && document.ontouchstart ? 't
  * history.location generated polyfill in https://github.com/devote/HTML5-History-API
  */
 
-let location = ('undefined' !== typeof window) && (window.history.location || window.location);
+// let location = ('undefined' !== typeof window) && (window.history.location || window.location);
 
 /**
  * Perform initial dispatch.
