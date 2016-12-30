@@ -10,7 +10,6 @@
   "globals": {
     "componentHandler": true,
     "firebase": true,
-    "page": true,
     "Chart": true,
     "webdriver": true
   },

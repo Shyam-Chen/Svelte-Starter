@@ -6,7 +6,7 @@ import { layout } from '../../components/layout';
 
 // Assets
 import vanilla from '../../assets/images/vanilla.png';
-
+import luyou from '../../scripts/luyou';
 // Main
 import tpl from './home.html';
 import style from './home.css';
@@ -46,12 +46,12 @@ export const HOME_ZH = () => {
 export const home = () => {
   switch (true) {
     case /zh/.test(navigator.language):
-      page('/', '/zh/home');
+      luyou('/', '/zh/home');
       break;
     default:
-      page('/', '/en/home');
+      luyou('/', '/en/home');
   }
 
-  page('/en/home', HOME_EN);
-  page('/zh/home', HOME_ZH);
+  luyou('/en/home', HOME_EN);
+  luyou('/zh/home', HOME_ZH);
 };

@@ -115,7 +115,6 @@ $ yarn run reinstall
 * `async/await` - Babel runtime
 * ---------- 2 ----------
 * `rollup-plugin-posthtml`
-* `luyou` - Rewrite `page.js` with ES modules
 * ---------- 3 ----------
 * Migrate from `material-design-lite` to `@material/*` - Modular components
 * Import the Firebase features separately - Modular components

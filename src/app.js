@@ -44,13 +44,16 @@ firebase.initializeApp(firebaseConfig);
     });
 }*/
 
+import luyou from './scripts/luyou';
+
 import { home } from './pages/home';
 import { about } from './pages/about';
 import { contact } from './pages/contact';
 import { error } from './pages/error';
 
+
 home();
 about();
 contact();
 error();
-page();
+luyou();
