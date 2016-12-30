@@ -42,7 +42,7 @@ let running;
  * HashBang option
  */
 
-let hashbang = false;
+// let hashbang = false;
 
 /**
  * Previous context, for capturing
@@ -151,9 +151,10 @@ luyou.start = function(options) {
   if (false !== options.click) {
     document.addEventListener(clickEvent, onclick, false);
   }
-  if (true === options.hashbang) hashbang = true;
+  // if (true === options.hashbang) hashbang = true;
   if (!dispatch) return;
-  let url = (hashbang && ~location.hash.indexOf('#!')) ? location.hash.substr(2) + location.search : location.pathname + location.search + location.hash;
+  // let url = (hashbang && ~location.hash.indexOf('#!')) ? location.hash.substr(2) + location.search : location.pathname + location.search + location.hash;
+  let url = location.pathname + location.search + location.hash;
   luyou.replace(url, null, true, dispatch);
 };
 
@@ -317,11 +318,11 @@ function unhandled(ctx) {
   if (ctx.handled) return;
   let current;
 
-  if (hashbang) {
-    current = base + location.hash.replace('#!', '');
-  } else {
+  // if (hashbang) {
+  //   current = base + location.hash.replace('#!', '');
+  // } else {
     current = location.pathname + location.search;
-  }
+  // }
 
   if (current === ctx.canonicalPath) return;
   luyou.stop();
@@ -371,12 +372,13 @@ function decodeURLEncodedURIComponent(val) {
  */
 
 function Context(path, state) {
-  if ('/' === path[0] && 0 !== path.indexOf(base)) path = base + (hashbang ? '#!' : '') + path;
+  // if ('/' === path[0] && 0 !== path.indexOf(base)) path = base + (hashbang ? '#!' : '') + path;
+  if ('/' === path[0] && 0 !== path.indexOf(base)) path = base + path;
   let i = path.indexOf('?');
 
   this.canonicalPath = path;
   this.path = path.replace(base, '') || '/';
-  if (hashbang) this.path = this.path.replace('#!', '') || '/';
+  // if (hashbang) this.path = this.path.replace('#!', '') || '/';
 
   this.title = document.title;
   this.state = state || {};
@@ -387,13 +389,13 @@ function Context(path, state) {
 
   // fragment
   this.hash = '';
-  if (!hashbang) {
-    if (!~this.path.indexOf('#')) return;
-    let parts = this.path.split('#');
-    this.path = parts[0];
-    this.hash = decodeURLEncodedURIComponent(parts[1]) || '';
-    this.querystring = this.querystring.split('#')[0];
-  }
+  // if (!hashbang) {
+  //   if (!~this.path.indexOf('#')) return;
+  //   let parts = this.path.split('#');
+  //   this.path = parts[0];
+  //   this.hash = decodeURLEncodedURIComponent(parts[1]) || '';
+  //   this.querystring = this.querystring.split('#')[0];
+  // }
 }
 
 /**
@@ -411,7 +413,8 @@ luyou.Context = Context;
 Context.prototype.pushState = function() {
   luyou.len++;
   // history.pushState(this.state, this.title, hashbang && this.path !== '/' ? '#!' + this.path : this.canonicalPath);
-  history.pushState(this.state, this.title, hashbang && this.path !== '/' ? `#!${this.path}` : this.canonicalPath);
+  // history.pushState(this.state, this.title, hashbang && this.path !== '/' ? `#!${this.path}` : this.canonicalPath);
+  history.pushState(this.state, this.title, this.canonicalPath);
 };
 
 /**
@@ -422,7 +425,8 @@ Context.prototype.pushState = function() {
 
 Context.prototype.save = function() {
   // history.replaceState(this.state, this.title, hashbang && this.path !== '/' ? '#!' + this.path : this.canonicalPath);
-  history.replaceState(this.state, this.title, hashbang && this.path !== '/' ? `#!${this.path}` : this.canonicalPath);
+  // history.replaceState(this.state, this.title, hashbang && this.path !== '/' ? `#!${this.path}` : this.canonicalPath);
+  history.replaceState(this.state, this.title, this.canonicalPath);
 };
 
 /**
@@ -552,7 +556,7 @@ function onclick(e) {
 
   // ensure non-hash for the same path
   let link = el.getAttribute('href');
-  if (!hashbang && el.pathname === location.pathname && (el.hash || '#' === link)) return;
+  // if (!hashbang && el.pathname === location.pathname && (el.hash || '#' === link)) return;
 
   // Check for mailto: in the href
   if (link && link.indexOf('mailto:') > -1) return;
@@ -576,7 +580,7 @@ function onclick(e) {
 
   if (path.indexOf(base) === 0) path = path.substr(base.length);
 
-  if (hashbang) path = path.replace('#!', '');
+  // if (hashbang) path = path.replace('#!', '');
 
   if (base && orig === path) return;
 
