@@ -1,7 +1,7 @@
 {
   "TITLE": "Vanilla",
   "LINK": [
-    ["/en/home", "Home"],
+    ["/en", "Home"],
     ["/en/about", "About"],
     ["/en/contact", "Contact"]
   ]

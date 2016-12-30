@@ -17,13 +17,21 @@ export const layout = (lang, page, content) => {
     case 'en':
       site('en', 'Vanilla');
       app.innerHTML = LAYOUT_EN;
-      document.querySelector('#zh').href = `/zh/${page}`;
+      if (page === 'home') {
+        document.querySelector('#zh').href = `/zh`;
+      } else {
+        document.querySelector('#zh').href = `/zh/${page}`;
+      }
       document.querySelector('#page').innerHTML = content;
       break;
     case 'zh':
       site('zh', '香草');
       app.innerHTML = LAYOUT_ZH;
-      document.querySelector('#en').href = `/en/${page}`;
+      if (page === 'home') {
+        document.querySelector('#en').href = `/en`;
+      } else {
+        document.querySelector('#en').href = `/en/${page}`;
+      }
       document.querySelector('#page').innerHTML = content;
       break;
   }

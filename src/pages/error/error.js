@@ -7,7 +7,7 @@ const ERROR = () => {
   document.querySelector('#app').innerHTML = template(tpl, {
     'imports': { style }
   })({
-    text: '404'
+    statusCode: '404'
   });
 };
 

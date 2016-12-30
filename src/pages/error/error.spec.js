@@ -6,7 +6,8 @@ import styl from './error.css';
 describe('Error', () => {
 
   it('toMatch', () => {
-    expect(tpl).toMatch(/<%= text %>/);
+    expect(tpl).toMatch(/<%= statusCode %>/);
+    expect(tpl).toMatch(/<%= style.statusCode %>/);
     expect(tpl).toMatch(/<%= style.text %>/);
   });
 
@@ -15,7 +16,7 @@ describe('Error', () => {
     document.querySelector = jasmine.createSpy('HTML Element').and.returnValue(dummyElement);
 
     const importsSpec = { 'imports': { 'style': styl } };
-    const datasSpec = { text: '404' };
+    const datasSpec = { statusCode: '404' };
     const load404Spec = () => {
       document.querySelector('#app').innerHTML = template(tpl, importsSpec)(datasSpec);
     };

@@ -1,11 +1,11 @@
 describe('Home', () => {
 
   beforeEach(() => {
-    webdriver.get('http://localhost:9876/en/home');
+    webdriver.get('http://localhost:9876/en');
   });
 
   it('getCurrentUrl toEqual', () => {
-    expect(webdriver.getCurrentUrl()).toEqual('http://localhost:9876/en/home');
+    expect(webdriver.getCurrentUrl()).toEqual('http://localhost:9876/en');
   });
 
   it('getText toEqual', () => {
