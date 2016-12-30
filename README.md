@@ -110,9 +110,13 @@ $ yarn run reinstall
 * `assets` - datas, images, fonts, videos, audios, files ...
 
 ## TODO List
+* ---------- 1 ----------
 * Service Workers and Web App Manifest - Progressive web application
-* `redux-observable`, `async/await` ...
-* ------------------------------
+* `async/await` - Babel runtime
+* ---------- 2 ----------
+* `rollup-plugin-posthtml`
+* `luyou` - Rewrite `page.js` with ES modules
+* ---------- 3 ----------
 * Migrate from `material-design-lite` to `@material/*` - Modular components
 * Import the Firebase features separately - Modular components
 * `chart.js` - Import the Chart features separately [#2466](https://github.com/chartjs/Chart.js/issues/2466#issuecomment-265682059)
