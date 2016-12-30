@@ -3,6 +3,7 @@ import pathtoRegexp from 'path-to-regexp';
 /**
  * Detect click event
  */
+
 let clickEvent = ('undefined' !== typeof document) && document.ontouchstart ? 'touchstart' : 'click';
 
 /**
@@ -15,34 +16,39 @@ let location = ('undefined' !== typeof window) && (window.history.location || wi
 /**
  * Perform initial dispatch.
  */
-let dispatch = true;
 
+let dispatch = true;
 
 /**
  * Decode URL components (query string, pathname, hash).
  * Accommodates both regular percent encoding and x-www-form-urlencoded format.
  */
+
 let decodeURLComponents = true;
 
 /**
  * Base path.
  */
+
 let base = '';
 
 /**
  * Running flag.
  */
+
 let running;
 
 /**
  * HashBang option
  */
+
 let hashbang = false;
 
 /**
  * Previous context, for capturing
  * luyou exit events.
  */
+
 let prevContext;
 
 /**
@@ -95,6 +101,7 @@ luyou.exits = [];
  * Current path being processed
  * @type {string}
  */
+
 luyou.current = '';
 
 /**
@@ -132,6 +139,7 @@ luyou.base = function(path) {
  * @param {Object} options
  * @api public
  */
+
 
 luyou.start = function(options) {
   options = options || {};
@@ -218,6 +226,7 @@ luyou.back = function(path, state) {
  * @param {string=} to
  * @api public
  */
+
 luyou.redirect = function(from, to) {
   // Define route from a path to another
   if ('string' === typeof from && 'string' === typeof to) {
@@ -263,6 +272,7 @@ luyou.replace = function(path, state, init, dispatch) {
  * @param {Context} ctx
  * @api private
  */
+
 luyou.dispatch = function(ctx) {
   let prev = prevContext,
     i = 0,
@@ -302,6 +312,7 @@ luyou.dispatch = function(ctx) {
  * @param {Context} ctx
  * @api private
  */
+
 function unhandled(ctx) {
   if (ctx.handled) return;
   let current;
@@ -324,6 +335,7 @@ function unhandled(ctx) {
  * on the previous context when a new
  * luyou is visited.
  */
+
 luyou.exit = function(path) {
   if (typeof path === 'function') {
     return luyou.exit('*', path);
@@ -342,6 +354,7 @@ luyou.exit = function(path) {
  *
  * @param {string} val - URL component to decode
  */
+
 function decodeURLEncodedURIComponent(val) {
   if (typeof val !== 'string') { return val; }
   return decodeURLComponents ? decodeURIComponent(val.replace(/\+/g, ' ')) : val;
@@ -397,7 +410,8 @@ luyou.Context = Context;
 
 Context.prototype.pushState = function() {
   luyou.len++;
-  history.pushState(this.state, this.title, hashbang && this.path !== '/' ? '#!' + this.path : this.canonicalPath);
+  // history.pushState(this.state, this.title, hashbang && this.path !== '/' ? '#!' + this.path : this.canonicalPath);
+  history.pushState(this.state, this.title, hashbang && this.path !== '/' ? `#!${this.path}` : this.canonicalPath);
 };
 
 /**
@@ -407,7 +421,8 @@ Context.prototype.pushState = function() {
  */
 
 Context.prototype.save = function() {
-  history.replaceState(this.state, this.title, hashbang && this.path !== '/' ? '#!' + this.path : this.canonicalPath);
+  // history.replaceState(this.state, this.title, hashbang && this.path !== '/' ? '#!' + this.path : this.canonicalPath);
+  history.replaceState(this.state, this.title, hashbang && this.path !== '/' ? `#!${this.path}` : this.canonicalPath);
 };
 
 /**
@@ -497,8 +512,8 @@ let onpopstate = (function () {
   if (document.readyState === 'complete') {
     loaded = true;
   } else {
-    window.addEventListener('load', function() {
-      setTimeout(function() {
+    window.addEventListener('load', () => {
+      setTimeout(() => {
         loaded = true;
       }, 0);
     });
@@ -513,26 +528,22 @@ let onpopstate = (function () {
     }
   };
 })();
+
 /**
  * Handle "click" events.
  */
 
 function onclick(e) {
-
   if (1 !== which(e)) return;
 
   if (e.metaKey || e.ctrlKey || e.shiftKey) return;
   if (e.defaultPrevented) return;
-
-
 
   // ensure link
   // use shadow dom when available
   let el = e.path ? e.path[0] : e.target;
   while (el && 'A' !== el.nodeName) el = el.parentNode;
   if (!el || 'A' !== el.nodeName) return;
-
-
 
   // Ignore if tag has
   // 1. "download" attribute
@@ -543,8 +554,6 @@ function onclick(e) {
   let link = el.getAttribute('href');
   if (!hashbang && el.pathname === location.pathname && (el.hash || '#' === link)) return;
 
-
-
   // Check for mailto: in the href
   if (link && link.indexOf('mailto:') > -1) return;
 
@@ -553,8 +562,6 @@ function onclick(e) {
 
   // x-origin
   if (!sameOrigin(el.href)) return;
-
-
 
   // rebuild path
   let path = el.pathname + el.search + (el.hash || '');
@@ -567,9 +574,7 @@ function onclick(e) {
   // same luyou
   let orig = path;
 
-  if (path.indexOf(base) === 0) {
-    path = path.substr(base.length);
-  }
+  if (path.indexOf(base) === 0) path = path.substr(base.length);
 
   if (hashbang) path = path.replace('#!', '');
 
@@ -593,8 +598,8 @@ function which(e) {
  */
 
 function sameOrigin(href) {
-  let origin = location.protocol + '//' + location.hostname;
-  if (location.port) origin += ':' + location.port;
+  let origin = `${location.protocol}//${location.hostname}`;
+  if (location.port) origin += `:${location.port}`;
   return (href && (0 === href.indexOf(origin)));
 }
 
