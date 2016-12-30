@@ -66,7 +66,7 @@ let prevContext;
  *
  * @param {string|!Function|!Object} path
  * @param {Function=} fn
- * @api public
+ * @public
  */
 
 export default function luyou(path, fn) {
@@ -119,7 +119,7 @@ luyou.len = 0;
  * Get or set basepath to `path`.
  *
  * @param {string} path
- * @api public
+ * @public
  */
 
 luyou.base = function(path) {
@@ -137,9 +137,8 @@ luyou.base = function(path) {
  *    - `dispatch` perform initial dispatch [true]
  *
  * @param {Object} options
- * @api public
+ * @public
  */
-
 
 luyou.start = function(options) {
   options = options || {};
@@ -161,7 +160,7 @@ luyou.start = function(options) {
 /**
  * Unbind click and popstate event handlers.
  *
- * @api public
+ * @public
  */
 
 luyou.stop = function() {
@@ -181,7 +180,7 @@ luyou.stop = function() {
  * @param {boolean=} dispatch
  * @param {boolean=} push
  * @return {!Context}
- * @api public
+ * @public
  */
 
 luyou.show = function(path, state, dispatch, push) {
@@ -198,7 +197,7 @@ luyou.show = function(path, state, dispatch, push) {
  *
  * @param {string} path - fallback path to go back if no more history exists, if undefined defaults to luyou.base
  * @param {Object=} state
- * @api public
+ * @public
  */
 
 luyou.back = function(path, state) {
@@ -218,14 +217,13 @@ luyou.back = function(path, state) {
   }
 };
 
-
 /**
  * Register route to redirect from one path to other
  * or just redirect to another route
  *
  * @param {string} from - if param 'to' is undefined redirects to 'from'
  * @param {string=} to
- * @api public
+ * @public
  */
 
 luyou.redirect = function(from, to) {
@@ -254,9 +252,8 @@ luyou.redirect = function(from, to) {
  * @param {boolean=} init
  * @param {boolean=} dispatch
  * @return {!Context}
- * @api public
+ * @public
  */
-
 
 luyou.replace = function(path, state, init, dispatch) {
   let ctx = new Context(path, state);
@@ -271,7 +268,7 @@ luyou.replace = function(path, state, init, dispatch) {
  * Dispatch the given `ctx`.
  *
  * @param {Context} ctx
- * @api private
+ * @private
  */
 
 luyou.dispatch = function(ctx) {
@@ -311,7 +308,7 @@ luyou.dispatch = function(ctx) {
  * 404s on your own use `luyou('*', callback)`.
  *
  * @param {Context} ctx
- * @api private
+ * @private
  */
 
 function unhandled(ctx) {
@@ -368,7 +365,7 @@ function decodeURLEncodedURIComponent(val) {
  * @constructor
  * @param {string} path
  * @param {Object=} state
- * @api public
+ * @public
  */
 
 function Context(path, state) {
@@ -407,7 +404,7 @@ luyou.Context = Context;
 /**
  * Push state.
  *
- * @api private
+ * @private
  */
 
 Context.prototype.pushState = function() {
@@ -420,7 +417,7 @@ Context.prototype.pushState = function() {
 /**
  * Save the context state.
  *
- * @api public
+ * @public
  */
 
 Context.prototype.save = function() {
@@ -434,14 +431,13 @@ Context.prototype.save = function() {
  * and an array of `callbacks` and `options`.
  *
  * Options:
- *
  *   - `sensitive`    enable case-sensitive routes
  *   - `strict`       enable strict matching for trailing slashes
  *
  * @constructor
  * @param {string} path
  * @param {Object=} options
- * @api private
+ * @private
  */
 
 function Route(path, options) {
@@ -463,7 +459,7 @@ luyou.Route = Route;
  *
  * @param {Function} fn
  * @return {Function}
- * @api public
+ * @public
  */
 
 Route.prototype.middleware = function(fn) {
@@ -481,14 +477,14 @@ Route.prototype.middleware = function(fn) {
  * @param {string} path
  * @param {Object} params
  * @return {boolean}
- * @api private
+ * @private
  */
 
 Route.prototype.match = function(path, params) {
-  let keys = this.keys,
-    qsIndex = path.indexOf('?'),
-    pathname = ~qsIndex ? path.slice(0, qsIndex) : path,
-    m = this.regexp.exec(decodeURIComponent(pathname));
+  let keys = this.keys;
+  let qsIndex = path.indexOf('?');
+  let pathname = ~qsIndex ? path.slice(0, qsIndex) : path;
+  let m = this.regexp.exec(decodeURIComponent(pathname));
 
   if (!m) return false;
 
@@ -510,9 +506,8 @@ Route.prototype.match = function(path, params) {
 
 let onpopstate = (function () {
   let loaded = false;
-  if ('undefined' === typeof window) {
-    return;
-  }
+  // if ('undefined' === typeof window) return;
+
   if (document.readyState === 'complete') {
     loaded = true;
   } else {

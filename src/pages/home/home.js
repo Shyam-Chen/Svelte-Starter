@@ -47,9 +47,13 @@ export const home = () => {
   switch (true) {
     case /zh/.test(navigator.language):
       luyou('/', '/zh/home');
+      luyou('/zh', '/zh/home');
+      luyou('/en', '/en/home');
       break;
     default:
       luyou('/', '/en/home');
+      luyou('/zh', '/zh/home');
+      luyou('/en', '/en/home');
   }
 
   luyou('/en/home', HOME_EN);
