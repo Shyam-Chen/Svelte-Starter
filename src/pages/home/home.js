@@ -42,3 +42,16 @@ export const HOME_ZH = () => {
 
   componentHandler.upgradeAllRegistered();
 };
+
+export const home = () => {
+  switch (true) {
+    case /zh/.test(navigator.language):
+      page('/', '/zh/home');
+      break;
+    default:
+      page('/', '/en/home');
+  }
+
+  page('/en/home', HOME_EN);
+  page('/zh/home', HOME_ZH);
+};

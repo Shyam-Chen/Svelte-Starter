@@ -19,7 +19,7 @@ import style from './contact.css';
 import LANGS_EN from './langs/en.json';
 import LANGS_ZH from './langs/zh.json';
 
-const contact = () => {
+const auth = () => {
   const signInButton = document.querySelector('#sign-in-button');
   const signOutButton = document.querySelector('#sign-out-button');
   const content = document.querySelector('#content');
@@ -64,7 +64,7 @@ export const CONTACT_EN = () => {
   const content = template(tpl, { 'imports': { style } })(LANGS_EN);
   layout('en', 'contact', content);
   fileUpload('contact-image');
-  contact();
+  auth();
 	componentHandler.upgradeAllRegistered();
 };
 
@@ -72,6 +72,11 @@ export const CONTACT_ZH = () => {
   const content = template(tpl, { 'imports': { style } })(LANGS_ZH);
   layout('zh', 'contact', content);
   fileUpload('contact-image', '選擇一個檔案');
-  contact();
+  auth();
   componentHandler.upgradeAllRegistered();
+};
+
+export const contact = () => {
+  page('/en/contact', CONTACT_EN);
+  page('/zh/contact', CONTACT_ZH);
 };

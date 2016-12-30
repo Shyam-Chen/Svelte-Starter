@@ -97,3 +97,8 @@ export const ABOUT_ZH = () => {
   counterGo();
   componentHandler.upgradeAllRegistered();
 };
+
+export const about = () => {
+  page('/en/about', ABOUT_EN);
+  page('/zh/about', ABOUT_ZH);
+};
