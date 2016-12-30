@@ -99,21 +99,18 @@ $ yarn run reinstall
 
 ## Folder Name
 * ---------- 1 ----------
-* `routes` - isomorphic javascript (not yet - `universal-router`)
-* ---------- 2 ----------
 * `pages` - pages, child pages ...
-* ---------- 3 ----------
+* ---------- 2 ----------
 * `components` - shared components, reusable components ...
-* ---------- 4 ----------
+* ---------- 3 ----------
 * `scripts` - js, functions, states ...
 * `styles` - css, variables, custom css ...
 * `templates` - html, child templates ... (not yet - `posthtml`)
-* ---------- 5 ----------
+* ---------- 4 ----------
 * `assets` - datas, images, fonts, videos, audios, files ...
 
 ## TODO List
 * Service Workers and Web App Manifest - Progressive web application
-* Migrate from `page.js` to `universal-router` - Universal web application
 * `redux-observable`, `async/await` ...
 * ------------------------------
 * Migrate from `material-design-lite` to `@material/*` - Modular components
