@@ -64,7 +64,7 @@ export default function luyou(path, fn) {
 
   // route <path> to <callback ...>
   if ('function' === typeof fn) {
-    let route = new Route(/** @type {string} */ (path));
+    let route = new Route(path);
     for (let i = 1; i < arguments.length; ++i) {
       luyou.callbacks.push(route.middleware(arguments[i]));
     }
@@ -95,10 +95,9 @@ luyou.base = (path) => {
  * Bind with the given `options`.
  *
  * Options:
- *
- *    - `click` bind to click events [true]
- *    - `popstate` bind to popstate [true]
- *    - `dispatch` perform initial dispatch [true]
+ *   - `click` bind to click events [true]
+ *   - `popstate` bind to popstate [true]
+ *   - `dispatch` perform initial dispatch [true]
  *
  * @param {Object} options
  * @public
@@ -154,7 +153,8 @@ luyou.show = (path, state, dispatch, push) => {
  * Goes back in the history
  * Back should always let the current route push state and then go back.
  *
- * @param {string} path - fallback path to go back if no more history exists, if undefined defaults to luyou.base
+ * @param {string} path - fallback path to go back if no more history exists, if
+ *                        undefined defaults to luyou.base
  * @param {Object=} state
  * @public
  */
@@ -188,16 +188,16 @@ luyou.back = (path, state) => {
 luyou.redirect = (from, to) => {
   // Define route from a path to another
   if ('string' === typeof from && 'string' === typeof to) {
-    luyou(from, function() {
-      setTimeout(function() {
-        luyou.replace(/** @type {!string} */ (to));
+    luyou(from, () => {
+      setTimeout(() => {
+        luyou.replace(to);
       }, 0);
     });
   }
 
   // Wait for the push state and replace it with another
   if ('string' === typeof from && 'undefined' === typeof to) {
-    setTimeout(function() {
+    setTimeout(() => {
       luyou.replace(from);
     }, 0);
   }
@@ -218,7 +218,7 @@ luyou.replace = (path, state, init, dispatch) => {
   let ctx = new Context(path, state);
   luyou.current = ctx.path;
   ctx.init = init;
-  ctx.save(); // save before dispatching, which may redirect
+  ctx.save();  // save before dispatching, which may redirect
   if (false !== dispatch) luyou.dispatch(ctx);
   return ctx;
 };
@@ -256,10 +256,8 @@ luyou.dispatch = (ctx) => {
 };
 
 /**
- * Register an exit route on `path` with
- * callback `fn()`, which will be called
- * on the previous context when a new
- * luyou is visited.
+ * Register an exit route on `path` with callback `fn()`, which will be called
+ * on the previous context when a new luyou is visited.
  */
 
 luyou.exit = (path) => {
@@ -275,6 +273,7 @@ luyou.exit = (path) => {
 
 /**
  * Callback functions.
+ * @type {array}
  */
 
 luyou.callbacks = [];
@@ -299,9 +298,8 @@ luyou.current = '';
 luyou.len = 0;
 
 /**
- * Unhandled `ctx`. When it's not the initial
- * popstate then redirect. If you wish to handle
- * 404s on your own use `luyou('*', callback)`.
+ * Unhandled `ctx`. When it's not the initial popstate then redirect. If you
+ * wish to handle 404s on your own use `luyou('*', callback)`.
  *
  * @param {Context} ctx
  * @private
@@ -474,7 +472,7 @@ class Route {
    *
    * @param {Function} fn
    * @return {Function}
-   * @api public
+   * @public
    */
 
   middleware(fn) {
@@ -492,7 +490,7 @@ class Route {
    * @param {string} path
    * @param {Object} params
    * @return {boolean}
-   * @api private
+   * @private
    */
 
   match(path, params) {
