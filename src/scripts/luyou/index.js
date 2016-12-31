@@ -341,48 +341,43 @@ function decodeURLEncodedURIComponent(val) {
  * @public
  */
 
-function Context(path, state) {
-  if ('/' === path[0] && 0 !== path.indexOf(base)) path = base + path;
-  let i = path.indexOf('?');
+class Context {
+  constructor(path, state) {
+    if ('/' === path[0] && 0 !== path.indexOf(base)) path = base + path;
+    let i = path.indexOf('?');
 
-  this.canonicalPath = path;
-  this.path = path.replace(base, '') || '/';
+    this.canonicalPath = path;
+    this.path = path.replace(base, '') || '/';
 
-  this.title = document.title;
-  this.state = state || {};
-  this.state.path = path;
-  this.querystring = ~i ? decodeURLEncodedURIComponent(path.slice(i + 1)) : '';
-  this.pathname = decodeURLEncodedURIComponent(~i ? path.slice(0, i) : path);
-  this.params = {};
+    this.title = document.title;
+    this.state = state || {};
+    this.state.path = path;
+    this.querystring = ~i ? decodeURLEncodedURIComponent(path.slice(i + 1)) : '';
+    this.pathname = decodeURLEncodedURIComponent(~i ? path.slice(0, i) : path);
+    this.params = {};
+  }
 
+  /**
+   * Push state.
+   *
+   * @private
+   */
+
+  pushState() {
+    luyou.len++;
+    history.pushState(this.state, this.title, this.canonicalPath);
+  }
+
+  /**
+   * Save the context state.
+   *
+   * @public
+   */
+
+  save() {
+    history.replaceState(this.state, this.title, this.canonicalPath);
+  }
 }
-
-/**
- * Expose `Context`.
- */
-
-luyou.Context = Context;
-
-/**
- * Push state.
- *
- * @private
- */
-
-Context.prototype.pushState = function() {
-  luyou.len++;
-  history.pushState(this.state, this.title, this.canonicalPath);
-};
-
-/**
- * Save the context state.
- *
- * @public
- */
-
-Context.prototype.save = function() {
-  history.replaceState(this.state, this.title, this.canonicalPath);
-};
 
 /**
  * Initialize `Route` with the given HTTP `path`,
@@ -398,65 +393,59 @@ Context.prototype.save = function() {
  * @private
  */
 
-function Route(path, options) {
-  options = options || {};
-  this.path = (path === '*') ? '(.*)' : path;
-  this.method = 'GET';
-  this.regexp = pathtoRegexp(this.path, this.keys = [], options);
-}
-
-/**
- * Expose `Route`.
- */
-
-luyou.Route = Route;
-
-/**
- * Return route middleware with
- * the given callback `fn()`.
- *
- * @param {Function} fn
- * @return {Function}
- * @public
- */
-
-Route.prototype.middleware = function(fn) {
-  let self = this;
-  return function(ctx, next) {
-    if (self.match(ctx.path, ctx.params)) return fn(ctx, next);
-    next();
-  };
-};
-
-/**
- * Check if this route matches `path`, if so
- * populate `params`.
- *
- * @param {string} path
- * @param {Object} params
- * @return {boolean}
- * @private
- */
-
-Route.prototype.match = function(path, params) {
-  let keys = this.keys;
-  let qsIndex = path.indexOf('?');
-  let pathname = ~qsIndex ? path.slice(0, qsIndex) : path;
-  let m = this.regexp.exec(decodeURIComponent(pathname));
-
-  if (!m) return false;
-
-  for (let i = 1, len = m.length; i < len; ++i) {
-    let key = keys[i - 1];
-    let val = decodeURLEncodedURIComponent(m[i]);
-    if (val !== undefined || !(hasOwnProperty.call(params, key.name))) {
-      params[key.name] = val;
-    }
+class Route {
+  constructor(path, options = {}) {
+    this.path = (path === '*') ? '(.*)' : path;
+    this.method = 'GET';
+    this.regexp = pathtoRegexp(this.path, this.keys = [], options);
   }
 
-  return true;
-};
+  /**
+   * Return route middleware with
+   * the given callback `fn()`.
+   *
+   * @param {Function} fn
+   * @return {Function}
+   * @api public
+   */
 
+  middleware(fn) {
+    const self = this;
+    return (ctx, next) => {
+      if (self.match(ctx.path, ctx.params)) return fn(ctx, next);
+      next();
+    };
+  }
+
+  /**
+   * Check if this route matches `path`, if so
+   * populate `params`.
+   *
+   * @param {string} path
+   * @param {Object} params
+   * @return {boolean}
+   * @api private
+   */
+
+  match(path, params) {
+    const keys = this.keys;
+    const qsIndex = path.indexOf('?');
+    const pathname = ~qsIndex ? path.slice(0, qsIndex) : path;
+    const m = this.regexp.exec(decodeURIComponent(pathname));
+
+    if (!m) return false;
+
+    for (let i = 1, len = m.length; i < len; ++i) {
+      const key = keys[i - 1];
+      const val = decodeURLEncodedURIComponent(m[i]);
+      if (val !== undefined || !(hasOwnProperty.call(params, key.name))) {
+        params[key.name] = val;
+      }
+    }
+
+    return true;
+  }
+}
 
 /**
  * Handle "populate" events.
@@ -464,7 +453,6 @@ Route.prototype.match = function(path, params) {
 
 let onpopstate = (function () {
   let loaded = false;
-  // if ('undefined' === typeof window) return;
 
   if (document.readyState === 'complete') {
     loaded = true;
