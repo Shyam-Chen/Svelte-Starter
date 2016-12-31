@@ -1,23 +1,12 @@
-import './styles/global.css';
-
-import { load } from './scripts';
-import firebaseConfig from './assets/datas/firebase.config.json';
-
 import luyou from './scripts/luyou';
+import './styles/global.css';
 
 import { home } from './pages/home';
 import { about } from './pages/about';
 import { contact } from './pages/contact';
 import { error } from './pages/error';
 
-Promise.all([
-    load('https://fonts.googleapis.com/icon?family=Material+Icons')
-  ])
-  .then((result) => {
-    const style = document.createElement('style');
-    style.innerHTML = result[0];
-    document.head.appendChild(style);
-  });
+import firebaseConfig from './assets/datas/firebase.config.json';
 
 firebase.initializeApp(firebaseConfig);
 

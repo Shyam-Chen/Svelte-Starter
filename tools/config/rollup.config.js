@@ -98,10 +98,16 @@ export const VENDOR_CONFIG = {
   context: 'window',
   plugins: [
     postcss({ plugins: [cssnano()] }),
+    babel({
+      babelrc: false,
+      presets: [['latest', { es2015: { modules: false } }]],
+      plugins: ['external-helpers'],
+      exclude: 'node_modules/**'
+    }),
     globals(),
     builtins(),
     resolve({ jsnext: true, browser: true }),
-    commonjs(),
+    commonjs({ include: 'node_modules/**' }),
     replace({ eval: '[eval][0]' }),
     uglify()
   ]
