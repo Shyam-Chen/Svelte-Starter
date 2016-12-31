@@ -4,14 +4,7 @@ import pathtoRegexp from 'path-to-regexp';
  * Detect click event
  */
 
-let clickEvent = ('undefined' !== typeof document) && document.ontouchstart ? 'touchstart' : 'click';
-
-/**
- * To work properly with the URL
- * history.location generated polyfill in https://github.com/devote/HTML5-History-API
- */
-
-// let location = ('undefined' !== typeof window) && (window.history.location || window.location);
+let clickEvent = document.ontouchstart ? 'touchstart' : 'click';
 
 /**
  * Perform initial dispatch.
@@ -37,12 +30,6 @@ let base = '';
  */
 
 let running;
-
-/**
- * HashBang option
- */
-
-// let hashbang = false;
 
 /**
  * Previous context, for capturing
@@ -140,8 +127,7 @@ luyou.base = function(path) {
  * @public
  */
 
-luyou.start = function(options) {
-  options = options || {};
+luyou.start = (options = {}) => {
   if (running) return;
   running = true;
   if (false === options.dispatch) dispatch = false;
@@ -150,10 +136,8 @@ luyou.start = function(options) {
   if (false !== options.click) {
     document.addEventListener(clickEvent, onclick, false);
   }
-  // if (true === options.hashbang) hashbang = true;
   if (!dispatch) return;
-  // let url = (hashbang && ~location.hash.indexOf('#!')) ? location.hash.substr(2) + location.search : location.pathname + location.search + location.hash;
-  let url = location.pathname + location.search + location.hash;
+  let url = location.pathname + location.search;
   luyou.replace(url, null, true, dispatch);
 };
 
@@ -163,7 +147,7 @@ luyou.start = function(options) {
  * @public
  */
 
-luyou.stop = function() {
+luyou.stop = () => {
   if (!running) return;
   luyou.current = '';
   luyou.len = 0;
@@ -183,7 +167,7 @@ luyou.stop = function() {
  * @public
  */
 
-luyou.show = function(path, state, dispatch, push) {
+luyou.show = (path, state, dispatch, push) => {
   let ctx = new Context(path, state);
   luyou.current = ctx.path;
   if (false !== dispatch) luyou.dispatch(ctx);
@@ -200,7 +184,7 @@ luyou.show = function(path, state, dispatch, push) {
  * @public
  */
 
-luyou.back = function(path, state) {
+luyou.back = (path, state) => {
   if (luyou.len > 0) {
     // this may need more testing to see if all browsers
     // wait for the next tick to go back in history
@@ -226,7 +210,7 @@ luyou.back = function(path, state) {
  * @public
  */
 
-luyou.redirect = function(from, to) {
+luyou.redirect = (from, to) => {
   // Define route from a path to another
   if ('string' === typeof from && 'string' === typeof to) {
     luyou(from, function() {
@@ -295,11 +279,7 @@ luyou.dispatch = function(ctx) {
     fn(ctx, nextEnter);
   }
 
-  if (prev) {
-    nextExit();
-  } else {
-    nextEnter();
-  }
+  prev ? nextExit() : nextEnter();
 };
 
 /**
@@ -313,14 +293,7 @@ luyou.dispatch = function(ctx) {
 
 function unhandled(ctx) {
   if (ctx.handled) return;
-  let current;
-
-  // if (hashbang) {
-  //   current = base + location.hash.replace('#!', '');
-  // } else {
-    current = location.pathname + location.search;
-  // }
-
+  let current = location.pathname + location.search;
   if (current === ctx.canonicalPath) return;
   luyou.stop();
   ctx.handled = false;
@@ -334,7 +307,7 @@ function unhandled(ctx) {
  * luyou is visited.
  */
 
-luyou.exit = function(path) {
+luyou.exit = (path) => {
   if (typeof path === 'function') {
     return luyou.exit('*', path);
   }
@@ -369,13 +342,11 @@ function decodeURLEncodedURIComponent(val) {
  */
 
 function Context(path, state) {
-  // if ('/' === path[0] && 0 !== path.indexOf(base)) path = base + (hashbang ? '#!' : '') + path;
   if ('/' === path[0] && 0 !== path.indexOf(base)) path = base + path;
   let i = path.indexOf('?');
 
   this.canonicalPath = path;
   this.path = path.replace(base, '') || '/';
-  // if (hashbang) this.path = this.path.replace('#!', '') || '/';
 
   this.title = document.title;
   this.state = state || {};
@@ -384,15 +355,6 @@ function Context(path, state) {
   this.pathname = decodeURLEncodedURIComponent(~i ? path.slice(0, i) : path);
   this.params = {};
 
-  // fragment
-  this.hash = '';
-  // if (!hashbang) {
-  //   if (!~this.path.indexOf('#')) return;
-  //   let parts = this.path.split('#');
-  //   this.path = parts[0];
-  //   this.hash = decodeURLEncodedURIComponent(parts[1]) || '';
-  //   this.querystring = this.querystring.split('#')[0];
-  // }
 }
 
 /**
@@ -409,8 +371,6 @@ luyou.Context = Context;
 
 Context.prototype.pushState = function() {
   luyou.len++;
-  // history.pushState(this.state, this.title, hashbang && this.path !== '/' ? '#!' + this.path : this.canonicalPath);
-  // history.pushState(this.state, this.title, hashbang && this.path !== '/' ? `#!${this.path}` : this.canonicalPath);
   history.pushState(this.state, this.title, this.canonicalPath);
 };
 
@@ -421,8 +381,6 @@ Context.prototype.pushState = function() {
  */
 
 Context.prototype.save = function() {
-  // history.replaceState(this.state, this.title, hashbang && this.path !== '/' ? '#!' + this.path : this.canonicalPath);
-  // history.replaceState(this.state, this.title, hashbang && this.path !== '/' ? `#!${this.path}` : this.canonicalPath);
   history.replaceState(this.state, this.title, this.canonicalPath);
 };
 
@@ -523,7 +481,7 @@ let onpopstate = (function () {
       let path = e.state.path;
       luyou.replace(path, e.state);
     } else {
-      luyou.show(location.pathname + location.hash, undefined, undefined, false);
+      luyou.show(location.pathname, undefined, undefined, false);
     }
   };
 })();
@@ -551,7 +509,6 @@ function onclick(e) {
 
   // ensure non-hash for the same path
   let link = el.getAttribute('href');
-  // if (!hashbang && el.pathname === location.pathname && (el.hash || '#' === link)) return;
 
   // Check for mailto: in the href
   if (link && link.indexOf('mailto:') > -1) return;
@@ -563,7 +520,7 @@ function onclick(e) {
   if (!sameOrigin(el.href)) return;
 
   // rebuild path
-  let path = el.pathname + el.search + (el.hash || '');
+  let path = el.pathname + el.search;
 
   // strip leading "/[drive letter]:" on NW.js on Windows
   if (typeof process !== 'undefined' && path.match(/^\/[a-zA-Z]:\//)) {
@@ -575,8 +532,6 @@ function onclick(e) {
 
   if (path.indexOf(base) === 0) path = path.substr(base.length);
 
-  // if (hashbang) path = path.replace('#!', '');
-
   if (base && orig === path) return;
 
   e.preventDefault();
@@ -587,8 +542,7 @@ function onclick(e) {
  * Event button.
  */
 
-function which(e) {
-  e = e || window.event;
+function which(e = window.event) {
   return null === e.which ? e.button : e.which;
 }
 
