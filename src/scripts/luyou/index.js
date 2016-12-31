@@ -4,7 +4,7 @@ import pathtoRegexp from 'path-to-regexp';
  * Detect click event
  */
 
-let clickEvent = document.ontouchstart ? 'touchstart' : 'click';
+const clickEvent = document.ontouchstart ? 'touchstart' : 'click';
 
 /**
  * Perform initial dispatch.
@@ -78,38 +78,15 @@ export default function luyou(path, fn) {
 }
 
 /**
- * Callback functions.
- */
-
-luyou.callbacks = [];
-luyou.exits = [];
-
-/**
- * Current path being processed
- * @type {string}
- */
-
-luyou.current = '';
-
-/**
- * Number of pages navigated to.
- * @type {number}
+ * @name luyou static method
  *
- *     luyou.len == 0;
- *     luyou('/login');
- *     luyou.len == 1;
- */
-
-luyou.len = 0;
-
-/**
  * Get or set basepath to `path`.
  *
  * @param {string} path
  * @public
  */
 
-luyou.base = function(path) {
+luyou.base = (path) => {
   if (0 === arguments.length) return base;
   base = path;
 };
@@ -133,9 +110,7 @@ luyou.start = (options = {}) => {
   if (false === options.dispatch) dispatch = false;
   if (false === options.decodeURLComponents) decodeURLComponents = false;
   if (false !== options.popstate) window.addEventListener('popstate', onpopstate, false);
-  if (false !== options.click) {
-    document.addEventListener(clickEvent, onclick, false);
-  }
+  if (false !== options.click) document.addEventListener(clickEvent, onclick, false);
   if (!dispatch) return;
   let url = location.pathname + location.search;
   luyou.replace(url, null, true, dispatch);
@@ -239,7 +214,7 @@ luyou.redirect = (from, to) => {
  * @public
  */
 
-luyou.replace = function(path, state, init, dispatch) {
+luyou.replace = (path, state, init, dispatch) => {
   let ctx = new Context(path, state);
   luyou.current = ctx.path;
   ctx.init = init;
@@ -255,10 +230,8 @@ luyou.replace = function(path, state, init, dispatch) {
  * @private
  */
 
-luyou.dispatch = function(ctx) {
-  let prev = prevContext,
-    i = 0,
-    j = 0;
+luyou.dispatch = (ctx) => {
+  let [prev, i, j] = [prevContext, 0, 0];
 
   prevContext = ctx;
 
@@ -283,24 +256,6 @@ luyou.dispatch = function(ctx) {
 };
 
 /**
- * Unhandled `ctx`. When it's not the initial
- * popstate then redirect. If you wish to handle
- * 404s on your own use `luyou('*', callback)`.
- *
- * @param {Context} ctx
- * @private
- */
-
-function unhandled(ctx) {
-  if (ctx.handled) return;
-  let current = location.pathname + location.search;
-  if (current === ctx.canonicalPath) return;
-  luyou.stop();
-  ctx.handled = false;
-  location.href = ctx.canonicalPath;
-}
-
-/**
  * Register an exit route on `path` with
  * callback `fn()`, which will be called
  * on the previous context when a new
@@ -319,6 +274,49 @@ luyou.exit = (path) => {
 };
 
 /**
+ * Callback functions.
+ */
+
+luyou.callbacks = [];
+luyou.exits = [];
+
+/**
+ * Current path being processed
+ * @type {string}
+ */
+
+luyou.current = '';
+
+/**
+ * Number of pages navigated to.
+ * @type {number}
+ *
+ *     luyou.len == 0;
+ *     luyou('/foo');
+ *     luyou.len == 1;
+ */
+
+luyou.len = 0;
+
+/**
+ * Unhandled `ctx`. When it's not the initial
+ * popstate then redirect. If you wish to handle
+ * 404s on your own use `luyou('*', callback)`.
+ *
+ * @param {Context} ctx
+ * @private
+ */
+
+function unhandled(ctx) {
+  if (ctx.handled) return;
+  let current = location.pathname + location.search;
+  if (current === ctx.canonicalPath) return;
+  luyou.stop();
+  ctx.handled = false;
+  location.href = ctx.canonicalPath;
+}
+
+/**
  * Remove URL encoding from the given `str`.
  * Accommodates whitespace in both x-www-form-urlencoded
  * and regular percent-encoded form.
@@ -329,6 +327,76 @@ luyou.exit = (path) => {
 function decodeURLEncodedURIComponent(val) {
   if (typeof val !== 'string') { return val; }
   return decodeURLComponents ? decodeURIComponent(val.replace(/\+/g, ' ')) : val;
+}
+
+/**
+ * Handle "click" events.
+ */
+
+function onclick(e) {
+  if (1 !== which(e)) return;
+
+  if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+  if (e.defaultPrevented) return;
+
+  // ensure link
+  // use shadow dom when available
+  let el = e.path ? e.path[0] : e.target;
+  while (el && 'A' !== el.nodeName) el = el.parentNode;
+  if (!el || 'A' !== el.nodeName) return;
+
+  // Ignore if tag has
+  // 1. "download" attribute
+  // 2. rel="external" attribute
+  if (el.hasAttribute('download') || el.getAttribute('rel') === 'external') return;
+
+  // ensure non-hash for the same path
+  let link = el.getAttribute('href');
+
+  // Check for mailto: in the href
+  if (link && link.indexOf('mailto:') > -1) return;
+
+  // check target
+  if (el.target) return;
+
+  // x-origin
+  if (!sameOrigin(el.href)) return;
+
+  // rebuild path
+  let path = el.pathname + el.search;
+
+  // strip leading "/[drive letter]:" on NW.js on Windows
+  if (typeof process !== 'undefined' && path.match(/^\/[a-zA-Z]:\//)) {
+    path = path.replace(/^\/[a-zA-Z]:\//, '/');
+  }
+
+  // same luyou
+  let orig = path;
+
+  if (path.indexOf(base) === 0) path = path.substr(base.length);
+
+  if (base && orig === path) return;
+
+  e.preventDefault();
+  luyou.show(orig);
+}
+
+/**
+ * Event button.
+ */
+
+function which(e = window.event) {
+  return null === e.which ? e.button : e.which;
+}
+
+/**
+ * Check if `href` is the same origin.
+ */
+
+function sameOrigin(href) {
+  let origin = `${location.protocol}//${location.hostname}`;
+  if (location.port) origin += `:${location.port}`;
+  return (href && (0 === href.indexOf(origin)));
 }
 
 /**
@@ -451,7 +519,7 @@ class Route {
  * Handle "populate" events.
  */
 
-let onpopstate = (function () {
+let onpopstate = (() => {
   let loaded = false;
 
   if (document.readyState === 'complete') {
@@ -473,75 +541,3 @@ let onpopstate = (function () {
     }
   };
 })();
-
-/**
- * Handle "click" events.
- */
-
-function onclick(e) {
-  if (1 !== which(e)) return;
-
-  if (e.metaKey || e.ctrlKey || e.shiftKey) return;
-  if (e.defaultPrevented) return;
-
-  // ensure link
-  // use shadow dom when available
-  let el = e.path ? e.path[0] : e.target;
-  while (el && 'A' !== el.nodeName) el = el.parentNode;
-  if (!el || 'A' !== el.nodeName) return;
-
-  // Ignore if tag has
-  // 1. "download" attribute
-  // 2. rel="external" attribute
-  if (el.hasAttribute('download') || el.getAttribute('rel') === 'external') return;
-
-  // ensure non-hash for the same path
-  let link = el.getAttribute('href');
-
-  // Check for mailto: in the href
-  if (link && link.indexOf('mailto:') > -1) return;
-
-  // check target
-  if (el.target) return;
-
-  // x-origin
-  if (!sameOrigin(el.href)) return;
-
-  // rebuild path
-  let path = el.pathname + el.search;
-
-  // strip leading "/[drive letter]:" on NW.js on Windows
-  if (typeof process !== 'undefined' && path.match(/^\/[a-zA-Z]:\//)) {
-    path = path.replace(/^\/[a-zA-Z]:\//, '/');
-  }
-
-  // same luyou
-  let orig = path;
-
-  if (path.indexOf(base) === 0) path = path.substr(base.length);
-
-  if (base && orig === path) return;
-
-  e.preventDefault();
-  luyou.show(orig);
-}
-
-/**
- * Event button.
- */
-
-function which(e = window.event) {
-  return null === e.which ? e.button : e.which;
-}
-
-/**
- * Check if `href` is the same origin.
- */
-
-function sameOrigin(href) {
-  let origin = `${location.protocol}//${location.hostname}`;
-  if (location.port) origin += `:${location.port}`;
-  return (href && (0 === href.indexOf(origin)));
-}
-
-luyou.sameOrigin = sameOrigin;
