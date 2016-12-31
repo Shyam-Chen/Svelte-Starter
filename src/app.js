@@ -3,16 +3,19 @@ import './styles/global.css';
 import { load } from './scripts';
 import firebaseConfig from './assets/datas/firebase.config.json';
 
-/**
- * @name Initialization
- */
-// TODO: npm i material-design-icons -S
+import luyou from './scripts/luyou';
+
+import { home } from './pages/home';
+import { about } from './pages/about';
+import { contact } from './pages/contact';
+import { error } from './pages/error';
+
 Promise.all([
     load('https://fonts.googleapis.com/icon?family=Material+Icons')
   ])
-  .then((data) => {
+  .then((result) => {
     const style = document.createElement('style');
-    style.innerHTML = data[0];
+    style.innerHTML = result[0];
     document.head.appendChild(style);
   });
 
@@ -43,14 +46,6 @@ firebase.initializeApp(firebaseConfig);
       };
     });
 }*/
-
-import luyou from './scripts/luyou';
-
-import { home } from './pages/home';
-import { about } from './pages/about';
-import { contact } from './pages/contact';
-import { error } from './pages/error';
-
 
 home();
 about();

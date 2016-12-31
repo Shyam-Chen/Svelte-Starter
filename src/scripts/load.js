@@ -3,7 +3,7 @@
  *
  * @example
  * load('...')
- *   .then((data) => {
+ *   .then((result) => {
  *     // ...
  *   });
  */

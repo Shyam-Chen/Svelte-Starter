@@ -34,14 +34,16 @@ export function createEpicMiddleware(epic, { adapter = defaultAdapter } = defaul
         ::map(epic => {
           const output$ = epic(action$, store);
           if (!output$) {
-            throw new TypeError(`Your root Epic "${epic.name || '<anonymous>'}" does not return a stream. Double check you\'re not missing a return statement!`);
+            throw new TypeError(
+              `Your root Epic "${epic.name || '<anonymous>'}" does not return a
+              stream. Double check you\'re not missing a return statement!
+            `);
           }
           return output$;
         })
         ::switchMap(output$ => adapter.output(output$))
         .subscribe(store.dispatch);
 
-      // Setup initial root epic
       epic$.next(epic);
 
       return action => {
@@ -52,12 +54,8 @@ export function createEpicMiddleware(epic, { adapter = defaultAdapter } = defaul
     };
   };
 
-  epicMiddleware.replaceEpic = epic => {
-    // gives the previous root Epic a last chance
-    // to do some clean up
+  epicMiddleware.replaceEpic = (epic) => {
     store.dispatch({ type: EPIC_END });
-    // switches to the new root Epic, synchronously terminating
-    // the previous one
     epic$.next(epic);
   };
 

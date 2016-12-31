@@ -34,7 +34,10 @@ const action = (name) => {
  * <div id="example-1"></div>
  * <div id="example-2"></div>
  */
+
 export const fileUpload = (name, text = 'Choose a file') => {
-  document.querySelector(`#${name}`).innerHTML = compiled({ name, text });
+  document.querySelector(`#${name}`)
+    .innerHTML = compiled({ name, text });
+
   action(name);
 };
