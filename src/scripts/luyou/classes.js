@@ -1,13 +1,12 @@
 import pathtoRegexp from 'path-to-regexp';
-import { decodeURLEncodedURIComponent } from './functions';
 
-let base = '';
+import { base } from './luyou';
+import { decodeURLEncodedURIComponent } from './functions';
 
 export class Context {
   constructor(path, state) {
     if ('/' === path[0] && 0 !== path.indexOf(base)) path = base + path;
     let i = path.indexOf('?');
-
 
     this.canonicalPath = path;
     this.path = path.replace(base, '') || '/';

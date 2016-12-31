@@ -3,8 +3,9 @@ import { onpopstate } from './popstate';
 import { Context, Route } from './classes';
 import { unhandled, onclick } from './functions';
 
+export let base = '';
+
 let dispatch = true;
-let base = '';
 let running;
 let prevContext;
 let callbacks = [];
@@ -66,11 +67,11 @@ luyou.back = (path, state) => {
     history.back();
     routelen--;
   } else if (path) {
-    setTimeout(function() {
+    setTimeout(() => {
       luyou.show(path, state);
     });
   }else{
-    setTimeout(function() {
+    setTimeout(() => {
       luyou.show(base, state);
     });
   }

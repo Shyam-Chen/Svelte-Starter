@@ -12,6 +12,7 @@ export const onpopstate = (() => {
       }, 0);
     });
   }
+
   return function onpopstate(e) {
     if (!loaded) return;
     if (e.state) {

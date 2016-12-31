@@ -1,8 +1,5 @@
 import luyou from './luyou';
 
-let decodeURLComponents = true;
-let base = '';
-
 export function unhandled(ctx) {
   if (ctx.handled) return;
   let current = location.pathname + location.search;
@@ -13,8 +10,7 @@ export function unhandled(ctx) {
 }
 
 export function decodeURLEncodedURIComponent(val) {
-  if (typeof val !== 'string') { return val; }
-  return decodeURLComponents ? decodeURIComponent(val.replace(/\+/g, ' ')) : val;
+  return decodeURIComponent(val.replace(/\+/g, ' '));
 }
 
 export function onclick(e) {
@@ -44,8 +40,8 @@ export function onclick(e) {
 
   let orig = path;
 
-  if (path.indexOf(base) === 0) path = path.substr(base.length);
-  if (base && orig === path) return;
+  // if (path.indexOf(base) === 0) path = path.substr(base.length);
+  // if (base && orig === path) return;
 
   e.preventDefault();
   luyou.show(orig);
