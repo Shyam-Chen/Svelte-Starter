@@ -1,8 +1,9 @@
 import { Subject } from 'rxjs/Subject';
 import { map } from 'rxjs/operator/map';
 import { switchMap } from 'rxjs/operator/switchMap';
-import { ActionsObservable } from './ActionsObservable';
-import { EPIC_END } from './EPIC_END';
+
+import { ActionsObservable } from './actions-observable';
+import { EPIC_END } from './constants';
 
 const defaultAdapter = {
   input: action$ => action$,

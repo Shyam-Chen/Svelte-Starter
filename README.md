@@ -105,7 +105,7 @@ $ yarn run reinstall
 * ---------- 3 ----------
 * `scripts` - js, functions, states ...
 * `styles` - css, variables, custom css ...
-* `templates` - html, child templates ... (not yet - `posthtml`)
+* `templates` - html, child templates ... (not yet)
 * ---------- 4 ----------
 * `assets` - datas, images, fonts, videos, audios, files ...
 
@@ -113,12 +113,6 @@ $ yarn run reinstall
 * ---------- 1 ----------
 * Service Workers and Web App Manifest - Progressive web application
 * `async/await` - Babel runtime
-* ---------- 2 ----------
-* `rollup-plugin-posthtml`
-* ---------- 3 ----------
-* Migrate from `material-design-lite` to `@material/*` - Modular components
-* Import the Firebase features separately - Modular components
-* `chart.js` - Import the Chart features separately [#2466](https://github.com/chartjs/Chart.js/issues/2466#issuecomment-265682059)
 
 ## Next Steps
 * [Mobile-Starter-Kit][mobile] - Build cross platform mobile applications with web technologies.

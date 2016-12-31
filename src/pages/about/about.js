@@ -3,8 +3,9 @@ import { template } from 'lodash-es';
 import { filter } from 'rxjs/operator/filter';
 import { map } from 'rxjs/operator/map';
 import { combineReducers, createStore, applyMiddleware } from 'redux';
-import { createEpicMiddleware, combineEpics } from '../../scripts/redux-observable';
+import { createEpicMiddleware, combineEpics } from '../../scripts/effects';
 import luyou from '../../scripts/luyou';
+
 // Components
 import { layout } from '../../components/layout';
 
