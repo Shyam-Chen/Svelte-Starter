@@ -4,7 +4,7 @@
     "TITLE": "This seed repository provides the following features:",
     "ITEM": [
       "Utility functions with Lodash.",
-      "Reactive extensions with ReactiveX.",
+      "Reactive functions with ReactiveX.",
       "State container with Redux.",
       "User interface components with Material.",
       "Backend cloud services with Firebase.",
@@ -25,7 +25,7 @@
       "Text editor with Atom.",
       "Version control with Git.",
       "Fast and deterministic builds with Yarn.",
-      "Containers with Docker.",
+      "Software container with Docker.",
       "Continuous integration with Travis."
     ]
   }

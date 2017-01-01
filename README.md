@@ -12,7 +12,7 @@
 This seed repository provides the following features:
 * ---------- **Primary Key** ----------
 * [x] Utility functions with **Lodash**.
-* [x] Reactive extensions with **ReactiveX**.
+* [x] Reactive functions with **ReactiveX**.
 * [x] State container with **Redux**.
 * [x] User interface components with **Material**.
 * [x] Backend cloud services with **Firebase**.
@@ -36,7 +36,7 @@ This seed repository provides the following features:
 * [x] Text editor with **Atom**.
 * [x] Version control with **Git**.
 * [x] Fast and deterministic builds with **Yarn**.
-* [x] Containers with **Docker**.
+* [x] Software container with **Docker**.
 * [x] Continuous integration with **Travis**.
 
 ## Getting Started

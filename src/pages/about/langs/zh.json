@@ -4,7 +4,7 @@
     "TITLE": "此種子存儲庫提供以下特點：",
     "ITEM": [
       "實用的函式使用 Lodash",
-      "反應式的擴展使用 ReactiveX",
+      "反應式的函式使用 ReactiveX",
       "狀態容器使用 Redux",
       "使用者介面元件使用 Material",
       "後端雲端服務使用 Firebase",
@@ -25,7 +25,7 @@
       "文字編輯器使用 Atom",
       "版本控制使用 Git",
       "快速且確定性的建置使用 Yarn",
-      "容器使用 Docker",
+      "軟體容器使用 Docker",
       "持續整合使用 Travis"
     ]
   }
