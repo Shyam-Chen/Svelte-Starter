@@ -110,7 +110,6 @@ $ yarn run reinstall
 * `assets` - datas, images, fonts, videos, audios, files ...
 
 ## TODO List
-* ---------- 1 ----------
 * Service Workers and Web App Manifest - Progressive web application
 * `async/await` - Babel runtime
 
