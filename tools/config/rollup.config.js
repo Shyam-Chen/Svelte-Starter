@@ -19,16 +19,7 @@ import replace from 'rollup-plugin-replace';
 import uglify from 'rollup-plugin-uglify';
 
 import { SOURCE_ROOT } from '../constants';
-
-class ReactiveX {
-  resolveId(id) {
-    if (id.startsWith('rxjs/')) {
-      return `node_modules/@reactivex/rxjs/dist/es6/${id.replace('rxjs/', '')}.js`;
-    }
-  }
-}
-
-const reactivex = () => new ReactiveX();
+import { reactivex } from '../utils';
 
 const plugins = () => {
   const htmlplugin = () => {

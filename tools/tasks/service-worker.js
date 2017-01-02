@@ -124,7 +124,7 @@ function writeServiceWorkerFile(rootDir, handleFetch, callback) {
   swprecache.write(path.join(rootDir, 'service-worker.js'), config, callback);
 }
 
-gulp.task('build', function(callback) {
+gulp.task('build-service-worker', function(callback) {
   runsequence('copy-dev-to-dist', 'generate-service-worker-dist', callback);
 });
 
