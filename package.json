@@ -104,6 +104,7 @@
     "run-sequence": "^1.2.2",
     "stylelint-config-standard": "^15.0.1",
     "sw-precache": "^4.2.3",
+    "sw-toolbox": "^3.4.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "webdriver-manager": "^11.1.0"
