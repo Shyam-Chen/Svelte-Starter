@@ -108,14 +108,3 @@ $ yarn run reinstall
 * `templates` - html, child templates ... (not yet)
 * ---------- 4 ----------
 * `assets` - datas, images, fonts, videos, audios, files ...
-
-## TODO List
-* Service Workers and Web App Manifest - Progressive web application
-* `async/await` - Babel runtime
-
-## Next Steps
-* [Mobile-Starter-Kit][mobile] - Build cross platform mobile applications with web technologies.
-* [Desktop-Starter-Kit][desktop] - Build cross platform desktop applications with web technologies.
-
-[mobile]: https://github.com/Shyam-Chen/Mobile-Starter-Kit
-[desktop]: https://github.com/Shyam-Chen/Desktop-Starter-Kit
