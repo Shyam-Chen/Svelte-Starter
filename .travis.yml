@@ -8,24 +8,29 @@ matrix:
       services: docker
       node_js: stable
       install: true
+      cache: docker
     - env: MODE=lint
       os: linux
       sudo: false
       node_js: stable
+      cache: yarn
     - env: MODE=unit
       os: linux
       sudo: false
       node_js: stable
+      cache: yarn
       # addons:
       #   firefox: latest
     - env: MODE=e2e
       os: linux
       sudo: false
       node_js: stable
+      cache: yarn
       # addons:
       #   firefox: "45.0"
 
 before_install:
+  # - if [[ "$MODE" == "docker" ]]; then gunzip -c cache.tar.gz | docker load; fi
   - if [[ "$MODE" == "docker" ]]; then docker-compose up -d; fi
   # - if [[ "$MODE" == "unit" ]] || [[ "$MODE" == "e2e" ]]; then export DISPLAY=:99.0; fi
 
