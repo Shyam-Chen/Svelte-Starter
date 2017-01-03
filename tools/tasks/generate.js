@@ -6,7 +6,7 @@ import swprecache from 'sw-precache';
 import pkg from '../../package.json';
 import { DIST_ROOT } from '../constants';
 
-const writeServiceWorkerFile = (rootDir, handleFetch = false, done) => {
+const writeServiceWorkerFile = (rootDir, handleFetch, done) => {
   const config = {
     cacheId: pkg.name,
     /*

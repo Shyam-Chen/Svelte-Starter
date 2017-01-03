@@ -1,4 +1,4 @@
-const rollupConfig = require('./rollup.config');
+const { TEST_CONFIG } = require('./rollup.config');
 
 module.exports = (config) => {
   config.set({
@@ -13,7 +13,7 @@ module.exports = (config) => {
     preprocessors: {
       'src/**/*.spec.js': ['rollup']
     },
-    rollupPreprocessor: rollupConfig.TEST_CONFIG,
+    rollupPreprocessor: TEST_CONFIG,
     reporters: ['mocha'],
     port: 9876,
     colors: true,
