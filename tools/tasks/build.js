@@ -1,3 +1,3 @@
 import gulp from 'gulp';
 
-gulp.task('build', ['copy', 'index', 'app', 'vendor', 'polyfills']);
+gulp.task('build', ['copy', 'generate-service-worker-dev', 'index', 'app', 'vendor', 'polyfills']);

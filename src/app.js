@@ -10,7 +10,7 @@ import firebaseConfig from './assets/datas/firebase.config.json';
 
 firebase.initializeApp(firebaseConfig);
 
-/*if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator) {
   navigator.serviceWorker
     .register('service-worker.js')
     .then((registration) => {
@@ -22,9 +22,9 @@ firebase.initializeApp(firebaseConfig);
             switch (installingWorker.state) {
               case 'installed':
                 if (navigator.serviceWorker.controller) {
-                  console.log('New or updated content is available.');
+                  // New or updated content is available.
                 } else {
-                  console.log('Content is now available offline!');
+                  // Content is now available offline!
                 }
                 break;
               case 'redundant':
@@ -34,7 +34,7 @@ firebase.initializeApp(firebaseConfig);
         }
       };
     });
-}*/
+}
 
 home();
 about();
