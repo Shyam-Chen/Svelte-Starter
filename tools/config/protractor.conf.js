@@ -1,6 +1,6 @@
 const phantomjs = require('phantomjs-prebuilt');
-const babel = require('babel-core/register');
-const SpecReporter = require('jasmine-spec-reporter');
+const babel = require('babel-register');
+const { SpecReporter } = require('jasmine-spec-reporter');
 
 const config = {
   // directConnect: true,
@@ -22,7 +22,7 @@ const config = {
   baseUrl: 'http://localhost:9876/',
   onPrepare() {
     babel({ presets: ['latest'] });
-    jasmine.getEnv().addReporter(new SpecReporter({ displayStacktrace: true }));
+    jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
     global.webdriver = browser.driver;
     webdriver.ignoreSynchronization = true;
     webdriver.manage().window().setSize(1280, 1024);
