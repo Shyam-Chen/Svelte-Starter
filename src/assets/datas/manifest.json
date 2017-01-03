@@ -1,8 +1,12 @@
 {
   "name": "Web Starter Kit",
-  "short_name": "WSK",
+  "short_name": "Web SK",
   "icons": [
-    { }
+    {
+      "src": "",
+      "sizes": "",
+      "type": "image/png"
+    }
   ],
   "start_url": "/",
   "display": "standalone"

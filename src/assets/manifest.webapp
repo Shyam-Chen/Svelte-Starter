@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "name": "Web Starter Kit",
+  "launch_path": "/",
+  "description": "",
+  "icons": {
+  },
+  "developer": {
+    "name": "",
+    "url": ""
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en",
+  "permissions": {
+  },
+  "locales": {
+    "en": {
+      "name": "Vanilla",
+      "description": "A boilerplate for Lodash, ReactiveX, Redux, Material, Firebase, and Chart."
+    },
+    "zh": {
+      "name": "香草",
+      "description": "Lodash、ReactiveX、Redux、Material、Firebase 和 Chart 的底板"
+    }
+  }
+}
