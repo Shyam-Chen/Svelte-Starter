@@ -1,10 +1,10 @@
 import pathtoRegexp from 'path-to-regexp';
 
-import { base } from './luyou';
 import { decodeURLEncodedURIComponent } from './functions';
 
 export class Context {
   constructor(path, state) {
+    let base = '';
     if ('/' === path[0] && 0 !== path.indexOf(base)) path = base + path;
     let i = path.indexOf('?');
 

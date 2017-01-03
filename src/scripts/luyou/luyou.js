@@ -3,8 +3,7 @@ import { onpopstate } from './popstate';
 import { Context, Route } from './classes';
 import { unhandled, onclick } from './functions';
 
-export let base = '';
-
+let base = '';
 let dispatch = true;
 let running;
 let prevContext;
