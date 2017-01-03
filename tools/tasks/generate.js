@@ -1,12 +1,12 @@
 import { join } from 'path';
 import gulp from 'gulp';
-import { log } from 'gulp-util';
+import { log, env } from 'gulp-util';
 import swprecache from 'sw-precache';
 
 import pkg from '../../package.json';
 import { DIST_ROOT } from '../constants';
 
-const writeServiceWorkerFile = (rootDir, handleFetch, done) => {
+const writeServiceWorkerFile = (rootDir, handleFetch = false, done) => {
   const config = {
     cacheId: pkg.name,
     /*
@@ -62,4 +62,8 @@ gulp.task('generate-service-worker-dev', (done) => {
 
 gulp.task('generate-service-worker-prod', (done) => {
   writeServiceWorkerFile(DIST_ROOT, true, done);
+});
+
+gulp.task('generate', (done) => {
+  writeServiceWorkerFile(DIST_ROOT, (env.mode === 'prod' ? true : false), done);
 });
