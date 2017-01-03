@@ -45,8 +45,10 @@ const writeServiceWorkerFile = (rootDir, handleFetch = false, done) => {
       // `${rootDir}/images/**.*`,
       // `${rootDir}/js/**.js`
 
-      `${rootDir}/*.js`,
-      `${rootDir}/*.{html,json}`
+      // `${rootDir}/*.js`,
+      // `${rootDir}/*.{html,json}`
+
+      `${rootDir}/*`
     ],
     stripPrefix: `${rootDir}/`,
     // verbose defaults to false, but for the purposes of this demo, log more.
@@ -55,14 +57,6 @@ const writeServiceWorkerFile = (rootDir, handleFetch = false, done) => {
 
   swprecache.write(join(rootDir, 'service-worker.js'), config, done);
 };
-
-gulp.task('generate-service-worker-dev', (done) => {
-  writeServiceWorkerFile(DIST_ROOT, false, done);
-});
-
-gulp.task('generate-service-worker-prod', (done) => {
-  writeServiceWorkerFile(DIST_ROOT, true, done);
-});
 
 gulp.task('generate', (done) => {
   writeServiceWorkerFile(DIST_ROOT, (env.mode === 'prod' ? true : false), done);
