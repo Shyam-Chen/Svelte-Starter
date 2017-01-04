@@ -4,7 +4,6 @@ import { filter } from 'rxjs/operator/filter';
 import { map } from 'rxjs/operator/map';
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import { combineEpics, createEpicMiddleware } from 'rollducks';
-import luyou from '../../scripts/luyou';
 
 // Components
 import { layout } from '../../components/layout';
@@ -100,6 +99,6 @@ export const ABOUT_ZH = () => {
 };
 
 export const about = () => {
-  luyou('/en/about', ABOUT_EN);
-  luyou('/zh/about', ABOUT_ZH);
+  page('/en/about', ABOUT_EN);
+  page('/zh/about', ABOUT_ZH);
 };
