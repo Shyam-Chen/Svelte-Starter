@@ -9,7 +9,7 @@ import firebaseConfig from './assets/datas/firebase.config.json';
 
 firebase.initializeApp(firebaseConfig);
 
-if ('serviceWorker' in navigator) {
+/*if ('serviceWorker' in navigator) {
   navigator.serviceWorker
     .register('service-worker.js')
     .then((registration) => {
@@ -33,7 +33,7 @@ if ('serviceWorker' in navigator) {
         }
       };
     });
-}
+}*/
 
 home();
 about();
