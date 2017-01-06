@@ -2,7 +2,7 @@
   "HOME": "Home",
   "VANILLA": {
     "TITLE": "Welcome to Vanilla",
-    "CONTENT": "A boilerplate for Lodash, ReactiveX, Redux, Material, Firebase, and Chart.",
+    "CONTENT": "A boilerplate for Lodash, RxJS, Redux, Material, Firebase, and Chart.js.",
     "BUTTON": "Get Started"
   }
 }

@@ -1,6 +1,6 @@
 # Web Starter Kit (Beta)
 
-> A boilerplate for Lodash, ReactiveX, Redux, Material, Firebase, and Chart.
+> A boilerplate for Lodash, RxJS, Redux, Material, Firebase, and Chart.js.
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit)
  //
@@ -11,33 +11,33 @@
 
 This seed repository provides the following features:
 * ---------- **Primary Key** ----------
-* [x] Utility functions with **Lodash**.
-* [x] Reactive functions with **ReactiveX**.
-* [x] State container with **Redux**.
-* [x] User interface components with **Material**.
-* [x] Backend cloud services with **Firebase**.
-* [x] Data visualization with **Chart**.
+* [x] Utility functions with [**Lodash**](https://lodash.com/).
+* [x] Reactive functions with [**RxJS**](http://reactivex.io/rxjs/).
+* [x] State container with [**Redux**](http://redux.js.org/).
+* [x] User interface components with [**Material**](https://material.io/).
+* [x] Backend cloud services with [**Firebase**](https://firebase.google.com/).
+* [x] Data visualization with [**Chart.js**](http://www.chartjs.org/).
 * ---------- **Dev Tools** ----------
-* [x] Build system with **Gulp**.
-* [x] Module bundler with **Rollup**.
-* [ ] HTML transformations with **PostHTML**.
-* [x] Future CSS features with **PostCSS**.
-* [x] Next generation JavaScript with **Babel**.
-* [x] Development server with **BrowserSync**.
+* [x] Build system with [**Gulp**](https://github.com/gulpjs/gulp).
+* [x] Module bundler with [**Rollup**](https://github.com/rollup/rollup).
+* [ ] HTML transformations with [**PostHTML**](https://github.com/posthtml/posthtml).
+* [x] Future CSS features with [**PostCSS**](https://github.com/postcss/postcss).
+* [x] Next generation JavaScript with [**Babel**](https://github.com/babel/babel).
+* [x] Development server with [**BrowserSync**](https://github.com/BrowserSync/browser-sync).
 * ---------- **Test Tools** ----------
-* [x] HTML static code analyzer with **HTMLHint**.
-* [x] CSS static code analyzer with **StyleLint**.
-* [x] JavaScript static code analyzer with **ESLint**.
-* [x] Testing framework with **Jasmine**.
-* [x] Unit tests with **Karma**.
-* [x] End-to-end tests with **Protractor**.
+* [x] HTML static code analyzer with [**HTMLHint**](https://github.com/yaniswang/HTMLHint).
+* [x] CSS static code analyzer with [**StyleLint**](https://github.com/stylelint/stylelint).
+* [x] JavaScript static code analyzer with [**ESLint**](https://github.com/eslint/eslint).
+* [x] Testing framework with [**Jasmine**](https://github.com/jasmine/jasmine).
+* [x] Unit tests with [**Karma**](https://github.com/karma-runner/karma).
+* [x] End-to-end tests with [**Protractor**](https://github.com/angular/protractor).
 * ---------- **Environment** ----------
-* [x] Operating system with **Linux**.
-* [x] Text editor with **Atom**.
-* [x] Version control with **Git**.
-* [x] Fast and deterministic builds with **Yarn**.
-* [x] Software container with **Docker**.
-* [x] Continuous integration with **Travis**.
+* [x] Operating system with [**Linux**](https://github.com/torvalds/linux).
+* [x] Text editor with [**Atom**](https://github.com/atom/atom).
+* [x] Version control with [**Git**](https://github.com/git/git).
+* [x] Fast and deterministic builds with [**Yarn**](https://github.com/yarnpkg/yarn).
+* [x] Software container with [**Docker**](https://github.com/docker/docker).
+* [x] Continuous integration with [**Travis**](https://github.com/travis-ci/travis-ci).
 
 ## Getting Started
 

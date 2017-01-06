@@ -2,7 +2,7 @@
   "HOME": "首頁",
   "VANILLA": {
     "TITLE": "歡迎來到香草",
-    "CONTENT": "Lodash、ReactiveX、Redux、Material、Firebase 和 Chart 的底板",
+    "CONTENT": "Lodash、RxJS、Redux、Material、Firebase 和 Chart.js 的底板",
     "BUTTON": "立馬開始"
   }
 }
