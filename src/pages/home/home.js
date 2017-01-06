@@ -17,43 +17,53 @@ import style from './home.css';
 import LANGS_EN from './langs/en.json';
 import LANGS_ZH from './langs/zh.json';
 
-const simpleCounter = () => {
+const counter = () => {
   const INCREMENT = 'INCREMENT';
+  const DECREMENT = 'DECREMENT';
+  const RESET = 'RESET';
   const INCREMENT_IF_ODD = 'INCREMENT_IF_ODD';
 
-  const increment = () => ({ type: INCREMENT });
-  const incrementIfOdd = () => ({ type: INCREMENT_IF_ODD });
-
-  const counter = (state = 0, action) => {
+  const counterReducer = (state = 0, action) => {
     switch (action.type) {
       case INCREMENT:
         return state + 1;
-
+      case DECREMENT:
+        return state - 1;
+      case RESET:
+        return 0;
       default:
         return state;
     }
   };
 
-  const rootReducer = combineReducers({ counter });
+  const rootReducer = combineReducers({ counterReducer });
+
+  const increment = () => ({ type: INCREMENT });
+  const decrement = () => ({ type: DECREMENT });
+  const reset = () => ({ type: RESET });
+  const incrementIfOdd = () => ({ type: INCREMENT_IF_ODD });
 
   const incrementIfOddEpic = (action$, store) =>
     action$.ofType(INCREMENT_IF_ODD)
-      ::filter(() => store.getState().counter % 2 === 1)
+      ::filter(() => store.getState().counterReducer % 2 === 1)
       ::map(increment);
 
   const rootEpic = combineEpics(incrementIfOddEpic);
   const epicMiddleware = createEpicMiddleware(rootEpic);
+  
   const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
 
   const render = () => {
-    const { counter } = store.getState();
-    document.querySelector('#value').innerHTML = counter;
+    const { counterReducer } = store.getState();
+    document.querySelector('#value').innerHTML = counterReducer;
   };
 
   store.subscribe(render);
   render();
 
   document.querySelector('#increment').onclick = () => store.dispatch(increment());
+  document.querySelector('#decrement').onclick = () => store.dispatch(decrement());
+  document.querySelector('#reset').onclick = () => store.dispatch(reset());
   document.querySelector('#incrementIfOdd').onclick = () => store.dispatch(incrementIfOdd());
 };
 
@@ -67,7 +77,7 @@ export const HOME_EN = () => {
   })(LANGS_EN);
 
   layout('en', 'home', content);
-  simpleCounter();
+  counter();
   componentHandler.upgradeAllRegistered();
 };
 
@@ -83,7 +93,7 @@ export const HOME_ZH = () => {
   })(LANGS_ZH);
 
   layout('zh', 'home', content);
-  simpleCounter();
+  counter();
   componentHandler.upgradeAllRegistered();
 };
 
