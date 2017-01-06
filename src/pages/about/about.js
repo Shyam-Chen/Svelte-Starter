@@ -1,9 +1,5 @@
 // Third party
 import { template } from 'lodash-es';
-import { filter } from 'rxjs/operator/filter';
-import { map } from 'rxjs/operator/map';
-import { combineReducers, createStore, applyMiddleware } from 'redux';
-import { combineEpics, createEpicMiddleware } from 'rollducks';
 
 // Components
 import { layout } from '../../components/layout';
@@ -16,85 +12,43 @@ import LANGS_ZH from './langs/zh.json';
 
 const imports = { 'imports': { style } };
 
-const chart = () => {
+const scoreChart = () => {
   new Chart('pagespeed-insights', {
     type: 'bar',
     data: {
-      labels: ["Mobile", "Desktop"],
+      labels: ["Score"],
       datasets: [
         {
-          label: 'Score',
-          data: [89, 95],
-          backgroundColor: [
-            'rgba(111, 99, 255, .2)',
-            'rgba(111, 99, 255, .2)'
-          ],
-          borderColor: [
-            'rgba(111, 99, 255, 1)',
-            'rgba(111, 99, 255, 1)'
-          ],
+          label: 'Mobile',
+          data: [89],
+          backgroundColor: ['rgba(111, 99, 255, .2)'],
+          borderColor: ['rgba(111, 99, 255, 1)'],
+          borderWidth: 1
+        }, {
+          label: 'Desktop',
+          data: [95],
+          backgroundColor: ['rgba(245, 99, 255, .2)'],
+          borderColor: ['rgba(245, 99, 255, 1)'],
           borderWidth: 1
         }
       ]
     },
     options: {
       title: { display: true, text: 'PageSpeed Insights' },
-      scales: { yAxes: [{ ticks: { beginAtZero:true } }] }
+      scales: { yAxes: [{ ticks: { beginAtZero: true } }] }
     }
   });
 };
 
-const counterGo = () => {
-  const INCREMENT = 'INCREMENT';
-  const INCREMENT_IF_ODD = 'INCREMENT_IF_ODD';
-
-  const increment = () => ({ type: INCREMENT });
-  const incrementIfOdd = () => ({ type: INCREMENT_IF_ODD });
-
-  const counter = (state = 0, action) => {
-    switch (action.type) {
-      case INCREMENT:
-        return state + 1;
-
-      default:
-        return state;
-    }
-  };
-
-  const rootReducer = combineReducers({ counter });
-
-  const incrementIfOddEpic = (action$, store) =>
-    action$.ofType(INCREMENT_IF_ODD)
-      ::filter(() => store.getState().counter % 2 === 1)
-      ::map(increment);
-
-  const rootEpic = combineEpics(incrementIfOddEpic);
-  const epicMiddleware = createEpicMiddleware(rootEpic);
-  const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
-
-  const render = () => {
-    const { counter } = store.getState();
-    document.querySelector('#value').innerHTML = counter;
-  };
-
-  store.subscribe(render);
-  render();
-
-  document.querySelector('#increment').onclick = () => store.dispatch(increment());
-  document.querySelector('#incrementIfOdd').onclick = () => store.dispatch(incrementIfOdd());
-};
-
 export const ABOUT_EN = () => {
   layout('en', 'about', template(tpl, imports)(LANGS_EN));
-  chart();
-  counterGo();
+  scoreChart();
   componentHandler.upgradeAllRegistered();
 };
 
 export const ABOUT_ZH = () => {
   layout('zh', 'about', template(tpl, imports)(LANGS_ZH));
-  chart();
-  counterGo();
+  scoreChart();
   componentHandler.upgradeAllRegistered();
 };
 

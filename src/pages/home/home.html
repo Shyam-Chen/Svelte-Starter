@@ -27,3 +27,30 @@
 <div class="mdl-grid mdl-grid--center">
   <%= TODAY %>
 </div>
+
+<div class="mdl-grid mdl-grid--center">
+  <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+    <thead>
+      <tr>
+        <th>Current Count</th>
+        <th>Increment</th>
+        <th>Increment if odd</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span id="value">0</span></td>
+        <td>
+          <button id="increment" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored">
+            <i class="material-icons">add</i> Add
+          </button>
+        </td>
+        <td>
+          <button id="incrementIfOdd" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored">
+            <i class="material-icons">add</i> Add
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
