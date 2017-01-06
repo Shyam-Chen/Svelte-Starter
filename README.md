@@ -37,7 +37,7 @@ This seed repository provides the following features:
 * [x] Version control with [**Git**](https://github.com/git/git).
 * [x] Fast and deterministic builds with [**Yarn**](https://github.com/yarnpkg/yarn).
 * [x] Software container with [**Docker**](https://github.com/docker/docker).
-* [x] Continuous integration with [**Travis**](https://github.com/travis-ci/travis-ci).
+* [x] Continuous integration with [**Travis CI**](https://github.com/travis-ci/travis-ci).
 
 ## Getting Started
 
@@ -104,12 +104,14 @@ $ yarn run deploy
 ```
 
 ## Folder Name
+* ---------- 0 ----------
+* `src` - `index.html`, `app.js`, `vendor.js`, `polyfills.js` ...
 * ---------- 1 ----------
 * `pages` - pages, child pages ...
 * ---------- 2 ----------
 * `components` - shared components, reusable components ...
 * ---------- 3 ----------
-* `scripts` - js, functions, states ...
+* `scripts` - js, functions, action-types, configure-store, reducers, actions, epics ...
 * `styles` - css, variables, custom css ...
 * `templates` - html, child templates ... (not yet)
 * ---------- 4 ----------

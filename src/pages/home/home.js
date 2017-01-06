@@ -22,6 +22,7 @@ const counter = () => {
   const DECREMENT = 'DECREMENT';
   const RESET = 'RESET';
   const INCREMENT_IF_ODD = 'INCREMENT_IF_ODD';
+  const DECREMENT_IF_EVEN = 'DECREMENT_IF_EVEN';
 
   const counterReducer = (state = 0, action) => {
     switch (action.type) {
@@ -42,15 +43,21 @@ const counter = () => {
   const decrement = () => ({ type: DECREMENT });
   const reset = () => ({ type: RESET });
   const incrementIfOdd = () => ({ type: INCREMENT_IF_ODD });
+  const decrementIfEven = () => ({ type: DECREMENT_IF_EVEN });
 
   const incrementIfOddEpic = (action$, store) =>
     action$.ofType(INCREMENT_IF_ODD)
       ::filter(() => store.getState().counterReducer % 2 === 1)
       ::map(increment);
 
-  const rootEpic = combineEpics(incrementIfOddEpic);
+  const decrementIfEvenEpic = (action$, store) =>
+    action$.ofType(DECREMENT_IF_EVEN)
+      ::filter(() => store.getState().counterReducer % 2 === 0)
+      ::map(decrement);
+
+  const rootEpic = combineEpics(incrementIfOddEpic, decrementIfEvenEpic);
   const epicMiddleware = createEpicMiddleware(rootEpic);
-  
+
   const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
 
   const render = () => {
@@ -65,6 +72,7 @@ const counter = () => {
   document.querySelector('#decrement').onclick = () => store.dispatch(decrement());
   document.querySelector('#reset').onclick = () => store.dispatch(reset());
   document.querySelector('#incrementIfOdd').onclick = () => store.dispatch(incrementIfOdd());
+  document.querySelector('#decrementIfEven').onclick = () => store.dispatch(decrementIfEven());
 };
 
 export const HOME_EN = () => {
