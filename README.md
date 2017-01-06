@@ -92,9 +92,15 @@ $ yarn run test-watch
 $ yarn run prod
 $ yarn run e2e
 
+$ yarn run lint
+
+$ yarn run webdriver
+
 $ yarn run clean
 $ yarn run reset
 $ yarn run reinstall
+
+$ yarn run deploy
 ```
 
 ## Folder Name

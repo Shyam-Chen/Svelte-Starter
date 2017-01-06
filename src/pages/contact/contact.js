@@ -5,7 +5,8 @@
  *   [ ] Storage
  *   [ ] Cloud Messaging
  */
- // Third party
+
+// Third party
 import { template } from 'lodash-es';
 
 // Components
