@@ -36,7 +36,7 @@
     ]
   },
   "dependencies": {
-    "@reactivex/rxjs": "5.0.3",
+    "@reactivex/rxjs": "5.0.2",
     "chart.js": "2.4.0",
     "core-js": "2.4.1",
     "dialog-polyfill": "0.4.5",
@@ -48,7 +48,7 @@
     "page": "1.7.1",
     "redux": "3.6.0",
     "rollducks": "1.0.5",
-    "rxjs": "5.0.3"
+    "rxjs": "5.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
