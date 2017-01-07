@@ -8,7 +8,7 @@
     "protractor": true
   },
   "globals": {
-    "page": true, 
+    "page": true,
     "componentHandler": true,
     "firebase": true,
     "Chart": true,
@@ -21,6 +21,7 @@
   },
   "rules": {
     // Possible Errors
+    "no-console": "off",
 
     // Best Practices
 
