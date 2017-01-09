@@ -86,6 +86,7 @@ export const APP_CONFIG = Object.assign({}, TEST_CONFIG, {
 
 export const VENDOR_CONFIG = {
   entry: join(SOURCE_ROOT, 'vendor.js'),
+  format: 'es',
   context: 'window',
   plugins: [
     postcss({ plugins: [cssnano()] }),
