@@ -103,16 +103,36 @@ $ yarn run reinstall
 $ yarn run deploy
 ```
 
-## Folder Name
-* ---------- 0 ----------
-* `src` - `index.html`, `app.js`, `vendor.js`, `polyfills.js` ...
-* ---------- 1 ----------
-* `pages` - pages, child pages ...
-* ---------- 2 ----------
-* `components` - shared components, reusable components ...
-* ---------- 3 ----------
-* `scripts` - js, functions, action-types, configure-store, reducers, actions, epics ...
-* `styles` - css, variables, custom css ...
-* `templates` - html, child templates ... (not yet)
-* ---------- 4 ----------
-* `assets` - datas, images, fonts, videos, audios, files ...
+## Directory Structure
+
+```
+.
+├── scripts
+│   └── build|deploy|install|test|window.sh
+├── src
+│   ├── assets
+│   │   └── datas, images, fonts, videos, audios, files ...
+│   ├── components
+│   │   └── shared components, reusable components ...
+│   ├── pages
+│   │   └── pages, child pages ...
+│   ├── scripts
+│   │   └── js, functions, action-types, configure-store, reducers, actions, epics ...
+│   ├── styles
+│   │   └── css, variables, custom css ...
+│   ├── templates
+│   │   └── html, child templates ... (not yet)
+│   ├── app.js
+│   ├── index.html
+│   └── polyfills|vendor.js
+├── tools
+│   ├── config
+│   │   └── karma.conf|protractor.conf|rollup.config.js
+│   ├── tasks
+│   │   └── more tasks ...
+│   ├── utils
+│   │   └── e2e-server|handle-errors|index|resolve-reactivex|service-worker.js
+│   └── constants.js
+├── gulpfile.babel.js
+└── package.json
+```
