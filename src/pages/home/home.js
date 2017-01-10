@@ -3,7 +3,7 @@ import { template } from 'lodash-es';
 import { filter } from 'rxjs/operator/filter';
 import { map } from 'rxjs/operator/map';
 import { combineReducers, createStore, applyMiddleware } from 'redux';
-import { combineEpics, createEpicMiddleware } from 'rollducks';
+import { combineEpics, createEpicMiddleware } from 'roll-redux-observable';
 
 // Components
 import { layout } from '../../components/layout';
