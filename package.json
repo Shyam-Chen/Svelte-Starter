@@ -39,6 +39,7 @@
     "@reactivex/rxjs": "5.0.2",
     "chart.js": "2.4.0",
     "core-js": "2.4.1",
+    "d3": "^4.4.1",
     "dialog-polyfill": "0.4.5",
     "firebase": "3.6.3",
     "intl": "1.2.5",
