@@ -136,3 +136,8 @@ $ yarn run deploy
 ├── gulpfile.babel.js
 └── package.json
 ```
+
+## Release It
+* [ ] Service Worker
+* [ ] Web App Manifest
+* [ ] Integration with PostHTML
