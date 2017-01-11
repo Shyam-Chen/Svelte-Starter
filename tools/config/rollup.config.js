@@ -62,12 +62,7 @@ const plugins = () => {
     globals(),
     builtins(),
     resolve({ jsnext: true, browser: true }),
-    commonjs({
-      include: 'node_modules/**',
-      namedExports: {
-        'node_modules/redux-observable/lib/index.js': ['createEpicMiddleware', 'combineEpics']
-      }
-    }),
+    commonjs({ include: 'node_modules/**' }),
     (env.mode === 'prod' ? uglify() : noop())
   ];
 };

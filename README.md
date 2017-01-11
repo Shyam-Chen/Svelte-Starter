@@ -137,7 +137,12 @@ $ yarn run deploy
 └── package.json
 ```
 
-## Release It
-* [ ] Service Worker
-* [ ] Web App Manifest
-* [ ] Integration with PostHTML
+## TODO List
+* ---------- 1 ----------
+* Service Worker
+* Web App Manifest
+* PostHTML support ... then release
+* ---------- 2 ----------
+* `async/await` support
+* Code refactoring
+* more ...
