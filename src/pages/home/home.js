@@ -19,7 +19,7 @@ import LANGS_ZH from './langs/zh.json';
 
 const counter = () => {
 
-  // Action types
+  // Types
   const INCREMENT = 'INCREMENT';
   const DECREMENT = 'DECREMENT';
   const RESET = 'RESET';
@@ -61,7 +61,7 @@ const counter = () => {
   const rootEpic = combineEpics(incrementIfOddEpic, decrementIfEvenEpic);
   const epicMiddleware = createEpicMiddleware(rootEpic);
 
-  // Configure store
+  // Store
   const rootReducer = combineReducers({ counterReducer });
   const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
 
