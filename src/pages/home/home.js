@@ -18,12 +18,15 @@ import LANGS_EN from './langs/en.json';
 import LANGS_ZH from './langs/zh.json';
 
 const counter = () => {
+
+  // Action types
   const INCREMENT = 'INCREMENT';
   const DECREMENT = 'DECREMENT';
   const RESET = 'RESET';
   const INCREMENT_IF_ODD = 'INCREMENT_IF_ODD';
   const DECREMENT_IF_EVEN = 'DECREMENT_IF_EVEN';
 
+  // Reducers
   const counterReducer = (state = 0, action) => {
     switch (action.type) {
       case INCREMENT:
@@ -37,14 +40,14 @@ const counter = () => {
     }
   };
 
-  const rootReducer = combineReducers({ counterReducer });
-
+  // Actions
   const increment = () => ({ type: INCREMENT });
   const decrement = () => ({ type: DECREMENT });
   const reset = () => ({ type: RESET });
   const incrementIfOdd = () => ({ type: INCREMENT_IF_ODD });
   const decrementIfEven = () => ({ type: DECREMENT_IF_EVEN });
 
+  // Epics
   const incrementIfOddEpic = (action$, store) =>
     action$.ofType(INCREMENT_IF_ODD)
       ::filter(() => store.getState().counterReducer % 2 === 1)
@@ -58,6 +61,8 @@ const counter = () => {
   const rootEpic = combineEpics(incrementIfOddEpic, decrementIfEvenEpic);
   const epicMiddleware = createEpicMiddleware(rootEpic);
 
+  // Configure store
+  const rootReducer = combineReducers({ counterReducer });
   const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
 
   const render = () => {
