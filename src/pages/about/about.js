@@ -1,5 +1,6 @@
 // Third party
 import { template } from 'lodash-es';
+import luyou from 'luyou';
 
 // Components
 import { layout } from '../../components/layout';
@@ -53,6 +54,6 @@ export const ABOUT_ZH = () => {
 };
 
 export const about = () => {
-  page('/en/about', ABOUT_EN);
-  page('/zh/about', ABOUT_ZH);
+  luyou('/en/about', ABOUT_EN);
+  luyou('/zh/about', ABOUT_ZH);
 };
