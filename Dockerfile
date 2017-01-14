@@ -25,7 +25,8 @@ RUN curl -sL https://deb.nodesource.com/setup_$NODE.x | bash - && \
 # RUN chmod a+x scripts/window.sh
 # ENTRYPOINT ["/Web-Starter-Kit/scripts/window.sh"]
 
-RUN yarn
+# RUN yarn
+RUN npm install
 
 EXPOSE 3000 9876
 

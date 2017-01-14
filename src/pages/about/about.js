@@ -56,4 +56,13 @@ export const ABOUT_ZH = () => {
 export const about = () => {
   luyou('/en/about', ABOUT_EN);
   luyou('/zh/about', ABOUT_ZH);
+
+  luyou('/en/about/1', ABOUT_EN);
+  luyou('/zh/about/1', ABOUT_ZH);
+  luyou('/en/about/2', ABOUT_EN);
+  luyou('/zh/about/2', ABOUT_ZH);
+  luyou('/en/about/3', ABOUT_EN);
+  luyou('/zh/about/3', ABOUT_ZH);
+  luyou('/en/about/4', ABOUT_EN);
+  luyou('/zh/about/4', ABOUT_ZH);
 };
