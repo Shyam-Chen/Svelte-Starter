@@ -12,11 +12,11 @@
 This seed repository provides the following features:
 * ---------- **Primary Key** ----------
 * [x] Utility functions with [**Lodash**](https://lodash.com/).
-* [x] Reactive functions with [**RxJS**](http://reactivex.io/rxjs/).
+* [x] Reactive functions with [**Reactivex**](http://reactivex.io/rxjs/).
 * [x] State container with [**Redux**](http://redux.js.org/).
+* [x] Data visualization with [**D3**](https://d3js.org/).
 * [x] User interface components with [**Material**](https://material.io/).
 * [x] Backend cloud services with [**Firebase**](https://firebase.google.com/).
-* [x] Data visualization with [**Chart.js**](http://www.chartjs.org/).
 * ---------- **Dev Tools** ----------
 * [x] Build system with [**Gulp**](https://github.com/gulpjs/gulp).
 * [x] Module bundler with [**Rollup**](https://github.com/rollup/rollup).
@@ -37,7 +37,17 @@ This seed repository provides the following features:
 * [x] Version control with [**Git**](https://github.com/git/git).
 * [x] Fast and deterministic builds with [**Yarn**](https://github.com/yarnpkg/yarn).
 * [x] Software container with [**Docker**](https://github.com/docker/docker).
-* [x] Continuous integration with [**Travis CI**](https://github.com/travis-ci/travis-ci).
+* [x] Continuous integration with [**Travis**](https://github.com/travis-ci/travis-ci).
+
+The default prepared third-party tool libraries:
+* `lodash` - `import { defaults, partition } from 'lodash-es';`
+* `rxjs`
+  * `import { Observable } from 'rxjs/Observable';`
+  * `import { timer } from 'rxjs/observable/timer';`
+  * `import { mapTo } from 'rxjs/operator/mapTo';`
+* `redux` - `import { combineReducers, createStore, applyMiddleware } from 'redux';`
+* `redux-observable` - `import { combineEpics, createEpicMiddleware } from 'roll-redux-observable';`
+* `d3` - `import { scaleLinear } from 'd3-scale';`
 
 ## Getting Started
 

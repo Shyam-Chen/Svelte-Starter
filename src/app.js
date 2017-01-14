@@ -40,3 +40,15 @@ about();
 contact();
 error();
 page();
+
+// import { scaleLinear } from 'd3-scale';
+// console.log(scaleLinear);
+
+// import { event, select, selectAll } from 'd3-selection';
+// console.log(event, select, selectAll);
+
+// import { geoAlbersUsa, geoPath, geoGraticule } from 'd3-geo';
+// console.log(geoAlbersUsa, geoPath, geoGraticule);
+
+// import { queue } from 'd3-queue';
+// console.log(queue);
