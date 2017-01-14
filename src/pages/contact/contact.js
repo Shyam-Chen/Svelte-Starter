@@ -8,7 +8,6 @@
 
 // Third party
 import { template } from 'lodash-es';
-import luyou from 'luyou';
 
 // Components
 import { layout } from '../../components/layout';
@@ -78,6 +77,6 @@ export const CONTACT_ZH = () => {
 };
 
 export const contact = () => {
-  luyou('/en/contact', CONTACT_EN);
-  luyou('/zh/contact', CONTACT_ZH);
+  page('/en/contact', CONTACT_EN);
+  page('/zh/contact', CONTACT_ZH);
 };

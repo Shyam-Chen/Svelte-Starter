@@ -22,19 +22,16 @@ matrix:
       sudo: false
       node_js: stable
       cache: yarn
-      install: true
     - env: MODE=lint
       os: linux
       sudo: false
       node_js: stable
       cache: yarn
-      install: true
     - env: MODE=unit
       os: linux
       sudo: false
       node_js: stable
       cache: yarn
-      install: true
       # addons:
       #   firefox: latest
     - env: MODE=e2e
@@ -42,7 +39,6 @@ matrix:
       sudo: false
       node_js: stable
       cache: yarn
-      install: true
       # addons:
       #   firefox: "45.0"
 
@@ -50,10 +46,6 @@ before_install:
   # - if [[ "$MODE" == "docker" ]]; then gunzip -c cache.tar.gz | docker load; fi
   - if [[ "$MODE" == "docker" ]]; then docker-compose up -d; fi
   # - if [[ "$MODE" == "unit" ]] || [[ "$MODE" == "e2e" ]]; then export DISPLAY=:99.0; fi
-  - if [[ "$MODE" == "prod" ]]; then npm install ; fi
-  - if [[ "$MODE" == "lint" ]]; then npm install ; fi
-  - if [[ "$MODE" == "unit" ]]; then npm install ; fi
-  - if [[ "$MODE" == "e2e" ]]; then npm install ; fi
 
 before_script:
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run webdriver; fi

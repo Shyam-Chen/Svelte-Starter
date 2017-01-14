@@ -1,6 +1,5 @@
 // Third party
 import { template } from 'lodash-es';
-import luyou from 'luyou';
 import { filter } from 'rxjs/operator/filter';
 import { map } from 'rxjs/operator/map';
 import { combineReducers, createStore, applyMiddleware } from 'redux';
@@ -114,12 +113,12 @@ export const HOME_ZH = () => {
 export const home = () => {
   switch (true) {
     case /zh/.test(navigator.language):
-      luyou('/', '/zh');
+      page('/', '/zh');
       break;
     default:
-      luyou('/', '/en');
+      page('/', '/en');
   }
 
-  luyou('/en', HOME_EN);
-  luyou('/zh', HOME_ZH);
+  page('/en', HOME_EN);
+  page('/zh', HOME_ZH);
 };
