@@ -159,6 +159,5 @@ $ yarn run deploy
 * ---------- 2 ----------
 * `async/await` support
 * Migrate from `material-design-lite` to `material-components-web`
-* Migrate from `chart.js` to `d3`
 * Code refactoring
 * more ...

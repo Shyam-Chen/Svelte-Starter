@@ -5,7 +5,6 @@ import 'firebase/firebase-auth';
 import 'firebase/firebase-database';
 import 'firebase/firebase-storage';
 import 'firebase/firebase-messaging';
-import 'chart.js/dist/Chart';
 
 import { load } from './scripts';
 
