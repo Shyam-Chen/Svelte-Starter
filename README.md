@@ -1,6 +1,6 @@
 # Web Starter Kit (Beta)
 
-> A boilerplate for Lodash, RxJS, Redux, Material, Firebase, and Chart.js.
+> A boilerplate for Lodash, ReactiveX, Redux, D3, Material, and Firebase.
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit)
  //
@@ -12,7 +12,7 @@
 This seed repository provides the following features:
 * ---------- **Primary Key** ----------
 * [x] Utility functions with [**Lodash**](https://lodash.com/).
-* [x] Reactive functions with [**Reactivex**](http://reactivex.io/rxjs/).
+* [x] Reactive extensions with [**ReactiveX**](http://reactivex.io/).
 * [x] State container with [**Redux**](http://redux.js.org/).
 * [x] Data visualization with [**D3**](https://d3js.org/).
 * [x] User interface components with [**Material**](https://material.io/).
@@ -40,14 +40,18 @@ This seed repository provides the following features:
 * [x] Continuous integration with [**Travis**](https://github.com/travis-ci/travis-ci).
 
 The default prepared third-party tool libraries:
-* `lodash` - `import { defaults, partition } from 'lodash-es';`
+* `lodash`
+  * `import { defaults, partition } from 'lodash-es';`
 * `rxjs`
   * `import { Observable } from 'rxjs/Observable';`
   * `import { timer } from 'rxjs/observable/timer';`
   * `import { mapTo } from 'rxjs/operator/mapTo';`
-* `redux` - `import { combineReducers, createStore, applyMiddleware } from 'redux';`
-* `redux-observable` - `import { combineEpics, createEpicMiddleware } from 'roll-redux-observable';`
-* `d3` - `import { scaleLinear } from 'd3-scale';`
+* `redux`
+  * `import { combineReducers, createStore, applyMiddleware } from 'redux';`
+* `redux-observable`
+  * `import { combineEpics, createEpicMiddleware } from 'roll-redux-observable';`
+* `d3`
+  * `import { scaleLinear } from 'd3-scale';`
 
 ## Getting Started
 
