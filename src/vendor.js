@@ -6,7 +6,7 @@ import 'firebase/firebase-database';
 import 'firebase/firebase-storage';
 import 'firebase/firebase-messaging';
 
-import { load } from './scripts';
+import { load } from './scripts/functions';
 
 Promise.all([
     load('https://fonts.googleapis.com/icon?family=Material+Icons')

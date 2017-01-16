@@ -39,20 +39,6 @@ This seed repository provides the following features:
 * [x] Software container with [**Docker**](https://github.com/docker/docker).
 * [x] Continuous integration with [**Travis**](https://github.com/travis-ci/travis-ci).
 
-The default prepared third-party tool libraries:
-* `lodash`
-  * `import { defaults, partition } from 'lodash-es';`
-* `rxjs`
-  * `import { Observable } from 'rxjs/Observable';`
-  * `import { timer } from 'rxjs/observable/timer';`
-  * `import { mapTo } from 'rxjs/operator/mapTo';`
-* `redux`
-  * `import { combineReducers, createStore, applyMiddleware } from 'redux';`
-* `redux-observable`
-  * `import { combineEpics, createEpicMiddleware } from 'roll-redux-observable';`
-* `d3`
-  * `import { scaleLinear } from 'd3-scale';`
-
 ## Getting Started
 
 1) Clone this Boilerplate
@@ -155,9 +141,10 @@ $ yarn run deploy
 * ---------- 1 ----------
 * Service Worker
 * Web App Manifest
-* PostHTML support ... then release
+* PostHTML support
+* ~ then release
 * ---------- 2 ----------
 * `async/await` support
 * Migrate from `material-design-lite` to `material-components-web`
 * Code refactoring
-* more ...
+* ...
