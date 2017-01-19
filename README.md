@@ -139,12 +139,12 @@ $ yarn run deploy
 
 ## TODO List
 * ---------- 1 ----------
-* Service Worker
-* Web App Manifest
-* PostHTML support
+* [WIP] Service Worker
+* [WIP] Web App Manifest
+* [WIP] PostHTML support
 * ~ then release
 * ---------- 2 ----------
 * `async/await` support
 * Migrate from `material-design-lite` to `material-components-web`
 * Code refactoring
-* ...
+* ~ and more
