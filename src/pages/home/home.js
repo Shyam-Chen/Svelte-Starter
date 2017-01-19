@@ -1,4 +1,5 @@
 // Third party
+import luyou from 'luyou';
 import { template } from 'lodash-es';
 import { filter } from 'rxjs/operator/filter';
 import { map } from 'rxjs/operator/map';
@@ -113,12 +114,12 @@ export const HOME_ZH = () => {
 export const home = () => {
   switch (true) {
     case /zh/.test(navigator.language):
-      page('/', '/zh');
+      luyou('/', '/zh');
       break;
     default:
-      page('/', '/en');
+      luyou('/', '/en');
   }
 
-  page('/en', HOME_EN);
-  page('/zh', HOME_ZH);
+  luyou('/en', HOME_EN);
+  luyou('/zh', HOME_ZH);
 };

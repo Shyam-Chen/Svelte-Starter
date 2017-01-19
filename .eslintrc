@@ -8,7 +8,6 @@
     "protractor": true
   },
   "globals": {
-    "page": true,
     "componentHandler": true,
     "firebase": true,
     "Chart": true,

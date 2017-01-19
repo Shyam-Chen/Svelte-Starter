@@ -1,4 +1,5 @@
 // Third party
+import luyou from 'luyou';
 import { template } from 'lodash-es';
 
 // Components
@@ -23,15 +24,15 @@ export const ABOUT_ZH = () => {
 };
 
 export const about = () => {
-  page('/en/about', ABOUT_EN);
-  page('/zh/about', ABOUT_ZH);
+  luyou('/en/about', ABOUT_EN);
+  luyou('/zh/about', ABOUT_ZH);
 
-  page('/en/about/1', ABOUT_EN);
-  page('/zh/about/1', ABOUT_ZH);
-  page('/en/about/2', ABOUT_EN);
-  page('/zh/about/2', ABOUT_ZH);
-  page('/en/about/3', ABOUT_EN);
-  page('/zh/about/3', ABOUT_ZH);
-  page('/en/about/4', ABOUT_EN);
-  page('/zh/about/4', ABOUT_ZH);
+  luyou('/en/about/1', ABOUT_EN);
+  luyou('/zh/about/1', ABOUT_ZH);
+  luyou('/en/about/2', ABOUT_EN);
+  luyou('/zh/about/2', ABOUT_ZH);
+  luyou('/en/about/3', ABOUT_EN);
+  luyou('/zh/about/3', ABOUT_ZH);
+  luyou('/en/about/4', ABOUT_EN);
+  luyou('/zh/about/4', ABOUT_ZH);
 };

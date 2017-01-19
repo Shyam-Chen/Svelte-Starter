@@ -1,3 +1,4 @@
+import luyou from 'luyou';
 import { template } from 'lodash-es';
 
 import tpl from './error.html';
@@ -12,5 +13,5 @@ const ERROR = () => {
 };
 
 export const error = () => {
-  page('*', ERROR);
+  luyou('*', ERROR);
 };
