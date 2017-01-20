@@ -1,6 +1,6 @@
 # Web Starter Kit (Beta)
 
-> A boilerplate for Lodash, ReactiveX, Redux, D3, Material, and Firebase.
+:icecream: A boilerplate for :star2: HTML5 :star2:, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit)
  //
