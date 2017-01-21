@@ -4,8 +4,8 @@
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit)
  //
-[![Dependency Status](https://david-dm.org/Shyam-Chen/Web-Starter-Kit.svg)](https://david-dm.org/Shyam-Chen/Web-Starter-Kit)
-[![devDependency Status](https://david-dm.org/Shyam-Chen/Web-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Web-Starter-Kit?type=dev)
+[![dependencies Status](https://david-dm.org/Shyam-Chen/Web-Starter-Kit/status.svg)](https://david-dm.org/Shyam-Chen/Web-Starter-Kit)
+[![devDependencies Status](https://david-dm.org/Shyam-Chen/Web-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Web-Starter-Kit?type=dev)
 
 [Live Demo](https://test-1498d.firebaseapp.com/)
 
