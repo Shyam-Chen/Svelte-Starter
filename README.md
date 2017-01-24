@@ -147,4 +147,8 @@ $ yarn run deploy
 * `async/await` support
 * Migrate from `material-design-lite` to `material-components-web`
 * Code refactoring
+* Add more examples
+* Add more tests
+* ---------- 3 ----------
+* Web Components
 * ~ and more

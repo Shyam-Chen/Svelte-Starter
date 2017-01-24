@@ -9,9 +9,7 @@ gulp.task('copy', () => {
   return gulp.src([
       join(ASSETS_ROOT, 'favicon.ico'),
       join(ASSETS_ROOT, 'robots.txt'),
-      join(ASSETS_ROOT, 'manifest.webmanifest'),
-      join(ASSETS_ROOT, 'manifest.webapp'),
-      join(ASSETS_ROOT, 'datas', 'manifest.json')
+      join(ASSETS_ROOT, 'manifest.webmanifest')
     ])
     .pipe(plumber())
     .pipe(gulp.dest(DIST_ROOT))

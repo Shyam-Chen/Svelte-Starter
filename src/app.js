@@ -15,6 +15,8 @@ firebase.initializeApp(firebaseConfig);
   navigator.serviceWorker
     .register('service-worker.js')
     .then((registration) => {
+      console.log('Service Worker Registered.');
+
       registration.onupdatefound = () => {
         if (navigator.serviceWorker.controller) {
           let installingWorker = registration.installing;
