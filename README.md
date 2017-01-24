@@ -139,9 +139,10 @@ $ yarn run deploy
 
 ## TODO List
 * ---------- 1 ----------
-* [WIP] Service Worker
-* [WIP] Web App Manifest
-* [WIP] PostHTML support
+* Service Workers
+* Web App Manifest
+* Add Prerender.IO
+* PostHTML support
 * ~ then release
 * ---------- 2 ----------
 * `async/await` support
