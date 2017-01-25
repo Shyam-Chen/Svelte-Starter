@@ -15,8 +15,6 @@ if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
   navigator.serviceWorker
     .register('service-worker.js')
     .then((registration) => {
-      console.log('Service Worker Registered.');
-
       registration.onupdatefound = () => {
         if (navigator.serviceWorker.controller) {
           let { installing } = registration;
@@ -25,9 +23,9 @@ if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
             switch (installing.state) {
               case 'installed':
                 if (navigator.serviceWorker.controller) {
-                  // New or updated content is available.
+                  console.log('New or updated content is available.');
                 } else {
-                  // Content is now available offline!
+                  console.log('Content is now available offline!');
                 }
                 break;
               case 'redundant':

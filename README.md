@@ -139,9 +139,6 @@ $ yarn run deploy
 
 ## Road Map
 * ---------- 1 ----------
-* Service Workers
-* Web App Manifest
-* Add Prerender.IO
 * PostHTML support
 * ~ then release
 * ---------- 2 ----------
