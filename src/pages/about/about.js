@@ -14,8 +14,9 @@ import LANGS_EN from './langs/en.json';
 import LANGS_ZH from './langs/zh.json';
 
 const ddd = () => {
-  select('#ddd')
-    .text('Hello!')
+  const dddEl = select('#ddd');
+
+  dddEl.text('Hello!')
     .style('text-align', 'center')
     .style('line-height', '10rem')
     .style('font-size', '7rem')

@@ -137,7 +137,7 @@ $ yarn run deploy
 └── package.json
 ```
 
-## TODO List
+## Road Map
 * ---------- 1 ----------
 * Service Workers
 * Web App Manifest
@@ -150,6 +150,7 @@ $ yarn run deploy
 * Code refactoring
 * Add more examples
 * Add more tests
+* ~ and more
 * ---------- 3 ----------
 * Web Components
 * ~ and more
