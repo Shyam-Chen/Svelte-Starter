@@ -19,10 +19,10 @@ if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
 
       registration.onupdatefound = () => {
         if (navigator.serviceWorker.controller) {
-          let installingWorker = registration.installing;
+          let { installing } = registration;
 
-          installingWorker.onstatechange = () => {
-            switch (installingWorker.state) {
+          installing.onstatechange = () => {
+            switch (installing.state) {
               case 'installed':
                 if (navigator.serviceWorker.controller) {
                   // New or updated content is available.
