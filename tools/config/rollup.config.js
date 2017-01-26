@@ -56,13 +56,14 @@ const plugins = () => {
     babel({
       babelrc: false,
       presets: [['latest', { es2015: { modules: false } }]],
-      plugins: ['external-helpers', 'lodash', 'transform-function-bind'],
+      plugins: ['external-helpers', 'transform-function-bind', 'lodash'],
       exclude: 'node_modules/**'
     }),
     globals(),
     builtins(),
     resolve({ jsnext: true, browser: true }),
     commonjs({ include: 'node_modules/**' }),
+    replace({ 'process.env.NODE_ENV': JSON.stringify(env.mode === 'prod' ? 'production' : 'development') }),
     (env.mode === 'prod' ? uglify() : noop())
   ];
 };
