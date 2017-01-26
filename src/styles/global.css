@@ -2,9 +2,11 @@
   & .mdl-grid--center {
     justify-content: center;
   }
+
   & .mdl-cell--center {
     text-align: center;
   }
+
   & .mdl-cell--right {
     text-align: right;
   }

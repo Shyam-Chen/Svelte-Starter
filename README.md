@@ -136,18 +136,3 @@ $ yarn run deploy
 ├── gulpfile.babel.js
 └── package.json
 ```
-
-## Road Map
-* ---------- 1 ----------
-* PostHTML support
-* ~ then release
-* ---------- 2 ----------
-* `async/await` support
-* Migrate from `material-design-lite` to `material-components-web`
-* Code refactoring
-* Add more examples
-* Add more tests
-* ~ and more
-* ---------- 3 ----------
-* Web Components
-* ~ and more
