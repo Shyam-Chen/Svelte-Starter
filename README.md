@@ -15,6 +15,7 @@ This seed repository provides the following features:
 * [x] Reactive extensions with [**ReactiveX**](http://reactivex.io/).
 * [x] State container with [**Redux**](http://redux.js.org/).
 * [x] Data visualization with [**D3**](https://d3js.org/).
+* [x] 3D scenes with [**Three**](https://threejs.org/).
 * [x] User interface components with [**Material**](https://material.io/).
 * [x] Backend cloud services with [**Firebase**](https://firebase.google.com/).
 * ---------- **Dev Tools** ----------
