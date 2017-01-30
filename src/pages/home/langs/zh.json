@@ -1,7 +1,7 @@
 {
   "HOME": "首頁",
   "VANILLA": {
-    "TITLE": "歡迎來到香草",
+    "TITLE": "歡迎來到前端啟動套件",
     "CONTENT": "HTML5、Material、Firebase、Gulp、Rollup、Babel、PostHTML 和 PostCSS 的底板",
     "BUTTON": "立馬開始"
   }
