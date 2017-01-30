@@ -1,6 +1,6 @@
 FROM buildpack-deps:jessie
 
-ENV HOME /Web-Starter-Kit
+ENV HOME /Frontend-Starter-Kit
 ENV NODE 7
 ENV DEBIAN_FRONTEND noninteractive
 ENV PATH $HOME/.yarn/bin:$PATH
@@ -23,7 +23,7 @@ RUN curl -sL https://deb.nodesource.com/setup_$NODE.x | bash - && \
     rm -rf /var/lib/apt/lists/*
 
 # RUN chmod a+x scripts/window.sh
-# ENTRYPOINT ["/Web-Starter-Kit/scripts/window.sh"]
+# ENTRYPOINT ["/Frontend-Starter-Kit/scripts/window.sh"]
 
 RUN yarn
 

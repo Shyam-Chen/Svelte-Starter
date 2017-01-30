@@ -1,5 +1,5 @@
 {
-  "name": "Web-Starter-Kit",
+  "name": "Frontend-Starter-Kit",
   "version": "1.0.0",
   "description": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.",
   "scripts": {
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shyam-Chen/Web-Starter-Kit.git"
+    "url": "git+https://github.com/Shyam-Chen/Frontend-Starter-Kit.git"
   },
   "keywords": [
     "HTML5"
@@ -27,9 +27,9 @@
   "author": "Yen-cheng Chen, 陳彥澄",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Shyam-Chen/Web-Starter-Kit/issues"
+    "url": "https://github.com/Shyam-Chen/Frontend-Starter-Kit/issues"
   },
-  "homepage": "https://github.com/Shyam-Chen/Web-Starter-Kit#readme",
+  "homepage": "https://github.com/Shyam-Chen/Frontend-Starter-Kit#readme",
   "babel": {
     "presets": [
       "latest"
