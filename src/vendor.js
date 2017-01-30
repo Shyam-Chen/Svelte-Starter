@@ -56,6 +56,6 @@ Promise.all([
   ])
   .then((result) => {
     const style = document.createElement('style');
-    style.innerHTML = result[0];
+    style.innerHTML = result;
     document.head.appendChild(style);
   });

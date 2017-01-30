@@ -11,14 +11,14 @@
 
 This seed repository provides the following features:
 * ---------- **Primary Key** ----------
-* [x] Web technologies with [**HTML5**](https://developer.mozilla.org/en-US/docs/Web).
+* [x] Client-side platform with [**HTML5**](https://html5.org/).
 * [x] User interface components with [**Material**](https://material.io/).
 * [x] Backend cloud services with [**Firebase**](https://firebase.google.com/).
 * ---------- **Secondary Key** ----------
 * [x] Utility functions with [**Lodash**](https://lodash.com/).
 * [x] Reactive extensions with [**ReactiveX**](http://reactivex.io/).
 * [x] State container with [**Redux**](http://redux.js.org/).
-* [x] Immutable generic collections with [**Immutable**](http://facebook.github.io/immutable-js/).
+* [x] Immutable collections with [**Immutable**](http://facebook.github.io/immutable-js/).
 * [x] Data visualization with [**D3**](https://d3js.org/).
 * [x] 3D scenes with [**Three**](https://threejs.org/).
 * ---------- **Dev Tools** ----------
