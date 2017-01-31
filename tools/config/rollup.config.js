@@ -62,7 +62,12 @@ const plugins = () => {
     globals(),
     builtins(),
     resolve({ jsnext: true, browser: true }),
-    commonjs({ include: 'node_modules/**' }),
+    commonjs({
+      include: 'node_modules/**',
+      namedExports: {
+        'node_modules/immutable/dist/immutable.js': ['Iterable', 'Seq', 'Collection', 'Map', 'OrderedMap', 'List', 'Stack', 'Set', 'OrderedSet', 'Record', 'Range', 'Repeat', 'is', 'fromJS']
+      }
+    }),
     replace({ 'process.env.NODE_ENV': JSON.stringify(env.mode === 'prod' ? 'production' : 'development') }),
     (env.mode === 'prod' ? uglify() : noop())
   ];
