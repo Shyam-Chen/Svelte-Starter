@@ -42,17 +42,3 @@ about();
 contact();
 error();
 luyou();
-
-// ------------------------------
-
-// import { Scene } from 'three/src/scenes/Scene';
-
-// console.log(Scene);
-
-// ------------------------------
-
-// import { Map } from 'immutable';
-
-// const client = Map({ name: 'Hale', age: 25 });
-
-// console.log(client.get('name'), client.get('age'));

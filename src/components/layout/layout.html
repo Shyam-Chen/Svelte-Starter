@@ -8,15 +8,6 @@
           <a class="mdl-navigation__link" href="<%- item[0] %>"><%- item[1] %></a>
         <% }); %>
       </nav>
-      <button id="language" class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">language</i>
-      </button>
-      <div class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="language">
-        <% var languages = [["en", "English"], ["zh", "中文"]]; %>
-        <% [].forEach.call(languages, function(item) { %>
-          <a href="javascript:void 0" id="<%- item[0] %>" class="mdl-menu__item"><%- item[1] %></a>
-        <% }); %>
-      </div>
     </div>
   </header>
   <div class="mdl-layout__drawer">

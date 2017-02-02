@@ -1,0 +1,8 @@
+{
+  "TITLE": "Frontend SK",
+  "LINK": [
+    ["/", "Home"],
+    ["/about", "About"],
+    ["/contact", "Contact"]
+  ]
+}

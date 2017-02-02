@@ -14,11 +14,10 @@ import { template } from 'lodash-es';
 import { layout } from '../../components/layout';
 import { fileUpload } from '../../components/file-upload';
 
-// Main
+// Contact
 import tpl from './contact.html';
 import style from './contact.css';
-import LANGS_EN from './langs/en.json';
-import LANGS_ZH from './langs/zh.json';
+import data from './contact.json';
 
 const auth = () => {
   const signInButton = document.querySelector('#sign-in-button');
@@ -61,23 +60,12 @@ const auth = () => {
   signInButton.style.display = '';
 };
 
-export const CONTACT_EN = () => {
-  const content = template(tpl, { 'imports': { style } })(LANGS_EN);
-  layout('en', 'contact', content);
-  fileUpload('contact-image');
-  auth();
-	componentHandler.upgradeAllRegistered();
-};
-
-export const CONTACT_ZH = () => {
-  const content = template(tpl, { 'imports': { style } })(LANGS_ZH);
-  layout('zh', 'contact', content);
-  fileUpload('contact-image', '選擇一個檔案');
-  auth();
-  componentHandler.upgradeAllRegistered();
-};
-
 export const contact = () => {
-  luyou('/en/contact', CONTACT_EN);
-  luyou('/zh/contact', CONTACT_ZH);
+  luyou('/contact', () => {
+    const content = template(tpl, { 'imports': { style } })(data);
+    layout('contact', content);
+    fileUpload('contact-image');
+    auth();
+    componentHandler.upgradeAllRegistered();
+  });
 };
