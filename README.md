@@ -84,20 +84,33 @@ $ docker-compose up
 
 ## Using Libraries
 
+1) `lodash-es`
 ```js
 import { partition } from 'lodash-es';
 
 console.log(partition([1, 2, 3, 4], n => n % 2));
+// [ [ 1, 3 ], [ 2, 4 ] ]
 ```
 
+2) `rxjs`
 ```js
 import { Observable } from 'rxjs/Observable';
+
+import { timer } from 'rxjs/observable/timer';
 import { of } from 'rxjs/observable/of';
 
-Observable::of(1, 2, 3)
+import { mapTo } from 'rxjs/operator/mapTo';
+import { combineAll } from 'rxjs/operator/combineAll';
+
+Observable::timer(2000)
+  ::mapTo(Observable::of('Hello', 'World'))
+  ::combineAll()
   .subscribe(result => console.log(result));
+  // ["Hello"]
+  // ["World"]
 ```
 
+3) `rxjs`, `redux`, & `redux-observable`
 ```js
 import { filter } from 'rxjs/operator/filter';
 import { map } from 'rxjs/operator/map';
@@ -173,6 +186,7 @@ store.dispatch(decrement());
 // -1
 ```
 
+4) `immutable`
 ```js
 import { Map } from 'immutable';
 
