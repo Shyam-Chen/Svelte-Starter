@@ -84,7 +84,7 @@ $ docker-compose up
 
 ## Using Libraries
 
-1) `lodash-es`
+1) Example of Lodash
 ```js
 import { partition } from 'lodash-es';
 
@@ -92,7 +92,7 @@ console.log(partition([1, 2, 3, 4], n => n % 2));
 // [ [ 1, 3 ], [ 2, 4 ] ]
 ```
 
-2) `rxjs`
+2) Example of ReactiveX
 ```js
 import { Observable } from 'rxjs/Observable';
 
@@ -110,7 +110,7 @@ Observable::timer(2000)
   // ["World"]
 ```
 
-3) `rxjs`, `redux`, & `redux-observable`
+3) Example of Redux
 ```js
 import { filter } from 'rxjs/operator/filter';
 import { map } from 'rxjs/operator/map';
@@ -186,13 +186,13 @@ store.dispatch(decrement());
 // -1
 ```
 
-4) `immutable` & `rxjs`
+4) Example of Immutable
 ```js
-import { Map } from 'immutable';
-
 import { Observable } from 'rxjs/Observable';
 
 import { from } from 'rxjs/observable/from';
+
+import { Map } from 'immutable';
 
 const map1 = Map({ a: 1, b: 2, c: 3 });
 const map2 = map1.set('b', 4);
