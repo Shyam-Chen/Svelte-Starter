@@ -186,14 +186,22 @@ store.dispatch(decrement());
 // -1
 ```
 
-4) `immutable`
+4) `immutable` & `rxjs`
 ```js
 import { Map } from 'immutable';
 
-const client = Map({ name: 'Hale', age: 25 });
+import { Observable } from 'rxjs/Observable';
 
-console.log(client.get('name'), client.get('age'));
-// Hale 25
+import { from } from 'rxjs/observable/from';
+
+const map1 = Map({ a: 1, b: 2, c: 3 });
+const map2 = map1.set('b', 4);
+
+Observable::from(map2)
+  .subscribe(val => console.log(val));
+  // ["a", 1]
+  // ["b", 4]
+  // ["c", 3]
 ```
 
 ## Other Commands
