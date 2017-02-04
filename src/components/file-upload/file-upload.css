@@ -20,7 +20,7 @@
       vertical-align: -.4rem;
     }
   }
-  
+
   &:focus + label,
   & + label:hover {
     color: var(--primary);
