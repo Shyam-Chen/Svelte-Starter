@@ -15,13 +15,12 @@ import data from './home.json';
 
 export const home = () => {
   luyou('/', () => {
-    const content = template(tpl, {
-      'imports': {
-        style,
-        'image': { 'vanilla': vanilla.src },
-        'TODAY': new Intl.DateTimeFormat('en').format(new Date())
+    const content = template(tpl, { 'imports': {
+      style,
+      'image': {
+        'vanilla': vanilla.src
       }
-    })(data);
+    } })(data);
     layout('home', content);
     componentHandler.upgradeAllRegistered();
   });

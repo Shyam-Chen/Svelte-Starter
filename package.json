@@ -41,7 +41,6 @@
     "dialog-polyfill": "0.4.6",
     "firebase": "3.6.3",
     "immutable": "3.8.1",
-    "intl": "1.2.5",
     "lodash-es": "4.17.4",
     "luyou": "1.0.0",
     "material-components-web": "0.3.0",
