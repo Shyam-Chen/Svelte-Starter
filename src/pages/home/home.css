@@ -1,6 +1,7 @@
 .counter {
   overflow: auto;
   margin: 1rem;
+
   & > table {
     margin: 0 auto;
   }

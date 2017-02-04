@@ -65,7 +65,7 @@ const plugins = () => {
     commonjs({
       include: 'node_modules/**',
       namedExports: {
-        'node_modules/immutable/dist/immutable.js': ['Iterable', 'Seq', 'Collection', 'Map', 'OrderedMap', 'List', 'Stack', 'Set', 'OrderedSet', 'Record', 'Range', 'Repeat', 'is', 'fromJS']
+        'node_modules/immutable/dist/immutable.js': Object.keys(require('immutable'))
       }
     }),
     replace({ 'process.env.NODE_ENV': JSON.stringify(env.mode === 'prod' ? 'production' : 'development') }),
