@@ -85,7 +85,7 @@
     "postcss-cssnext": "2.9.0",
     "postcss-import": "9.1.0",
     "postcss-modules": "0.6.4",
-    "protractor": "5.0.0",
+    "protractor": "5.1.0",
     "require-dir": "0.3.1",
     "rimraf": "2.5.4",
     "rollup-plugin-babel": "2.7.1",
@@ -107,6 +107,6 @@
     "sw-toolbox": "3.4.0",
     "vinyl-buffer": "1.0.0",
     "vinyl-source-stream": "1.1.0",
-    "webdriver-manager": "11.1.1"
+    "webdriver-manager": "12.0.1"
   }
 }
