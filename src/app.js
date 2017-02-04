@@ -42,18 +42,3 @@ about();
 contact();
 error();
 luyou();
-
-import { Observable } from 'rxjs/Observable';
-
-import { from } from 'rxjs/observable/from';
-
-import { Map } from 'immutable';
-
-const map1 = Map({ a: 1, b: 2, c: 3 });
-const map2 = map1.set('b', 4);
-
-Observable::from(map2)
-  .subscribe(val => console.log(val));
-  // ["a", 1]
-  // ["b", 4]
-  // ["c", 3]
