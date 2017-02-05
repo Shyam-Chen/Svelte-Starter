@@ -86,19 +86,21 @@ $ docker-compose up
 
 1) Example of Lodash
 ```js
-import { partition } from 'lodash-es';
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
+import { lowerFirst } from 'lodash-es';
 
-console.log(partition([1, 2, 3, 4], n => n % 2));
-// [ [ 1, 3 ], [ 2, 4 ] ]
+Observable::of(lowerFirst('Hello'), lowerFirst('World'))
+  .subscribe(result => console.log(result));
+  // hello
+  // world
 ```
 
 2) Example of ReactiveX
 ```js
 import { Observable } from 'rxjs/Observable';
-
 import { timer } from 'rxjs/observable/timer';
 import { of } from 'rxjs/observable/of';
-
 import { mapTo } from 'rxjs/operator/mapTo';
 import { combineAll } from 'rxjs/operator/combineAll';
 
@@ -189,9 +191,7 @@ store.dispatch(decrement());
 4) Example of Immutable
 ```js
 import { Observable } from 'rxjs/Observable';
-
 import { from } from 'rxjs/observable/from';
-
 import { Map } from 'immutable';
 
 const map1 = Map({ a: 1, b: 2, c: 3 });
