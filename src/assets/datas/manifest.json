@@ -2,8 +2,8 @@
   "name": "Frontend Starter Kit",
   "short_name": "Frontend SK",
   "start_url": "/",
-  "theme_color": "#1A237E",
-  "background_color": "#1A237E",
+  "theme_color": "#3F51B5",
+  "background_color": "#3F51B5",
   "orientation": "portrait",
   "display": "standalone",
   "icons": [
