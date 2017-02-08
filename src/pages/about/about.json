@@ -10,6 +10,7 @@
       "Reactive extensions with ReactiveX.",
       "State container with Redux.",
       "Immutable collections with Immutable.",
+      "Data visualizations with D3.",
       "Build system with Gulp.",
       "Module bundler with Rollup.",
       "HTML transformations with PostHTML.",

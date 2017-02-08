@@ -38,6 +38,7 @@
   "dependencies": {
     "@reactivex/rxjs": "5.0.2",
     "core-js": "2.4.1",
+    "d3": "4.5.0",
     "dialog-polyfill": "0.4.6",
     "firebase": "3.6.3",
     "immutable": "3.8.1",
