@@ -11,7 +11,7 @@
 
 This seed repository provides the following features:
 * ---------- **Primary Key** ----------
-* [x] Client-side platform with [**HTML5**](https://html5.org/).
+* [x] Client-side platform with [**HTML5**](https://platform.html5.org/).
 * [x] User interface components with [**Material**](https://material.io/).
 * [x] Backend cloud services with [**Firebase**](https://firebase.google.com/).
 * ---------- **Secondary Key** ----------
