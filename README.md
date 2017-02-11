@@ -42,6 +42,17 @@ This seed repository provides the following features:
 * [x] Software container with [**Docker**](https://github.com/docker/docker).
 * [x] Continuous integration with [**Travis**](https://github.com/travis-ci/travis-ci).
 
+***
+
+### Table of Contents
+* [Getting Started](#getting-started)
+* [Dockerization](#dockerization)
+* [Using Libraries](#using-libraries)
+* [All Commands](#all-commands)
+* [Directory Structure](#directory-structure)
+
+***
+
 ## Getting Started
 
 1) Clone this Boilerplate
@@ -66,7 +77,7 @@ $ git remote add upstream https://github.com/Shyam-Chen/Frontend-Starter-Kit.git
 $ git pull upstream master
 ```
 
-## Using Docker
+## Dockerization
 
 1) Build the Image
 ```bash
@@ -120,14 +131,12 @@ import { map } from 'rxjs/operator/map';
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import { combineEpics, createEpicMiddleware } from 'redux-observable-es';
 
-// Types
 const INCREMENT = 'INCREMENT';
 const DECREMENT = 'DECREMENT';
 const RESET = 'RESET';
 const INCREMENT_IF_ODD = 'INCREMENT_IF_ODD';
 const DECREMENT_IF_EVEN = 'DECREMENT_IF_EVEN';
 
-// Reducers
 const counterReducer = (state = 0, action) => {
   switch (action.type) {
     case INCREMENT:
@@ -141,14 +150,12 @@ const counterReducer = (state = 0, action) => {
   }
 };
 
-// Actions
 const increment = () => ({ type: INCREMENT });
 const decrement = () => ({ type: DECREMENT });
 const reset = () => ({ type: RESET });
 const incrementIfOdd = () => ({ type: INCREMENT_IF_ODD });
 const decrementIfEven = () => ({ type: DECREMENT_IF_EVEN });
 
-// Epics
 const incrementIfOddEpic = (action$, store) =>
   action$.ofType(INCREMENT_IF_ODD)
     ::filter(() => store.getState().counterReducer % 2 === 1)
@@ -162,7 +169,6 @@ const decrementIfEvenEpic = (action$, store) =>
 const rootEpic = combineEpics(incrementIfOddEpic, decrementIfEvenEpic);
 const epicMiddleware = createEpicMiddleware(rootEpic);
 
-// Store
 const rootReducer = combineReducers({ counterReducer });
 const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
 
@@ -207,25 +213,30 @@ Observable::from(map2)
 
 5) Example of D3
 ```js
+import { Observable } from 'rxjs/Observable';
+import { fromEvent } from 'rxjs/observable/fromEvent';
 import { select } from 'd3-selection';
 import { transition } from 'd3-transition';
 
-const exEl = select('#ex');
+Observable::fromEvent(document, 'click')
+  .subscribe(() => {
+    const exEl = select('#ex');
 
-exEl.text('Hello World')
-  .style('text-align', 'center')
-  .style('line-height', '10rem')
-  .style('font-size', '7rem')
-  ::transition()
-  .duration(2000)
-  .style('color', '#F44336');
+    exEl.text('Hello!')
+      .style('text-align', 'center')
+      .style('line-height', '10rem')
+      .style('font-size', '7rem')
+      ::transition()
+      .duration(500)
+      .style('color', '#F44336');
+  });
 ```
 
 ```html
 <div id="ex"></div>
 ```
 
-## Other Commands
+## All Commands
 
 ```bash
 $ yarn run dev
