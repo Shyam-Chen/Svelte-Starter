@@ -6,6 +6,6 @@ import { Server } from 'karma';
 gulp.task('unit', (done) => {
   new Server({
     configFile: join(__dirname, '../config', 'karma.conf.js'),
-    singleRun: !env.watch && true
+    singleRun: !(env.watch === 'on')
   }, done).start();
 });

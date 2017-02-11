@@ -1,5 +1,7 @@
 const { TEST_CONFIG } = require('./rollup.config');
 
+const { TEST_PORT } = require('../constants');
+
 module.exports = (config) => {
   config.set({
     basePath: '../..',
@@ -15,7 +17,7 @@ module.exports = (config) => {
     },
     rollupPreprocessor: TEST_CONFIG,
     reporters: ['mocha'],
-    port: 9876,
+    port: TEST_PORT,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,

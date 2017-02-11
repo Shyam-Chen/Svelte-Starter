@@ -47,6 +47,7 @@ This seed repository provides the following features:
 ### Table of Contents
 * [Getting Started](#getting-started)
 * [Dockerization](#dockerization)
+* [Configuration](#configuration)
 * [Using Libraries](#using-libraries)
 * [All Commands](#all-commands)
 * [Directory Structure](#directory-structure)
@@ -94,9 +95,25 @@ $ docker run -it -p 3000:3000 --name app Frontend-Starter-Kit
 $ docker-compose up
 ```
 
+## Configuration
+
+Server configuration
+
+```js
+export const DEV_PORT = 3000;
+export const TEST_PORT = 9876;
+```
+
+Environment configuration
+
+```bash
+$ gulp <TASK_NAME> --mode [dev|prod] --watch [on|off] --serve [on|off]
+```
+
 ## Using Libraries
 
-1) Example of Lodash
+Example of Lodash
+
 ```js
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
@@ -108,7 +125,8 @@ Observable::of(lowerFirst('Hello'), lowerFirst('World'))
   // world
 ```
 
-2) Example of ReactiveX
+Example of ReactiveX
+
 ```js
 import { Observable } from 'rxjs/Observable';
 import { timer } from 'rxjs/observable/timer';
@@ -124,7 +142,8 @@ Observable::timer(2000)
   // ["World"]
 ```
 
-3) Example of Redux
+Example of Redux
+
 ```js
 import { filter } from 'rxjs/operator/filter';
 import { map } from 'rxjs/operator/map';
@@ -195,7 +214,8 @@ store.dispatch(decrement());
 // -1
 ```
 
-4) Example of Immutable
+Example of Immutable
+
 ```js
 import { Observable } from 'rxjs/Observable';
 import { from } from 'rxjs/observable/from';
@@ -211,7 +231,8 @@ Observable::from(map2)
   // ["c", 3]
 ```
 
-5) Example of D3
+Example of D3
+
 ```js
 import { Observable } from 'rxjs/Observable';
 import { fromEvent } from 'rxjs/observable/fromEvent';
