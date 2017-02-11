@@ -42,17 +42,13 @@ This seed repository provides the following features:
 * [x] Software container with [**Docker**](https://github.com/docker/docker).
 * [x] Continuous integration with [**Travis**](https://github.com/travis-ci/travis-ci).
 
-***
-
-### Table of Contents
+## Table of Contents
 * [Getting Started](#getting-started)
 * [Dockerization](#dockerization)
 * [Configuration](#configuration)
 * [Using Libraries](#using-libraries)
 * [All Commands](#all-commands)
 * [Directory Structure](#directory-structure)
-
-***
 
 ## Getting Started
 
