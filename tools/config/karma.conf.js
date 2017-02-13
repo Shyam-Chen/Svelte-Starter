@@ -13,9 +13,10 @@ module.exports = (config) => {
     ],
     exclude: [],
     preprocessors: {
-      'src/**/*.spec.js': ['rollup']
+      'src/**/*.spec.js': ['rollup']  // ['webpack']
     },
     rollupPreprocessor: TEST_CONFIG,
+    // webpack: TEST_CONFIG,
     reporters: ['mocha'],
     port: TEST_PORT,
     colors: true,

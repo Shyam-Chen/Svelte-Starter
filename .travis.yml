@@ -34,6 +34,8 @@ matrix:
       cache: yarn
       # addons:
       #   firefox: latest
+      # ----------
+      install: true
     - env: MODE=e2e
       os: linux
       sudo: false
@@ -41,29 +43,33 @@ matrix:
       cache: yarn
       # addons:
       #   firefox: "45.0"
+      # ----------
+      install: true
 
 before_install:
   # - if [[ "$MODE" == "docker" ]]; then gunzip -c cache.tar.gz | docker load; fi
   - if [[ "$MODE" == "docker" ]]; then docker-compose up -d; fi
   # - if [[ "$MODE" == "unit" ]] || [[ "$MODE" == "e2e" ]]; then export DISPLAY=:99.0; fi
+  # ----------
+  - if [[ "$MODE" == "unit" ]] || [[ "$MODE" == "e2e" ]]; then npm i; fi
 
 before_script:
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run webdriver; fi
   # - if [[ "$MODE" == "unit" ]] || [[ "$MODE" == "e2e" ]]; then sh -e /etc/init.d/xvfb start; fi
   # - if [[ "$MODE" == "unit" ]]; then yarn add karma-firefox-launcher --dev; fi
   # - if [[ "$MODE" == "e2e" ]]; then nohup bash -c "webdriver-manager start 2>&1 &"; fi
-  - if [[ "$MODE" == "e2e" ]]; then yarn run webdriver; fi
+  - if [[ "$MODE" == "e2e" ]]; then npm run webdriver; fi
 
 script:
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run prod; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run lint; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run test; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run e2e; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run prod; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run lint; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run test; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run e2e; fi
   - if [[ "$MODE" == "prod" ]]; then yarn run prod; fi
   - if [[ "$MODE" == "lint" ]]; then yarn run lint; fi
-  - if [[ "$MODE" == "unit" ]]; then yarn run test; fi
-  - if [[ "$MODE" == "e2e" ]]; then yarn run prod && yarn run e2e; fi
+  - if [[ "$MODE" == "unit" ]]; then npm run test; fi
+  - if [[ "$MODE" == "e2e" ]]; then npm run prod && npm run e2e; fi
 
 after_success:
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run prod; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run deploy -- --token ${FIREBASE_TOKEN}; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run prod; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run deploy -- --token ${FIREBASE_TOKEN}; fi

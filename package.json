@@ -1,7 +1,7 @@
 {
   "name": "Frontend-Starter-Kit",
   "version": "1.0.0",
-  "description": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.",
+  "description": "A boilerplate for HTML5, Material, Firebase, Gulp, Webpack, Rollup, Babel, PostHTML, and PostCSS.",
   "scripts": {
     "start": "gulp dev --mode dev",
     "dev": "rimraf public && gulp dev --mode dev",
@@ -73,6 +73,7 @@
     "gulp-sourcemaps": "2.4.1",
     "gulp-stylelint": "3.8.0",
     "gulp-util": "3.0.8",
+    "html-loader": "0.4.4",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "3.2.0",
     "karma": "1.4.1",
@@ -81,14 +82,18 @@
     "karma-mocha-reporter": "2.2.2",
     "karma-phantomjs-launcher": "1.0.2",
     "karma-rollup-plugin": "0.2.4",
+    "karma-webpack": "2.0.2",
     "phantomjs-prebuilt": "2.1.14",
     "postcss-comment": "1.0.3",
     "postcss-cssnext": "2.9.0",
     "postcss-import": "9.1.0",
     "postcss-modules": "0.6.4",
+    "posthtml-loader": "0.11.0",
+    "prerender-spa-plugin": "2.0.1",
     "protractor": "5.1.1",
     "require-dir": "0.3.1",
     "rimraf": "2.5.4",
+    "rollup-loader": "0.1.2",
     "rollup-plugin-babel": "2.7.1",
     "rollup-plugin-commonjs": "7.0.0",
     "rollup-plugin-html": "0.2.1",
@@ -108,6 +113,7 @@
     "sw-toolbox": "3.4.0",
     "vinyl-buffer": "1.0.0",
     "vinyl-source-stream": "1.1.0",
-    "webdriver-manager": "12.0.2"
+    "webdriver-manager": "12.0.2",
+    "webpack-stream": "3.2.0"
   }
 }

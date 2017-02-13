@@ -12,6 +12,7 @@
       "Immutable collections with Immutable.",
       "Data visualizations with D3.",
       "Build system with Gulp.",
+      "Load parts with Webpack.",
       "Module bundler with Rollup.",
       "HTML transformations with PostHTML.",
       "Future CSS features with PostCSS.",
