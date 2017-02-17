@@ -22,7 +22,7 @@ exports.primary = {
         ]
       },
       {
-        test: /\.(css|js)$/,
+        test: /\.(css|js|gif|jpeg|jpg|png|svg|json)$/,
         loader: 'rollup-loader',
         exclude: [/node_modules/],
         options: APP_CONFIG
