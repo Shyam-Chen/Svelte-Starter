@@ -22,7 +22,7 @@ This seed repository provides the following features:
 * [x] Data visualizations with [**D3**](https://d3js.org/).
 * ---------- **Dev Tools** ----------
 * [x] Build system with [**Gulp**](https://github.com/gulpjs/gulp).
-* [ ] Load parts with [**Webpack**](https://github.com/webpack/webpack).
+* [ ] Related bundles with [**Webpack**](https://github.com/webpack/webpack).
 * [x] Module bundler with [**Rollup**](https://github.com/rollup/rollup).
 * [ ] HTML transformations with [**PostHTML**](https://github.com/posthtml/posthtml).
 * [x] Future CSS features with [**PostCSS**](https://github.com/postcss/postcss).
