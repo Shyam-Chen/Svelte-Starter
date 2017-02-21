@@ -24,7 +24,7 @@ This seed repository provides the following features:
 * [x] Build system with [**Gulp**](https://github.com/gulpjs/gulp).
 * [ ] Related bundles with [**Webpack**](https://github.com/webpack/webpack).
 * [x] Module bundler with [**Rollup**](https://github.com/rollup/rollup).
-* [ ] HTML transformations with [**PostHTML**](https://github.com/posthtml/posthtml).
+* [ ] Render web components with [**PostHTML**](https://github.com/posthtml/posthtml).
 * [x] Future CSS features with [**PostCSS**](https://github.com/postcss/postcss).
 * [x] Next generation JavaScript with [**Babel**](https://github.com/babel/babel).
 * [x] Development server with [**BrowserSync**](https://github.com/BrowserSync/browser-sync).
@@ -50,6 +50,7 @@ This seed repository provides the following features:
 * [Using Libraries](#using-libraries)
 * [All Commands](#all-commands)
 * [Directory Structure](#directory-structure)
+* [TODO List](#todo-list)
 
 ## Getting Started
 
@@ -117,7 +118,7 @@ import { of } from 'rxjs/observable/of';
 import { lowerFirst } from 'lodash-es';
 
 Observable::of(lowerFirst('Hello'), lowerFirst('World'))
-  .subscribe(result => console.log(result));
+  .subscribe(value => console.log(value));
   // hello
   // world
 ```
@@ -184,7 +185,6 @@ const decrementIfEvenEpic = (action$, store) =>
 
 const rootEpic = combineEpics(incrementIfOddEpic, decrementIfEvenEpic);
 const epicMiddleware = createEpicMiddleware(rootEpic);
-
 const rootReducer = combineReducers({ counterReducer });
 const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
 
@@ -222,7 +222,7 @@ const map1 = Map({ a: 1, b: 2, c: 3 });
 const map2 = map1.set('b', 4);
 
 Observable::from(map2)
-  .subscribe(val => console.log(val));
+  .subscribe(value => console.log(value));
   // ["a", 1]
   // ["b", 4]
   // ["c", 3]
@@ -310,3 +310,7 @@ $ yarn run deploy
 ├── gulpfile.babel.js
 └── package.json
 ```
+
+## TODO List
+* Web components via PostHTML.
+* SEO-friendly content via Webpack.

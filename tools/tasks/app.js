@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import { env, noop } from 'gulp-util';
 import sourcemaps from 'gulp-sourcemaps';
 import rollup from 'rollup-stream';
-// import webpack from 'webpack-stream';
+// import webpack from 'webpack';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
 import { stream } from 'browser-sync';

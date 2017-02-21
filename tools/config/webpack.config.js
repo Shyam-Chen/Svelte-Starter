@@ -1,4 +1,6 @@
-const Prerender = require('prerender-spa-plugin')
+const { LoaderOptionsPlugin } = require('webpack');
+const PrerenderSpaPlugin = require('prerender-spa-plugin');
+const webComponent = require('posthtml-web-component');
 
 const { SOURCE_ROOT, DIST_ROOT } = require('../constants');
 const { APP_CONFIG } = require('./rollup.config');
@@ -15,7 +17,14 @@ exports.primary = {
   module: {
     rules: [
       {
-        test: /\.(html|css|js|gif|jpeg|jpg|png|svg|json)$/,
+        test: /\.html$/,
+        use: [
+          { loader: 'html-loader', options: { minimize: true } },
+          'posthtml-loader'
+        ]
+      },
+      {
+        test: /\.(css|js|gif|jpeg|jpg|png|svg|json)$/,
         loader: 'rollup-loader',
         exclude: [/node_modules/],
         options: APP_CONFIG
@@ -23,23 +32,15 @@ exports.primary = {
     ]
   },
   plugins: [
-    new Prerender(
-      DIST_ROOT,
-      ['/', '/about', '/contact'],
-      {
-        postProcessHtml(context) {
-          const titles = {
-            '/': 'Frontend-Starter-Kit',
-            '/about': 'Frontend-Starter-Kit - About',
-            '/contact': 'Frontend-Starter-Kit - Contact'
-          };
-
-          return context.html.replace(
-            /<title>[^<]*<\/title>/i,
-            `<title>${titles[context.route]}</title>`
-          );
-        }
+    new LoaderOptionsPlugin({
+      posthtml() {
+        return {
+          plugins: [webComponent()]
+        };
       }
+    }),
+    new PrerenderSpaPlugin(DIST_ROOT,
+      ['/', '/about', '/contact']
     )
   ]
 };
