@@ -24,7 +24,7 @@ RUN curl -sL https://deb.nodesource.com/setup_$NODE.x | bash - && \
     rm -rf /var/lib/apt/lists/*
 
 # RUN chmod a+x scripts/window.sh
-# ENTRYPOINT ["/Frontend-Starter-Kit/scripts/window.sh"]
+# ENTRYPOINT ["/Frontend-Starter-Kit/tools/scripts/window.sh"]
 
 # RUN yarn
 RUN npm i

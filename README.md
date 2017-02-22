@@ -281,27 +281,39 @@ $ yarn run deploy
 
 ```
 .
-├── scripts
-│   └── build|deploy|install|test|window.sh
+
 ├── src
+│   ├── actions
+│   │   └── index.js
 │   ├── assets
-│   │   └── datas, images, fonts, videos, audios, files ...
+│   │   └── images, datas, fonts, videos, audios, files ...
 │   ├── components
 │   │   └── shared components, reusable components ...
+│   ├── containers
+│   │   └── index.js
+│   ├── epics
+│   │   └── index.js
+│   ├── functions
+│   │   └── index.js
 │   ├── pages
 │   │   └── pages, child pages ...
-│   ├── scripts
-│   │   └── js, functions, action-types, configure-store, reducers, actions, epics ...
-│   ├── styles
-│   │   └── css, variables, custom css ...
+│   ├── reducers
+│   │   └── index.js
 │   ├── app.js
+│   ├── global.css
 │   ├── index.html
-│   └── polyfills|vendor.js
+│   ├── polyfills.js
+│   ├── root.css
+│   ├── store.js
+│   ├── types.js
+│   └── vendor.js
 ├── tools
 │   ├── config
-│   │   └── karma.conf|protractor.conf|rollup.config.js
+│   │   └── karma.conf|protractor.conf|rollup.config|webpack.config.js
+│   ├── scripts
+│   │   └── build|deploy|install|test|window.sh
 │   ├── tasks
-│   │   └── more tasks ...
+│   │   └── app|build|copy|e2e|generate|index|lint|polyfills|serve|unit|vendor|watch.js
 │   ├── utils
 │   │   └── e2e-server|handle-errors|index|resolve-reactivex|service-worker.js
 │   └── constants.js

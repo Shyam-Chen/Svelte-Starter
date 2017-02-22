@@ -54,7 +54,7 @@ import 'firebase/firebase-auth';
 /**
  * @name Load
  */
-import { load } from './scripts/functions';
+import { load } from './functions';
 
 Promise.all([
     load('https://fonts.googleapis.com/icon?family=Material+Icons')

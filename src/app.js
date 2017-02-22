@@ -1,4 +1,4 @@
-import './styles/global.css';
+import './global.css';
 
 import { home } from './pages/home';
 import { about } from './pages/about';
