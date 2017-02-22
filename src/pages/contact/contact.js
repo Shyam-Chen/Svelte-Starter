@@ -7,7 +7,6 @@
  */
 
 // Third party
-import luyou from 'luyou';
 import { template } from 'lodash-es';
 
 // Components
@@ -61,7 +60,7 @@ const auth = () => {
 };
 
 export const contact = () => {
-  luyou('/contact', () => {
+  page('/contact', () => {
     const content = template(tpl, { 'imports': { style } })(data);
     layout('contact', content);
     fileUpload('contact-image');

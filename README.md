@@ -294,8 +294,6 @@ $ yarn run deploy
 │   │   └── js, functions, action-types, configure-store, reducers, actions, epics ...
 │   ├── styles
 │   │   └── css, variables, custom css ...
-│   ├── templates
-│   │   └── html, child templates ... (not yet)
 │   ├── app.js
 │   ├── index.html
 │   └── polyfills|vendor.js

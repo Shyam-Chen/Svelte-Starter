@@ -1,4 +1,9 @@
 /**
+ * @name Routing
+ */
+import 'page/page';
+
+/**
  * @name Material
  */
 // import '@material/animation/dist/mdc.animation.css';

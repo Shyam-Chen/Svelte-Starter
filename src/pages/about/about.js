@@ -1,5 +1,4 @@
 // Third party
-import luyou from 'luyou';
 import { template } from 'lodash-es';
 
 // Components
@@ -11,7 +10,7 @@ import style from './about.css';
 import data from './about.json';
 
 export const about = () => {
-  luyou('/about', () => {
+  page('/about', () => {
     layout('about', template(tpl, { 'imports': { style } })(data));
     componentHandler.upgradeAllRegistered();
   });

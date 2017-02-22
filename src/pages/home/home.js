@@ -1,5 +1,4 @@
 // Third party
-import luyou from 'luyou';
 import { template } from 'lodash-es';
 
 // Components
@@ -14,7 +13,7 @@ import style from './home.css';
 import data from './home.json';
 
 export const home = () => {
-  luyou('/', () => {
+  page('/', () => {
     const content = template(tpl, { 'imports': {
       style,
       'image': {

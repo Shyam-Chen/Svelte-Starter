@@ -1,5 +1,3 @@
-import luyou from 'luyou';
-
 import './styles/global.css';
 
 import { home } from './pages/home';
@@ -41,4 +39,4 @@ home();
 about();
 contact();
 error();
-luyou();
+page();

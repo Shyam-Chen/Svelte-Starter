@@ -8,6 +8,7 @@
     "protractor": true
   },
   "globals": {
+    "page": true,
     "componentHandler": true,  // @deprecated
     "firebase": true,
     "webdriver": true,
