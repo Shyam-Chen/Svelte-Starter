@@ -48,7 +48,7 @@ const plugins = () => {
   };
 
   return [
-    htmlplugin(),
+    htmlplugin(),  // @deprecated
     cssplugin(),
     image(),
     json(),

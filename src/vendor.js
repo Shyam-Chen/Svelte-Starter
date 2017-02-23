@@ -36,12 +36,8 @@ import 'page/page';
 // import '@material/textfield/dist/mdc.textfield';
 // import '@material/theme/dist/mdc.theme.css';
 // import '@material/typography/dist/mdc.typography.css';
-
-/**
- * @deprecated
- */
-import 'material-design-lite/dist/material.indigo-pink.min.css';
-import 'material-design-lite/material';
+import 'material-design-lite/dist/material.indigo-pink.min.css';  // @deprecated
+import 'material-design-lite/material';  // @deprecated
 
 /**
  * @name Firebase
@@ -59,7 +55,7 @@ import { load } from './functions';
 Promise.all([
     load('https://fonts.googleapis.com/icon?family=Material+Icons')
   ])
-  .then((result) => {
+  .then(result => {
     const style = document.createElement('style');
     style.innerHTML = result;
     document.head.appendChild(style);

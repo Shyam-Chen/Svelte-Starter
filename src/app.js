@@ -12,7 +12,7 @@ firebase.initializeApp(firebaseConfig);
 if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost')) {
   navigator.serviceWorker
     .register('service-worker.js')
-    .then((registration) => {
+    .then(registration => {
       registration.onupdatefound = () => {
         if (navigator.serviceWorker.controller) {
           let { installing } = registration;
