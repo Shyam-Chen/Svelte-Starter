@@ -107,6 +107,18 @@ Environment configuration
 $ gulp <TASK_NAME> --mode [dev|prod] --watch [on|off] --serve [on|off]
 ```
 
+Custom Environments
+
+```js
+import { env } from 'gulp-util';
+
+env.<ENV_NAME> === '<ENV_VALUE>';
+```
+
+```bash
+$ gulp <TASK_NAME> --<ENV_NAME> <ENV_VALUE>
+```
+
 ## Using Libraries
 
 Example of Lodash
