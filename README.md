@@ -24,7 +24,7 @@ This seed repository provides the following features:
 * [x] Build system with [**Gulp**](https://github.com/gulpjs/gulp).
 * [ ] Related bundles with [**Webpack**](https://github.com/webpack/webpack).
 * [x] Module bundler with [**Rollup**](https://github.com/rollup/rollup).
-* [ ] Render web components with [**PostHTML**](https://github.com/posthtml/posthtml).
+* [ ] HTML transformations with [**PostHTML**](https://github.com/posthtml/posthtml).
 * [x] Future CSS features with [**PostCSS**](https://github.com/postcss/postcss).
 * [x] Next generation JavaScript with [**Babel**](https://github.com/babel/babel).
 * [x] Development server with [**BrowserSync**](https://github.com/BrowserSync/browser-sync).
@@ -50,7 +50,6 @@ This seed repository provides the following features:
 * [Using Libraries](#using-libraries)
 * [All Commands](#all-commands)
 * [Directory Structure](#directory-structure)
-* [TODO List](#todo-list)
 
 ## Getting Started
 
@@ -320,7 +319,3 @@ $ yarn run deploy
 ├── gulpfile.babel.js
 └── package.json
 ```
-
-## TODO List
-* Web components via PostHTML.
-* SEO-friendly content via Webpack.

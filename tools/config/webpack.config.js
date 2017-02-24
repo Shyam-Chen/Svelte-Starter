@@ -1,6 +1,8 @@
 const { LoaderOptionsPlugin } = require('webpack');
 const PrerenderSpaPlugin = require('prerender-spa-plugin');
-const webComponent = require('posthtml-web-component');
+const include = require('posthtml-include');
+const extend = require('posthtml-extend');
+const mixins = require('posthtml-mixins');
 
 const { SOURCE_ROOT, DIST_ROOT } = require('../constants');
 const { APP_CONFIG } = require('./rollup.config');
@@ -35,7 +37,7 @@ exports.primary = {
     new LoaderOptionsPlugin({
       posthtml() {
         return {
-          plugins: [webComponent()]
+          plugins: [include(), extend(), mixins()]
         };
       }
     }),

@@ -14,7 +14,7 @@
       "Build system with Gulp.",
       "Related bundles with Webpack.",
       "Module bundler with Rollup.",
-      "Render web components with PostHTML.",
+      "HTML transformations with PostHTML.",
       "Future CSS features with PostCSS.",
       "Next generation JavaScript with Babel.",
       "Development server with BrowserSync.",
