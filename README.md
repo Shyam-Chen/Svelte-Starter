@@ -104,7 +104,7 @@ export const TEST_PORT = 9876;
 Environment configuration
 
 ```bash
-$ gulp <TASK_NAME> --mode [dev|prod] --watch [on|off] --serve [on|off]
+$ npm run gulp -- <TASK_NAME> --mode [dev|prod] --watch [on|off] --serve [on|off]
 ```
 
 Custom Environments
@@ -116,7 +116,7 @@ env.<ENV_NAME> === '<ENV_VALUE>';
 ```
 
 ```bash
-$ gulp <TASK_NAME> --<ENV_NAME> <ENV_VALUE>
+$ npm run gulp -- <TASK_NAME> --<ENV_NAME> <ENV_VALUE>
 ```
 
 ## Using Libraries
@@ -126,12 +126,12 @@ Example of Lodash
 ```js
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import { lowerFirst } from 'lodash-es';
+import { lowerFirst, pad } from 'lodash-es';
 
-Observable::of(lowerFirst('Hello'), lowerFirst('World'))
+Observable::of(lowerFirst('Hello'), pad('World', 5))
   .subscribe(value => console.log(value));
   // hello
-  // world
+  // World
 ```
 
 Example of ReactiveX
@@ -160,41 +160,26 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import { combineEpics, createEpicMiddleware } from 'redux-observable-es';
 
 const INCREMENT = 'INCREMENT';
-const DECREMENT = 'DECREMENT';
-const RESET = 'RESET';
 const INCREMENT_IF_ODD = 'INCREMENT_IF_ODD';
-const DECREMENT_IF_EVEN = 'DECREMENT_IF_EVEN';
 
 const counterReducer = (state = 0, action) => {
   switch (action.type) {
     case INCREMENT:
       return state + 1;
-    case DECREMENT:
-      return state - 1;
-    case RESET:
-      return 0;
     default:
       return state;
   }
 };
 
 const increment = () => ({ type: INCREMENT });
-const decrement = () => ({ type: DECREMENT });
-const reset = () => ({ type: RESET });
 const incrementIfOdd = () => ({ type: INCREMENT_IF_ODD });
-const decrementIfEven = () => ({ type: DECREMENT_IF_EVEN });
 
 const incrementIfOddEpic = (action$, store) =>
   action$.ofType(INCREMENT_IF_ODD)
     ::filter(() => store.getState().counterReducer % 2 === 1)
     ::map(increment);
 
-const decrementIfEvenEpic = (action$, store) =>
-  action$.ofType(DECREMENT_IF_EVEN)
-    ::filter(() => store.getState().counterReducer % 2 === 0)
-    ::map(decrement);
-
-const rootEpic = combineEpics(incrementIfOddEpic, decrementIfEvenEpic);
+const rootEpic = combineEpics(incrementIfOddEpic);
 const epicMiddleware = createEpicMiddleware(rootEpic);
 const rootReducer = combineReducers({ counterReducer });
 const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
@@ -204,22 +189,8 @@ store.subscribe(() => {
   console.log(counterReducer);
 });
 
-store.dispatch(increment());
-// 1
-
-store.dispatch(incrementIfOdd());
-// 1
-// 2
-
-store.dispatch(decrementIfEven());
-// 2
-// 1
-
-store.dispatch(reset());
-// 0
-
-store.dispatch(decrement());
-// -1
+store.dispatch(increment());  // 1
+store.dispatch(incrementIfOdd());  // 1 -> 2
 ```
 
 Example of Immutable
@@ -251,7 +222,7 @@ Observable::fromEvent(document, 'click')
   .subscribe(() => {
     const exEl = select('#ex');
 
-    exEl.text('Hello!')
+    exEl.text('Hello World')
       .style('text-align', 'center')
       .style('line-height', '10rem')
       .style('font-size', '7rem')

@@ -15,7 +15,8 @@
     "clean": "rimraf public",
     "reset": "git reset --hard HEAD && git clean -df",
     "reinstall": "yarn cache clean && git clean -dfx -e '.*' && yarn install",
-    "deploy": "firebase deploy"
+    "deploy": "firebase deploy",
+    "gulp": "gulp"
   },
   "repository": {
     "type": "git",

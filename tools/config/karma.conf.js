@@ -7,6 +7,7 @@ module.exports = (config) => {
     basePath: '../..',
     frameworks: ['jasmine'],
     files: [
+      // TODO: polyfills & vendor
       'src/**/*.spec.js'
     ],
     exclude: [],

@@ -1,10 +1,7 @@
-import homeTpl from './home.html';
+import tpl from './home.html';
 
 describe('Home', () => {
-
   it('toMatch', () => {
-    expect(homeTpl).toMatch(/<%= HOME %>/);
-    expect(homeTpl).not.toMatch(/<%= ABOUT %>/);
+    expect(tpl).toMatch(/<%= HOME %>/);
   });
-
 });
