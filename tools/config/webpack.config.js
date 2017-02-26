@@ -1,4 +1,5 @@
-const { LoaderOptionsPlugin } = require('webpack');
+const { env, noop } =  require('gulp-util');
+const { LoaderOptionsPlugin, HotModuleReplacementPlugin, NamedModulesPlugin } = require('webpack');
 const PrerenderSpaPlugin = require('prerender-spa-plugin');
 const include = require('posthtml-include');
 const extend = require('posthtml-extend');
@@ -41,6 +42,8 @@ exports.primary = {
         };
       }
     }),
+    (env.mode === 'dev' ? new HotModuleReplacementPlugin() : noop()),
+    (env.mode === 'dev' ? new NamedModulesPlugin() : noop()),  // prints more readable module names in the browser console on HMR updates
     new PrerenderSpaPlugin(DIST_ROOT,
       ['/', '/about', '/contact']
     )
