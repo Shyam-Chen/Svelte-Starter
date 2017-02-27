@@ -1,4 +1,4 @@
-const { env, noop } =  require('gulp-util');
+const { env, noop } = require('gulp-util');
 const { LoaderOptionsPlugin, HotModuleReplacementPlugin, NamedModulesPlugin } = require('webpack');
 const PrerenderSpaPlugin = require('prerender-spa-plugin');
 const include = require('posthtml-include');
@@ -8,7 +8,7 @@ const mixins = require('posthtml-mixins');
 const { SOURCE_ROOT, DIST_ROOT } = require('../constants');
 const { APP_CONFIG } = require('./rollup.config');
 
-exports.primary = {
+exports.APP_WEBPACK_CONFIG = {
   context: SOURCE_ROOT,
   entry: {
     app: './app.js'
@@ -48,4 +48,8 @@ exports.primary = {
       ['/', '/about', '/contact']
     )
   ]
+};
+
+exports.TEST_WEBPACK_CONFIG = {
+
 };

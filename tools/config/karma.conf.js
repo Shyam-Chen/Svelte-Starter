@@ -7,14 +7,17 @@ module.exports = (config) => {
     basePath: '../..',
     frameworks: ['jasmine'],
     files: [
-      // TODO: polyfills & vendor
+      // { pattern: 'src/polyfills.js', included: false, watched: false },
+      // { pattern: 'src/vendor.js', included: false, watched: false },
       'src/**/*.spec.js'
     ],
     exclude: [],
     preprocessors: {
+      // 'src/polyfills.js': ['rollup'],
+      // 'src/vendor.js': ['rollup'],
       'src/**/*.spec.js': ['rollup']  // ['webpack']
     },
-    rollupPreprocessor: TEST_CONFIG,
+    rollupPreprocessor: TEST_CONFIG,  // polyfills & vendor
     // webpack: TEST_CONFIG,
     reporters: ['mocha'],
     port: TEST_PORT,
