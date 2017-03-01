@@ -4,11 +4,11 @@ import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
 
 import { DIST_ROOT } from '../constants';
-import { VENDOR_CONFIG } from '../config/rollup.config';
+import { VENDOR_ROLLUP_CONFIG } from '../config/rollup.config';
 import { CompileError } from '../utils';
 
 gulp.task('vendor', () => {
-  return rollup(VENDOR_CONFIG)
+  return rollup(VENDOR_ROLLUP_CONFIG)
     .on('error', CompileError.handle)
     .pipe(source('vendor.js'))
     .pipe(buffer())

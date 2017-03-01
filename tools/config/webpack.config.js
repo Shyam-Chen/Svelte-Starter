@@ -6,7 +6,7 @@ const extend = require('posthtml-extend');
 const mixins = require('posthtml-mixins');
 
 const { SOURCE_ROOT, DIST_ROOT } = require('../constants');
-const { APP_CONFIG } = require('./rollup.config');
+const { APP_ROLLUP_CONFIG } = require('./rollup.config');
 
 exports.APP_WEBPACK_CONFIG = {
   context: SOURCE_ROOT,
@@ -17,6 +17,7 @@ exports.APP_WEBPACK_CONFIG = {
     path: DIST_ROOT,
     filename: '[name].js'
   },
+  devtool: (env.mode === 'dev' ? 'source-map' : noop()),
   module: {
     rules: [
       {
@@ -30,7 +31,7 @@ exports.APP_WEBPACK_CONFIG = {
         test: /\.(css|js|gif|jpeg|jpg|png|svg|json)$/,
         loader: 'rollup-loader',
         exclude: [/node_modules/],
-        options: APP_CONFIG
+        options: APP_ROLLUP_CONFIG
       }
     ]
   },
@@ -43,7 +44,7 @@ exports.APP_WEBPACK_CONFIG = {
       }
     }),
     (env.mode === 'dev' ? new HotModuleReplacementPlugin() : noop()),
-    (env.mode === 'dev' ? new NamedModulesPlugin() : noop()),  // prints more readable module names in the browser console on HMR updates
+    (env.mode === 'dev' ? new NamedModulesPlugin() : noop()),
     new PrerenderSpaPlugin(DIST_ROOT,
       ['/', '/about', '/contact']
     )
@@ -51,5 +52,31 @@ exports.APP_WEBPACK_CONFIG = {
 };
 
 exports.TEST_WEBPACK_CONFIG = {
-
+  devtool: 'inline-source-map',
+  module: {
+    rules: [
+      {
+        test: /\.html$/,
+        use: [
+          { loader: 'html-loader', options: { minimize: true } },
+          'posthtml-loader'
+        ]
+      },
+      {
+        test: /\.(css|js|gif|jpeg|jpg|png|svg|json)$/,
+        loader: 'rollup-loader',
+        exclude: [/node_modules/],
+        options: APP_ROLLUP_CONFIG
+      }
+    ]
+  },
+  plugins: [
+    new LoaderOptionsPlugin({
+      posthtml() {
+        return {
+          plugins: [include(), extend(), mixins()]
+        };
+      }
+    })
+  ]
 };

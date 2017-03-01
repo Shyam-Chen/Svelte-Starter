@@ -73,20 +73,24 @@ const plugins = () => {
   ];
 };
 
-export const TEST_CONFIG = {
-  format: 'umd',
+export const TEST_CONFIG = {  // @deprecated
+  format: 'iife',
   context: 'window',
   sourceMap: 'inline',
   plugins: plugins()
 };
 
-export const APP_CONFIG = Object.assign({}, TEST_CONFIG, {
+export const APP_CONFIG = Object.assign({}, TEST_CONFIG, {  // @deprecated
   entry: join(SOURCE_ROOT, 'app.js'),
   sourceMap: env.mode === 'dev' && true,
 });
 
-export const VENDOR_CONFIG = {
-  entry: join(SOURCE_ROOT, 'vendor.js'),
+export const APP_ROLLUP_CONFIG = {
+  context: 'window',
+  plugins: plugins()
+};
+
+export const LIB_ROLLUP_CONFIG = {
   format: 'es',
   context: 'window',
   plugins: [
@@ -106,6 +110,10 @@ export const VENDOR_CONFIG = {
   ]
 };
 
-export const POLYFILLS_CONFIG = Object.assign({}, VENDOR_CONFIG, {
+export const VENDOR_ROLLUP_CONFIG = Object.assign({}, LIB_ROLLUP_CONFIG, {
+  entry: join(SOURCE_ROOT, 'vendor.js')
+});
+
+export const POLYFILLS_ROLLUP_CONFIG = Object.assign({}, LIB_ROLLUP_CONFIG, {
   entry: join(SOURCE_ROOT, 'polyfills.js')
 });

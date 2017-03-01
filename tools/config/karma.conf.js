@@ -1,4 +1,5 @@
-const { TEST_CONFIG } = require('./rollup.config');
+const { TEST_CONFIG, LIB_ROLLUP_CONFIG } = require('./rollup.config');
+// const { TEST_WEBPACK_CONFIG } = require('./webpack.config');
 
 const { TEST_PORT } = require('../constants');
 
@@ -17,8 +18,8 @@ module.exports = (config) => {
       // 'src/vendor.js': ['rollup'],
       'src/**/*.spec.js': ['rollup']  // ['webpack']
     },
-    rollupPreprocessor: TEST_CONFIG,  // polyfills & vendor
-    // webpack: TEST_CONFIG,
+    rollupPreprocessor: TEST_CONFIG,  // LIB_ROLLUP_CONFIG,
+    // webpack: TEST_CONFIG,  // TEST_WEBPACK_CONFIG,
     reporters: ['mocha'],
     port: TEST_PORT,
     colors: true,
