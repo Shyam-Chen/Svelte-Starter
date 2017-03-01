@@ -31,15 +31,10 @@
     "url": "https://github.com/Shyam-Chen/Frontend-Starter-Kit/issues"
   },
   "homepage": "https://github.com/Shyam-Chen/Frontend-Starter-Kit#readme",
-  "babel": {
-    "presets": [
-      "latest"
-    ]
-  },
   "dependencies": {
     "@reactivex/rxjs": "5.0.2",
     "core-js": "2.4.1",
-    "d3": "4.6.0",
+    "d3": "4.7.0",
     "dialog-polyfill": "0.4.7",
     "firebase": "3.6.3",
     "immutable": "3.8.1",
@@ -63,7 +58,7 @@
     "cssnano": "3.10.0",
     "express": "4.14.1",
     "express-history-api-fallback": "2.1.0",
-    "firebase-tools": "3.3.0",
+    "firebase-tools": "3.4.0",
     "gulp": "3.9.1",
     "gulp-eslint": "3.0.1",
     "gulp-htmlhint": "0.3.1",
@@ -74,7 +69,7 @@
     "gulp-sourcemaps": "2.4.1",
     "gulp-stylelint": "3.9.0",
     "gulp-util": "3.0.8",
-    "html-loader": "0.4.4",
+    "html-loader": "0.4.5",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "3.2.0",
     "karma": "1.5.0",
@@ -96,7 +91,7 @@
     "prerender-spa-plugin": "2.0.1",
     "protractor": "5.1.1",
     "require-dir": "0.3.1",
-    "rimraf": "2.6.0",
+    "rimraf": "2.6.1",
     "rollup-loader": "0.1.2",
     "rollup-plugin-babel": "2.7.1",
     "rollup-plugin-commonjs": "7.0.0",
@@ -114,7 +109,7 @@
     "run-sequence": "1.2.2",
     "stylelint-config-standard": "16.0.0",
     "sw-precache": "5.0.0",
-    "sw-toolbox": "3.5.1",
+    "sw-toolbox": "3.6.0",
     "vinyl-buffer": "1.0.0",
     "vinyl-source-stream": "1.1.0",
     "webdriver-manager": "12.0.2",

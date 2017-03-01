@@ -146,7 +146,7 @@ import { combineAll } from 'rxjs/operator/combineAll';
 Observable::timer(2000)
   ::mapTo(Observable::of('Hello', 'World'))
   ::combineAll()
-  .subscribe(result => console.log(result));
+  .subscribe(value => console.log(value));
   // ["Hello"]
   // ["World"]
 ```

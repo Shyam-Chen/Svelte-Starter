@@ -61,15 +61,15 @@ before_script:
   - if [[ "$MODE" == "e2e" ]]; then npm run webdriver; fi
 
 script:
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run prod; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run lint; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run test; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run e2e; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run prod; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run lint; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run test; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run e2e; fi
   - if [[ "$MODE" == "prod" ]]; then yarn run prod; fi
   - if [[ "$MODE" == "lint" ]]; then yarn run lint; fi
   - if [[ "$MODE" == "unit" ]]; then npm run test; fi
   - if [[ "$MODE" == "e2e" ]]; then npm run prod && npm run e2e; fi
 
 after_success:
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run prod; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app npm run deploy -- --token ${FIREBASE_TOKEN}; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run prod; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run deploy -- --token ${FIREBASE_TOKEN}; fi

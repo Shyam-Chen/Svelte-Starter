@@ -3,20 +3,18 @@
 </div>
 
 <div class="mdl-grid mdl-grid--no-spacing mdl-grid--center">
-  <div class="mdl-cell mdl-cell--5-col">
-    <ul class="mdl-list mdl-shadow--2dp mdl-color--white">
-      <li class="mdl-list__item">
-        <b class="mdl-list__item-primary-content">
-          <%= LIST.TITLE %>
-        </b>
-      </li>
+  <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+    <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric"><%= LIST.TITLE %></th>
+      </tr>
+    </thead>
+    <tbody>
       <% [].forEach.call(LIST.ITEM, function(item, index) { %>
-        <li class="mdl-list__item">
-          <span class="mdl-list__item-primary-content">
-            <%- ++index %>. <%- item %>
-          </span>
-        </li>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric"><%- ++index %>. <%- item %></td>
+        </tr>
       <% }); %>
-    </ul>
-  </div>
+    </tbody>
+  </table>
 </div>
