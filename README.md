@@ -162,6 +162,9 @@ import { combineEpics, createEpicMiddleware } from 'redux-observable-es';
 const INCREMENT = 'INCREMENT';
 const INCREMENT_IF_ODD = 'INCREMENT_IF_ODD';
 
+const increment = () => ({ type: INCREMENT });
+const incrementIfOdd = () => ({ type: INCREMENT_IF_ODD });
+
 const counterReducer = (state = 0, action) => {
   switch (action.type) {
     case INCREMENT:
@@ -170,9 +173,6 @@ const counterReducer = (state = 0, action) => {
       return state;
   }
 };
-
-const increment = () => ({ type: INCREMENT });
-const incrementIfOdd = () => ({ type: INCREMENT_IF_ODD });
 
 const incrementIfOddEpic = (action$, store) =>
   action$.ofType(INCREMENT_IF_ODD)
