@@ -1,4 +1,4 @@
-const { TEST_CONFIG, LIB_ROLLUP_CONFIG } = require('./rollup.config');
+const { TEST_CONFIG } = require('./rollup.config');
 // const { TEST_WEBPACK_CONFIG } = require('./webpack.config');
 
 const { TEST_PORT } = require('../constants');
@@ -8,6 +8,8 @@ module.exports = (config) => {
     basePath: '../..',
     frameworks: ['jasmine'],
     files: [
+      { pattern: 'public/polyfills.js', included: false, watched: false },
+      { pattern: 'public/vendor.js', included: false, watched: false },
       // { pattern: 'src/polyfills.js', included: false, watched: false },
       // { pattern: 'src/vendor.js', included: false, watched: false },
       'src/**/*.spec.js'

@@ -6,7 +6,7 @@ import browsersync from 'browser-sync';
 
 import { SOURCE_ROOT, DIST_ROOT } from '../constants';
 
-gulp.task('index', () => {
+gulp.task('entrypoint', () => {
   return gulp.src(join(SOURCE_ROOT, 'index.html'))
     .pipe(plumber())
     .pipe(htmlmin({

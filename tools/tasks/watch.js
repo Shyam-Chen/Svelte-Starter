@@ -11,7 +11,7 @@ gulp.task('watch', () => {
 
   gulp.watch([
     join(SOURCE_ROOT, 'index.html')
-  ], ['index']);
+  ], ['entrypoint']);
 
   gulp.watch([
     join(SOURCE_ROOT, '**/*.{html,css,js}'),
