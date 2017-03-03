@@ -24,7 +24,7 @@ This seed repository provides the following features:
 * [x] Build system with [**Gulp**](https://github.com/gulpjs/gulp).
 * [ ] Related bundles with [**Webpack**](https://github.com/webpack/webpack).
 * [x] Module bundler with [**Rollup**](https://github.com/rollup/rollup).
-* [ ] HTML transformations with [**PostHTML**](https://github.com/posthtml/posthtml).
+* [ ] HTML transformations with [**Reshape**](https://github.com/reshape/reshape).
 * [x] Future CSS features with [**PostCSS**](https://github.com/postcss/postcss).
 * [x] Next generation JavaScript with [**Babel**](https://github.com/babel/babel).
 * [x] Development server with [**BrowserSync**](https://github.com/BrowserSync/browser-sync).
@@ -50,26 +50,31 @@ This seed repository provides the following features:
 * [Using Libraries](#using-libraries)
 * [All Commands](#all-commands)
 * [Directory Structure](#directory-structure)
+* [TODO List](#todo-list)
 
 ## Getting Started
 
 1) Clone this Boilerplate
+
 ```bash
 $ git clone --depth 1 https://github.com/Shyam-Chen/Frontend-Starter-Kit.git <PROJECT_NAME>
 $ cd <PROJECT_NAME>
 ```
 
 2) Install Dependencies
+
 ```bash
 $ yarn install
 ```
 
 3) Run the Application
+
 ```bash
 $ yarn start
 ```
 
 4) Stay up-to-date
+
 ```bash
 $ git remote add upstream https://github.com/Shyam-Chen/Frontend-Starter-Kit.git
 $ git pull upstream master
@@ -78,16 +83,19 @@ $ git pull upstream master
 ## Dockerization
 
 1) Build the Image
+
 ```bash
 $ docker build -t Frontend-Starter-Kit .
 ```
 
 2) Run the Container
+
 ```bash
 $ docker run -it -p 3000:3000 --name app Frontend-Starter-Kit
 ```
 
 3) Just Compose
+
 ```bash
 $ docker-compose up
 ```
@@ -302,3 +310,9 @@ $ yarn run deploy
 ├── gulpfile.babel.js
 └── package.json
 ```
+
+## TODO List
+* Generate a Sitemap via Gulp.
+* Prerenders static HTML via Phantom.
+* Switch to Web Components.
+* Remove PostHTML and CSS modules.
