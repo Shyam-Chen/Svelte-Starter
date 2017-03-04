@@ -48,7 +48,7 @@ matrix:
 
 before_install:
   # - if [[ "$MODE" == "docker" ]]; then gunzip -c cache.tar.gz | docker load; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose up; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose up -d; fi
   # - if [[ "$MODE" == "unit" ]] || [[ "$MODE" == "e2e" ]]; then export DISPLAY=:99.0; fi
   # ----------
   - if [[ "$MODE" == "unit" ]] || [[ "$MODE" == "e2e" ]]; then npm i; fi
