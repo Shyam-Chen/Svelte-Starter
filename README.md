@@ -91,7 +91,7 @@ $ docker build -t Frontend-Starter-Kit .
 2) Run the Container
 
 ```bash
-$ docker run -it -p 3000:3000 --name app Frontend-Starter-Kit
+$ docker run -it -p 3000:3000 -p 9876:9876 --name app Frontend-Starter-Kit
 ```
 
 3) Just Compose
@@ -312,7 +312,6 @@ $ yarn run deploy
 ```
 
 ## TODO List
-* Generate a Sitemap via Gulp.
-* Prerenders static HTML via Phantom.
-* Switch to Web Components.
-* Remove PostHTML and CSS modules.
+* Prerenders static HTML
+* Hot Module Replacement
+* Switch to Web Components
