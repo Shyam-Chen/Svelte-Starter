@@ -271,12 +271,13 @@ $ yarn run deploy
 
 ```
 .
-
+├── scripts
+│   └── build|deploy|install|test|window.sh
 ├── src
 │   ├── actions
 │   │   └── index.js
 │   ├── assets
-│   │   └── images, datas, fonts, videos, audios, files ...
+│   │   └── images, fonts, datas, videos, audios, files ...
 │   ├── components
 │   │   └── shared components, reusable components ...
 │   ├── containers
@@ -300,18 +301,32 @@ $ yarn run deploy
 ├── tools
 │   ├── config
 │   │   └── karma.conf|protractor.conf|rollup.config|webpack.config.js
-│   ├── scripts
-│   │   └── build|deploy|install|test|window.sh
 │   ├── tasks
-│   │   └── app|build|copy|e2e|generate|index|lint|polyfills|serve|unit|vendor|watch.js
+│   │   └── app|build|copy|e2e|entrypoint|lint|polyfills|precache|prerender|serve|unit|vendor|watch.js
 │   ├── utils
 │   │   └── e2e-server|handle-errors|index|resolve-reactivex|service-worker.js
 │   └── constants.js
+├── .babelrc
+├── .editorconfig
+├── .eslintrc
+├── .firebaserc
+├── .gitattributes
+├── .gitignore
+├── .htmlhintrc
+├── .stylelintrc
+├── .travis.yml
+├── Dockerfile
+├── LICENSE
+├── README.md
+├── database.rules.json
+├── docker-compose.yml
+├── firebase.json
 ├── gulpfile.babel.js
-└── package.json
+├── package.json
+└── yarn.lock
 ```
 
 ## TODO List
 * Prerenders static HTML
 * Hot Module Replacement
-* Switch to Web Components
+* HTML5 Web Components
