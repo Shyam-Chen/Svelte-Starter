@@ -165,7 +165,7 @@ Example of Redux
 import { filter } from 'rxjs/operator/filter';
 import { map } from 'rxjs/operator/map';
 import { combineReducers, createStore, applyMiddleware } from 'redux';
-import { combineEpics, createEpicMiddleware } from 'redux-observable-es';
+import { combineEpics, createEpicMiddleware } from 'redux-observable';
 
 const INCREMENT = 'INCREMENT';
 const INCREMENT_IF_ODD = 'INCREMENT_IF_ODD';
