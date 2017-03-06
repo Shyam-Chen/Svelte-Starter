@@ -1,8 +1,18 @@
-import aboutTpl from './about.html';
+import tpl from './about.html';
+import { about } from './about';
 
 describe('About', () => {
-  it('toMatch', () => {
-    expect(aboutTpl).toMatch(/<%= ABOUT %>/);
-    expect(aboutTpl).not.toMatch(/<%= HOME %>/);
+  describe('Template', () => {
+    it('Page title', () => {
+      expect(tpl).toMatch(/<%= ABOUT %>/);
+    });
+
+    it('Table head', () => {
+      expect(tpl).toMatch(/<%= LIST.TITLE %>/);
+    });
+  });
+
+  it('action', () => {
+    expect(about).toBeDefined();
   });
 });
