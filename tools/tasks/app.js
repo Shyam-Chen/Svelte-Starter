@@ -5,6 +5,7 @@ import rollup from 'rollup-stream';
 // import webpack from 'webpack';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
+import rev from 'gulp-rev';
 import { stream } from 'browser-sync';
 
 import { DIST_ROOT } from '../constants';
@@ -22,6 +23,8 @@ gulp.task('app', () => {
     .pipe(buffer())
     .pipe(env.mode === 'dev' ? sourcemaps.init({ loadMaps: true }) : noop())
     .pipe(env.mode === 'dev' ? sourcemaps.write('./') : noop())
+    .pipe(gulp.dest(DIST_ROOT))
+    .pipe(rev())
     .pipe(gulp.dest(DIST_ROOT))
     .pipe(stream());
 });

@@ -12,6 +12,7 @@
 This seed repository provides the following features:
 * ---------- **Primary Key** ----------
 * [x] Client-side platform with [**HTML5**](https://platform.html5.org/).
+* [x] Routing and navigation with [**Page**](http://visionmedia.github.io/page.js/).
 * [x] User interface components with [**Material**](https://material.io/).
 * [x] Backend cloud services with [**Firebase**](https://firebase.google.com/).
 * ---------- **Secondary Key** ----------
@@ -22,9 +23,8 @@ This seed repository provides the following features:
 * [x] Data visualizations with [**D3**](https://d3js.org/).
 * ---------- **Dev Tools** ----------
 * [x] Build system with [**Gulp**](https://github.com/gulpjs/gulp).
-* [ ] Related bundles with [**Webpack**](https://github.com/webpack/webpack).
-* [x] Module bundler with [**Rollup**](https://github.com/rollup/rollup).
-* [ ] HTML transformations with [**Reshape**](https://github.com/reshape/reshape).
+* [ ] Module bundler with [**Webpack**](https://github.com/webpack/webpack).
+* [ ] HTML transformations with [**PostHTML**](https://github.com/posthtml/posthtml).
 * [x] Future CSS features with [**PostCSS**](https://github.com/postcss/postcss).
 * [x] Next generation JavaScript with [**Babel**](https://github.com/babel/babel).
 * [x] Development server with [**BrowserSync**](https://github.com/BrowserSync/browser-sync).
@@ -327,6 +327,8 @@ $ yarn run deploy
 ```
 
 ## TODO List
-* Prerenders static HTML
-* Hot Module Replacement
-* HTML5 Web Components
+* [ ] Output hashes filenames - `rollup-plugin-rev` - `gulp-rev`
+* [ ] Inject hash files - `rollup-plugin-entrypoint` - `gulp-inject`
+* [ ] Prerenders static HTML - `rollup-plugin-prerender` - `prerender-spa-plugin`
+* [ ] Hot Module Replacement - `rollup-plugin-hmr` - `browserify-hmr`
+* [ ] HTML5 Web Components
