@@ -24,7 +24,7 @@ gulp.task('app', () => {
     .pipe(env.mode === 'dev' ? sourcemaps.init({ loadMaps: true }) : noop())
     .pipe(env.mode === 'dev' ? sourcemaps.write('./') : noop())
     .pipe(gulp.dest(DIST_ROOT))
-    .pipe(rev())
-    .pipe(gulp.dest(DIST_ROOT))
+    .pipe(env.mode === 'prod' ? rev() : noop())
+    .pipe(env.mode === 'prod' ? gulp.dest(DIST_ROOT) : noop())
     .pipe(stream());
 });

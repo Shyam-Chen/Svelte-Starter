@@ -72,4 +72,5 @@ script:
 
 after_success:
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run prod; fi
+  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run chunkhash; fi
   - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run deploy -- --token ${FIREBASE_TOKEN}; fi
