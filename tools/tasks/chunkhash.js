@@ -1,19 +1,30 @@
 import { join } from 'path';
 import gulp from 'gulp';
-import replace from 'gulp-replace';
+import template from 'gulp-template';
 import inject from 'gulp-inject';
 import htmlmin from 'gulp-htmlmin';
 
-import { DIST_ROOT } from '../constants';
+import { SOURCE_ROOT, DIST_ROOT } from '../constants';
 
 gulp.task('chunkhash', () => {
-  return gulp.src(join(DIST_ROOT, 'index.html'))
-    .pipe(replace('<script src="polyfills.js" defer="defer"></script>', '<!-- polyfills:js --><!-- endinject -->'))
-    .pipe(replace('<script src="vendor.js" defer="defer"></script>', '<!-- vendor:js --><!-- endinject -->'))
-    .pipe(replace('<script src="app.js" defer="defer"></script>', '<!-- app:js --><!-- endinject -->'))
-    .pipe(inject(gulp.src(join(DIST_ROOT, 'polyfills-*.js'), { read: false }), { name: 'polyfills', relative: true, transform(filepath) { return `<script src="${filepath}" defer></script>`; } }))
-    .pipe(inject(gulp.src(join(DIST_ROOT, 'vendor-*.js'), { read: false }), { name: 'vendor', relative: true, transform(filepath) { return `<script src="${filepath}" defer></script>`; } }))
-    .pipe(inject(gulp.src(join(DIST_ROOT, 'app-*.js'), { read: false }), { name: 'app', relative: true, transform(filepath) { return `<script src="${filepath}" defer></script>`; } }))
+  return gulp.src(join(SOURCE_ROOT, 'index.html'))
+    .pipe(template({
+      polyfills: '<!-- polyfills:js --><!-- endinject -->',
+      vendor: '<!-- vendor:js --><!-- endinject -->',
+      app: '<!-- app:js --><!-- endinject -->'
+    }))
+    .pipe(inject(gulp.src(join(DIST_ROOT, 'polyfills-*.js'), { read: false }), { name: 'polyfills', transform(filepath) {
+      filepath = filepath.replace(`/public/`, '');
+      return `<script src="${filepath}" defer></script>`;
+    } }))
+    .pipe(inject(gulp.src(join(DIST_ROOT, 'vendor-*.js'), { read: false }), { name: 'vendor', transform(filepath) {
+      filepath = filepath.replace(`/public/`, '');
+      return `<script src="${filepath}" defer></script>`;
+    } }))
+    .pipe(inject(gulp.src(join(DIST_ROOT, 'app-*.js'), { read: false }), { name: 'app', transform(filepath) {
+      filepath = filepath.replace(`/public/`, '');
+      return `<script src="${filepath}" defer></script>`;
+    } }))
     .pipe(htmlmin({
       collapseWhitespace: true,
       removeAttributeQuotes: true,
