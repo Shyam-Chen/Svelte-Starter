@@ -1,6 +1,11 @@
 import gulp from 'gulp';
+import { env } from 'gulp-util';
 import runsequence from 'run-sequence';
 
 gulp.task('build', (done) => {
-  return runsequence(['copy', 'entrypoint', 'app', 'vendor', 'polyfills'], 'precache', done);
+  if (env.mode === 'prod') {
+    return runsequence(['copy', 'entrypoint', 'app', 'vendor', 'polyfills'], 'chunkhash', 'precache', done);
+  } else {
+    return runsequence(['copy', 'entrypoint', 'app', 'vendor', 'polyfills'], 'precache', done);
+  }
 });
