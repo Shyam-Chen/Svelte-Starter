@@ -1,7 +1,7 @@
 {
-  "apiKey": "AIzaSyAXX0yKesUH5aF7tgjeT5o-lriHEWFXdDw",
-  "authDomain": "frontend-sk.firebaseapp.com",
-  "databaseURL": "https://frontend-sk.firebaseio.com",
-  "storageBucket": "frontend-sk.appspot.com",
-  "messagingSenderId": "877407432262"
+  "apiKey": "AIzaSyABgvqPE5cNRsTS0UfXpWdyYvqxvR5lGYs",
+  "authDomain": "frontend-starter-kit.firebaseapp.com",
+  "databaseURL": "https://frontend-starter-kit.firebaseio.com",
+  "storageBucket": "frontend-starter-kit.appspot.com",
+  "messagingSenderId": "428173442531"
 }
