@@ -1,7 +1,7 @@
 {
   "name": "Frontend-Starter-Kit",
   "version": "1.0.0",
-  "description": "A boilerplate for HTML5, Material, Firebase, Gulp, Webpack, Rollup, Babel, PostHTML, and PostCSS.",
+  "description": "A boilerplate for HTML5, Material, Firebase, Gulp, Webpack, Babel, PostHTML, and PostCSS.",
   "scripts": {
     "start": "gulp dev --mode dev",
     "dev": "rimraf public && gulp dev --mode dev",
