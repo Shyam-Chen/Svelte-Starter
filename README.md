@@ -72,7 +72,26 @@ $ yarn install
 $ yarn start
 ```
 
-4) Stay up-to-date
+4) Run the Test
+
+```bash
+# pre-test
+$ yarn run lib
+
+$ yarn test
+```
+
+5) Run the E2E test
+
+```bash
+# pre-e2e
+$ yarn run webdriver
+$ yarn run prod
+
+$ yarn run e2e
+```
+
+6) Stay up-to-date
 
 ```bash
 $ git remote add upstream https://github.com/Shyam-Chen/Frontend-Starter-Kit.git
@@ -257,7 +276,7 @@ $ yarn run prod
 $ yarn run e2e
 
 $ yarn run lint
-
+$ yarn run lib
 $ yarn run webdriver
 
 $ yarn run clean
