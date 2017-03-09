@@ -120,7 +120,7 @@ $ docker-compose up
 
 ## Configuration
 
-Server configuration
+Port configuration
 
 ```js
 export const DEV_PORT = 3000;
