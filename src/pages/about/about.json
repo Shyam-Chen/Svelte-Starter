@@ -4,6 +4,7 @@
     "TITLE": "This seed repository provides the following features:",
     "ITEM": [
       "Client-side platform with HTML5.",
+      "Routing and navigation with Page.",
       "User interface components with Material.",
       "Backend cloud services with Firebase.",
       "Utility functions with Lodash.",
@@ -16,7 +17,7 @@
       "HTML transformations with PostHTML.",
       "Future CSS features with PostCSS.",
       "Next generation JavaScript with Babel.",
-      "Development server with BrowserSync.",
+      "Synchronised browser testing with BrowserSync.",
       "HTML static code analyzer with HTMLHint.",
       "CSS static code analyzer with StyleLint.",
       "JavaScript static code analyzer with ESLint.",

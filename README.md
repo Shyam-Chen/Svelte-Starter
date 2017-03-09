@@ -27,7 +27,7 @@ This seed repository provides the following features:
 * [ ] HTML transformations with [**PostHTML**](https://github.com/posthtml/posthtml).
 * [x] Future CSS features with [**PostCSS**](https://github.com/postcss/postcss).
 * [x] Next generation JavaScript with [**Babel**](https://github.com/babel/babel).
-* [x] Development server with [**BrowserSync**](https://github.com/BrowserSync/browser-sync).
+* [x] Synchronised browser testing with [**BrowserSync**](https://github.com/BrowserSync/browser-sync).
 * ---------- **Test Tools** ----------
 * [x] HTML static code analyzer with [**HTMLHint**](https://github.com/yaniswang/HTMLHint).
 * [x] CSS static code analyzer with [**StyleLint**](https://github.com/stylelint/stylelint).
@@ -327,8 +327,6 @@ $ yarn run deploy
 ```
 
 ## TODO List
-* [ ] Output hashes filenames - `rollup-plugin-rev` - `gulp-rev`
-* [ ] Inject hash files - `rollup-plugin-entrypoint` - `gulp-inject`
 * [ ] Prerenders static HTML - `rollup-plugin-prerender` - `prerender-spa-plugin`
 * [ ] Hot Module Replacement - `rollup-plugin-hmr` - `browserify-hmr`
 * [ ] HTML5 Web Components
