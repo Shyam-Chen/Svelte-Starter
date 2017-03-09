@@ -17,7 +17,7 @@
       "HTML transformations with PostHTML.",
       "Future CSS features with PostCSS.",
       "Next generation JavaScript with Babel.",
-      "Synchronised browser testing with BrowserSync.",
+      "Synchronised browser with BrowserSync.",
       "HTML static code analyzer with HTMLHint.",
       "CSS static code analyzer with StyleLint.",
       "JavaScript static code analyzer with ESLint.",

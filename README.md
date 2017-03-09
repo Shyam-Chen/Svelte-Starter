@@ -27,7 +27,7 @@ This seed repository provides the following features:
 * [ ] HTML transformations with [**PostHTML**](https://github.com/posthtml/posthtml).
 * [x] Future CSS features with [**PostCSS**](https://github.com/postcss/postcss).
 * [x] Next generation JavaScript with [**Babel**](https://github.com/babel/babel).
-* [x] Synchronised browser testing with [**BrowserSync**](https://github.com/BrowserSync/browser-sync).
+* [x] Synchronised browser with [**BrowserSync**](https://github.com/BrowserSync/browser-sync).
 * ---------- **Test Tools** ----------
 * [x] HTML static code analyzer with [**HTMLHint**](https://github.com/yaniswang/HTMLHint).
 * [x] CSS static code analyzer with [**StyleLint**](https://github.com/stylelint/stylelint).
@@ -50,7 +50,6 @@ This seed repository provides the following features:
 * [Using Libraries](#using-libraries)
 * [All Commands](#all-commands)
 * [Directory Structure](#directory-structure)
-* [TODO List](#todo-list)
 
 ## Getting Started
 
@@ -166,6 +165,7 @@ import { filter } from 'rxjs/operator/filter';
 import { map } from 'rxjs/operator/map';
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
+import { Map } from 'immutable';
 
 const INCREMENT = 'INCREMENT';
 const INCREMENT_IF_ODD = 'INCREMENT_IF_ODD';
@@ -173,10 +173,10 @@ const INCREMENT_IF_ODD = 'INCREMENT_IF_ODD';
 const increment = () => ({ type: INCREMENT });
 const incrementIfOdd = () => ({ type: INCREMENT_IF_ODD });
 
-const counterReducer = (state = 0, action) => {
+const counterReducer = (state = Map({ counter: 0 }), action) => {
   switch (action.type) {
     case INCREMENT:
-      return state + 1;
+      return state.set('counter', state.get('counter') + 1);
     default:
       return state;
   }
@@ -184,7 +184,7 @@ const counterReducer = (state = 0, action) => {
 
 const incrementIfOddEpic = (action$, store) =>
   action$.ofType(INCREMENT_IF_ODD)
-    ::filter(() => store.getState().counterReducer % 2 === 1)
+    ::filter(() => store.getState().counterReducer.get('counter') % 2 === 1)
     ::map(increment);
 
 const rootEpic = combineEpics(incrementIfOddEpic);
@@ -194,7 +194,7 @@ const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
 
 store.subscribe(() => {
   const { counterReducer } = store.getState();
-  console.log(counterReducer);
+  console.log(counterReducer.get('counter'));
 });
 
 store.dispatch(increment());  // 1
@@ -325,8 +325,3 @@ $ yarn run deploy
 ├── package.json
 └── yarn.lock
 ```
-
-## TODO List
-* [ ] Prerenders static HTML - `rollup-plugin-prerender` - `prerender-spa-plugin`
-* [ ] Hot Module Replacement - `rollup-plugin-hmr` - `browserify-hmr`
-* [ ] HTML5 Web Components
