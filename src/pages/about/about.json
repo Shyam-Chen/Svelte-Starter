@@ -4,11 +4,11 @@
     "TITLE": "This seed repository provides the following features:",
     "ITEM": [
       "Client-side platform with HTML5.",
-      "Routing and navigation with Page.",
       "User interface components with Material.",
       "Backend cloud services with Firebase.",
       "Utility functions with Lodash.",
       "Reactive extensions with ReactiveX.",
+      "Routing and navigation with Page.",
       "State container with Redux.",
       "Immutable collections with Immutable.",
       "Data visualizations with D3.",

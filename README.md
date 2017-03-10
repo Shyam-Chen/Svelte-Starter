@@ -12,12 +12,12 @@
 This seed repository provides the following features:
 * ---------- **Primary Key** ----------
 * [x] Client-side platform with [**HTML5**](https://platform.html5.org/).
-* [x] Routing and navigation with [**Page**](http://visionmedia.github.io/page.js/).
 * [x] User interface components with [**Material**](https://material.io/).
 * [x] Backend cloud services with [**Firebase**](https://firebase.google.com/).
 * ---------- **Secondary Key** ----------
 * [x] Utility functions with [**Lodash**](https://lodash.com/).
 * [x] Reactive extensions with [**ReactiveX**](http://reactivex.io/).
+* [x] Routing and navigation with [**Page**](http://visionmedia.github.io/page.js/).
 * [x] State container with [**Redux**](http://redux.js.org/).
 * [x] Immutable collections with [**Immutable**](http://facebook.github.io/immutable-js/).
 * [x] Data visualizations with [**D3**](https://d3js.org/).
@@ -50,6 +50,7 @@ This seed repository provides the following features:
 * [Using Libraries](#using-libraries)
 * [All Commands](#all-commands)
 * [Directory Structure](#directory-structure)
+* [To-Do List](#to-do-list)
 
 ## Getting Started
 
@@ -147,6 +148,49 @@ $ npm run gulp -- <TASK_NAME> --<ENV_NAME> <ENV_VALUE>
 
 ## Using Libraries
 
+Example of Component
+
+```html
+<div id="_<%= name %>" class="<%= style.new %>">
+  A New Component
+</div>
+```
+
+```css
+.new {
+  padding: 1rem;
+}
+```
+
+```js
+import { template } from 'lodash-es';
+
+import tpl from './new.html';
+import style from './new.css';
+
+const compiled = template(tpl, { 'imports': { style } });
+
+// ...
+```
+
+Example of Route
+
+```js
+page('/a', );
+```
+
+Example of Internationalization
+
+```js
+{
+
+}
+```
+
+```js
+
+```
+
 Example of Lodash
 
 ```js
@@ -195,7 +239,7 @@ const incrementIfOdd = () => ({ type: INCREMENT_IF_ODD });
 const counterReducer = (state = Map({ counter: 0 }), action) => {
   switch (action.type) {
     case INCREMENT:
-      return state.set('counter', state.get('counter') + 1);
+      return state.update('counter', value => value + 1);
     default:
       return state;
   }
@@ -344,3 +388,10 @@ $ yarn run deploy
 ├── package.json
 └── yarn.lock
 ```
+
+## To-Do List
+* Integration PostHTML to Rollup (`rollup-plugin-posthtml`)
+* Prerenders static HTML (`gulp-prerender`)
+* Hot module replacement (`rollup-plugin-hmr`)
+* ----------
+* Or migrate from Rollup to Webpack
