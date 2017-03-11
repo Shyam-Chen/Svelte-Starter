@@ -7,6 +7,7 @@ import style from './error.css';
 
 export const error = () => {
   page('*', () => {
-    document.querySelector('#app').innerHTML = template(tpl, { 'imports': { style } })({ statusCode: '404' });
+    document.querySelector('#app')
+      .innerHTML = template(tpl, { 'imports': { style } })({ statusCode: '404' });
   });
 };

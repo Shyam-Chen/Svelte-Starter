@@ -1,6 +1,6 @@
 # Frontend Starter Kit (Beta)
 
-:icecream: A boilerplate for :star2: HTML5 :star2:, Material, Firebase, Gulp, Webpack, Rollup, Babel, PostHTML, and PostCSS.
+:icecream: A boilerplate for :star2: HTML5 :star2:, Material, Firebase, Gulp, Webpack, Babel, PostHTML, and PostCSS.
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Frontend-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Frontend-Starter-Kit)
  //
@@ -17,7 +17,6 @@ This seed repository provides the following features:
 * ---------- **Secondary Key** ----------
 * [x] Utility functions with [**Lodash**](https://lodash.com/).
 * [x] Reactive extensions with [**ReactiveX**](http://reactivex.io/).
-* [x] Routing and navigation with [**Page**](http://visionmedia.github.io/page.js/).
 * [x] State container with [**Redux**](http://redux.js.org/).
 * [x] Immutable collections with [**Immutable**](http://facebook.github.io/immutable-js/).
 * [x] Data visualizations with [**D3**](https://d3js.org/).
@@ -151,7 +150,7 @@ $ npm run gulp -- <TASK_NAME> --<ENV_NAME> <ENV_VALUE>
 Example of Component
 
 ```html
-<div id="_<%= name %>" class="<%= style.new %>">
+<div class="<%= style.new %>">
   A New Component
 </div>
 ```
@@ -170,25 +169,63 @@ import style from './new.css';
 
 const compiled = template(tpl, { 'imports': { style } });
 
-// ...
+export const new = () => {
+  // ...
+};
 ```
 
 Example of Route
 
 ```js
-page('/a', );
+page('/a', () => console.log('A'));
+page('/b', () => console.log('B'));
+
+// ...
 ```
 
 Example of Internationalization
 
+```html
+<h1><%= TITLE %></h1>
+
+<p>Intl Object ...</p>
+```
+
 ```js
 {
-
+  "TITLE": "Title"
 }
 ```
 
 ```js
+{
+  "TITLE": "標題"
+}
+```
 
+```js
+import { template } from 'lodash-es';
+
+import tpl from './ex.html';
+import style from './ex.css';
+import DATA_EN from './en.json';
+import DATA_ZH from './zh.json';
+
+export const EX_EN = () => {
+  page('/en/ex', () => {
+    document.querySelector('#app')
+      .innerHTML = template(tpl, { 'imports': { style } })(DATA_EN);
+  });
+};
+
+export const EX_ZH = () => {
+  page('/zh/ex', () => {
+    document.querySelector('#app')
+      .innerHTML = template(tpl, { 'imports': { style } })(DATA_ZH);
+  });
+};
+
+// ...
 ```
 
 Example of Lodash
@@ -391,7 +428,9 @@ $ yarn run deploy
 
 ## To-Do List
 * Integration PostHTML to Rollup (`rollup-plugin-posthtml`)
+* ----------
 * Prerenders static HTML (`gulp-prerender`)
 * Hot module replacement (`rollup-plugin-hmr`)
-* ----------
 * Or migrate from Rollup to Webpack
+* ----------
+* Components & Router
