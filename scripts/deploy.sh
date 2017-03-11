@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -eux
 
 if [[ "$MODE" == "docker" ]]; then
   docker-compose exec app yarn run prod

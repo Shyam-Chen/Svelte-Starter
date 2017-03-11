@@ -53,7 +53,7 @@ import 'firebase/firebase-auth';
 import { load } from './functions';
 
 Promise.all([
-    load('https://fonts.googleapis.com/icon?family=Material+Icons')
+    load('https://fonts.googleapis.com/icon?family=Material+Icons')  // @deprecated
   ])
   .then(result => {
     const style = document.createElement('style');

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -eux
 
 if [[ "$MODE" == "docker" ]]; then
   docker-compose exec app yarn run prod
@@ -22,5 +22,5 @@ if [[ "$MODE" == "unit" ]]; then
 fi
 
 if [[ "$MODE" == "e2e" ]]; then
-  yarn run prod && yarn run e2e
+  yarn run e2e
 fi

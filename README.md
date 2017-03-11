@@ -150,18 +150,37 @@ $ npm run gulp -- <TASK_NAME> --<ENV_NAME> <ENV_VALUE>
 Example of Component
 
 ```html
+<!-- new.html -->
 <div class="<%= style.new %>">
   A New Component
 </div>
+
+<!--
+<template>
+  <style>
+    .new {
+      color: #F44336;
+    }
+  </style>
+  <div class="new">
+    A New Component
+  </div>
+</template>
+<script>
+  // ...
+</script>
+-->
 ```
 
 ```css
+/* new.css */
 .new {
-  padding: 1rem;
+  color: #F44336;
 }
 ```
 
 ```js
+// new.js
 import { template } from 'lodash-es';
 
 import tpl from './new.html';
@@ -179,51 +198,6 @@ Example of Route
 ```js
 page('/a', () => console.log('A'));
 page('/b', () => console.log('B'));
-
-// ...
-```
-
-Example of Internationalization
-
-```html
-<h1><%= TITLE %></h1>
-
-<p>Intl Object ...</p>
-```
-
-```js
-{
-  "TITLE": "Title"
-}
-```
-
-```js
-{
-  "TITLE": "標題"
-}
-```
-
-```js
-import { template } from 'lodash-es';
-
-import tpl from './ex.html';
-import style from './ex.css';
-import DATA_EN from './en.json';
-import DATA_ZH from './zh.json';
-
-export const EX_EN = () => {
-  page('/en/ex', () => {
-    document.querySelector('#app')
-      .innerHTML = template(tpl, { 'imports': { style } })(DATA_EN);
-  });
-};
-
-export const EX_ZH = () => {
-  page('/zh/ex', () => {
-    document.querySelector('#app')
-      .innerHTML = template(tpl, { 'imports': { style } })(DATA_ZH);
-  });
-};
 
 // ...
 ```
@@ -432,5 +406,3 @@ $ yarn run deploy
 * Prerenders static HTML (`gulp-prerender`)
 * Hot module replacement (`rollup-plugin-hmr`)
 * Or migrate from Rollup to Webpack
-* ----------
-* Components & Router
