@@ -8,7 +8,9 @@ const { APP_ROLLUP_CONFIG } = require('./rollup.config');
 exports.APP_WEBPACK_CONFIG = {
   context: SOURCE_ROOT,
   entry: {
-    app: './app.js'
+    app: './app.js',
+    vendor: './vendor.js',
+    polyfills: './polyfills.js'
   },
   output: {
     path: DIST_ROOT,
@@ -18,18 +20,44 @@ exports.APP_WEBPACK_CONFIG = {
   module: {
     rules: [
       {
-        test: /\.(html|css|js|gif|jpeg|jpg|png|svg|json)$/,
-        loader: 'rollup-loader',
+        test: /\.html$/,
+        use: [
+          { loader: 'html-loader', options: { minimize: true } },
+          { loader: 'posthtml-loader', options: { plugins: [require('posthtml-include')()] } }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader', options: { modules: true } },
+          { loader: 'postcss-loader', options: { plugins: [require('postcss-cssnext')({ warnForDuplicates: false }), require('rucksack-css')({ autoprefixer: true }), require('cssnano')()] } }
+        ]
+      },
+      {
+        test: /\.js$/,
         exclude: [/node_modules/],
-        options: APP_ROLLUP_CONFIG
+        use: [
+          { loader: 'babel-loader', options: { babelrc: false, presets: ['latest'], plugins: ['transform-function-bind', 'lodash'] }
+        }]
+      },
+      {
+        test: /\.(gif|jpeg|jpg|png|svg)$/,
+      },
+      {
+        test: /\.json$/,
       }
     ]
   },
   plugins: [
     (env.mode === 'dev' ? new HotModuleReplacementPlugin() : noop()),
     (env.mode === 'dev' ? new NamedModulesPlugin() : noop()),
-    new PrerenderSpaPlugin(DIST_ROOT,
-      ['/', '/about', '/contact']
+    new PrerenderSpaPlugin(
+      DIST_ROOT,
+      ['/', '/about', '/contact'],
+      {
+
+      }
     )
   ]
 };
