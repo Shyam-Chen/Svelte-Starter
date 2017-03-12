@@ -56,7 +56,24 @@ exports.APP_WEBPACK_CONFIG = {
       DIST_ROOT,
       ['/', '/about', '/contact'],
       {
+        postProcessHtml(context) {
+          const titles = {
+            '/': 'Frontend Starter Kit',
+            '/about': 'Frontend Starter Kit - About',
+            '/contact': 'Frontend Starter Kit - Contact'
+          };
 
+          const metas = {
+            '/': 'A boilerplate for HTML5, Material, Firebase, Gulp, Webpack, Babel, PostHTML, and PostCSS.',
+            '/about': 'About ...',
+            '/contact': 'Contact ...'
+          };
+
+          return context.html.replace('{{ TITLE_META_SERVICE }}', `
+            <title>${titles[context.route]}</title>
+            <meta name="description" content="${metas[context.route]}">
+          `);
+        }
       }
     )
   ]
