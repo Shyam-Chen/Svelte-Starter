@@ -4,7 +4,7 @@ import template from 'gulp-template';
 import inject from 'gulp-inject';
 import htmlmin from 'gulp-htmlmin';
 
-import { SOURCE_ROOT, DIST_ROOT } from '../constants';
+import { APP_BASE, SOURCE_ROOT, DIST_ROOT } from '../constants';
 
 gulp.task('chunkhash', () => {
   const injectScripts = (fileName) => {
@@ -25,9 +25,10 @@ gulp.task('chunkhash', () => {
 
   return gulp.src(join(SOURCE_ROOT, 'index.html'))
     .pipe(template({
-      polyfills: '<!-- polyfills:js --><!-- endinject -->',
-      vendor: '<!-- vendor:js --><!-- endinject -->',
-      app: '<!-- app:js --><!-- endinject -->'
+      APP_BASE,
+      POLYFILLS_SCRIPT: '<!-- polyfills:js --><!-- endinject -->',
+      VENDOR_SCRIPT: '<!-- vendor:js --><!-- endinject -->',
+      APP_SCRIPT: '<!-- app:js --><!-- endinject -->'
     }))
     .pipe(injectScripts('polyfills'))
     .pipe(injectScripts('vendor'))

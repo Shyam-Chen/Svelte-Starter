@@ -120,11 +120,12 @@ $ docker-compose up
 
 ## Configuration
 
-Port configuration
+Application configuration
 
 ```js
 export const DEV_PORT = 3000;
 export const TEST_PORT = 9876;
+export const APP_BASE = '/';
 ```
 
 Environment configuration
