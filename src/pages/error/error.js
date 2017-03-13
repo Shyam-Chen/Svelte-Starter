@@ -1,5 +1,5 @@
 // Third party
-import { template } from 'lodash-es';
+import { template } from 'lodash';
 
 // Error
 import tpl from './error.html';

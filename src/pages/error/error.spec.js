@@ -1,4 +1,4 @@
-import { template } from 'lodash-es';
+import { template } from 'lodash';
 
 import tpl from './error.html';
 import style from './error.css';

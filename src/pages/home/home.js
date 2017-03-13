@@ -1,5 +1,5 @@
 // Third party
-import { template } from 'lodash-es';
+import { template } from 'lodash';
 
 // Components
 import { layout } from '../../components/layout';

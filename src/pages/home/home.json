@@ -2,7 +2,7 @@
   "HOME": "Home",
   "VANILLA": {
     "TITLE": "Frontend Starter Kit",
-    "CONTENT": "A boilerplate for HTML5, Material, Firebase, Gulp, Webpack, Babel, PostHTML, and PostCSS.",
+    "CONTENT": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.",
     "BUTTON": "Get Started"
   }
 }

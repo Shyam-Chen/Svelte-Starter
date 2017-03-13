@@ -2,7 +2,7 @@ import { join } from 'path';
 import gulp from 'gulp';
 import plumber from 'gulp-plumber';
 import template from 'gulp-template';
-import browsersync from 'browser-sync';
+import { stream } from 'browser-sync';
 
 import { APP_BASE, SOURCE_ROOT, DIST_ROOT } from '../constants';
 
@@ -16,5 +16,5 @@ gulp.task('entrypoint', () => {
       APP_SCRIPT: '<script src="app.js" defer></script>'
     }))
     .pipe(gulp.dest(DIST_ROOT))
-    .pipe(browsersync.stream());
+    .pipe(stream());
 });

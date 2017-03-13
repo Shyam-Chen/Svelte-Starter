@@ -19,7 +19,7 @@ import replace from 'rollup-plugin-replace';
 import uglify from 'rollup-plugin-uglify';
 
 import { SOURCE_ROOT } from '../constants';
-import { reactivex } from '../utils';
+import { reactivex, lodash } from '../utils';
 
 const plugins = () => {
   const htmlplugin = () => {
@@ -52,6 +52,7 @@ const plugins = () => {
     cssplugin(),
     image(),
     json(),
+    lodash(),
     reactivex(),
     babel({
       babelrc: false,

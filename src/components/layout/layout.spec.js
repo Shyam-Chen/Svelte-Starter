@@ -1,5 +1,3 @@
-// import _template from 'lodash-es/template';
-
 import template from './layout.html';
 
 describe('Layout', () => {

@@ -1,4 +1,4 @@
-import { template } from 'lodash-es';
+import { template } from 'lodash';
 
 import tpl from './file-upload.html';
 import style from './file-upload.css';

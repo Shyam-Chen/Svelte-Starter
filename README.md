@@ -1,6 +1,6 @@
 # Frontend Starter Kit (Beta)
 
-:icecream: A boilerplate for :star2: HTML5 :star2:, Material, Firebase, Gulp, Webpack, Babel, PostHTML, and PostCSS.
+:icecream: A boilerplate for :star2: HTML5 :star2:, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Frontend-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Frontend-Starter-Kit)
  //
@@ -14,6 +14,7 @@ This seed repository provides the following features:
 * [x] Client-side platform with [**HTML5**](https://platform.html5.org/).
 * [x] User interface components with [**Material**](https://material.io/).
 * [x] Backend cloud services with [**Firebase**](https://firebase.google.com/).
+* [x] Routing and navigation with [**Page**](http://visionmedia.github.io/page.js/).
 * ---------- **Secondary Key** ----------
 * [x] Utility functions with [**Lodash**](https://lodash.com/).
 * [x] Reactive extensions with [**ReactiveX**](http://reactivex.io/).
@@ -22,7 +23,7 @@ This seed repository provides the following features:
 * [x] Data visualizations with [**D3**](https://d3js.org/).
 * ---------- **Dev Tools** ----------
 * [x] Build system with [**Gulp**](https://github.com/gulpjs/gulp).
-* [ ] Module bundler with [**Webpack**](https://github.com/webpack/webpack).
+* [x] Module bundler with [**Rollup**](https://github.com/rollup/rollup).
 * [ ] HTML transformations with [**PostHTML**](https://github.com/posthtml/posthtml).
 * [x] Future CSS features with [**PostCSS**](https://github.com/postcss/postcss).
 * [x] Next generation JavaScript with [**Babel**](https://github.com/babel/babel).
@@ -155,22 +156,6 @@ Example of Component
 <div class="<%= style.new %>">
   A New Component
 </div>
-
-<!--
-<template>
-  <style>
-    .new {
-      color: #F44336;
-    }
-  </style>
-  <div class="new">
-    A New Component
-  </div>
-</template>
-<script>
-  // ...
-</script>
--->
 ```
 
 ```css
@@ -182,7 +167,7 @@ Example of Component
 
 ```js
 // new.js
-import { template } from 'lodash-es';
+import { template } from 'lodash';
 
 import tpl from './new.html';
 import style from './new.css';
@@ -208,7 +193,7 @@ Example of Lodash
 ```js
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import { lowerFirst, pad } from 'lodash-es';
+import { lowerFirst, pad } from 'lodash';
 
 Observable::of(lowerFirst('Hello'), pad('World', 5))
   .subscribe(value => console.log(value));
@@ -403,4 +388,6 @@ $ yarn run deploy
 
 ## To-Do List
 * Integration PostHTML to Rollup (`rollup-plugin-posthtml`)
-* Prerender Service (Firebase Cloud Functions - `prerender-node`)
+* Modular ReactiveX builds (`babel-plugin-reactivex`)
+* Prerenders static HTML (`gulp-prerender`)
+* Hot module replacement (`rollup-plugin-hmr`)

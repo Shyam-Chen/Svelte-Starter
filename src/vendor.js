@@ -1,5 +1,5 @@
 /**
- * @name Material
+ * @name Design
  */
 // import '@material/animation/dist/mdc.animation.css';
 // import '@material/animation/dist/mdc.animation';
@@ -35,7 +35,7 @@ import 'material-design-lite/dist/material.indigo-pink.min.css';  // @deprecated
 import 'material-design-lite/material';  // @deprecated
 
 /**
- * @name Firebase
+ * @name Application
  */
 import 'firebase/firebase-auth';
 // import 'firebase/firebase-database';
