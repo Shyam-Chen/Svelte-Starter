@@ -403,7 +403,4 @@ $ yarn run deploy
 
 ## To-Do List
 * Integration PostHTML to Rollup (`rollup-plugin-posthtml`)
-* ----------
-* Prerenders static HTML (`gulp-prerender`)
-* Hot module replacement (`rollup-plugin-hmr`)
-* Or migrate from Rollup to Webpack
+* Prerender Service (Firebase Cloud Functions - `prerender-node`)

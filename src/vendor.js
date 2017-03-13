@@ -1,9 +1,4 @@
 /**
- * @name Routing
- */
-import 'page/page';
-
-/**
  * @name Material
  */
 // import '@material/animation/dist/mdc.animation.css';
@@ -48,9 +43,14 @@ import 'firebase/firebase-auth';
 // import 'firebase/firebase-messaging';
 
 /**
+ * @name Router
+ */
+import 'page/page';
+
+/**
  * @name Load
  */
-import { load } from './functions';
+import { load } from './utils';
 
 Promise.all([
     load('https://fonts.googleapis.com/icon?family=Material+Icons')  // @deprecated
