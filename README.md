@@ -388,6 +388,6 @@ $ yarn run deploy
 
 ## To-Do List
 * Integration PostHTML to Rollup (`rollup-plugin-posthtml`)
-* Modular ReactiveX builds (`babel-plugin-reactivex`)
+* Import file as a blob (`rollup-plugin-binary`)
 * Prerenders static HTML (`gulp-prerender`)
 * Hot module replacement (`rollup-plugin-hmr`)
