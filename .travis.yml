@@ -39,23 +39,13 @@ matrix:
       cache: yarn
 
 before_install:
-  - if [[ "$MODE" == "docker" ]]; then docker-compose up -d; fi
+  - chmod +x scripts/build.sh scripts/test.sh scripts/deploy.sh
 
 before_script:
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run webdriver; fi
-  - if [[ "$MODE" == "unit" ]]; then yarn run lib; fi
-  - if [[ "$MODE" == "e2e" ]]; then yarn run webdriver && yarn run prod; fi
+  - scripts/build.sh
 
 script:
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run prod; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run lint; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run test; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run e2e; fi
-  - if [[ "$MODE" == "prod" ]]; then yarn run prod; fi
-  - if [[ "$MODE" == "lint" ]]; then yarn run lint; fi
-  - if [[ "$MODE" == "unit" ]]; then yarn run test; fi
-  - if [[ "$MODE" == "e2e" ]]; then yarn run e2e; fi
+  - scripts/test.sh
 
 after_success:
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run prod; fi
-  - if [[ "$MODE" == "docker" ]]; then docker-compose exec app yarn run deploy -- --token ${FIREBASE_TOKEN}; fi
+  - scripts/deploy.sh

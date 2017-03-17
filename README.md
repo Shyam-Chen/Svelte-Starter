@@ -331,24 +331,26 @@ $ yarn run deploy
 
 ```
 .
+├── functions
+│   └── server-side logic ...
 ├── scripts
-│   └── build|deploy|install|test|window.sh
+│   └── build|deploy|test.sh
 ├── src
 │   ├── actions
 │   │   └── index.js
 │   ├── assets
-│   │   └── images, fonts, datas, videos, audios, files ...
+│   │   └── audios, datas, fonts, images, videos ...
 │   ├── components
 │   │   └── shared components, reusable components ...
 │   ├── containers
 │   │   └── index.js
 │   ├── epics
 │   │   └── index.js
-│   ├── functions
-│   │   └── index.js
 │   ├── pages
-│   │   └── pages, child pages ...
+│   │   └── all pages, child pages ...
 │   ├── reducers
+│   │   └── index.js
+│   ├── utils
 │   │   └── index.js
 │   ├── app.js
 │   ├── global.css
@@ -360,11 +362,11 @@ $ yarn run deploy
 │   └── vendor.js
 ├── tools
 │   ├── config
-│   │   └── karma.conf|protractor.conf|rollup.config|webpack.config.js
+│   │   └── karma.conf|protractor.conf|rollup.config.js
 │   ├── tasks
-│   │   └── app|build|copy|e2e|entrypoint|lint|polyfills|precache|prerender|serve|unit|vendor|watch.js
+│   │   └── app|build|chunkhash|copy|e2e|entrypoint|lint|polyfills|precache|prerender|serve|unit|vendor|watch.js
 │   ├── utils
-│   │   └── e2e-server|handle-errors|index|resolve-reactivex|service-worker.js
+│   │   └── e2e-server|handle-errors|index|resolve-id|service-worker.js
 │   └── constants.js
 ├── .babelrc
 ├── .editorconfig
@@ -399,5 +401,7 @@ $ yarn run deploy
 * Prerenders static HTML (`gulp-prerender`)
 * Hot module replacement (`rollup-plugin-hmr`)
 * **--------------------**
+* Migrate from `material-design-lite` to `material-components-web`
 * Firebase Examples (Contact Page)
+* Reforming static analysis (`.htmlhintrc`, `.stylelintrc`, `.eslintrc`)
 * Modular ReactiveX builds ([Issue Page](https://github.com/ReactiveX/rxjs/issues/2460))
