@@ -391,9 +391,10 @@ $ yarn run deploy
 * Integration PostHTML to Rollup (`rollup-plugin-posthtml`)
 * Import file as a blob (`rollup-plugin-binary`)
 * ---------- **Medium** ----------
-* Update to gulp-protractor 3.0.0+
-* Update to rxjs 5.0.2+
-* Update to firebase 3.6.3+
+* Update to gulp-protractor v3.0.0+
+* Update to postcss-cssnext v2.9.0+
+* Update to rxjs v5.0.2+
+* Update to firebase v3.6.3+
 * ---------- **Hard** ----------
 * Prerenders static HTML (`gulp-prerender`)
 * Hot module replacement (`rollup-plugin-hmr`)

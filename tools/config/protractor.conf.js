@@ -4,18 +4,11 @@ const { SpecReporter } = require('jasmine-spec-reporter');
 
 const { TEST_PORT } = require('../constants');
 
-const config = {
-  // directConnect: true,
+exports.config = {
   specs: [
     'src/**/*.e2e-spec.js'
   ],
   exclude: [],
-  // capabilities: {
-  //   'browserName': 'chrome',
-  //   'chromeOptions': {
-  //     'args': ['no-sandbox']
-  //   }
-  // },
   capabilities: {
     'browserName': 'phantomjs',
     'phantomjs.binary.path': phantomjs.path,
@@ -37,11 +30,3 @@ const config = {
     includeStackTrace: false
   }
 };
-
-// if (process.env.TRAVIS) {
-//   config.capabilities = {
-//     browserName: 'firefox'
-//   };
-// }
-
-exports.config = config;
