@@ -6,11 +6,11 @@ import buffer from 'vinyl-buffer';
 import rev from 'gulp-rev';
 
 import { DIST_ROOT } from '../constants';
-import { VENDOR_ROLLUP_CONFIG } from '../config/rollup.config';
+import { VENDOR_CONFIG } from '../config/rollup.config';
 import { CompileError } from '../utils';
 
 gulp.task('vendor', () => {
-  return rollup(VENDOR_ROLLUP_CONFIG)
+  return rollup(VENDOR_CONFIG)
     .on('error', CompileError.handle)
     .pipe(source('vendor.js'))
     .pipe(buffer())

@@ -398,3 +398,6 @@ $ yarn run deploy
 * ---------- **Hard** ----------
 * Prerenders static HTML (`gulp-prerender`)
 * Hot module replacement (`rollup-plugin-hmr`)
+* **--------------------**
+* Firebase Examples (Contact Page)
+* Modular ReactiveX builds ([Issue Page](https://github.com/ReactiveX/rxjs/issues/2460))

@@ -16,7 +16,7 @@ exports.config = {
   },
   baseUrl: `http://localhost:${TEST_PORT}/`,
   onPrepare() {
-    babel({ presets: ['latest'] });
+    babel();
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
     global.webdriver = browser.driver;
     webdriver.ignoreSynchronization = true;

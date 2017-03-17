@@ -21,100 +21,87 @@ import uglify from 'rollup-plugin-uglify';
 import { SOURCE_ROOT } from '../constants';
 import { reactivex, lodash } from '../utils';
 
-const plugins = () => {
-  const htmlplugin = () => {
-    return html({
-      htmlMinifierOptions: {
-        collapseWhitespace: true,
-        removeAttributeQuotes: true,
-        removeComments: true
-      }
-    });
-  };
-
-  const cssplugin = () => {
-    const cssExportMap = {};
-    return postcss({
-      parser: comment,
-      plugins: [
-        postcssimport(),
-        cssnext({ warnForDuplicates: false }),
-        rucksack({ autoprefixer: true }),
-        modules({ getJSON(id, tokens) { cssExportMap[id] = tokens; } }),
-        cssnano()
-      ],
-      getExport(id) { return cssExportMap[id]; }
-    });
-  };
-
-  return [
-    htmlplugin(),  // @deprecated
-    cssplugin(),
-    image(),
-    json(),
-    lodash(),
-    reactivex(),
-    babel({
-      babelrc: false,
-      presets: [['latest', { es2015: { modules: false } }]],
-      plugins: ['external-helpers', 'transform-function-bind', [
-        'transform-imports', {
-          'lodash': {
-            transform: 'lodash/${member}',
-            preventFullImport: true
-          },
-          'rxjs': {
-            transform: 'rxjs/${member}',
-            preventFullImport: true
-          },
-          'rxjs/observable': {
-            transform: 'rxjs/observable/${member}',
-            preventFullImport: true
-          },
-          'rxjs/operator': {
-            transform: 'rxjs/operator/${member}',
-            preventFullImport: true
-          },
-          'rxjs/scheduler': {
-            transform: 'rxjs/scheduler/${member}',
-            preventFullImport: true
-          }
-        }
-      ]],
-      exclude: 'node_modules/**'
-    }),
-    globals(),
-    builtins(),
-    resolve({ jsnext: true, browser: true }),
-    commonjs({
-      include: 'node_modules/**',
-      namedExports: {
-        'node_modules/immutable/dist/immutable.js': Object.keys(require('immutable'))
-      }
-    }),
-    replace({ 'process.env.NODE_ENV': JSON.stringify(env.mode === 'prod' ? 'production' : 'development') }),
-    (env.mode === 'prod' ? uglify() : noop())
-  ];
-};
-
-export const TEST_CONFIG = {  // @deprecated
+export const PRIMARY_CONFIG = {
   format: 'iife',
   context: 'window',
-  sourceMap: 'inline',
-  plugins: plugins()
+  plugins: (() => {
+    const htmlplugin = () => {
+      return html({
+        htmlMinifierOptions: {
+          collapseWhitespace: true,
+          removeAttributeQuotes: true,
+          removeComments: true
+        }
+      });
+    };
+
+    const cssplugin = () => {
+      const cssExportMap = {};
+      return postcss({
+        parser: comment,
+        plugins: [
+          postcssimport(),
+          cssnext({ warnForDuplicates: false }),
+          rucksack({ autoprefixer: true }),
+          modules({ getJSON(id, tokens) { cssExportMap[id] = tokens; } }),
+          cssnano()
+        ],
+        getExport(id) { return cssExportMap[id]; }
+      });
+    };
+
+    return [
+      htmlplugin(),  // @deprecated, TODO: rollup-plugin-posthtml
+      cssplugin(),
+      image(),  // @deprecated, TODO: rollup-plugin-binary
+      json(),
+      lodash(),
+      reactivex(),
+      babel({
+        babelrc: false,
+        presets: [['latest', { es2015: { modules: false } }]],
+        plugins: ['external-helpers', 'transform-function-bind', [
+          'transform-imports', {
+            'lodash': {
+              transform: 'lodash/${member}',
+              preventFullImport: true
+            },
+            'rxjs': {
+              transform: 'rxjs/${member}',
+              preventFullImport: true
+            },
+            'rxjs/observable': {
+              transform: 'rxjs/observable/${member}',
+              preventFullImport: true
+            },
+            'rxjs/operator': {
+              transform: 'rxjs/operator/${member}',
+              preventFullImport: true
+            },
+            'rxjs/scheduler': {
+              transform: 'rxjs/scheduler/${member}',
+              preventFullImport: true
+            }
+          }
+        ]],
+        exclude: 'node_modules/**'
+      }),
+      globals(),
+      builtins(),
+      resolve({ jsnext: true, browser: true }),
+      commonjs({
+        include: 'node_modules/**',
+        namedExports: {
+          'node_modules/immutable/dist/immutable.js': Object.keys(require('immutable'))
+        }
+      }),
+      replace({ 'process.env.NODE_ENV': JSON.stringify(env.mode === 'prod' ? 'production' : 'development') }),
+      (env.mode === 'prod' ? uglify() : noop())
+    ];
+  })()
 };
 
-export const APP_CONFIG = Object.assign({}, TEST_CONFIG, {  // @deprecated
-  entry: join(SOURCE_ROOT, 'app.js'),
-  sourceMap: env.mode === 'dev' && true,
-});
-
-export const APP_ROLLUP_CONFIG = {
-  context: 'window',
-  plugins: plugins()
-};
-
-export const LIB_ROLLUP_CONFIG = {
+export const SECONDARY_CONFIG = {
   format: 'es',
   context: 'window',
   plugins: [
@@ -134,10 +121,19 @@ export const LIB_ROLLUP_CONFIG = {
   ]
 };
 
-export const VENDOR_ROLLUP_CONFIG = Object.assign({}, LIB_ROLLUP_CONFIG, {
-  entry: join(SOURCE_ROOT, 'vendor.js')
+export const APP_CONFIG = Object.assign({}, PRIMARY_CONFIG, {
+  entry: join(SOURCE_ROOT, 'app.js'),
+  sourceMap: env.mode === 'dev' && true
 });
 
-export const POLYFILLS_ROLLUP_CONFIG = Object.assign({}, LIB_ROLLUP_CONFIG, {
+export const TEST_CONFIG = Object.assign({}, PRIMARY_CONFIG, {
+  sourceMap: 'inline'
+});
+
+export const POLYFILLS_CONFIG = Object.assign({}, SECONDARY_CONFIG, {
   entry: join(SOURCE_ROOT, 'polyfills.js')
+});
+
+export const VENDOR_CONFIG = Object.assign({}, SECONDARY_CONFIG, {
+  entry: join(SOURCE_ROOT, 'vendor.js')
 });

@@ -6,11 +6,11 @@ import buffer from 'vinyl-buffer';
 import rev from 'gulp-rev';
 
 import { DIST_ROOT } from '../constants';
-import { POLYFILLS_ROLLUP_CONFIG } from '../config/rollup.config';
+import { POLYFILLS_CONFIG } from '../config/rollup.config';
 import { CompileError } from '../utils';
 
 gulp.task('polyfills', () => {
-  return rollup(POLYFILLS_ROLLUP_CONFIG)
+  return rollup(POLYFILLS_CONFIG)
     .on('error', CompileError.handle)
     .pipe(source('polyfills.js'))
     .pipe(buffer())
