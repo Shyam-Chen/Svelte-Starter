@@ -391,18 +391,16 @@ $ yarn run deploy
 ## To-Do List
 * ---------- **Easy** ----------
 * Integration PostHTML to Rollup (`rollup-plugin-posthtml`)
-* Import file as a blob (`rollup-plugin-binary`)
+* Reforming static analysis (`.htmlhintrc`, `.stylelintrc`, `.eslintrc`)
 * ---------- **Medium** ----------
+* Import file as a blob (`rollup-plugin-binary`)
+* Migrate from `material-design-lite` to `material-components-web`
+* Firebase examples (Contact Page)
 * Update to gulp-protractor v3.0.0+ ([Issue Page](https://github.com/mllrsohn/gulp-protractor/issues/128))
 * Update to postcss-cssnext v2.9.0+ ([Issue Page](https://github.com/MoOx/postcss-cssnext/issues/357))
 * Update to rxjs v5.0.2+ ([Issue Page](https://github.com/ReactiveX/rxjs/issues/2460))
 * Update to firebase v3.6.3+ ([Issue Page](https://github.com/rollup/rollup/issues/1275))
 * ---------- **Hard** ----------
+* Add more tests (`*.spec|e2e-spec.js`)
 * Prerenders static HTML (`gulp-prerender`)
 * Hot module replacement (`rollup-plugin-hmr`)
-* **--------------------**
-* Migrate from `material-design-lite` to `material-components-web`
-* Firebase examples (Contact Page)
-* Reforming static analysis (`.htmlhintrc`, `.stylelintrc`, `.eslintrc`)
-* Add more tests (`*.spec|e2e-spec.js`)
-* Modular ReactiveX builds ([Issue Page](https://github.com/ReactiveX/rxjs/issues/2460))
