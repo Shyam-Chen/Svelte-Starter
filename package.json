@@ -70,6 +70,7 @@
     "gulp-plumber": "1.1.0",
     "gulp-protractor": "3.0.0",
     "gulp-rev": "7.1.2",
+    "gulp-sitemap": "^4.2.0",
     "gulp-sourcemaps": "2.4.1",
     "gulp-stylelint": "3.9.0",
     "gulp-template": "4.0.0",
