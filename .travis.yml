@@ -1,4 +1,5 @@
 language: node_js
+node_js: stable
 
 branches:
   only: master
@@ -8,44 +9,31 @@ notifications:
     on_success: change
     on_failure: change
 
+env:
+  matrix:
+    - MODE=prod
+    - MODE=lint
+    - MODE=unit
+    - MODE=e2e
+
+os: linux
+sudo: false
+
+cache: yarn
+
 matrix:
   include:
     - env: MODE=docker
-      os: linux
       sudo: required
       services: docker
-      node_js: stable
       install: true
       cache: docker
-    - env: MODE=prod
-      os: linux
+  exclude:
+    - env: MODE=docker
       sudo: false
-      node_js: stable
-      cache: yarn
-    - env: MODE=lint
-      os: linux
-      sudo: false
-      node_js: stable
-      cache: yarn
-    - env: MODE=unit
-      os: linux
-      sudo: false
-      node_js: stable
-      cache: yarn
-    - env: MODE=e2e
-      os: linux
-      sudo: false
-      node_js: stable
       cache: yarn
 
-before_install:
-  - chmod +x scripts/build.sh scripts/test.sh scripts/deploy.sh
-
-before_script:
-  - scripts/build.sh
-
-script:
-  - scripts/test.sh
-
-after_success:
-  - scripts/deploy.sh
+before_install: chmod +x scripts/*.sh
+before_script: scripts/build.sh
+script: scripts/test.sh
+after_success: scripts/deploy.sh
