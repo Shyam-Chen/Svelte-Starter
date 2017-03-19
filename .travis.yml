@@ -1,13 +1,12 @@
+os: linux
+sudo: false
+
 language: node_js
 node_js: stable
+cache: yarn
 
 branches:
   only: master
-
-notifications:
-  email:
-    on_success: change
-    on_failure: change
 
 env:
   matrix:
@@ -15,11 +14,6 @@ env:
     - MODE=lint
     - MODE=unit
     - MODE=e2e
-
-os: linux
-sudo: false
-
-cache: yarn
 
 matrix:
   include:
@@ -37,3 +31,8 @@ before_install: chmod +x scripts/*.sh
 before_script: scripts/build.sh
 script: scripts/test.sh
 after_success: scripts/deploy.sh
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
