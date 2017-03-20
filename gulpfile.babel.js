@@ -6,9 +6,9 @@ import requiredir from 'require-dir';
 requiredir('./tools/tasks');
 
 gulp.task('dev', (done) => {
-  if (env.watch === 'off' && env.serve === 'off') {
+  if (!env.watch && !env.serve) {
     return runsequence('build', done);
-  } else if (env.serve === 'off') {
+  } else if (!env.serve) {
     return runsequence('build', 'watch', done);
   } else {
     return runsequence('build', 'watch', 'serve', done);

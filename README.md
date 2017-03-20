@@ -132,7 +132,7 @@ export const APP_BASE = '/';
 Environment configuration
 
 ```bash
-$ npm run gulp -- <TASK_NAME> --mode [dev|prod] --watch [on|off] --serve [on|off]
+$ npm run gulp -- <TASK_NAME> --mode [dev|prod] --watch --serve
 ```
 
 Custom Environments
