@@ -9,7 +9,6 @@ gulp.task('copy', () => {
   return gulp.src([
       join(ASSETS_ROOT, 'datas/manifest.json'),
       join(ASSETS_ROOT, 'datas/robots.txt'),
-      join(ASSETS_ROOT, 'datas/sitemap.xml'),
       join(ASSETS_ROOT, 'images/favicon.ico'),
       join(ASSETS_ROOT, 'images/launcher-icon-1x.png'),
       join(ASSETS_ROOT, 'images/launcher-icon-2x.png'),

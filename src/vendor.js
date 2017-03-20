@@ -1,6 +1,7 @@
 /**
  * @name Design
  */
+
 // import '@material/animation/dist/mdc.animation.css';
 // import '@material/animation/dist/mdc.animation';
 // import '@material/auto-init/dist/mdc.autoInit';
@@ -37,6 +38,7 @@ import 'material-design-lite/material';  // @deprecated
 /**
  * @name Application
  */
+
 import 'firebase/firebase-auth';
 // import 'firebase/firebase-database';
 // import 'firebase/firebase-storage';
@@ -45,11 +47,13 @@ import 'firebase/firebase-auth';
 /**
  * @name Router
  */
+
 import 'page/page';
 
 /**
  * @name Load
  */
+
 import { load } from './utils';
 
 Promise.all([

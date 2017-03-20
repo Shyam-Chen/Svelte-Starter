@@ -5,9 +5,13 @@ import { about } from './pages/about';
 import { contact } from './pages/contact';
 import { error } from './pages/error';
 
-import firebaseConfig from './assets/datas/firebase.config.json';
-
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp({
+  apiKey: 'AIzaSyABgvqPE5cNRsTS0UfXpWdyYvqxvR5lGYs',
+  authDomain: 'frontend-starter-kit.firebaseapp.com',
+  databaseURL: 'https://frontend-starter-kit.firebaseio.com',
+  storageBucket: 'frontend-starter-kit.appspot.com',
+  messagingSenderId: '428173442531'
+});
 
 if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost')) {
   navigator.serviceWorker

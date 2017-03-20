@@ -182,10 +182,7 @@ export const new = () => {
 Example of Route
 
 ```js
-page('/a', () => console.log('A'));
-page('/b', () => console.log('B'));
-
-// ...
+page('/new', () => console.log('New Page.'));
 ```
 
 Example of Lodash
