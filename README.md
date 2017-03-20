@@ -152,21 +152,21 @@ $ npm run gulp -- <TASK_NAME> --<ENV_NAME> <ENV_VALUE>
 Example of Component
 
 ```html
-<!-- new.html -->
+<!-- new-component.html -->
 <div class="<%= style.new %>">
-  A New Component
+  <%= text %>
 </div>
 ```
 
 ```css
-/* new.css */
+/* new-component.css */
 .new {
   color: #F44336;
 }
 ```
 
 ```js
-// new.js
+// new-component.js
 import { template } from 'lodash';
 
 import tpl from './new.html';
@@ -174,15 +174,25 @@ import style from './new.css';
 
 const compiled = template(tpl, { 'imports': { style } });
 
-export const new = () => {
-  // ...
+export const newComponent = (name, text) => {
+  document.querySelector(`#${name}`).innerHTML = compiled({ text });
 };
+```
+
+```js
+import { newComponent } from '../../components/new-component';
+
+newComponent('new', 'New Component');
+```
+
+```html
+<div id="new"></div>
 ```
 
 Example of Route
 
 ```js
-page('/new', () => console.log('New Page.'));
+page('/new', () => document.querySelector('#app').innerHTML = 'New Route');
 ```
 
 Example of Lodash
