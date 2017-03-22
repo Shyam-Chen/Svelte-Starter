@@ -67,7 +67,7 @@
     "gulp-inject": "4.2.0",
     "gulp-notify": "3.0.0",
     "gulp-plumber": "1.1.0",
-    "gulp-protractor": "3.0.0",
+    "gulp-protractor": "mllrsohn/gulp-protractor#spawn_to_fork",
     "gulp-rev": "7.1.2",
     "gulp-sitemap": "^4.2.0",
     "gulp-sourcemaps": "2.4.1",
@@ -107,7 +107,6 @@
     "sw-precache": "5.1.0",
     "sw-toolbox": "3.6.0",
     "vinyl-buffer": "1.0.0",
-    "vinyl-source-stream": "1.1.0",
-    "webdriver-manager": "12.0.4"
+    "vinyl-source-stream": "1.1.0"
   }
 }

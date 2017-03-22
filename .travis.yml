@@ -1,9 +1,12 @@
 os: linux
-sudo: false
+dist: trusty
+sudo: required
 
 language: node_js
 node_js: stable
 cache: yarn
+
+jdk: oraclejdk8
 
 branches:
   only: master
@@ -18,13 +21,11 @@ env:
 matrix:
   include:
     - env: MODE=docker
-      sudo: required
       services: docker
       install: true
       cache: docker
   exclude:
     - env: MODE=docker
-      sudo: false
       cache: yarn
 
 before_install: chmod +x scripts/*.sh
