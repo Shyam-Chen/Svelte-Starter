@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.",
   "scripts": {
-    "start": "gulp dev --mode dev",
+    "start": "gulp dev --mode dev --watch --serve",
     "dev": "rimraf public && gulp dev --mode dev --watch --serve",
-    "dev-watch": "rimraf public && gulp dev --mode dev --serve",
     "test": "gulp unit",
-    "test-watch": "gulp unit --watch",
     "prod": "rimraf public && gulp build --mode prod",
     "e2e": "gulp e2e",
     "lint": "gulp lint",

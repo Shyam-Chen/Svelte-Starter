@@ -315,10 +315,7 @@ Observable::fromEvent(document, 'click')
 
 ```bash
 $ yarn run dev
-$ yarn run dev-watch
-
 $ yarn run test
-$ yarn run test-watch
 
 $ yarn run prod
 $ yarn run e2e
