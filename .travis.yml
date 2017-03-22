@@ -27,6 +27,7 @@ matrix:
   exclude:
     - env: MODE=docker
       cache: yarn
+      jdk: oraclejdk8
 
 before_install: chmod +x scripts/*.sh
 before_script: scripts/build.sh

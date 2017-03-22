@@ -50,7 +50,7 @@ This seed repository provides the following features:
 * [Using Libraries](#using-libraries)
 * [All Commands](#all-commands)
 * [Directory Structure](#directory-structure)
-* [To-Do List](#to-do-list)
+* [Known Issues](#known-issues)
 
 ## Getting Started
 
@@ -395,7 +395,7 @@ $ yarn run deploy
 └── yarn.lock
 ```
 
-## To-Do List
+## Known Issues
 * ---------- **Easy** ----------
 * Integration PostHTML to Rollup (`rollup-plugin-posthtml`)
 * Reforming static analysis (`.htmlhintrc`, `.stylelintrc`, `.eslintrc`)
