@@ -4,6 +4,6 @@ import { env } from 'gulp-util';
 import { DIST_ROOT } from '../constants';
 import { ServiceWorker } from '../utils';
 
-gulp.task('precache', (done) => {
+gulp.task('precache', done => {
   new ServiceWorker(DIST_ROOT, (env.mode === 'prod'), done);
 });

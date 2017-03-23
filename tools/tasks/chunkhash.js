@@ -7,7 +7,7 @@ import htmlmin from 'gulp-htmlmin';
 import { APP_BASE, SOURCE_ROOT, DIST_ROOT } from '../constants';
 
 gulp.task('chunkhash', () => {
-  const injectScripts = (fileName) => {
+  const injectScripts = fileName => {
     return inject(
       gulp.src(
           join(DIST_ROOT, `${fileName}-*.js`),

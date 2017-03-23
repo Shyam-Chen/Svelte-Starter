@@ -5,11 +5,6 @@ import { SOURCE_ROOT } from '../constants';
 
 gulp.task('watch', () => {
   gulp.watch([
-    join(SOURCE_ROOT, 'favicon.ico'),
-    join(SOURCE_ROOT, 'robots.txt')
-  ], ['copy']);
-
-  gulp.watch([
     join(SOURCE_ROOT, 'index.html')
   ], ['entrypoint']);
 

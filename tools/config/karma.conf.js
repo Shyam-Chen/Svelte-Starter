@@ -1,7 +1,7 @@
-const { TEST_CONFIG } = require('./rollup.config');
 const { TEST_PORT } = require('../constants');
+const { TEST_CONFIG } = require('./rollup.config');
 
-module.exports = (config) => {
+module.exports = config => {
   config.set({
     basePath: '../..',
     frameworks: ['jasmine'],

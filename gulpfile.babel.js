@@ -5,7 +5,7 @@ import requiredir from 'require-dir';
 
 requiredir('./tools/tasks');
 
-gulp.task('default', (done) => {
+gulp.task('default', done => {
   if (!env.watch && !env.serve) {
     return runsequence('build', done);
   } else if (!env.serve) {
