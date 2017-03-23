@@ -6,7 +6,7 @@ case $MODE in
   "docker" )
     docker-compose exec app yarn run prod
     docker-compose exec app yarn run lint
-    docker-compose exec app yarn run test
+    docker-compose exec app yarn run unit
     docker-compose exec app yarn run e2e
     ;;
   "prod" )
@@ -16,7 +16,7 @@ case $MODE in
     yarn run lint
     ;;
   "unit" )
-    yarn run test
+    yarn run unit
     ;;
   "e2e" )
     yarn run e2e

@@ -76,23 +76,10 @@ $ yarn start
 4) Run the Test
 
 ```bash
-# pre-test
-$ yarn run lib
-
 $ yarn test
 ```
 
-5) Run the E2E test
-
-```bash
-# pre-e2e
-$ yarn run webdriver
-$ yarn run prod
-
-$ yarn run e2e
-```
-
-6) Stay up-to-date
+5) Stay up-to-date
 
 ```bash
 $ git remote add upstream https://github.com/Shyam-Chen/Frontend-Starter-Kit.git
@@ -132,7 +119,7 @@ export const APP_BASE = '/';
 Environment configuration
 
 ```bash
-$ npm run gulp -- <TASK_NAME> --mode [dev|prod] --watch --serve
+$ yarn run gulp -- <TASK_NAME> --mode [dev|prod] --watch --serve
 ```
 
 Custom Environments
@@ -144,7 +131,7 @@ env.<ENV_NAME> === '<ENV_VALUE>';
 ```
 
 ```bash
-$ npm run gulp -- <TASK_NAME> --<ENV_NAME> <ENV_VALUE>
+$ yarn run gulp -- <TASK_NAME> --<ENV_NAME> <ENV_VALUE>
 ```
 
 ## Using Libraries
@@ -315,14 +302,11 @@ Observable::fromEvent(document, 'click')
 
 ```bash
 $ yarn run dev
-$ yarn run test
-
 $ yarn run prod
-$ yarn run e2e
 
 $ yarn run lint
-$ yarn run lib
-$ yarn run webdriver
+$ yarn run unit  # pre: yarn run lib
+$ yarn run e2e  # pre: yarn run webdriver && yarn run prod
 
 $ yarn run clean
 $ yarn run reset
@@ -336,7 +320,7 @@ $ yarn run deploy
 ```
 .
 ├── functions
-│   └── server-side logic ...
+│   └── server-side rules ...
 ├── scripts
 │   └── build|deploy|test.sh
 ├── src
@@ -394,9 +378,9 @@ $ yarn run deploy
 
 ## Known Issues
 * ---------- **Easy** ----------
-* Integration PostHTML to Rollup (`rollup-plugin-posthtml`)
 * Reforming static analysis (`.htmlhintrc`, `.stylelintrc`, `.eslintrc`)
 * ---------- **Medium** ----------
+* Integration PostHTML to Rollup (`rollup-plugin-posthtml`)
 * Import file as a blob (`rollup-plugin-binary`)
 * Migrate from `material-design-lite` to `material-components-web`
 * Firebase examples (Contact Page)
@@ -407,4 +391,3 @@ $ yarn run deploy
 * ---------- **Hard** ----------
 * Add more tests (`*.spec|e2e-spec.js`)
 * Prerenders static HTML (`gulp-prerender`)
-* Hot module replacement (`rollup-plugin-hmr`)
