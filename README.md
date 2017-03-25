@@ -122,18 +122,6 @@ Environment configuration
 $ yarn run gulp -- <TASK_NAME> --mode [dev|prod] --watch --serve
 ```
 
-Custom Environments
-
-```js
-import { env } from 'gulp-util';
-
-env.<ENV_NAME> === '<ENV_VALUE>';
-```
-
-```bash
-$ yarn run gulp -- <TASK_NAME> --<ENV_NAME> <ENV_VALUE>
-```
-
 ## Using Libraries
 
 Example of Component
