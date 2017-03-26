@@ -377,5 +377,6 @@ $ yarn run deploy
 * Update to postcss-cssnext v2.9.0+ ([Issue](https://github.com/MoOx/postcss-cssnext/issues/357))
 * Update to rxjs v5.0.2+ ([Issue](https://github.com/ReactiveX/rxjs/issues/2460))
 * Update to firebase v3.6.3+ ([Issue](https://github.com/rollup/rollup/issues/1275))
+* Immutable with ES Modules ([Issue](https://github.com/facebook/immutable-js/issues/1190))
 * Add more tests (`*.spec|e2e-spec.js`)
 * Prerenders static HTML (`gulp-prerender`)
