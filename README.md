@@ -369,12 +369,13 @@ $ yarn run deploy
 * Reforming static analysis (`.htmlhintrc`, `.stylelintrc`, `.eslintrc`)
 * ---------- **Medium** ----------
 * Integration PostHTML to Rollup (`rollup-plugin-posthtml`)
-* Import file as a blob (`rollup-plugin-binary`) vs `posthtml-inline-assets`
+* Import file as a blob (`rollup-plugin-binary` vs `posthtml-inline-assets`)
 * Migrate from `material-design-lite` to `material-components-web`
+* Migrate from `postcss-modules` to `posthtml-bem` (Friendly to MDC)
 * Firebase examples (Contact Page)
-* Update to postcss-cssnext v2.9.0+ ([Issue Page](https://github.com/MoOx/postcss-cssnext/issues/357))
-* Update to rxjs v5.0.2+ ([Issue Page](https://github.com/ReactiveX/rxjs/issues/2460))
-* Update to firebase v3.6.3+ ([Issue Page](https://github.com/rollup/rollup/issues/1275))
 * ---------- **Hard** ----------
+* Update to postcss-cssnext v2.9.0+ ([Issue](https://github.com/MoOx/postcss-cssnext/issues/357))
+* Update to rxjs v5.0.2+ ([Issue](https://github.com/ReactiveX/rxjs/issues/2460))
+* Update to firebase v3.6.3+ ([Issue](https://github.com/rollup/rollup/issues/1275))
 * Add more tests (`*.spec|e2e-spec.js`)
 * Prerenders static HTML (`gulp-prerender`)
