@@ -9,13 +9,11 @@ gulp.task('watch', () => {
   ], ['entrypoint']);
 
   gulp.watch([
-    join(SOURCE_ROOT, '**/*.{html,css,js}'),
-    join(SOURCE_ROOT, '**/*.{gif,jpeg,jpg,png,svg}'),
-    join(SOURCE_ROOT, '**/*.json'),
+    join(SOURCE_ROOT, '**/*.{html,css,js,json}'),
     `!${join(SOURCE_ROOT, 'index.html')}`,
     `!${join(SOURCE_ROOT, 'polyfills.js')}`,
     `!${join(SOURCE_ROOT, 'vendor.js')}`,
-    `!${join(SOURCE_ROOT, '**/*.{spec.js,e2e-spec.js}')}`
+    `!${join(SOURCE_ROOT, '**/*.{spec,e2e-spec}.js')}`
   ], ['app']);
 
   gulp.watch([

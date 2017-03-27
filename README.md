@@ -310,12 +310,12 @@ $ yarn run deploy
 ├── functions
 │   └── server-side rules ...
 ├── scripts
-│   └── build|deploy|test.sh
+│   └── {build,deploy,test}.sh  -> shell scripts ...
 ├── src
 │   ├── actions
 │   │   └── action creators ...
 │   ├── assets
-│   │   └── images, audios, datas, fonts, , videos ...
+│   │   └── audios, datas, fonts, images, videos ...
 │   ├── components
 │   │   └── shared components, reusable components ...
 │   ├── containers
@@ -338,12 +338,12 @@ $ yarn run deploy
 │   └── vendor.js  -> third-party libraries ...
 ├── tools
 │   ├── config
-│   │   └── karma.conf|protractor.conf|rollup.config.js
+│   │   └── {karma.conf,protractor.conf,rollup.config}.js
 │   ├── tasks
-│   │   └── app|build|chunkhash|copy|e2e|entrypoint|lint|polyfills|precache|prerender|serve|unit|vendor|watch.js
+│   │   └── {app,build,chunkhash,copy,e2e,entrypoint,lint,polyfills,precache,preload,prerender,serve,sitemap,unit,vendor,watch}.js
 │   ├── utils
-│   │   └── e2e-server|handle-errors|index|resolve-id|service-worker.js
-│   └── constants.js
+│   │   └── {e2e-server,handle-errors,index,resolve-id,service-worker}.js
+│   └── constants.js  -> tool constants ...
 ├── .babelrc
 ├── .editorconfig
 ├── .eslintrc

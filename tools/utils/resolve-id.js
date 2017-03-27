@@ -1,6 +1,6 @@
 class Lodash {
   resolveId(id) {
-    if (id.startsWith('lodash')) {
+    if (id.startsWith('lodash') && !id.startsWith('lodash-es')) {
       return `node_modules/lodash-es/${id.replace('lodash/', '')}.js`;
     }
   }
@@ -8,7 +8,7 @@ class Lodash {
 
 class ReactiveX {
   resolveId(id) {
-    if (id.startsWith('rxjs')) {
+    if (id.startsWith('rxjs') && !id.startsWith('rxjs-es')) {
       return `node_modules/@reactivex/rxjs/dist/es6/${id.replace('rxjs/', '')}.js`;
     }
   }
