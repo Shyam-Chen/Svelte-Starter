@@ -329,7 +329,7 @@ $ yarn run deploy
 │   ├── utils
 │   │   └── utility functions ...
 │   ├── app.js
-│   ├── global.css  -> thing about posthtml-bem (Rename to app.css) ...
+│   ├── global.css
 │   ├── index.html
 │   ├── polyfills.js  -> polyfills, shims, prevendor ...
 │   ├── root.css  -> variables, mixins ...
@@ -369,9 +369,9 @@ $ yarn run deploy
 * Reforming static analysis (`.htmlhintrc`, `.stylelintrc`, `.eslintrc`)
 * ---------- **Medium** ----------
 * Integration PostHTML to Rollup (`rollup-plugin-posthtml`)
-* Import file as a blob (`rollup-plugin-binary` vs `posthtml-inline-assets`)
+* Migrate from `rollup-plugin-image` to `posthtml-inline-assets`
 * Migrate from `material-design-lite` to `material-components-web`
-* Migrate from `postcss-modules` to `posthtml-bem` (Friendly to MDC)
+* Migrate from `postcss-modules` to `posthtml-bem`
 * Firebase examples (Contact Page)
 * ---------- **Hard** ----------
 * Update to postcss-cssnext v2.9.0+ ([Issue](https://github.com/MoOx/postcss-cssnext/issues/357))

@@ -43,7 +43,7 @@ export const PRIMARY_CONFIG = {
           postcssimport(),
           cssnext({ warnForDuplicates: false }),
           rucksack({ autoprefixer: true }),
-          modules({ getJSON(id, tokens) { cssExportMap[id] = tokens; } }),
+          modules({ getJSON(id, tokens) { cssExportMap[id] = tokens; } }),  // @deprecated, TODO: posthtml-bem
           cssnano()
         ],
         getExport(id) { return cssExportMap[id]; }
@@ -53,7 +53,7 @@ export const PRIMARY_CONFIG = {
     return [
       htmlplugin(),  // @deprecated, TODO: rollup-plugin-posthtml
       cssplugin(),
-      image(),  // @deprecated, TODO: rollup-plugin-binary
+      image(),  // @deprecated, TODO: posthtml-inline-assets
       json(),
       lodash(),
       reactivex(),
