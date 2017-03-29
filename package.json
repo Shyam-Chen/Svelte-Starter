@@ -89,6 +89,7 @@
     "postcss-cssnext": "2.9.0",
     "postcss-import": "9.1.0",
     "postcss-modules": "0.6.4",
+    "postcss-url": "5.1.2",
     "protractor": "5.1.1",
     "require-dir": "0.3.1",
     "rimraf": "2.6.1",

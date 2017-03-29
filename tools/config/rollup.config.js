@@ -6,6 +6,7 @@ import comment from 'postcss-comment';
 import postcssimport from 'postcss-import';
 import cssnext from 'postcss-cssnext';
 import rucksack from 'rucksack-css';
+import url from 'postcss-url';
 import modules from 'postcss-modules';
 import cssnano from 'cssnano';
 import image from 'rollup-plugin-image';
@@ -43,6 +44,7 @@ export const PRIMARY_CONFIG = {
           postcssimport(),
           cssnext({ warnForDuplicates: false }),
           rucksack({ autoprefixer: true }),
+          url({ url: 'inline', maxSize: 32 }),
           modules({ getJSON(id, tokens) { cssExportMap[id] = tokens; } }),  // @deprecated, TODO: posthtml-bem
           cssnano()
         ],
