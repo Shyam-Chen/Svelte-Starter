@@ -4,6 +4,6 @@ services:
   app:
     build: .
     ports:
-      - "3000:3000"
+      - "8000:8000"
       - "9876:9876"
     tty: true

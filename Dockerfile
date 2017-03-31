@@ -31,4 +31,4 @@ RUN apt-get purge -y wget && apt-get -y autoremove && \
 # install
 RUN yarn
 
-EXPOSE 3000 9876
+EXPOSE 8000 9876

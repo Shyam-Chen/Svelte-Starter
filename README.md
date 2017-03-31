@@ -97,7 +97,7 @@ $ docker build -t Frontend-Starter-Kit .
 2) Run the Container
 
 ```bash
-$ docker run -it -p 3000:3000 -p 9876:9876 --name app Frontend-Starter-Kit
+$ docker run -it -p 8000:8000 -p 9876:9876 --name app Frontend-Starter-Kit
 ```
 
 3) Just Compose
@@ -111,7 +111,7 @@ $ docker-compose up
 Application configuration
 
 ```js
-export const DEV_PORT = 3000;
+export const DEV_PORT = 8000;
 export const TEST_PORT = 9876;
 export const APP_BASE = '/';
 ```
