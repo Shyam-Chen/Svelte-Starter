@@ -1,7 +1,4 @@
-import { template } from 'lodash';
-
-import tpl from './layout.html';
-import style from './layout.css';
+import template from './layout.html';
 import data from './layout.json';
 
 /**
@@ -14,6 +11,6 @@ import data from './layout.json';
  */
 
 export const layout = (page, content) => {
-  document.querySelector('#app').innerHTML = template(tpl, { 'imports': { style } })(data);
+  document.querySelector('#app').innerHTML = template(data);
   document.querySelector('#page').innerHTML = content;
 };

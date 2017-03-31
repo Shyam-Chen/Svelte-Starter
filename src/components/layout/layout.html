@@ -1,25 +1,24 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title"><%= TITLE %></span>
+      <span class="mdl-layout-title">${ _.TITLE }</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <% [].forEach.call(LINK, function(item) { %>
-          <a class="mdl-navigation__link" href="<%- item[0] %>"><%- item[1] %></a>
-        <% }); %>
+        <each loop="item in [['/', 'Home'], ['/about', 'About'], ['/contact', 'Contact']]">
+          <a class="mdl-navigation__link" href="{{ item[0] }}">{{ item[1] }}</a>
+        </each>
       </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title"><%= TITLE %></span>
+    <span class="mdl-layout-title">${ _.TITLE }</span>
     <nav class="mdl-navigation">
-      <% [].forEach.call(LINK, function(item) { %>
-        <a class="mdl-navigation__link" href="<%- item[0] %>"><%- item[1] %></a>
-      <% }); %>
+      <each loop="item in [['/', 'Home'], ['/about', 'About'], ['/contact', 'Contact']]">
+        <a class="mdl-navigation__link" href="{{ item[0] }}">{{ item[1] }}</a>
+      </each>
     </nav>
   </div>
   <main class="mdl-layout__content mdl-color--grey-100">
-    <div id="page"></div>
-    <div class="<%= style.bottomBlank %>"></div>
+    <div id="page" style="padding-bottom: 2rem"></div>
   </main>
 </div>

@@ -1,20 +1,49 @@
 <div class="mdl-grid mdl-grid--center">
-  <h2 class="mdl-color-text--blue-900"><%= ABOUT %></h2>
+  <h2 class="mdl-color-text--blue-900">${ _.ABOUT }</h2>
 </div>
 
 <div class="mdl-grid mdl-grid--no-spacing mdl-grid--center">
   <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
     <thead>
       <tr>
-        <th class="mdl-data-table__cell--non-numeric"><%= LIST.TITLE %></th>
+        <th class="mdl-data-table__cell--non-numeric">${ _.LIST.TITLE }</th>
       </tr>
     </thead>
     <tbody>
-      <% [].forEach.call(LIST.ITEM, function(item, index) { %>
+      <each loop="item, index in [
+          'Client-side platform with HTML5.',
+          'User interface components with Material.',
+          'Backend cloud services with Firebase.',
+          'Routing and navigation with Page.',
+          'Utility functions with Lodash.',
+          'Reactive extensions with ReactiveX.',
+          'State container with Redux.',
+          'Immutable collections with Immutable.',
+          'Data visualizations with D3.',
+          'Build system with Gulp.',
+          'Module bundler with Rollup.',
+          'HTML transformations with PostHTML.',
+          'Future CSS features with PostCSS.',
+          'Next generation JavaScript with Babel.',
+          'Synchronised browser with BrowserSync.',
+          'HTML static code analyzer with HTMLHint.',
+          'CSS static code analyzer with StyleLint.',
+          'JavaScript static code analyzer with ESLint.',
+          'Testing framework with Jasmine.',
+          'Unit tests with Karma.',
+          'End-to-end tests with Protractor.',
+          'Operating system with Linux.',
+          'Text editor with Atom.',
+          'Version control with Git.',
+          'Fast and deterministic builds with Yarn.',
+          'Software container with Docker.',
+          'Continuous integration with Travis.'
+        ]"
+      >
         <tr>
-          <td class="mdl-data-table__cell--non-numeric"><%- ++index %>. <%- item %></td>
+          <td class="mdl-data-table__cell--non-numeric">{{ ++index }}. {{ item }}</td>
         </tr>
-      <% }); %>
+      </each>
     </tbody>
   </table>
 </div>

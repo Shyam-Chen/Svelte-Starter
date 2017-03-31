@@ -6,7 +6,7 @@ import buffer from 'vinyl-buffer';
 import rev from 'gulp-rev';
 
 import { DIST_ROOT } from '../constants';
-import { VENDOR_CONFIG } from '../config/rollup.config';
+import { VENDOR_CONFIG } from '../config/rollup';
 import { CompileError } from '../utils';
 
 gulp.task('vendor', () => {

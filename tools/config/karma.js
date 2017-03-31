@@ -1,5 +1,5 @@
 const { TEST_PORT } = require('../constants');
-const { TEST_CONFIG } = require('./rollup.config');
+const { TEST_CONFIG } = require('./rollup');
 
 module.exports = config => {
   config.set({

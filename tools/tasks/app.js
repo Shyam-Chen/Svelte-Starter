@@ -8,7 +8,7 @@ import rev from 'gulp-rev';
 import { stream } from 'browser-sync';
 
 import { DIST_ROOT } from '../constants';
-import { APP_CONFIG } from '../config/rollup.config';
+import { APP_CONFIG } from '../config/rollup';
 import { CompileError } from '../utils';
 
 gulp.task('app', () => {

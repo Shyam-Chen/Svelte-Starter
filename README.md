@@ -24,7 +24,7 @@ This seed repository provides the following features:
 * ---------- **Dev Tools** ----------
 * [x] Build system with [**Gulp**](https://github.com/gulpjs/gulp).
 * [x] Module bundler with [**Rollup**](https://github.com/rollup/rollup).
-* [ ] HTML transformations with [**PostHTML**](https://github.com/posthtml/posthtml).
+* [x] HTML transformations with [**PostHTML**](https://github.com/posthtml/posthtml).
 * [x] Future CSS features with [**PostCSS**](https://github.com/postcss/postcss).
 * [x] Next generation JavaScript with [**Babel**](https://github.com/babel/babel).
 * [x] Synchronised browser with [**BrowserSync**](https://github.com/BrowserSync/browser-sync).
@@ -128,40 +128,52 @@ Example of Component
 
 ```html
 <!-- new-component.html -->
-<div class="<%= style.new %>">
-  <%= text %>
+<div block="card" mods="theme:light">
+  <div elem="title" mods="size:big">${ _.title }</div>
+  <div elem="content">${ _.content }</div>
 </div>
 ```
 
-```css
+```scss
 /* new-component.css */
-.new {
-  color: #F44336;
+.card {  // block
+  ...
+  &__title {  // elem
+    ...
+    &--size {  // mods
+      ...
+      &-big { ... }
+      &-small { ... }
+    }
+  }
+  &__content { ... }  // elem
+  &--theme {  // mods
+    ...
+    &-dark { ... }
+    &-light { ... }
+  }
 }
 ```
 
 ```js
 // new-component.js
-import { template } from 'lodash';
+import './new-component.css';
 
-import tpl from './new.html';
-import style from './new.css';
+import template from './new-component.html';
 
-const compiled = template(tpl, { 'imports': { style } });
-
-export const newComponent = (name, text) => {
-  document.querySelector(`#${name}`).innerHTML = compiled({ text });
+export const newComponent = (name, title, content) => {
+  document.querySelector(`#${name}`).innerHTML = template({ title, content });
 };
 ```
 
 ```js
 import { newComponent } from '../../components/new-component';
 
-newComponent('new', 'New Component');
+newComponent('ex', 'Component - Title', 'Component - Content');
 ```
 
 ```html
-<div id="new"></div>
+<div id="ex"></div>
 ```
 
 Example of Route
@@ -328,8 +340,8 @@ $ yarn run deploy
 │   │   └── reducer functions ...
 │   ├── utils
 │   │   └── utility functions ...
+│   ├── app.css
 │   ├── app.js
-│   ├── global.css
 │   ├── index.html
 │   ├── polyfills.js  -> polyfills, shims, prevendor ...
 │   ├── root.css  -> variables, mixins ...
@@ -338,7 +350,7 @@ $ yarn run deploy
 │   └── vendor.js  -> third-party libraries ...
 ├── tools
 │   ├── config
-│   │   └── {karma.conf,protractor.conf,rollup.config}.js
+│   │   └── {babel,karma,postcss,posthtml,protractor,rollup}.js
 │   ├── tasks
 │   │   └── {app,build,chunkhash,copy,e2e,entrypoint,lint,polyfills,precache,preload,prerender,serve,sitemap,unit,vendor,watch}.js
 │   ├── utils
@@ -368,10 +380,9 @@ $ yarn run deploy
 * ---------- **Easy** ----------
 * Reforming static analysis (`.htmlhintrc`, `.stylelintrc`, `.eslintrc`)
 * ---------- **Medium** ----------
-* Integration PostHTML to Rollup (`rollup-plugin-posthtml`)
-* Migrate from `rollup-plugin-image` to `posthtml-inline-assets`
+* Integration with `posthtml-expressions`
+* `posthtml-inline-assets` not working
 * Migrate from `material-design-lite` to `material-components-web`
-* Migrate from `postcss-modules` to `posthtml-bem`
 * Firebase examples (Contact Page)
 * ---------- **Hard** ----------
 * Update to postcss-cssnext v2.9.0+ ([Issue](https://github.com/MoOx/postcss-cssnext/issues/357))

@@ -1,13 +1,15 @@
-:global {
-  & .mdl-grid--center {
+.mdl-grid {
+  &--center {
     justify-content: center;
   }
+}
 
-  & .mdl-cell--center {
+.mdl-cell {
+  &--center {
     text-align: center;
   }
 
-  & .mdl-cell--right {
+  &--right {
     text-align: right;
   }
 }

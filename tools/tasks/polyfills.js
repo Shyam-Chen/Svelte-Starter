@@ -6,7 +6,7 @@ import buffer from 'vinyl-buffer';
 import rev from 'gulp-rev';
 
 import { DIST_ROOT } from '../constants';
-import { POLYFILLS_CONFIG } from '../config/rollup.config';
+import { POLYFILLS_CONFIG } from '../config/rollup';
 import { CompileError } from '../utils';
 
 gulp.task('polyfills', () => {

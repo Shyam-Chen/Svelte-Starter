@@ -5,7 +5,7 @@ import { Server } from 'karma';
 
 gulp.task('unit', done => {
   new Server({
-    configFile: join(__dirname, '../config/karma.conf.js'),
+    configFile: join(__dirname, '../config/karma.js'),
     singleRun: !env.watch
   }, done).start();
 });

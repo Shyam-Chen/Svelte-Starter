@@ -1,13 +1,9 @@
-// Third party
-import { template } from 'lodash';
-
 // Error
-import tpl from './error.html';
-import style from './error.css';
+import template from './error.html';
 
 export const error = () => {
   page('*', () => {
     document.querySelector('#app')
-      .innerHTML = template(tpl, { 'imports': { style } })({ statusCode: '404' });
+      .innerHTML = template({ statusCode: '404' });
   });
 };

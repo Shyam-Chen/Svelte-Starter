@@ -6,16 +6,12 @@
  *   [ ] Cloud Messaging
  */
 
-// Third party
-import { template } from 'lodash';
-
 // Components
 import { layout } from '../../components/layout';
 import { fileUpload } from '../../components/file-upload';
 
 // Contact
-import tpl from './contact.html';
-import style from './contact.css';
+import template from './contact.html';
 import data from './contact.json';
 
 const auth = () => {
@@ -61,8 +57,7 @@ const auth = () => {
 
 export const contact = () => {
   page('/contact', () => {
-    const content = template(tpl, { 'imports': { style } })(data);
-    layout('contact', content);
+    layout('contact', template(data));
     fileUpload('contact-image');
     auth();
     componentHandler.upgradeAllRegistered();
