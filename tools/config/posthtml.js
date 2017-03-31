@@ -3,10 +3,13 @@ import inlineAssets from 'posthtml-inline-assets';
 import expressions from 'posthtml-expressions';
 import minifier from 'posthtml-minifier';
 
+import { ASSETS_ROOT } from '../constants';
+
 export default {
   plugins: [
     bem({ elemPrefix: '__', modPrefix: '--', modDlmtr: '-' }),
     inlineAssets({
+      from: ASSETS_ROOT,
       inline: {
         images: {
           then(node, data) {

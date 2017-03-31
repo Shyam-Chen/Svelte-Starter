@@ -8,7 +8,6 @@ gulp.task('copy', () => {
       join(ASSETS_ROOT, 'datas/manifest.json'),
       join(ASSETS_ROOT, 'datas/robots.txt'),
       join(ASSETS_ROOT, 'images/favicon.ico'),
-      join(ASSETS_ROOT, 'images/vanilla.png'),
       join(ASSETS_ROOT, 'images/launcher-icon-1x.png'),
       join(ASSETS_ROOT, 'images/launcher-icon-2x.png'),
       join(ASSETS_ROOT, 'images/launcher-icon-3x.png'),

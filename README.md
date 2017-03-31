@@ -381,7 +381,6 @@ $ yarn run deploy
 * Reforming static analysis (`.htmlhintrc`, `.stylelintrc`, `.eslintrc`)
 * ---------- **Medium** ----------
 * Integration with `posthtml-expressions`
-* `posthtml-inline-assets` not working
 * Migrate from `material-design-lite` to `material-components-web`
 * Firebase examples (Contact Page)
 * ---------- **Hard** ----------
