@@ -7,9 +7,6 @@ case $MODE in
     docker-compose up -d
     docker-compose exec app yarn run webdriver
     ;;
-  "unit" )
-    yarn run lib
-    ;;
   "e2e" )
     yarn run webdriver
     yarn run prod

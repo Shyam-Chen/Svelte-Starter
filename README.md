@@ -305,7 +305,7 @@ $ yarn run dev
 $ yarn run prod
 
 $ yarn run lint
-$ yarn run unit  # pre: yarn run lib
+$ yarn run unit
 $ yarn run e2e  # pre: yarn run webdriver && yarn run prod
 
 $ yarn run clean
