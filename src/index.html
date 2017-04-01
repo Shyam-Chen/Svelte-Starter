@@ -8,6 +8,9 @@
     <link rel="manifest" href="manifest.json">
     <meta name="description" content="A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.">
     <base href="<%= APP_BASE %>">
+    <%= PRELOAD_POLYFILLS %>
+    <%= PRELOAD_VENDOR %>
+    <%= PRELOAD_APP %>
   </head>
   <body>
     <div id="app"></div>
