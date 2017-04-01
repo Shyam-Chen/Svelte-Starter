@@ -1,6 +1,6 @@
 @import '../../root.css';
 
-.File_Upload {
+.file-upload {
   opacity: 0;
   overflow: hidden;
   position: absolute;

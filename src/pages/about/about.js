@@ -1,6 +1,5 @@
 import { layout } from '../../components/layout';
 
-// About
 import template from './about.html';
 import data from './about.json';
 

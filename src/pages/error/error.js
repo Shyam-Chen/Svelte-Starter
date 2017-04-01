@@ -1,4 +1,3 @@
-// Error
 import template from './error.html';
 
 export const error = () => {

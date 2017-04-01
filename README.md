@@ -379,8 +379,8 @@ $ yarn run deploy
 ## Known Issues
 * ---------- **Easy** ----------
 * Reforming static analysis (`.htmlhintrc`, `.stylelintrc`, `.eslintrc`)
+* Clean code (`.html`, `.css`, `.js`)
 * ---------- **Medium** ----------
-* Integration with `posthtml-expressions`
 * Migrate from `material-design-lite` to `material-components-web`
 * Firebase examples (Contact Page)
 * ---------- **Hard** ----------

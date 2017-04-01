@@ -8,7 +8,7 @@
  *   });
  */
 
-export const load = (url) => {
+export const load = url => {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);

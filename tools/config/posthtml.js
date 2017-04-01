@@ -1,5 +1,8 @@
 import bem from 'posthtml-bem';
 import inlineAssets from 'posthtml-inline-assets';
+import include from 'posthtml-include';
+import mixins from 'posthtml-mixins';
+import extend from 'posthtml-extend';
 import expressions from 'posthtml-expressions';
 import minifier from 'posthtml-minifier';
 
@@ -25,6 +28,9 @@ export default {
         }
       }
     }),
+    include(),
+    mixins(),
+    extend(),
     expressions(),
     minifier({
       collapseWhitespace: true,

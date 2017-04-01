@@ -6,11 +6,9 @@
  *   [ ] Cloud Messaging
  */
 
-// Components
 import { layout } from '../../components/layout';
 import { fileUpload } from '../../components/file-upload';
 
-// Contact
 import template from './contact.html';
 import data from './contact.json';
 

@@ -1,7 +1,7 @@
 import { about } from './about';
 
 describe('About', () => {
-  it('action', () => {
+  it('toBeDefined', () => {
     expect(about).toBeDefined();
   });
 });

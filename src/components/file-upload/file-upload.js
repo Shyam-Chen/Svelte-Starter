@@ -1,21 +1,6 @@
+import './file-upload.css';
+
 import template from './file-upload.html';
-
-const compiled = template;
-
-const action = (name) => {
-  const input = document.querySelector(`input[type=file]#_${name}`);
-	let label	= input.nextElementSibling;
-	let labelVal = label.innerHTML;
-	input.addEventListener('change', (event) => {
-		let fileName = '';
-    fileName = event.target.value.split('\\').pop();
-    if (fileName) {
-			label.querySelector('span').innerHTML = fileName;
-		} else {
-			label.innerHTML = labelVal;
-    }
-	});
-};
 
 /**
  * @param {string} name
@@ -34,7 +19,21 @@ const action = (name) => {
 
 export const fileUpload = (name, text = 'Choose a file') => {
   document.querySelector(`#${name}`)
-    .innerHTML = compiled({ name, text });
+    .innerHTML = template({ name, text });
 
-  action(name);
+  const input = document.querySelector(`input[type=file]#_${name}`);
+
+  let label	= input.nextElementSibling;
+  let labelVal = label.innerHTML;
+
+  input.addEventListener('change', event => {
+    let fileName = '';
+    fileName = event.target.value.split('\\').pop();
+
+    if (fileName) {
+      label.querySelector('span').innerHTML = fileName;
+    } else {
+      label.innerHTML = labelVal;
+    }
+  });
 };
