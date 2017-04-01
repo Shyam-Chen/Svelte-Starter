@@ -1,4 +1,4 @@
-# Frontend Starter Kit (Beta)
+# Frontend Starter Kit (GA)
 
 :icecream: A boilerplate for :star2: HTML5 :star2:, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.
 
