@@ -17,7 +17,7 @@ export default {
     pimport(),
     cssnext({ warnForDuplicates: false }),
     rucksack({ autoprefixer: true }),
-    url({ url: 'inline', maxSize: 32 }),
+    url({ url: 'inline' }),
     extend(),
     simplevars(),
     conditionals(),
