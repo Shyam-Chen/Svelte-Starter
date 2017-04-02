@@ -1,11 +1,3 @@
-/*
- * TODO: Firebase
- *   [x] Authentication
- *   [ ] Realtime Database
- *   [ ] Storage
- *   [ ] Cloud Messaging
- */
-
 import { layout } from '../../components/layout';
 import { fileUpload } from '../../components/file-upload';
 
