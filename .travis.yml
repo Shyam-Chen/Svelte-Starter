@@ -30,6 +30,7 @@ matrix:
       jdk: oraclejdk8
 
 before_install: chmod +x scripts/*.sh
+
 before_script: scripts/build.sh
 script: scripts/test.sh
 after_success: scripts/deploy.sh

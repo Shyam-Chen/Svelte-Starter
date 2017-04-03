@@ -94,7 +94,7 @@
     "postcss-for": "2.1.1",
     "postcss-import": "9.1.0",
     "postcss-simple-vars": "3.1.0",
-    "postcss-url": "5.1.2",
+    "postcss-url": "6.0.0",
     "posthtml-bem": "0.2.2",
     "posthtml-expressions": "1.1.0",
     "posthtml-extend": "0.1.2",
