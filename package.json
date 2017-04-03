@@ -38,8 +38,6 @@
     "d3": "4.7.4",
     "d3-selection-multi": "1.0.1",
     "firebase": "3.6.3",
-    "firebase-admin": "4.1.4",
-    "firebase-functions": "0.5.4",
     "immutable": "3.8.1",
     "lodash-es": "4.17.4",
     "material-components-web": "0.7.0",
