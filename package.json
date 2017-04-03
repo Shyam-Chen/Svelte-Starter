@@ -4,7 +4,7 @@
   "description": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.",
   "scripts": {
     "start": "gulp --mode dev --watch --serve",
-    "test": "gulp unit",
+    "test": "gulp unit --watch",
     "dev": "gulp --mode dev --watch --serve",
     "prod": "gulp --mode prod",
     "lint": "gulp lint",
@@ -14,7 +14,6 @@
     "reset": "git reset --hard HEAD && git clean -df",
     "reinstall": "yarn cache clean && git clean -dfx -e '.*' && yarn install",
     "deploy": "firebase deploy",
-    "lib": "gulp polyfills && gulp vendor",
     "webdriver": "gulp webdriver",
     "gulp": "gulp",
     "predev": "rimraf public",
