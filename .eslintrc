@@ -24,10 +24,13 @@
     "no-console": "off",
 
     // Best Practices
+    "no-alert": "error",
+    "no-caller": "error",
 
     // Variables
 
     // Node.js and CommonJS
+    "callback-return": "error",
 
     // Stylistic Issues
 
