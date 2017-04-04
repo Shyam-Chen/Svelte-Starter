@@ -10,7 +10,7 @@ export class Protractor {
     app.use(express.static(root));
     app.use(history('index.html', { root }));
 
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       let server = app.listen(port, () => {
         resolve(server);
       });

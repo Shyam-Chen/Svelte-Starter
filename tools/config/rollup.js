@@ -19,7 +19,7 @@ import POSTCSS_CONFIG from './postcss';
 import BABEL_CONFIG from './babel';
 
 import { SOURCE_ROOT } from '../constants';
-import { reactivex, lodash } from '../utils';
+import { lodash, reactivex } from '../utils';
 
 export const PRIMARY_CONFIG = {
   format: 'iife',

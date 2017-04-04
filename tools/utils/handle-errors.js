@@ -4,6 +4,7 @@ import notify from 'gulp-notify';
 export class CompileError {
   static handle(err) {
     let self = this;
+
     if (env.mode === 'dev') {
       let args = Array.from(arguments);
 
