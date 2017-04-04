@@ -25,8 +25,6 @@ exports.config = {
   },
   framework: 'jasmine',
   jasmineNodeOpts: {
-    isVerbose: false,
-    showColors: true,
-    includeStackTrace: false
+    print() {}
   }
 };
