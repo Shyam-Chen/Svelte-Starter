@@ -14,14 +14,13 @@ exports.config = {
     'phantomjs.binary.path': phantomjs.path,
     'phantomjs.ghostdriver.cli.args': ['--loglevel=DEBUG']
   },
-  baseUrl: `http://localhost:${TEST_PORT}/`,
+  baseUrl: `http://localhost:${TEST_PORT}`,
   onPrepare() {
     babel();
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+    browser.ignoreSynchronization = true;
     global.webdriver = browser.driver;
-    webdriver.ignoreSynchronization = true;
     webdriver.manage().window().setSize(1280, 1024);
-    global.browserGet = (url = '/') => webdriver.get(`http://localhost:${TEST_PORT}${url}`);
   },
   framework: 'jasmine',
   jasmineNodeOpts: {

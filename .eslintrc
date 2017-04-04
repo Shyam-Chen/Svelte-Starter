@@ -8,11 +8,10 @@
     "protractor": true
   },
   "globals": {
-    "page": true,
-    "componentHandler": true,  // @deprecated
+    "componentHandler": true,
     "firebase": true,
-    "webdriver": true,
-    "browserGet": true
+    "page": true,
+    "webdriver": true
   },
   "extends": "eslint:recommended",
   "parser": "babel-eslint",

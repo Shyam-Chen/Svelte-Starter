@@ -1,6 +1,6 @@
 describe('Contact', () => {
   beforeEach(() => {
-    browserGet('/contact');
+    webdriver.get(`${browser.baseUrl}/contact`);
   });
 
   it('getText toEqual', () => {

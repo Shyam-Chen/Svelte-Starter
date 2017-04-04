@@ -1,6 +1,6 @@
 describe('Home', () => {
   beforeEach(() => {
-    browserGet('/');
+    webdriver.get(browser.baseUrl);
   });
 
   it('getText toEqual', () => {
