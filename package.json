@@ -14,10 +14,10 @@
     "reset": "git reset --hard HEAD && git clean -df",
     "reinstall": "yarn cache clean && git clean -dfx -e '.*' && yarn install",
     "deploy": "firebase deploy",
-    "webdriver": "gulp webdriver",
     "gulp": "gulp",
     "predev": "rimraf public",
-    "preprod": "rimraf public"
+    "preprod": "rimraf public",
+    "postinstall": "gulp webdriver"
   },
   "repository": {
     "type": "git",

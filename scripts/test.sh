@@ -19,6 +19,7 @@ case $MODE in
     yarn run unit
     ;;
   "e2e" )
+    yarn run prod
     yarn run e2e
     ;;
 esac

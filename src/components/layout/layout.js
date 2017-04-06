@@ -7,7 +7,7 @@ import data from './layout.json';
  *
  * @example
  * import { layout } from '../../components/layout';
- * layout('new', template(tpl, { 'imports': { style } })(data)));
+ * layout('new', template(data)));
  */
 
 export const layout = (page, content) => {

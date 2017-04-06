@@ -310,7 +310,7 @@ $ yarn run prod
 
 $ yarn run lint
 $ yarn run unit
-$ yarn run e2e  # pre: yarn run webdriver && yarn run prod
+$ yarn run e2e
 
 $ yarn run clean
 $ yarn run reset
