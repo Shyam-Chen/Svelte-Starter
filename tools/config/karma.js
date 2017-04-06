@@ -6,8 +6,8 @@ module.exports = config => {
     basePath: '../..',
     frameworks: ['jasmine'],
     files: [
-      { pattern: 'src/polyfills.js', included: false, watched: false },
-      { pattern: 'src/vendor.js', included: false, watched: false },
+      { pattern: 'src/polyfills.js', watched: false },
+      { pattern: 'src/vendor.js', watched: false },
       'src/**/*.spec.js'
     ],
     exclude: [],
