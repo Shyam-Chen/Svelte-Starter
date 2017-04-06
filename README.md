@@ -275,6 +275,8 @@ Observable::from(map2)
 Example of D3
 
 ```js
+import 'd3-selection-multi';
+
 import { Observable } from 'rxjs/Observable';
 import { fromEvent } from 'rxjs/observable/fromEvent';
 import { select } from 'd3-selection';
@@ -285,9 +287,11 @@ Observable::fromEvent(document, 'click')
     const exEl = select('#ex');
 
     exEl.text('Hello World')
-      .style('text-align', 'center')
-      .style('line-height', '10rem')
-      .style('font-size', '7rem')
+      .styles({
+        'text-align': 'center',
+        'line-height': '10rem',
+        'font-size': '7rem'
+      })
       ::transition()
       .duration(500)
       .style('color', '#F44336');

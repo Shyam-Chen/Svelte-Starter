@@ -51,8 +51,10 @@ import 'firebase/firebase-auth';
 import 'page/page';
 
 /**
- * @name Load
+ * @name Other
  */
+
+// import 'd3-selection-multi';
 
 import { load } from './utils';
 
