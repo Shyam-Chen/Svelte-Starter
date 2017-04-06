@@ -5,5 +5,5 @@ services:
     build: .
     ports:
       - "8000:8000"
-      - "9876:9876"
+      - "8080:8080"
     tty: true

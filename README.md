@@ -1,4 +1,4 @@
-# Frontend Starter Kit (GA)
+# Frontend Starter Kit (Beta)
 
 :icecream: A boilerplate for :star2: HTML5 :star2:, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.
 
@@ -97,7 +97,7 @@ $ docker build -t Frontend-Starter-Kit .
 2) Run the Container
 
 ```bash
-$ docker run -it -p 8000:8000 -p 9876:9876 --name app Frontend-Starter-Kit
+$ docker run -it -p 8000:8000 -p 8080:8080 --name app Frontend-Starter-Kit
 ```
 
 3) Just Compose
@@ -112,7 +112,7 @@ Application configuration
 
 ```js
 export const DEV_PORT = 8000;
-export const TEST_PORT = 9876;
+export const TEST_PORT = 8080;
 export const APP_BASE = '/';
 ```
 
