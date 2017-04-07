@@ -4,7 +4,7 @@
       <span class="mdl-layout-title">${ _.TITLE }</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <each loop="item in [['/', 'Home'], ['/about', 'About'], ['/contact', 'Contact']]">
+        <each loop="item in LINK">
           <a class="mdl-navigation__link" href="{{ item[0] }}">{{ item[1] }}</a>
         </each>
       </nav>
@@ -13,7 +13,7 @@
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">${ _.TITLE }</span>
     <nav class="mdl-navigation">
-      <each loop="item in [['/', 'Home'], ['/about', 'About'], ['/contact', 'Contact']]">
+      <each loop="item in LINK">
         <a class="mdl-navigation__link" href="{{ item[0] }}">{{ item[1] }}</a>
       </each>
     </nav>

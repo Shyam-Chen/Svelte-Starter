@@ -281,12 +281,14 @@ import { Observable } from 'rxjs/Observable';
 import { fromEvent } from 'rxjs/observable/fromEvent';
 import { select } from 'd3-selection';
 import { transition } from 'd3-transition';
+import { Set } from 'immutable';
 
 Observable::fromEvent(document, 'click')
   .subscribe(() => {
     const exEl = select('#ex');
+    const elText = Set(['Hello', 'Goodbye']);
 
-    exEl.text('Hello World')
+    exEl.text(`${elText.first()} D3`)
       .styles({
         'text-align': 'center',
         'line-height': '10rem',

@@ -10,36 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <each loop="item, index in [
-          'Client-side platform with HTML5.',
-          'User interface components with Material.',
-          'Backend cloud services with Firebase.',
-          'Routing and navigation with Page.',
-          'Utility functions with Lodash.',
-          'Reactive extensions with ReactiveX.',
-          'State container with Redux.',
-          'Immutable collections with Immutable.',
-          'Data visualizations with D3.',
-          'Build system with Gulp.',
-          'Module bundler with Rollup.',
-          'HTML transformations with PostHTML.',
-          'Future CSS features with PostCSS.',
-          'Next generation JavaScript with Babel.',
-          'Synchronised browser with BrowserSync.',
-          'HTML static code analyzer with HTMLHint.',
-          'CSS static code analyzer with StyleLint.',
-          'JavaScript static code analyzer with ESLint.',
-          'Testing framework with Jasmine.',
-          'Unit tests with Karma.',
-          'End-to-end tests with Protractor.',
-          'Operating system with Linux.',
-          'Text editor with Atom.',
-          'Version control with Git.',
-          'Fast and deterministic builds with Yarn.',
-          'Software container with Docker.',
-          'Continuous integration with Travis.'
-        ]"
-      >
+      <each loop="item, index in LIST.ITEM">
         <tr>
           <td class="mdl-data-table__cell--non-numeric">{{ ++index }}. {{ item }}</td>
         </tr>

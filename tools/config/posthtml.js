@@ -8,6 +8,10 @@ import minifier from 'posthtml-minifier';
 
 import { ASSETS_ROOT } from '../constants';
 
+// TODO: template
+const { LINK } = require('../../src/components/layout/layout.json');
+const { LIST } = require('../../src/pages/about/about.json');
+
 export default {
   plugins: [
     bem({ elemPrefix: '__', modPrefix: '--', modDlmtr: '-' }),
@@ -15,7 +19,7 @@ export default {
     include(),
     mixins(),
     extend(),
-    expressions(),
+    expressions({ locals: { LINK, LIST } }),
     minifier({ collapseWhitespace: true, removeAttributeQuotes: true, removeComments: true })
   ],
   template: true
