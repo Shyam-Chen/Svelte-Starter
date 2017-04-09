@@ -5,7 +5,19 @@ import { store } from '../../store';
 import { increment, decrement, reset, incrementIfOdd, decrementIfEven } from './counter-actions';
 import template from './counter.html';
 
-export const counter = (name) => {
+/**
+ * @param {string} name
+ *
+ * @example
+ * // js
+ * import { counter } from '../../containers/counter';
+ * counter('example');
+ *
+ * // html
+ * <div id="example" data-counter></div>
+ */
+
+export const counter = name => {
   document.querySelector(`#${name}[data-counter]`).innerHTML = template();
 
   const render = () => {
