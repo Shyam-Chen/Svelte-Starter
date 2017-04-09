@@ -1,9 +1,11 @@
-import { store } from '../../store';
-import { increment, decrement, reset, incrementIfOdd, decrementIfEven } from '../../actions/counter';
+import './counter.css';
 
+import { store } from '../../store';
+
+import { increment, decrement, reset, incrementIfOdd, decrementIfEven } from './counter-actions';
 import template from './counter.html';
 
-export default function(name) {
+export const counter = (name) => {
   document.querySelector(`#${name}[data-counter]`).innerHTML = template();
 
   const render = () => {
@@ -19,4 +21,4 @@ export default function(name) {
   document.querySelector('#reset').onclick = () => store.dispatch(reset());
   document.querySelector('#incrementIfOdd').onclick = () => store.dispatch(incrementIfOdd());
   document.querySelector('#decrementIfEven').onclick = () => store.dispatch(decrementIfEven());
-}
+};

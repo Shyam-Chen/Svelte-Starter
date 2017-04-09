@@ -1,8 +1,7 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 
-import { incrementIfOddEpic, decrementIfEvenEpic } from './epics/counter';
-import { counterReducer } from './reducers/counter';
+import { incrementIfOddEpic, decrementIfEvenEpic, counterReducer } from './containers/counter';
 
 const rootEpic = combineEpics(
   incrementIfOddEpic,
