@@ -183,15 +183,15 @@ finalhandler@~1.0.0:
     statuses "~1.3.1"
     unpipe "~1.0.0"
 
-firebase-admin@4.1.4:
-  version "4.1.4"
-  resolved "https://registry.yarnpkg.com/firebase-admin/-/firebase-admin-4.1.4.tgz#d36fdccf476ba91db071137f1e5acfdbc8895b02"
+firebase-admin@latest:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/firebase-admin/-/firebase-admin-4.2.0.tgz#92b8d900becb7c5f499eb68ca267a94c652c709f"
   dependencies:
     "@types/jsonwebtoken" "^7.1.33"
     faye-websocket "0.9.3"
     jsonwebtoken "7.1.9"
 
-firebase-functions@0.5.4:
+firebase-functions@latest:
   version "0.5.4"
   resolved "https://registry.yarnpkg.com/firebase-functions/-/firebase-functions-0.5.4.tgz#f1c5b3bf7bc7390d3ae2cdf2b2e0efe7891e5558"
   dependencies:

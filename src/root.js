@@ -12,6 +12,4 @@ const rootReducer = combineReducers({
   counterReducer
 });
 
-const epicMiddleware = createEpicMiddleware(rootEpic);
-
-export const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
+export const store = createStore(rootReducer, applyMiddleware(createEpicMiddleware(rootEpic)));

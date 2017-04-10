@@ -1,4 +1,4 @@
-export * from './counter-epics';
-export * from './counter-reducer';
+export * from './epics';
+export * from './reducer';
 
 export * from './counter';

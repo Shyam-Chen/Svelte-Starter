@@ -1,8 +1,8 @@
 import './counter.css';
 
-import { store } from '../../store';
+import { store } from '../../root';
 
-import { increment, decrement, reset, incrementIfOdd, decrementIfEven } from './counter-actions';
+import { increment, decrement, reset, incrementIfOdd, decrementIfEven } from './actions';
 import template from './counter.html';
 
 /**

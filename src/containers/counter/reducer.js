@@ -1,7 +1,7 @@
 import { Map } from 'immutable';
 import { random } from 'lodash';
 
-import { INCREMENT, DECREMENT, RESET } from './counter-actions';
+import { INCREMENT, DECREMENT, RESET } from './actions';
 
 export const counterReducer = (state = Map({ counter: random(9) }), action) => {
   switch (action.type) {

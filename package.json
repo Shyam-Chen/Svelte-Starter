@@ -17,7 +17,7 @@
     "gulp": "gulp",
     "predev": "rimraf public",
     "preprod": "rimraf public",
-    "postinstall": "gulp webdriver"
+    "postinstall": "gulp webdriver && cd functions && yarn"
   },
   "repository": {
     "type": "git",

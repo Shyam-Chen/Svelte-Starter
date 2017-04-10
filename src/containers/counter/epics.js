@@ -1,7 +1,7 @@
 import { filter } from 'rxjs/operator/filter';
 import { map } from 'rxjs/operator/map';
 
-import { INCREMENT_IF_ODD, DECREMENT_IF_EVEN, increment, decrement } from './counter-actions';
+import { INCREMENT_IF_ODD, DECREMENT_IF_EVEN, increment, decrement } from './actions';
 
 export const incrementIfOddEpic = (action$, store) =>
   action$.ofType(INCREMENT_IF_ODD)

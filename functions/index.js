@@ -3,4 +3,14 @@ const admin = require('firebase-admin');
 
 admin.initializeApp(functions.config().firebase);
 
-// exports.<NAME> = ...;
+exports.addMessage = functions.https
+  .onRequest((req, res) => {
+    const original = req.query.text;
+
+    admin.database()
+      .ref('/messages')
+      .push({ original })
+      .then(snapshot => {
+        res.redirect(303, snapshot.ref);
+      });
+  });
