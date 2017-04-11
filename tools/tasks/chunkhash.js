@@ -1,42 +1,10 @@
-import { join, basename } from 'path';
+import { join } from 'path';
 import gulp from 'gulp';
 import template from 'gulp-template';
-import inject from 'gulp-inject';
 import htmlmin from 'gulp-htmlmin';
 
 import { APP_BASE, SOURCE_ROOT, DIST_ROOT } from '../constants';
-
-const injectService = (fileName, serviceName) => {
-  return inject(
-    gulp.src(
-        join(DIST_ROOT, `${fileName}-*.js`),
-        { read: false }
-      ),
-      {
-        name: (() => {
-          switch (serviceName) {
-            case 'preload':
-              return `pre${fileName}`;
-            case 'script':
-              return `${fileName}`
-            default:
-              return;
-          }
-        })(),
-        transform(filepath) {
-          filepath = filepath.replace(`/${basename(DIST_ROOT)}/`, '');
-          switch (serviceName) {
-            case 'preload':
-              return `<link rel="preload" href="${filepath}" as="script">`;
-            case 'script':
-              return `<script src="${filepath}" defer></script>`;
-            default:
-              return;
-          }
-        }
-      }
-    );
-};
+import { injectService } from '../utils';
 
 gulp.task('chunkhash', () => {
   return gulp.src(join(SOURCE_ROOT, 'index.html'))
