@@ -8,7 +8,6 @@ import minifier from 'posthtml-minifier';
 
 import { ASSETS_ROOT } from '../constants';
 
-// TODO: template
 const { LINK } = require('../../src/components/layout/layout.json');
 const { LIST } = require('../../src/pages/about/about.json');
 
