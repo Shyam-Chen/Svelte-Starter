@@ -15,7 +15,7 @@
 <div id="content" class="mdl-grid mdl-grid--center">
   <div class="mdl-card mdl-shadow--2dp">
     <div class="mdl-card__supporting-text">
-      <form action="#">
+      <form>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
           <input class="mdl-textfield__input" type="text" id="username" value="Google Display Name" readonly>
           <label class="mdl-textfield__label" for="username">${ _.NAME }</label>
@@ -24,13 +24,13 @@
           <input class="mdl-textfield__input" type="text" id="useremail" value="Google Email" readonly>
           <label class="mdl-textfield__label" for="useremail">${ _.EMAIL }</label>
         </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <textarea class="mdl-textfield__input" type="text" rows= "3" id="content-text" required></textarea>
+        <div id="content-textfield" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <textarea class="mdl-textfield__input" type="text" rows= "3" id="content-text"></textarea>
           <label class="mdl-textfield__label" for="content-text">${ _.COMMENT }</label>
         </div>
-        <div class="mdl-textfield">
+        <!--<div class="mdl-textfield">
           <div id="contact-image"></div>
-        </div>
+        </div>-->
       </form>
     </div>
     <div class="mdl-card__actions mdl-card--border mdl-cell--right">

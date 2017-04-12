@@ -1,5 +1,5 @@
 import { layout } from '../../components/layout';
-import { fileUpload } from '../../components/file-upload';
+// import { fileUpload } from '../../components/file-upload';
 
 import template from './contact.html';
 import data from './contact.json';
@@ -36,9 +36,14 @@ const auth = () => {
       emailEl.value = `${user.email}`;
 
       sendButton.onclick = () => {
-        postData(user.uid, user.displayName, user.email, contentText.value);
-        document.querySelector('#send-toast').MaterialSnackbar.showSnackbar({ message: 'Thanks for your comment.' });
-        contentText.value = '';
+        if (contentText.value !== '') {
+          postData(user.uid, user.displayName, user.email, contentText.value);
+          document.querySelector('#send-toast').MaterialSnackbar.showSnackbar({ message: 'Thanks for your comment.' });
+          document.querySelector('#content-textfield').classList.remove('is-dirty');
+          contentText.value = '';
+        } else {
+          document.querySelector('#send-toast').MaterialSnackbar.showSnackbar({ message: 'Not valid!' });
+        }
       };
     } else {
       currentUID = null;
@@ -70,7 +75,7 @@ const auth = () => {
 export const contact = () => {
   page('/contact', () => {
     layout('contact', template(data));
-    fileUpload('contact-image');
+    // fileUpload('contact-image');
     auth();
     componentHandler.upgradeAllRegistered();
   });
