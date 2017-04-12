@@ -5,6 +5,7 @@ import posthtml from 'rollup-plugin-posthtml-template';
 import postcss from 'rollup-plugin-postcss';
 import json from 'rollup-plugin-json';
 import babel from 'rollup-plugin-babel';
+import buble from 'rollup-plugin-buble';
 import globals from 'rollup-plugin-node-globals';
 import builtins from 'rollup-plugin-node-builtins';
 import resolve from 'rollup-plugin-node-resolve';
@@ -50,12 +51,7 @@ export const SECONDARY_CONFIG = {
   context: 'window',
   plugins: [
     postcss({ plugins: [cssnano()] }),
-    babel({
-      babelrc: false,
-      presets: [['latest', { es2015: { modules: false } }]],
-      plugins: ['external-helpers'],
-      exclude: 'node_modules/**'
-    }),
+    buble(),
     globals(),
     builtins(),
     resolve({ jsnext: true, browser: true }),
