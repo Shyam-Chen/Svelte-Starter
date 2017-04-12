@@ -37,7 +37,8 @@ const auth = () => {
 
       sendButton.onclick = () => {
         postData(user.uid, user.displayName, user.email, contentText.value);
-        page.redirect('/');
+        document.querySelector('#send-toast').MaterialSnackbar.showSnackbar({ message: 'Thanks for your comment.' });
+        contentText.value = '';
       };
     } else {
       currentUID = null;
