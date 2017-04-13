@@ -1,5 +1,4 @@
 import { layout } from '../../components/layout';
-// import { fileUpload } from '../../components/file-upload';
 
 import template from './contact.html';
 import data from './contact.json';
@@ -7,7 +6,6 @@ import data from './contact.json';
 export const contact = () => {
   page('/contact', () => {
     layout(template(data));
-    // fileUpload('contact-image');
 
     const signInButton = document.querySelector('#sign-in-button');
     const signOutButton = document.querySelector('#sign-out-button');

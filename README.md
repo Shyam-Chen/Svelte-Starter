@@ -390,7 +390,6 @@ $ yarn run deploy
 * Refactor static analysis (`.htmlhintrc`, `.stylelintrc`, `.eslintrc`)
 * ---------- **Medium** ----------
 * Switch to `material-components-web`
-* Add firebase examples (Contact Page)
 * ---------- **Hard** ----------
 * Add more tests (`*.spec|e2e-spec.js`)
 * Prerenders static HTML (`gulp-prerender`)

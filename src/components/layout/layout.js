@@ -9,7 +9,7 @@ import data from './layout.json';
  * layout(template(data)));
  */
 
-export const layout = (content) => {
+export const layout = content => {
   document.querySelector('#app').innerHTML = template(data);
   document.querySelector('#page').innerHTML = content;
 };
