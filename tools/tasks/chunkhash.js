@@ -4,7 +4,7 @@ import template from 'gulp-template';
 import htmlmin from 'gulp-htmlmin';
 
 import { APP_BASE, SOURCE_ROOT, DIST_ROOT } from '../constants';
-import { injectService } from '../utils';
+import { InjectService } from '../utils';
 
 gulp.task('chunkhash', () => {
   return gulp.src(join(SOURCE_ROOT, 'index.html'))
@@ -17,12 +17,12 @@ gulp.task('chunkhash', () => {
       VENDOR_SCRIPT: '<!-- vendor:js --><!-- endinject -->',
       APP_SCRIPT: '<!-- app:js --><!-- endinject -->'
     }))
-    .pipe(injectService('polyfills', 'preload'))
-    .pipe(injectService('vendor', 'preload'))
-    .pipe(injectService('app', 'preload'))
-    .pipe(injectService('polyfills', 'script'))
-    .pipe(injectService('vendor', 'script'))
-    .pipe(injectService('app', 'script'))
+    .pipe(InjectService.preload('polyfills'))
+    .pipe(InjectService.preload('vendor'))
+    .pipe(InjectService.preload('app'))
+    .pipe(InjectService.script('polyfills'))
+    .pipe(InjectService.script('vendor'))
+    .pipe(InjectService.script('app'))
     .pipe(htmlmin({
       collapseWhitespace: true,
       removeAttributeQuotes: true,

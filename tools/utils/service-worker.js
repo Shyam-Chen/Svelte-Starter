@@ -1,7 +1,7 @@
 import { join } from 'path';
 import { log } from 'gulp-util';
-
 import swprecache from 'sw-precache';
+
 import pkg from '../../package.json';
 
 export class ServiceWorker {

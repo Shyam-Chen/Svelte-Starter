@@ -4,34 +4,36 @@ import inject from 'gulp-inject';
 
 import { DIST_ROOT } from '../constants';
 
-export const injectService = (fileName, serviceName) => {
-  return inject(
-    gulp.src(
-        join(DIST_ROOT, `${fileName}-*.js`),
-        { read: false }
-      ),
-      {
-        name: (() => {
-          switch (serviceName) {
-            case 'preload':
-              return `pre${fileName}`;
-            case 'script':
-              return `${fileName}`
-            default:
-              return;
-          }
-        })(),
-        transform(filepath) {
-          filepath = filepath.replace(`/${basename(DIST_ROOT)}/`, '');
-          switch (serviceName) {
-            case 'preload':
-              return `<link rel="preload" href="${filepath}" as="script">`;
-            case 'script':
-              return `<script src="${filepath}" defer></script>`;
-            default:
-              return;
+export class InjectService {
+  static preload(fileName) {
+    return inject(
+      gulp.src(
+          join(DIST_ROOT, `${fileName}-*.js`),
+          { read: false }
+        ),
+        {
+          name: `pre${fileName}`,
+          transform(filepath) {
+            filepath = filepath.replace(`/${basename(DIST_ROOT)}/`, '');
+            return `<link rel="preload" href="${filepath}" as="script">`;
           }
         }
-      }
-    );
-};
+      );
+  }
+
+  static script(fileName) {
+    return inject(
+      gulp.src(
+          join(DIST_ROOT, `${fileName}-*.js`),
+          { read: false }
+        ),
+        {
+          name: `${fileName}`,
+          transform(filepath) {
+            filepath = filepath.replace(`/${basename(DIST_ROOT)}/`, '');
+            return `<script src="${filepath}" defer></script>`;
+          }
+        }
+      );
+  }
+}
