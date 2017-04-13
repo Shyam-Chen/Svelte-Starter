@@ -392,7 +392,8 @@ $ yarn run deploy
 * Switch to `material-components-web`
 * ---------- **Hard** ----------
 * Add more tests (`*.spec|e2e-spec.js`)
-* Prerenders static HTML (`gulp-prerender`)
+* Render posthtml template ([`rollup-plugin-posthtml-template`](https://github.com/Vanilla-IceCream/rollup-plugin-posthtml-template))
+* Prerender static HTML (`gulp-prerender`)
 * ---------- **Other** ----------
 * Update to postcss-cssnext v2.9.0+ ([Issue](https://github.com/MoOx/postcss-cssnext/issues/357))
 * Update to rxjs v5.0.2+ ([Issue](https://github.com/ReactiveX/rxjs/issues/2460))
