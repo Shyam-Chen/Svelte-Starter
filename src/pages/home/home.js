@@ -7,7 +7,7 @@ import data from './home.json';
 
 export const home = () => {
   page('/', () => {
-    layout('home', template(data));
+    layout(template(data));
     // counter('ex');
     componentHandler.upgradeAllRegistered();
   });

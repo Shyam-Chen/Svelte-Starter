@@ -6,17 +6,17 @@ import data from './contact.json';
 
 export const contact = () => {
   page('/contact', () => {
-    layout('contact', template(data));
+    layout(template(data));
     // fileUpload('contact-image');
 
     const signInButton = document.querySelector('#sign-in-button');
     const signOutButton = document.querySelector('#sign-out-button');
-    const content = document.querySelector('#content');
+    const signInContent = document.querySelector('#sign-in-content');
+    const name = document.querySelector('#name');
+    const email = document.querySelector('#email');
+    const comment = document.querySelector('#comment');
     const sendButton = document.querySelector('#send-button');
-
-    const nameEl = document.querySelector('#username');
-    const emailEl = document.querySelector('#useremail');
-    const contentText = document.querySelector('#content-text');
+    const sendToast = document.querySelector('#send-toast');
 
     const postData = (userId, name, email, comment) => {
       firebase.database()
@@ -34,19 +34,20 @@ export const contact = () => {
 
         signInButton.style.display = 'none';
         signOutButton.style.display = '';
-        content.style.display = '';
+        signInContent.style.display = '';
 
-        nameEl.value = `${user.displayName}`;
-        emailEl.value = `${user.email}`;
+        name.value = `${user.displayName}`;
+        email.value = `${user.email}`;
 
         sendButton.onclick = () => {
-          if (contentText.value !== '') {
-            postData(user.uid, user.displayName, user.email, contentText.value);
-            document.querySelector('#send-toast').MaterialSnackbar.showSnackbar({ message: 'Thanks for your comment.' });
-            document.querySelector('#content-textfield').classList.remove('is-dirty');
-            contentText.value = '';
+          if (comment.value !== '') {
+            postData(user.uid, user.displayName, user.email, comment.value);
+
+            sendToast.MaterialSnackbar.showSnackbar({ message: 'Thanks for your comment.' });
+            comment.value = '';
+            document.querySelector('#sign-in-content .mdl-textfield:nth-child(3)').classList.remove('is-dirty');
           } else {
-            document.querySelector('#send-toast').MaterialSnackbar.showSnackbar({ message: 'Not valid!' });
+            sendToast.MaterialSnackbar.showSnackbar({ message: 'Not valid!' });
           }
         };
       } else {
@@ -64,14 +65,14 @@ export const contact = () => {
     signOutButton.onclick = () => {
       firebase.auth().signOut();
 
-      content.style.display = 'none';
+      signInContent.style.display = 'none';
       signOutButton.style.display = 'none';
       signInButton.style.display = '';
     };
 
     firebase.auth().onAuthStateChanged(onAuthStateChanged);
 
-    content.style.display = 'none';
+    signInContent.style.display = 'none';
     signOutButton.style.display = 'none';
     signInButton.style.display = '';
 

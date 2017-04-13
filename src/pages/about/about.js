@@ -5,7 +5,7 @@ import data from './about.json';
 
 export const about = () => {
   page('/about', () => {
-    layout('about', template(data));
+    layout(template(data));
     componentHandler.upgradeAllRegistered();
   });
 };
