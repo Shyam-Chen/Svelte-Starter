@@ -3,16 +3,14 @@ import notify from 'gulp-notify';
 
 export class CompileError {
   static handle(err) {
-    let self = this;
+    const self = this;
 
     if (env.mode === 'dev') {
-      let args = Array.from(arguments);
-
       notify.onError({
           title: 'Compile Error',
           message: `\r\n${err.message}`
         })
-        .apply(this, args);
+        .apply(this, Array.from(arguments));
 
       self.emit('end');
     } else {
