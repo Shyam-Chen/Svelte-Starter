@@ -1,3 +1,4 @@
+/*
 import { scaleOrdinal } from 'd3-scale';
 import { select } from 'd3-selection';
 import { pie } from 'd3-shape';
@@ -12,3 +13,4 @@ const color = scaleOrdinal(['#98abc5', '#8a89a6', '#7b6888', '#6b486b', '#a05d56
 svg.data(pie({
 
 }));
+*/
