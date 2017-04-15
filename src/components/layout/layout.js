@@ -1,3 +1,5 @@
+import './layout.css';
+
 import template from './layout.html';
 import data from './layout.json';
 
