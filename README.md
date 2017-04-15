@@ -305,6 +305,8 @@ Observable::fromEvent(document, 'click')
 <div id="ex"></div>
 ```
 
+For more examples, please see the branch.
+
 ## All Commands
 
 ```bash
