@@ -5,7 +5,12 @@ import data from './about.json';
 
 export const about = () => {
   page('/about', () => {
-    layout(template(data));
+    layout('en', 'about', template(data));
+    componentHandler.upgradeAllRegistered();
+  });
+
+  page('/zh/about', () => {
+    layout('zh', 'about', template(data));
     componentHandler.upgradeAllRegistered();
   });
 };

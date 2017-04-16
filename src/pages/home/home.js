@@ -5,7 +5,12 @@ import data from './home.json';
 
 export const home = () => {
   page('/', () => {
-    layout(template(data));
+    layout('en', 'home', template(data));
+    componentHandler.upgradeAllRegistered();
+  });
+
+  page('/zh', () => {
+    layout('zh', 'home', template(data));
     componentHandler.upgradeAllRegistered();
   });
 };
