@@ -10,6 +10,7 @@
   &__text {
     position: absolute;
     bottom: 1rem;
-    margin: auto .33rem;
+    text-align: center;
+    width: 100%;
   }
 }
