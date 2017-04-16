@@ -243,7 +243,6 @@ const incrementIfOddEpic = (action$, store) =>
 
 const rootEpic = combineEpics(incrementIfOddEpic);
 const rootReducer = combineReducers({ counterReducer });
-
 const epicMiddleware = createEpicMiddleware(rootEpic);
 const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
 
@@ -334,7 +333,7 @@ $ yarn run deploy
 │   ├── assets  -> audios, datas, fonts, images, videos ...
 │   ├── components  -> presentational components ...
 │   │   └── <feature>
-│   │       ├── <feature>.{html,css,js,json,spec.js}  -> shared component, reusable component ...
+│   │       ├── <feature>.{html,css,js,json,spec.js}  -> reusable component ...
 │   │       └── index.js
 │   ├── containers  -> container components ...
 │   │   └── <feature>
@@ -388,16 +387,15 @@ $ yarn run deploy
 
 ## Known Issues
 * ---------- **Easy** ----------
-* Refactor source code (`.html`, `.css`, `.js`)
-* Refactor static analysis (`.htmlhintrc`, `.stylelintrc`, `.eslintrc`)
+* ...
 * ---------- **Medium** ----------
 * Switch to `material-components-web`
+* Switch to `karma-chrome-launcher` (Chrome headless, [PR](https://github.com/karma-runner/karma-chrome-launcher/pull/111))
 * ---------- **Hard** ----------
-* Add more tests (`*.spec|e2e-spec.js`)
 * Render posthtml template ([`rollup-plugin-posthtml-template`](https://github.com/Vanilla-IceCream/rollup-plugin-posthtml-template))
 * Prerender static HTML (`gulp-prerender`)
 * ---------- **Other** ----------
-* Update to postcss-cssnext v2.9.0+ ([Issue](https://github.com/MoOx/postcss-cssnext/issues/357))
-* Update to rxjs v5.0.2+ ([Issue](https://github.com/ReactiveX/rxjs/issues/2460))
-* Update to firebase v3.6.3+ ([Issue](https://github.com/rollup/rollup/issues/1275))
-* Immutable build with ES Modules ([Issue](https://github.com/facebook/immutable-js/issues/1190))
+* Update `postcss-cssnext` to v2.9.0+ ([Issue](https://github.com/MoOx/postcss-cssnext/issues/357))
+* Update `rxjs` to v5.0.2+ ([Issue](https://github.com/ReactiveX/rxjs/issues/2460))
+* Update `firebase` to v3.6.3+ ([Issue](https://github.com/rollup/rollup/issues/1275))
+* Update `immutable` to support ES modules ([Issue](https://github.com/facebook/immutable-js/issues/1190))
