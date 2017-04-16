@@ -2,6 +2,7 @@ import { layout } from '../../components/layout';
 
 import template from './home.html';
 import data from './home.json';
+import dataZh from './home-zh.json';
 
 export const home = () => {
   page('/', () => {
@@ -10,7 +11,7 @@ export const home = () => {
   });
 
   page('/zh', () => {
-    layout('zh', 'home', template(data));
+    layout('zh', 'home', template(dataZh));
     componentHandler.upgradeAllRegistered();
   });
 };

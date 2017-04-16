@@ -2,8 +2,9 @@ import { layout } from '../../components/layout';
 
 import template from './contact.html';
 import data from './contact.json';
+import dataZh from './contact-zh.json';
 
-const form = () => {
+const common = () => {
   const signInButton = document.querySelector('#sign-in-button');
   const signOutButton = document.querySelector('#sign-out-button');
   const signInContent = document.querySelector('#sign-in-content');
@@ -75,13 +76,13 @@ const form = () => {
 export const contact = () => {
   page('/contact', () => {
     layout('en', 'contact', template(data));
-    form();
+    common();
     componentHandler.upgradeAllRegistered();
   });
 
   page('/zh/contact', () => {
-    layout('zh', 'contact', template(data));
-    form();
+    layout('zh', 'contact', template(dataZh));
+    common();
     componentHandler.upgradeAllRegistered();
   });
 };

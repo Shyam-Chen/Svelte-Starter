@@ -8,16 +8,13 @@ import minifier from 'posthtml-minifier';
 
 import { ASSETS_ROOT } from '../constants';
 
-const { LINK } = require('../../src/components/layout/layout.json');
-const { LIST } = require('../../src/pages/about/about.json');
-
 export default {
   plugins: [
     bem({ elemPrefix: '__', modPrefix: '--', modDlmtr: '-' }),
     include(),
     mixins(),
     extend(),
-    expressions({ locals: { LINK, LIST } }),
+    expressions(),
     inlineAssets({ from: ASSETS_ROOT }),  // url(),
     minifier({ collapseWhitespace: true, removeAttributeQuotes: true, removeComments: true })
   ],

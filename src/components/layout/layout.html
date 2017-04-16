@@ -1,7 +1,10 @@
 <mixin name="links">
-  <each loop="item in LINK">
+  <!--<each loop="item in LINK">
     <a class="mdl-navigation__link" href="{{ item[0] }}">{{ item[1] }}</a>
-  </each>
+  </each>-->
+  <a class="mdl-navigation__link" href="${ _.LINK[0][0] }">${ _.LINK[0][1] }</a>
+  <a class="mdl-navigation__link" href="${ _.LINK[1][0] }">${ _.LINK[1][1] }</a>
+  <a class="mdl-navigation__link" href="${ _.LINK[2][0] }">${ _.LINK[2][1] }</a>
 </mixin>
 
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">

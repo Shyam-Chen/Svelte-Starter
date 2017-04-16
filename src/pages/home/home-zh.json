@@ -1,0 +1,8 @@
+{
+  "HOME": "首頁",
+  "VANILLA": {
+    "TITLE": "Frontend Starter Kit",
+    "CONTENT": "HTML5、Material、Firebase、Gulp、Rollup、Babel、PostHTML 和 PostCSS 的樣板",
+    "BUTTON": "立馬開始"
+  }
+}
