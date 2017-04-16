@@ -5,11 +5,13 @@ import data from './layout.json';
 import dataZh from './layout-zh.json';
 
 /**
+ * @param {string} language
+ * @param {string} page
  * @param {string} content
  *
  * @example
  * import { layout } from '../../components/layout';
- * layout(template(data)));
+ * layout('en', 'ex', template(data));
  */
 
 export const layout = (language, page, content) => {
@@ -17,10 +19,11 @@ export const layout = (language, page, content) => {
   app.innerHTML = template(data);
   if (language === 'zh') app.innerHTML = template(dataZh);
 
-  const zhAnchor = document.querySelector('#zh');
   const enAnchor = document.querySelector('#en');
-  page === 'home' ? zhAnchor.href = `/zh` : zhAnchor.href = `/zh/${page}`;
-  page === 'home' ? enAnchor.href = `/` : enAnchor.href = `/${page}`;
+  const zhAnchor = document.querySelector('#zh');
+  const homeConditional = page === 'home';
+  homeConditional ? enAnchor.href = `/` : enAnchor.href = `/${page}`;
+  homeConditional ? zhAnchor.href = `/zh` : zhAnchor.href = `/zh/${page}`;
 
   document.querySelector('main').innerHTML = content;
 };
