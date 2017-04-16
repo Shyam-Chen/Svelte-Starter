@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.",
   "scripts": {
-    "start": "gulp --mode dev --watch --serve",
+    "start": "gulp --watch --serve",
     "test": "gulp unit --watch",
-    "dev": "gulp --mode dev --watch --serve",
-    "prod": "gulp --mode prod",
+    "dev": "gulp --watch --serve",
+    "prod": "gulp --prod",
     "lint": "gulp lint",
     "unit": "gulp unit",
     "e2e": "gulp e2e",

@@ -14,6 +14,6 @@ gulp.task('vendor', () => {
     .on('error', CompileError.handle)
     .pipe(source('vendor.js'))
     .pipe(buffer())
-    .pipe(env.mode === 'prod' ? rev() : noop())
+    .pipe(env.prod ? rev() : noop())
     .pipe(gulp.dest(DIST_ROOT))
 });

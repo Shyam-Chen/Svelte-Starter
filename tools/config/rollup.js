@@ -41,8 +41,8 @@ export const PRIMARY_CONFIG = {
         'node_modules/immutable/dist/immutable.js': Object.keys(require('immutable'))
       }
     }),
-    replace({ 'process.env.NODE_ENV': JSON.stringify(env.mode === 'prod' ? 'production' : 'development') }),
-    (env.mode === 'prod' ? uglify() : noop())
+    replace({ 'process.env.NODE_ENV': JSON.stringify(env.prod ? 'production' : 'development') }),
+    (env.prod ? uglify() : noop())
   ]
 };
 
@@ -63,7 +63,7 @@ export const SECONDARY_CONFIG = {
 
 export const APP_CONFIG = Object.assign({}, PRIMARY_CONFIG, {
   entry: join(SOURCE_ROOT, 'app.js'),
-  sourceMap: env.mode === 'dev' && true
+  sourceMap: !env.prod
 });
 
 export const TEST_CONFIG = Object.assign({}, PRIMARY_CONFIG, {

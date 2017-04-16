@@ -14,6 +14,6 @@ gulp.task('polyfills', () => {
     .on('error', CompileError.handle)
     .pipe(source('polyfills.js'))
     .pipe(buffer())
-    .pipe(env.mode === 'prod' ? rev() : noop())
+    .pipe(env.prod ? rev() : noop())
     .pipe(gulp.dest(DIST_ROOT))
 });

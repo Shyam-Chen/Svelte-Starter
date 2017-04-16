@@ -5,7 +5,7 @@ export class CompileError {
   static handle(err) {
     const self = this;
 
-    if (env.mode === 'dev') {
+    if (!env.prod) {
       notify.onError({
           title: 'Compile Error',
           message: `\r\n${err.message}`

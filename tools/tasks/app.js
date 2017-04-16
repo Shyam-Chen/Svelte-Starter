@@ -20,9 +20,9 @@ gulp.task('app', () => {
     .on('error', CompileError.handle)
     .pipe(source('app.js'))
     .pipe(buffer())
-    .pipe(env.mode === 'dev' ? sourcemaps.init({ loadMaps: true }) : noop())
-    .pipe(env.mode === 'dev' ? sourcemaps.write('./') : noop())
-    .pipe(env.mode === 'prod' ? rev() : noop())
+    .pipe(!env.prod ? sourcemaps.init({ loadMaps: true }) : noop())
+    .pipe(!env.prod ? sourcemaps.write('./') : noop())
+    .pipe(env.prod ? rev() : noop())
     .pipe(gulp.dest(DIST_ROOT))
     .pipe(stream());
 });

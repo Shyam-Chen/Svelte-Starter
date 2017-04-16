@@ -119,7 +119,7 @@ export const APP_BASE = '/';
 Environment configuration
 
 ```bash
-$ yarn run gulp -- <TASK_NAME> --mode [dev|prod] --watch --serve
+$ yarn run gulp -- <TASK_NAME> --prod --watch --serve
 ```
 
 ## Using Libraries

@@ -9,10 +9,10 @@ import { InjectService } from '../utils';
 gulp.task('chunkhash', () => {
   return gulp.src(join(SOURCE_ROOT, 'index.html'))
     .pipe(template({
+      APP_BASE,
       PRELOAD_POLYFILLS: '<!-- prepolyfills:js --><!-- endinject -->',
       PRELOAD_VENDOR: '<!-- prevendor:js --><!-- endinject -->',
       PRELOAD_APP: '<!-- preapp:js --><!-- endinject -->',
-      APP_BASE,
       POLYFILLS_SCRIPT: '<!-- polyfills:js --><!-- endinject -->',
       VENDOR_SCRIPT: '<!-- vendor:js --><!-- endinject -->',
       APP_SCRIPT: '<!-- app:js --><!-- endinject -->'
