@@ -13,5 +13,5 @@ import data from './layout.json';
 
 export const layout = content => {
   document.querySelector('#app').innerHTML = template(data);
-  document.querySelector('#page').innerHTML = content;
+  document.querySelector('main').innerHTML = content;
 };
