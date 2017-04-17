@@ -389,7 +389,7 @@ $ yarn run deploy
 * ---------- **Easy** ----------
 * ...
 * ---------- **Medium** ----------
-* Switch to `material-components-web`
+* Switch to `material-components-web` ([repository](https://github.com/material-components/material-components-web))
 * Switch to `karma-chrome-launcher` (Chrome headless, [PR](https://github.com/karma-runner/karma-chrome-launcher/pull/111))
 * ---------- **Hard** ----------
 * Render posthtml template ([`rollup-plugin-posthtml-template`](https://github.com/Vanilla-IceCream/rollup-plugin-posthtml-template))
