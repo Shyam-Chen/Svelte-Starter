@@ -35,7 +35,7 @@
   "dependencies": {
     "@reactivex/rxjs": "5.0.2",
     "core-js": "2.4.1",
-    "d3": "4.7.4",
+    "d3": "4.8.0",
     "d3-selection-multi": "1.0.1",
     "firebase": "3.6.3",
     "immutable": "3.8.1",
@@ -74,7 +74,7 @@
     "gulp-template": "4.0.0",
     "gulp-util": "3.0.8",
     "jasmine-core": "2.5.2",
-    "jasmine-spec-reporter": "3.3.0",
+    "jasmine-spec-reporter": "4.0.0",
     "karma": "1.6.0",
     "karma-jasmine": "1.1.0",
     "karma-mocha-reporter": "2.2.3",
