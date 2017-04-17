@@ -18,20 +18,20 @@ if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || wi
     .register('service-worker.js')
     .then(registration => {
       registration.onupdatefound = () => {
-        if (navigator.serviceWorker.controller) {
+        const controllerConditional = navigator.serviceWorker.controller;
+
+        if (controllerConditional) {
           const { installing } = registration;
 
           installing.onstatechange = () => {
+            const contentOffline = () => console.log('Content is now available offline!');
+
             switch (installing.state) {
               case 'installed':
-                if (navigator.serviceWorker.controller) {
-                  const { update } = registration;
-
-                  console.log('New or updated content is available.');
-                  update();
-                } else {
-                  console.log('Content is now available offline!');
-                }
+                controllerConditional ? registration.update() : contentOffline();
+                break;
+              case 'activated':
+                controllerConditional ? location.reload() : contentOffline();
                 break;
               case 'redundant':
                 throw new Error('The installing service worker became redundant.');
