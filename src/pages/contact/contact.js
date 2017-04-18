@@ -3,6 +3,7 @@ import { layout } from '../../components/layout';
 import template from './contact.html';
 import data from './contact.json';
 import dataZh from './contact-zh.json';
+import dataJp from './contact-jp.json';
 
 const common = () => {
   const signInButton = document.querySelector('#sign-in-button');
@@ -82,6 +83,12 @@ export const contact = () => {
 
   page('/zh/contact', () => {
     layout('zh', 'contact', template(dataZh));
+    common();
+    componentHandler.upgradeAllRegistered();
+  });
+
+  page('/jp/contact', () => {
+    layout('jp', 'contact', template(dataJp));
     common();
     componentHandler.upgradeAllRegistered();
   });
