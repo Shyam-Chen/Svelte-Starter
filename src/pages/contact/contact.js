@@ -76,19 +76,19 @@ const common = () => {
 
 export const contact = () => {
   page('/contact', () => {
-    layout('en', 'contact', template(data));
+    layout(template(data), 'contact');
     common();
     componentHandler.upgradeAllRegistered();
   });
 
   page('/zh/contact', () => {
-    layout('zh', 'contact', template(dataZh));
+    layout(template(dataZh), 'contact', 'zh');
     common();
     componentHandler.upgradeAllRegistered();
   });
 
   page('/jp/contact', () => {
-    layout('jp', 'contact', template(dataJp));
+    layout(template(dataJp), 'contact', 'jp');
     common();
     componentHandler.upgradeAllRegistered();
   });

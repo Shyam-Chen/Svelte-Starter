@@ -6,16 +6,16 @@ import dataZh from './layout-zh.json';
 import dataJp from './layout-jp.json';
 
 /**
- * @param {string} language
- * @param {string} page
  * @param {string} content
+ * @param {string} page
+ * @param {string} language
  *
  * @example
  * import { layout } from '../../components/layout';
- * layout('en', 'ex', template(data));
+ * layout(template(data), 'example');
  */
 
-export const layout = (language, page, content) => {
+export const layout = (content, page, language) => {
   const app = document.querySelector('#app');
   app.innerHTML = template(data);
   if (language === 'zh') app.innerHTML = template(dataZh);

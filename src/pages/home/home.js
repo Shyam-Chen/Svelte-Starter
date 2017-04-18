@@ -7,17 +7,17 @@ import dataJp from './home-jp.json';
 
 export const home = () => {
   page('/', () => {
-    layout('en', 'home', template(data));
+    layout(template(data), 'home');
     componentHandler.upgradeAllRegistered();
   });
 
   page('/zh', () => {
-    layout('zh', 'home', template(dataZh));
+    layout(template(dataZh), 'home', 'zh');
     componentHandler.upgradeAllRegistered();
   });
 
   page('/jp', () => {
-    layout('jp', 'home', template(dataJp));
+    layout(template(dataJp), 'home', 'jp');
     componentHandler.upgradeAllRegistered();
   });
 };
