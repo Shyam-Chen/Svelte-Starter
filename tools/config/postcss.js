@@ -12,13 +12,15 @@ import each from 'postcss-each';
 import definefunction from 'postcss-define-function';
 import cssnano from 'cssnano';
 
+import { ASSETS_ROOT } from '../constants';
+
 export default {
   parser: comment,
   plugins: [
     pimport(),
     cssnext({ warnForDuplicates: false }),
     rucksack({ autoprefixer: true }),
-    url({ url: 'inline' }),
+    url({ url: 'inline', maxSize: 32, basePath: ASSETS_ROOT }),
     extend(),
     simplevars(),
     conditionals(),

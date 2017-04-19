@@ -1,3 +1,5 @@
+import { join } from 'path';
+
 import bem from 'posthtml-bem';
 import include from 'posthtml-include';
 import mixins from 'posthtml-mixins';
@@ -15,7 +17,7 @@ export default {
     mixins(),
     extend(),
     expressions(),
-    inlineAssets({ from: ASSETS_ROOT }),  // url(),
+    inlineAssets({ from: join(ASSETS_ROOT, 'images') }),  // url(),
     minifier({ collapseWhitespace: true, removeAttributeQuotes: true, removeComments: true })
   ],
   template: true

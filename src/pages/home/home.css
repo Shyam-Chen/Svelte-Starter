@@ -1,0 +1,11 @@
+.card-vanilla {
+  &.mdl-card {
+    width: 320px;
+    height: 320px;
+  }
+
+  & > .mdl-card__title {
+    color: #FFFFFF;
+    background: url('images/card.jpg') bottom right 5% no-repeat;
+  }
+}

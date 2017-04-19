@@ -1,3 +1,5 @@
+import './home.css';
+
 import { layout } from '../../components/layout';
 
 import template from './home.html';
