@@ -20,17 +20,14 @@ if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || wi
       registration.onupdatefound = () => {
         if (navigator.serviceWorker.controller) {
           const { installing } = registration;
-          const serviceWorkerNotification = body => new Notification('Frontend Starter Kit', { body, icon: 'favicon.ico' });
 
           installing.onstatechange = () => {
             switch (installing.state) {
               case 'installed':
                 registration.update();
-                if ('Notification' in window) serviceWorkerNotification('New or updated content is available.');
                 break;
               case 'activated':
                 location.reload();
-                if ('Notification' in window) serviceWorkerNotification('New or updated content has been used.');
                 break;
               case 'redundant':
                 throw new Error('The installing service worker became redundant.');

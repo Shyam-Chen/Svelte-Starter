@@ -1,6 +1,6 @@
 {
   "HOME": "首頁",
-  "VANILLA": {
+  "CARD": {
     "TITLE": "歡迎來到 Web GO",
     "CONTENT": "HTML5、Material、Firebase、Gulp、Rollup、Babel、PostHTML 和 PostCSS 的樣板",
     "BUTTON": "立馬開始"

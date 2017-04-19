@@ -4,8 +4,8 @@
     "SIGN_IN_BUTTON": "Google でログイン",
     "SIGN_OUT_BUTTON": "サインアウト"
   },
-  "NAME": "名",
-  "EMAIL": "Eメール",
+  "NAME": "フルネーム",
+  "EMAIL": "メール",
   "COMMENT": "コメント",
   "SEND": "送信"
 }

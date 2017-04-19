@@ -1,11 +1,13 @@
-.card-vanilla {
-  &.mdl-card {
-    width: 320px;
-    height: 20rem;
-  }
+.home {
+  &__card {
+    &.mdl-card {
+      width: 330px;
+      height: 20rem;
+    }
 
-  & > .mdl-card__title {
-    color: #FFFFFF;
-    background: url('images/card.jpg') bottom right 5% no-repeat;
+    & > .mdl-card__title {
+      color: #FFFFFF;
+      background: url('images/card.jpg') bottom right 5% no-repeat;
+    }
   }
 }

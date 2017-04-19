@@ -1,4 +1,4 @@
-# Web GO (Beta)
+# Web Starter Kit (Beta)
 
 :icecream: A boilerplate for :star2: HTML5 :star2:, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.
 
@@ -7,7 +7,7 @@
 [![dependencies Status](https://david-dm.org/Shyam-Chen/Web-Starter-Kit/status.svg)](https://david-dm.org/Shyam-Chen/Web-Starter-Kit)
 [![devDependencies Status](https://david-dm.org/Shyam-Chen/Web-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Web-Starter-Kit?type=dev)
 
-[Live Demo](https://Web-starter-kit.firebaseapp.com/)
+[Live Demo](https://frontend-starter-kit.firebaseapp.com/)
 
 This seed repository provides the following features:
 * ---------- **Primary Key** ----------
