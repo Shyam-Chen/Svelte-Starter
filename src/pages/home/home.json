@@ -1,7 +1,7 @@
 {
   "HOME": "Home",
   "VANILLA": {
-    "TITLE": "Frontend Starter Kit",
+    "TITLE": "Welcome to Web GO",
     "CONTENT": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.",
     "BUTTON": "Get Started"
   }

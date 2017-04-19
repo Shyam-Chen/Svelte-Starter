@@ -1,7 +1,7 @@
 .card-vanilla {
   &.mdl-card {
     width: 320px;
-    height: 320px;
+    height: 20rem;
   }
 
   & > .mdl-card__title {

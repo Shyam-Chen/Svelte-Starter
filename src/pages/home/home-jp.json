@@ -1,7 +1,7 @@
 {
   "HOME": "ホーム",
   "VANILLA": {
-    "TITLE": "Frontend Starter Kit",
+    "TITLE": "Web GO へようこそ",
     "CONTENT": "HTML5、Material、Firebase、Gulp、Rollup、Babel、PostHTML と PostCSS のための定型文",
     "BUTTON": "開始する"
   }
