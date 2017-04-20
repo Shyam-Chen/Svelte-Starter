@@ -21,6 +21,10 @@
   "rules": {
     // Possible Errors
     "no-console": "off",
+    "no-extra-parens": "error",
+    "no-prototype-builtins": "error",
+    "no-template-curly-in-string": "error",
+    "valid-jsdoc": "error",
 
     // Best Practices
     "no-alert": "error",
