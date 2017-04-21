@@ -308,8 +308,12 @@ Observable::fromEvent(document, 'click')
 
 The practical examples:
 
-* [Component (basic)](https://github.com/Shyam-Chen/Web-Starter-Kit/tree/component)
-* [Container (basic)](https://github.com/Shyam-Chen/Web-Starter-Kit/tree/container)
+* Components
+  * [File upload](https://github.com/Shyam-Chen/Web-Starter-Kit/tree/component)
+  * ...
+* Containers
+  * [Counter](https://github.com/Shyam-Chen/Web-Starter-Kit/tree/container)
+  * ...
 
 ## All Commands
 
@@ -395,11 +399,11 @@ $ yarn run deploy
 * ---------- **Easy** ----------
 * ...
 * ---------- **Medium** ----------
-* Switch to `material-components-web` ([Repository](https://github.com/material-components/material-components-web))
-* Switch to `karma-chrome-launcher` (Chrome headless, [PR](https://github.com/karma-runner/karma-chrome-launcher/pull/111))
+* Migrate from `material-design-lite` to ([`material-components-web`](https://github.com/material-components/material-components-web))
+* Migrate from Phantom to Chrome headless
 * ---------- **Hard** ----------
-* Render posthtml template ([`rollup-plugin-posthtml-template`](https://github.com/Vanilla-IceCream/rollup-plugin-posthtml-template))
-* Prerender static HTML (`gulp-prerender`)
+* Render PostHTML templates ([`rollup-plugin-posthtml-template`](https://github.com/Vanilla-IceCream/rollup-plugin-posthtml-template))
+* Prerender HTML snapshots (`gulp-prerender`)
 * ---------- **Other** ----------
 * Update `postcss-cssnext` to v2.9.0+ ([Issue](https://github.com/MoOx/postcss-cssnext/issues/357))
 * Update `rxjs` to v5.0.2+ ([Issue](https://github.com/ReactiveX/rxjs/issues/2460))
