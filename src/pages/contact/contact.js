@@ -3,7 +3,7 @@ import { layout } from '../../components/layout';
 import template from './contact.html';
 import data from './contact.json';
 import dataZh from './contact-zh.json';
-import dataJp from './contact-jp.json';
+import dataJa from './contact-ja.json';
 
 const common = () => {
   const signInButton = document.querySelector('#sign-in-button');
@@ -87,8 +87,8 @@ export const contact = () => {
     componentHandler.upgradeAllRegistered();
   });
 
-  page('/jp/contact', () => {
-    layout(template(dataJp), 'contact', 'jp');
+  page('/ja/contact', () => {
+    layout(template(dataJa), 'contact', 'ja');
     common();
     componentHandler.upgradeAllRegistered();
   });

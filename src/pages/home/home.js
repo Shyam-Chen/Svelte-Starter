@@ -5,7 +5,7 @@ import { layout } from '../../components/layout';
 import template from './home.html';
 import data from './home.json';
 import dataZh from './home-zh.json';
-import dataJp from './home-jp.json';
+import dataJa from './home-ja.json';
 
 export const home = () => {
   page('/', () => {
@@ -18,8 +18,8 @@ export const home = () => {
     componentHandler.upgradeAllRegistered();
   });
 
-  page('/jp', () => {
-    layout(template(dataJp), 'home', 'jp');
+  page('/ja', () => {
+    layout(template(dataJa), 'home', 'ja');
     componentHandler.upgradeAllRegistered();
   });
 };

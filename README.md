@@ -10,6 +10,7 @@
 [Live Demo](https://frontend-starter-kit.firebaseapp.com/)
 
 This seed repository provides the following features:
+
 * ---------- **Primary Key** ----------
 * [x] Client-side platform with [**HTML5**](https://platform.html5.org/).
 * [x] User interface components with [**Material**](https://material.io/).
@@ -44,6 +45,7 @@ This seed repository provides the following features:
 * [x] Continuous integration with [**Travis**](https://github.com/travis-ci/travis-ci).
 
 ## Table of Contents
+
 * [Getting Started](#getting-started)
 * [Dockerization](#dockerization)
 * [Configuration](#configuration)
@@ -304,7 +306,10 @@ Observable::fromEvent(document, 'click')
 <div id="ex"></div>
 ```
 
-For more examples, please see the branch.
+The practical examples:
+
+* [Component (basic)](https://github.com/Shyam-Chen/Web-Starter-Kit/tree/component)
+* [Container (basic)](https://github.com/Shyam-Chen/Web-Starter-Kit/tree/container)
 
 ## All Commands
 
@@ -386,6 +391,7 @@ $ yarn run deploy
 ```
 
 ## Known Issues
+
 * ---------- **Easy** ----------
 * ...
 * ---------- **Medium** ----------

@@ -3,7 +3,7 @@ import { layout } from '../../components/layout';
 import template from './about.html';
 import data from './about.json';
 import dataZh from './about-zh.json';
-import dataJp from './about-jp.json';
+import dataJa from './about-ja.json';
 
 export const about = () => {
   page('/about', () => {
@@ -16,8 +16,8 @@ export const about = () => {
     componentHandler.upgradeAllRegistered();
   });
 
-  page('/jp/about', () => {
-    layout(template(dataJp), 'about', 'jp');
+  page('/ja/about', () => {
+    layout(template(dataJa), 'about', 'ja');
     componentHandler.upgradeAllRegistered();
   });
 };

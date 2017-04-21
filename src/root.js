@@ -1,13 +1,9 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 
-const rootEpic = combineEpics(
+const rootEpic = combineEpics(/* ... */);
 
-);
-
-const rootReducer = combineReducers({
-
-});
+const rootReducer = combineReducers({ /* ... */ });
 
 const epicMiddleware = createEpicMiddleware(rootEpic);
 
