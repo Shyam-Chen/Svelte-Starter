@@ -24,10 +24,9 @@ export const layout = (content, page, language) => {
   const enAnchor = document.querySelector('#en');
   const zhAnchor = document.querySelector('#zh');
   const jaAnchor = document.querySelector('#ja');
-  const homeConditional = page === 'home';
-  homeConditional ? enAnchor.href = `/` : enAnchor.href = `/${page}`;
-  homeConditional ? zhAnchor.href = `/zh` : zhAnchor.href = `/zh/${page}`;
-  homeConditional ? jaAnchor.href = `/ja` : jaAnchor.href = `/ja/${page}`;
+  page === 'home' ? enAnchor.href = `/` : enAnchor.href = `/${page}`;
+  page === 'home' ? zhAnchor.href = `/zh` : zhAnchor.href = `/zh/${page}`;
+  page === 'home' ? jaAnchor.href = `/ja` : jaAnchor.href = `/ja/${page}`;
 
   document.querySelector('main').innerHTML = content;
 };
