@@ -1,6 +1,6 @@
 import { join } from 'path';
 
-export const SITE_URL = 'https://frontend-starter-kit.firebaseapp.com/';
+export const SITE_URL = 'https://web-go-demo.firebaseapp.com/';
 export const APP_BASE = '/';
 
 export const DEV_PORT = 8000;

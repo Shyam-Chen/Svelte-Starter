@@ -6,11 +6,12 @@ import { contact } from './pages/contact';
 import { error } from './pages/error';
 
 firebase.initializeApp({
-  apiKey: 'AIzaSyABgvqPE5cNRsTS0UfXpWdyYvqxvR5lGYs',
-  authDomain: 'frontend-starter-kit.firebaseapp.com',
-  databaseURL: 'https://frontend-starter-kit.firebaseio.com',
-  storageBucket: 'frontend-starter-kit.appspot.com',
-  messagingSenderId: '428173442531'
+  apiKey: 'AIzaSyDBA0yVS0JuIqGaoN9nafvPFxPSVgmxwnw',
+  authDomain: 'web-go-demo.firebaseapp.com',
+  databaseURL: 'https://web-go-demo.firebaseio.com',
+  projectId: 'web-go-demo',
+  storageBucket: 'web-go-demo.appspot.com',
+  messagingSenderId: '584431831746'
 });
 
 if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost')) {

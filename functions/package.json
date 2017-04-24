@@ -1,5 +1,5 @@
 {
-  "name": "Frontend-Starter-Kit",
+  "name": "Web-Starter-Kit",
   "description": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.",
   "dependencies": {
     "firebase-admin": "latest",
