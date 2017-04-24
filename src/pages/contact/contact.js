@@ -5,7 +5,7 @@ import data from './contact.json';
 import dataZh from './contact-zh.json';
 import dataJa from './contact-ja.json';
 
-const common = () => {
+const common = (language = 'en') => {
   const signInButton = document.querySelector('#sign-in-button');
   const signOutButton = document.querySelector('#sign-out-button');
   const signInContent = document.querySelector('#sign-in-content');
@@ -40,11 +40,16 @@ const common = () => {
         if (comment.value !== '') {
           postData(user.uid, user.displayName, user.email, comment.value);
 
-          sendToast.MaterialSnackbar.showSnackbar({ message: 'Thanks for your comment.' });
+          if (language === 'en') sendToast.MaterialSnackbar.showSnackbar({ message: 'Thanks for your comment.' });
+          if (language === 'zh') sendToast.MaterialSnackbar.showSnackbar({ message: '感谢您的评论' });
+          if (language === 'ja') sendToast.MaterialSnackbar.showSnackbar({ message: 'あなたのコメントをありがとう' });
+
           comment.value = '';
           document.querySelector('#sign-in-content .mdl-textfield:nth-child(3)').classList.remove('is-dirty');
         } else {
-          sendToast.MaterialSnackbar.showSnackbar({ message: 'Not valid!' });
+          if (language === 'en') sendToast.MaterialSnackbar.showSnackbar({ message: 'Not valid!' });
+          if (language === 'zh') sendToast.MaterialSnackbar.showSnackbar({ message: '無效！' });
+          if (language === 'ja') sendToast.MaterialSnackbar.showSnackbar({ message: '有効ではありません！' });
         }
       };
     } else {
@@ -83,13 +88,13 @@ export const contact = () => {
 
   page('/zh/contact', () => {
     layout(template(dataZh), 'contact', 'zh');
-    common();
+    common('zh');
     componentHandler.upgradeAllRegistered();
   });
 
   page('/ja/contact', () => {
     layout(template(dataJa), 'contact', 'ja');
-    common();
+    common('ja');
     componentHandler.upgradeAllRegistered();
   });
 };

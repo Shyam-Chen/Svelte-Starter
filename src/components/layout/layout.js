@@ -8,16 +8,16 @@ import dataJa from './layout-ja.json';
 /**
  * @param {string} content
  * @param {string} page
- * @param {string} language
+ * @param {string} [language=en]
  *
  * @example
  * import { layout } from '../../components/layout';
  * layout(template(data), 'example');
  */
 
-export const layout = (content, page, language) => {
+export const layout = (content, page, language = 'en') => {
   const app = document.querySelector('#app');
-  app.innerHTML = template(data);
+  if (language === 'en') app.innerHTML = template(data);
   if (language === 'zh') app.innerHTML = template(dataZh);
   if (language === 'ja') app.innerHTML = template(dataJa);
 
