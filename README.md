@@ -386,16 +386,17 @@ $ yarn run deploy
 
 ## Known Issues
 
-* ---------- **Easy** ----------
+* ---------- **P0: Critical** ----------
 * ...
-* ---------- **Medium** ----------
+* ---------- **P1: Urgent** ----------
 * Add `sw-helpers`
+* ---------- **P2: Required** ----------
 * Migrate from `material-design-lite` to ([`material-components-web`](https://github.com/material-components/material-components-web))
 * Migrate from Phantom to Chrome headless
-* ---------- **Hard** ----------
+* ---------- **P3: Important** ----------
 * Render PostHTML templates ([`rollup-plugin-posthtml-template`](https://github.com/Vanilla-IceCream/rollup-plugin-posthtml-template))
 * Prerender HTML snapshots (`gulp-prerender`)
-* ---------- **Other** ----------
+* ---------- **P4: Nice to have** ----------
 * Update `postcss-cssnext` to v2.9.0+ ([Issue](https://github.com/MoOx/postcss-cssnext/issues/357))
 * Update `rxjs` to v5.0.2+ ([Issue](https://github.com/ReactiveX/rxjs/issues/2460))
 * Update `firebase` to v3.6.3+ ([Issue](https://github.com/rollup/rollup/issues/1275))

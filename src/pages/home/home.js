@@ -11,8 +11,8 @@ import dataJa from './home-ja.json';
 
 const imports = {
   style,
-  'image': {
-    'vanilla': vanilla
+  image: {
+    vanilla
   }
 };
 

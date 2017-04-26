@@ -2,8 +2,8 @@
   width: 330px;
   height: 20rem;
 
-  & > .cardTitle {
-      color: #FFFFFF;
-      background: url('images/background.jpg') bottom right 5% no-repeat;
+  & > .title {
+    color: #FFFFFF;
+    background: url('images/background.jpg') bottom right 5% no-repeat;
   }
 }
