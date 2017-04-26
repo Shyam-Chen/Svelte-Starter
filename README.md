@@ -130,41 +130,31 @@ Example of Component
 
 ```html
 <!-- new-component.html -->
-<div block="card" mods="theme:light">
-  <div elem="title" mods="size:big">${ _.title }</div>
-  <div elem="content">${ _.content }</div>
+<div class="${ style.card }">
+  <div class="${ style.title }">${ title }</div>
+  <div class="${ style.content }">${ content }</div>
 </div>
 ```
 
 ```scss
-/* new-component.css */
-.card {  // block
-  ...
-  &__title {  // elem
-    ...
-    &--size {  // mods
-      ...
-      &-big { ... }
-      &-small { ... }
-    }
-  }
-  &__content { ... }  // elem
-  &--theme {  // mods
-    ...
-    &-dark { ... }
-    &-light { ... }
-  }
+// new-component.css
+.card {
+  // ...
+  & > .title { /* ... */ }
+  & > .content { /* ... */ }
 }
 ```
 
 ```js
 // new-component.js
-import './new-component.css';
+import { template as _ } from 'lodash';
 
 import template from './new-component.html';
+import style from './new-component.css';
 
 export const newComponent = (name, title, content) => {
-  document.querySelector(`#${name}`).innerHTML = template({ title, content });
+  document.querySelector(`#${name}`)
+    .innerHTML = _(template, { 'imports': { style } })({ title, content });
 };
 ```
 

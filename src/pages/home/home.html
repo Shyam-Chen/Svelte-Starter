@@ -1,21 +1,21 @@
 <div class="mdl-grid mdl-grid--center">
-  <h2 class="mdl-color-text--blue-900">${ _.HOME }</h2>
+  <h2 class="mdl-color-text--blue-900">${ HOME }</h2>
 </div>
 
-<div block="home" class="mdl-grid mdl-grid--center">
+<div class="mdl-grid mdl-grid--center">
   <div class="mdl-cell mdl-cell--center mdl-cell--3-col">
-    <img src="images/vanilla.png" alt="Vanilla">
+    <img src="${ image.vanilla }" alt="Vanilla">
   </div>
-  <div elem="card" class="mdl-cell mdl-cell--4-col mdl-cell--middle mdl-card mdl-shadow--2dp">
-    <div class="mdl-card__title mdl-card--expand">
-      <h2 class="mdl-card__title-text">${ _.CARD.TITLE }</h2>
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--middle mdl-card mdl-shadow--2dp ${ style.card }">
+    <div class="mdl-card__title mdl-card--expand ${ style.cardTitle }">
+      <h2 class="mdl-card__title-text">${ CARD.TITLE }</h2>
     </div>
     <div class="mdl-card__supporting-text">
-      ${ _.CARD.CONTENT }
+      ${ CARD.CONTENT }
     </div>
     <div class="mdl-card__actions mdl-card--border mdl-cell--right">
       <a href="https://github.com/Shyam-Chen/Web-Starter-Kit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-        ${ _.CARD.BUTTON }
+        ${ CARD.BUTTON }
       </a>
     </div>
   </div>

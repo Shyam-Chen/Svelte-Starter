@@ -1,16 +1,14 @@
-.error {
-  &__status {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 10rem;
-  }
+.status {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10rem;
+}
 
-  &__text {
-    position: absolute;
-    bottom: 1rem;
-    text-align: center;
-    width: 100%;
-  }
+.text {
+  position: absolute;
+  bottom: 1rem;
+  text-align: center;
+  width: 100%;
 }

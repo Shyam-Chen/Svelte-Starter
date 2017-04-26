@@ -1,25 +1,35 @@
-import './home.css';
+import { template as _ } from 'lodash';
 
 import { layout } from '../../components/layout';
+import vanilla from '../../assets/images/vanilla.png';
 
 import template from './home.html';
+import style from './home.css';
 import data from './home.json';
 import dataZh from './home-zh.json';
 import dataJa from './home-ja.json';
 
+const imports = {
+  style,
+  'image': {
+    'vanilla': vanilla
+  }
+};
+
 export const home = () => {
   page('/', () => {
-    layout(template(data), 'home');
+    layout(_(template, { imports })(data), 'home');
+    console.log(vanilla);
     componentHandler.upgradeAllRegistered();
   });
 
   page('/zh', () => {
-    layout(template(dataZh), 'home', 'zh');
+    layout(_(template, { imports })(dataZh), 'home', 'zh');
     componentHandler.upgradeAllRegistered();
   });
 
   page('/ja', () => {
-    layout(template(dataJa), 'home', 'ja');
+    layout(_(template, { imports })(dataJa), 'home', 'ja');
     componentHandler.upgradeAllRegistered();
   });
 };

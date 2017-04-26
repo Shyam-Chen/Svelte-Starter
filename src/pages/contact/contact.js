@@ -1,6 +1,9 @@
+import { template as _ } from 'lodash';
+
 import { layout } from '../../components/layout';
 
 import template from './contact.html';
+import style from './contact.css';
 import data from './contact.json';
 import dataZh from './contact-zh.json';
 import dataJa from './contact-ja.json';
@@ -81,19 +84,19 @@ const common = (language = 'en') => {
 
 export const contact = () => {
   page('/contact', () => {
-    layout(template(data), 'contact');
+    layout(_(template, { 'imports': { style } })(data), 'contact');
     common();
     componentHandler.upgradeAllRegistered();
   });
 
   page('/zh/contact', () => {
-    layout(template(dataZh), 'contact', 'zh');
+    layout(_(template, { 'imports': { style } })(dataZh), 'contact', 'zh');
     common('zh');
     componentHandler.upgradeAllRegistered();
   });
 
   page('/ja/contact', () => {
-    layout(template(dataJa), 'contact', 'ja');
+    layout(_(template, { 'imports': { style } })(dataJa), 'contact', 'ja');
     common('ja');
     componentHandler.upgradeAllRegistered();
   });

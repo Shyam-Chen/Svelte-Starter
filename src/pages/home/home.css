@@ -1,13 +1,9 @@
-.home {
-  &__card {
-    width: 330px;
-    height: 20rem;
+.card {
+  width: 330px;
+  height: 20rem;
 
-    & > .mdl-card {
-      &__title {
-        color: #FFFFFF;
-        background: url('images/background.jpg') bottom right 5% no-repeat;
-      }
-    }
+  & > .cardTitle {
+      color: #FFFFFF;
+      background: url('images/background.jpg') bottom right 5% no-repeat;
   }
 }

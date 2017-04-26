@@ -1,35 +1,33 @@
-<mixin name="links">
-  <!--<each loop="item in LINK">
-    <a class="mdl-navigation__link" href="{{ item[0] }}">{{ item[1] }}</a>
-  </each>-->
-  <a class="mdl-navigation__link" href="${ _.LINK[0][0] }">${ _.LINK[0][1] }</a>
-  <a class="mdl-navigation__link" href="${ _.LINK[1][0] }">${ _.LINK[1][1] }</a>
-  <a class="mdl-navigation__link" href="${ _.LINK[2][0] }">${ _.LINK[2][1] }</a>
-</mixin>
-
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">${ _.TITLE }</span>
+      <span class="mdl-layout-title">${ TITLE }</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <mixin name="links"></mixin>
+        <% [].forEach.call(LINK, function(item) { %>
+          <a class="mdl-navigation__link" href="<%- item[0] %>"><%- item[1] %></a>
+        <% }); %>
       </nav>
       <button id="language" class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">language</i>
       </button>
       <div class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="language">
-        <a href="javascript:void 0" id="en" class="mdl-menu__item">English</a>
-        <a href="javascript:void 0" id="zh" class="mdl-menu__item">中文</a>
-        <a href="javascript:void 0" id="ja" class="mdl-menu__item">日本語</a>
+        <% var languages = [['en', 'English'], ['zh', '中文'], ['ja', '日本語']]; %>
+        <% [].forEach.call(languages, function(language) { %>
+          <a href="javascript:void 0" id="<%- language[0] %>" class="mdl-menu__item"><%- language[1] %></a>
+        <% }); %>
       </div>
     </div>
   </header>
   <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">${ _.TITLE }</span>
+    <span class="mdl-layout-title">${ TITLE }</span>
     <nav class="mdl-navigation">
-      <mixin name="links"></mixin>
+      <% [].forEach.call(LINK, function(item) { %>
+        <a class="mdl-navigation__link" href="<%- item[0] %>"><%- item[1] %></a>
+      <% }); %>
     </nav>
   </div>
-  <main class="mdl-layout__content mdl-color--grey-100"></main>
+  <main class="mdl-layout__content mdl-color--grey-100">
+    <div id="content" class="${ style.content }"></div>
+  </main>
 </div>

@@ -1,15 +1,17 @@
-.mdl-grid {
-  &--center {
-    justify-content: center;
-  }
-}
-
-.mdl-cell {
-  &--center {
-    text-align: center;
+:global {
+  & .mdl-grid {
+    &--center {
+      justify-content: center;
+    }
   }
 
-  &--right {
-    text-align: right;
+  & .mdl-cell {
+    &--center {
+      text-align: center;
+    }
+
+    &--right {
+      text-align: right;
+    }
   }
 }

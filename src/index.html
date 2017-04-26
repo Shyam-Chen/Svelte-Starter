@@ -8,10 +8,10 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="manifest" href="manifest.json">
     <meta name="description" content="A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.">
-    <base href="<%= APP_BASE %>">
-    <%= PRELOAD_POLYFILLS %>
-    <%= PRELOAD_VENDOR %>
-    <%= PRELOAD_APP %>
+    <base href="${ APP_BASE }">
+    ${ PRELOAD_POLYFILLS }
+    ${ PRELOAD_VENDOR }
+    ${ PRELOAD_APP }
   </head>
   <body>
     <div id="app"></div>
@@ -23,8 +23,8 @@
       ga('create', 'UA-84381641-2', 'auto');
       ga('send', 'pageview');
     </script>
-    <%= POLYFILLS_SCRIPT %>
-    <%= VENDOR_SCRIPT %>
-    <%= APP_SCRIPT %>
+    ${ POLYFILLS_SCRIPT }
+    ${ VENDOR_SCRIPT }
+    ${ APP_SCRIPT }
   </body>
 </html>

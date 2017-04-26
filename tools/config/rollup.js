@@ -1,8 +1,10 @@
 import { join } from 'path';
 import { env, noop } from 'gulp-util';
 
-import posthtml from 'rollup-plugin-posthtml-template';
+// import posthtml from 'rollup-plugin-posthtml-template';
+import html from 'rollup-plugin-html';
 import postcss from 'rollup-plugin-postcss';
+import url from 'rollup-plugin-url';
 import json from 'rollup-plugin-json';
 import babel from 'rollup-plugin-babel';
 import buble from 'rollup-plugin-buble';
@@ -15,7 +17,7 @@ import uglify from 'rollup-plugin-uglify';
 
 import cssnano from 'cssnano';
 
-import POSTHTML_CONFIG from './posthtml';
+// import POSTHTML_CONFIG from './posthtml';
 import POSTCSS_CONFIG from './postcss';
 import BABEL_CONFIG from './babel';
 
@@ -26,8 +28,16 @@ export const PRIMARY_CONFIG = {
   format: 'iife',
   context: 'window',
   plugins: [
-    posthtml(POSTHTML_CONFIG),
+    // posthtml(POSTHTML_CONFIG),
+    html({
+      htmlMinifierOptions: {
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+        removeComments: true
+      }
+    }),
     postcss(POSTCSS_CONFIG),
+    url({ limit: 32 * 1024 }),
     json(),
     lodash(),
     reactivex(),

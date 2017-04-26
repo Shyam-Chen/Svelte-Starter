@@ -10,9 +10,12 @@ import pfor from 'postcss-for';
 import each from 'postcss-each';
 // import pwhile from 'postcss-while';
 import definefunction from 'postcss-define-function';
+import modules from 'postcss-modules';
 import cssnano from 'cssnano';
 
 import { ASSETS_ROOT } from '../constants';
+
+const cssExportMap = {};
 
 export default {
   parser: comment,
@@ -28,6 +31,14 @@ export default {
     each(),
     // pwhile(),
     definefunction(),
+    modules({
+      getJSON(id, tokens) {
+        cssExportMap[id] = tokens;
+      }
+    }),
     cssnano()
-  ]
+  ],
+  getExport(id) {
+    return cssExportMap[id];
+  }
 };
