@@ -399,6 +399,7 @@ $ yarn run deploy
 * ---------- **Easy** ----------
 * ...
 * ---------- **Medium** ----------
+* Add `sw-helpers`
 * Migrate from `material-design-lite` to ([`material-components-web`](https://github.com/material-components/material-components-web))
 * Migrate from Phantom to Chrome headless
 * ---------- **Hard** ----------
