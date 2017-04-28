@@ -2,8 +2,8 @@
   width: 330px;
   height: 20rem;
 
-  & > .title {
+  &__title {
     color: #FFFFFF;
-    background: url('images/background.jpg') bottom right 5% no-repeat;
+    background: url('images/background.jpg') bottom right no-repeat;
   }
 }

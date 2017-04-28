@@ -1,10 +1,11 @@
-import { template as _ } from 'lodash';
+import { template as _, noop } from 'lodash';
 
 import template from './layout.html';
 import style from './layout.css';
 import data from './layout.json';
-import dataZh from './layout-zh.json';
-import dataJa from './layout-ja.json';
+
+import dataZh from './languages/layout-zh.json';
+import dataJa from './languages/layout-ja.json';
 
 /**
  * @param {string} content
@@ -18,9 +19,10 @@ import dataJa from './layout-ja.json';
 
 export const layout = (content, page, language = 'en') => {
   const app = document.querySelector('#app');
-  if (language === 'en') app.innerHTML = _(template, { 'imports': { style } })(data);
-  if (language === 'zh') app.innerHTML = _(template, { 'imports': { style } })(dataZh);
-  if (language === 'ja') app.innerHTML = _(template, { 'imports': { style } })(dataJa);
+  const imports = { style };
+  language === 'en' ? app.innerHTML = _(template, { imports })(data) : noop();
+  language === 'zh' ? app.innerHTML = _(template, { imports })(dataZh) : noop();
+  language === 'ja' ? app.innerHTML = _(template, { imports })(dataJa) : noop();
 
   const enAnchor = document.querySelector('#en');
   const zhAnchor = document.querySelector('#zh');

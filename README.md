@@ -131,8 +131,8 @@ Example of Component
 ```html
 <!-- new-component.html -->
 <div class="${ style.card }">
-  <div class="${ style.title }">${ title }</div>
-  <div class="${ style.content }">${ content }</div>
+  <div class="${ style.card__title }">${ title }</div>
+  <div class="${ style.card__content }">${ content }</div>
 </div>
 ```
 
@@ -140,8 +140,8 @@ Example of Component
 // new-component.css
 .card {
   // ...
-  & > .title { /* ... */ }
-  & > .content { /* ... */ }
+  &__title { /* ... */ }
+  &__content { /* ... */ }
 }
 ```
 
@@ -152,16 +152,19 @@ import { template as _ } from 'lodash';
 import template from './new-component.html';
 import style from './new-component.css';
 
-export const newComponent = (name, title, content) => {
+export const newComponent = (name, data) => {
+  const imports = { style };
   document.querySelector(`#${name}`)
-    .innerHTML = _(template, { 'imports': { style } })({ title, content });
+    .innerHTML = _(template, { imports })(data);
 };
 ```
 
 ```js
 import { newComponent } from '../../components/new-component';
 
-newComponent('ex', 'Component - Title', 'Component - Content');
+import data from './new-component.json';
+
+newComponent('ex', data);
 ```
 
 ```html

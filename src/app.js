@@ -1,7 +1,7 @@
+import './app.css';
+
 import { Observable } from 'rxjs/Observable';
 import { forkJoin } from 'rxjs/observable/forkJoin';
-
-import './app.css';
 
 import { load } from './utils';
 

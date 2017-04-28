@@ -1,12 +1,13 @@
-import { template as _ } from 'lodash';
+import { template as _, noop } from 'lodash';
 
 import { layout } from '../../components/layout';
 
 import template from './contact.html';
 import style from './contact.css';
 import data from './contact.json';
-import dataZh from './contact-zh.json';
-import dataJa from './contact-ja.json';
+
+import dataZh from './languages/contact-zh.json';
+import dataJa from './languages/contact-ja.json';
 
 const common = (language = 'en') => {
   const signInButton = document.querySelector('#sign-in-button');
@@ -25,7 +26,6 @@ const common = (language = 'en') => {
   };
 
   let currentUID;
-
   const onAuthStateChanged = user => {
     if (user && currentUID === user.uid) return;
 
@@ -43,16 +43,16 @@ const common = (language = 'en') => {
         if (comment.value !== '') {
           postData(user.uid, user.displayName, user.email, comment.value);
 
-          if (language === 'en') sendToast.MaterialSnackbar.showSnackbar({ message: 'Thanks for your comment.' });
-          if (language === 'zh') sendToast.MaterialSnackbar.showSnackbar({ message: '感谢您的评论' });
-          if (language === 'ja') sendToast.MaterialSnackbar.showSnackbar({ message: 'あなたのコメントをありがとう' });
+          language === 'en' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'Thanks for your comment.' }) : noop();
+          language === 'zh' ? sendToast.MaterialSnackbar.showSnackbar({ message: '感谢您的评论' }) : noop();
+          language === 'ja' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'あなたのコメントをありがとう' }) : noop();
 
           comment.value = '';
           document.querySelector('#sign-in-content .mdl-textfield:nth-child(3)').classList.remove('is-dirty');
         } else {
-          if (language === 'en') sendToast.MaterialSnackbar.showSnackbar({ message: 'Not valid!' });
-          if (language === 'zh') sendToast.MaterialSnackbar.showSnackbar({ message: '無效！' });
-          if (language === 'ja') sendToast.MaterialSnackbar.showSnackbar({ message: '有効ではありません！' });
+          language === 'en' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'Not valid!' }) : noop();
+          language === 'zh' ? sendToast.MaterialSnackbar.showSnackbar({ message: '無效！' }) : noop();
+          language === 'ja' ? sendToast.MaterialSnackbar.showSnackbar({ message: '有効ではありません！' }) : noop();
         }
       };
     } else {
@@ -67,36 +67,40 @@ const common = (language = 'en') => {
     firebase.auth().signInWithPopup(provider);
   };
 
+  const unAuth = () => {
+    signInButton.style.display = '';
+    signOutButton.style.display = 'none';
+    signInContent.style.display = 'none';
+  };
+
   signOutButton.onclick = () => {
     firebase.auth().signOut();
-
-    signInContent.style.display = 'none';
-    signOutButton.style.display = 'none';
-    signInButton.style.display = '';
+    unAuth();
   };
 
   firebase.auth().onAuthStateChanged(onAuthStateChanged);
+  unAuth();
+};
 
-  signInContent.style.display = 'none';
-  signOutButton.style.display = 'none';
-  signInButton.style.display = '';
+const imports = {
+  style
 };
 
 export const contact = () => {
   page('/contact', () => {
-    layout(_(template, { 'imports': { style } })(data), 'contact');
+    layout(_(template, { imports })(data), 'contact');
     common();
     componentHandler.upgradeAllRegistered();
   });
 
   page('/zh/contact', () => {
-    layout(_(template, { 'imports': { style } })(dataZh), 'contact', 'zh');
+    layout(_(template, { imports })(dataZh), 'contact', 'zh');
     common('zh');
     componentHandler.upgradeAllRegistered();
   });
 
   page('/ja/contact', () => {
-    layout(_(template, { 'imports': { style } })(dataJa), 'contact', 'ja');
+    layout(_(template, { imports })(dataJa), 'contact', 'ja');
     common('ja');
     componentHandler.upgradeAllRegistered();
   });

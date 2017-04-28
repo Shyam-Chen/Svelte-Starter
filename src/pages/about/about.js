@@ -5,22 +5,27 @@ import { layout } from '../../components/layout';
 import template from './about.html';
 import style from './about.css';
 import data from './about.json';
-import dataZh from './about-zh.json';
-import dataJa from './about-ja.json';
+
+import dataZh from './languages/about-zh.json';
+import dataJa from './languages/about-ja.json';
+
+const imports = {
+  style
+};
 
 export const about = () => {
   page('/about', () => {
-    layout(_(template, { 'imports': { style } })(data), 'about');
+    layout(_(template, { imports })(data), 'about');
     componentHandler.upgradeAllRegistered();
   });
 
   page('/zh/about', () => {
-    layout(_(template, { 'imports': { style } })(dataZh), 'about', 'zh');
+    layout(_(template, { imports })(dataZh), 'about', 'zh');
     componentHandler.upgradeAllRegistered();
   });
 
   page('/ja/about', () => {
-    layout(_(template, { 'imports': { style } })(dataJa), 'about', 'ja');
+    layout(_(template, { imports })(dataJa), 'about', 'ja');
     componentHandler.upgradeAllRegistered();
   });
 };

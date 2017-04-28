@@ -6,8 +6,9 @@ import vanilla from '../../assets/images/vanilla.png';
 import template from './home.html';
 import style from './home.css';
 import data from './home.json';
-import dataZh from './home-zh.json';
-import dataJa from './home-ja.json';
+
+import dataZh from './languages/home-zh.json';
+import dataJa from './languages/home-ja.json';
 
 const imports = {
   style,
