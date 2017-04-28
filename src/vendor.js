@@ -39,8 +39,8 @@
 // import '@material/theme/dist/mdc.theme.css';
 // import '@material/toolbar/dist/mdc.toolbar.css';
 // import '@material/typography/dist/mdc.typography.css';
-import 'material-design-lite/dist/material.indigo-pink.min.css';  // @deprecated
-import 'material-design-lite/material';  // @deprecated
+import 'material-design-lite/dist/material.indigo-pink.min.css';
+import 'material-design-lite/material';
 
 /**
  * @name Application
@@ -58,18 +58,7 @@ import 'firebase/firebase-database';
 import 'page/page';
 
 /**
- * @name Other
+ * @name Others
  */
 
 // import 'd3-selection-multi';
-
-import { load } from './utils';
-
-Promise.all([
-    load('https://fonts.googleapis.com/icon?family=Material+Icons')  // @deprecated
-  ])
-  .then(result => {
-    const style = document.createElement('style');
-    style.innerHTML = result;
-    document.head.appendChild(style);
-  });

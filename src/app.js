@@ -1,9 +1,23 @@
+import { Observable } from 'rxjs/Observable';
+import { forkJoin } from 'rxjs/observable/forkJoin';
+
 import './app.css';
+
+import { load } from './utils';
 
 import { home } from './pages/home';
 import { about } from './pages/about';
 import { contact } from './pages/contact';
 import { error } from './pages/error';
+
+Observable::forkJoin(
+    load('https://fonts.googleapis.com/icon?family=Material+Icons')
+  )
+  .subscribe(result => {
+    const style = document.createElement('style');
+    style.innerHTML = result;
+    document.head.appendChild(style);
+  });
 
 firebase.initializeApp({
   apiKey: 'AIzaSyDBA0yVS0JuIqGaoN9nafvPFxPSVgmxwnw',

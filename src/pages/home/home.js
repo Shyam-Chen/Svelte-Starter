@@ -19,7 +19,6 @@ const imports = {
 export const home = () => {
   page('/', () => {
     layout(_(template, { imports })(data), 'home');
-    console.log(vanilla);
     componentHandler.upgradeAllRegistered();
   });
 

@@ -1,26 +1,28 @@
+import { Observable } from 'rxjs/Observable';
+
 /**
  * @param {string} url
  *
  * @example
  * load('...')
- *   .then((result) => {
+ *   .subscribe((result) => {
  *     // ...
  *   });
  */
 
 export const load = url => {
-  return new Promise((resolve, reject) => {
+  return new Observable(observer => {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     xhr.onload = () => {
       if (xhr.status === 200) {
-        resolve(xhr.response);
+        observer.next(xhr.response);
+        observer.complete();
       } else {
-        reject(new Error('Failed to load.'));
+        observer.error(new Error(xhr.statusText));
       }
     };
-    xhr.onerror = () => reject(new Error('Network Error.'));
+    xhr.onerror = () => observer.error(new Error('Network Error.'));
     xhr.send();
-    return xhr.responseText;
   });
 };
