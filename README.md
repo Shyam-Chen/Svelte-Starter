@@ -255,16 +255,15 @@ Example of Immutable
 ```js
 import { Observable } from 'rxjs/Observable';
 import { from } from 'rxjs/observable/from';
-import { Map } from 'immutable';
+import { map } from 'rxjs/operator/map';
+import { Set } from 'immutable';
 
-const map1 = Map({ a: 1, b: 2, c: 3 });
-const map2 = map1.set('b', 4);
-
-Observable::from(map2)
+Observable::from(Set([1, 2, 3]))
+  ::map(value => value * 2)
   .subscribe(value => console.log(value));
-  // ["a", 1]
-  // ["b", 4]
-  // ["c", 3]
+  // 2
+  // 4
+  // 6
 ```
 
 Example of D3
