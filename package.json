@@ -73,7 +73,7 @@
     "gulp-stylelint": "3.9.0",
     "gulp-template": "4.0.0",
     "gulp-util": "3.0.8",
-    "jasmine-core": "2.5.2",
+    "jasmine-core": "2.6.1",
     "jasmine-spec-reporter": "4.0.0",
     "karma": "1.6.0",
     "karma-jasmine": "1.1.0",

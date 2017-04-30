@@ -1,9 +1,12 @@
-import { about } from './about';
-
-import template from './about.html';
-import data from './about.json';
+import { template as _ } from 'lodash';
 
 import { layout } from '../../components/layout';
+
+import template from './about.html';
+import style from './about.css';
+import data from './about.json';
+
+import { about } from './about';
 
 describe('About', () => {
   it('toBeDefined', () => {
@@ -15,8 +18,10 @@ describe('About', () => {
   });
 
   it('test', () => {
+    const imports = { style };
+
     page('/about', () => {
-      layout('about', template(data));
+      layout(_(template, { imports })(data), 'about');
       componentHandler.upgradeAllRegistered();
     });
   });
