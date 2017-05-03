@@ -14,3 +14,18 @@ exports.addMessage = functions.https
         res.redirect(303, snapshot.ref);
       });
   });
+
+// exports.addWelcomeMessages = functions.auth
+//   .user()
+//   .onCreate(event => {
+//     const user = event.data;
+//     const fullName = user.displayName || 'Anonymous';
+//
+//     return admin.database()
+//       .ref('messages')
+//       .push({
+//         name: 'Bot',
+//         photoUrl: 'launcher-icon-3x.png',
+//         text: `${fullName} signed in for the first time! Welcome!`
+//       });
+//   });

@@ -6,6 +6,7 @@ import { ASSETS_ROOT, DIST_ROOT } from '../constants';
 gulp.task('copy', () => {
   return gulp.src([
       join(ASSETS_ROOT, 'datas/manifest.json'),
+      join(ASSETS_ROOT, 'datas/manifest.webapp'),
       join(ASSETS_ROOT, 'datas/robots.txt'),
       join(ASSETS_ROOT, 'images/favicon.ico'),
       join(ASSETS_ROOT, 'images/launcher-icon-1x.png'),
