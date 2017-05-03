@@ -1,5 +1,9 @@
+import { template as _ } from 'lodash';
+
 import template from './layout.html';
+import style from './layout.css';
 import data from './layout.json';
+
 import { layout } from './layout';
 
 describe('Layout', () => {
@@ -21,11 +25,12 @@ describe('Layout', () => {
     expect(layout).toBeDefined();
   });
 
-  // it('test', () => {
-  //   const dummyElement = document.createElement('div');
-  //   document.querySelector = jasmine.createSpy('HTML Element').and.returnValue(dummyElement);
+  it('should works', () => {
+    const dummyElement = document.createElement('div');
+    document.querySelector = jasmine.createSpy('HTML Element').and.returnValue(dummyElement);
 
-  //   document.querySelector('#app').innerHTML = template(data);
-  //   document.querySelector('#content').innerHTML = `<p>Content</p>`;
-  // });
+    const imports = { style };
+    document.querySelector('#app').innerHTML = _(template, { imports })(data);
+    document.querySelector('#content').innerHTML = `<p>Content</p>`;
+  });
 });
