@@ -389,9 +389,9 @@ $ yarn run deploy
 * ---------- **P2: Required** ----------
 * Migrate from `material-design-lite` to ([`material-components-web`](https://github.com/material-components/material-components-web))
 * ---------- **P3: Important** ----------
-* Prerender HTML snapshots (`gulp-prerender`)
+* ...
 * ---------- **P4: Nice to have** ----------
-* Use `posthtml` and `lodash` together ([Issue](https://github.com/posthtml/posthtml/issues/216))
+* Use `posthtml` and `lodash/template` together ([Issue](https://github.com/posthtml/posthtml/issues/216))
 * Update `postcss-cssnext` to v2.9.0+ ([Issue](https://github.com/MoOx/postcss-cssnext/issues/357))
 * Update `rxjs` to v5.0.2+ ([Issue](https://github.com/ReactiveX/rxjs/issues/2460))
 * Update `firebase` to v3.6.3+ ([Issue](https://github.com/rollup/rollup/issues/1275))
