@@ -5,9 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web GO</title>
+    <meta name="description" content="A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="manifest" href="manifest.json">
-    <meta name="description" content="A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.">
+
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Web GO">
+    <link rel="icon" sizes="192x192" href="launcher-icon-4x.png">
+
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web GO">
+    <link rel="apple-touch-icon" href="launcher-icon-4x.png">
+
+    <!-- Windows -->
+    <meta name="msapplication-TileImage" content="launcher-icon-3x.png">
+    <meta name="msapplication-TileColor" content="#3F51B5">
+
     <base href="${ APP_BASE }">
     ${ PRELOAD_POLYFILLS }
     ${ PRELOAD_VENDOR }
