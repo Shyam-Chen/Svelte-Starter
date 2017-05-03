@@ -156,9 +156,7 @@ export const newComponent = (name, data) => {
 ```js
 import { newComponent } from '../../components/new-component';
 
-import data from './new-component.json';
-
-newComponent('ex', data);
+newComponent('ex', { title: 'Title here', content: 'Content here' });
 ```
 
 ```html
@@ -295,10 +293,14 @@ Observable::fromEvent(document, 'click')
 The practical examples:
 
 * Components
-  * [File upload](https://github.com/Shyam-Chen/Web-Starter-Kit/tree/component)
+  * [File upload](https://github.com/Shyam-Chen/Web-Starter-Kit/tree/file-upload)
   * ...
 * Containers
-  * [Counter](https://github.com/Shyam-Chen/Web-Starter-Kit/tree/container)
+  * [Counter](https://github.com/Shyam-Chen/Web-Starter-Kit/tree/counter)
+  * ...
+* Pages
+  * ...
+* Functions
   * ...
 
 ## All Commands
@@ -377,6 +379,7 @@ $ yarn run deploy
 ├── firebase.json
 ├── gulpfile.babel.js
 ├── package.json
+├── storage.rules
 └── yarn.lock
 ```
 
