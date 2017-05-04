@@ -8,13 +8,10 @@ admin.initializeApp(functions.config().firebase);
  * https://us-central1-web-go-demo.cloudfunctions.net/addMessage?text=foo
  */
 exports.addMessage = functions.https
-  .onRequest((req, res) => {
+  .onRequest(req => {
     const text = req.query.text;
 
     admin.database()
       .ref('/messages')
-      .push({ text })
-      .then(snapshot => {
-        res.redirect(303, snapshot.ref);
-      });
+      .push({ text });
   });
