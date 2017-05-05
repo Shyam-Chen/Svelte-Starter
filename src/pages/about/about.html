@@ -3,16 +3,35 @@
 </div>
 
 <div class="mdl-grid mdl-grid--center">
-  <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+  <h3>${ TITLE }</h3>
+</div>
+
+<div class="mdl-grid mdl-grid--center">
+  <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp ${ style.table }">
     <thead>
       <tr>
-        <th class="mdl-data-table__cell--non-numeric">${ LIST.TITLE }</th>
+        <th class="mdl-data-table__cell--non-numeric">${ FRONTEND.TITLE }</th>
       </tr>
     </thead>
     <tbody>
-      <% [].forEach.call(LIST.ITEM, function(item, index) { %>
+      <% [].forEach.call(FRONTEND.ITEM, function(item) { %>
         <tr>
-          <td class="mdl-data-table__cell--non-numeric"><%- ++index %>. <%- item %></td>
+          <td class="mdl-data-table__cell--non-numeric"><%- item %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+  <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp ${ style.table }">
+    <thead>
+      <tr>
+        <th class="mdl-data-table__cell--non-numeric">${ BACKEND.TITLE }</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% [].forEach.call(BACKEND.ITEM, function(item) { %>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric"><%- item %></td>
         </tr>
       <% }); %>
     </tbody>

@@ -1,8 +1,14 @@
 {
   "HOME": "ホーム",
-  "CARD": {
-    "TITLE": "Web GO へようこそ",
+  "TITLE": "Web GO へようこそ",
+  "FRONTEND": {
+    "TITLE": "Frontend Starter Kit",
     "CONTENT": "HTML5、Material、Firebase、Gulp、Rollup、Babel、PostHTML と PostCSS のための定型文",
+    "BUTTON": "開始する"
+  },
+  "BACKEND": {
+    "TITLE": "Backend Starter Kit",
+    "CONTENT": "Node.js、Express、Mongoose、Heroku、mLab、Nodemon、PM2 と Babel のための定型文",
     "BUTTON": "開始する"
   }
 }

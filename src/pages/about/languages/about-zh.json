@@ -1,7 +1,8 @@
 {
   "ABOUT": "關於",
-  "LIST": {
-    "TITLE": "此種子儲存庫提供以下特點：",
+  "TITLE": "所有功能",
+  "FRONTEND": {
+    "TITLE": "Frontend Starter Kit",
     "ITEM": [
       "用戶端平台使用 HTML5",
       "使用者介面元件使用 Material",
@@ -30,6 +31,33 @@
       "快速且確定性的建置使用 Yarn",
       "軟體容器使用 Docker",
       "持續整合使用 Travis"
+    ]
+  },
+  "BACKEND": {
+    "TITLE": "Backend Starter Kit",
+    "ITEM": [
+      "Server-side platform with Node.",
+      "Application framework with Express.",
+      "Dadabase object modeling with Mongoose.",
+      "Application cloud hosting with Heroku.",
+      "Dadabase cloud hosting with mLab.",
+      "Utility functions with Lodash.",
+      "Securely authentication with JWT.",
+      "Data query language with GraphQL.",
+      "Real-time bidirectional communication with Socket.",
+      "Automatically restart application with Nodemon.",
+      "Keeping application alive with PM2.",
+      "Next generation JavaScript with Babel.",
+      "Static code analyzer with ESLint.",
+      "Test framework with Mocha.",
+      "Assertion library with Chai.",
+      "Test spies with Sinon.",
+      "Operating system with Linux.",
+      "Text editor with Atom.",
+      "Version control with Git.",
+      "Fast and deterministic builds with Yarn.",
+      "Software container with Docker.",
+      "Continuous integration with Travis."
     ]
   }
 }

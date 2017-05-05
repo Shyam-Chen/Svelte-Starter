@@ -1,5 +1,5 @@
 {
-  "name": "Web-Starter-Kit",
+  "name": "Frontend-Starter-Kit",
   "version": "1.0.0",
   "description": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shyam-Chen/Web-Starter-Kit.git"
+    "url": "git+https://github.com/Shyam-Chen/Frontend-Starter-Kit.git"
   },
   "keywords": [
     "HTML5"
@@ -29,9 +29,9 @@
   "author": "Yen-cheng Chen, 陳彥澄",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Shyam-Chen/Web-Starter-Kit/issues"
+    "url": "https://github.com/Shyam-Chen/Frontend-Starter-Kit/issues"
   },
-  "homepage": "https://github.com/Shyam-Chen/Web-Starter-Kit#readme",
+  "homepage": "https://github.com/Shyam-Chen/Frontend-Starter-Kit#readme",
   "dependencies": {
     "@reactivex/rxjs": "5.0.2",
     "core-js": "2.4.1",
@@ -58,7 +58,7 @@
     "cssnano": "3.10.0",
     "express": "4.15.2",
     "express-history-api-fallback": "2.1.0",
-    "firebase-tools": "3.6.1",
+    "firebase-tools": "3.7.0",
     "gulp": "3.9.1",
     "gulp-eslint": "3.0.1",
     "gulp-htmlhint": "0.3.1",
@@ -106,7 +106,7 @@
     "rollup-plugin-commonjs": "8.0.2",
     "rollup-plugin-html": "0.2.1",
     "rollup-plugin-json": "2.1.1",
-    "rollup-plugin-node-builtins": "2.1.0",
+    "rollup-plugin-node-builtins": "2.1.1",
     "rollup-plugin-node-globals": "1.1.0",
     "rollup-plugin-node-resolve": "3.0.0",
     "rollup-plugin-postcss": "0.4.1",
@@ -118,7 +118,7 @@
     "rucksack-css": "0.9.1",
     "run-sequence": "1.2.2",
     "stylelint-config-standard": "16.0.0",
-    "sw-precache": "5.1.0",
+    "sw-precache": "5.1.1",
     "sw-toolbox": "3.6.0",
     "vinyl-buffer": "1.0.0",
     "vinyl-source-stream": "1.1.0"

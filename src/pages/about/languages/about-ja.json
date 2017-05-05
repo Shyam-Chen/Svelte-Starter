@@ -1,7 +1,8 @@
 {
   "ABOUT": "について",
-  "LIST": {
-    "TITLE": "このシードリポジトリには、次の機能があります:",
+  "TITLE": "すべての機能",
+  "FRONTEND": {
+    "TITLE": "Frontend Starter Kit",
     "ITEM": [
       "HTML5 を使用したクライアントのプラットフォーム",
       "Material を使用したユーザーインターフェイスコンポーネント",
@@ -30,6 +31,33 @@
       "Yarn を使用した高速かつ確定的なビルド",
       "Docker を使用したソフトウェアコンテナ",
       "Travis を使用した継続的な統合"
+    ]
+  },
+  "BACKEND": {
+    "TITLE": "Backend Starter Kit",
+    "ITEM": [
+      "Server-side platform with Node.",
+      "Application framework with Express.",
+      "Dadabase object modeling with Mongoose.",
+      "Application cloud hosting with Heroku.",
+      "Dadabase cloud hosting with mLab.",
+      "Utility functions with Lodash.",
+      "Securely authentication with JWT.",
+      "Data query language with GraphQL.",
+      "Real-time bidirectional communication with Socket.",
+      "Automatically restart application with Nodemon.",
+      "Keeping application alive with PM2.",
+      "Next generation JavaScript with Babel.",
+      "Static code analyzer with ESLint.",
+      "Test framework with Mocha.",
+      "Assertion library with Chai.",
+      "Test spies with Sinon.",
+      "Operating system with Linux.",
+      "Text editor with Atom.",
+      "Version control with Git.",
+      "Fast and deterministic builds with Yarn.",
+      "Software container with Docker.",
+      "Continuous integration with Travis."
     ]
   }
 }

@@ -4,6 +4,7 @@
 
   &__title {
     color: #FFFFFF;
+    text-shadow: 2px 2px #BDBDBD;
     background: url('images/background.jpg') bottom right no-repeat;
   }
 }

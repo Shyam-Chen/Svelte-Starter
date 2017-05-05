@@ -1,7 +1,8 @@
 {
   "ABOUT": "About",
-  "LIST": {
-    "TITLE": "This seed repository provides the following features:",
+  "TITLE": "All Features",
+  "FRONTEND": {
+    "TITLE": "Frontend Starter Kit",
     "ITEM": [
       "Client-side platform with HTML5.",
       "User interface components with Material.",
@@ -24,6 +25,33 @@
       "Testing framework with Jasmine.",
       "Unit tests with Karma.",
       "End-to-end tests with Protractor.",
+      "Operating system with Linux.",
+      "Text editor with Atom.",
+      "Version control with Git.",
+      "Fast and deterministic builds with Yarn.",
+      "Software container with Docker.",
+      "Continuous integration with Travis."
+    ]
+  },
+  "BACKEND": {
+    "TITLE": "Backend Starter Kit",
+    "ITEM": [
+      "Server-side platform with Node.",
+      "Application framework with Express.",
+      "Dadabase object modeling with Mongoose.",
+      "Application cloud hosting with Heroku.",
+      "Dadabase cloud hosting with mLab.",
+      "Utility functions with Lodash.",
+      "Securely authentication with JWT.",
+      "Data query language with GraphQL.",
+      "Real-time bidirectional communication with Socket.",
+      "Automatically restart application with Nodemon.",
+      "Keeping application alive with PM2.",
+      "Next generation JavaScript with Babel.",
+      "Static code analyzer with ESLint.",
+      "Test framework with Mocha.",
+      "Assertion library with Chai.",
+      "Test spies with Sinon.",
       "Operating system with Linux.",
       "Text editor with Atom.",
       "Version control with Git.",

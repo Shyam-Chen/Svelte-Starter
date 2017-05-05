@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "name": "Web GO",
   "launch_path": "/",
-  "description": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.",
+  "description": "A boilerplate for HTML5 and Node.js.",
   "icons": {
   },
   "developer": {
@@ -18,15 +18,15 @@
   "locales": {
     "en": {
       "name": "Web GO",
-      "description": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS."
+      "description": "A boilerplate for HTML5 and Node.js."
     },
     "zh": {
       "name": "Web GO",
-      "description": "HTML5、Material、Firebase、Gulp、Rollup、Babel、PostHTML 和 PostCSS 的樣板"
+      "description": "HTML5 和 Node.js 的樣板"
     },
     "ja": {
       "name": "Web GO",
-      "description": "HTML5、Material、Firebase、Gulp、Rollup、Babel、PostHTML と PostCSS のための定型文"
+      "description": "HTML5 と Node.js のための定型文"
     }
   }
 }
