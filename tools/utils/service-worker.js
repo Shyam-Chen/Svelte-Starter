@@ -1,4 +1,4 @@
-import { join } from 'path';
+import { join, basename } from 'path';
 import { log } from 'gulp-util';
 import swprecache from 'sw-precache';
 
@@ -24,8 +24,8 @@ export class ServiceWorker {
             }
           }
         ],
-        staticFileGlobs: [`${rootDir}/*`],
-        stripPrefix: `${rootDir}/`,
+        staticFileGlobs: [`${basename(rootDir)}/*`],
+        stripPrefix: `${basename(rootDir)}/`,
         verbose: true
       },
       done
