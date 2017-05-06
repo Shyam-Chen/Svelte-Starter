@@ -1,7 +1,7 @@
 import { template as _ } from 'lodash';
 
 import { layout } from '../../components/layout';
-import vanilla from '../../assets/images/vanilla.png';
+import webFundamentals from '../../assets/images/web-fundamentals.png';
 
 import template from './home.html';
 import style from './home.css';
@@ -13,7 +13,7 @@ import dataJa from './languages/home-ja.json';
 const imports = {
   style,
   image: {
-    vanilla
+    webFundamentals
   }
 };
 
