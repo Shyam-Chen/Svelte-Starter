@@ -1,7 +1,7 @@
 import { contact } from './contact';
 
 describe('Contact', () => {
-  it('toBeDefined', () => {
+  it('should be defined', () => {
     expect(contact).toBeDefined();
   });
 });
