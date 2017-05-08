@@ -1,0 +1,14 @@
+.status {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10rem;
+}
+
+.text {
+  position: absolute;
+  bottom: 1rem;
+  text-align: center;
+  width: 100%;
+}

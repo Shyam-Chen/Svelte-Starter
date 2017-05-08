@@ -8,6 +8,7 @@ import { load } from './utils';
 import { home } from './pages/home';
 import { about } from './pages/about';
 import { contact } from './pages/contact';
+import { notfound } from './pages/not-found';
 
 Observable::forkJoin(
     load('https://fonts.googleapis.com/icon?family=Material+Icons')
@@ -58,4 +59,5 @@ if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || wi
 home();
 about();
 contact();
+notfound();
 page();
