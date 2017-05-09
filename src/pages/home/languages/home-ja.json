@@ -1,6 +1,7 @@
 {
   "HOME": "ホーム",
   "TITLE": "Web GO へようこそ",
+  "DESCRIPTION": "Web GO は、<a href=\"https://developers.google.com/web/fundamentals/\">Web Fundamentals</a> で説明されているベストプラクティスに従います",
   "FRONTEND": {
     "TITLE": "Frontend Starter Kit",
     "CONTENT": "HTML5、Material、Firebase、Gulp、Rollup、Babel、PostHTML と PostCSS のための定型文",
