@@ -12,16 +12,22 @@ export class ServiceWorker {
         cacheId: pkg.name,
         handleFetch,
         logger: log,
+        navigateFallback: '/',
         runtimeCaching: [
           {
+            urlPattern: /\.com/,
+            handler: 'fastest'
+          }, {
             urlPattern: /runtime-caching/,
             handler: 'cacheFirst',
             options: {
               cache: {
-                maxEntries: 1,
+                maxEntries: 50,
                 name: 'runtime-cache'
               }
             }
+          }, {
+             default: 'networkFirst'
           }
         ],
         staticFileGlobs: [`${basename(rootDir)}/*`],

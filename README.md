@@ -385,7 +385,7 @@ $ yarn run deploy
 * ---------- **P0: Critical** ----------
 * ...
 * ---------- **P1: Urgent** ----------
-* Add more `sw-helpers` options
+* ...
 * ---------- **P2: Required** ----------
 * Migrate from `material-design-lite` to ([`material-components-web`](https://github.com/material-components/material-components-web))
 * ---------- **P3: Important** ----------
