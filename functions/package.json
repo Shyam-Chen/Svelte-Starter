@@ -1,5 +1,5 @@
 {
-  "name": "Web-Starter-Kit",
+  "name": "Frontend-Starter-Kitt",
   "description": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.",
   "dependencies": {
     "@google-cloud/bigquery": "^0.9.3",
