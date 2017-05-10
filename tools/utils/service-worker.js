@@ -12,7 +12,7 @@ export class ServiceWorker {
         cacheId: pkg.name,
         handleFetch,
         logger: log,
-        navigateFallback: '/',
+        navigateFallback: '/index.html',
         runtimeCaching: [
           {
             urlPattern: /\.com/,
