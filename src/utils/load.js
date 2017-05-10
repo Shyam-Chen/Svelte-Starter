@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
  *
  * @example
  * load('...')
- *   .subscribe((result) => {
+ *   .subscribe(result => {
  *     // ...
  *   });
  */

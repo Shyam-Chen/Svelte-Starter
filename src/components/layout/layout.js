@@ -14,7 +14,7 @@ import dataJa from './languages/layout-ja.json';
  *
  * @example
  * import { layout } from '../../components/layout';
- * layout(tpl(data), 'example');
+ * layout(_(template, { imports })(data), 'home');
  */
 
 export const layout = (content, page, language = 'en') => {
