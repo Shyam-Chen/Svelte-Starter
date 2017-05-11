@@ -10,7 +10,9 @@ export class ServiceWorker {
       join(rootDir, 'service-worker.js'),
       {
         cacheId: pkg.name,
+        dynamicUrlToDependencies: {},
         handleFetch,
+        importScripts: [],
         logger: log,
         navigateFallback: '/index.html',
         runtimeCaching: [
@@ -27,7 +29,7 @@ export class ServiceWorker {
               }
             }
           }, {
-             default: 'networkFirst'
+            default: 'networkFirst'
           }
         ],
         staticFileGlobs: [`${basename(rootDir)}/*`],

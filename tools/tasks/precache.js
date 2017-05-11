@@ -5,5 +5,5 @@ import { DIST_ROOT } from '../constants';
 import { ServiceWorker } from '../utils';
 
 gulp.task('precache', done => {
-  new ServiceWorker(DIST_ROOT, (env.prod), done);
+  new ServiceWorker(DIST_ROOT, !!env.prod, done);
 });
