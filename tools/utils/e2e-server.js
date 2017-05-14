@@ -1,6 +1,6 @@
 import { resolve } from 'path';
 import express from 'express';
-import history from 'express-history-api-fallback';
+import fallback from 'express-history-api-fallback';
 
 export class Protractor {
   server(port, dir) {
@@ -8,7 +8,7 @@ export class Protractor {
     const root = resolve(process.cwd(), dir);
 
     app.use(express.static(root));
-    app.use(history('index.html', { root }));
+    app.use(fallback('index.html', { root }));
 
     return new Promise(resolve => {
       const server = app.listen(port, () => {
