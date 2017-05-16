@@ -392,7 +392,6 @@ $ yarn run deploy
 * ...
 * ---------- **P4: Nice to have** ----------
 * Use `posthtml` and `lodash/template` together ([Issue](https://github.com/posthtml/posthtml/issues/216))
-* Update `postcss-cssnext` to v2.9.0+ ([Issue](https://github.com/MoOx/postcss-cssnext/issues/357))
 * Update `rxjs` to v5.0.2+ ([Issue](https://github.com/ReactiveX/rxjs/issues/2460))
 * Update `firebase` to v3.6.3+ ([Issue](https://github.com/rollup/rollup/issues/1275))
-* Update `immutable` to support ES modules ([Issue](https://github.com/facebook/immutable-js/issues/1190))
+* Enhance `immutable` to support tree-shaking ([Issue](https://github.com/facebook/immutable-js/issues/1190))
