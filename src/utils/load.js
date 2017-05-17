@@ -1,7 +1,9 @@
 import { Observable } from 'rxjs/Observable';
 
 /**
- * @param {string} url
+ * @param {string} url - url
+ *
+ * @return {observable} - Observable
  *
  * @example
  * load('...')
@@ -9,7 +11,6 @@ import { Observable } from 'rxjs/Observable';
  *     // ...
  *   });
  */
-
 export const load = url => {
   return new Observable(observer => {
     const xhr = new XMLHttpRequest();

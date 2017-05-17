@@ -1,7 +1,6 @@
 /**
  * @name Design
  */
-
 // import '@material/animation/dist/mdc.animation.css';
 // import '@material/button/dist/mdc.button.css';
 // import '@material/card/dist/mdc.card.css';
@@ -31,7 +30,6 @@ import 'material-design-lite/material';
 /**
  * @name Application
  */
-
 import 'firebase/firebase-auth';
 import 'firebase/firebase-database';
 // import 'firebase/firebase-storage';
@@ -40,11 +38,9 @@ import 'firebase/firebase-database';
 /**
  * @name Router
  */
-
 import 'page/page';
 
 /**
  * @name Others
  */
-
 // import 'd3-selection-multi';

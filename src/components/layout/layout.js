@@ -8,15 +8,16 @@ import dataZh from './languages/layout-zh.json';
 import dataJa from './languages/layout-ja.json';
 
 /**
- * @param {string} content
- * @param {string} page
- * @param {string} [language=en]
+ * @param {string} content - Page content
+ * @param {string} page - Page name
+ * @param {string} [language=en] - Page language
+ *
+ * @return {void}
  *
  * @example
  * import { layout } from '../../components/layout';
  * layout(_(template, { imports })(data), 'home');
  */
-
 export const layout = (content, page, language = 'en') => {
   const app = document.querySelector('#app');
   const imports = { style };
