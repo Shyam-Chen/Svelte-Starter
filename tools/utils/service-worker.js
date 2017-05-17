@@ -17,19 +17,14 @@ export class ServiceWorker {
         navigateFallback: 'index.html',
         runtimeCaching: [
           {
-            urlPattern: /\.com/,
-            handler: 'fastest'
-          }, {
             urlPattern: /runtime-caching/,
             handler: 'cacheFirst',
             options: {
               cache: {
-                maxEntries: 50,
+                maxEntries: 1,
                 name: 'runtime-cache'
               }
             }
-          }, {
-            default: 'networkFirst'
           }
         ],
         staticFileGlobs: [`${basename(rootDir)}/*`],
