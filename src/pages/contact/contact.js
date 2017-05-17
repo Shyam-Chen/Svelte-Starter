@@ -9,6 +9,10 @@ import data from './contact.json';
 import dataZh from './languages/contact-zh.json';
 import dataJa from './languages/contact-ja.json';
 
+const imports = {
+  style
+};
+
 const common = (language = 'en') => {
   const signInButton = document.querySelector('#sign-in-button');
   const signOutButton = document.querySelector('#sign-out-button');
@@ -19,71 +23,65 @@ const common = (language = 'en') => {
   const sendButton = document.querySelector('#send-button');
   const sendToast = document.querySelector('#send-toast');
 
-  const postData = (userId, name, email, comment) => {
-    firebase.database()
-      .ref(`users/${userId}`)
-      .push({ name, email, comment });
-  };
-
-  let currentUID;
-  const onAuthStateChanged = user => {
-    if (user && currentUID === user.uid) return;
-
-    if (user) {
-      currentUID = user.uid;
-
-      signInButton.style.display = 'none';
-      signOutButton.style.display = '';
-      signInContent.style.display = '';
-
-      name.value = `${user.displayName}`;
-      email.value = `${user.email}`;
-
-      sendButton.onclick = () => {
-        if (comment.value !== '') {
-          postData(user.uid, user.displayName, user.email, comment.value);
-
-          language === 'en' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'Thanks for your comment.' }) : noop();
-          language === 'zh' ? sendToast.MaterialSnackbar.showSnackbar({ message: '感谢您的评论' }) : noop();
-          language === 'ja' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'あなたのコメントをありがとう' }) : noop();
-
-          comment.value = '';
-          document.querySelector('#sign-in-content .mdl-textfield:nth-child(3)').classList.remove('is-dirty');
-        } else {
-          language === 'en' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'Not valid!' }) : noop();
-          language === 'zh' ? sendToast.MaterialSnackbar.showSnackbar({ message: '無效！' }) : noop();
-          language === 'ja' ? sendToast.MaterialSnackbar.showSnackbar({ message: '有効ではありません！' }) : noop();
-        }
-      };
-    } else {
-      currentUID = null;
-
-      signInButton.style.display = '';
-    }
-  };
+  signInButton.style.display = '';
+  signOutButton.style.display = 'none';
+  signInContent.style.display = 'none';
 
   signInButton.onclick = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider);
   };
 
-  const unAuth = () => {
+  signOutButton.onclick = () => {
+    firebase.auth().signOut();
     signInButton.style.display = '';
     signOutButton.style.display = 'none';
     signInContent.style.display = 'none';
   };
 
-  signOutButton.onclick = () => {
-    firebase.auth().signOut();
-    unAuth();
-  };
+  firebase.auth()
+    .onAuthStateChanged(user => {
+      let currentUID;
 
-  firebase.auth().onAuthStateChanged(onAuthStateChanged);
-  unAuth();
-};
+      if (user && currentUID === user.uid) return;
 
-const imports = {
-  style
+      if (user) {
+        currentUID = user.uid;
+
+        signInButton.style.display = 'none';
+        signOutButton.style.display = '';
+        signInContent.style.display = '';
+
+        name.value = `${user.displayName}`;
+        email.value = `${user.email}`;
+
+        sendButton.onclick = () => {
+          if (comment.value !== '') {
+            firebase.database()
+              .ref(`users/${user.uid}`)
+              .push({
+                name: user.displayName,
+                email: user.email,
+                comment: comment.value
+              });
+
+            language === 'en' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'Thanks for your comment.' }) : noop();
+            language === 'zh' ? sendToast.MaterialSnackbar.showSnackbar({ message: '感谢您的评论' }) : noop();
+            language === 'ja' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'あなたのコメントをありがとう' }) : noop();
+
+            comment.value = '';
+            document.querySelector('#sign-in-content .mdl-textfield:nth-child(3)').classList.remove('is-dirty');
+          } else {
+            language === 'en' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'Not valid!' }) : noop();
+            language === 'zh' ? sendToast.MaterialSnackbar.showSnackbar({ message: '無效！' }) : noop();
+            language === 'ja' ? sendToast.MaterialSnackbar.showSnackbar({ message: '有効ではありません！' }) : noop();
+          }
+        };
+      } else {
+        currentUID = null;
+        signInButton.style.display = '';
+      }
+    });
 };
 
 export const contact = () => {
