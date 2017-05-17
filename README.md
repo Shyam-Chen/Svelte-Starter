@@ -389,7 +389,7 @@ $ yarn run deploy
 * ---------- **P2: Required** ----------
 * Migrate from `material-design-lite` to ([`material-components-web`](https://github.com/material-components/material-components-web))
 * ---------- **P3: Important** ----------
-* ...
+* Prerender HTML snapshots (`gulp-prerender`, ref [`prerender-spa-plugin`](https://github.com/chrisvfritz/prerender-spa-plugin))
 * ---------- **P4: Nice to have** ----------
 * Use `posthtml` and `lodash/template` together ([Issue](https://github.com/posthtml/posthtml/issues/216))
 * Update `rxjs` to v5.0.2+ ([Issue](https://github.com/ReactiveX/rxjs/issues/2460))
