@@ -16,6 +16,7 @@ import replace from 'rollup-plugin-replace';
 import uglify from 'rollup-plugin-uglify';
 
 import cssnano from 'cssnano';
+import { minify } from 'uglify-js-harmony';
 
 // import POSTHTML_CONFIG from './posthtml';
 import POSTCSS_CONFIG from './postcss';
@@ -52,7 +53,7 @@ export const PRIMARY_CONFIG = {
       }
     }),
     replace({ 'process.env.NODE_ENV': JSON.stringify(env.prod ? 'production' : 'development') }),
-    (env.prod ? uglify() : noop())
+    (env.prod ? uglify({}, minify) : noop())
   ]
 };
 

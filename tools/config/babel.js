@@ -18,6 +18,7 @@ export default {
           transform: 'lodash/${member}',
           preventFullImport: true
         },
+        // not yet
         'rxjs': {
           transform: 'rxjs/${member}',
           preventFullImport: true

@@ -121,6 +121,7 @@
     "stylelint-config-standard": "16.0.0",
     "sw-precache": "5.1.1",
     "sw-toolbox": "3.6.0",
+    "uglify-js-harmony": "^2.7.7",
     "vinyl-buffer": "1.0.0",
     "vinyl-source-stream": "1.1.0"
   }

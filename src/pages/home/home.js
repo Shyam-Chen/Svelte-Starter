@@ -1,4 +1,4 @@
-// import { MDCRipple } from '@material/ripple';
+import { MDCRipple } from '@material/ripple';
 import { template as _ } from 'lodash';
 
 import { layout } from '../../components/layout';
@@ -18,20 +18,26 @@ const imports = {
   }
 };
 
+const common = () => {
+  [].forEach.call(
+    document.querySelectorAll('.mdc-button'),
+    surface => MDCRipple.attachTo(surface)
+  );
+};
+
 export const home = () => {
   page('/', () => {
     layout(_(template, { imports })(data), 'home');
-    // [].forEach.call(
-    //   document.querySelectorAll('.mdc-button'),
-    //   surface => MDCRipple.attachTo(surface)
-    // );
+    common();
   });
 
   page('/zh', () => {
     layout(_(template, { imports })(dataZh), 'home', 'zh');
+    common();
   });
 
   page('/ja', () => {
     layout(_(template, { imports })(dataJa), 'home', 'ja');
+    common();
   });
 };
