@@ -88,18 +88,18 @@ export const contact = () => {
   page('/contact', () => {
     layout(_(template, { imports })(data), 'contact');
     common();
-    componentHandler.upgradeAllRegistered();
+    // componentHandler.upgradeAllRegistered();
   });
 
   page('/zh/contact', () => {
     layout(_(template, { imports })(dataZh), 'contact', 'zh');
     common('zh');
-    componentHandler.upgradeAllRegistered();
+    // componentHandler.upgradeAllRegistered();
   });
 
   page('/ja/contact', () => {
     layout(_(template, { imports })(dataJa), 'contact', 'ja');
     common('ja');
-    componentHandler.upgradeAllRegistered();
+    // componentHandler.upgradeAllRegistered();
   });
 };

@@ -16,16 +16,16 @@ const imports = {
 export const about = () => {
   page('/about', () => {
     layout(_(template, { imports })(data), 'about');
-    componentHandler.upgradeAllRegistered();
+    // componentHandler.upgradeAllRegistered();
   });
 
   page('/zh/about', () => {
     layout(_(template, { imports })(dataZh), 'about', 'zh');
-    componentHandler.upgradeAllRegistered();
+    // componentHandler.upgradeAllRegistered();
   });
 
   page('/ja/about', () => {
     layout(_(template, { imports })(dataJa), 'about', 'ja');
-    componentHandler.upgradeAllRegistered();
+    // componentHandler.upgradeAllRegistered();
   });
 };

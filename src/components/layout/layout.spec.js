@@ -9,8 +9,7 @@ import { layout } from './layout';
 describe('Layout', () => {
   describe('Template', () => {
     it('should be `fixed-header`', () => {
-      expect(template).toMatch(/mdl-layout--fixed-header/);
-      expect(template).not.toMatch(/mdl-layout--fixed-drawer/);
+      expect(template).toMatch(/mdc-toolbar--fixed"/);
     });
   });
 

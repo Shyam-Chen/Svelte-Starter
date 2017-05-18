@@ -32,5 +32,17 @@ export const layout = (content, page, language = 'en') => {
   page === 'home' ? zhAnchor.href = `/zh` : zhAnchor.href = `/zh/${page}`;
   page === 'home' ? jaAnchor.href = `/ja` : jaAnchor.href = `/ja/${page}`;
 
+  const drawerDesktopEl = document.querySelector('.mdc-permanent-drawer[data-desktop]');
+  const mainEl = document.querySelector('main');
+
+  document.querySelector('#menu').onclick = () => {
+  if (window.innerWidth <= 599) {
+    // drawerMobile.open = true;
+  } else {
+    drawerDesktopEl.classList.toggle('drawer-action');
+    mainEl.classList.toggle('main-action');
+  }
+};
+
   document.querySelector('#content').innerHTML = content;
 };

@@ -1,3 +1,4 @@
+// import { MDCRipple } from '@material/ripple';
 import { template as _ } from 'lodash';
 
 import { layout } from '../../components/layout';
@@ -20,16 +21,20 @@ const imports = {
 export const home = () => {
   page('/', () => {
     layout(_(template, { imports })(data), 'home');
-    componentHandler.upgradeAllRegistered();
+    // [].forEach.call(
+    //   document.querySelectorAll('.mdc-button'),
+    //   surface => MDCRipple.attachTo(surface)
+    // );
+    // componentHandler.upgradeAllRegistered();
   });
 
   page('/zh', () => {
     layout(_(template, { imports })(dataZh), 'home', 'zh');
-    componentHandler.upgradeAllRegistered();
+    // componentHandler.upgradeAllRegistered();
   });
 
   page('/ja', () => {
     layout(_(template, { imports })(dataJa), 'home', 'ja');
-    componentHandler.upgradeAllRegistered();
+    // componentHandler.upgradeAllRegistered();
   });
 };
