@@ -25,16 +25,13 @@ export const home = () => {
     //   document.querySelectorAll('.mdc-button'),
     //   surface => MDCRipple.attachTo(surface)
     // );
-    // componentHandler.upgradeAllRegistered();
   });
 
   page('/zh', () => {
     layout(_(template, { imports })(dataZh), 'home', 'zh');
-    // componentHandler.upgradeAllRegistered();
   });
 
   page('/ja', () => {
     layout(_(template, { imports })(dataJa), 'home', 'ja');
-    // componentHandler.upgradeAllRegistered();
   });
 };

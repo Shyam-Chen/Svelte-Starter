@@ -1,65 +1,37 @@
-<div class="mdl-grid mdl-grid--center">
-  <h2 class="mdl-color-text--blue-900">${ HOME }</h2>
+<div>
+  <h2>${ HOME }</h2>
 </div>
 
-<button class="mdc-button mdc-button--primary">Button</button>
-
-<button class="mdc-button mdc-button--raised mdc-button--primary">Button</button>
-
-<button class="mdc-button mdc-button--accent">Button</button>
-
-<button class="mdc-button mdc-button--raised mdc-button--accent">Button</button>
-
-<button class="mdc-button mdc-button--dense mdc-button--primary">Button</button>
-
-<button class="mdc-button mdc-button--compact mdc-button--primary">Button</button>
-
-<button class="mdc-button mdc-button--dense mdc-button--accent">Button</button>
-
-<button class="mdc-button mdc-button--compact mdc-button--accent">Button</button>
-
-<button class="mdc-button mdc-button--raised mdc-button--dense mdc-button--primary">Button</button>
-
-<button class="mdc-button mdc-button--raised mdc-button--compact mdc-button--primary">Button</button>
-
-<button class="mdc-button mdc-button--raised mdc-button--dense mdc-button--accent">Button</button>
-
-<button class="mdc-button mdc-button--raised mdc-button--compact mdc-button--accent">Button</button>
-
-<div class="mdl-grid mdl-grid--center">
-  <div class="mdl-cell mdl-cell--center mdl-cell--4-col">
+<div>
+  <div>
     <img src="${ image.webFundamentals }" alt="Web Fundamentals">
     <h3>${ TITLE }</h3>
     <p>${ DESCRIPTION }</p>
   </div>
 </div>
 
-<div class="mdl-grid mdl-grid--center">
-  <div class="mdl-cell mdl-cell--4-col mdl-cell--middle mdl-card mdl-shadow--2dp ${ style.card }">
-    <div class="mdl-card__title mdl-card--expand ${ style.card__title }">
-      <h2 class="mdl-card__title-text">${ FRONTEND.TITLE }</h2>
-    </div>
-    <div class="mdl-card__supporting-text">
+<div>
+  <div class="mdc-card ${ style.card }">
+    <section class="mdc-card__media ${ style.card__media }">
+      <h1 class="mdc-card__title mdc-card__title--large ${ style.card__title }">${ FRONTEND.TITLE }</h1>
+    </section>
+    <section class="mdc-card__supporting-text">
       ${ FRONTEND.CONTENT }
-    </div>
-    <div class="mdl-card__actions mdl-card--border">
-      <a href="https://github.com/Shyam-Chen/Frontend-Starter-Kit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-        ${ FRONTEND.BUTTON }
-      </a>
-    </div>
+    </section>
+    <section class="mdc-card__actions">
+      <button class="mdc-button mdc-button--compact mdc-button--primary mdc-card__action">${ FRONTEND.BUTTON }</button>
+    </section>
   </div>
 
-  <div class="mdl-cell mdl-cell--4-col mdl-cell--middle mdl-card mdl-shadow--2dp ${ style.card }">
-    <div class="mdl-card__title mdl-card--expand ${ style.card__title }">
-      <h2 class="mdl-card__title-text">${ BACKEND.TITLE }</h2>
-    </div>
-    <div class="mdl-card__supporting-text">
+  <div class="mdc-card ${ style.card }">
+    <section class="mdc-card__media ${ style.card__media }">
+      <h1 class="mdc-card__title mdc-card__title--large ${ style.card__title }">${ BACKEND.TITLE }</h1>
+    </section>
+    <section class="mdc-card__supporting-text">
       ${ BACKEND.CONTENT }
-    </div>
-    <div class="mdl-card__actions mdl-card--border">
-      <a href="https://github.com/Shyam-Chen/Backend-Starter-Kit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-        ${ BACKEND.BUTTON }
-      </a>
-    </div>
+    </section>
+    <section class="mdc-card__actions">
+      <button class="mdc-button mdc-button--compact mdc-button--primary mdc-card__action">${ BACKEND.BUTTON }</button>
+    </section>
   </div>
 </div>

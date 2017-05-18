@@ -1,10 +1,15 @@
 .card {
-  width: 330px;
-  height: 20rem;
+  max-width: 21.875rem;
+
+  &__media {
+    background-image: url('https://material-components-web.appspot.com/images/16-9.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 12.313rem;
+
+  }
 
   &__title {
-    color: #FFFFFF;
-    text-shadow: 2px 2px #BDBDBD;
-    background: url('images/background.jpg') bottom right no-repeat;
+    color: #E8EAF6;
   }
 }

@@ -24,4 +24,28 @@ main {
   padding-left: 1rem;
   margin-left: 240px;
   transition: margin-left 1s;
+  width: 100%;
+}
+
+@media (max-width: 599px) {
+  :global .mdc-permanent-drawer[data-desktop] {
+    display: none;
+  }
+
+  main {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 600px) {
+  :global .mdc-temporary-drawer[data-mobile] {
+    display: none;
+  }
+}
+
+footer {
+  padding: 16px 40px;
+  background: #424242;
+  color: #9E9E9E;
+  margin-left: -16px;
 }

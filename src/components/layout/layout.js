@@ -1,3 +1,5 @@
+import { MDCTemporaryDrawer } from '@material/drawer';
+
 import { template as _, noop } from 'lodash';
 
 import template from './layout.html';
@@ -32,17 +34,25 @@ export const layout = (content, page, language = 'en') => {
   page === 'home' ? zhAnchor.href = `/zh` : zhAnchor.href = `/zh/${page}`;
   page === 'home' ? jaAnchor.href = `/ja` : jaAnchor.href = `/ja/${page}`;
 
-  const drawerDesktopEl = document.querySelector('.mdc-permanent-drawer[data-desktop]');
+  const bodyEl = document.querySelector('body');
   const mainEl = document.querySelector('main');
+  const drawerDesktopEl = document.querySelector('.mdc-permanent-drawer[data-desktop]');
+  const drawerMobileEl = document.querySelector('.mdc-temporary-drawer[data-mobile]');
+
+  const drawerMobile = new MDCTemporaryDrawer(drawerMobileEl);
 
   document.querySelector('#menu').onclick = () => {
-  if (window.innerWidth <= 599) {
-    // drawerMobile.open = true;
-  } else {
-    drawerDesktopEl.classList.toggle('drawer-action');
-    mainEl.classList.toggle('main-action');
-  }
-};
+    if (window.innerWidth <= 599) {
+      drawerMobile.open = true;
+    } else {
+      drawerDesktopEl.classList.toggle('drawer-action');
+      mainEl.classList.toggle('main-action');
+    }
+  };
+
+  // document.querySelector('#mobile-menu').onclick = () => drawerMobile.open = false;
+  drawerMobileEl.addEventListener('MDCTemporaryDrawer:open', () => bodyEl.style.overflowY = 'hidden');
+  drawerMobileEl.addEventListener('MDCTemporaryDrawer:close', () => bodyEl.style.overflowY = 'auto');
 
   document.querySelector('#content').innerHTML = content;
 };

@@ -21,7 +21,7 @@ import '@material/list/dist/mdc.list.css';
 // import '@material/snackbar/dist/mdc.snackbar.css';
 // import '@material/switch/dist/mdc.switch.css';
 // import '@material/textfield/dist/mdc.textfield.css';
-// import '@material/theme/dist/mdc.theme.css';
+import '@material/theme/dist/mdc.theme.css';
 import '@material/toolbar/dist/mdc.toolbar.css';
 // import '@material/typography/dist/mdc.typography.css';
 // import 'material-design-lite/dist/material.indigo-pink.min.css';
