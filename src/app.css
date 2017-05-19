@@ -1,11 +1,15 @@
 :global {
-  & .mdl-grid {
-    &--center {
-      justify-content: center;
-    }
+  & .mdc-layout--center {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
   }
 
-  & .mdl-cell {
+  & .mdc-cell {
+    &--column {
+      flex-direction: column;
+    }
+
     &--center {
       text-align: center;
     }

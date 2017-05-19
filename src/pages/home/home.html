@@ -1,17 +1,17 @@
-<div>
-  <h2 class="mdl-color-text--blue-900">${ HOME }</h2>
-</div>
+<header>
+  <h1 class="${ style.title }">${ HOME }</h1>
+</header>
 
-<div>
-  <div>
+<article class="mdc-layout--center">
+  <section class="mdc-cell--column mdc-cell--center">
     <img src="${ image.webFundamentals }" alt="Web Fundamentals">
     <h3>${ TITLE }</h3>
     <p>${ DESCRIPTION }</p>
-  </div>
-</div>
+  </section>
+</article>
 
-<div>
-  <div class="mdc-card ${ style.card }">
+<article class="mdc-layout--center">
+  <article class="mdc-card ${ style.card }">
     <section class="mdc-card__media ${ style.card__media }">
       <h1 class="mdc-card__title mdc-card__title--large ${ style.card__title }">${ FRONTEND.TITLE }</h1>
     </section>
@@ -21,9 +21,9 @@
     <section class="mdc-card__actions">
       <button class="mdc-button mdc-button--compact mdc-button--primary mdc-card__action">${ FRONTEND.BUTTON }</button>
     </section>
-  </div>
+  </article>
 
-  <div class="mdc-card ${ style.card }">
+  <article class="mdc-card ${ style.card }">
     <section class="mdc-card__media ${ style.card__media }">
       <h1 class="mdc-card__title mdc-card__title--large ${ style.card__title }">${ BACKEND.TITLE }</h1>
     </section>
@@ -33,5 +33,5 @@
     <section class="mdc-card__actions">
       <button class="mdc-button mdc-button--compact mdc-button--primary mdc-card__action">${ BACKEND.BUTTON }</button>
     </section>
-  </div>
-</div>
+  </article>
+</article>
