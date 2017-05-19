@@ -1,4 +1,5 @@
-import { MDCRipple } from '@material/ripple';
+// import { MDCRipple } from '@material/ripple';
+import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
 import { template as _ } from 'lodash';
 
 import { layout } from '../../components/layout';
@@ -21,7 +22,7 @@ const imports = {
 const common = () => {
   [].forEach.call(
     document.querySelectorAll('.mdc-button'),
-    surface => MDCRipple.attachTo(surface)
+    surface => mdRipple.MDCRipple.attachTo(surface)
   );
 };
 

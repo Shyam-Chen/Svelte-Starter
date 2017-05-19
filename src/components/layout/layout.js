@@ -1,4 +1,5 @@
-import { MDCTemporaryDrawer } from '@material/drawer';
+// import { MDCTemporaryDrawer } from '@material/drawer';
+import { __moduleExports as mdDrawer } from '@material/drawer/dist/mdc.drawer';
 
 import { template as _, noop } from 'lodash';
 
@@ -39,7 +40,7 @@ export const layout = (content, page, language = 'en') => {
   const drawerDesktopEl = document.querySelector('.mdc-permanent-drawer[data-desktop]');
   const drawerMobileEl = document.querySelector('.mdc-temporary-drawer[data-mobile]');
 
-  const drawerMobile = new MDCTemporaryDrawer(drawerMobileEl);
+  const drawerMobile = new mdDrawer.MDCTemporaryDrawer(drawerMobileEl);
 
   document.querySelector('#menu').onclick = () => {
     if (window.innerWidth <= 599) {
