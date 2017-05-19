@@ -23,6 +23,11 @@ RUN \
   update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_121/bin/java 100 && \
   update-alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_121/bin/javac 100
 
+# ruby
+RUN \
+  apt-get update && apt-get install -y ruby && \
+  gem install dpl
+
 # cleanup
 RUN rm -rf /var/lib/apt/lists/*
 
