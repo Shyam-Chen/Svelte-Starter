@@ -8,7 +8,6 @@
     "protractor": true
   },
   "globals": {
-    "componentHandler": true,
     "firebase": true,
     "page": true,
     "webdriver": true
