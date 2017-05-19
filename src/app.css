@@ -18,21 +18,6 @@
       text-align: right;
     }
   }
-
-  & .mdc-permanent-drawer[data-desktop] {
-    position: fixed;
-    overflow: auto;
-    height: calc(100% - 64px);
-    transition: margin-left .33s;
-  }
-
-  & .drawer-action {
-    margin-left: -240px;
-  }
-
-  & .main-action {
-    margin-left: 0;
-  }
 }
 
 html {

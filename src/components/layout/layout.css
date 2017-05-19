@@ -14,6 +14,13 @@
   display: flex;
   height: 100%;
   box-sizing: border-box;
+
+  &__drawer[data-desktop] {
+    position: fixed;
+    overflow: auto;
+    height: calc(100% - 64px);
+    transition: margin-left .33s;
+  }
 }
 
 .content {
@@ -27,8 +34,16 @@ main {
   width: 100%;
 }
 
+:global .drawer-action {
+  margin-left: -240px;
+}
+
+:global .main-action {
+  margin-left: 0;
+}
+
 @media (max-width: 599px) {
-  :global .mdc-permanent-drawer[data-desktop] {
+  .desktop__drawer[data-desktop] {
     display: none;
   }
 
@@ -38,7 +53,7 @@ main {
 }
 
 @media (min-width: 600px) {
-  :global .mdc-temporary-drawer[data-mobile] {
+  .mobile__drawer[data-mobile] {
     display: none;
   }
 }
