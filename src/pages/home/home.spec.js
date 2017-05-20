@@ -22,7 +22,6 @@ describe('Home', () => {
     page('/', () => {
       const imports = { style, image: { webFundamentals } };
       layout(_(template, { imports })(data), 'home');
-      componentHandler.upgradeAllRegistered();
     });
   });
 });

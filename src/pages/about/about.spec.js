@@ -22,7 +22,6 @@ describe('About', () => {
 
     page('/about', () => {
       layout(_(template, { imports })(data), 'about');
-      componentHandler.upgradeAllRegistered();
     });
   });
 });
