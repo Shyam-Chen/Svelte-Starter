@@ -28,7 +28,6 @@
 }
 
 main {
-  padding-left: 1rem;
   margin-left: 240px;
   transition: margin-left 1s;
   width: 100%;

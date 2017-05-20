@@ -1,4 +1,4 @@
-import { template as _, noop } from 'lodash';
+import { template as _ } from 'lodash';
 
 import { layout } from '../../components/layout';
 
@@ -13,7 +13,7 @@ const imports = {
   style
 };
 
-const common = (language = 'en') => {
+const common = (/* language = 'en'*/) => {
   const signInButton = document.querySelector('#sign-in-button');
   const signOutButton = document.querySelector('#sign-out-button');
   const signInContent = document.querySelector('#sign-in-content');
@@ -21,7 +21,7 @@ const common = (language = 'en') => {
   const email = document.querySelector('#email');
   const comment = document.querySelector('#comment');
   const sendButton = document.querySelector('#send-button');
-  const sendToast = document.querySelector('#send-toast');
+  // const sendToast = document.querySelector('#send-toast');
 
   signInButton.style.display = '';
   signOutButton.style.display = 'none';
@@ -65,16 +65,16 @@ const common = (language = 'en') => {
                 comment: comment.value
               });
 
-            language === 'en' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'Thanks for your comment.' }) : noop();
-            language === 'zh' ? sendToast.MaterialSnackbar.showSnackbar({ message: '感谢您的评论' }) : noop();
-            language === 'ja' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'あなたのコメントをありがとう' }) : noop();
+            // language === 'en' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'Thanks for your comment.' }) : noop();
+            // language === 'zh' ? sendToast.MaterialSnackbar.showSnackbar({ message: '感谢您的评论' }) : noop();
+            // language === 'ja' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'あなたのコメントをありがとう' }) : noop();
 
             comment.value = '';
-            document.querySelector('#sign-in-content .mdl-textfield:nth-child(3)').classList.remove('is-dirty');
+            // document.querySelector('#sign-in-content .mdl-textfield:nth-child(3)').classList.remove('is-dirty');
           } else {
-            language === 'en' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'Not valid!' }) : noop();
-            language === 'zh' ? sendToast.MaterialSnackbar.showSnackbar({ message: '無效！' }) : noop();
-            language === 'ja' ? sendToast.MaterialSnackbar.showSnackbar({ message: '有効ではありません！' }) : noop();
+            // language === 'en' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'Not valid!' }) : noop();
+            // language === 'zh' ? sendToast.MaterialSnackbar.showSnackbar({ message: '無效！' }) : noop();
+            // language === 'ja' ? sendToast.MaterialSnackbar.showSnackbar({ message: '有効ではありません！' }) : noop();
           }
         };
       } else {
