@@ -2,3 +2,12 @@
   color: var(--mdc-theme-primary);
   text-align: center;
 }
+
+.card {
+  max-width: 23rem;
+  margin: 1rem;
+}
+
+.form {
+  display: flex;
+}

@@ -12,16 +12,16 @@
   </button>
 </div>
 
-<div id="sign-in-content" class="">
+<div id="sign-in-content" class="mdc-layout--center mdc-card ${ style.card }">
   <div class="">
     <div class="">
-      <form>
+      <form class="mdc-cell--column ${ style.form }">
         <div class="mdc-textfield">
-          <input class="mdc-textfield__input" type="text" id="name" value="Google Display Name" readonly>
+          <input class="mdc-textfield__input" type="text" id="name" value="Google Display Name" autocomplete="name" readonly>
           <label class="mdc-textfield__label" for="name">${ NAME }</label>
         </div>
         <div class="mdc-textfield">
-          <input class="mdc-textfield__input" type="text" id="email" value="Google Email" readonly>
+          <input class="mdc-textfield__input" type="text" id="email" autocomplete="email" value="Google Email" readonly>
           <label class="mdc-textfield__label" for="email">${ EMAIL }</label>
         </div>
         <div class="mdc-textfield">
@@ -38,8 +38,8 @@
   </div>
 </div>
 
-<div id="send-toast" class="mdc-snackbar">
-  <div class="mdc-snackbar__text"></div>
+<div id="send-toast" class="mdc-snackbar  mdc-snackbar--active">
+  <div class="mdc-snackbar__text">Message sent</div>
   <div class="mdc-snackbar__action-wrapper">
     <button type="button" class="mdc-button mdc-snackbar__action-button">Undo</button>
   </div>
