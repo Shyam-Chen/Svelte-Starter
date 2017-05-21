@@ -387,7 +387,7 @@ $ yarn run deploy
 * ---------- **P1: Urgent** ----------
 * ...
 * ---------- **P2: Required** ----------
-* Migrate from `material-design-lite` to ([`material-components-web`](https://github.com/material-components/material-components-web))
+* ...
 * ---------- **P3: Important** ----------
 * Prerender HTML snapshots (`gulp-prerender`, ref [`prerender-spa-plugin`](https://github.com/chrisvfritz/prerender-spa-plugin))
 * ---------- **P4: Nice to have** ----------
