@@ -14,7 +14,7 @@ export class ServiceWorker {
         handleFetch,
         importScripts: [],
         logger: log,
-        navigateFallback: 'index.html',
+        // navigateFallback: 'index.html',
         runtimeCaching: [
           {
             urlPattern: /runtime-caching/,
