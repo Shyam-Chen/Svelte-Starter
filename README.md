@@ -102,6 +102,12 @@ $ docker-compose up
 $ docker-compose exec app <COMMAND>
 ```
 
+3) Remove the old container before creating the new one
+
+```bash
+$ docker-compose rm -fs
+```
+
 ## Configuration
 
 Application configuration

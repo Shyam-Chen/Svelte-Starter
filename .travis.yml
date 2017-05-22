@@ -4,34 +4,13 @@ sudo: required
 
 language: node_js
 node_js: stable
-# cache: yarn
 
 services: docker
 install: true
 cache: docker
 
-# jdk: oraclejdk8
-
 branches:
   only: master
-
-# env:
-#   matrix:
-#     - MODE=prod
-#     - MODE=lint
-#     - MODE=unit
-#     - MODE=e2e
-
-# matrix:
-#   include:
-#     - env: MODE=docker
-#       services: docker
-#       install: true
-#       cache: docker
-#   exclude:
-#     - env: MODE=docker
-#       cache: yarn
-#       jdk: oraclejdk8
 
 before_install: chmod +x scripts/*.sh
 
