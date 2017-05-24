@@ -11,33 +11,31 @@
 
 This seed repository provides the following features:
 
-* ---------- **Primary Key** ----------
+* ---------- **Essentials** ----------
 * [x] Client-side platform with [**HTML5**](https://platform.html5.org/).
 * [x] User interface components with [**Material**](https://material.io/).
 * [x] Backend cloud services with [**Firebase**](https://firebase.google.com/).
 * [x] Routing and navigation with [**Page**](http://visionmedia.github.io/page.js/).
-* ---------- **Secondary Key** ----------
 * [x] Utility functions with [**Lodash**](https://lodash.com/).
 * [x] Reactive extensions with [**ReactiveX**](http://reactivex.io/).
 * [x] State container with [**Redux**](http://redux.js.org/).
 * [x] Immutable collections with [**Immutable**](http://facebook.github.io/immutable-js/).
 * [x] Data visualizations with [**D3**](https://d3js.org/).
-* ---------- **Dev Tools** ----------
+* ---------- **Tools** ----------
 * [x] Build system with [**Gulp**](https://github.com/gulpjs/gulp).
 * [x] Module bundler with [**Rollup**](https://github.com/rollup/rollup).
 * [ ] HTML transformations with [**PostHTML**](https://github.com/posthtml/posthtml).
 * [x] Future CSS features with [**PostCSS**](https://github.com/postcss/postcss).
 * [x] Next generation JavaScript with [**Babel**](https://github.com/babel/babel).
-* [ ] Type checking wit [**Flow**](https://github.com/facebook/flow).
+* [ ] Type checking with [**Flow**](https://github.com/facebook/flow).
 * [x] Synchronised browser with [**BrowserSync**](https://github.com/BrowserSync/browser-sync).
-* ---------- **Test Tools** ----------
 * [x] HTML static code analyzer with [**HTMLHint**](https://github.com/yaniswang/HTMLHint).
 * [x] CSS static code analyzer with [**StyleLint**](https://github.com/stylelint/stylelint).
 * [x] JavaScript static code analyzer with [**ESLint**](https://github.com/eslint/eslint).
 * [x] Testing framework with [**Jasmine**](https://github.com/jasmine/jasmine).
 * [x] Unit tests with [**Karma**](https://github.com/karma-runner/karma).
 * [x] End-to-end tests with [**Protractor**](https://github.com/angular/protractor).
-* ---------- **Environment** ----------
+* ---------- **Environments** ----------
 * [x] Operating system with [**Linux**](https://github.com/torvalds/linux).
 * [x] Text editor with [**Atom**](https://github.com/atom/atom).
 * [x] Version control with [**Git**](https://github.com/git/git).
