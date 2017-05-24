@@ -25,9 +25,10 @@ This seed repository provides the following features:
 * ---------- **Dev Tools** ----------
 * [x] Build system with [**Gulp**](https://github.com/gulpjs/gulp).
 * [x] Module bundler with [**Rollup**](https://github.com/rollup/rollup).
-* [x] HTML transformations with [**PostHTML**](https://github.com/posthtml/posthtml).
+* [ ] HTML transformations with [**PostHTML**](https://github.com/posthtml/posthtml).
 * [x] Future CSS features with [**PostCSS**](https://github.com/postcss/postcss).
 * [x] Next generation JavaScript with [**Babel**](https://github.com/babel/babel).
+* [ ] Type checking wit [**Flow**](https://github.com/facebook/flow).
 * [x] Synchronised browser with [**BrowserSync**](https://github.com/BrowserSync/browser-sync).
 * ---------- **Test Tools** ----------
 * [x] HTML static code analyzer with [**HTMLHint**](https://github.com/yaniswang/HTMLHint).
