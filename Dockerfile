@@ -1,37 +1,60 @@
-FROM buildpack-deps:jessie
+FROM buildpack-deps:jessie-scm
 
 ENV HOME /Frontend-Starter-Kit
 
 WORKDIR ${HOME}
 ADD . $HOME
 
-# node
+ENV NODE 7
+ENV PATH $HOME/.yarn/bin:$PATH
+
 RUN \
-  curl -sL https://deb.nodesource.com/setup_7.x | bash - && \
+  curl -sL https://deb.nodesource.com/setup_$NODE.x | bash - && \
   curl -o- -L https://yarnpkg.com/install.sh | bash && \
   apt-get update && \
   apt-get install -y nodejs
 
-ENV PATH $HOME/.yarn/bin:$PATH
-
-# java
 RUN \
-  wget -nv -O /tmp/jdk.tgz --no-check-certificate --no-cookies \
-    --header "Cookie: oraclelicense=accept-securebackup-cookie" \
-    http://download.oracle.com/otn-pub/java/jdk/8u121-b13/e9e7ea248e2c4826b92b3f075a80e441/jdk-8u121-linux-x64.tar.gz && \
-  tar zxf /tmp/jdk.tgz -C /opt && \
-  update-alternatives --install /usr/bin/java java /opt/jdk1.8.0_121/bin/java 100 && \
-  update-alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_121/bin/javac 100
+  apt-get update && \
+  apt-get install -y bzip2 unzip xz-utils
 
-# ruby
-# RUN \
-#   apt-get update && apt-get install -y ruby && \
-#   gem install dpl
+RUN echo 'deb http://deb.debian.org/debian jessie-backports main' > /etc/apt/sources.list.d/jessie-backports.list
 
-# cleanup
+ENV LANG C.UTF-8
+
+RUN \
+  { \
+    echo '#!/bin/sh'; \
+    echo 'set -e'; \
+    echo; \
+    echo 'dirname "$(dirname "$(readlink -f "$(which javac || which java)")")"'; \
+  } > /usr/local/bin/docker-java-home && \
+  chmod +x /usr/local/bin/docker-java-home
+
+RUN ln -svT "/usr/lib/jvm/java-8-openjdk-$(dpkg --print-architecture)" /docker-java-home
+ENV JAVA_HOME /docker-java-home
+
+ENV JAVA_VERSION 8u131
+ENV JAVA_DEBIAN_VERSION 8u131-b11-1~bpo8+1
+
+ENV CA_CERTIFICATES_JAVA_VERSION 20161107~bpo8+1
+
+RUN \
+  set -ex; \
+  apt-get update; \
+  apt-get install -y \
+    openjdk-8-jdk="$JAVA_DEBIAN_VERSION" \
+    ca-certificates-java="$CA_CERTIFICATES_JAVA_VERSION" \
+  ; \
+  rm -rf /var/lib/apt/lists/*; \
+  [ "$(readlink -f "$JAVA_HOME")" = "$(docker-java-home)" ]; \
+  update-alternatives --get-selections | awk -v home="$(readlink -f "$JAVA_HOME")" 'index($3, home) == 1 { $2 = "manual"; print | "update-alternatives --set-selections" }'; \
+  update-alternatives --query java | grep -q 'Status: manual'
+
+RUN /var/lib/dpkg/info/ca-certificates-java.postinst configure
+
 RUN rm -rf /var/lib/apt/lists/*
 
-# install
 RUN yarn
 
 EXPOSE 8000 8080
