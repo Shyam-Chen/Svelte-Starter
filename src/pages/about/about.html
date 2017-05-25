@@ -1,39 +1,27 @@
-<div class="mdl-grid mdl-grid--center">
-  <h2 class="mdl-color-text--blue-900">${ ABOUT }</h2>
-</div>
+<header class="${ style.header }">
+  <h1 class="mdc-typography--display1 ${ style.header__title }">${ ABOUT }</h1>
+</header>
 
-<div class="mdl-grid mdl-grid--center">
-  <h3>${ TITLE }</h3>
-</div>
+<section class="${ style.section }">
+  <h3 class="mdc-typography--title ${ style.section__title }">${ TITLE }</h3>
 
-<div class="mdl-grid mdl-grid--center">
-  <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp ${ style.table }">
-    <thead>
-      <tr>
-        <th class="mdl-data-table__cell--non-numeric">${ FRONTEND.TITLE }</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% [].forEach.call(FRONTEND.ITEM, function(item) { %>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric"><%- item %></td>
-        </tr>
-      <% }); %>
-    </tbody>
-  </table>
+  <section class="${ style.section__content }">
+    <section class="${ style.section__subcontent }">
+      <h3 class="mdc-typography--subheading1">${ FRONTEND.TITLE }</h3>
+      <ul class="mdc-list mdc-list--dense mdc-elevation--z2">
+        <% [].forEach.call(FRONTEND.ITEM, function(item) { %>
+          <li class="mdc-list-item"><%- item %></li>
+        <% }); %>
+      </ul>
+    </section>
 
-  <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp ${ style.table }">
-    <thead>
-      <tr>
-        <th class="mdl-data-table__cell--non-numeric">${ BACKEND.TITLE }</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% [].forEach.call(BACKEND.ITEM, function(item) { %>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric"><%- item %></td>
-        </tr>
-      <% }); %>
-    </tbody>
-  </table>
-</div>
+    <section class="${ style.section__subcontent }">
+      <h3 class="mdc-typography--subheading1">${ BACKEND.TITLE }</h3>
+      <ul class="mdc-list mdc-list--dense mdc-elevation--z2">
+        <% [].forEach.call(BACKEND.ITEM, function(item) { %>
+          <li class="mdc-list-item"><%- item %></li>
+        <% }); %>
+      </ul>
+    </section>
+  </section>
+</section>

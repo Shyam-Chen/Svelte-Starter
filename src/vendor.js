@@ -7,7 +7,7 @@ import '@material/card/dist/mdc.card.css';
 // import '@material/checkbox/dist/mdc.checkbox.css';
 // import '@material/dialog/dist/mdc.dialog.css';
 import '@material/drawer/dist/mdc.drawer.css';
-// import '@material/elevation/dist/mdc.elevation.css';
+import '@material/elevation/dist/mdc.elevation.css';
 // import '@material/fab/dist/mdc.fab.css';
 // import '@material/form-field/dist/mdc.form-field.css';
 // import '@material/grid-list/dist/mdc.grid-list.css';
@@ -23,7 +23,7 @@ import '@material/snackbar/dist/mdc.snackbar.css';
 import '@material/textfield/dist/mdc.textfield.css';
 import '@material/theme/dist/mdc.theme.css';
 import '@material/toolbar/dist/mdc.toolbar.css';
-// import '@material/typography/dist/mdc.typography.css';
+import '@material/typography/dist/mdc.typography.css';
 
 /**
  * @name Application

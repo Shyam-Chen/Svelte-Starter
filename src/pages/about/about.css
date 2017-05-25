@@ -1,3 +1,23 @@
-.table {
-  margin: 1rem;
+.header {
+  &__title {
+    color: var(--mdc-theme-primary);
+    text-align: center;
+  }
+}
+
+.section {
+  &__title {
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: .5rem;
+  }
+
+  &__subcontent {
+    margin: .5rem;
+  }
 }
