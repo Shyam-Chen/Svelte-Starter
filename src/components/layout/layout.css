@@ -10,11 +10,13 @@
   margin-left: 1rem;
 }
 
-.desktop {
+.layout {
   display: flex;
   height: 100%;
   box-sizing: border-box;
+}
 
+.desktop {
   &__drawer[data-desktop] {
     position: fixed;
     overflow: auto;

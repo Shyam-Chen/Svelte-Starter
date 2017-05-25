@@ -1,3 +1,4 @@
+import { __moduleExports as mdTextfield } from '@material/textfield/dist/mdc.textfield';
 import { template as _ } from 'lodash';
 
 import { layout } from '../../components/layout';
@@ -82,6 +83,13 @@ const common = (/* language = 'en'*/) => {
         signInButton.style.display = '';
       }
     });
+
+
+
+    [].forEach.call(
+      document.querySelectorAll('.mdc-textfield:not([data-demo-no-auto-js])'),
+      surface => mdTextfield.MDCTextfield.attachTo(surface)
+    );
 };
 
 export const contact = () => {

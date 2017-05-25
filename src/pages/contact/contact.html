@@ -17,15 +17,15 @@
     <div class="">
       <form class="mdc-cell--column ${ style.form }">
         <div class="mdc-textfield">
-          <input class="mdc-textfield__input" type="text" id="name" value="Google Display Name" autocomplete="name" readonly>
+          <input class="mdc-textfield__input" style="width: 100%" type="text" id="name" value="Google Display Name" autocomplete="name" readonly>
           <label class="mdc-textfield__label" for="name">${ NAME }</label>
         </div>
         <div class="mdc-textfield">
-          <input class="mdc-textfield__input" type="text" id="email" autocomplete="email" value="Google Email" readonly>
+          <input class="mdc-textfield__input" style="width: 100%" type="text" id="email" autocomplete="email" value="Google Email" readonly>
           <label class="mdc-textfield__label" for="email">${ EMAIL }</label>
         </div>
-        <div class="mdc-textfield">
-          <textarea class="mdc-textfield__input" type="text" rows= "3" id="comment"></textarea>
+        <div class="mdc-textfield mdc-textfield--multiline" >
+          <textarea class="mdc-textfield__input" type="text" rows= "5" id="comment" style="width: 100%"></textarea>
           <label class="mdc-textfield__label" for="comment">${ COMMENT }</label>
         </div>
       </form>
