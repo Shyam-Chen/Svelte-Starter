@@ -4,8 +4,9 @@
 }
 
 .card {
-  max-width: 23rem;
+  width: 20rem;
   margin: 1rem;
+  padding: 1rem;
 }
 
 .form {
