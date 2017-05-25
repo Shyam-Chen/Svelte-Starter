@@ -1,4 +1,5 @@
 import { __moduleExports as mdTextfield } from '@material/textfield/dist/mdc.textfield';
+import { __moduleExports as mdSnackbar } from '@material/snackbar/dist/mdc.snackbar';
 import { template as _ } from 'lodash';
 
 import { layout } from '../../components/layout';
@@ -22,7 +23,7 @@ const common = (/* language = 'en'*/) => {
   const email = document.querySelector('#email');
   const comment = document.querySelector('#comment');
   const sendButton = document.querySelector('#send-button');
-  // const sendToast = document.querySelector('#send-toast');
+  const sendToast = document.querySelector('#send-toast');
 
   signInButton.style.display = '';
   signOutButton.style.display = 'none';
@@ -39,6 +40,9 @@ const common = (/* language = 'en'*/) => {
     signOutButton.style.display = 'none';
     signInContent.style.display = 'none';
   };
+
+  const MDCSnackbar = mdSnackbar.MDCSnackbar;
+  const snackbar = new MDCSnackbar(sendToast)
 
   firebase.auth()
     .onAuthStateChanged(user => {
@@ -66,13 +70,17 @@ const common = (/* language = 'en'*/) => {
                 comment: comment.value
               });
 
+            snackbar.show({ message: 'Thanks for your comment.' });
             // language === 'en' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'Thanks for your comment.' }) : noop();
             // language === 'zh' ? sendToast.MaterialSnackbar.showSnackbar({ message: '感谢您的评论' }) : noop();
             // language === 'ja' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'あなたのコメントをありがとう' }) : noop();
 
             comment.value = '';
-            // document.querySelector('#sign-in-content .mdl-textfield:nth-child(3)').classList.remove('is-dirty');
+            document.querySelector('#sign-in-content .mdc-textfield:nth-child(3) > .mdc-textfield__label').classList.remove('mdc-textfield__label--float-above');
           } else {
+
+
+            snackbar.show({ message: 'Not valid!' });
             // language === 'en' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'Not valid!' }) : noop();
             // language === 'zh' ? sendToast.MaterialSnackbar.showSnackbar({ message: '無效！' }) : noop();
             // language === 'ja' ? sendToast.MaterialSnackbar.showSnackbar({ message: '有効ではありません！' }) : noop();
