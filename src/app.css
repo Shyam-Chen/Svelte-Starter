@@ -1,8 +1,18 @@
 :global {
-  & .mdc-layout--center {
+  & .mdc-layout {
     display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
+
+    &--row {
+      flex-flow: row wrap;
+    }
+
+    &--column {
+      flex-flow: column wrap;
+    }
+
+    &--center {
+      justify-content: center;
+    }
   }
 
   & .mdc-cell {

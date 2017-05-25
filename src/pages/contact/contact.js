@@ -1,6 +1,7 @@
+import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
 import { __moduleExports as mdTextfield } from '@material/textfield/dist/mdc.textfield';
 import { __moduleExports as mdSnackbar } from '@material/snackbar/dist/mdc.snackbar';
-import { template as _ } from 'lodash';
+import { template as _, noop } from 'lodash';
 
 import { layout } from '../../components/layout';
 
@@ -15,7 +16,7 @@ const imports = {
   style
 };
 
-const common = (/* language = 'en'*/) => {
+const common = (language = 'en') => {
   const signInButton = document.querySelector('#sign-in-button');
   const signOutButton = document.querySelector('#sign-out-button');
   const signInContent = document.querySelector('#sign-in-content');
@@ -70,20 +71,17 @@ const common = (/* language = 'en'*/) => {
                 comment: comment.value
               });
 
-            snackbar.show({ message: 'Thanks for your comment.' });
-            // language === 'en' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'Thanks for your comment.' }) : noop();
-            // language === 'zh' ? sendToast.MaterialSnackbar.showSnackbar({ message: '感谢您的评论' }) : noop();
-            // language === 'ja' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'あなたのコメントをありがとう' }) : noop();
+            language === 'en' ? snackbar.show({ message: 'Thanks for your comment.' }) : noop();
+            language === 'zh' ? snackbar.show({ message: '感谢您的评论' }) : noop();
+            language === 'ja' ? snackbar.show({ message: 'あなたのコメントをありがとう' }) : noop();
 
             comment.value = '';
-            document.querySelector('#sign-in-content .mdc-textfield:nth-child(3) > .mdc-textfield__label').classList.remove('mdc-textfield__label--float-above');
+            document.querySelector('#sign-in-content .mdc-textfield:nth-child(3) > .mdc-textfield__label')
+              .classList.remove('mdc-textfield__label--float-above');
           } else {
-
-
-            snackbar.show({ message: 'Not valid!' });
-            // language === 'en' ? sendToast.MaterialSnackbar.showSnackbar({ message: 'Not valid!' }) : noop();
-            // language === 'zh' ? sendToast.MaterialSnackbar.showSnackbar({ message: '無效！' }) : noop();
-            // language === 'ja' ? sendToast.MaterialSnackbar.showSnackbar({ message: '有効ではありません！' }) : noop();
+            language === 'en' ? snackbar.show({ message: 'Not valid!' }) : noop();
+            language === 'zh' ? snackbar.show({ message: '無效！' }) : noop();
+            language === 'ja' ? snackbar.show({ message: '有効ではありません！' }) : noop();
           }
         };
       } else {
@@ -94,10 +92,15 @@ const common = (/* language = 'en'*/) => {
 
 
 
-    [].forEach.call(
-      document.querySelectorAll('.mdc-textfield:not([data-demo-no-auto-js])'),
-      surface => mdTextfield.MDCTextfield.attachTo(surface)
-    );
+  [].forEach.call(
+    document.querySelectorAll('.mdc-button'),
+    surface => mdRipple.MDCRipple.attachTo(surface)
+  );
+
+  [].forEach.call(
+    document.querySelectorAll('.mdc-textfield'),
+    surface => mdTextfield.MDCTextfield.attachTo(surface)
+  );
 };
 
 export const contact = () => {

@@ -1,8 +1,8 @@
-<header class="mdc-layout--center">
+<header class="mdc-layout mdc-layout--center">
   <h1 class="mdc-typography--display1 mdc-theme--primary">${ CONTACT }</h1>
 </header>
 
-<div class="mdc-layout--center">
+<div class="mdc-layout mdc-layout--center">
   <button type="button" id="sign-in-button" class="mdc-button mdc-button--raised mdc-button--primary">
     ${ ACCOUNT.SIGN_IN_BUTTON }
   </button>
@@ -12,29 +12,25 @@
   </button>
 </div>
 
-<div id="sign-in-content" class="mdc-layout--center">
+<div id="sign-in-content" class="mdc-layout mdc-layout--center">
   <div class="mdc-card ${ style.card }">
-    <div class="">
-      <form class="mdc-cell--column ${ style.form }">
-        <div class="mdc-textfield">
-          <input class="mdc-textfield__input" style="width: 100%" type="text" id="name" value="Google Display Name" autocomplete="name" readonly>
-          <label class="mdc-textfield__label" for="name">${ NAME }</label>
-        </div>
-        <div class="mdc-textfield">
-          <input class="mdc-textfield__input" style="width: 100%" type="text" id="email" autocomplete="email" value="Google Email" readonly>
-          <label class="mdc-textfield__label" for="email">${ EMAIL }</label>
-        </div>
-        <div class="mdc-textfield mdc-textfield--multiline" >
-          <textarea class="mdc-textfield__input" type="text" rows= "5" id="comment" style="width: 100%"></textarea>
-          <label class="mdc-textfield__label" for="comment">${ COMMENT }</label>
-        </div>
-      </form>
-    </div>
-    <div class="">
+    <form class="mdc-cell--column ${ style.form }">
+      <div class="mdc-textfield">
+        <input id="name" class="mdc-textfield__input ${ style.input }" type="text" value="Google Display Name" autocomplete="name" readonly>
+        <label class="mdc-textfield__label" for="name">${ NAME }</label>
+      </div>
+      <div class="mdc-textfield ${ style.email }">
+        <input id="email" class="mdc-textfield__input ${ style.input }" type="text" value="Google Email" autocomplete="email" readonly>
+        <label class="mdc-textfield__label" for="email">${ EMAIL }</label>
+      </div>
+      <div class="mdc-textfield mdc-textfield--multiline">
+        <textarea id="comment" class="mdc-textfield__input ${ style.input }" type="text" rows="5"></textarea>
+        <label class="mdc-textfield__label" for="comment">${ COMMENT }</label>
+      </div>
       <button type="button" id="send-button" class="mdc-button mdc-button--primary">
         ${ SEND }
       </button>
-    </div>
+    </form>
   </div>
 </div>
 

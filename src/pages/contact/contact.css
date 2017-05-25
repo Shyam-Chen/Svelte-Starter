@@ -1,8 +1,3 @@
-.title {
-  color: var(--mdc-theme-primary);
-  text-align: center;
-}
-
 .card {
   width: 20rem;
   margin: 1rem;
@@ -11,4 +6,12 @@
 
 .form {
   display: flex;
+}
+
+.input {
+  width: 100%;
+}
+
+.email {
+  margin-bottom: 1.5rem;
 }
