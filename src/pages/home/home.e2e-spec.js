@@ -4,7 +4,7 @@ describe('Home', () => {
   });
 
   it('getText toEqual', () => {
-    const el = webdriver.findElement(by.css('header > h1'));
+    const el = webdriver.findElement(by.css('h1.mdc-typography--display1'));
     expect(el.getText()).toEqual('Home');
   });
 });

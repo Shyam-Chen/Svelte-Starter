@@ -3,7 +3,7 @@ import { template as _ } from 'lodash';
 import { home } from './home';
 
 import { layout } from '../../components/layout';
-import webFundamentals from '../../assets/images/web-fundamentals.png';
+import logo from '../../assets/images/logo.png';
 
 import template from './home.html';
 import style from './home.css';
@@ -20,7 +20,7 @@ describe('Home', () => {
 
   it('should be able to work', () => {
     page('/', () => {
-      const imports = { style, image: { webFundamentals } };
+      const imports = { style, image: { logo } };
       layout(_(template, { imports })(data), 'home');
     });
   });
