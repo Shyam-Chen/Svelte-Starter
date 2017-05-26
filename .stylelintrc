@@ -1,5 +1,8 @@
 {
   "extends": "stylelint-config-standard",
+  "plugins": [
+    "stylelint-scss"
+  ],
   "rules": {
     "block-closing-brace-empty-line-before": null,
     "color-hex-case": null,

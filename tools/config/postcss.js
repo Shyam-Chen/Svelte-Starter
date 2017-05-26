@@ -1,4 +1,4 @@
-import comment from 'postcss-comment';
+import scss from 'postcss-scss';
 import pimport from 'postcss-import';
 import cssnext from 'postcss-cssnext';
 import rucksack from 'rucksack-css';
@@ -18,7 +18,7 @@ import { ASSETS_ROOT } from '../constants';
 const cssExportMap = {};
 
 export default {
-  parser: comment,
+  parser: scss,
   plugins: [
     pimport(),
     cssnext({ warnForDuplicates: false }),
