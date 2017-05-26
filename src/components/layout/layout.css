@@ -59,9 +59,18 @@ main {
   }
 }
 
-footer {
+.footer {
   padding: 16px 40px;
-  background: #424242;
   color: #9E9E9E;
-  margin-left: -16px;
+  background-color: #424242;
+
+  &__link {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+  &__section {
+    flex: 1;
+    padding: .5rem;
+  }
 }

@@ -89,13 +89,40 @@
   </nav>
 
   <main>
-    <% var languages = [['en', 'English'], ['zh', '中文'], ['ja', '日本語']]; %>
-    <% [].forEach.call(languages, function(language) { %>
-      <a href="javascript:void 0" id="<%- language[0] %>"><%- language[1] %></a>
-    <% }); %>
     <div id="content" class="${ style.content }"></div>
-    <footer class="mdc-typography--body1">
-      Powered by Google ©2017. Code licensed under an MIT-style License.
+
+    <footer class="mdc-typography--body1 ${ style.footer }">
+      <section class="mdc-layout mdc-layout--row">
+        <section class="${ style.footer__section }">
+          <h2 class="mdc-typography--title">Learn</h2>
+          <ul>
+            <!-- <li><a href="#" class="${ style.footer__link }">JavaScript</a></li> -->
+          </ul>
+        </section>
+
+        <section class="${ style.footer__section }">
+          <h2 class="mdc-typography--title">Resources</h2>
+          <ul>
+            <!-- <li><a href="#" class="${ style.footer__link }">Books</a></li> -->
+          </ul>
+        </section>
+
+        <section class="${ style.footer__section }">
+          <h2 class="mdc-typography--title">Languages</h2>
+          <ul>
+            <% var languages = [['en', 'English'], ['zh', '中文'], ['ja', '日本語']]; %>
+            <% [].forEach.call(languages, function(language) { %>
+              <li>
+                <a href="javascript: void 0" id="<%- language[0] %>" class="${ style.footer__link }"><%- language[1] %></a>
+              </li>
+            <% }); %>
+          </ul>
+        </section>
+      </section>
+
+      <section>
+        Powered by Google ©2017. Code licensed under an MIT-style License.
+      </section>
     </footer>
   </main>
 </div>

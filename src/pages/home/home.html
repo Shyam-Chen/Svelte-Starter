@@ -1,17 +1,17 @@
-<header>
-  <h1 class="mdc-typography--display1 ${ style.title }">${ HOME }</h1>
+<header class="mdc-layout mdc-layout--center">
+  <h1 class="mdc-typography--display1 mdc-theme--primary">${ HOME }</h1>
 </header>
 
-<article class="mdc-layout--center">
+<section class="mdc-layout--center">
   <section class="mdc-cell--column mdc-cell--center">
     <img src="${ image.logo }" alt="Web Fundamentals">
     <h3 class="mdc-typography--title">${ TITLE }</h3>
     <p class="mdc-typography--body1">${ DESCRIPTION }</p>
   </section>
-</article>
+</section>
 
-<article class="mdc-layout mdc-layout--row mdc-layout--center">
-  <article class="mdc-card ${ style.card }">
+<section class="mdc-layout mdc-layout--row mdc-layout--center">
+  <section class="mdc-card ${ style.card }">
     <section class="mdc-card__media ${ style.card__media }">
       <h1 class="mdc-card__title mdc-card__title--large ${ style.card__title }">${ FRONTEND.TITLE }</h1>
     </section>
@@ -21,9 +21,9 @@
     <section class="mdc-card__actions">
       <a href="https://github.com/Shyam-Chen/Frontend-Starter-Kit" class="mdc-button mdc-button--compact mdc-button--primary mdc-card__action">${ FRONTEND.BUTTON }</a>
     </section>
-  </article>
+  </section>
 
-  <article class="mdc-card ${ style.card }">
+  <section class="mdc-card ${ style.card }">
     <section class="mdc-card__media ${ style.card__media }">
       <h1 class="mdc-card__title mdc-card__title--large ${ style.card__title }">${ BACKEND.TITLE }</h1>
     </section>
@@ -33,5 +33,5 @@
     <section class="mdc-card__actions">
       <a href="https://github.com/Shyam-Chen/Backend-Starter-Kit" class="mdc-button mdc-button--compact mdc-button--primary mdc-card__action">${ BACKEND.BUTTON }</a>
     </section>
-  </article>
-</article>
+  </section>
+</section>

@@ -1,10 +1,3 @@
-.header {
-  &__title {
-    color: var(--mdc-theme-primary);
-    text-align: center;
-  }
-}
-
 .section {
   &__title {
     text-align: center;

@@ -1,4 +1,4 @@
 :root {
-  --primary: /* ... */;
-  --accent: /* ... */;
+  --mdc-theme-primary: #3F51B5;  // Indigo
+  --mdc-theme-accent: #E91E63;  // Pink
 }
