@@ -1,8 +1,7 @@
 {
-  "version": "1.0.0",
   "name": "Web GO",
-  "launch_path": "/",
   "description": "Professional templates for frontend and backend development with HTML5 and Node.js.",
+  "launch_path": "/",
   "icons": {
     "128": "icon-128x128.png"
   },
@@ -10,17 +9,12 @@
     "name": "",
     "url": ""
   },
+  "default_locale": "en",
+  "type": "web",
   "installs_allowed_from": [
     "*"
   ],
-  "default_locale": "en",
-  "content_security_policy": "script-src 'self' https://apis.google.com https://www.googleapis.com https://securetoken.googleapis.com; object-src 'self'",
-  "permissions": ["https://*/*", "activeTab"],
   "locales": {
-    "en": {
-      "name": "Web GO",
-      "description": "Professional templates for frontend and backend development with HTML5 and Node.js."
-    },
     "zh": {
       "name": "Web GO",
       "description": "對於前端和後端的開發使用 HTML5 和 Node.js 的專業模板"
