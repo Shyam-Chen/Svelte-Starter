@@ -4,10 +4,18 @@
 
 <div class="mdc-layout mdc-layout--center">
   <button type="button" id="sign-in-button" class="mdc-button mdc-button--raised mdc-button--primary">
+    <svg fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
+      <path d="M0 0h24v24H0z" fill="none" />
+    </svg>
     ${ ACCOUNT.SIGN_IN_BUTTON }
   </button>
 
   <button type="button" id="sign-out-button" class="mdc-button mdc-button--raised mdc-button--primary">
+    <svg fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
+      <path d="M0 0h24v24H0z" fill="none" />
+    </svg>
     ${ ACCOUNT.SIGN_OUT_BUTTON }
   </button>
 </div>
@@ -16,11 +24,11 @@
   <div class="mdc-card ${ style.card }">
     <form class="mdc-cell--column ${ style.form }">
       <div class="mdc-textfield">
-        <input id="name" class="mdc-textfield__input ${ style.input }" type="text" value="Google Display Name" autocomplete="name" readonly>
+        <input id="name" class="mdc-textfield__input ${ style.input }" type="text">
         <label class="mdc-textfield__label" for="name">${ NAME }</label>
       </div>
       <div class="mdc-textfield ${ style.email }">
-        <input id="email" class="mdc-textfield__input ${ style.input }" type="text" value="Google Email" autocomplete="email" readonly>
+        <input id="email" class="mdc-textfield__input ${ style.input }" type="text">
         <label class="mdc-textfield__label" for="email">${ EMAIL }</label>
       </div>
       <div class="mdc-textfield mdc-textfield--multiline">
@@ -29,6 +37,10 @@
       </div>
       <button type="button" id="send-button" class="mdc-button mdc-button--primary">
         ${ SEND }
+        <svg fill="#3F51B5" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle">
+          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+          <path d="M0 0h24v24H0z" fill="none" />
+        </svg>
       </button>
     </form>
   </div>

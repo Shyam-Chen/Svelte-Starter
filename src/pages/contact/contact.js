@@ -19,16 +19,21 @@ const imports = {
 const common = (language = 'en') => {
   const signInButton = document.querySelector('#sign-in-button');
   const signOutButton = document.querySelector('#sign-out-button');
-  const signInContent = document.querySelector('#sign-in-content');
+
   const name = document.querySelector('#name');
+  const nameLabel = document.querySelector('#name + .mdc-textfield__label');
   const email = document.querySelector('#email');
+  const emailLabel = document.querySelector('#email + .mdc-textfield__label');
   const comment = document.querySelector('#comment');
+  const commentLabel = document.querySelector('#comment + .mdc-textfield__label');
   const sendButton = document.querySelector('#send-button');
+
   const sendToast = document.querySelector('#send-toast');
+  const MDCSnackbar = mdSnackbar.MDCSnackbar;
+  const snackbar = new MDCSnackbar(sendToast);
 
   signInButton.style.display = '';
   signOutButton.style.display = 'none';
-  signInContent.style.display = 'none';
 
   signInButton.onclick = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -39,11 +44,13 @@ const common = (language = 'en') => {
     firebase.auth().signOut();
     signInButton.style.display = '';
     signOutButton.style.display = 'none';
-    signInContent.style.display = 'none';
   };
 
-  const MDCSnackbar = mdSnackbar.MDCSnackbar;
-  const snackbar = new MDCSnackbar(sendToast)
+  sendButton.onclick = () => {
+    language === 'en' ? snackbar.show({ message: 'Please login first.' }) : noop();
+    language === 'zh' ? snackbar.show({ message: '請先登入' }) : noop();
+    language === 'ja' ? snackbar.show({ message: '最初にログインしてください' }) : noop();
+  };
 
   firebase.auth()
     .onAuthStateChanged(user => {
@@ -56,10 +63,13 @@ const common = (language = 'en') => {
 
         signInButton.style.display = 'none';
         signOutButton.style.display = '';
-        signInContent.style.display = '';
 
         name.value = `${user.displayName}`;
         email.value = `${user.email}`;
+        name.setAttribute('readonly', '');
+        email.setAttribute('readonly', '');
+        nameLabel.classList.add('mdc-textfield__label--float-above');
+        emailLabel.classList.add('mdc-textfield__label--float-above');
 
         sendButton.onclick = () => {
           if (comment.value !== '') {
@@ -71,13 +81,12 @@ const common = (language = 'en') => {
                 comment: comment.value
               });
 
-            language === 'en' ? snackbar.show({ message: 'Thanks for your comment.' }) : noop();
-            language === 'zh' ? snackbar.show({ message: '感谢您的评论' }) : noop();
-            language === 'ja' ? snackbar.show({ message: 'あなたのコメントをありがとう' }) : noop();
-
             comment.value = '';
-            document.querySelector('#sign-in-content .mdc-textfield:nth-child(3) > .mdc-textfield__label')
-              .classList.remove('mdc-textfield__label--float-above');
+            commentLabel.classList.remove('mdc-textfield__label--float-above');
+
+            language === 'en' ? snackbar.show({ message: 'Thanks for your comment.' }) : noop();
+            language === 'zh' ? snackbar.show({ message: '感謝您的評論' }) : noop();
+            language === 'ja' ? snackbar.show({ message: 'あなたのコメントをありがとう' }) : noop();
           } else {
             language === 'en' ? snackbar.show({ message: 'Not valid!' }) : noop();
             language === 'zh' ? snackbar.show({ message: '無效！' }) : noop();
@@ -86,10 +95,23 @@ const common = (language = 'en') => {
         };
       } else {
         currentUID = null;
+
         signInButton.style.display = '';
+
+        name.value = '';
+        email.value = '';
+        name.removeAttribute('readonly');
+        email.removeAttribute('readonly');
+        nameLabel.classList.remove('mdc-textfield__label--float-above');
+        emailLabel.classList.remove('mdc-textfield__label--float-above');
+
+        sendButton.onclick = () => {
+          language === 'en' ? snackbar.show({ message: 'Please login first.' }) : noop();
+          language === 'zh' ? snackbar.show({ message: '請先登入' }) : noop();
+          language === 'ja' ? snackbar.show({ message: '最初にログインしてください' }) : noop();
+        };
       }
     });
-
 
 
   [].forEach.call(
