@@ -116,12 +116,12 @@ const common = (language = 'en') => {
 
   [].forEach.call(
     document.querySelectorAll('.mdc-button'),
-    surface => mdRipple.MDCRipple.attachTo(surface)
+    ripple => mdRipple.MDCRipple.attachTo(ripple)
   );
 
   [].forEach.call(
     document.querySelectorAll('.mdc-textfield'),
-    surface => mdTextfield.MDCTextfield.attachTo(surface)
+    textfield => mdTextfield.MDCTextfield.attachTo(textfield)
   );
 };
 

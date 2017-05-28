@@ -22,7 +22,7 @@ const imports = {
 const common = () => {
   [].forEach.call(
     document.querySelectorAll('.mdc-button'),
-    surface => mdRipple.MDCRipple.attachTo(surface)
+    ripple => mdRipple.MDCRipple.attachTo(ripple)
   );
 };
 
