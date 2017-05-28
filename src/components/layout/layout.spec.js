@@ -13,11 +13,11 @@ describe('Layout', () => {
     });
   });
 
-  describe('Style', () => {
-    it('should be `style.content`', () => {
-      expect(template).toMatch(/style.content/);
-    });
-  });
+  // describe('Style', () => {
+  //   it('should be `style.content`', () => {
+  //     expect(template).toMatch(/style.content/);
+  //   });
+  // });
 
   describe('Data', () => {
     it('should be `TITLE` and `LINK`', () => {

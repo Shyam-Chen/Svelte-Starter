@@ -1,65 +1,62 @@
-.menu {
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+.header {
+  &__menu {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
 
-.title {
-  margin-left: 1rem;
+  &__title {
+    margin-left: 1rem;
+  }
 }
 
 .layout {
   display: flex;
   height: 100%;
   box-sizing: border-box;
-}
 
-.desktop {
+  &__drawer[data-mobile] {
+    @media (min-width: 600px) {
+      display: none;
+    }
+  }
+
   &__drawer[data-desktop] {
     position: fixed;
     overflow: auto;
     height: calc(100% - 64px);
     transition: margin-left .33s;
+
+    @media (max-width: 599px) {
+      display: none;
+    }
+  }
+
+  &__content {
+    margin-left: 240px;
+    transition: margin-left 1s;
+    width: 100%;
+
+    @media (max-width: 599px) {
+      margin-left: 0;
+    }
   }
 }
 
-.content {
-  padding-bottom: 1rem;
-}
-
-main {
-  margin-left: 240px;
-  transition: margin-left 1s;
-  width: 100%;
-}
-
-:global .drawer-action {
-  margin-left: -240px;
-}
-
-:global .main-action {
-  margin-left: 0;
-}
-
-@media (max-width: 599px) {
-  .desktop__drawer[data-desktop] {
-    display: none;
-  }
-
-  main {
+.js {
+  &__contentAction {
     margin-left: 0;
   }
-}
 
-@media (min-width: 600px) {
-  .mobile__drawer[data-mobile] {
-    display: none;
+  &__drawerAction {
+    margin-left: -240px;
   }
 }
 
 .footer {
+  margin: 16px 0 0;
   padding: 16px 40px;
   color: #9E9E9E;
   background-color: #424242;

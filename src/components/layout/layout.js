@@ -46,8 +46,8 @@ export const layout = (content, page, language = 'en') => {
     if (window.innerWidth <= 599) {
       drawerMobile.open = true;
     } else {
-      drawerDesktopEl.classList.toggle('drawer-action');
-      mainEl.classList.toggle('main-action');
+      mainEl.classList.toggle(style.js__contentAction);
+      drawerDesktopEl.classList.toggle(style.js__drawerAction);
     }
   };
 
