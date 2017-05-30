@@ -1,6 +1,6 @@
 FROM buildpack-deps:jessie-scm
 
-ENV HOME /Frontend-Starter-Kit
+ENV HOME /Web-Starter-Kit
 
 WORKDIR ${HOME}
 ADD . $HOME
