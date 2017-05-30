@@ -1,5 +1,6 @@
 // import { MDCTemporaryDrawer } from '@material/drawer';
 import { __moduleExports as mdDrawer } from '@material/drawer/dist/mdc.drawer';
+import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
 
 import { template as _, noop } from 'lodash';
 
@@ -54,6 +55,11 @@ export const layout = (content, page, language = 'en') => {
   // document.querySelector('#mobile-menu').onclick = () => drawerMobile.open = false;
   drawerMobileEl.addEventListener('MDCTemporaryDrawer:open', () => bodyEl.style.overflowY = 'hidden');
   drawerMobileEl.addEventListener('MDCTemporaryDrawer:close', () => bodyEl.style.overflowY = 'auto');
+
+  [].forEach.call(
+    document.querySelectorAll('a.mdc-list-item'),
+    ripple => mdRipple.MDCRipple.attachTo(ripple)
+  );
 
   document.querySelector('#content').innerHTML = content;
 };
