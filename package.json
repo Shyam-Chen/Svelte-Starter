@@ -37,7 +37,7 @@
     "core-js": "2.4.1",
     "d3": "4.9.1",
     "d3-selection-multi": "1.0.1",
-    "firebase": "3.6.3",
+    "firebase": "4.1.0",
     "immutable": "3.8.1",
     "lodash-es": "4.17.4",
     "material-components-web": "0.12.0",
