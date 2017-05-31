@@ -1,7 +1,7 @@
 <header class="mdc-toolbar mdc-toolbar--fixed">
   <div class="mdc-toolbar__row">
     <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-      <button id="menu" class="${ style.header__menu }">
+      <button type="button" aria-label="Menu" id="menu" class="${ style.header__menu }">
         <svg fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 0h24v24H0z" fill="none" />
           <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
@@ -95,8 +95,7 @@
       <section class="mdc-layout mdc-layout--row">
         <section class="${ style.footer__section }">
           <h2 class="mdc-typography--title">Technologies</h2>
-          <ul>
-            <li><a href="http://www.ecma-international.org/ecma-262/7.0/" class="${ style.footer__link }">ECMAScript</a></li>
+          <ul class="${ style.footer__list }">
             <li><a href="https://www.w3.org/TR/html5/" class="${ style.footer__link }">HTML5</a></li>
             <li><a href="https://cordova.apache.org/" class="${ style.footer__link }">Cordova</a></li>
             <li><a href="https://electron.atom.io/" class="${ style.footer__link }">Electron</a></li>
@@ -106,7 +105,7 @@
 
         <section class="${ style.footer__section }">
           <h2 class="mdc-typography--title">Resources</h2>
-          <ul>
+          <ul class="${ style.footer__list }">
             <li><a href="https://www.packtpub.com/web-development?search=&type_list%5Bbooks%5D=books&offset=&rows=&sort=" class="${ style.footer__link }">Books</a></li>
             <li><a href="https://www.packtpub.com/web-development?search=&type_list%5Bvideos%5D=videos&offset=&rows=&sort=" class="${ style.footer__link }">Videos</a></li>
           </ul>
@@ -114,7 +113,7 @@
 
         <section class="${ style.footer__section }">
           <h2 class="mdc-typography--title">Languages</h2>
-          <ul>
+          <ul class="${ style.footer__list }">
             <% var languages = [['en', 'English'], ['zh', '中文'], ['ja', '日本語']]; %>
             <% [].forEach.call(languages, function(language) { %>
               <li>
