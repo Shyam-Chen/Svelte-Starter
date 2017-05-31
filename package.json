@@ -40,7 +40,7 @@
     "firebase": "3.6.3",
     "immutable": "3.8.1",
     "lodash-es": "4.17.4",
-    "material-components-web": "0.11.1",
+    "material-components-web": "0.12.0",
     "page": "1.7.1",
     "redux": "3.6.0",
     "redux-observable": "0.14.1"
