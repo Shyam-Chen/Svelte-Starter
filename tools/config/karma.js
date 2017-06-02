@@ -8,13 +8,15 @@ module.exports = config => {
     files: [
       { pattern: 'src/polyfills.js', watched: false },
       { pattern: 'src/vendor.js', watched: false },
-      'src/**/*.spec.js'
+      'src/**/*.spec.js',
+      'test.js'
     ],
     exclude: [],
     preprocessors: {
       'src/polyfills.js': ['prerollup'],
       'src/vendor.js': ['prerollup'],
-      'src/**/*.spec.js': ['rollup']
+      'src/**/*.spec.js': ['rollup'],
+      'test.js': ['rollup']
     },
     prerollupPreprocessor: SECONDARY_CONFIG,
     rollupPreprocessor: TEST_CONFIG,

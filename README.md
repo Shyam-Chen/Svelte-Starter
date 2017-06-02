@@ -128,7 +128,7 @@ $ yarn run gulp -- <TASK_NAME> --prod --watch --serve
 Example of Component
 
 ```html
-<!-- new-component.html -->
+<!-- src/components/new-component/new-component.html -->
 <div class="${ style.card }">
   <div class="${ style.card__title }">${ title }</div>
   <div class="${ style.card__content }">${ content }</div>
@@ -136,7 +136,7 @@ Example of Component
 ```
 
 ```scss
-// new-component.css
+// src/components/new-component/new-component.css
 .card {
   // ...
   &__title { /* ... */ }
@@ -145,7 +145,7 @@ Example of Component
 ```
 
 ```js
-// new-component.js
+// src/components/new-component/new-component.js
 import { template as _ } from 'lodash';
 
 import template from './new-component.html';
@@ -156,6 +156,11 @@ export const newComponent = (name, data) => {
   document.querySelector(`#${name}`)
     .innerHTML = _(template, { imports })(data);
 };
+```
+
+```js
+// src/components/new-component/index.js
+export * from './new-component';
 ```
 
 ```js
@@ -171,7 +176,28 @@ newComponent('ex', { title: 'Title here', content: 'Content here' });
 Example of Route
 
 ```js
-page('/new', () => document.querySelector('#app').innerHTML = 'New Route');
+// src/pages/new-route/new-route.js
+import { template as _ } from 'lodash';
+
+import { layout } from '../../components/layout';
+
+export const newRoute = () => {
+  page('/ex', () => {
+    layout(_(`<p>New Route</p>`)(), 'ex');
+  });
+};
+```
+
+```js
+// src/pages/new-route/index.js
+export * from './new-route';
+```
+
+```js
+// src/app.js
+import { newRoute } from './pages/new-route';
+
+newRoute();
 ```
 
 Example of Lodash
@@ -303,10 +329,6 @@ The practical examples:
 * Containers
   * [Counter](https://github.com/Shyam-Chen/Web-Starter-Kit/tree/counter)
   * ...
-* Pages
-  * ...
-* Functions
-  * ...
 
 ## All Commands
 
@@ -392,7 +414,7 @@ $ yarn run deploy
 * ---------- **P1: Urgent** ----------
 * ...
 * ---------- **P2: Required** ----------
-* ...
+* Write tests (`rxjs` & `redux`)
 * ---------- **P3: Important** ----------
 * Prerender HTML snapshots (`gulp-prerender`, ref [`prerender-spa-plugin`](https://github.com/chrisvfritz/prerender-spa-plugin))
 * ---------- **P4: Nice to have** ----------
