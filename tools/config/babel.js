@@ -18,23 +18,22 @@ export default {
           transform: 'lodash/${member}',
           preventFullImport: true
         },
-        // not yet
-        'rxjs': {
-          transform: 'rxjs/${member}',
-          preventFullImport: true
-        },
-        'rxjs/observable': {
-          transform: 'rxjs/observable/${member}',
-          preventFullImport: true
-        },
-        'rxjs/operator': {
-          transform: 'rxjs/operator/${member}',
-          preventFullImport: true
-        },
-        'rxjs/scheduler': {
-          transform: 'rxjs/scheduler/${member}',
-          preventFullImport: true
-        }
+        // 'rxjs': {
+        //   transform: 'rxjs/${member}',
+        //   preventFullImport: true
+        // },
+        // 'rxjs/observable': {
+        //   transform: 'rxjs/observable/${member}',
+        //   preventFullImport: true
+        // },
+        // 'rxjs/operator': {
+        //   transform: 'rxjs/operator/${member}',
+        //   preventFullImport: true
+        // },
+        // 'rxjs/scheduler': {
+        //   transform: 'rxjs/scheduler/${member}',
+        //   preventFullImport: true
+        // }
       }
     ]
   ],

@@ -33,11 +33,11 @@
   },
   "homepage": "https://github.com/Shyam-Chen/Web-Starter-Kit#readme",
   "dependencies": {
-    "@reactivex/rxjs": "5.4.0",
+    "@reactivex/rxjs": "5.0.2",
     "core-js": "2.4.1",
     "d3": "4.9.1",
     "d3-selection-multi": "1.0.1",
-    "firebase": "4.1.1",
+    "firebase": "3.6.3",
     "immutable": "3.8.1",
     "lodash-es": "4.17.4",
     "material-components-web": "0.12.1",
