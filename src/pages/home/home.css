@@ -1,7 +1,8 @@
-.card {
-  max-width: 23rem;
-  margin: 1rem;
+.section {
+  max-width: 800px;
+}
 
+.card {
   &__media {
     background-image: url('images/background.jpg');
     background-size: cover;
