@@ -10,7 +10,7 @@ describe('About', () => {
 
   it('Table head', () => {
     const el = webdriver.findElement(by.css('h3.mdc-typography--subheading1'));
-    expect(el.getText()).toEqual('Frontend Starter Kit');
+    expect(el.getText()).toEqual('Essentials');
   });
 
   it('Table body', () => {

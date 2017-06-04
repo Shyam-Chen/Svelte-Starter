@@ -1,23 +1,39 @@
 {
   "ABOUT": "關於",
   "TITLE": "所有功能",
-  "FRONTEND": {
-    "TITLE": "Frontend Starter Kit",
-    "ITEM": [
+  "ESSENTIALS": {
+    "TITLE": "精要",
+    "CONTENT": [
       "用戶端平台使用 HTML5",
+      "伺服端平台使用 Node",
+      "跨平台行動應用使用 Cordova",
+      "跨平台桌面應用使用 Electron",
       "使用者介面元件使用 Material",
       "後端雲端服務使用 Firebase",
       "路由和導覽使用 Page",
+      "應用程式框架使用 Express",
+      "資料庫物件模型使用 Mongoose",
+      "應用程式雲端託管使用 Heroku",
+      "資料庫雲端託管使用 mLab",
       "實用的函式使用 Lodash",
       "反應式的擴充使用 ReactiveX",
       "狀態容器使用 Redux",
       "不變的集合使用 Immutable",
       "資料視覺化使用 D3",
+      "安全認證使用 JWT",
+      "資料查詢語言使用 GraphQL",
+      "即時雙向通信使用 Socket"
+    ]
+  },
+  "TOOLS": {
+    "TITLE": "工具",
+    "CONTENT": [
       "建置系統使用 Gulp",
       "模組捆綁器使用 Rollup",
       "HTML 變形使用 PostHTML",
       "未來的 CSS 特性使用 PostCSS",
       "下一代的 JavaScript 使用 Babel",
+      "型別檢查使用 Flow",
       "同步瀏覽器使用 BrowserSync",
       "HTML 靜態程式碼分析使用 HTMLHint",
       "CSS 靜態程式碼分析使用 StyleLint",
@@ -25,38 +41,19 @@
       "測試框架使用 Jasmine",
       "單元測試使用 Karma",
       "端對端測試使用 Protractor",
-      "作業系統使用 Linux",
-      "文字編輯器使用 Atom",
-      "版本控制使用 Git",
-      "快速且確定性的建置使用 Yarn",
-      "軟體容器使用 Docker",
-      "持續整合使用 Travis"
-    ]
-  },
-  "BACKEND": {
-    "TITLE": "Backend Starter Kit",
-    "ITEM": [
-      "伺服端平台使用 Node",
-      "應用程式框架使用 Express",
-      "資料庫物件模型使用 Mongoose",
-      "應用程式雲端託管使用 Heroku",
-      "資料庫雲端託管使用 mLab",
-      "實用的函式使用 Lodash",
-      "反應式的擴充使用 ReactiveX",
-      "安全認證使用 JWT",
-      "資料查詢語言使用 GraphQL",
-      "即時雙向通信使用 Socket",
       "自動重新啟動應用程式使用 Nodemon",
       "保持應用程式持續運作使用 PM2",
-      "下一代的 JavaScript 使用 Babel",
-      "靜態程式碼分析使用 ESLint",
-      "測試框架使用 Mocha",
-      "斷言庫使用 Chai",
-      "測試間諜使用 Sinon",
+      "後端測試框架使用 Jest"
+    ]
+  },
+  "ENVIRONMENTS": {
+    "TITLE": "環境",
+    "CONTENT": [
       "作業系統使用 Linux",
       "文字編輯器使用 Atom",
       "版本控制使用 Git",
       "快速且確定性的建置使用 Yarn",
+      "反向代理和快取使用 Nginx",
       "軟體容器使用 Docker",
       "持續整合使用 Travis"
     ]

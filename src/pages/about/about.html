@@ -7,18 +7,27 @@
 
   <section class="${ style.section__content }">
     <section class="${ style.section__subcontent }">
-      <h3 class="mdc-typography--subheading1">${ FRONTEND.TITLE }</h3>
+      <h3 class="mdc-typography--subheading1">${ ESSENTIALS.TITLE }</h3>
       <ul class="mdc-list mdc-list--dense mdc-elevation--z2">
-        <% [].forEach.call(FRONTEND.ITEM, function(item) { %>
+        <% [].forEach.call(ESSENTIALS.CONTENT, function(item) { %>
           <li class="mdc-list-item"><%- item %></li>
         <% }); %>
       </ul>
     </section>
 
     <section class="${ style.section__subcontent }">
-      <h3 class="mdc-typography--subheading1">${ BACKEND.TITLE }</h3>
+      <h3 class="mdc-typography--subheading1">${ TOOLS.TITLE }</h3>
       <ul class="mdc-list mdc-list--dense mdc-elevation--z2">
-        <% [].forEach.call(BACKEND.ITEM, function(item) { %>
+        <% [].forEach.call(TOOLS.CONTENT, function(item) { %>
+          <li class="mdc-list-item"><%- item %></li>
+        <% }); %>
+      </ul>
+    </section>
+
+    <section class="${ style.section__subcontent }">
+      <h3 class="mdc-typography--subheading1">${ ENVIRONMENTS.TITLE }</h3>
+      <ul class="mdc-list mdc-list--dense mdc-elevation--z2">
+        <% [].forEach.call(ENVIRONMENTS.CONTENT, function(item) { %>
           <li class="mdc-list-item"><%- item %></li>
         <% }); %>
       </ul>
