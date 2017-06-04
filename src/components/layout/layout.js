@@ -22,7 +22,7 @@ import dataJa from './languages/layout-ja.json';
  * import { layout } from '../../components/layout';
  * layout(_(template, { imports })(data), 'home');
  */
-export const layout = (content, page, language = 'en') => {
+export const layout = (content: string, page: string, language: string = 'en'): void => {
   const app = document.querySelector('#app');
   const imports = { style };
   language === 'en' ? app.innerHTML = _(template, { imports })(data) : noop();
@@ -63,3 +63,5 @@ export const layout = (content, page, language = 'en') => {
 
   document.querySelector('#content').innerHTML = content;
 };
+
+// @flow

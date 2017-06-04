@@ -7,7 +7,8 @@ export default {
           modules: false
         }
       }
-    ]
+    ],
+    'flow'
   ],
   plugins: [
     'external-helpers',

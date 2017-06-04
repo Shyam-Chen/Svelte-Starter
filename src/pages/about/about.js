@@ -13,7 +13,6 @@ const imports = {
   style
 };
 
-// @flow
 export const about = (): void => {
   page('/about', () => {
     layout(_(template, { imports })(data), 'about');
@@ -27,3 +26,5 @@ export const about = (): void => {
     layout(_(template, { imports })(dataJa), 'about', 'ja');
   });
 };
+
+// @flow
