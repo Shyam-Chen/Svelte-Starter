@@ -16,7 +16,7 @@ const imports = {
   style
 };
 
-const common = (language = 'en') => {
+const common = (language: string = 'en'): void => {
   const signInButton = document.querySelector('#sign-in-button');
   const signOutButton = document.querySelector('#sign-out-button');
 

@@ -33,7 +33,7 @@
       "HTML transformations with PostHTML.",
       "Future CSS features with PostCSS.",
       "Next generation JavaScript with Babel.",
-      "Type checking with Flow.",
+      "Type annotations with Flow.",
       "Synchronised browser with BrowserSync.",
       "HTML static code analyzer with HTMLHint.",
       "CSS static code analyzer with StyleLint.",

@@ -19,14 +19,14 @@ const imports = {
   }
 };
 
-const common = () => {
+const common = (): void => {
   [].forEach.call(
     document.querySelectorAll('.mdc-button'),
     ripple => mdRipple.MDCRipple.attachTo(ripple)
   );
 };
 
-export const home = () => {
+export const home = (): void => {
   page('/', () => {
     layout(_(template, { imports })(data), 'home');
     common();

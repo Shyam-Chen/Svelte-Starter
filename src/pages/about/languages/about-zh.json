@@ -33,7 +33,7 @@
       "HTML 變形使用 PostHTML",
       "未來的 CSS 特性使用 PostCSS",
       "下一代的 JavaScript 使用 Babel",
-      "型別檢查使用 Flow",
+      "型別註釋使用 Flow",
       "同步瀏覽器使用 BrowserSync",
       "HTML 靜態程式碼分析使用 HTMLHint",
       "CSS 靜態程式碼分析使用 StyleLint",

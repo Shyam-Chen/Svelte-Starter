@@ -26,5 +26,3 @@ export const about = (): void => {
     layout(_(template, { imports })(dataJa), 'about', 'ja');
   });
 };
-
-// @flow

@@ -33,7 +33,7 @@
       "PostHTML を使用した HTML 変換",
       "PostCSS を使用した今後の CSS 機能",
       "Babel を使用した次世代 JavaScript",
-      "Flow を使用したタイプチェック",
+      "Flow を使用したタイプ注釈",
       "BrowserSync を使用した同期ブラウザ",
       "HTMLHint を使用した HTML スタティックコードアナライザ",
       "StyleLint を使用した CSS スタティックコードアナライザ",

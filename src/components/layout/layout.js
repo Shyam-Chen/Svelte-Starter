@@ -12,16 +12,11 @@ import dataZh from './languages/layout-zh.json';
 import dataJa from './languages/layout-ja.json';
 
 /**
- * @param {string} content - Page content
- * @param {string} page - Page name
- * @param {string} [language=en] - Page language
- *
- * @return {void}
- *
  * @example
  * import { layout } from '../../components/layout';
  * layout(_(template, { imports })(data), 'home');
  */
+
 export const layout = (content: string, page: string, language: string = 'en'): void => {
   const app = document.querySelector('#app');
   const imports = { style };
@@ -63,5 +58,3 @@ export const layout = (content: string, page: string, language: string = 'en'): 
 
   document.querySelector('#content').innerHTML = content;
 };
-
-// @flow
