@@ -6,6 +6,7 @@ import html from 'rollup-plugin-html';
 import postcss from 'rollup-plugin-postcss';
 import url from 'rollup-plugin-url';
 import json from 'rollup-plugin-json';
+import flow from 'rollup-plugin-flow';
 import babel from 'rollup-plugin-babel';
 import buble from 'rollup-plugin-buble';
 import globals from 'rollup-plugin-node-globals';
@@ -42,6 +43,7 @@ export const PRIMARY_CONFIG = {
     json(),
     lodash(),
     reactivex(),
+    flow(),
     babel(BABEL_CONFIG),
     globals(),
     builtins(),

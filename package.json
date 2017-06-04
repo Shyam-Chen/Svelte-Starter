@@ -15,6 +15,7 @@
     "reinstall": "yarn cache clean && git clean -dfx -e '.*' && yarn install",
     "deploy": "firebase deploy",
     "gulp": "gulp",
+    "flow": "flow",
     "predev": "rimraf public",
     "preprod": "rimraf public",
     "postinstall": "gulp webdriver && cd functions && yarn"
@@ -59,6 +60,7 @@
     "express": "4.15.3",
     "express-history-api-fallback": "2.2.1",
     "firebase-tools": "3.9.0",
+    "flow-bin": "0.47.0",
     "gulp": "3.9.1",
     "gulp-eslint": "3.0.1",
     "gulp-htmlhint": "0.3.1",
@@ -99,6 +101,7 @@
     "rollup-plugin-babel": "2.7.1",
     "rollup-plugin-buble": "0.15.0",
     "rollup-plugin-commonjs": "8.0.2",
+    "rollup-plugin-flow": "1.1.1",
     "rollup-plugin-html": "0.2.1",
     "rollup-plugin-json": "2.1.1",
     "rollup-plugin-node-builtins": "2.1.2",

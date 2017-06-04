@@ -13,7 +13,8 @@ const imports = {
   style
 };
 
-export const about = () => {
+// @flow
+export const about = (): void => {
   page('/about', () => {
     layout(_(template, { imports })(data), 'about');
   });
