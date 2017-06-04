@@ -4,5 +4,8 @@
     ["/", "Home"],
     ["/about", "About"],
     ["/contact", "Contact"]
-  ]
+  ],
+  "TECHNOLOGIES": "Technologies",
+  "RESOURCES": "Resources",
+  "LANGUAGES": "Languages"
 }

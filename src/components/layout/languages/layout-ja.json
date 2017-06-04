@@ -4,5 +4,8 @@
     ["/ja", "ホーム"],
     ["/ja/about", "について"],
     ["/ja/contact", "コンタクト"]
-  ]
+  ],
+  "TECHNOLOGIES": "テクノロジー",
+  "RESOURCES": "リソース",
+  "LANGUAGES": "言語"
 }

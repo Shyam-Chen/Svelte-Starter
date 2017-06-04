@@ -4,5 +4,8 @@
     ["/zh", "首頁"],
     ["/zh/about", "關於"],
     ["/zh/contact", "聯繫"]
-  ]
+  ],
+  "TECHNOLOGIES": "技術",
+  "RESOURCES": "資源",
+  "LANGUAGES": "語言"
 }

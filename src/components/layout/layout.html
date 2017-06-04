@@ -94,7 +94,7 @@
     <footer class="mdc-typography--body1 ${ style.footer }">
       <section class="flexbox flexbox--row">
         <section class="${ style.footer__section }">
-          <h2 class="mdc-typography--title">Technologies</h2>
+          <h2 class="mdc-typography--title">${ TECHNOLOGIES }</h2>
           <ul class="${ style.footer__list }">
             <li><a href="https://www.w3.org/TR/html5/" class="${ style.footer__link }">HTML5</a></li>
             <li><a href="https://cordova.apache.org/" class="${ style.footer__link }">Cordova</a></li>
@@ -104,7 +104,7 @@
         </section>
 
         <section class="${ style.footer__section }">
-          <h2 class="mdc-typography--title">Resources</h2>
+          <h2 class="mdc-typography--title">${ RESOURCES }</h2>
           <ul class="${ style.footer__list }">
             <li><a href="https://www.packtpub.com/web-development?search=&type_list%5Bbooks%5D=books&offset=&rows=&sort=" class="${ style.footer__link }">Books</a></li>
             <li><a href="https://www.packtpub.com/web-development?search=&type_list%5Bvideos%5D=videos&offset=&rows=&sort=" class="${ style.footer__link }">Videos</a></li>
@@ -112,7 +112,7 @@
         </section>
 
         <section class="${ style.footer__section }">
-          <h2 class="mdc-typography--title">Languages</h2>
+          <h2 class="mdc-typography--title">${ LANGUAGES }</h2>
           <ul class="${ style.footer__list }">
             <% var languages = [['en', 'English'], ['zh', '中文'], ['ja', '日本語']]; %>
             <% [].forEach.call(languages, function(language) { %>

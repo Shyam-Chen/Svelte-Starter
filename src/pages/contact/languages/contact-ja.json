@@ -1,5 +1,6 @@
 {
   "CONTACT": "コンタクト",
+  "TITLE": "詳細は以下のフォームに記入してください！",
   "ACCOUNT": {
     "SIGN_IN_BUTTON": "Google でログイン",
     "SIGN_OUT_BUTTON": "サインアウト"
