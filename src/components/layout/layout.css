@@ -63,8 +63,8 @@
 
   &__list {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
+    padding: 0 0 1.5rem .75rem;
+    margin: -.75rem 0 0;
   }
 
   &__link {
@@ -74,6 +74,6 @@
 
   &__section {
     flex: 1;
-    padding: 1rem;
+    padding: .75rem;
   }
 }
