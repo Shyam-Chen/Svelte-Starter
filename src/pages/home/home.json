@@ -5,6 +5,12 @@
   "WEB": {
     "CONTENT": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS."
   },
+  "MOBILE": {
+    "CONTENT": "A boilerplate for Cordova, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS."
+  },
+  "DESKTOP": {
+    "CONTENT": "A boilerplate for Electron, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS."
+  },
   "BACKEND": {
     "CONTENT": "A boilerplate for Node.js, Express, Mongoose, Heroku, mLab, Nodemon, PM2, and Babel."
   },

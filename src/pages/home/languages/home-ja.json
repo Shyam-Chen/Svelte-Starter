@@ -5,6 +5,12 @@
   "WEB": {
     "CONTENT": "HTML5、Material、Firebase、Gulp、Rollup、Babel、PostHTML と PostCSS のための定型文"
   },
+  "MOBILE": {
+    "CONTENT": "Cordova、Material、Firebase、Gulp、Rollup、Babel、PostHTML と PostCSS のための定型文"
+  },
+  "DESKTOP": {
+    "CONTENT": "Electron、Material、Firebase、Gulp、Rollup、Babel、PostHTML と PostCSS のための定型文"
+  },
   "BACKEND": {
     "CONTENT": "Node.js、Express、Mongoose、Heroku、mLab、Nodemon、PM2 と Babel のための定型文"
   },

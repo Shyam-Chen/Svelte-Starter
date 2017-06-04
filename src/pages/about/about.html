@@ -1,12 +1,12 @@
-<header class="mdc-layout mdc-layout--center">
+<header class="flexbox flexbox--center">
   <h1 class="mdc-typography--display1 mdc-theme--primary">${ ABOUT }</h1>
 </header>
 
 <section class="${ style.section }">
   <h3 class="mdc-typography--title ${ style.section__title }">${ TITLE }</h3>
 
-  <section class="${ style.section__content }">
-    <section class="${ style.section__subcontent }">
+  <section class="mdc-layout-grid ${ style.section__content }">
+    <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
       <h3 class="mdc-typography--subheading1">${ ESSENTIALS.TITLE }</h3>
       <ul class="mdc-list mdc-list--dense mdc-elevation--z2">
         <% [].forEach.call(ESSENTIALS.CONTENT, function(item) { %>
@@ -15,7 +15,7 @@
       </ul>
     </section>
 
-    <section class="${ style.section__subcontent }">
+    <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
       <h3 class="mdc-typography--subheading1">${ TOOLS.TITLE }</h3>
       <ul class="mdc-list mdc-list--dense mdc-elevation--z2">
         <% [].forEach.call(TOOLS.CONTENT, function(item) { %>
@@ -24,7 +24,7 @@
       </ul>
     </section>
 
-    <section class="${ style.section__subcontent }">
+    <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
       <h3 class="mdc-typography--subheading1">${ ENVIRONMENTS.TITLE }</h3>
       <ul class="mdc-list mdc-list--dense mdc-elevation--z2">
         <% [].forEach.call(ENVIRONMENTS.CONTENT, function(item) { %>

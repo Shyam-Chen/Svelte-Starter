@@ -5,6 +5,12 @@
   "WEB": {
     "CONTENT": "HTML5、Material、Firebase、Gulp、Rollup、Babel、PostHTML 和 PostCSS 的樣板"
   },
+  "MOBILE": {
+    "CONTENT": "Cordova、Material、Firebase、Gulp、Rollup、Babel、PostHTML 和 PostCSS 的樣板"
+  },
+  "DESKTOP": {
+    "CONTENT": "Electron、Material、Firebase、Gulp、Rollup、Babel、PostHTML 和 PostCSS 的樣板"
+  },
   "BACKEND": {
     "CONTENT": "Node.js、Express、Mongoose、Heroku、mLab、Nodemon、PM2 和 Babel 的樣板"
   },

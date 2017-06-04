@@ -1,9 +1,9 @@
-<header class="mdc-layout mdc-layout--center">
+<header class="flexbox flexbox--center">
   <h1 class="mdc-typography--display1 mdc-theme--primary">${ HOME }</h1>
 </header>
 
-<section class="mdc-layout--center">
-  <section class="mdc-cell--column mdc-cell--center">
+<section class="flexbox flexbox--center">
+  <section class="flexbox__cell--column flexbox__cell--center">
     <img src="${ image.logo }" alt="Web Fundamentals">
     <h3 class="mdc-typography--title">${ TITLE }</h3>
     <p class="mdc-typography--body1">${ DESCRIPTION }</p>
@@ -28,7 +28,7 @@
       <h1 class="mdc-card__title mdc-card__title--large ${ style.card__title }">Mobile Starter Kit</h1>
     </section>
     <section class="mdc-card__supporting-text">
-      A boilerplate for Cordova, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.
+      ${ MOBILE.CONTENT }
     </section>
     <section class="mdc-card__actions">
       <a href="https://github.com/Shyam-Chen/Mobile-Starter-Kit" class="mdc-button mdc-button--compact mdc-button--primary mdc-card__action">${ GET_STARTED }</a>
@@ -40,7 +40,7 @@
       <h1 class="mdc-card__title mdc-card__title--large ${ style.card__title }">Desktop Starter Kit</h1>
     </section>
     <section class="mdc-card__supporting-text">
-      A boilerplate for Electron, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.
+      ${ DESKTOP.CONTENT }
     </section>
     <section class="mdc-card__actions">
       <a href="https://github.com/Shyam-Chen/Desktop-Starter-Kit" class="mdc-button mdc-button--compact mdc-button--primary mdc-card__action">${ GET_STARTED }</a>

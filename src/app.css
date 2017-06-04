@@ -1,5 +1,18 @@
+html {
+  height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 :global {
-  & .mdc-layout {
+  & .flexbox {
     display: flex;
 
     &--row {
@@ -13,32 +26,19 @@
     &--center {
       justify-content: center;
     }
+
+    &__cell {
+      &--column {
+        flex-direction: column;
+      }
+
+      &--center {
+        text-align: center;
+      }
+
+      &--right {
+        text-align: right;
+      }
+    }
   }
-
-  & .mdc-cell {
-    &--column {
-      flex-direction: column;
-    }
-
-    &--center {
-      text-align: center;
-    }
-
-    &--right {
-      text-align: right;
-    }
-  }
-}
-
-html {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  height: 100%;
 }

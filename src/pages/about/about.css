@@ -4,13 +4,6 @@
   }
 
   &__content {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    margin: .5rem;
-  }
-
-  &__subcontent {
-    margin: .5rem;
+    max-width: 1000px;
   }
 }
