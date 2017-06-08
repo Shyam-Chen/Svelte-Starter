@@ -58,8 +58,6 @@
 .footer {
   margin: 16px 0 0;
   padding: 16px 40px;
-  color: #FFFFFF;
-  background-color: #263238;
 
   &__list {
     list-style-type: none;
@@ -68,7 +66,6 @@
   }
 
   &__link {
-    color: #FFFFFF;
     text-decoration: none;
   }
 
