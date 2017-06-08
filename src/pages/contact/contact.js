@@ -17,8 +17,8 @@ const imports = {
 };
 
 const common = (language: string = 'en'): void => {
-  const signInButton = document.querySelector('#sign-in-button');
-  const signOutButton = document.querySelector('#sign-out-button');
+  // const signInButton = document.querySelector('#sign-in-button');
+  // const signOutButton = document.querySelector('#sign-out-button');
 
   const name = document.querySelector('#name');
   const nameLabel = document.querySelector('#name + .mdc-textfield__label');
@@ -32,56 +32,21 @@ const common = (language: string = 'en'): void => {
   const MDCSnackbar = mdSnackbar.MDCSnackbar;
   const snackbar = new MDCSnackbar(sendToast);
 
-  signInButton.style.display = '';
-  signOutButton.style.display = 'none';
-
-  signInButton.onclick = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider);
-  };
-
-  signOutButton.onclick = () => {
-    firebase.auth().signOut();
-    signInButton.style.display = '';
-    signOutButton.style.display = 'none';
-  };
-
-  sendButton.onclick = () => {
-    language === 'en' ? snackbar.show({ message: 'Please login first.' }) : noop();
-    language === 'zh' ? snackbar.show({ message: '請先登入' }) : noop();
-    language === 'ja' ? snackbar.show({ message: '最初にログインしてください' }) : noop();
-  };
-
   firebase.auth()
     .onAuthStateChanged(user => {
-      let currentUID;
-
-      if (user && currentUID === user.uid) return;
-
       if (user) {
-        currentUID = user.uid;
-
-        signInButton.style.display = 'none';
-        signOutButton.style.display = '';
-
-        name.value = `${user.displayName}`;
-        email.value = `${user.email}`;
-        name.setAttribute('readonly', '');
-        email.setAttribute('readonly', '');
-        nameLabel.classList.add('mdc-textfield__label--float-above');
-        emailLabel.classList.add('mdc-textfield__label--float-above');
-
+        // console.log('Anonymous user signed-in.', user);
         sendButton.onclick = () => {
-          if (comment.value !== '') {
+          if (name.value !== '' && email.value !== '' && comment.value !== '') {
             firebase.database()
               .ref(`users/${user.uid}`)
-              .push({
-                name: user.displayName,
-                email: user.email,
-                comment: comment.value
-              });
+              .push({ name: name.value, email: email.value, comment: comment.value });
 
+            name.value = '';
+            email.value = '';
             comment.value = '';
+            nameLabel.classList.remove('mdc-textfield__label--float-above');
+            emailLabel.classList.remove('mdc-textfield__label--float-above');
             commentLabel.classList.remove('mdc-textfield__label--float-above');
 
             language === 'en' ? snackbar.show({ message: 'Thanks for your comment.' }) : noop();
@@ -94,24 +59,91 @@ const common = (language: string = 'en'): void => {
           }
         };
       } else {
-        currentUID = null;
-
-        signInButton.style.display = '';
-
-        name.value = '';
-        email.value = '';
-        name.removeAttribute('readonly');
-        email.removeAttribute('readonly');
-        nameLabel.classList.remove('mdc-textfield__label--float-above');
-        emailLabel.classList.remove('mdc-textfield__label--float-above');
-
-        sendButton.onclick = () => {
-          language === 'en' ? snackbar.show({ message: 'Please login first.' }) : noop();
-          language === 'zh' ? snackbar.show({ message: '請先登入' }) : noop();
-          language === 'ja' ? snackbar.show({ message: '最初にログインしてください' }) : noop();
-        };
+        // console.log('There was no anonymous session. Creating a new anonymous user.');
+        firebase.auth().signInAnonymously();
       }
     });
+
+  // signInButton.style.display = '';
+  // signOutButton.style.display = 'none';
+  //
+  // signInButton.onclick = () => {
+  //   const provider = new firebase.auth.GoogleAuthProvider();
+  //   firebase.auth().signInWithPopup(provider);
+  // };
+  //
+  // signOutButton.onclick = () => {
+  //   firebase.auth().signOut();
+  //   signInButton.style.display = '';
+  //   signOutButton.style.display = 'none';
+  // };
+  //
+  // sendButton.onclick = () => {
+  //   language === 'en' ? snackbar.show({ message: 'Please login first.' }) : noop();
+  //   language === 'zh' ? snackbar.show({ message: '請先登入' }) : noop();
+  //   language === 'ja' ? snackbar.show({ message: '最初にログインしてください' }) : noop();
+  // };
+  //
+  // firebase.auth()
+  //   .onAuthStateChanged(user => {
+  //     let currentUID;
+  //
+  //     if (user && currentUID === user.uid) return;
+  //
+  //     if (user) {
+  //       currentUID = user.uid;
+  //
+  //       signInButton.style.display = 'none';
+  //       signOutButton.style.display = '';
+  //
+  //       name.value = `${user.displayName}`;
+  //       email.value = `${user.email}`;
+  //       name.setAttribute('readonly', '');
+  //       email.setAttribute('readonly', '');
+  //       nameLabel.classList.add('mdc-textfield__label--float-above');
+  //       emailLabel.classList.add('mdc-textfield__label--float-above');
+  //
+  //       sendButton.onclick = () => {
+  //         if (comment.value !== '') {
+  //           firebase.database()
+  //             .ref(`users/${user.uid}`)
+  //             .push({
+  //               name: user.displayName,
+  //               email: user.email,
+  //               comment: comment.value
+  //             });
+  //
+  //           comment.value = '';
+  //           commentLabel.classList.remove('mdc-textfield__label--float-above');
+  //
+  //           language === 'en' ? snackbar.show({ message: 'Thanks for your comment.' }) : noop();
+  //           language === 'zh' ? snackbar.show({ message: '感謝您的評論' }) : noop();
+  //           language === 'ja' ? snackbar.show({ message: 'あなたのコメントをありがとう' }) : noop();
+  //         } else {
+  //           language === 'en' ? snackbar.show({ message: 'Not valid!' }) : noop();
+  //           language === 'zh' ? snackbar.show({ message: '無效！' }) : noop();
+  //           language === 'ja' ? snackbar.show({ message: '有効ではありません！' }) : noop();
+  //         }
+  //       };
+  //     } else {
+  //       currentUID = null;
+  //
+  //       signInButton.style.display = '';
+  //
+  //       name.value = '';
+  //       email.value = '';
+  //       name.removeAttribute('readonly');
+  //       email.removeAttribute('readonly');
+  //       nameLabel.classList.remove('mdc-textfield__label--float-above');
+  //       emailLabel.classList.remove('mdc-textfield__label--float-above');
+  //
+  //       sendButton.onclick = () => {
+  //         language === 'en' ? snackbar.show({ message: 'Please login first.' }) : noop();
+  //         language === 'zh' ? snackbar.show({ message: '請先登入' }) : noop();
+  //         language === 'ja' ? snackbar.show({ message: '最初にログインしてください' }) : noop();
+  //       };
+  //     }
+  //   });
 
 
   [].forEach.call(
