@@ -8,6 +8,7 @@ import './app.css';
 import { home } from './pages/home';
 import { about } from './pages/about';
 import { contact } from './pages/contact';
+import { admin } from './pages/admin';
 import { notfound } from './pages/not-found';
 
 // Observable::forkJoin(
@@ -59,5 +60,6 @@ if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || wi
 home();
 about();
 contact();
+admin();
 notfound();
 page();

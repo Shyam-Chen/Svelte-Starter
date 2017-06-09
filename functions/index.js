@@ -18,3 +18,8 @@ exports.addMessage = functions.https
         res.redirect(303, snapshot.ref);
       });
   });
+
+// const ref = admin.database().ref('/users');
+// ref.once('value', snapshot => {
+//   console.log(snapshot.val());
+// });

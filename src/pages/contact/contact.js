@@ -36,8 +36,8 @@ const common = (language: string = 'en'): void => {
         sendButton.onclick = () => {
           if (name.value !== '' && email.value !== '' && comment.value !== '') {
             firebase.database()
-              .ref(`users/${user.uid}`)
-              .push({ name: name.value, email: email.value, comment: comment.value });
+              .ref('users')
+              .push({ id: user.uid, name: name.value, email: email.value, message: comment.value });
 
             name.value = '';
             email.value = '';

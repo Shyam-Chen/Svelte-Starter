@@ -7,7 +7,8 @@ import { SITE_URL, SOURCE_ROOT, DIST_ROOT } from '../constants';
 gulp.task('sitemap', () => {
   return gulp.src([
       join(SOURCE_ROOT, 'pages/**/*.html'),
-      `!${join(SOURCE_ROOT, 'pages/not-found/not-found.html')}`
+      `!${join(SOURCE_ROOT, 'pages/not-found/not-found.html')}`,
+      `!${join(SOURCE_ROOT, 'pages/admin/admin.html')}`
     ])
     .pipe(sitemap({
       siteUrl: SITE_URL,
