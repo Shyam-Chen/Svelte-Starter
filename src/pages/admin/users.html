@@ -1,0 +1,23 @@
+<table class="md-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Message</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% snapshot.forEach(function(childSnapshot) { %>
+      <tr>
+        <td><%- childSnapshot.val().name %></td>
+        <td><%- childSnapshot.val().email %></td>
+        <td><%- childSnapshot.val().message %></td>
+        <td>
+          <button type="button" class="mdc-button mdc-button--primary">Edit</button>
+          <button type="button" class="mdc-button mdc-button--primary">Delete</button>
+        </td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>

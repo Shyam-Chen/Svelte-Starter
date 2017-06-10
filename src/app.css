@@ -41,4 +41,36 @@ body {
       }
     }
   }
+
+  & .md-table {
+    border-collapse: collapse;
+    white-space: nowrap;
+    background: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+
+    & th,
+    & td {
+      padding: 15px;
+    }
+
+    & th {
+      border-top: 1px solid rgba(0, 0, 0, .1);
+      border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    & td {
+      border: none;
+      border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    & tbody tr {
+      transition-duration: .28s;
+      transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+      transition-property: background-color;
+    }
+
+    & tbody tr:hover {
+      background-color: #EEEEEE;
+    }
+  }
 }

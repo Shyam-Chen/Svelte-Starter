@@ -3,6 +3,8 @@ import { template as _ } from 'lodash';
 import template from './admin.html';
 import style from './admin.css';
 
+import usersTemplate from './users.html';
+
 export const admin = (): void => {
   page('/admin', () => {
     document.querySelector('#app')
@@ -28,6 +30,7 @@ export const admin = (): void => {
       signOutButton.style.display = 'none';
     };
 
+    // firebase.auth().createUserWithEmailAndPassword(email, password)
     firebase.auth()
       .onAuthStateChanged(user => {
         let currentUID;
@@ -44,16 +47,11 @@ export const admin = (): void => {
           firebase.database()
             .ref('users')
             .once('value', snapshot => {
-              snapshot.forEach(childSnapshot => {
-                list.innerHTML += `
-                  <p>
-                    Name: ${childSnapshot.val().name},
-                    Email: ${childSnapshot.val().email},
-                    Message: ${childSnapshot.val().message}
-                  </p>
-                `;
-              });
+              list.innerHTML = _(usersTemplate, { imports: { snapshot } })();
             });
+
+
+
         } else {
           currentUID = null;
 
