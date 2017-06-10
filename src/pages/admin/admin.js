@@ -31,7 +31,9 @@ export const admin = (): void => {
     };
 
     // TODO: admin account
-    // firebase.auth().createUserWithEmailAndPassword(email, password)
+    // firebase.auth()
+    //   .signInWithEmailAndPassword(email, password)
+
     firebase.auth()
       .onAuthStateChanged(user => {
         let currentUID;
@@ -50,8 +52,9 @@ export const admin = (): void => {
             .on('value', snapshot => {
               list.innerHTML = _(usersTemplate, { imports: { snapshot } })();
 
+              // TODO: multi-field search (?)
               const searchName = document.querySelector('#search-name');
-              const searchEmail = document.querySelector('#search-email');
+              // const searchEmail = document.querySelector('#search-email');
 
               searchName.onkeyup = () => {
                 let input, filter, table, tr, td, i;
@@ -72,24 +75,24 @@ export const admin = (): void => {
                 }
               };
 
-              searchEmail.onkeyup = () => {
-                let input, filter, table, tr, td, i;
-                input = document.querySelector('#search-email');
-                filter = input.value.toUpperCase();
-                table = document.querySelector('#table');
-                tr = table.getElementsByTagName('tr');
-
-                for (i = 0; i < tr.length; i++) {
-                  td = tr[i].getElementsByTagName('td')[1];
-                  if (td) {
-                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                      tr[i].style.display = '';
-                    } else {
-                      tr[i].style.display = 'none';
-                    }
-                  }
-                }
-              };
+              // searchEmail.onkeyup = () => {
+              //   let input, filter, table, tr, td, i;
+              //   input = document.querySelector('#search-email');
+              //   filter = input.value.toUpperCase();
+              //   table = document.querySelector('#table');
+              //   tr = table.getElementsByTagName('tr');
+              //
+              //   for (i = 0; i < tr.length; i++) {
+              //     td = tr[i].getElementsByTagName('td')[1];
+              //     if (td) {
+              //       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+              //         tr[i].style.display = '';
+              //       } else {
+              //         tr[i].style.display = 'none';
+              //       }
+              //     }
+              //   }
+              // };
 
 
               [].forEach.call(
