@@ -46,8 +46,22 @@ export const admin = (): void => {
 
           firebase.database()
             .ref('users')
-            .once('value', snapshot => {
+            .on('value', snapshot => {
               list.innerHTML = _(usersTemplate, { imports: { snapshot } })();
+
+
+              [].forEach.call(
+                document.querySelectorAll('.mdc-button[data-delete]'),
+                deleteButton => {
+                  deleteButton.onclick = () => {
+                    firebase.database().ref(`users/${deleteButton.dataset.delete}`).remove();
+                  };
+                }
+              );
+
+              // function deleteUser(userId){
+              //   firebase.database().ref(`users/${userId}`).remove();
+              // }
             });
 
 
@@ -55,7 +69,6 @@ export const admin = (): void => {
         } else {
           currentUID = null;
 
-          list.innerHTML = '';
           list.style.display = 'none';
         }
       });
