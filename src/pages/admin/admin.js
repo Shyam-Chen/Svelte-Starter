@@ -50,6 +50,48 @@ export const admin = (): void => {
             .on('value', snapshot => {
               list.innerHTML = _(usersTemplate, { imports: { snapshot } })();
 
+              const searchName = document.querySelector('#search-name');
+              const searchEmail = document.querySelector('#search-email');
+
+              searchName.onkeyup = () => {
+                let input, filter, table, tr, td, i;
+                input = document.querySelector('#search-name');
+                filter = input.value.toUpperCase();
+                table = document.querySelector('#table');
+                tr = table.getElementsByTagName('tr');
+
+                for (i = 0; i < tr.length; i++) {
+                  td = tr[i].getElementsByTagName('td')[0];
+                  if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                      tr[i].style.display = '';
+                    } else {
+                      tr[i].style.display = 'none';
+                    }
+                  }
+                }
+              };
+
+              searchEmail.onkeyup = () => {
+                let input, filter, table, tr, td, i;
+                input = document.querySelector('#search-email');
+                filter = input.value.toUpperCase();
+                table = document.querySelector('#table');
+                tr = table.getElementsByTagName('tr');
+
+                for (i = 0; i < tr.length; i++) {
+                  td = tr[i].getElementsByTagName('td')[1];
+                  if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                      tr[i].style.display = '';
+                    } else {
+                      tr[i].style.display = 'none';
+                    }
+                  }
+                }
+              };
+
+
               [].forEach.call(
                 document.querySelectorAll('.mdc-button[data-delete]'),
                 deleteButton => {
@@ -95,13 +137,7 @@ export const admin = (): void => {
               );
 
               // TODO: pagination
-
-              // TODO: search data
-
             });
-
-
-
         } else {
           currentUID = null;
 
