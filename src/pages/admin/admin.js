@@ -10,26 +10,6 @@ export const admin = (): void => {
     document.querySelector('#app')
       .innerHTML = _(template, { imports: { style } })();
 
-    // const signInButton = document.querySelector('#sign-in-button');
-    // const signOutButton = document.querySelector('#sign-out-button');
-
-
-
-    // signInButton.style.display = '';
-    // signOutButton.style.display = 'none';
-    // list.style.display = 'none';
-
-    // signInButton.onclick = () => {
-    //   const provider = new firebase.auth.GoogleAuthProvider();
-    //   firebase.auth().signInWithPopup(provider);
-    // };
-
-    // signOutButton.onclick = () => {
-    //   firebase.auth().signOut();
-    //   signInButton.style.display = '';
-    //   signOutButton.style.display = 'none';
-    // };
-
     const adminEmail = document.querySelector('#admin-email');
     const adminPassword = document.querySelector('#admin-password');
     const adminSignIn = document.querySelector('#admin-sign-in');
@@ -37,14 +17,16 @@ export const admin = (): void => {
 
     const signOutContent = document.querySelector('#sign-out-content');
     const signInContent = document.querySelector('#sign-in-content');
-    const list = document.querySelector('#list');
 
     adminSignIn.onclick = () => {
-      console.log(adminEmail.value, adminPassword.value);
       firebase.auth()
         .signInWithEmailAndPassword(adminEmail.value, adminPassword.value)
+        .then(() => {
+          adminEmail.value = '';
+          adminPassword.value = ''
+        })
         .catch(error => {
-          console.log(error.code, error.message);
+          console.error(error.code, error.message);
         });
     };
 
@@ -54,6 +36,7 @@ export const admin = (): void => {
       signInContent.style.display = 'none';
     };
 
+    firebase.auth().signOut();
     signOutContent.style.display = '';
     signInContent.style.display = 'none';
 
@@ -66,16 +49,13 @@ export const admin = (): void => {
         if (user) {
           currentUID = user.uid;
 
-          // signInButton.style.display = 'none';
-          // signOutButton.style.display = '';
-          // list.style.display = '';
-
           signOutContent.style.display = 'none';
           signInContent.style.display = '';
 
           firebase.database()
             .ref('users')
             .on('value', snapshot => {
+              const list = document.querySelector('#list');
               list.innerHTML = _(usersTemplate, { imports: { snapshot } })();
 
               // TODO: multi-field search (?)
@@ -173,22 +153,3 @@ export const admin = (): void => {
       });
   });
 };
-
-// {
-//   "rules": {
-//     "admin": {
-//       ".read": "auth !== null",
-//       ".write": "auth === auth.email"
-//     },
-//     "admin": {
-//       "$room_id": {
-//         ".read": "data.child(auth.uid).exists()",
-//         ".validate": "root.child('room_names/'+$room_id).exists()",
-//         "$user_id": {
-//           ".write": "auth.uid === $user_id",
-//           ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length < 20"
-//         }
-//       }
-//     }
-//   }
-// }
