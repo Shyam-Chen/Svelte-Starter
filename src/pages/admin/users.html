@@ -1,7 +1,7 @@
 <table class="md-table">
   <thead>
     <tr>
-      <th>ID</th>
+      <!-- <th>ID</th> -->
       <th>Name</th>
       <th>Email</th>
       <th>Message</th>
@@ -11,15 +11,48 @@
   <tbody>
     <% snapshot.forEach(function(childSnapshot) { %>
       <tr>
-        <td><%- childSnapshot.key %></td>
+        <!-- <td><%- childSnapshot.key %></td> -->
         <td><%- childSnapshot.val().name %></td>
         <td><%- childSnapshot.val().email %></td>
         <td><%- childSnapshot.val().message %></td>
         <td>
-          <button type="button" class="mdc-button mdc-button--primary">Edit</button>
+          <button type="button" class="mdc-button mdc-button--primary"
+            data-edit="<%- childSnapshot.key %>"
+            data-edit-name="<%- childSnapshot.val().name %>"
+            data-edit-email="<%- childSnapshot.val().email %>"
+            data-edit-message="<%- childSnapshot.val().message %>"
+          >Edit</button>
           <button type="button" class="mdc-button mdc-button--primary" data-delete="<%- childSnapshot.key %>">Delete</button>
         </td>
       </tr>
     <% }); %>
   </tbody>
 </table>
+
+<hr>
+
+<h3>Edit</h3>
+
+<div id="edit" class="mdc-layout-grid">
+  <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-elevation--z2">
+    <div class="mdc-form-field mdc-form-field--align-end">
+      <div class="mdc-textfield">
+        <label for="name">Name: </label>
+        <input type="text" class="mdc-textfield__input" id="edit-name" value="">
+      </div>
+
+      <div class="mdc-textfield">
+        <label for="email">Email: </label>
+        <input type="text" class="mdc-textfield__input" id="edit-email" value="">
+      </div>
+
+      <div class="mdc-textfield">
+        <label for="message">Message: </label>
+        <input type="text" class="mdc-textfield__input" id="edit-message" value="">
+      </div>
+    </div>
+
+    <button type="button" class="mdc-button mdc-button--primary" id="edit-save">Save</button>
+    <button type="button" class="mdc-button mdc-button--primary" id="edit-cancel">Cancel</button>
+  </div>
+</div>

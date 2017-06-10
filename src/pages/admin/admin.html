@@ -16,18 +16,22 @@
   </button>
 </div>
 
-<div class="mdc-form-field mdc-form-field--align-end">
-  <div class="mdc-textfield">
-    <label for="name">Name: </label>
-    <input type="text" class="mdc-textfield__input" id="name" placeholder="Name">
-  </div>
+<div class="mdc-layout-grid">
+  <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-elevation--z2">
+    <div class="mdc-form-field mdc-form-field--align-end">
+      <div class="mdc-textfield">
+        <label for="name">Name: </label>
+        <input type="text" class="mdc-textfield__input" id="name" placeholder="Name">
+      </div>
 
-  <div class="mdc-textfield">
-    <label for="email">Email: </label>
-    <input type="text" class="mdc-textfield__input" id="email" placeholder="Email">
+      <div class="mdc-textfield">
+        <label for="email">Email: </label>
+        <input type="text" class="mdc-textfield__input" id="email" placeholder="Email">
+      </div>
+    </div>
+
+    <button type="button" class="mdc-button mdc-button--primary">Search</button>
   </div>
 </div>
-
-<button type="button" class="mdc-button mdc-button--primary">Search</button>
 
 <div id="list"></div>
