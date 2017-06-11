@@ -1,17 +1,19 @@
-<div id="sign-out-content" class="mdc-layout-grid">
+<div id="sign-out-content" class="${ style.signIn }">
   <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-elevation--z2">
-    <h3>Admin</h3>
+    <div class="mdc-typography--title flexbox__cell--center" style="padding: 1rem 0 0">Admin</div>
 
-    <div class="mdc-form-field">
+    <div class="mdc-form-field flexbox flexbox__cell--column ${ style.signInForm }">
       <div class="mdc-textfield">
-        <input type="text" class="mdc-textfield__input" id="admin-email" value="">
-        <label class="mdc-textfield__label" for="admin-email">Email: </label>
+        <input type="text" id="admin-email" class="mdc-textfield__input" value="">
+        <label class="mdc-textfield__label" for="admin-email">Email</label>
       </div>
 
       <div class="mdc-textfield">
-        <input type="password" class="mdc-textfield__input" id="admin-password" value="">
-        <label class="mdc-textfield__label" for="admin-password">Password: </label>
+        <input type="password" id="admin-password" class="mdc-textfield__input" value="">
+        <label class="mdc-textfield__label" for="admin-password">Password</label>
       </div>
+
+      <br>
 
       <button type="button" id="admin-sign-in" class="mdc-button mdc-button--raised mdc-button--primary">Sign in</button>
     </div>

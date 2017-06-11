@@ -1,0 +1,10 @@
+.signIn {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signInForm {
+  padding: 0 1rem 1rem;
+}
