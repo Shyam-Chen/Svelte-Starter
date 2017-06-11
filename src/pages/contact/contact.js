@@ -32,7 +32,6 @@ const common = (language: string = 'en'): void => {
   firebase.auth()
     .onAuthStateChanged(user => {
       if (user) {
-        // console.log('Anonymous user signed-in.', user);
         sendButton.onclick = () => {
           if (name.value !== '' && email.value !== '' && comment.value !== '') {
             firebase.database()

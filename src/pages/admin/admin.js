@@ -1,3 +1,6 @@
+import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
+import { __moduleExports as mdTextfield } from '@material/textfield/dist/mdc.textfield';
+
 import { template as _ } from 'lodash';
 
 import template from './admin.html';
@@ -27,6 +30,7 @@ export const admin = (): void => {
         })
         .catch(error => {
           console.error(error.code, error.message);
+          // TODO: open dialog
         });
     };
 
@@ -36,18 +40,20 @@ export const admin = (): void => {
       signInContent.style.display = 'none';
     };
 
-    firebase.auth().signOut();
     signOutContent.style.display = '';
     signInContent.style.display = 'none';
 
     firebase.auth()
       .onAuthStateChanged(user => {
-        let currentUID;
+        // let currentUID;
 
-        if (user && currentUID === user.uid) return;
+        // if (user && currentUID === user.uid) return;
 
         if (user) {
-          currentUID = user.uid;
+          // console.log(user.isAnonymous);
+          if (user.isAnonymous) return;
+
+          // currentUID = user.uid;
 
           signOutContent.style.display = 'none';
           signInContent.style.display = '';
@@ -58,12 +64,10 @@ export const admin = (): void => {
               const list = document.querySelector('#list');
               list.innerHTML = _(usersTemplate, { imports: { snapshot } })();
 
-              // TODO: multi-field search (?)
               const searchName = document.querySelector('#search-name');
-              // const searchEmail = document.querySelector('#search-email');
 
               searchName.onkeyup = () => {
-                let input, filter, table, tr, td, i;
+                let input, filter, table, tr, td, td2, i;
                 input = document.querySelector('#search-name');
                 filter = input.value.toUpperCase();
                 table = document.querySelector('#table');
@@ -71,8 +75,12 @@ export const admin = (): void => {
 
                 for (i = 0; i < tr.length; i++) {
                   td = tr[i].getElementsByTagName('td')[0];
-                  if (td) {
-                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                  td2 = tr[i].getElementsByTagName('td')[1];
+                  if (td || td2) {
+                    if (
+                      td.innerHTML.toUpperCase().indexOf(filter) > -1 ||
+                      td2.innerHTML.toUpperCase().indexOf(filter) > -1
+                    ) {
                       tr[i].style.display = '';
                     } else {
                       tr[i].style.display = 'none';
@@ -80,26 +88,6 @@ export const admin = (): void => {
                   }
                 }
               };
-
-              // searchEmail.onkeyup = () => {
-              //   let input, filter, table, tr, td, i;
-              //   input = document.querySelector('#search-email');
-              //   filter = input.value.toUpperCase();
-              //   table = document.querySelector('#table');
-              //   tr = table.getElementsByTagName('tr');
-              //
-              //   for (i = 0; i < tr.length; i++) {
-              //     td = tr[i].getElementsByTagName('td')[1];
-              //     if (td) {
-              //       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-              //         tr[i].style.display = '';
-              //       } else {
-              //         tr[i].style.display = 'none';
-              //       }
-              //     }
-              //   }
-              // };
-
 
               [].forEach.call(
                 document.querySelectorAll('.mdc-button[data-delete]'),
@@ -148,8 +136,18 @@ export const admin = (): void => {
               // TODO: pagination
             });
         } else {
-          currentUID = null;
+          // currentUID = null;
         }
       });
+
+    [].forEach.call(
+      document.querySelectorAll('.mdc-button'),
+      ripple => mdRipple.MDCRipple.attachTo(ripple)
+    );
+
+    [].forEach.call(
+      document.querySelectorAll('.mdc-textfield'),
+      textfield => mdTextfield.MDCTextfield.attachTo(textfield)
+    );
   });
 };

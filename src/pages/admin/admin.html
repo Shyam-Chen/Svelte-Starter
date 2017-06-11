@@ -4,20 +4,17 @@
 
     <div class="mdc-form-field">
       <div class="mdc-textfield">
-        <label for="admin-email">Email: </label>
         <input type="text" class="mdc-textfield__input" id="admin-email" value="">
+        <label class="mdc-textfield__label" for="admin-email">Email: </label>
       </div>
-    </div>
 
-    <div class="mdc-form-field">
       <div class="mdc-textfield">
-        <label for="admin-password">Password: </label>
         <input type="password" class="mdc-textfield__input" id="admin-password" value="">
+        <label class="mdc-textfield__label" for="admin-password">Password: </label>
       </div>
+
+      <button type="button" id="admin-sign-in" class="mdc-button mdc-button--raised mdc-button--primary">Sign in</button>
     </div>
-
-    <button type="button" id="admin-sign-in" class="mdc-button mdc-button--raised mdc-button--primary">Sign in</button>
-
   </div>
 </div>
 
@@ -46,21 +43,12 @@
 
   <div class="mdc-layout-grid">
     <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-elevation--z2">
-      <h3>Search</h3>
-
       <div class="mdc-form-field">
         <div class="mdc-textfield">
-          <label for="search-name">Name: </label>
           <input type="text" class="mdc-textfield__input" id="search-name">
+          <label for="search-name" class="mdc-textfield__label">Search</label>
         </div>
       </div>
-
-      <!-- <div class="mdc-form-field">
-        <div class="mdc-textfield">
-          <label for="search-email">Email: </label>
-          <input type="text" class="mdc-textfield__input" id="search-email">
-        </div>
-      </div> -->
     </div>
   </div>
 
