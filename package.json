@@ -91,7 +91,7 @@
     "postcss-for": "2.1.1",
     "postcss-import": "10.0.0",
     "postcss-modules": "0.8.0",
-    "postcss-scss": "1.0.0",
+    "postcss-scss": "1.0.1",
     "postcss-simple-vars": "4.0.0",
     "postcss-url": "7.0.0",
     "protractor": "5.1.2",

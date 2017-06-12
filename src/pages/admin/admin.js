@@ -62,6 +62,8 @@ export const admin = (): void => {
             .ref('users')
             .on('value', snapshot => {
               const list = document.querySelector('#list');
+
+              // TODO: progress spinner
               list.innerHTML = _(usersTemplate, { imports: { snapshot } })();
 
               const searchName = document.querySelector('#search-name');
@@ -74,6 +76,8 @@ export const admin = (): void => {
                 tr = table.getElementsByTagName('tr');
 
                 for (let i = 0; i < tr.length; i++) {
+
+                  // TODO: for loop
                   td = tr[i].getElementsByTagName('td')[0];
                   td2 = tr[i].getElementsByTagName('td')[1];
 
@@ -90,10 +94,19 @@ export const admin = (): void => {
                 }
               };
 
+              const sliceAll = (selector, element) =>
+                [].slice.call((element || document).querySelectorAll(selector));
+
+              sliceAll('tbody').forEach(body => {
+                sliceAll('tr', body).reverse()
+                  .forEach(row => body.appendChild(row));
+              });
+
               [].forEach.call(
                 document.querySelectorAll('.mdc-button[data-delete]'),
                 deleteButton => {
                   deleteButton.onclick = () => {
+                    // TODO: open dialog
                     firebase.database()
                       .ref(`users/${deleteButton.dataset.delete}`)
                       .remove();
@@ -134,7 +147,7 @@ export const admin = (): void => {
                 }
               );
 
-              // TODO: pagination
+              // TODO: table pagination
             });
         } else {
           // currentUID = null;
