@@ -1,10 +1,8 @@
 import { lowerFirst, pad } from 'lodash';
 
-import { Observable } from 'rxjs/Observable';
-import { timer } from 'rxjs/observable/timer';
-import { of } from 'rxjs/observable/of';
-import { mapTo } from 'rxjs/operator/mapTo';
-import { combineAll } from 'rxjs/operator/combineAll';
+import { Observable } from 'rxjs';
+import { timer, of } from 'rxjs/observable';
+import { mapTo, combineAll } from 'rxjs/operator';
 
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';

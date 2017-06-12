@@ -216,11 +216,9 @@ Observable::of(lowerFirst('Hello'), pad('World', 5))
 Example of ReactiveX
 
 ```js
-import { Observable } from 'rxjs/Observable';
-import { timer } from 'rxjs/observable/timer';
-import { of } from 'rxjs/observable/of';
-import { mapTo } from 'rxjs/operator/mapTo';
-import { combineAll } from 'rxjs/operator/combineAll';
+import { Observable } from 'rxjs';
+import { timer, of } from 'rxjs/observable';
+import { mapTo, combineAll } from 'rxjs/operator';
 
 Observable::timer(2000)
   ::mapTo(Observable::of('Hello', 'World'))
