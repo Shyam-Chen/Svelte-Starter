@@ -203,8 +203,8 @@ newRoute();
 Example of Lodash
 
 ```js
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
+import { Observable } from 'rxjs';
+import { of } from 'rxjs/observable';
 import { lowerFirst, pad } from 'lodash';
 
 Observable::of(lowerFirst('Hello'), pad('World', 5))
@@ -231,8 +231,7 @@ Observable::timer(2000)
 Example of Redux
 
 ```js
-import { filter } from 'rxjs/operator/filter';
-import { map } from 'rxjs/operator/map';
+import { filter, map } from 'rxjs/operator';
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 import { Map } from 'immutable';
@@ -274,9 +273,9 @@ store.dispatch(incrementIfOdd());  // 1 -> 2
 Example of Immutable
 
 ```js
-import { Observable } from 'rxjs/Observable';
-import { from } from 'rxjs/observable/from';
-import { map } from 'rxjs/operator/map';
+import { Observable } from 'rxjs';
+import { from } from 'rxjs/observable';
+import { map } from 'rxjs/operator';
 import { Set } from 'immutable';
 
 Observable::from(Set([1, 2, 3]))
@@ -292,11 +291,11 @@ Example of D3
 ```js
 import 'd3-selection-multi';
 
-import { Observable } from 'rxjs/Observable';
-import { fromEvent } from 'rxjs/observable/fromEvent';
+import { Observable } from 'rxjs';
+import { fromEvent } from 'rxjs/observable';
+import { Set } from 'immutable';
 import { select } from 'd3-selection';
 import { transition } from 'd3-transition';
-import { Set } from 'immutable';
 
 Observable::fromEvent(document, 'click')
   .subscribe(() => {
@@ -318,15 +317,6 @@ Observable::fromEvent(document, 'click')
 ```html
 <div id="ex"></div>
 ```
-
-The practical examples:
-
-* Components
-  * [File upload](https://github.com/Shyam-Chen/Web-Starter-Kit/tree/file-upload)
-  * ...
-* Containers
-  * [Counter](https://github.com/Shyam-Chen/Web-Starter-Kit/tree/counter)
-  * ...
 
 ## All Commands
 
