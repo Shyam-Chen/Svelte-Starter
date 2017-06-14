@@ -69,22 +69,21 @@ export const admin = (): void => {
               const searchName = document.querySelector('#search-name');
 
               searchName.onkeyup = () => {
-                let input, filter, table, tr, td, td2;
-                input = document.querySelector('#search-name');
-                filter = input.value.toUpperCase();
-                table = document.querySelector('#table');
-                tr = table.getElementsByTagName('tr');
+                const input = document.querySelector('#search-name');
+                const filter = input.value.toUpperCase();
+                const table = document.querySelector('#table');
+                const tr = table.getElementsByTagName('tr');
 
                 for (let i = 0; i < tr.length; i++) {
+                  const name = tr[i].getElementsByTagName('td')[0];
+                  const email = tr[i].getElementsByTagName('td')[1];
+                  const message = tr[i].getElementsByTagName('td')[2];
 
-                  // TODO: for loop
-                  td = tr[i].getElementsByTagName('td')[0];
-                  td2 = tr[i].getElementsByTagName('td')[1];
-
-                  if (td || td2) {
+                  if (name || email || message) {
                     if (
-                      td.innerHTML.toUpperCase().indexOf(filter) > -1 ||
-                      td2.innerHTML.toUpperCase().indexOf(filter) > -1
+                      name.innerHTML.toUpperCase().indexOf(filter) > -1 ||
+                      email.innerHTML.toUpperCase().indexOf(filter) > -1 ||
+                      message.innerHTML.toUpperCase().indexOf(filter) > -1
                     ) {
                       tr[i].style.display = '';
                     } else {
