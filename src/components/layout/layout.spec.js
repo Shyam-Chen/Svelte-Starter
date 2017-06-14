@@ -1,5 +1,7 @@
 import { template as _ } from 'lodash';
 
+import logo from '../../assets/images/touch/ms-touch-icon-144x144-precomposed.png';
+
 import template from './layout.html';
 import style from './layout.css';
 import data from './layout.json';
@@ -38,7 +40,7 @@ describe('Layout', () => {
     const dummyElement = document.createElement('div');
     document.querySelector = jasmine.createSpy('HTML Element').and.returnValue(dummyElement);
 
-    const imports = { style };
+    const imports = { style, image: { logo } };
     document.querySelector('#app').innerHTML = _(template, { imports })(data);
     document.querySelector('#content').innerHTML = `<p>Content</p>`;
   });

@@ -21,7 +21,7 @@ import dataJa from './languages/layout-ja.json';
 
 export const layout = (content: string, page: string, language: string = 'en'): void => {
   const app = document.querySelector('#app');
-  const imports = { style, image: { logo }};
+  const imports = { style, image: { logo } };
   language === 'en' ? app.innerHTML = _(template, { imports })(data) : noop();
   language === 'zh' ? app.innerHTML = _(template, { imports })(dataZh) : noop();
   language === 'ja' ? app.innerHTML = _(template, { imports })(dataJa) : noop();
