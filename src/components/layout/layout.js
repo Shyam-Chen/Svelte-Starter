@@ -4,6 +4,8 @@ import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
 
 import { template as _, noop } from 'lodash';
 
+import logo from '../../assets/images/touch/ms-touch-icon-144x144-precomposed.png';
+
 import template from './layout.html';
 import style from './layout.css';
 import data from './layout.json';
@@ -19,7 +21,7 @@ import dataJa from './languages/layout-ja.json';
 
 export const layout = (content: string, page: string, language: string = 'en'): void => {
   const app = document.querySelector('#app');
-  const imports = { style };
+  const imports = { style, image: { logo }};
   language === 'en' ? app.innerHTML = _(template, { imports })(data) : noop();
   language === 'zh' ? app.innerHTML = _(template, { imports })(dataZh) : noop();
   language === 'ja' ? app.innerHTML = _(template, { imports })(dataJa) : noop();
