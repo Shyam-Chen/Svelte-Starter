@@ -14,7 +14,9 @@ export const admin = (): void => {
       .innerHTML = _(template, { imports: { style } })();
 
     const adminEmail = document.querySelector('#admin-email');
+    const adminEmailLabel = document.querySelector('#admin-email + .mdc-textfield__label')
     const adminPassword = document.querySelector('#admin-password');
+    const adminPasswordLabel = document.querySelector('#admin-password + .mdc-textfield__label');
     const adminSignIn = document.querySelector('#admin-sign-in');
     const adminSignOut = document.querySelector('#admin-sign-out');
 
@@ -27,6 +29,8 @@ export const admin = (): void => {
         .then(() => {
           adminEmail.value = '';
           adminPassword.value = ''
+          adminEmailLabel.classList.remove('mdc-textfield__label--float-above');
+          adminPasswordLabel.classList.remove('mdc-textfield__label--float-above');
         })
         .catch(error => {
           console.error(error.code, error.message);
@@ -66,29 +70,22 @@ export const admin = (): void => {
               // TODO: progress spinner
               list.innerHTML = _(usersTemplate, { imports: { snapshot } })();
 
-              const searchName = document.querySelector('#search-name');
+              const searchName = document.querySelector('#search');
 
               searchName.onkeyup = () => {
-                const input = document.querySelector('#search-name');
+                const input = document.querySelector('#search');
                 const filter = input.value.toUpperCase();
-                const table = document.querySelector('#table');
-                const tr = table.getElementsByTagName('tr');
+                const tbody = document.querySelector('#table > tbody');
+                const tr = tbody.getElementsByTagName('tr');
 
                 for (let i = 0; i < tr.length; i++) {
-                  const name = tr[i].getElementsByTagName('td')[0];
-                  const email = tr[i].getElementsByTagName('td')[1];
-                  const message = tr[i].getElementsByTagName('td')[2];
+                  const tds = tr[i].getElementsByTagName('td');
+                  const find = [].findIndex.call(tds, td => td.innerHTML.toUpperCase().indexOf(filter) !== -1);
 
-                  if (name || email || message) {
-                    if (
-                      name.innerHTML.toUpperCase().indexOf(filter) > -1 ||
-                      email.innerHTML.toUpperCase().indexOf(filter) > -1 ||
-                      message.innerHTML.toUpperCase().indexOf(filter) > -1
-                    ) {
-                      tr[i].style.display = '';
-                    } else {
-                      tr[i].style.display = 'none';
-                    }
+                  if (find === -1) {
+                    tr[i].style.display = 'none';
+                  } else {
+                    tr[i].style.display = '';
                   }
                 }
               };
