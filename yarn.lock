@@ -7079,9 +7079,9 @@ postcss-responsive-type@^0.5.0:
   dependencies:
     postcss "^5.0.0"
 
-postcss-scss@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-scss/-/postcss-scss-1.0.0.tgz#4957013097973dfd5bd9b1ad8a6dc13456a5d1ba"
+postcss-scss@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/postcss-scss/-/postcss-scss-1.0.1.tgz#71e6baa2bc5688ffc5bca6abc4a8199badea8fb6"
   dependencies:
     postcss "^6.0.1"
 
@@ -7707,7 +7707,7 @@ request@2.78.0:
     tough-cookie "~2.3.0"
     tunnel-agent "~0.4.1"
 
-request@2.x, request@^2.58.0, request@^2.61.0, request@^2.72.0, request@^2.74.0, request@^2.79.0, request@^2.81.0:
+request@2.x, request@^2.58.0, request@^2.61.0, request@^2.72.0, request@^2.74.0, request@^2.78.0, request@^2.79.0, request@^2.81.0:
   version "2.81.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.81.0.tgz#c6928946a0e06c5f8d6f8a9333469ffda46298a0"
   dependencies:
@@ -7734,7 +7734,7 @@ request@2.x, request@^2.58.0, request@^2.61.0, request@^2.72.0, request@^2.74.0,
     tunnel-agent "^0.6.0"
     uuid "^3.0.0"
 
-request@^2.78.0, request@~2.79.0:
+request@~2.79.0:
   version "2.79.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.79.0.tgz#4dfe5bf6be8b8cdc37fcf93e04b65577722710de"
   dependencies:
@@ -8743,7 +8743,7 @@ sugarss@^0.2.0:
   dependencies:
     postcss "^5.2.4"
 
-superagent@^3.0.0:
+superagent@3.5.2, superagent@^3.0.0:
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/superagent/-/superagent-3.5.2.tgz#3361a3971567504c351063abeaae0faa23dbf3f8"
   dependencies:

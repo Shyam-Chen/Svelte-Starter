@@ -43,7 +43,8 @@
     "material-components-web": "0.12.1",
     "page": "1.7.1",
     "redux": "3.6.0",
-    "redux-observable": "0.14.1"
+    "redux-observable": "0.14.1",
+    "superagent": "3.5.2"
   },
   "devDependencies": {
     "babel-core": "6.24.1",
