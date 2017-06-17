@@ -34,11 +34,11 @@ export default {
           preventFullImport: true,
           skipDefaultConversion: true
         },
-        'rxjs/scheduler': {
-          transform: 'rxjs/scheduler/${member}',
-          preventFullImport: true,
-          skipDefaultConversion: true
-        }
+        // 'rxjs/scheduler': {
+        //   transform: 'rxjs/scheduler/${member}',
+        //   preventFullImport: true,
+        //   skipDefaultConversion: true
+        // }
       }
     ]
   ],
