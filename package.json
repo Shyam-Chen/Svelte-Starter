@@ -44,6 +44,7 @@
     "page": "1.7.1",
     "redux": "3.7.0",
     "redux-observable": "0.14.1",
+    "socket.io-client": "2.0.3",
     "superagent": "3.5.2"
   },
   "devDependencies": {

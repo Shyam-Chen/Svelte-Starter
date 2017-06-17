@@ -226,7 +226,20 @@ xhr.delete(`https://web-go-demo.herokuapp.com/__/list/${listId}`)
   .end(() => console.log('done'));
 ```
 
-4. Example of Lodash
+4. Example of Sockets
+
+```js
+import io from 'socket.io-client';
+
+const socket = io('https://web-go-demo.herokuapp.com/');
+  socket.on('connect', () => console.log('WS: Accept a connection.'));
+  socket.on('A', data => {
+    console.log(data);
+    socket.emit('B', { foo: 'baz' });
+  });
+```
+
+5. Example of Lodash
 
 ```js
 import { Observable } from 'rxjs';
@@ -239,7 +252,7 @@ Observable::of(lowerFirst('Hello'), pad('World', 5))
   // World
 ```
 
-5. Example of ReactiveX
+6. Example of ReactiveX
 
 ```js
 import { Observable } from 'rxjs';
@@ -254,7 +267,7 @@ Observable::timer(2000)
   // ["World"]
 ```
 
-6. Example of Redux
+7. Example of Redux
 
 ```js
 import { filter, map } from 'rxjs/operator';
@@ -296,7 +309,7 @@ store.dispatch(increment());  // 1
 store.dispatch(incrementIfOdd());  // 1 -> 2
 ```
 
-7. Example of Immutable
+8. Example of Immutable
 
 ```js
 import { Observable } from 'rxjs';
@@ -312,7 +325,7 @@ Observable::from(Set([1, 2, 3]))
   // 6
 ```
 
-8. Example of D3
+9. Example of D3
 
 ```js
 import 'd3-selection-multi';
