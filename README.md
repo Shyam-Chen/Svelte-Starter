@@ -55,32 +55,32 @@ This seed repository provides the following features:
 
 ## Getting Started
 
-1) Clone this Boilerplate
+1. Clone this Boilerplate
 
 ```bash
 $ git clone --depth 1 https://github.com/Shyam-Chen/Web-Starter-Kit.git <PROJECT_NAME>
 $ cd <PROJECT_NAME>
 ```
 
-2) Install Dependencies
+2. Install Dependencies
 
 ```bash
 $ yarn install
 ```
 
-3) Run the Application
+3. Run the Application
 
 ```bash
 $ yarn start
 ```
 
-4) Run the Test
+4. Run the Test
 
 ```bash
 $ yarn test
 ```
 
-5) Stay up-to-date
+5. Stay up-to-date
 
 ```bash
 $ git remote add upstream https://github.com/Shyam-Chen/Web-Starter-Kit.git
@@ -89,19 +89,19 @@ $ git pull upstream master
 
 ## Dockerization
 
-1) Build and run the Container
+1. Build and run the Container
 
 ```bash
 $ docker-compose up
 ```
 
-2) Run a command in a running container
+2. Run a command in a running container
 
 ```bash
 $ docker-compose exec app <COMMAND>
 ```
 
-3) Remove the old container before creating the new one
+3. Remove the old container before creating the new one
 
 ```bash
 $ docker-compose rm -fs
@@ -109,7 +109,7 @@ $ docker-compose rm -fs
 
 ## Configuration
 
-Application configuration
+1. Application configuration
 
 ```js
 export const DEV_PORT = 8000;
@@ -117,7 +117,7 @@ export const TEST_PORT = 8080;
 export const APP_BASE = '/';
 ```
 
-Environment configuration
+2. Environment configuration
 
 ```bash
 $ yarn run gulp -- <TASK_NAME> --prod --watch --serve
@@ -125,7 +125,7 @@ $ yarn run gulp -- <TASK_NAME> --prod --watch --serve
 
 ## Using Libraries
 
-Example of Component
+1. Example of Component
 
 ```html
 <!-- src/components/new-component/new-component.html -->
@@ -173,7 +173,7 @@ newComponent('ex', { title: 'Title here', content: 'Content here' });
 <div id="ex"></div>
 ```
 
-Example of Route
+2. Example of Route
 
 ```js
 // src/pages/new-route/new-route.js
@@ -200,7 +200,33 @@ import { newRoute } from './pages/new-route';
 newRoute();
 ```
 
-Example of Lodash
+3. Example of Ajax
+
+```js
+import xhr from 'superagent';
+
+xhr('GET', 'https://web-go-demo.herokuapp.com/__/list')
+  .then(res => document.querySelector('#api-list').innerHTML = res.text);
+
+const listId = '5910223ae1dea61c944c6011';
+xhr('GET', `https://web-go-demo.herokuapp.com/__/list/${listId}`)
+  .then(res => document.querySelector('#api-list').innerHTML = res.text);
+
+xhr.post('https://web-go-demo.herokuapp.com/__/list/')
+  .send({ text: 'Web GO' })
+  .end(() => console.log('done'));
+
+const listId = '5910223ae1dea61c944c6011';
+xhr.put(`https://web-go-demo.herokuapp.com/__/list/${listId}`)
+  .send({ text: 'Web GO' })
+  .end(() => console.log('done'));
+
+const listId = '594388af058f440012d4ae49';
+xhr.delete(`https://web-go-demo.herokuapp.com/__/list/${listId}`)
+  .end(() => console.log('done'));
+```
+
+4. Example of Lodash
 
 ```js
 import { Observable } from 'rxjs';
@@ -213,7 +239,7 @@ Observable::of(lowerFirst('Hello'), pad('World', 5))
   // World
 ```
 
-Example of ReactiveX
+5. Example of ReactiveX
 
 ```js
 import { Observable } from 'rxjs';
@@ -228,7 +254,7 @@ Observable::timer(2000)
   // ["World"]
 ```
 
-Example of Redux
+6. Example of Redux
 
 ```js
 import { filter, map } from 'rxjs/operator';
@@ -270,7 +296,7 @@ store.dispatch(increment());  // 1
 store.dispatch(incrementIfOdd());  // 1 -> 2
 ```
 
-Example of Immutable
+7. Example of Immutable
 
 ```js
 import { Observable } from 'rxjs';
@@ -286,7 +312,7 @@ Observable::from(Set([1, 2, 3]))
   // 6
 ```
 
-Example of D3
+8. Example of D3
 
 ```js
 import 'd3-selection-multi';
