@@ -4,6 +4,6 @@
 import 'core-js/client/shim';
 
 /**
- * Pre-vendor
+ * @name Prevendor
  */
 import 'firebase/firebase-app';

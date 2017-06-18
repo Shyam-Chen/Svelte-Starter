@@ -1,14 +1,13 @@
 import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
 import { __moduleExports as mdTextfield } from '@material/textfield/dist/mdc.textfield';
 
-// import request from 'superagent';
-
 import { template as _ } from 'lodash';
 
 import template from './admin.html';
 import style from './admin.css';
 
 import usersTemplate from './users.html';
+import { users } from './users';
 
 export const admin = (): void => {
   page('/admin', () => {
@@ -50,7 +49,7 @@ export const admin = (): void => {
     signInContent.style.display = 'none';
 
     firebase.auth()
-      .onAuthStateChanged(user => {
+      .onAuthStateChanged((user: { isAnonymous?: boolean }) => {
         // let currentUID;
 
         // if (user && currentUID === user.uid) return;
@@ -66,10 +65,17 @@ export const admin = (): void => {
           firebase.database()
             .ref('users')
             .on('value', snapshot => {
+              /**
+               * list
+               */
+
               const list = document.querySelector('#list');
 
-              // TODO: progress spinner
               list.innerHTML = _(usersTemplate, { imports: { snapshot } })();
+
+              /**
+               * search
+               */
 
               const searchName = document.querySelector('#search');
 
@@ -91,6 +97,10 @@ export const admin = (): void => {
                 }
               };
 
+              /**
+               * reverse data table
+               */
+
               const sliceAll = (selector, element) =>
                 [].slice.call((element || document).querySelectorAll(selector));
 
@@ -99,52 +109,9 @@ export const admin = (): void => {
                   .forEach(row => body.appendChild(row));
               });
 
-              [].forEach.call(
-                document.querySelectorAll('.mdc-button[data-delete]'),
-                deleteButton => {
-                  deleteButton.onclick = () => {
-                    // TODO: open dialog
-                    firebase.database()
-                      .ref(`users/${deleteButton.dataset.delete}`)
-                      .remove();
-                  };
-                }
-              );
-
-              document.querySelector('#edit').style.display = 'none';
-
-              [].forEach.call(
-                document.querySelectorAll('.mdc-button[data-edit]'),
-                editButton => {
-                  editButton.onclick = () => {
-                    // TODO: open dialog
-                    document.querySelector('#edit').style.display = '';
-
-                    const name = document.querySelector('#edit-name');
-                    const email = document.querySelector('#edit-email');
-                    const message = document.querySelector('#edit-message');
-
-                    const save = document.querySelector('#edit-save');
-                    const cancel = document.querySelector('#edit-cancel');
-
-                    name.value = editButton.dataset.editName;
-                    email.value = editButton.dataset.editEmail;
-                    message.value = editButton.dataset.editMessage;
-
-                    save.onclick = () => {
-                      firebase.database()
-                        .ref(`users/${editButton.dataset.edit}`)
-                        .update({ name: name.value, email: email.value, message: message.value });
-                    };
-
-                    cancel.onclick = () => {
-                      document.querySelector('#edit').style.display = 'none';
-                    };
-                  };
-                }
-              );
-
               // TODO: table pagination
+
+              users();
             });
         } else {
           // currentUID = null;
