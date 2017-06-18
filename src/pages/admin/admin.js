@@ -56,7 +56,6 @@ export const admin = (): void => {
         // if (user && currentUID === user.uid) return;
 
         if (user) {
-          // console.log(user.isAnonymous);
           if (user.isAnonymous) return;
 
           // currentUID = user.uid;
@@ -146,32 +145,6 @@ export const admin = (): void => {
               );
 
               // TODO: table pagination
-
-
-              /**
-               * RESTful API
-               */
-
-              // request('GET', 'https://web-go-demo.herokuapp.com/__/list')
-              //   .then(res => document.querySelector('#api-list').innerHTML = res.text);
-
-              // const listId = '5910223ae1dea61c944c6011';
-              // request('GET', `https://web-go-demo.herokuapp.com/__/list/${listId}`)
-              //   .then(res => document.querySelector('#api-list').innerHTML = res.text);
-
-              // request.post('https://web-go-demo.herokuapp.com/__/list/')
-              //   .send({ text: 'Web GO' })
-              //   .end(() => console.log('done'));
-
-              // const listId = '5910223ae1dea61c944c6011';
-              // request.put(`https://web-go-demo.herokuapp.com/__/list/${listId}`)
-              //   .send({ text: 'Web GO' })
-              //   .end(() => console.log('done'));
-
-              // const listId = '594388af058f440012d4ae49';
-              // request.delete(`https://web-go-demo.herokuapp.com/__/list/${listId}`)
-              //   .end(() => console.log('done'));
-
             });
         } else {
           // currentUID = null;

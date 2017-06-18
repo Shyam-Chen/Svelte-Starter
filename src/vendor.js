@@ -17,7 +17,7 @@ import '@material/list/dist/mdc.list.css';
 // import '@material/menu/dist/mdc.menu.css';
 // import '@material/radio/dist/mdc.radio.css';
 // import '@material/select/dist/mdc.select.css';
-import '@material/slider/dist/mdc.slider.css';
+// import '@material/slider/dist/mdc.slider.css';
 import '@material/snackbar/dist/mdc.snackbar.css';
 // import '@material/switch/dist/mdc.switch.css';
 // import '@material/tabs/dist/mdc.tabs.css';

@@ -232,11 +232,13 @@ xhr.delete(`https://web-go-demo.herokuapp.com/__/list/${listId}`)
 import io from 'socket.io-client';
 
 const socket = io('https://web-go-demo.herokuapp.com/');
-  socket.on('connect', () => console.log('WS: Accept a connection.'));
-  socket.on('A', data => {
-    console.log(data);
-    socket.emit('B', { foo: 'baz' });
-  });
+
+socket.on('connect', () => console.log('WS: Accept a connection.'));
+
+socket.on('A', data => {
+  console.log(data);
+  socket.emit('B', { foo: 'baz' });
+});
 ```
 
 5. Example of Lodash
