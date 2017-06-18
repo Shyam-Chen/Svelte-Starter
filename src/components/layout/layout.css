@@ -20,6 +20,12 @@
     }
   }
 
+  &__link {
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+  }
+
   &__content {
     margin-left: 240px;
     transition: margin-left 1s;
@@ -42,7 +48,6 @@
 }
 
 .footer {
-  margin: 16px 0 0;
   padding: 16px 40px;
   color: #FFFFFF;
   background: #1A237E;
@@ -56,10 +61,5 @@
   &__link {
     color: #FFFFFF;
     text-decoration: none;
-  }
-
-  &__section {
-    flex: 1;
-    padding: .75rem;
   }
 }

@@ -49,7 +49,6 @@ export const layout = (content: string, page: string, language: string = 'en'): 
     }
   };
 
-  // document.querySelector('#mobile-menu').onclick = () => drawerMobile.open = false;
   drawerMobileEl.addEventListener('MDCTemporaryDrawer:open', () => bodyEl.style.overflowY = 'hidden');
   drawerMobileEl.addEventListener('MDCTemporaryDrawer:close', () => bodyEl.style.overflowY = 'auto');
 
