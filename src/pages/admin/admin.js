@@ -35,7 +35,7 @@ export const admin = (): void => {
         })
         .catch(error => {
           console.error(error.code, error.message);
-          // TODO: open dialog
+          // TODO: show snackbar
         });
     };
 

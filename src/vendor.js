@@ -4,7 +4,7 @@
 import '@material/button/dist/mdc.button.css';
 import '@material/card/dist/mdc.card.css';
 // import '@material/checkbox/dist/mdc.checkbox.css';
-// import '@material/dialog/dist/mdc.dialog.css';
+import '@material/dialog/dist/mdc.dialog.css';
 import '@material/drawer/dist/mdc.drawer.css';
 import '@material/elevation/dist/mdc.elevation.css';
 // import '@material/fab/dist/mdc.fab.css';
