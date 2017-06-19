@@ -6,7 +6,7 @@ WORKDIR ${HOME}
 ADD . $HOME
 
 # node --
-ENV NODE 8
+ENV NODE 7
 ENV PATH $HOME/.yarn/bin:$PATH
 
 RUN \
