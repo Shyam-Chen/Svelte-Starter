@@ -2,17 +2,11 @@
   "HOME": "首頁",
   "TITLE": "歡迎來到 Web GO",
   "DESCRIPTION": "Web GO 遵循 <a href=\"https://developers.google.com/web/fundamentals/\">Web Fundamentals</a> 中概述的最佳實踐",
-  "WEB": {
-    "CONTENT": "HTML5、Material、Firebase、Gulp、Rollup、Babel、PostHTML 和 PostCSS 的樣板"
-  },
-  "MOBILE": {
-    "CONTENT": "Cordova、Material、Firebase、Gulp、Rollup、Babel、PostHTML 和 PostCSS 的樣板"
-  },
-  "DESKTOP": {
-    "CONTENT": "Electron、Material、Firebase、Gulp、Rollup、Babel、PostHTML 和 PostCSS 的樣板"
-  },
-  "BACKEND": {
-    "CONTENT": "Node.js、Express、Mongoose、Heroku、mLab、Nodemon、PM2 和 Babel 的樣板"
+  "CONTENT": {
+    "WEB": "HTML5、Material、Firebase、Gulp、Rollup、Babel、PostHTML 和 PostCSS 的樣板",
+    "MOBILE": "Cordova、Material、Firebase、Gulp、Rollup、Babel、PostHTML 和 PostCSS 的樣板",
+    "DESKTOP": "Electron、Material、Firebase、Gulp、Rollup、Babel、PostHTML 和 PostCSS 的樣板",
+    "BACKEND": "Node.js、Express、Mongoose、Heroku、mLab、Nodemon、PM2 和 Babel 的樣板"
   },
   "GET_STARTED": "立馬開始"
 }

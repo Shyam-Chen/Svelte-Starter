@@ -1,10 +1,14 @@
-<header class="flexbox flexbox--center">
-  <h1 class="mdc-typography--display1 mdc-theme--primary">${ ABOUT }</h1>
-</header>
+<section class="mdc-layout-grid">
+  <div class="mdc-layout-grid__inner flexbox flexbox--center">
+    <h1 class="mdc-typography--display1 mdc-theme--primary">${ ABOUT }</h1>
+  </div>
+
+  <div class="mdc-layout-grid__inner flexbox flexbox--center">
+    <h3 class="mdc-typography--title">${ TITLE }</h3>
+  </div>
+</section>
 
 <section class="${ style.section }">
-  <h3 class="mdc-typography--title ${ style.section__title }">${ TITLE }</h3>
-
   <section class="mdc-layout-grid ${ style.section__content }">
     <div class="mdc-layout-grid__inner">
       <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">

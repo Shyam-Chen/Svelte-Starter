@@ -2,17 +2,11 @@
   "HOME": "Home",
   "TITLE": "Welcome to Web GO",
   "DESCRIPTION": "Web GO follows the best practices outlined in <a href=\"https://developers.google.com/web/fundamentals/\">Web Fundamentals</a>.",
-  "WEB": {
-    "CONTENT": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS."
-  },
-  "MOBILE": {
-    "CONTENT": "A boilerplate for Cordova, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS."
-  },
-  "DESKTOP": {
-    "CONTENT": "A boilerplate for Electron, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS."
-  },
-  "BACKEND": {
-    "CONTENT": "A boilerplate for Node.js, Express, Mongoose, Heroku, mLab, Nodemon, PM2, and Babel."
+  "CONTENT": {
+    "WEB": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.",
+    "MOBILE": "A boilerplate for Cordova, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.",
+    "DESKTOP": "A boilerplate for Electron, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.",
+    "BACKEND": "A boilerplate for Node.js, Express, Mongoose, Heroku, mLab, Nodemon, PM2, and Babel."
   },
   "GET_STARTED": "Get Started"
 }

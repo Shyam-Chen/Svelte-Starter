@@ -3,7 +3,6 @@ html {
 }
 
 body {
-  // background: #FAFAFA;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -26,20 +25,7 @@ body {
 
     &--center {
       justify-content: center;
-    }
-
-    &__cell {
-      &--column {
-        flex-direction: column;
-      }
-
-      &--center {
-        text-align: center;
-      }
-
-      &--right {
-        text-align: right;
-      }
+      text-align: center;
     }
   }
 

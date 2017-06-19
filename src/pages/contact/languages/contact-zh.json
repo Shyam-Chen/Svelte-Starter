@@ -1,10 +1,6 @@
 {
   "CONTACT": "聯繫",
-  "TITLE": "填寫以下表格，以了解更多！",
-  "ACCOUNT": {
-    "SIGN_IN_BUTTON": "使用 Google 登入",
-    "SIGN_OUT_BUTTON": "登出"
-  },
+  "TITLE": "填寫以下表格，以了解更多",
   "NAME": "姓名",
   "EMAIL": "電子郵件",
   "COMMENT": "訊息",
