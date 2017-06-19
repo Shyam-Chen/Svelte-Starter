@@ -2,6 +2,14 @@
   <table id="table" class="md-table">
     <thead>
       <tr>
+        <th colspan="4">
+          <div class="mdc-textfield">
+            <input type="text" id="search" class="mdc-textfield__input">
+            <label for="search-name" class="mdc-textfield__label">Search</label>
+          </div>
+        </th>
+      </tr>
+      <tr>
         <th>Name</th>
         <th>Email</th>
         <th>Message</th>
@@ -26,6 +34,17 @@
         </tr>
       <% }); %>
     </tbody>
+    <!-- <tfoot>
+      <tr>
+        <td colspan="4">
+          <span>Page: 1</span>
+          <span>Rows per page: 10</span>
+          <span>1 - 10 of 9453</span>
+          <button type="button" class="mdc-button mdc-button--accent" id="prev-page">Previous</button>
+          <button type="button" class="mdc-button mdc-button--accent" id="next-page">Next</button>
+        </td>
+      </tr>
+    </tfoot> -->
   </table>
 </div>
 

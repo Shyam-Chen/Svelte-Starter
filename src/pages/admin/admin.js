@@ -1,6 +1,7 @@
 import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
 import { __moduleExports as mdTextfield } from '@material/textfield/dist/mdc.textfield';
 import { __moduleExports as mdSnackbar } from '@material/snackbar/dist/mdc.snackbar';
+import { __moduleExports as mdLinearProgress } from '@material/linear-progress/dist/mdc.linearProgress';
 
 import { template as _ } from 'lodash';
 
@@ -23,10 +24,13 @@ export const admin = (): void => {
     const adminSignOut = document.querySelector('#admin-sign-out');
 
     const signOutContent = document.querySelector('#sign-out-content');
-    const signInContent = document.querySelector('#sign-in-content');
+    const signInContent = document.querySelectorAll('[data-sign-in]');
 
     const loginToastEl = document.querySelector('#login-toast');
     const loginToast = new mdSnackbar.MDCSnackbar(loginToastEl);
+
+    const determinate = document.querySelector('.mdc-linear-progress');
+    const linearProgress = mdLinearProgress.MDCLinearProgress.attachTo(determinate);
 
     adminSignIn.onclick = () => {
       firebase.auth()
@@ -45,79 +49,38 @@ export const admin = (): void => {
     adminSignOut.onclick = () => {
       firebase.auth().signOut();
       signOutContent.style.display = '';
-      signInContent.style.display = 'none';
+      [].forEach.call(signInContent, content => content.style.display = 'none');
     };
 
     signOutContent.style.display = '';
-    signInContent.style.display = 'none';
+    [].forEach.call(signInContent, content => content.style.display = 'none');
 
     firebase.auth()
-      .onAuthStateChanged((user: { isAnonymous?: boolean }) => {
-        // let currentUID;
+      .onAuthStateChanged(user => {
+        let currentUID;
 
-        // if (user && currentUID === user.uid) return;
+        if (user && currentUID === user.uid) return;
 
         if (user) {
           if (user.isAnonymous) return;
 
-          // currentUID = user.uid;
+          currentUID = user.uid;
 
           signOutContent.style.display = 'none';
-          signInContent.style.display = '';
+          [].forEach.call(signInContent, content => content.style.display = '');
 
           firebase.database()
             .ref('users')
             .on('value', snapshot => {
-              /**
-               * list
-               */
+              linearProgress.progress = 1;
 
-              const list = document.querySelector('#list');
-
-              list.innerHTML = _(usersTemplate, { imports: { snapshot } })();
-
-              /**
-               * search
-               */
-
-              const searchName = document.querySelector('#search');
-
-              searchName.onkeyup = () => {
-                const input = document.querySelector('#search');
-                const filter = input.value.toUpperCase();
-                const tbody = document.querySelector('#table > tbody');
-                const tr = tbody.getElementsByTagName('tr');
-
-                for (let i = 0; i < tr.length; i++) {
-                  const tds = tr[i].getElementsByTagName('td');
-                  const find = [].findIndex.call(tds, td => td.innerHTML.toUpperCase().indexOf(filter) !== -1);
-
-                  if (find === -1) {
-                    tr[i].style.display = 'none';
-                  } else {
-                    tr[i].style.display = '';
-                  }
-                }
-              };
-
-              /**
-               * reverse data table
-               */
-
-              const sliceAll = (selector, element) =>
-                [].slice.call((element || document).querySelectorAll(selector));
-
-              sliceAll('tbody').forEach(body => {
-                sliceAll('tr', body).reverse()
-                  .forEach(row => body.appendChild(row));
-              });
-
-              // TODO: table pagination
+              document.querySelector('#users')
+                .innerHTML = _(usersTemplate, { imports: { snapshot } })();
 
               users();
             });
         } else {
-          // currentUID = null;
+          currentUID = null;
         }
       });
 
