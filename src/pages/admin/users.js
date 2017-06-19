@@ -3,34 +3,36 @@ import { __moduleExports as mdDialog } from '@material/dialog/dist/mdc.dialog';
 import { __moduleExports as mdTextfield } from '@material/textfield/dist/mdc.textfield';
 
 export const users = (): void => {
-  const dialog = new mdDialog.MDCDialog(document.querySelector('#dialog-edit'));
+  const bodyEl = document.querySelector('body');
 
-  /**
-   * edit
-   */
+  const dialogEditEl = document.querySelector('#dialog-edit');
+  const dialogEdit = new mdDialog.MDCDialog(dialogEditEl);
+  const name = document.querySelector('#edit-name');
+  const email = document.querySelector('#edit-email');
+  const message = document.querySelector('#edit-message');
+  const save = document.querySelector('#edit-save');
 
-  // document.querySelector('#edit').style.display = 'none';
+  const dialogDeleteEl = document.querySelector('#dialog-delete');
+  const dialogDelete = new mdDialog.MDCDialog(dialogDeleteEl);
+  const confirm = document.querySelector('#delete-confirm');
+
+  [dialogEdit, dialogDelete].forEach((dialog: any) => {
+    dialog.listen('MDCDialog:accept', () => bodyEl.style.overflowY = 'auto');
+    dialog.listen('MDCDialog:cancel', () => bodyEl.style.overflowY = 'auto');
+  });
 
   [].forEach.call(
     document.querySelectorAll('.mdc-button[data-edit]'),
     editButton => {
-      editButton.onclick = (event: any): void => {
-        dialog.lastFocusedTarget = event.target;
-        dialog.show();
-
-        const name = document.querySelector('#edit-name');
-        const email = document.querySelector('#edit-email');
-        const message = document.querySelector('#edit-message');
-
-        const save = document.querySelector('#edit-save');
+      editButton.onclick = (): void => {
+        dialogEdit.show();
+        bodyEl.style.overflowY = 'hidden';
 
         name.value = editButton.dataset.editName;
         email.value = editButton.dataset.editEmail;
         message.value = editButton.dataset.editMessage;
 
-        save.onclick = (event: any): void => {
-          dialog.lastFocusedTarget = event.target;
-
+        save.onclick = (): void => {
           firebase.database()
             .ref(`users/${editButton.dataset.edit}`)
             .update({ name: name.value, email: email.value, message: message.value });
@@ -39,25 +41,21 @@ export const users = (): void => {
     }
   );
 
-  /**
-   * delete
-   */
-
   [].forEach.call(
     document.querySelectorAll('.mdc-button[data-delete]'),
     deleteButton => {
-      deleteButton.onclick = () => {
-        // TODO: open dialog
-        firebase.database()
-          .ref(`users/${deleteButton.dataset.delete}`)
-          .remove();
+      deleteButton.onclick = (): void => {
+        dialogDelete.show();
+        bodyEl.style.overflowY = 'hidden';
+
+        confirm.onclick = (): void => {
+          firebase.database()
+            .ref(`users/${deleteButton.dataset.delete}`)
+            .remove();
+        };
       };
     }
   );
-
-  /**
-   * @name Material
-   */
 
   [].forEach.call(
     document.querySelectorAll('.mdc-button'),
