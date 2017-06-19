@@ -1,5 +1,6 @@
 import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
 import { __moduleExports as mdTextfield } from '@material/textfield/dist/mdc.textfield';
+import { __moduleExports as mdSnackbar } from '@material/snackbar/dist/mdc.snackbar';
 
 import { template as _ } from 'lodash';
 
@@ -24,6 +25,9 @@ export const admin = (): void => {
     const signOutContent = document.querySelector('#sign-out-content');
     const signInContent = document.querySelector('#sign-in-content');
 
+    const loginToastEl = document.querySelector('#login-toast');
+    const loginToast = new mdSnackbar.MDCSnackbar(loginToastEl);
+
     adminSignIn.onclick = () => {
       firebase.auth()
         .signInWithEmailAndPassword(adminEmail.value, adminPassword.value)
@@ -34,8 +38,7 @@ export const admin = (): void => {
           adminPasswordLabel.classList.remove('mdc-textfield__label--float-above');
         })
         .catch(error => {
-          console.error(error.code, error.message);
-          // TODO: show snackbar
+          loginToast.show({ message: error.message });
         });
     };
 

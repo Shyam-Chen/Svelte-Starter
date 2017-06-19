@@ -25,9 +25,8 @@ const common = (language: string = 'en'): void => {
   const commentLabel = document.querySelector('#comment + .mdc-textfield__label');
   const sendButton = document.querySelector('#send-button');
 
-  const sendToast = document.querySelector('#send-toast');
-  const MDCSnackbar = mdSnackbar.MDCSnackbar;
-  const snackbar = new MDCSnackbar(sendToast);
+  const sendToastEl = document.querySelector('#send-toast');
+  const sendToast = new mdSnackbar.MDCSnackbar(sendToastEl);
 
   firebase.auth()
     .onAuthStateChanged(user => {
@@ -45,13 +44,13 @@ const common = (language: string = 'en'): void => {
             emailLabel.classList.remove('mdc-textfield__label--float-above');
             commentLabel.classList.remove('mdc-textfield__label--float-above');
 
-            language === 'en' ? snackbar.show({ message: 'Thanks for your comment.' }) : noop();
-            language === 'zh' ? snackbar.show({ message: '感謝您的評論' }) : noop();
-            language === 'ja' ? snackbar.show({ message: 'あなたのコメントをありがとう' }) : noop();
+            language === 'en' ? sendToast.show({ message: 'Thanks for your comment.' }) : noop();
+            language === 'zh' ? sendToast.show({ message: '感謝您的評論' }) : noop();
+            language === 'ja' ? sendToast.show({ message: 'あなたのコメントをありがとう' }) : noop();
           } else {
-            language === 'en' ? snackbar.show({ message: 'Not valid!' }) : noop();
-            language === 'zh' ? snackbar.show({ message: '無效！' }) : noop();
-            language === 'ja' ? snackbar.show({ message: '有効ではありません！' }) : noop();
+            language === 'en' ? sendToast.show({ message: 'Not valid!' }) : noop();
+            language === 'zh' ? sendToast.show({ message: '無效！' }) : noop();
+            language === 'ja' ? sendToast.show({ message: '有効ではありません！' }) : noop();
           }
         };
       } else {
