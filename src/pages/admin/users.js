@@ -21,11 +21,11 @@ export const users = (): void => {
   search.onkeyup = (): void => {
     const input = document.querySelector('#search');
     const filter = input.value.toUpperCase();
-    const tbody = document.querySelector('#table > tbody');
-    const tr = tbody.getElementsByTagName('tr');
+    const tbody = document.querySelector('#users-table > tbody');
+    const tr = tbody.querySelectorAll('tr');
 
     for (let i = 0; i < tr.length; i++) {
-      const tds = tr[i].getElementsByTagName('td');
+      const tds = tr[i].querySelectorAll('td');
       const find = [].findIndex.call(tds, td => td.innerHTML.toUpperCase().indexOf(filter) !== -1);
 
       if (find === -1 || find === (tds.length - 1)) {
