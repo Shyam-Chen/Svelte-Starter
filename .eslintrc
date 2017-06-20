@@ -9,8 +9,7 @@
   },
   "globals": {
     "firebase": true,
-    "page": true,
-    "webdriver": true
+    "page": true
   },
   "extends": "eslint:recommended",
   "parser": "babel-eslint",

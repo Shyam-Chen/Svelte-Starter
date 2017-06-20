@@ -1,4 +1,3 @@
-// const { path } = require('phantomjs-prebuilt');
 const babel = require('babel-register');
 const { SpecReporter } = require('jasmine-spec-reporter');
 
@@ -10,11 +9,6 @@ exports.config = {
     'src/**/*.e2e-spec.js'
   ],
   exclude: [],
-  // capabilities: {
-  //   'browserName': 'phantomjs',
-  //   'phantomjs.binary.path': path,
-  //   'phantomjs.ghostdriver.cli.args': ['--loglevel=DEBUG']
-  // },
   capabilities: {
     'browserName': 'chrome',
     'chromeOptions': {
@@ -26,8 +20,6 @@ exports.config = {
     babel();
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
     browser.ignoreSynchronization = true;
-    global.webdriver = browser.driver;
-    // webdriver.manage().window().setSize(1280, 1024);
   },
   framework: 'jasmine',
   jasmineNodeOpts: {

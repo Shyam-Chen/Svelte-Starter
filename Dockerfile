@@ -1,7 +1,6 @@
 FROM buildpack-deps:jessie-scm
 
 ENV HOME /Web-Starter-Kit
-ENV DEBIAN_FRONTEND noninteractive
 
 WORKDIR ${HOME}
 ADD . $HOME
