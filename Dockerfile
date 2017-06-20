@@ -1,9 +1,18 @@
 FROM buildpack-deps:jessie-scm
 
 ENV HOME /Web-Starter-Kit
+ENV DEBIAN_FRONTEND noninteractive
 
 WORKDIR ${HOME}
 ADD . $HOME
+
+# chrome --
+ENV CHROME_BIN /usr/bin/chromium
+
+RUN \
+  apt-get update && \
+  apt-get install -y chromium libgconf-2-4
+# -- chrome
 
 # node --
 ENV NODE 7
