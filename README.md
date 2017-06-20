@@ -200,17 +200,17 @@ import { newRoute } from './pages/new-route';
 newRoute();
 ```
 
-3. Example of Ajax
+3. Example of REST
 
 ```js
 import xhr from 'superagent';
 
 xhr('GET', 'https://web-go-demo.herokuapp.com/__/list')
-  .then(res => document.querySelector('#api-list').innerHTML = res.text);
+  .then(res => res => console.log(res.text));
 
 const listId = '5910223ae1dea61c944c6011';
 xhr('GET', `https://web-go-demo.herokuapp.com/__/list/${listId}`)
-  .then(res => document.querySelector('#api-list').innerHTML = res.text);
+  .then(res => res => console.log(res.text));
 
 xhr.post('https://web-go-demo.herokuapp.com/__/list/')
   .send({ text: 'Web GO' })
@@ -226,7 +226,31 @@ xhr.delete(`https://web-go-demo.herokuapp.com/__/list/${listId}`)
   .end(() => console.log('done'));
 ```
 
-4. Example of Sockets
+4. Example of GraphQL
+
+```js
+import ApolloClient, { createNetworkInterface } from 'apollo-client';
+import gql from 'graphql-tag';
+
+const client = new ApolloClient({
+  networkInterface: createNetworkInterface({
+    uri: 'https://web-go-demo.herokuapp.com/__/graphql'
+  })
+});
+
+client.query({
+    query: gql`
+      {
+        users {
+          name
+        }
+      }
+    `
+  })
+  .then(res => console.log(res));
+```
+
+5. Example of Sockets
 
 ```js
 import io from 'socket.io-client';
@@ -241,7 +265,7 @@ socket.on('A', data => {
 });
 ```
 
-5. Example of Lodash
+6. Example of Lodash
 
 ```js
 import { Observable } from 'rxjs';
@@ -254,7 +278,7 @@ Observable::of(lowerFirst('Hello'), pad('World', 5))
   // World
 ```
 
-6. Example of ReactiveX
+7. Example of ReactiveX
 
 ```js
 import { Observable } from 'rxjs';
@@ -269,7 +293,7 @@ Observable::timer(2000)
   // ["World"]
 ```
 
-7. Example of Redux
+8. Example of Redux
 
 ```js
 import { filter, map } from 'rxjs/operator';
@@ -311,7 +335,7 @@ store.dispatch(increment());  // 1
 store.dispatch(incrementIfOdd());  // 1 -> 2
 ```
 
-8. Example of Immutable
+9. Example of Immutable
 
 ```js
 import { Observable } from 'rxjs';
@@ -327,7 +351,7 @@ Observable::from(Set([1, 2, 3]))
   // 6
 ```
 
-9. Example of D3
+10. Example of D3
 
 ```js
 import 'd3-selection-multi';
