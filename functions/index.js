@@ -19,7 +19,21 @@ exports.addMessage = functions.https
       });
   });
 
-// const ref = admin.database().ref('/users');
-// ref.once('value', snapshot => {
-//   console.log(snapshot.val());
-// });
+exports.makeUppercase = functions.database
+  .ref('/users')
+  .onWrite(event => {
+    const original = event.data.val();
+    const uppercase = original.toUpperCase();
+
+    return event.data.ref.parent.child('uppercase').set(uppercase);
+  });
+
+exports.prerenderAboutPage = functions.https
+  .onRequest((req, res) => {
+    res.status(200).send();
+  });
+
+exports.prerenderContactPage = functions.https
+  .onRequest((req, res) => {
+    res.status(200).send();
+  });
