@@ -205,25 +205,30 @@ newRoute();
 ```js
 import xhr from 'superagent';
 
-xhr('GET', 'https://web-go-demo.herokuapp.com/__/list')
-  .then(res => res => console.log(res.text));
+xhr.get('https://web-go-demo.herokuapp.com/__/list')
+  .then(res => console.log(res.text))
+  .then(() => console.log('done'));
 
-const listId = '5910223ae1dea61c944c6011';
-xhr('GET', `https://web-go-demo.herokuapp.com/__/list/${listId}`)
-  .then(res => res => console.log(res.text));
+const getListId = '5910223ae1dea61c944c6011';
+xhr.get(`https://web-go-demo.herokuapp.com/__/list/${getListId}`)
+  .then(res => console.log(res.text))
+  .then(() => console.log('done'));
 
 xhr.post('https://web-go-demo.herokuapp.com/__/list/')
   .send({ text: 'Web GO' })
-  .end(() => console.log('done'));
+  .then(res => console.log(res.text))
+  .then(() => console.log('done'));
 
-const listId = '5910223ae1dea61c944c6011';
-xhr.put(`https://web-go-demo.herokuapp.com/__/list/${listId}`)
+const putListId = '5943881e058f440012d4ae47';
+xhr.put(`https://web-go-demo.herokuapp.com/__/list/${putListId}`)
   .send({ text: 'Web GO' })
-  .end(() => console.log('done'));
+  .then(res => console.log(res.text))
+  .then(() => console.log('done'));
 
-const listId = '594388af058f440012d4ae49';
-xhr.delete(`https://web-go-demo.herokuapp.com/__/list/${listId}`)
-  .end(() => console.log('done'));
+const deleteListId = '594388af058f440012d4ae49';
+xhr.delete(`https://web-go-demo.herokuapp.com/__/list/${deleteListId}`)
+  .then(res => console.log(res.text))
+  .then(() => console.log('done'));
 ```
 
 4. Example of GraphQL
@@ -463,13 +468,13 @@ $ yarn run deploy
 ## Known Issues
 
 * ---------- **P0: Critical** ----------
-* ...
+* Serve dynamic content with Cloud Functions (ref, https://firebase.google.com/docs/hosting/functions)
 * ---------- **P1: Urgent** ----------
 * ...
 * ---------- **P2: Required** ----------
-* Write tests (`rxjs` & `redux`)
+* Write more tests
 * ---------- **P3: Important** ----------
-* Prerender HTML snapshots (`gulp-prerender`, ref [`prerender-spa-plugin`](https://github.com/chrisvfritz/prerender-spa-plugin))
+* ...
 * ---------- **P4: Nice to have** ----------
 * Use `posthtml` and `lodash/template` together ([Issue](https://github.com/posthtml/posthtml/issues/216))
 * Update `rxjs` to v5.0.2+ ([Issue](https://github.com/ReactiveX/rxjs/issues/2460))
