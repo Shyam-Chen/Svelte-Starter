@@ -2,13 +2,13 @@
 import { lowerFirst, pad } from 'lodash';
 
 // ReactiveX
-import { Observable, Subject } from 'rxjs';
-import { timer, of } from 'rxjs/observable';
-import { mapTo, combineAll } from 'rxjs/operator';
+// import { Observable, Subject } from 'rxjs';
+// import { timer, of } from 'rxjs/observable';
+// import { mapTo, combineAll } from 'rxjs/operator';
 
 // Redux
 import { combineReducers, createStore, applyMiddleware } from 'redux';
-import { combineEpics, createEpicMiddleware } from 'redux-observable';
+// import { combineEpics, createEpicMiddleware } from 'redux-observable';
 
 // Immutable
 import { Map, Set } from 'immutable';
@@ -26,14 +26,14 @@ describe('Test', () => {
   });
 
   describe('ReactiveX', () => {
-    it('should be able to use', () => {
-      expect(Observable).toBeDefined();
-      expect(Subject).toBeDefined();
-      expect(timer).toBeDefined();
-      expect(of).toBeDefined();
-      expect(mapTo).toBeDefined();
-      expect(combineAll).toBeDefined();
-    });
+    // it('should be able to use', () => {
+    //   expect(Observable).toBeDefined();
+    //   expect(Subject).toBeDefined();
+    //   expect(timer).toBeDefined();
+    //   expect(of).toBeDefined();
+    //   expect(mapTo).toBeDefined();
+    //   expect(combineAll).toBeDefined();
+    // });
 
     // it('should be able to use', () => {
     //   const source$ = new Observable(observer => {
@@ -57,8 +57,8 @@ describe('Test', () => {
       expect(combineReducers).toBeDefined();
       expect(createStore).toBeDefined();
       expect(applyMiddleware).toBeDefined();
-      expect(combineEpics).toBeDefined();
-      expect(createEpicMiddleware).toBeDefined();
+      // expect(combineEpics).toBeDefined();
+      // expect(createEpicMiddleware).toBeDefined();
     });
   });
 
