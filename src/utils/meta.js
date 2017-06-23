@@ -10,6 +10,6 @@ interface MetaDefinition {
   url?: string;
 }
 
-export const addTag = (tag: MetaDefinition, forceCreation?: boolean = false): HTMLMetaElement | null => {
+export const addTag = (tag: MetaDefinition, forceCreation?: boolean = false): HTMLMetaElement => {
   console.log(tag, forceCreation);
 };

@@ -31,7 +31,7 @@ const common = (language: string = 'en'): void => {
   firebase.auth()
     .onAuthStateChanged(user => {
       if (user) {
-        sendButton.onclick = () => {
+        sendButton.onclick = (): void => {
           if (name.value !== '' && email.value !== '' && comment.value !== '') {
             firebase.database()
               .ref('users')

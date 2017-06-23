@@ -1,3 +1,5 @@
-export const getTitle = () => document.title;
+export const getTitle = (): string => document.title;
 
-export const setTitle = (newTitle: string) => document.title = newTitle;
+export const setTitle = (newTitle: string): void => {
+  document.title = newTitle
+};

@@ -36,10 +36,10 @@ export const users = (): void => {
     }
   };
 
-  const sliceAll = (selector: string, element: any = document): any =>
+  const sliceAll = (selector: string, element: HTMLElement = document): string[] =>
     [].slice.call((element).querySelectorAll(selector));
 
-  sliceAll('tbody').forEach((body: any): void => {
+  sliceAll('tbody').forEach((body: HTMLTableElement): void => {
     sliceAll('tr', body).reverse()
       .forEach(row => body.appendChild(row));
   });

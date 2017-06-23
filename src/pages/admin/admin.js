@@ -32,7 +32,7 @@ export const admin = (): void => {
     const determinate = document.querySelector('.mdc-linear-progress');
     const linearProgress = mdLinearProgress.MDCLinearProgress.attachTo(determinate);
 
-    adminSignIn.onclick = () => {
+    adminSignIn.onclick = (): void => {
       firebase.auth()
         .signInWithEmailAndPassword(adminEmail.value, adminPassword.value)
         .then(() => {
@@ -46,7 +46,7 @@ export const admin = (): void => {
         });
     };
 
-    adminSignOut.onclick = () => {
+    adminSignOut.onclick = (): void => {
       firebase.auth().signOut();
       signOutContent.style.display = '';
       [].forEach.call(signInContent, content => content.style.display = 'none');

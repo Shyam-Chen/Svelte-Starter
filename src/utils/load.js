@@ -1,17 +1,14 @@
 import { Observable } from 'rxjs';
 
 /**
- * @param {string} url - url
- *
- * @return {observable} - Observable
- *
  * @example
  * load('...')
  *   .subscribe(result => {
  *     // ...
  *   });
  */
-export const load = url => {
+
+export const load = (url: string): Observable<string[]> => {
   return new Observable(observer => {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
