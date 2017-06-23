@@ -1,7 +1,17 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 
+const express = require('express');
+
 admin.initializeApp(functions.config().firebase);
+
+const app = express();
+
+['/', '/about', '/contact'].forEach(route => {
+  app.get(route, (req, res) => {
+    res.render('../public/index.html', { req, res });
+  });
+});
 
 /**
  * @example
@@ -19,21 +29,5 @@ exports.addMessage = functions.https
       });
   });
 
-exports.makeUppercase = functions.database
-  .ref('/users')
-  .onWrite(event => {
-    const original = event.data.val();
-    const uppercase = original.toUpperCase();
-
-    return event.data.ref.parent.child('uppercase').set(uppercase);
-  });
-
-exports.prerenderAboutPage = functions.https
-  .onRequest((req, res) => {
-    res.status(200).send();
-  });
-
-exports.prerenderContactPage = functions.https
-  .onRequest((req, res) => {
-    res.status(200).send();
-  });
+// TODO: prerender static content
+exports.app = functions.https.onRequest(app);
