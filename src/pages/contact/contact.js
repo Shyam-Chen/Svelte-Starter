@@ -18,11 +18,8 @@ const imports = {
 
 const common = (language: string = 'en'): void => {
   const name = document.querySelector('#name');
-  const nameLabel = document.querySelector('#name + .mdc-textfield__label');
   const email = document.querySelector('#email');
-  const emailLabel = document.querySelector('#email + .mdc-textfield__label');
   const comment = document.querySelector('#comment');
-  const commentLabel = document.querySelector('#comment + .mdc-textfield__label');
   const sendButton = document.querySelector('#send-button');
 
   const sendToastEl = document.querySelector('#send-toast');
@@ -32,17 +29,23 @@ const common = (language: string = 'en'): void => {
     .onAuthStateChanged(user => {
       if (user) {
         sendButton.onclick = (): void => {
-          if (name.value !== '' && email.value !== '' && comment.value !== '') {
+          const textfieldInputs = document.querySelectorAll('.mdc-textfield__input');
+          const empty = [].filter.call(textfieldInputs, textfieldInput => textfieldInput.value === '');
+
+          if (!empty.length) {
             firebase.database()
               .ref('users')
               .push({ id: user.uid, name: name.value, email: email.value, message: comment.value });
 
-            name.value = '';
-            email.value = '';
-            comment.value = '';
-            nameLabel.classList.remove('mdc-textfield__label--float-above');
-            emailLabel.classList.remove('mdc-textfield__label--float-above');
-            commentLabel.classList.remove('mdc-textfield__label--float-above');
+            [].forEach.call(
+              textfieldInputs,
+              textfieldInput => textfieldInput.value = ''
+            );
+
+            [].forEach.call(
+              document.querySelectorAll('.mdc-textfield__label'),
+              textfieldLabel => textfieldLabel.classList.remove('mdc-textfield__label--float-above')
+            );
 
             language === 'en' ? sendToast.show({ message: 'Thanks for your comment.' }) : noop();
             language === 'zh' ? sendToast.show({ message: '感謝您的評論' }) : noop();
@@ -54,14 +57,13 @@ const common = (language: string = 'en'): void => {
           }
         };
       } else {
-        // console.log('There was no anonymous session. Creating a new anonymous user.');
         firebase.auth().signInAnonymously();
       }
     });
 
   [].forEach.call(
     document.querySelectorAll('.mdc-button'),
-    ripple => mdRipple.MDCRipple.attachTo(ripple)
+    button => mdRipple.MDCRipple.attachTo(button)
   );
 
   [].forEach.call(
