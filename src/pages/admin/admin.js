@@ -17,9 +17,7 @@ export const admin = (): void => {
       .innerHTML = _(template, { imports: { style } })();
 
     const adminEmail = document.querySelector('#admin-email');
-    const adminEmailLabel = document.querySelector('#admin-email + .mdc-textfield__label')
     const adminPassword = document.querySelector('#admin-password');
-    const adminPasswordLabel = document.querySelector('#admin-password + .mdc-textfield__label');
     const adminSignIn = document.querySelector('#admin-sign-in');
     const adminSignOut = document.querySelector('#admin-sign-out');
 
@@ -36,10 +34,15 @@ export const admin = (): void => {
       firebase.auth()
         .signInWithEmailAndPassword(adminEmail.value, adminPassword.value)
         .then(() => {
-          adminEmail.value = '';
-          adminPassword.value = ''
-          adminEmailLabel.classList.remove('mdc-textfield__label--float-above');
-          adminPasswordLabel.classList.remove('mdc-textfield__label--float-above');
+          [].forEach.call(
+            document.querySelectorAll('.mdc-textfield__input'),
+            textfieldInput => textfieldInput.value = ''
+          );
+
+          [].forEach.call(
+            document.querySelectorAll('.mdc-textfield__label'),
+            textfieldLabel => textfieldLabel.classList.remove('mdc-textfield__label--float-above')
+          );
         })
         .catch(error => {
           loginToast.show({ message: error.message });

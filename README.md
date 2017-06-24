@@ -7,7 +7,7 @@
 [![dependencies Status](https://david-dm.org/Shyam-Chen/Web-Starter-Kit/status.svg)](https://david-dm.org/Shyam-Chen/Web-Starter-Kit)
 [![devDependencies Status](https://david-dm.org/Shyam-Chen/Web-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Web-Starter-Kit?type=dev)
 
-[Live Demo](https://web-go-demo.firebaseapp.com/) | [Admin Demo](https://web-go-demo.firebaseapp.com/admin) (Account: ecmatc39@gmail.com, 123456)
+[Live Demo](https://web-go-demo.firebaseapp.com/) | [Admin Demo](https://web-go-demo.firebaseapp.com/admin) (Account: `ecmatc39@gmail.com`, `123456`)
 
 This seed repository provides the following features:
 
