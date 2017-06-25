@@ -1,4 +1,3 @@
-// import { MDCTemporaryDrawer } from '@material/drawer';
 import { __moduleExports as mdDrawer } from '@material/drawer/dist/mdc.drawer';
 import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
 

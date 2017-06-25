@@ -80,7 +80,7 @@
     "jasmine-core": "2.6.4",
     "jasmine-spec-reporter": "4.1.1",
     "karma": "1.7.0",
-    "karma-chrome-launcher": "^2.1.1",
+    "karma-chrome-launcher": "2.1.1",
     "karma-jasmine": "1.1.0",
     "karma-mocha-reporter": "2.2.3",
     "karma-prerollup-plugin": "1.0.1",
