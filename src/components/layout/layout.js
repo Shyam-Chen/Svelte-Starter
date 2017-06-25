@@ -39,7 +39,7 @@ export const layout = (content: string, page: string, language: string = 'en'): 
 
   const drawerMobile = new mdDrawer.MDCTemporaryDrawer(drawerMobileEl);
 
-  document.querySelector('#menu').onclick = () => {
+  document.querySelector('#menu').onclick = (): void => {
     if (window.innerWidth <= 599) {
       drawerMobile.open = true;
     } else {
