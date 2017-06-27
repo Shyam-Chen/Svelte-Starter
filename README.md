@@ -15,7 +15,6 @@ This seed repository provides the following features:
 * [x] Client-side platform with [**HTML5**](https://platform.html5.org/).
 * [x] User interface components with [**Material**](https://material.io/).
 * [x] Backend cloud services with [**Firebase**](https://firebase.google.com/).
-* [x] Routing and navigation with [**Page**](http://visionmedia.github.io/page.js/).
 * [x] Utility functions with [**Lodash**](https://lodash.com/).
 * [x] Reactive extensions with [**ReactiveX**](http://reactivex.io/).
 * [x] State container with [**Redux**](http://redux.js.org/).
