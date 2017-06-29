@@ -21,6 +21,7 @@
     "@google-cloud/trace-agent": "^2.1.0",
     "@google-cloud/translate": "^0.8.2",
     "@google-cloud/vision": "^0.11.3",
+    "express": "^4.15.3",
     "firebase-admin": "^4.2.1",
     "firebase-functions": "^0.5.7"
   }

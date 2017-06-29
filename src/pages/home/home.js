@@ -27,6 +27,11 @@ const common = (): void => {
 };
 
 export const home = (): void => {
+  if (location.pathname === '/') {
+    if (/zh/.test(navigator.language)) page.redirect('/zh');
+    if (/ja/.test(navigator.language)) page.redirect('/ja');
+  }
+
   page('/', () => {
     layout(_(template, { imports })(data), 'home');
     common();
