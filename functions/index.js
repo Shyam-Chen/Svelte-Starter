@@ -7,10 +7,17 @@ admin.initializeApp(functions.config().firebase);
 
 const app = express();
 
-['/', '/about', '/contact'].forEach(route => {
-  app.get(route, (req, res) => {
-    res.render('../public/index.html', { req, res });
-  });
+app.engine('html', () => {
+  // TODO
+});
+
+app.set('view engine', 'html');
+app.set('views', 'public')
+
+app.use('/', express.static('public', { index: false }));
+
+app.get('*', (req, res) => {
+  res.render('../public/index.html', { req, res });
 });
 
 /**
