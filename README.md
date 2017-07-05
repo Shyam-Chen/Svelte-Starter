@@ -467,10 +467,12 @@ $ yarn run deploy
 ## Known Issues
 
 * ---------- **P0: Critical** ----------
-* Serve dynamic content with Cloud Functions (ref, https://firebase.google.com/docs/hosting/functions)
+* Serve dynamic content (ref, https://firebase.google.com/docs/hosting/functions)
+* Communication between components (ref, [PostHTML](https://github.com/posthtml/posthtml) or [Reshape](https://github.com/reshape/reshape))
 * ---------- **P1: Urgent** ----------
-* `rxjs` not working
+* ...
 * ---------- **P2: Required** ----------
+* Do more examples
 * Write more tests
 * ---------- **P3: Important** ----------
 * ...
