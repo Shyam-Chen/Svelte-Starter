@@ -7,10 +7,13 @@ ADD . $HOME
 
 # chrome --
 ENV CHROME_BIN /usr/bin/chromium
+ENV DISPLAY :99
 
 RUN \
   apt-get update && \
-  apt-get install -y chromium libgconf-2-4
+  apt-get install -y xvfb chromium libgconf-2-4
+
+ENTRYPOINT ["Xvfb", "-ac", ":99", "-screen", "0", "1280x720x16"]
 # -- chrome
 
 # node --
