@@ -469,6 +469,7 @@ $ yarn run deploy
 * ---------- **P0: Critical** ----------
 * Serve dynamic content (ref, https://firebase.google.com/docs/hosting/functions)
 * Communication between components (ref, [PostHTML](https://github.com/posthtml/posthtml) or [Reshape](https://github.com/reshape/reshape))
+* Protractor HTTP mock
 * ---------- **P1: Urgent** ----------
 * ...
 * ---------- **P2: Required** ----------
