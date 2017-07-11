@@ -2,6 +2,7 @@
   "HOME": "Home",
   "TITLE": "Welcome to Web GO",
   "DESCRIPTION": "Web GO follows the best practices outlined in <a href=\"https://developers.google.com/web/fundamentals/\">Web Fundamentals</a>.",
+  "SUBTITLE": "Boilerplate Code",
   "CONTENT": {
     "WEB": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.",
     "MOBILE": "A boilerplate for Cordova, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.",

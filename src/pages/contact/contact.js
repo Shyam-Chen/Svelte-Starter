@@ -78,6 +78,11 @@ export const contact = (): void => {
     common();
   });
 
+  page('/en/contact', () => {
+    layout(_(template, { imports })(data), 'contact');
+    common();
+  });
+
   page('/zh/contact', () => {
     layout(_(template, { imports })(dataZh), 'contact', 'zh');
     common('zh');

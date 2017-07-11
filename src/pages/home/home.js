@@ -37,6 +37,11 @@ export const home = (): void => {
     common();
   });
 
+  page('/en', () => {
+    layout(_(template, { imports })(data), 'home');
+    common();
+  });
+
   page('/zh', () => {
     layout(_(template, { imports })(dataZh), 'home', 'zh');
     common();

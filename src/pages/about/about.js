@@ -18,6 +18,10 @@ export const about = (): void => {
     layout(_(template, { imports })(data), 'about');
   });
 
+  page('/en/about', () => {
+    layout(_(template, { imports })(data), 'about');
+  });
+
   page('/zh/about', () => {
     layout(_(template, { imports })(dataZh), 'about', 'zh');
   });

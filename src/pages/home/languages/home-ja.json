@@ -2,6 +2,7 @@
   "HOME": "ホーム",
   "TITLE": "Web GO へようこそ",
   "DESCRIPTION": "Web GO は、<a href=\"https://developers.google.com/web/fundamentals/\">Web Fundamentals</a> で説明されているベストプラクティスに従います",
+  "SUBTITLE": "定型文コード",
   "CONTENT": {
     "WEB": "HTML5、Material、Firebase、Gulp、Rollup、Babel、PostHTML と PostCSS のための定型文",
     "MOBILE": "Cordova、Material、Firebase、Gulp、Rollup、Babel、PostHTML と PostCSS のための定型文",

@@ -28,7 +28,7 @@ export const layout = (content: string, page: string, language: string = 'en'): 
   const enAnchor = document.querySelector('#en');
   const zhAnchor = document.querySelector('#zh');
   const jaAnchor = document.querySelector('#ja');
-  page === 'home' ? enAnchor.href = `/` : enAnchor.href = `/${page}`;
+  page === 'home' ? enAnchor.href = `/en` : enAnchor.href = `/en/${page}`;
   page === 'home' ? zhAnchor.href = `/zh` : zhAnchor.href = `/zh/${page}`;
   page === 'home' ? jaAnchor.href = `/ja` : jaAnchor.href = `/ja/${page}`;
 

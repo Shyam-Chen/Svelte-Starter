@@ -1,9 +1,9 @@
 {
   "TITLE": "Web GO",
   "LINK": [
-    ["/", "Home"],
-    ["/about", "About"],
-    ["/contact", "Contact"]
+    ["/en", "Home"],
+    ["/en/about", "About"],
+    ["/en/contact", "Contact"]
   ],
   "TECHNOLOGIES": "Technologies",
   "RESOURCES": "Resources",
