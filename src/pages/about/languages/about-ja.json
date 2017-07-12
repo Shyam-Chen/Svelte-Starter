@@ -29,7 +29,7 @@
     "CONTENT": [
       "Gulp を使用したシステムを構築",
       "Rollup を使用したモジュールバンドラ",
-      "PostHTML を使用した HTML 変換",
+      "Reshape を使用した HTML 変換",
       "PostCSS を使用した今後の CSS 機能",
       "Babel を使用した次世代 JavaScript",
       "Flow を使用したタイプ注釈",

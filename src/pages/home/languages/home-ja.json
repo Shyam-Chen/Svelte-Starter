@@ -4,9 +4,9 @@
   "DESCRIPTION": "Web GO は、<a href=\"https://developers.google.com/web/fundamentals/\">Web Fundamentals</a> で説明されているベストプラクティスに従います",
   "SUBTITLE": "定型文コード",
   "CONTENT": {
-    "WEB": "HTML5、Material、Firebase、Gulp、Rollup、Babel、PostHTML と PostCSS のための定型文",
-    "MOBILE": "Cordova、Material、Firebase、Gulp、Rollup、Babel、PostHTML と PostCSS のための定型文",
-    "DESKTOP": "Electron、Material、Firebase、Gulp、Rollup、Babel、PostHTML と PostCSS のための定型文",
+    "WEB": "HTML5、Material、Firebase、Gulp、Rollup、Babel、Reshape と PostCSS のための定型文",
+    "MOBILE": "Cordova、Material、Firebase、Gulp、Rollup、Babel、Reshape と PostCSS のための定型文",
+    "DESKTOP": "Electron、Material、Firebase、Gulp、Rollup、Babel、Reshape と PostCSS のための定型文",
     "BACKEND": "Node.js、Express、Mongoose、Heroku、mLab、Nodemon、PM2 と Babel のための定型文"
   },
   "GET_STARTED": "開始する"

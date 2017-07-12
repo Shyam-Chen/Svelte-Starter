@@ -1,6 +1,6 @@
 # Web Starter Kit (Beta)
 
-:icecream: A boilerplate for :star2: HTML5 :star2:, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.
+:icecream: A boilerplate for :star2: HTML5 :star2:, Material, Firebase, Gulp, Rollup, Babel, Reshape, and PostCSS.
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit)
  //
@@ -23,7 +23,7 @@ This seed repository provides the following features:
 * ---------- **Tools** ----------
 * [x] Build system with [**Gulp**](https://github.com/gulpjs/gulp).
 * [x] Module bundler with [**Rollup**](https://github.com/rollup/rollup).
-* [ ] HTML transformations with [**PostHTML**](https://github.com/posthtml/posthtml).
+* [x] HTML transformations with [**Reshape**](https://github.com/reshape/reshape).
 * [x] Future CSS features with [**PostCSS**](https://github.com/postcss/postcss).
 * [x] Next generation JavaScript with [**Babel**](https://github.com/babel/babel).
 * [x] Type annotations with [**Flow**](https://github.com/facebook/flow).
@@ -437,7 +437,7 @@ $ yarn run deploy
 │   └── vendor.js  -> third-party libraries ...
 ├── tools
 │   ├── config
-│   │   └── {babel,karma,postcss,posthtml,protractor,rollup}.js
+│   │   └── {babel,karma,postcss,protractor,reshape,rollup}.js
 │   ├── tasks
 │   │   └── {app,build,chunkhash,copy,e2e,entrypoint,lint,polyfills,precache,serve,sitemap,unit,vendor,watch}.js
 │   ├── utils
@@ -468,7 +468,6 @@ $ yarn run deploy
 
 * ---------- **P0: Critical** ----------
 * Serve dynamic content (ref, https://firebase.google.com/docs/hosting/functions)
-* Communication between components (ref, [PostHTML](https://github.com/posthtml/posthtml) or [Reshape](https://github.com/reshape/reshape))
 * Protractor HTTP mock
 * ---------- **P1: Urgent** ----------
 * ...

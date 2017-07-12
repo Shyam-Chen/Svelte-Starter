@@ -1,7 +1,7 @@
 {
   "name": "Web-Starter-Kit",
   "version": "1.0.0",
-  "description": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, PostHTML, and PostCSS.",
+  "description": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, Reshape, and PostCSS.",
   "scripts": {
     "start": "gulp --watch --serve",
     "test": "gulp unit --watch",
@@ -111,7 +111,7 @@
     "rollup-plugin-node-resolve": "3.0.0",
     "rollup-plugin-postcss": "0.5.3",
     "rollup-plugin-replace": "1.1.1",
-    "rollup-plugin-reshape": "0.1.0",
+    "rollup-plugin-reshape": "0.2.0",
     "rollup-plugin-uglify": "2.0.1",
     "rollup-plugin-url": "1.2.0",
     "rollup-stream": "1.21.0",

@@ -1,9 +1,7 @@
 import { join } from 'path';
 import { env, noop } from 'gulp-util';
 
-// import posthtml from 'rollup-plugin-posthtml-template';
-// import reshape from 'rollup-plugin-reshape';
-import html from 'rollup-plugin-html';
+import reshape from 'rollup-plugin-reshape';
 import postcss from 'rollup-plugin-postcss';
 import url from 'rollup-plugin-url';
 import json from 'rollup-plugin-json';
@@ -17,10 +15,8 @@ import replace from 'rollup-plugin-replace';
 import uglify from 'rollup-plugin-uglify';
 
 import cssnano from 'cssnano';
-// import { minify } from 'uglify-js-harmony';
 
-// import POSTHTML_CONFIG from './posthtml';
-// import RESHAPE_CONFIG from './reshape';
+import RESHAPE_CONFIG from './reshape';
 import POSTCSS_CONFIG from './postcss';
 import BABEL_CONFIG from './babel';
 
@@ -31,15 +27,7 @@ export const PRIMARY_CONFIG = {
   format: 'iife',
   context: 'window',
   plugins: [
-    // posthtml(POSTHTML_CONFIG),
-    // reshape(RESHAPE_CONFIG),
-    html({
-      htmlMinifierOptions: {
-        collapseWhitespace: true,
-        removeAttributeQuotes: true,
-        removeComments: true
-      }
-    }),
+    reshape(RESHAPE_CONFIG),
     postcss(POSTCSS_CONFIG),
     url({ limit: 32 * 1024 }),
     json(),
@@ -56,7 +44,7 @@ export const PRIMARY_CONFIG = {
       }
     }),
     replace({ 'process.env.NODE_ENV': JSON.stringify(env.prod ? 'production' : 'development') }),
-    (env.prod ? uglify() /* uglify({}, minify) */ : noop())
+    (env.prod ? uglify() : noop())
   ]
 };
 

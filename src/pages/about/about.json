@@ -29,7 +29,7 @@
     "CONTENT": [
       "Build system with Gulp.",
       "Module bundler with Rollup.",
-      "HTML transformations with PostHTML.",
+      "HTML transformations with Reshape.",
       "Future CSS features with PostCSS.",
       "Next generation JavaScript with Babel.",
       "Type annotations with Flow.",

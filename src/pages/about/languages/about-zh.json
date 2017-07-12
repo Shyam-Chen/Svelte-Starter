@@ -29,7 +29,7 @@
     "CONTENT": [
       "建置系統使用 Gulp",
       "模組捆綁器使用 Rollup",
-      "HTML 變形使用 PostHTML",
+      "HTML 變形使用 Reshape",
       "未來的 CSS 特性使用 PostCSS",
       "下一代的 JavaScript 使用 Babel",
       "型別註釋使用 Flow",

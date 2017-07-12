@@ -1,19 +1,7 @@
-<header class="mdc-toolbar mdc-toolbar--fixed">
-  <div class="mdc-toolbar__row">
-    <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
-      <button type="button" aria-label="Menu" id="menu" class="mdc-toolbar__icon--menu" style="cursor: pointer">
-        <svg fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
-        </svg>
-      </button>
-      <a href="${ LINK[0][0] }" class="mdc-toolbar__title" style="color: #FFFFFF; text-decoration: none">${ TITLE }</a>
-    </section>
-  </div>
-</header>
+<include src="./src/components/layout/includes/header.html" />
 
 <div class="mdc-toolbar-fixed-adjust ${ style.layout }">
-  <nav class="mdc-temporary-drawer ${ style.layout__drawer }" data-mobile>
+  <nav class="mdc-temporary-drawer ${ style.layout__drawer }" data-mobile style="z-index: 10">
     <nav class="mdc-temporary-drawer__drawer">
       <header class="mdc-temporary-drawer__header">
         <div class="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary mdc-typography--title">
