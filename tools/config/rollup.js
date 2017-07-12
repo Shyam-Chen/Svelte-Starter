@@ -2,6 +2,7 @@ import { join } from 'path';
 import { env, noop } from 'gulp-util';
 
 // import posthtml from 'rollup-plugin-posthtml-template';
+// import reshape from 'rollup-plugin-reshape';
 import html from 'rollup-plugin-html';
 import postcss from 'rollup-plugin-postcss';
 import url from 'rollup-plugin-url';
@@ -19,6 +20,7 @@ import cssnano from 'cssnano';
 // import { minify } from 'uglify-js-harmony';
 
 // import POSTHTML_CONFIG from './posthtml';
+// import RESHAPE_CONFIG from './reshape';
 import POSTCSS_CONFIG from './postcss';
 import BABEL_CONFIG from './babel';
 
@@ -30,6 +32,7 @@ export const PRIMARY_CONFIG = {
   context: 'window',
   plugins: [
     // posthtml(POSTHTML_CONFIG),
+    // reshape(RESHAPE_CONFIG),
     html({
       htmlMinifierOptions: {
         collapseWhitespace: true,
