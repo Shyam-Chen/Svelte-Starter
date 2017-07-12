@@ -12,8 +12,6 @@
       "Backend cloud services with Firebase.",
       "Application framework with Express.",
       "Database object modeling with Mongoose.",
-      "Application cloud hosting with Heroku.",
-      "Database cloud hosting with mLab.",
       "Utility functions with Lodash.",
       "Reactive extensions with ReactiveX.",
       "State container with Redux.",
@@ -52,6 +50,8 @@
       "Text editor with Atom.",
       "Version control with Git.",
       "Fast and deterministic builds with Yarn.",
+      "Application cloud hosting with Heroku.",
+      "Database cloud hosting with mLab.",
       "Reverse proxy and caching with Nginx.",
       "Software container with Docker.",
       "Continuous integration with Travis."

@@ -1,0 +1,40 @@
+<nav class="mdc-temporary-drawer ${ style.layout__drawer }" data-mobile style="z-index: 10">
+  <nav class="mdc-temporary-drawer__drawer">
+    <header class="mdc-temporary-drawer__header">
+      <div class="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary mdc-typography--title">
+        ${ TITLE }
+      </div>
+    </header>
+    <nav class="mdc-temporary-drawer__content mdc-list-group" id="mobile-menu">
+      <div class="mdc-list">
+        <a class="mdc-list-item mdc-theme--primary" onclick="page.redirect('${ LINK[0][0] }'); document.querySelector('body').style.overflowY = 'auto'" style="box-sizing: border-box">
+          <span class="${ style.layout__link }">
+            <svg fill="#3F51B5" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+              <path d="M0 0h24v24H0z" fill="none" />
+            </svg>
+          </span>
+          ${ LINK[0][1] }
+        </a>
+        <a class="mdc-list-item mdc-theme--primary" onclick="page.redirect('${ LINK[1][0] }'); document.querySelector('body').style.overflowY = 'auto'" style="box-sizing: border-box">
+          <span class="${ style.layout__link }">
+            <svg fill="#3F51B5" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 11.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm6 0c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.05-.86 2.36-1.05 4.23-2.98 5.21-5.37C11.07 8.33 14.05 10 17.42 10c.78 0 1.53-.09 2.25-.26.21.71.33 1.47.33 2.26 0 4.41-3.59 8-8 8z" />
+              <path d="M0 0h24v24H0z" fill="none" />
+            </svg>
+          </span>
+          ${ LINK[1][1] }
+        </a>
+        <a class="mdc-list-item mdc-theme--primary" onclick="page.redirect('${ LINK[2][0] }'); document.querySelector('body').style.overflowY = 'auto'" style="box-sizing: border-box">
+          <span class="${ style.layout__link }">
+            <svg fill="#3F51B5" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 0h24v24H0zm0 0h24v24H0zm0 0h24v24H0z" fill="none" />
+              <path d="M20 0H4v2h16V0zM4 24h16v-2H4v2zM20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 2.75c1.24 0 2.25 1.01 2.25 2.25s-1.01 2.25-2.25 2.25S9.75 10.24 9.75 9 10.76 6.75 12 6.75zM17 17H7v-1.5c0-1.67 3.33-2.5 5-2.5s5 .83 5 2.5V17z" />
+            </svg>
+          </span>
+          ${ LINK[2][1] }
+        </a>
+      </div>
+    </nav>
+  </nav>
+</nav>

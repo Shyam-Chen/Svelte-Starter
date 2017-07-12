@@ -12,8 +12,6 @@
       "後端雲端服務使用 Firebase",
       "應用程式框架使用 Express",
       "資料庫物件模型使用 Mongoose",
-      "應用程式雲端託管使用 Heroku",
-      "資料庫雲端託管使用 mLab",
       "實用的函式使用 Lodash",
       "反應式的擴充使用 ReactiveX",
       "狀態容器使用 Redux",
@@ -52,6 +50,8 @@
       "文字編輯器使用 Atom",
       "版本控制使用 Git",
       "快速且確定性的建置使用 Yarn",
+      "應用程式雲端託管使用 Heroku",
+      "資料庫雲端託管使用 mLab",
       "反向代理和快取使用 Nginx",
       "軟體容器使用 Docker",
       "持續整合使用 Travis"
