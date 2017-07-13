@@ -8,8 +8,8 @@ import { template as _ } from 'lodash';
 import template from './admin.html';
 import style from './admin.css';
 
-import usersTemplate from './users.html';
-import { users } from './users';
+import usersTemplate from './users/users.html';
+import { users } from './users/users';
 
 export const admin = (): void => {
   page('/admin', () => {
