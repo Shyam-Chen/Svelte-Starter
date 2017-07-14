@@ -1,15 +1,13 @@
 import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
 import { __moduleExports as mdTextfield } from '@material/textfield/dist/mdc.textfield';
 import { __moduleExports as mdSnackbar } from '@material/snackbar/dist/mdc.snackbar';
-import { __moduleExports as mdLinearProgress } from '@material/linear-progress/dist/mdc.linearProgress';
 
 import { template as _ } from 'lodash';
 
 import template from './admin.html';
 import style from './admin.css';
 
-import usersTemplate from './users/users.html';
-import { users } from './users/users';
+import { users } from '../../components/users';
 
 export const admin = (): void => {
   page('/admin', () => {
@@ -26,9 +24,6 @@ export const admin = (): void => {
 
     const loginToastEl = document.querySelector('#login-toast');
     const loginToast = new mdSnackbar.MDCSnackbar(loginToastEl);
-
-    const determinate = document.querySelector('.mdc-linear-progress');
-    const linearProgress = mdLinearProgress.MDCLinearProgress.attachTo(determinate);
 
     adminSignIn.onclick = (): void => {
       firebase.auth()
@@ -72,16 +67,7 @@ export const admin = (): void => {
           signOutContent.style.display = 'none';
           [].forEach.call(signInContent, content => content.style.display = '');
 
-          firebase.database()
-            .ref('users')
-            .on('value', snapshot => {
-              linearProgress.progress = 1;
-
-              document.querySelector('#users')
-                .innerHTML = _(usersTemplate, { imports: { snapshot } })();
-
-              users();
-            });
+          users();
         } else {
           currentUID = null;
         }
