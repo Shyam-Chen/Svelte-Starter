@@ -67,7 +67,7 @@ export const admin = (): void => {
           signOutContent.style.display = 'none';
           [].forEach.call(signInContent, content => content.style.display = '');
 
-          users();
+          users('admin');
         } else {
           currentUID = null;
         }

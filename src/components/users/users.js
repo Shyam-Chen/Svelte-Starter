@@ -7,11 +7,11 @@ import { template as _ } from 'lodash';
 import template from './users.html';
 import style from './users.css';
 
-export const users = (): void => {
+export const users = (page: string): void => {
   firebase.database()
     .ref('users')
-    .on('value', snapshot => {
-      document.querySelector('#users')
+    .on('value', (snapshot): void => {
+      document.querySelector(`#users[data-${page}]`)
         .innerHTML = _(template, { imports: { style, snapshot } })();
 
         const bodyEl = document.querySelector('body');
@@ -55,7 +55,7 @@ export const users = (): void => {
             .forEach(row => body.appendChild(row));
         });
 
-        [dialogEdit, dialogDelete].forEach((dialog: any): void => {
+        [dialogEdit, dialogDelete].forEach((dialog): void => {
           dialog.listen('MDCDialog:accept', () => bodyEl.style.overflowY = 'auto');
           dialog.listen('MDCDialog:cancel', () => bodyEl.style.overflowY = 'auto');
         });
