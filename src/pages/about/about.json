@@ -4,10 +4,6 @@
   "ESSENTIALS": {
     "TITLE": "Essentials",
     "CONTENT": [
-      "Client-side platform with HTML5.",
-      "Server-side platform with Node.",
-      "Cross-platform mobile applications with Cordova.",
-      "Cross-platform desktop applications with Electron.",
       "User interface components with Material.",
       "Backend cloud services with Firebase.",
       "Application framework with Express.",
@@ -46,6 +42,10 @@
   "ENVIRONMENTS": {
     "TITLE": "Environments",
     "CONTENT": [
+      "Client-side platform with HTML5.",
+      "Server-side platform with Node.",
+      "Cross-platform mobile applications with Cordova.",
+      "Cross-platform desktop applications with Electron.",
       "Operating system with Linux.",
       "Text editor with Atom.",
       "Version control with Git.",

@@ -4,10 +4,6 @@
   "ESSENTIALS": {
     "TITLE": "精要",
     "CONTENT": [
-      "用戶端平台使用 HTML5",
-      "伺服端平台使用 Node",
-      "跨平台行動應用使用 Cordova",
-      "跨平台桌面應用使用 Electron",
       "使用者介面元件使用 Material",
       "後端雲端服務使用 Firebase",
       "應用程式框架使用 Express",
@@ -46,6 +42,10 @@
   "ENVIRONMENTS": {
     "TITLE": "環境",
     "CONTENT": [
+      "用戶端平台使用 HTML5",
+      "伺服端平台使用 Node",
+      "跨平台行動應用使用 Cordova",
+      "跨平台桌面應用使用 Electron",
       "作業系統使用 Linux",
       "文字編輯器使用 Atom",
       "版本控制使用 Git",

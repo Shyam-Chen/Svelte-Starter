@@ -12,7 +12,6 @@
 This seed repository provides the following features:
 
 * ---------- **Essentials** ----------
-* [x] Client-side platform with [**HTML5**](https://platform.html5.org/).
 * [x] User interface components with [**Material**](https://material.io/).
 * [x] Backend cloud services with [**Firebase**](https://firebase.google.com/).
 * [x] Utility functions with [**Lodash**](https://lodash.com/).
@@ -35,6 +34,7 @@ This seed repository provides the following features:
 * [x] Unit tests with [**Karma**](https://github.com/karma-runner/karma).
 * [x] End-to-end tests with [**Protractor**](https://github.com/angular/protractor).
 * ---------- **Environments** ----------
+* [x] Client-side platform with [**HTML5**](https://platform.html5.org/).
 * [x] Operating system with [**Linux**](https://github.com/torvalds/linux).
 * [x] Text editor with [**Atom**](https://github.com/atom/atom).
 * [x] Version control with [**Git**](https://github.com/git/git).
