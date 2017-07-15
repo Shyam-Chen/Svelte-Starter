@@ -15,6 +15,6 @@ describe('About', () => {
 
   it('Table body', () => {
     const el = browser.driver.findElement(by.css('li.mdc-list-item'));
-    expect(el.getText()).toEqual('Client-side platform with HTML5.');
+    expect(el.getText()).toEqual('User interface components with Material.');
   });
 });

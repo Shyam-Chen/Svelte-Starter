@@ -44,8 +44,6 @@
     "CONTENT": [
       "用戶端平台使用 HTML5",
       "伺服端平台使用 Node",
-      "跨平台行動應用使用 Cordova",
-      "跨平台桌面應用使用 Electron",
       "作業系統使用 Linux",
       "文字編輯器使用 Atom",
       "版本控制使用 Git",

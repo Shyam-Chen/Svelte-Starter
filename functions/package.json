@@ -1,6 +1,6 @@
 {
-  "name": "Web-Starter-Kit",
-  "description": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, Reshape, and PostCSS.",
+  "name": "Web-GO",
+  "description": "Professional templates for modern web development with HTML5 and Node.js.",
   "dependencies": {
     "@google-cloud/bigquery": "^0.9.5",
     "@google-cloud/bigtable": "^0.9.1",

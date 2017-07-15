@@ -1,11 +1,11 @@
-# Web Starter Kit (Beta)
+# Frontend Starter Kit (Beta)
 
 :icecream: A boilerplate for :star2: HTML5 :star2:, Material, Firebase, Gulp, Rollup, Babel, Reshape, and PostCSS.
 
-[![Build Status](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Web-Starter-Kit)
+[![Build Status](https://travis-ci.org/Shyam-Chen/Frontend-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Frontend-Starter-Kit)
  //
-[![dependencies Status](https://david-dm.org/Shyam-Chen/Web-Starter-Kit/status.svg)](https://david-dm.org/Shyam-Chen/Web-Starter-Kit)
-[![devDependencies Status](https://david-dm.org/Shyam-Chen/Web-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Web-Starter-Kit?type=dev)
+[![dependencies Status](https://david-dm.org/Shyam-Chen/Frontend-Starter-Kit/status.svg)](https://david-dm.org/Shyam-Chen/Frontend-Starter-Kit)
+[![devDependencies Status](https://david-dm.org/Shyam-Chen/Frontend-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Frontend-Starter-Kit?type=dev)
 
 [Live Demo](https://web-go-demo.firebaseapp.com/) | [Admin Demo](https://web-go-demo.firebaseapp.com/admin) (Account: `ecmatc39@gmail.com`, `123456`)
 
@@ -57,7 +57,7 @@ This seed repository provides the following features:
 1. Clone this Boilerplate
 
 ```bash
-$ git clone --depth 1 https://github.com/Shyam-Chen/Web-Starter-Kit.git <PROJECT_NAME>
+$ git clone --depth 1 https://github.com/Shyam-Chen/Frontend-Starter-Kit.git <PROJECT_NAME>
 $ cd <PROJECT_NAME>
 ```
 
@@ -82,7 +82,7 @@ $ yarn test
 5. Stay up-to-date
 
 ```bash
-$ git remote add upstream https://github.com/Shyam-Chen/Web-Starter-Kit.git
+$ git remote add upstream https://github.com/Shyam-Chen/Frontend-Starter-Kit.git
 $ git pull upstream master
 ```
 

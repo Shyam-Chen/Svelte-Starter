@@ -5,8 +5,6 @@
   "SUBTITLE": "樣板程式碼",
   "CONTENT": {
     "WEB": "HTML5、Material、Firebase、Gulp、Rollup、Babel、Reshape 和 PostCSS 的樣板",
-    "MOBILE": "Cordova、Material、Firebase、Gulp、Rollup、Babel、Reshape 和 PostCSS 的樣板",
-    "DESKTOP": "Electron、Material、Firebase、Gulp、Rollup、Babel、Reshape 和 PostCSS 的樣板",
     "BACKEND": "Node.js、Express、Mongoose、Heroku、mLab、Nodemon、PM2 和 Babel 的樣板"
   },
   "GET_STARTED": "立馬開始"

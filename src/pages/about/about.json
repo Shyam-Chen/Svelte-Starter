@@ -44,8 +44,6 @@
     "CONTENT": [
       "Client-side platform with HTML5.",
       "Server-side platform with Node.",
-      "Cross-platform mobile applications with Cordova.",
-      "Cross-platform desktop applications with Electron.",
       "Operating system with Linux.",
       "Text editor with Atom.",
       "Version control with Git.",
