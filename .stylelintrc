@@ -13,7 +13,6 @@
     "no-invalid-double-slash-comments": null,
     "number-leading-zero": "never",
     "property-no-unknown": null,
-    "rule-nested-empty-line-before": null,
     "selector-pseudo-class-no-unknown": null
   }
 }
