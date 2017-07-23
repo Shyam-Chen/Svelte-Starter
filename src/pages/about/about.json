@@ -13,9 +13,11 @@
       "State container with Redux.",
       "Immutable collections with Immutable.",
       "Data visualizations with D3.",
+      "3D scene graph with Three.",
       "Secure authentication with JWT.",
       "Data query language with GraphQL.",
-      "Real-time bidirectional communication with Socket."
+      "Real-time bidirectional communication with Socket.",
+      "Message queuing with RabbitMQ."
     ]
   },
   "TOOLS": {
@@ -50,6 +52,7 @@
       "Fast and deterministic builds with Yarn.",
       "Application cloud hosting with Heroku.",
       "Database cloud hosting with mLab.",
+      "Message queuing cloud hosting with CloudAMQP.",
       "Reverse proxy and caching with Nginx.",
       "Software container with Docker.",
       "Continuous integration with Travis."

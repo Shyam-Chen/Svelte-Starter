@@ -13,9 +13,11 @@
       "狀態容器使用 Redux",
       "不變的集合使用 Immutable",
       "資料視覺化使用 D3",
+      "3D 場景圖使用 Three",
       "安全認證使用 JWT",
       "資料查詢語言使用 GraphQL",
-      "即時雙向通信使用 Socket"
+      "即時雙向通信使用 Socket",
+      "訊息佇列使用 RabbitMQ"
     ]
   },
   "TOOLS": {
@@ -50,6 +52,7 @@
       "快速且確定性的建置使用 Yarn",
       "應用程式雲端託管使用 Heroku",
       "資料庫雲端託管使用 mLab",
+      "訊息佇列雲端託管使用 CloudAMQP",
       "反向代理和快取使用 Nginx",
       "軟體容器使用 Docker",
       "持續整合使用 Travis"

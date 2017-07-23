@@ -19,6 +19,7 @@ This seed repository provides the following features:
 * [x] State container with [**Redux**](http://redux.js.org/).
 * [x] Immutable collections with [**Immutable**](http://facebook.github.io/immutable-js/).
 * [x] Data visualizations with [**D3**](https://d3js.org/).
+* [ ] 3D scene graph with [**Three**](https://threejs.org/).
 * ---------- **Tools** ----------
 * [x] Build system with [**Gulp**](https://github.com/gulpjs/gulp).
 * [x] Module bundler with [**Rollup**](https://github.com/rollup/rollup).

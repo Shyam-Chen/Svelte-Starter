@@ -46,7 +46,8 @@
     "redux-observable": "0.14.1",
     "rxjs-es": "5.0.0-beta.12",
     "socket.io-client": "2.0.3",
-    "superagent": "3.5.2"
+    "superagent": "3.5.2",
+    "three": "0.86.0"
   },
   "devDependencies": {
     "babel-core": "6.25.0",
