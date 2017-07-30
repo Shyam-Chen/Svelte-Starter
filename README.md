@@ -252,7 +252,7 @@ client.query({
       }
     `
   })
-  .then(res => console.log(res));
+  .then(res => console.log(res.data));
 ```
 
 5. Example of Sockets

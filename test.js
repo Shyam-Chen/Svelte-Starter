@@ -17,6 +17,9 @@ import { Map, Set } from 'immutable';
 import { select, selectAll } from 'd3-selection';
 import { transition, active } from 'd3-transition';
 
+// Three
+import { Scene, WebGLRenderer } from 'three';
+
 describe('Test', () => {
   describe('Lodash', () => {
     it('should be able to use', () => {
@@ -75,6 +78,13 @@ describe('Test', () => {
       expect(selectAll).toBeDefined();
       expect(transition).toBeDefined();
       expect(active).toBeDefined();
+    });
+  });
+
+  describe('Three', () => {
+    it('should be able to use', () => {
+      expect(Scene).toBeDefined();
+      expect(WebGLRenderer).toBeDefined();
     });
   });
 });
