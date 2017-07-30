@@ -510,8 +510,10 @@ $ yarn run deploy
 * ---------- **P0: Critical** ----------
 * Serve dynamic content (ref, https://firebase.google.com/docs/hosting/functions)
 * Protractor HTTP mock
+* `socket.io-client` can't import
 * ---------- **P1: Urgent** ----------
-* ...
+* `rxjs` can't import (`rxjs-es` -> `rxjs`)
+* `axios` can't import (`superagent` -> `axios`)
 * ---------- **P2: Required** ----------
 * Do more examples
 * Write more tests
