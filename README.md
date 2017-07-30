@@ -19,7 +19,7 @@ This seed repository provides the following features:
 * [x] State container with [**Redux**](http://redux.js.org/).
 * [x] Immutable collections with [**Immutable**](http://facebook.github.io/immutable-js/).
 * [x] Data visualizations with [**D3**](https://d3js.org/).
-* [ ] 3D scene graph with [**Three**](https://threejs.org/).
+* [x] 3D scene graph with [**Three**](https://threejs.org/).
 * ---------- **Tools** ----------
 * [x] Build system with [**Gulp**](https://github.com/gulpjs/gulp).
 * [x] Module bundler with [**Rollup**](https://github.com/rollup/rollup).
@@ -359,29 +359,69 @@ Observable::from(Set([1, 2, 3]))
 10. Example of D3
 
 ```js
-import 'd3-selection-multi';
-
-import { Observable } from 'rxjs';
-import { fromEvent } from 'rxjs/observable';
-import { Set } from 'immutable';
 import { select } from 'd3-selection';
-import { transition } from 'd3-transition';
 
-Observable::fromEvent(document, 'click')
-  .subscribe(() => {
-    const exEl = select('#ex');
-    const elText = Set(['Hello', 'Goodbye']);
+const exWidth = 400;
+const exHeight = 200;
+const exDataset = [5, 10, 15, 20, 15, 10, 15, 20, 15, 10, 5];
 
-    exEl.text(`${elText.first()} D3`)
-      .styles({
-        'text-align': 'center',
-        'line-height': '10rem',
-        'font-size': '7rem'
-      })
-      ::transition()
-      .duration(500)
-      .style('color', '#F44336');
-  });
+const exSvgEl = select('#ex')
+  .append('svg')
+  .attr('width', exWidth)
+  .attr('height', exHeight);
+
+exSvgEl.selectAll('rect')
+  .data(exDataset)
+  .enter()
+  .append('rect')
+  .attr('x', (data, index) => index * (exWidth / exDataset.length))
+  .attr('fill', data => `rgba(200, 100, 200, ${data / 25})`)
+  .attr('y', data => exHeight - (data * 4))
+  .attr('width', exWidth / exDataset.length - 1)
+  .attr('height', data => data * 4);
+```
+
+```html
+<div id="ex"></div>
+```
+
+11. Example of Three
+
+```js
+import { PerspectiveCamera, Scene, BoxGeometry, MeshBasicMaterial, Mesh, WebGLRenderer } from 'three';
+
+let camera, scene, renderer, geometry, material, mesh;
+
+const init = () => {
+  camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+  camera.position.z = 1000;
+
+  scene = new Scene();
+
+  geometry = new BoxGeometry(200, 200, 200);
+  material = new MeshBasicMaterial({ color: 0xff0000, wireframe: true });
+
+  mesh = new Mesh(geometry, material);
+  scene.add(mesh);
+
+  renderer = new WebGLRenderer();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  document.querySelector('#ex')
+    .appendChild(renderer.domElement);
+};
+
+const animate = () => {
+  requestAnimationFrame(animate);
+
+  mesh.rotation.x += 0.01;
+  mesh.rotation.y += 0.02;
+
+  renderer.render(scene, camera);
+};
+
+init();
+animate();
 ```
 
 ```html
