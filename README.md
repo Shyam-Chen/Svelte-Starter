@@ -431,18 +431,17 @@ animate();
 ## All Commands
 
 ```bash
-$ yarn run dev
-$ yarn run prod
+$ yarn dev
+$ yarn prod
 
-$ yarn run lint
-$ yarn run unit
-$ yarn run e2e
+$ yarn lint
+$ yarn unit
+$ yarn e2e
 
-$ yarn run clean
-$ yarn run reset
-$ yarn run reinstall
+$ yarn reset
+$ yarn reinstall
 
-$ yarn run deploy
+$ yarn deploy
 ```
 
 ## Directory Structure
