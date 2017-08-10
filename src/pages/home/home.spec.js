@@ -2,7 +2,7 @@ import { template as _ } from 'lodash';
 
 import { home } from './home';
 
-import { layout } from '../../components/layout';
+import { layout } from '../../shared/layout';
 import logo from '../../assets/images/logo.png';
 
 import template from './home.html';

@@ -3,7 +3,7 @@ import { __moduleExports as mdTextfield } from '@material/textfield/dist/mdc.tex
 import { __moduleExports as mdSnackbar } from '@material/snackbar/dist/mdc.snackbar';
 import { template as _, noop } from 'lodash';
 
-import { layout } from '../../components/layout';
+import { layout } from '../../shared/layout';
 
 import template from './contact.html';
 import style from './contact.css';
