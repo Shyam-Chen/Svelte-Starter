@@ -37,4 +37,4 @@ exports.addMessage = functions.https
   });
 
 // TODO: prerender static content
-exports.app = functions.https.onRequest(app);
+// exports.app = functions.https.onRequest(app);
