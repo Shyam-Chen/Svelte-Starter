@@ -1,11 +1,7 @@
-export const INCREMENT = 'INCREMENT';
-export const DECREMENT = 'DECREMENT';
-export const RESET = 'RESET';
-export const INCREMENT_IF_ODD = 'INCREMENT_IF_ODD';
-export const DECREMENT_IF_EVEN = 'DECREMENT_IF_EVEN';
+import { INCREMENT, DECREMENT, RESET, INCREMENT_IF_ODD, DECREMENT_IF_EVEN } from './constants';
 
-export const increment = () => ({ type: INCREMENT });
-export const decrement = () => ({ type: DECREMENT });
-export const reset = () => ({ type: RESET });
-export const incrementIfOdd = () => ({ type: INCREMENT_IF_ODD });
-export const decrementIfEven = () => ({ type: DECREMENT_IF_EVEN });
+export const onIncrement = () => ({ type: INCREMENT });
+export const onDecrement = () => ({ type: DECREMENT });
+export const onReset = () => ({ type: RESET });
+export const onIncrementIfOdd = () => ({ type: INCREMENT_IF_ODD });
+export const onDecrementIfEven = () => ({ type: DECREMENT_IF_EVEN });
