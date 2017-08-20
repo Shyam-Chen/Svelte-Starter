@@ -517,8 +517,8 @@ $ yarn deploy
 * Do more examples
 * Write more tests
 * ---------- **P3: Important** ----------
-* Think about Webpack (resolve import CJS)
+* Think about Webpack (resolve import CommonJS)
 * Think about Jest (Jasmine & Karma -> Jest)
-* Think about Nightwatch (Protractor)
+* Think about Nightwatch (Protractor => Nightwatch)
 * ---------- **P4: Nice to have** ----------
 * ...
