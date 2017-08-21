@@ -512,7 +512,8 @@ $ yarn deploy
 * Need to mock HTTP (tests)
 * ---------- **P1: Urgent** ----------
 * `axios` can't import (`superagent` -> `axios`)
-* Add unit tests for Cloud Functions
+* Add code coverage reports
+* Add unit tests for Cloud Functions (Jest)
 * ---------- **P2: Required** ----------
 * Do more examples
 * Write more tests
