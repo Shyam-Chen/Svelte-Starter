@@ -128,7 +128,7 @@ $ yarn run gulp -- <TASK_NAME> --prod --watch --serve
 1. Example of Component
 
 ```html
-<!-- src/components/new-component/new-component.html -->
+<!-- src/shared/new-component/new-component.html -->
 <div class="${ style.card }">
   <div class="${ style.card__title }">${ title }</div>
   <div class="${ style.card__content }">${ content }</div>
@@ -136,7 +136,7 @@ $ yarn run gulp -- <TASK_NAME> --prod --watch --serve
 ```
 
 ```scss
-// src/components/new-component/new-component.css
+// src/shared/new-component/new-component.css
 .card {
   // ...
   &__title { /* ... */ }
@@ -145,7 +145,7 @@ $ yarn run gulp -- <TASK_NAME> --prod --watch --serve
 ```
 
 ```js
-// src/components/new-component/new-component.js
+// src/shared/new-component/new-component.js
 import { template as _ } from 'lodash';
 
 import template from './new-component.html';
@@ -159,7 +159,7 @@ export const newComponent = (name, data) => {
 ```
 
 ```js
-// src/components/new-component/index.js
+// src/shared/new-component/index.js
 export * from './new-component';
 ```
 
@@ -243,16 +243,17 @@ const client = new ApolloClient({
   })
 });
 
-client.query({
+client.query(
+  {
     query: gql`
       {
-        users {
-          name
+        list {
+          text
         }
       }
     `
-  })
-  .then(res => console.log(res.data));
+  }
+).then(res => console.log(res.data));
 ```
 
 5. Example of Sockets
@@ -455,16 +456,18 @@ $ yarn deploy
 │   ├── pages  -> parent pages, child pages ...
 │   │   └── <page>
 │   │       ├── <component>  -> presentational components ...
-│   │       │   ├── <feature>.{html,css,js,json,spec.js}  -> reusable component ...
-│   │       │   └── index.js
-│   │       ├── <container>  -> container components ...
-│   │       │   ├── actions.{js,spec.js}  -> action types, action creators ...
-│   │       │   ├── epics.{js,spec.js}  -> side effects ...
-│   │       │   ├── reducer.{js,spec.js}  -> reducer function ...
 │   │       │   ├── <feature>.{html,css,js,json,spec.js}  -> feature component ...
 │   │       │   └── index.js
-│   │       ├── <page>.{html,css,js,json,spec.js,e2e-spec.js}  -> page component ...
+│   │       ├── <container>  -> container components ...
+│   │       │   ├── constants.js
+│   │       │   ├── actions.js  -> action creators ...
+│   │       │   ├── effects.js  -> side effects ...
+│   │       │   ├── reducer.js  -> reducer function ...
+│   │       │   ├── <feature>.{html,css,js,json,spec.js}  -> feature component ...
+│   │       │   └── index.js
+│   │       ├── <feature>.{html,css,js,json,spec.js,e2e-spec.js}  -> feature component ...
 │   │       └── index.js
+│   ├── shared  -> shared components ...
 │   ├── utils  -> utility functions ...
 │   ├── app.css
 │   ├── app.js
@@ -506,12 +509,12 @@ $ yarn deploy
 
 * ---------- **P0: Critical** ----------
 * Serve dynamic content (ref, https://firebase.google.com/docs/hosting/functions)
+* ---------- **P1: Urgent** ----------
 * `rxjs` can't import
 * `rxjs-es` can't use
 * `socket.io-client` can't import
-* Need to mock HTTP (tests)
-* ---------- **P1: Urgent** ----------
 * `axios` can't import (`superagent` -> `axios`)
+* Need to mock HTTP (tests)
 * Add code coverage reports
 * Add unit tests for Cloud Functions (Jest)
 * ---------- **P2: Required** ----------
@@ -520,6 +523,6 @@ $ yarn deploy
 * ---------- **P3: Important** ----------
 * Think about Webpack (Rollup -> Webpack)
 * Think about Jest (Jasmine & Karma -> Jest)
-* Think about Nightwatch (Protractor => Nightwatch)
+* Think about Nightwatch (Protractor -> Nightwatch)
 * ---------- **P4: Nice to have** ----------
 * ...
