@@ -3,7 +3,7 @@ import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
 
 import { template as _, noop } from 'lodash';
 
-import logo from '../../assets/images/touch/ms-touch-icon-144x144-precomposed.png';
+import logo from '~/assets/images/touch/ms-touch-icon-144x144-precomposed.png';
 
 import template from './layout.html';
 import style from './layout.css';

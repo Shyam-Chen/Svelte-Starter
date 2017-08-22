@@ -2,8 +2,8 @@
 import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
 import { template as _ } from 'lodash';
 
-import { layout } from '../../shared/layout';
-import logo from '../../assets/images/logo.png';
+import { layout } from '~/shared/layout';
+import logo from '~/assets/images/logo.png';
 
 import template from './home.html';
 import style from './home.css';

@@ -15,6 +15,11 @@ export default {
     'external-helpers',
     'transform-function-bind',
     [
+      'babel-plugin-root-import', {
+        'rootPathSuffix': 'src'
+      }
+    ],
+    [
       'transform-imports', {
         'lodash': {
           transform: 'lodash/${member}',
