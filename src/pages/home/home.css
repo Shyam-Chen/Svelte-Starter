@@ -2,15 +2,13 @@
   max-width: 839px;
 }
 
-.card {
-  &__media {
-    background-image: url('images/background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 12.313rem;
-  }
+.cardMedia {
+  background-image: url('images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 12.313rem;
+}
 
-  &__title {
-    color: #E8EAF6;
-  }
+.cardTitle {
+  color: #E8EAF6;
 }

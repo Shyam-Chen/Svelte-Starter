@@ -7,27 +7,27 @@
 
       <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3">
         <h2 class="mdc-typography--title">${ TECHNOLOGIES }</h2>
-        <ul class="${ style.footer__list }">
-          <li><a href="https://www.w3.org/TR/html5/" class="${ style.footer__link }">HTML5</a></li>
-          <li><a href="https://nodejs.org/" class="${ style.footer__link }">Node.js</a></li>
+        <ul class="${ style.footerList }">
+          <li><a href="https://www.w3.org/TR/html5/" class="${ style.footerLink }">HTML5</a></li>
+          <li><a href="https://nodejs.org/" class="${ style.footerLink }">Node.js</a></li>
         </ul>
       </section>
 
       <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3">
         <h2 class="mdc-typography--title">${ RESOURCES }</h2>
-        <ul class="${ style.footer__list }">
-          <li><a href="https://www.packtpub.com/web-development?search=&type_list%5Bbooks%5D=books&offset=&rows=&sort=" class="${ style.footer__link }">Books</a></li>
-          <li><a href="https://www.packtpub.com/web-development?search=&type_list%5Bvideos%5D=videos&offset=&rows=&sort=" class="${ style.footer__link }">Videos</a></li>
+        <ul class="${ style.footerList }">
+          <li><a href="https://www.packtpub.com/web-development?search=&type_list%5Bbooks%5D=books&offset=&rows=&sort=" class="${ style.footerLink }">Books</a></li>
+          <li><a href="https://www.packtpub.com/web-development?search=&type_list%5Bvideos%5D=videos&offset=&rows=&sort=" class="${ style.footerLink }">Videos</a></li>
         </ul>
       </section>
 
       <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3">
         <h2 class="mdc-typography--title">${ LANGUAGES }</h2>
-        <ul class="${ style.footer__list }">
+        <ul class="${ style.footerList }">
           <% var languages = [['en', 'English'], ['zh', '中文'], ['ja', '日本語']]; %>
           <% [].forEach.call(languages, function(language) { %>
             <li>
-              <a href="javascript: void 0" id="<%- language[0] %>" class="${ style.footer__link }"><%- language[1] %></a>
+              <a href="javascript: void 0" id="<%- language[0] %>" class="${ style.footerLink }"><%- language[1] %></a>
             </li>
           <% }); %>
         </ul>
