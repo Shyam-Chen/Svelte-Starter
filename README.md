@@ -511,7 +511,6 @@ $ yarn deploy
 * Serve dynamic content (ref, https://firebase.google.com/docs/hosting/functions)
 * ---------- **P1: Urgent** ----------
 * `rxjs` can't import
-* `rxjs-es` can't use
 * `socket.io-client` can't import
 * `axios` can't import (`superagent` -> `axios`)
 * Need to mock HTTP (tests)
@@ -521,8 +520,6 @@ $ yarn deploy
 * Do more examples
 * Write more tests
 * ---------- **P3: Important** ----------
-* Think about Webpack (Rollup -> Webpack)
-* Think about Jest (Jasmine & Karma -> Jest)
-* Think about Nightwatch (Protractor -> Nightwatch)
+* ...
 * ---------- **P4: Nice to have** ----------
 * ...

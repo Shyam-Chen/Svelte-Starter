@@ -33,6 +33,7 @@
   "homepage": "https://github.com/Shyam-Chen/Frontend-Starter-Kit#readme",
   "dependencies": {
     "apollo-client": "1.9.1",
+    "axios": "0.16.2",
     "core-js": "2.5.0",
     "d3": "4.10.0",
     "d3-selection-multi": "1.0.1",
@@ -43,7 +44,7 @@
     "page": "1.7.1",
     "redux": "3.7.2",
     "redux-observable": "0.16.0",
-    "rxjs-es": "5.0.0-beta.12",
+    "rxjs": "5.4.3",
     "socket.io-client": "2.0.3",
     "superagent": "3.6.0",
     "three": "0.87.1"

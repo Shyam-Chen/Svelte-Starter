@@ -15,9 +15,12 @@ export default {
     'external-helpers',
     'transform-function-bind',
     [
-      'babel-plugin-root-import', {
-        'rootPathSuffix': 'src'
-      }
+      'babel-plugin-root-import', [
+        {
+          rootPathPrefix: '~',
+          rootPathSuffix: 'src'
+        }
+      ]
     ],
     [
       'transform-imports', {

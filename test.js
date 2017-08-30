@@ -24,7 +24,10 @@ describe('Test', () => {
   describe('Lodash', () => {
     it('should be able to use', () => {
       expect(lowerFirst).toBeDefined();
+      expect(lowerFirst('Fred')).toBe('fred');
+
       expect(pad).toBeDefined();
+      expect(pad('abc', 8, '-')).toBe('--abc---');
     });
   });
 
@@ -37,6 +40,13 @@ describe('Test', () => {
       expect(mapTo).toBeDefined();
       expect(combineAll).toBeDefined();
     });
+
+    // it('should be able to use', () => {
+    //   Observable::timer(2000)
+    //     ::mapTo(Observable::of('Hello', 'World'))
+    //     ::combineAll()
+    //     .subscribe(value => console.log(value));
+    // });
 
     // it('should be able to use', () => {
     //   const source$ = new Observable(observer => {
