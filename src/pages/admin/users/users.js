@@ -8,15 +8,16 @@ import template from './users.html';
 import style from './users.css';
 
 export const users = (page: string): void => {
-  firebase.database()
-    .ref('users')
-    .orderByKey()
-    .limitToFirst(5)
-    .startAt('-KqC5w9AgVqHFQLBKN4P')
-    .on('value', (snapshot): void => {
-      console.log(snapshot.val());
-      console.log(snapshot.val()['-KqC5w9AgVqHFQLBKN4P']);
-    });
+  // pagination
+  // firebase.database()
+  //   .ref('users')
+  //   .orderByKey()
+  //   .limitToFirst(5)
+  //   .startAt('-KqC5w9AgVqHFQLBKN4P')
+  //   .on('value', (snapshot): void => {
+  //     console.log(snapshot.val());
+  //     console.log(snapshot.val()['-KqC5w9AgVqHFQLBKN4P']);
+  //   });
 
   firebase.database()
     .ref('users')
@@ -24,7 +25,7 @@ export const users = (page: string): void => {
       document.querySelector(`#users[data-${page}]`)
         .innerHTML = _(template, { imports: { style, snapshot } })();
 
-        const bodyEl = document.querySelector('body');
+        const bodyEl = document.body;
 
         const search = document.querySelector('#search');
 
