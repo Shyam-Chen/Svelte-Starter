@@ -450,6 +450,7 @@ $ yarn deploy
 ```
 .
 ├── functions  -> server-side rules ...
+├── public  -> client-side public
 ├── scripts  -> shell scripts ...
 ├── src
 │   ├── assets  -> audios, datas, fonts, images, videos ...
@@ -474,7 +475,7 @@ $ yarn deploy
 │   ├── index.html
 │   ├── polyfills.js  -> polyfills, shims, prevendor ...
 │   ├── root.css  -> root variables, root mixins, custom selectors ...
-│   ├── root.js  -> root epics, root reducers, configure store ...
+│   ├── root.js  -> root effects, root reducers, configure store ...
 │   └── vendor.js  -> third-party libraries ...
 ├── tools
 │   ├── config
@@ -482,11 +483,12 @@ $ yarn deploy
 │   ├── tasks
 │   │   └── {app,build,chunkhash,copy,e2e,entrypoint,lint,polyfills,precache,serve,sitemap,unit,vendor,watch}.js
 │   ├── utils
-│   │   └── {e2e-server,handle-errors,index,resolve-id,service-worker}.js
+│   │   └── {e2e-server,handle-errors,index,inject-service,resolve-id,service-worker}.js
 │   └── constants.js
 ├── .babelrc
 ├── .editorconfig
 ├── .eslintrc
+├── .flowconfig
 ├── .firebaserc
 ├── .gitattributes
 ├── .gitignore
@@ -502,6 +504,7 @@ $ yarn deploy
 ├── gulpfile.babel.js
 ├── package.json
 ├── storage.rules
+├── test.js
 └── yarn.lock
 ```
 
@@ -510,12 +513,12 @@ $ yarn deploy
 * ---------- **P0: Critical** ----------
 * Serve dynamic content (ref, https://firebase.google.com/docs/hosting/functions)
 * ---------- **P1: Urgent** ----------
-* `rxjs` can't import
-* `socket.io-client` can't import
-* `axios` can't import (`superagent` -> `axios`)
 * Need to mock HTTP (tests)
 * Add code coverage reports
 * Add unit tests for Cloud Functions (Jest)
+* `rxjs` can't import
+* `socket.io-client` can't import
+* `axios` can't import (`superagent` -> `axios`)
 * ---------- **P2: Required** ----------
 * Do more examples
 * Write more tests
