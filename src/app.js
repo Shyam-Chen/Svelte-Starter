@@ -64,3 +64,8 @@ contact();
 admin();
 notfound();
 page();
+
+window.preprender = async path => {
+  history.push(path);
+  return document.documentElement.outerHTML;
+};
