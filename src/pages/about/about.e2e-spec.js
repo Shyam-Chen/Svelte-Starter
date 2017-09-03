@@ -1,6 +1,6 @@
 describe('About', () => {
-  beforeEach(() => {
-    browser.driver.get(`${browser.baseUrl}/about`);
+  beforeEach(async () => {
+    await browser.driver.get(`${browser.baseUrl}/about`);
   });
 
   it('Page title', () => {

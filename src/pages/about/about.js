@@ -5,13 +5,10 @@ import { layout } from '~/shared/layout';
 import template from './about.html';
 import style from './about.css';
 import data from './about.json';
-
 import dataZh from './languages/about-zh.json';
 import dataJa from './languages/about-ja.json';
 
-const imports = {
-  style
-};
+const imports = { style };
 
 export const about = (): void => {
   page('/about', () => {

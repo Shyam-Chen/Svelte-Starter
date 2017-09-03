@@ -1,4 +1,3 @@
-// import { MDCRipple } from '@material/ripple';
 import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
 import { template as _ } from 'lodash';
 
@@ -8,7 +7,6 @@ import logo from '~/assets/images/logo.png';
 import template from './home.html';
 import style from './home.css';
 import data from './home.json';
-
 import dataZh from './languages/home-zh.json';
 import dataJa from './languages/home-ja.json';
 

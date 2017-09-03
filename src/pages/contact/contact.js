@@ -8,13 +8,10 @@ import { layout } from '~/shared/layout';
 import template from './contact.html';
 import style from './contact.css';
 import data from './contact.json';
-
 import dataZh from './languages/contact-zh.json';
 import dataJa from './languages/contact-ja.json';
 
-const imports = {
-  style
-};
+const imports = { style };
 
 const common = (language: string = 'en'): void => {
   const name = document.querySelector('#name');

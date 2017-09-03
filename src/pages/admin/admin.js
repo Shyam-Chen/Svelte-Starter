@@ -6,7 +6,6 @@ import { template as _ } from 'lodash';
 
 import template from './admin.html';
 import style from './admin.css';
-
 import { users } from './users';
 
 export const admin = (): void => {

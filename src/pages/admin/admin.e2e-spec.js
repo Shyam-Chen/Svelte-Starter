@@ -1,6 +1,6 @@
 describe('Admin', () => {
-  beforeEach(() => {
-    browser.driver.get(`${browser.baseUrl}/admin`);
+  beforeEach(async () => {
+    await browser.driver.get(`${browser.baseUrl}/admin`);
   });
 
   it('getText toEqual', () => {
