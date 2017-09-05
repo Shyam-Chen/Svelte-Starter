@@ -515,7 +515,8 @@ $ yarn deploy
 ## Known Issues
 
 * ---------- **P0: Critical** ----------
-* Serve dynamic content (ref, https://firebase.google.com/docs/hosting/functions)
+* Server-side Rendering with Cloud Functions
+* Prerenders static `.html` pages with `pre-render`
 * ---------- **P1: Urgent** ----------
 * Need to mock HTTP (tests)
 * Add code coverage reports
