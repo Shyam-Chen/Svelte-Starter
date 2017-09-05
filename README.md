@@ -305,40 +305,44 @@ Observable::timer(2000)
 import { filter, map } from 'rxjs/operator';
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
+import { handleActions } from 'redux-actions';
 import { Map } from 'immutable';
 
-const INCREMENT = 'INCREMENT';
-const INCREMENT_IF_ODD = 'INCREMENT_IF_ODD';
+const INITIAL = Map({ value: 0 });
+const INCREMENT = '[Counter] INCREMENT';
+const INCREMENT_IF_ODD = '[Counter] INCREMENT_IF_ODD';
 
-const increment = () => ({ type: INCREMENT });
-const incrementIfOdd = () => ({ type: INCREMENT_IF_ODD });
-
-const counterReducer = (state = Map({ counter: 0 }), action) => {
-  switch (action.type) {
-    case INCREMENT:
-      return state.update('counter', value => value + 1);
-    default:
-      return state;
-  }
-};
+const onIncrement = () => ({ type: INCREMENT });
+const onIncrementIfOdd = () => ({ type: INCREMENT_IF_ODD });
 
 const incrementIfOddEpic = (action$, store) =>
   action$.ofType(INCREMENT_IF_ODD)
-    ::filter(() => store.getState().counterReducer.get('counter') % 2 === 1)
-    ::map(increment);
+    ::filter(() => store.getState().counter.get('value') % 2 === 1)
+    ::map(onIncrement);
+
+const counter = handleActions({
+  [INCREMENT](state) {
+    return state.update('counter', value => value + 1);
+  }
+}, INITIAL);
 
 const rootEpic = combineEpics(incrementIfOddEpic);
-const rootReducer = combineReducers({ counterReducer });
-const epicMiddleware = createEpicMiddleware(rootEpic);
-const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
+const rootReducer = combineReducers({ counter });
+
+const store = createStore(
+  rootReducer,
+  applyMiddleware(
+    createEpicMiddleware(rootEpic)
+  )
+);
 
 store.subscribe(() => {
-  const { counterReducer } = store.getState();
-  console.log(counterReducer.get('counter'));
+  const { counter } = store.getState();
+  console.log(counter.get('value'));
 });
 
-store.dispatch(increment());  // 1
-store.dispatch(incrementIfOdd());  // 1 -> 2
+store.dispatch(onIncrement());  // 1
+store.dispatch(onIncrementIfOdd());  // 1 -> 2
 ```
 
 9. Example of Immutable
