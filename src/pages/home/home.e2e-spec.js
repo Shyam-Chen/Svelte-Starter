@@ -1,6 +1,6 @@
 describe('Home', () => {
   beforeEach(async () => {
-    await browser.driver.get(browser.baseUrl);
+    return await browser.driver.get(browser.baseUrl);
   });
 
   it('getText toEqual', () => {

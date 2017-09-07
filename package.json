@@ -91,6 +91,7 @@
     "karma-mocha-reporter": "2.2.4",
     "karma-prerollup-plugin": "1.0.1",
     "karma-rollup-plugin": "0.2.4",
+    "nock": "^9.0.14",
     "postcss-conditionals": "2.1.0",
     "postcss-cssnext": "3.0.2",
     "postcss-define-function": "0.1.1",

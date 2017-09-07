@@ -1,6 +1,6 @@
 describe('Contact', () => {
   beforeEach(async () => {
-    await browser.driver.get(`${browser.baseUrl}/contact`);
+    return await browser.driver.get(`${browser.baseUrl}/contact`);
   });
 
   it('getText toEqual', () => {
