@@ -1,7 +1,17 @@
-import { INCREMENT, DECREMENT, RESET, INCREMENT_IF_ODD, DECREMENT_IF_EVEN } from './constants';
+import { INCREMENT, DECREMENT } from './constants';
 
 export const onIncrement = () => ({ type: INCREMENT });
 export const onDecrement = () => ({ type: DECREMENT });
-export const onReset = () => ({ type: RESET });
-export const onIncrementIfOdd = () => ({ type: INCREMENT_IF_ODD });
-export const onDecrementIfEven = () => ({ type: DECREMENT_IF_EVEN });
+
+export const onIncrementAsync = () =>
+  dispatch =>
+    setTimeout(() => dispatch(onIncrement()), 1000);
+
+export const onIncrementIfOdd = () =>
+  (dispatch, getState) => {
+    const { counter } = getState();
+
+    if (counter.value % 2 === 1) {
+      dispatch(onIncrement());
+    }
+  };

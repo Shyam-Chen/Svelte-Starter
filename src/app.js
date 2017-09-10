@@ -9,6 +9,7 @@ import { home } from './pages/home';
 import { about } from './pages/about';
 import { contact } from './pages/contact';
 import { admin } from './pages/admin';
+// import { counterFunc } from './pages/examples/counter';
 import { notfound } from './pages/not-found';
 
 // Observable::forkJoin(
@@ -62,6 +63,7 @@ home();
 about();
 contact();
 admin();
+// counterFunc();
 notfound();
 page();
 

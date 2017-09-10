@@ -1,3 +1,4 @@
-import counter from './counter';
+import counterFunc from './counter';
+import counter from './reducer';
 
-export { counter };
+export { counterFunc, counter };

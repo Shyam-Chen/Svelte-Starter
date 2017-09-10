@@ -1,6 +1,6 @@
 import { handleActions } from 'redux-actions';
 
-import { INITIAL, INCREMENT, DECREMENT, RESET } from './constants';
+import { INITIAL, INCREMENT, DECREMENT } from './constants';
 
 export default handleActions({
   [INCREMENT](state) {
@@ -8,8 +8,5 @@ export default handleActions({
   },
   [DECREMENT](state) {
     return state.update('counter', value => value - 1);
-  },
-  [RESET](state) {
-    return state.update('counter', () => 0);
   }
 }, INITIAL);

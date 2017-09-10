@@ -1,23 +1,26 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
-import { combineEpics, createEpicMiddleware } from 'redux-observable';
+import thunkMiddleware from 'redux-thunk';
+// import { combineEpics, createEpicMiddleware } from 'redux-observable';
+// import loggerMiddleware from 'redux-logger';
 
-import { incrementIfOddEpic, decrementIfEvenEpic, counter } from './pages/examples/counter';
+// import { incrementIfOddEpic, decrementIfEvenEpic, counter } from './pages/examples/counter';
+import { counter } from './pages/examples/counter';
 
-const rootEpic = combineEpics(
-  incrementIfOddEpic,
-  decrementIfEvenEpic
-);
+// const rootEpic = combineEpics(
+//   incrementIfOddEpic,
+//   decrementIfEvenEpic
+// );
 
 const rootReducer = combineReducers({
   counter
 });
 
-const epicMiddleware = createEpicMiddleware(rootEpic);
-
 export const store = createStore(
   rootReducer,
   applyMiddleware(
-    epicMiddleware
+    thunkMiddleware,
+    // createEpicMiddleware(rootEpic),
+    // loggerMiddleware
   )
 );
 
