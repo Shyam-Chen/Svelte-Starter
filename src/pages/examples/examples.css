@@ -1,0 +1,7 @@
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 92.5vh;
+  overflow: hidden;
+}
