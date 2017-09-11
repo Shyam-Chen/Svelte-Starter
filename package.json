@@ -124,7 +124,7 @@
     "rollup-plugin-reshape": "0.2.2",
     "rollup-plugin-uglify": "2.0.1",
     "rollup-plugin-url": "1.2.0",
-    "rollup-stream": "1.23.1",
+    "rollup-stream": "1.24.1",
     "rucksack-css": "1.0.2",
     "run-sequence": "2.1.0",
     "stylelint-config-standard": "17.0.0",
