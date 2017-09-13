@@ -243,17 +243,17 @@ const client = new ApolloClient({
   })
 });
 
-client.query(
-  {
+client.query({
     query: gql`
       {
         list {
+          _id
           text
         }
       }
     `
-  }
-).then(res => console.log(res.data));
+  })
+  .then(res => console.log(res.data));
 ```
 
 5. Example of Sockets
@@ -309,6 +309,7 @@ import { handleActions } from 'redux-actions';
 import { Map } from 'immutable';
 
 const INITIAL = Map({ value: 0 });
+
 const INCREMENT = '[Counter] INCREMENT';
 const INCREMENT_IF_ODD = '[Counter] INCREMENT_IF_ODD';
 
@@ -517,6 +518,7 @@ $ yarn deploy
 * ---------- **P0: Critical** ----------
 * Server-side Rendering with Cloud Functions
 * Prerenders static `.html` pages with `pre-render`
+* Use Node 8 (Docker)
 * ---------- **P1: Urgent** ----------
 * Need to mock HTTP (tests)
 * Add code coverage reports
