@@ -44,10 +44,11 @@
     "page": "1.7.1",
     "redux": "3.7.2",
     "redux-actions": "2.2.1",
+    "redux-logger": "3.0.6",
     "redux-observable": "0.16.0",
+    "reselect": "3.0.1",
     "rxjs-es": "5.0.0-beta.12",
     "socket.io-client": "2.0.3",
-    "superagent": "3.6.0",
     "three": "0.87.1"
   },
   "devDependencies": {
@@ -104,8 +105,6 @@
     "postcss-url": "7.1.2",
     "pre-render": "0.1.0-preview.2",
     "protractor": "5.1.2",
-    "redux-logger": "3.0.6",
-    "redux-thunk": "2.2.0",
     "require-dir": "0.3.2",
     "reshape-include": "1.0.0",
     "reshape-minify": "1.1.0",

@@ -151,11 +151,9 @@ import { template as _ } from 'lodash';
 import template from './new-component.html';
 import style from './new-component.css';
 
-export const newComponent = (name, data) => {
-  const imports = { style };
+export const newComponent = (name, data) =>
   document.querySelector(`#${name}`)
-    .innerHTML = _(template, { imports })(data);
-};
+    .innerHTML = _(template, { imports: { style } })(data);
 ```
 
 ```js
@@ -164,13 +162,17 @@ export * from './new-component';
 ```
 
 ```js
-import { newComponent } from '../../components/new-component';
+// use the new component
+import { newComponent } from '~/components/new-component';
 
-newComponent('ex', { title: 'Title here', content: 'Content here' });
+newComponent('ex-1', { title: 'Title 1', content: 'Content 1' });
+newComponent('ex-2', { title: 'Title 2', content: 'Content 2' });
 ```
 
 ```html
-<div id="ex"></div>
+<!-- use the new component -->
+<div id="ex-1"></div>
+<div id="ex-2"></div>
 ```
 
 2. Example of Route
@@ -203,31 +205,26 @@ newRoute();
 3. Example of REST
 
 ```js
-import xhr from 'superagent';
+import axios from 'axios';
 
-xhr.get('https://web-go-demo.herokuapp.com/__/list')
-  .then(res => console.log(res.text))
+const API_LIST = 'https://web-go-demo.herokuapp.com/__/list';
+
+axios.get(text ? `${API_LIST}?text=${text}` : API_LIST)
+  .then(res => console.log(res.data))
   .then(() => console.log('done'));
 
-const getListId = '5910223ae1dea61c944c6011';
-xhr.get(`https://web-go-demo.herokuapp.com/__/list/${getListId}`)
-  .then(res => console.log(res.text))
+axios.post(API_LIST, { text: 'Web GO' })
+  .then(res => console.log(res.data))
   .then(() => console.log('done'));
 
-xhr.post('https://web-go-demo.herokuapp.com/__/list/')
-  .send({ text: 'Web GO' })
-  .then(res => console.log(res.text))
+let putListId = '5943881e058f440012d4ae47';
+axios.put(`${API_LIST}/${putListId}`, { text: 'Web GO' })
+  .then(res => console.log(res.data))
   .then(() => console.log('done'));
 
-const putListId = '5943881e058f440012d4ae47';
-xhr.put(`https://web-go-demo.herokuapp.com/__/list/${putListId}`)
-  .send({ text: 'Web GO' })
-  .then(res => console.log(res.text))
-  .then(() => console.log('done'));
-
-const deleteListId = '594388af058f440012d4ae49';
-xhr.delete(`https://web-go-demo.herokuapp.com/__/list/${deleteListId}`)
-  .then(res => console.log(res.text))
+let deleteListId = '594388af058f440012d4ae49';
+axios.delete(`${API_LIST}/${deleteListId}`)
+  .then(res => console.log(res.data))
   .then(() => console.log('done'));
 ```
 
@@ -274,9 +271,9 @@ socket.on('A', data => {
 6. Example of Lodash
 
 ```js
+import { lowerFirst, pad } from 'lodash';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs/observable';
-import { lowerFirst, pad } from 'lodash';
 
 Observable::of(lowerFirst('Hello'), pad('World', 5))
   .subscribe(value => console.log(value));
@@ -302,11 +299,11 @@ Observable::timer(2000)
 8. Example of Redux
 
 ```js
-import { filter, map } from 'rxjs/operator';
 import { combineReducers, createStore, applyMiddleware } from 'redux';
-import { combineEpics, createEpicMiddleware } from 'redux-observable';
-import { handleActions } from 'redux-actions';
 import { Map } from 'immutable';
+import { combineEpics, createEpicMiddleware } from 'redux-observable';
+import { filter, map } from 'rxjs/operator';
+import { handleActions } from 'redux-actions';
 
 const INITIAL = Map({ value: 0 });
 
@@ -349,10 +346,10 @@ store.dispatch(onIncrementIfOdd());  // 1 -> 2
 9. Example of Immutable
 
 ```js
+import { Set } from 'immutable';
 import { Observable } from 'rxjs';
 import { from } from 'rxjs/observable';
 import { map } from 'rxjs/operator';
-import { Set } from 'immutable';
 
 Observable::from(Set([1, 2, 3]))
   ::map(value => value * 2)
@@ -459,18 +456,12 @@ $ yarn deploy
 ├── scripts  -> shell scripts ...
 ├── src
 │   ├── assets  -> audios, datas, fonts, images, videos ...
-│   ├── pages  -> parent pages, child pages ...
-│   │   └── <page>
-│   │       ├── <component>  -> presentational components ...
-│   │       │   ├── <feature>.{html,css,js,json,spec.js}  -> feature component ...
-│   │       │   └── index.js
-│   │       ├── <container>  -> container components ...
-│   │       │   ├── constants.js
-│   │       │   ├── actions.js  -> action creators ...
-│   │       │   ├── effects.js  -> side effects ...
-│   │       │   ├── reducer.js  -> reducer function ...
-│   │       │   ├── <feature>.{html,css,js,json,spec.js}  -> feature component ...
-│   │       │   └── index.js
+│   ├── pages
+│   │   └── <container|component>
+│   │       ├── constants.js -> action types ...
+│   │       ├── actions.js  -> action creators ...
+│   │       ├── epics.{js,.spec.js}  -> side effects ...
+│   │       ├── reducer.{js,.spec.js}  -> reducer function ...
 │   │       ├── <feature>.{html,css,js,json,spec.js,e2e-spec.js}  -> feature component ...
 │   │       └── index.js
 │   ├── shared  -> shared components ...
@@ -478,23 +469,27 @@ $ yarn deploy
 │   ├── app.css
 │   ├── app.js
 │   ├── index.html
+│   ├── lib.spec.js
 │   ├── polyfills.js  -> polyfills, shims, prevendor ...
 │   ├── root.css  -> root variables, root mixins, custom selectors ...
-│   ├── root.js  -> root effects, root reducers, configure store ...
+│   ├── root.js  -> root epics, root reducers, configure store ...
 │   └── vendor.js  -> third-party libraries ...
 ├── tools
 │   ├── config
 │   │   └── {babel,karma,postcss,protractor,reshape,rollup}.js
+│   ├── rules
+│   │   └── database.rules.json,storage.rules
 │   ├── tasks
 │   │   └── {app,build,chunkhash,copy,e2e,entrypoint,lint,polyfills,precache,serve,sitemap,unit,vendor,watch}.js
 │   ├── utils
 │   │   └── {e2e-server,handle-errors,index,inject-service,resolve-id,service-worker}.js
-│   └── constants.js
+│   ├── constants.js
+│   └── render.js
 ├── .babelrc
 ├── .editorconfig
 ├── .eslintrc
-├── .flowconfig
 ├── .firebaserc
+├── .flowconfig
 ├── .gitattributes
 ├── .gitignore
 ├── .htmlhintrc
@@ -503,29 +498,25 @@ $ yarn deploy
 ├── Dockerfile
 ├── LICENSE
 ├── README.md
-├── database.rules.json
 ├── docker-compose.yml
 ├── firebase.json
 ├── gulpfile.babel.js
 ├── package.json
-├── storage.rules
-├── test.js
 └── yarn.lock
 ```
 
 ## Known Issues
 
 * ---------- **P0: Critical** ----------
-* Server-side Rendering with Cloud Functions
-* Prerenders static `.html` pages with `pre-render`
-* Use Node 8 (Docker)
+* [Feat] Server-side Rendering with Cloud Functions
+* [Feat] Prerenders static `.html` pages with `pre-render`
 * ---------- **P1: Urgent** ----------
-* Need to mock HTTP (tests)
-* Add code coverage reports
-* Add unit tests for Cloud Functions (Jest)
-* `rxjs` can't import
-* `socket.io-client` can't import
-* `axios` can't import (`superagent` -> `axios`)
+* [Feat] HTTP mocking with `nock`
+* [Feat] Add code coverage reports
+* [Feat] Add unit tests for Cloud Functions with Jest
+* [Bug] `rxjs` can't import
+* [Bug] `socket.io-client` can't import
+* [Bug] `axios` can't import
 * ---------- **P2: Required** ----------
 * Do more examples
 * Write more tests
