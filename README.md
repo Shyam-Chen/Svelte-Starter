@@ -511,12 +511,12 @@ $ yarn deploy
 * [Feat] Server-side Rendering with Cloud Functions
 * [Feat] Prerenders static `.html` pages with `pre-render`
 * ---------- **P1: Urgent** ----------
+* [Bug] `rxjs` can't import
+* [Bug] `axios` can't import
+* [Bug] `socket.io-client` can't import
 * [Feat] HTTP mocking with `nock`
 * [Feat] Add code coverage reports
 * [Feat] Add unit tests for Cloud Functions with Jest
-* [Bug] `rxjs` can't import
-* [Bug] `socket.io-client` can't import
-* [Bug] `axios` can't import
 * ---------- **P2: Required** ----------
 * Do more examples
 * Write more tests
