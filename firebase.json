@@ -1,9 +1,9 @@
 {
   "database": {
-    "rules": "database.rules.json"
+    "rules": "./tools/rules/database.rules.json"
   },
   "storage": {
-    "rules": "storage.rules"
+    "rules": "./tools/rules/storage.rules"
   },
   "hosting": {
     "public": "public",
