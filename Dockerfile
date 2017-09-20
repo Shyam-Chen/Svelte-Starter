@@ -17,14 +17,14 @@ ENTRYPOINT ["Xvfb", "-ac", ":99", "-screen", "0", "1280x720x16"]
 # -- chrome
 
 # node --
-ENV NODE 7
-ENV PATH $HOME/.yarn/bin:$PATH
+ENV NODE 8
 
 RUN \
   curl -sL https://deb.nodesource.com/setup_$NODE.x | bash - && \
-  curl -o- -L https://yarnpkg.com/install.sh | bash && \
+  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+  echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
   apt-get update && \
-  apt-get install -y nodejs
+  apt-get install -y nodejs yarn
 # -- node
 
 # java --
