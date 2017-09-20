@@ -7,11 +7,6 @@ node_js: stable
 
 services: docker
 install: true
-# cache:
-#   directories: ${HOME}/docker
-
-# env:
-#   global: DOCKER_CACHE_FILE=${HOME}/docker/cache.tar.gz
 
 branches:
   only: master

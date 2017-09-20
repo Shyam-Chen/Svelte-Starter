@@ -16,8 +16,7 @@
     "deploy": "firebase deploy",
     "gulp": "gulp",
     "predev": "rimraf public",
-    "preprod": "rimraf public",
-    "postinstall": "gulp webdriver && cd functions && yarn install"
+    "preprod": "rimraf public"
   },
   "repository": {
     "type": "git",

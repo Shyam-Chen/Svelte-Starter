@@ -36,5 +36,5 @@ exports.addMessage = functions.https
       });
   });
 
-// TODO: prerender static content
+// TODO: server-side rendering
 // exports.app = functions.https.onRequest(app);

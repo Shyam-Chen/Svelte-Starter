@@ -1,6 +1,6 @@
 {
   "name": "Web-GO",
-  "description": "Professional templates for modern web development with HTML5 and Node.js.",
+  "description": "Professional templates for modern web development with ECMAScript, HTML5, Node.js, and Docker.",
   "dependencies": {
     "@google-cloud/bigquery": "^0.9.5",
     "@google-cloud/bigtable": "^0.9.1",
