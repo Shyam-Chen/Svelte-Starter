@@ -21,27 +21,28 @@ This seed repository provides the following features:
 * [x] Data visualizations with [**D3**](https://d3js.org/).
 * [x] 3D scene graph with [**Three**](https://threejs.org/).
 * ---------- **Tools** ----------
-* [x] Build system with [**Gulp**](https://github.com/gulpjs/gulp).
-* [x] Module bundler with [**Rollup**](https://github.com/rollup/rollup).
-* [x] HTML transformations with [**Reshape**](https://github.com/reshape/reshape).
-* [x] Future CSS features with [**PostCSS**](https://github.com/postcss/postcss).
-* [x] Next generation JavaScript with [**Babel**](https://github.com/babel/babel).
-* [x] Type annotations with [**Flow**](https://github.com/facebook/flow).
-* [x] Synchronised browser with [**BrowserSync**](https://github.com/BrowserSync/browser-sync).
-* [x] HTML static code analyzer with [**HTMLHint**](https://github.com/yaniswang/HTMLHint).
-* [x] CSS static code analyzer with [**StyleLint**](https://github.com/stylelint/stylelint).
-* [x] JavaScript static code analyzer with [**ESLint**](https://github.com/eslint/eslint).
-* [x] Testing framework with [**Jasmine**](https://github.com/jasmine/jasmine).
-* [x] Unit tests with [**Karma**](https://github.com/karma-runner/karma).
-* [x] End-to-end tests with [**Protractor**](https://github.com/angular/protractor).
+* [x] Build system with [**Gulp**](http://gulpjs.com/).
+* [x] Module bundler with [**Rollup**](https://rollupjs.org/).
+* [x] HTML transformations with [**Reshape**](https://reshape.ml/).
+* [x] Future CSS features with [**PostCSS**](http://postcss.org/).
+* [x] Next generation JavaScript with [**Babel**](https://babeljs.io/).
+* [x] Type annotations with [**Flow**](https://flow.org/).
+* [x] Synchronised browser with [**BrowserSync**](https://browsersync.io/).
+* [x] HTML static code analyzer with [**HTMLHint**](http://htmlhint.com/).
+* [x] CSS static code analyzer with [**StyleLint**](https://stylelint.io/).
+* [x] JavaScript static code analyzer with [**ESLint**](https://eslint.org).
+* [x] Testing framework with [**Jasmine**](https://jasmine.github.io/).
+* [x] Unit tests with [**Karma**](http://karma-runner.github.io/).
+* [x] End-to-end tests with [**Protractor**](http://www.protractortest.org/).
 * ---------- **Environments** ----------
 * [x] Client-side platform with [**HTML5**](https://platform.html5.org/).
-* [x] Operating system with [**Linux**](https://github.com/torvalds/linux).
-* [x] Text editor with [**Atom**](https://github.com/atom/atom).
-* [x] Version control with [**Git**](https://github.com/git/git).
-* [x] Fast and deterministic builds with [**Yarn**](https://github.com/yarnpkg/yarn).
-* [x] Software container with [**Docker**](https://github.com/docker/docker).
-* [x] Continuous integration with [**Travis**](https://github.com/travis-ci/travis-ci).
+* [x] Operating system with [**Linux**](https://www.linux.org/).
+* [x] Text editor with [**Atom**](https://atom.io/).
+* [x] Version control with [**Git**](https://git-scm.com/).
+* [x] Code repository with [**GitHub**](https://github.com/).
+* [x] Fast and deterministic builds with [**Yarn**](https://yarnpkg.com/).
+* [x] Software container with [**Docker**](https://www.docker.com/).
+* [x] Continuous integration with [**Travis**](https://travis-ci.org/).
 
 ## Table of Contents
 
