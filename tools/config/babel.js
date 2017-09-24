@@ -14,6 +14,7 @@ export default {
   plugins: [
     'external-helpers',
     'transform-function-bind',
+    'transform-object-rest-spread',
     [
       'babel-plugin-root-import', [
         {
@@ -42,12 +43,7 @@ export default {
           transform: 'rxjs/operator/${member}',
           preventFullImport: true,
           skipDefaultConversion: true
-        },
-        // 'rxjs/scheduler': {
-        //   transform: 'rxjs/scheduler/${member}',
-        //   preventFullImport: true,
-        //   skipDefaultConversion: true
-        // }
+        }
       }
     ]
   ],

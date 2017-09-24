@@ -300,24 +300,29 @@ Observable::timer(2000)
 8. Example of Redux
 
 ```js
-import { combineReducers, createStore, applyMiddleware } from 'redux';
-import { Map } from 'immutable';
-import { combineEpics, createEpicMiddleware } from 'redux-observable';
 import { filter, map } from 'rxjs/operator';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
+import { combineEpics, createEpicMiddleware } from 'redux-observable';
 import { handleActions } from 'redux-actions';
+import { Map } from 'immutable';
 
 const INITIAL = Map({ value: 0 });
 
 const INCREMENT = '[Counter] INCREMENT';
 const INCREMENT_IF_ODD = '[Counter] INCREMENT_IF_ODD';
 
-const onIncrement = () => ({ type: INCREMENT });
-const onIncrementIfOdd = () => ({ type: INCREMENT_IF_ODD });
+const increment = () => ({ type: INCREMENT });
+const incrementIfOdd = () => ({ type: INCREMENT_IF_ODD });
 
-const incrementIfOddEpic = (action$, store) =>
-  action$.ofType(INCREMENT_IF_ODD)
-    ::filter(() => store.getState().counter.get('value') % 2 === 1)
-    ::map(onIncrement);
+const incrementIfOddEpic = (action$, store) => {
+  const { counter } = store.getState();
+
+  return action$.ofType(INCREMENT_IF_ODD)
+    ::filter(() => counter.get('value') % 2 === 1)
+    ::map(increment);
+};
+
+const counterEpic = combineEpics(incrementIfOddEpic);
 
 const counter = handleActions({
   [INCREMENT](state) {
@@ -325,7 +330,7 @@ const counter = handleActions({
   }
 }, INITIAL);
 
-const rootEpic = combineEpics(incrementIfOddEpic);
+const rootEpic = combineEpics(counterEpic);
 const rootReducer = combineReducers({ counter });
 
 const store = createStore(
@@ -340,17 +345,17 @@ store.subscribe(() => {
   console.log(counter.get('value'));
 });
 
-store.dispatch(onIncrement());  // 1
-store.dispatch(onIncrementIfOdd());  // 1 -> 2
+store.dispatch(increment());  // 1
+store.dispatch(incrementIfOdd());  // 1 -> 2
 ```
 
 9. Example of Immutable
 
 ```js
-import { Set } from 'immutable';
 import { Observable } from 'rxjs';
 import { from } from 'rxjs/observable';
 import { map } from 'rxjs/operator';
+import { Set } from 'immutable';
 
 Observable::from(Set([1, 2, 3]))
   ::map(value => value * 2)
