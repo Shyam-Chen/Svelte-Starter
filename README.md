@@ -511,17 +511,17 @@ $ yarn deploy
 * ---------- **P0: Critical** ----------
 * [Feat] Server-side Rendering with Cloud Functions
 * [Feat] Prerenders static `.html` pages with `pre-render`
+* [Feat] Offline Google Analytics
 * ---------- **P1: Urgent** ----------
-* [Bug] `rxjs` can't import
-* [Bug] `axios` can't import
-* [Bug] `socket.io-client` can't import
 * [Feat] HTTP mocking with `nock`
 * [Feat] Add code coverage reports
 * [Feat] Add unit tests for Cloud Functions with Jest
 * ---------- **P2: Required** ----------
-* Do more examples
-* Write more tests
+* [Bug] `rxjs` can't import
+* [Bug] `axios` can't import
+* [Bug] `socket.io-client` can't import
 * ---------- **P3: Important** ----------
-* ...
+* [Ex] Do more examples
+* [Ex] Write more tests
 * ---------- **P4: Nice to have** ----------
-* ...
+* [Feat] Remove unused CSS with PurifyCSS
