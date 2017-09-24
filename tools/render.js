@@ -4,5 +4,17 @@ if (
   process.argv.indexOf('--pre-render') !== -1 ||
   process.argv.indexOf('--prerender') !== -1
 ) {
-  prerender('./public', ['/', '/about', '/contact']);
+  prerender('./public', [
+    '/',
+    '/about',
+    '/contact',
+
+    '/examples',
+    '/examples/counter',
+    '/examples/crud',
+    '/examples/rest',
+    '/examples/graphql',
+    '/examples/data-table',
+    '/examples/form-controls'
+  ]);
 }
