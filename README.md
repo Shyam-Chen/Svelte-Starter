@@ -514,19 +514,22 @@ $ yarn deploy
 ## Known Issues
 
 * ---------- **P0: Critical** ----------
-* [Feat] Server-side Rendering with Cloud Functions
-* [Feat] Prerenders static `.html` pages with `pre-render`
-* [Feat] Offline Google Analytics
+* [Feature] Server-side Rendering with Cloud Functions
+* [Feature] Prerenders static `.html` pages with `pre-render`
+* [Enhancement] Offline Google Analytics
 * ---------- **P1: Urgent** ----------
-* [Feat] HTTP mocking with `nock`
-* [Feat] Add code coverage reports
-* [Feat] Add unit tests for Cloud Functions with Jest
+* [Enhancement] Real Flow types
+* [Enhancement] Use more Reshape plugins
+* [Feature] HTTP mocking with `nock`
+* [Feature] Add code coverage reports
+* [Feature] Add unit tests for Cloud Functions with Jest
 * ---------- **P2: Required** ----------
 * [Bug] `rxjs` can't import
 * [Bug] `axios` can't import
 * [Bug] `socket.io-client` can't import
 * ---------- **P3: Important** ----------
-* [Ex] Do more examples
-* [Ex] Write more tests
+* [Example] Do more examples
+* [Example] Write more tests
 * ---------- **P4: Nice to have** ----------
-* [Feat] Remove unused CSS with PurifyCSS
+* [Feature] Remove unused CSS with PurifyCSS
+* [Feature] Integration with Hot Module Replacement (`rollup-plugin-hmr`)
