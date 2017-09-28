@@ -1,8 +1,13 @@
 import { combineEpics } from 'redux-observable';
-import { filter, map } from 'rxjs/operator';
+import { delay, filter, map } from 'rxjs/operator';
 
-import { INCREMENT_IF_EVEN } from './constants';
-import { increment } from './actions';
+import { DECREMENT_ASYNC, INCREMENT_IF_EVEN } from './constants';
+import { increment, decrement } from './actions';
+
+const decrementAsyncEpic = (action$) =>
+  action$.ofType(DECREMENT_ASYNC)
+    ::delay(1000)
+    ::map(decrement);
 
 const incrementIfEvenEpic = (action$, store) => {
   const { counter } = store.getState();
@@ -13,5 +18,6 @@ const incrementIfEvenEpic = (action$, store) => {
 };
 
 export default combineEpics(
+  decrementAsyncEpic,
   incrementIfEvenEpic
 );

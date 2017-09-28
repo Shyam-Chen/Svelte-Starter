@@ -67,9 +67,9 @@ admin();
 notfound();
 page();
 
-if (process.env.NODE_ENV === 'production') {
-  window.preprender = async path => {
-    history.push(path);
-    return document.documentElement.outerHTML;
-  };
-}
+// if (process.env.NODE_ENV === 'production') {
+//   window.preprender = async path => {
+//     history.push(path);
+//     return document.documentElement.outerHTML;
+//   };
+// }

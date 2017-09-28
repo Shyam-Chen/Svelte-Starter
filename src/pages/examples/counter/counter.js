@@ -4,7 +4,7 @@ import { store } from '~/root';
 
 import template from './counter.html';
 import style from './counter.css';
-import { increment, decrement, incrementAsync, incrementIfOdd } from './actions';
+import { increment, decrement, incrementAsync, decrementAsync, incrementIfOdd, incrementIfEven } from './actions';
 
 const imports = { style };
 
@@ -24,6 +24,8 @@ export default () => {
     document.querySelector('#increment').onclick = () => store.dispatch(increment());
     document.querySelector('#decrement').onclick = () => store.dispatch(decrement());
     document.querySelector('#incrementAsync').onclick = () => store.dispatch(incrementAsync());
+    document.querySelector('#decrementAsync').onclick = () => store.dispatch(decrementAsync());
     document.querySelector('#incrementIfOdd').onclick = () => store.dispatch(incrementIfOdd());
+    document.querySelector('#incrementIfEven').onclick = () => store.dispatch(incrementIfEven());
   });
 };
