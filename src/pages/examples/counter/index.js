@@ -1,4 +1,5 @@
-import counterFunc from './counter';
-import counter from './reducer';
+import counter from './counter';
+import counterEpic from './epics';
+import counterReducer from './reducer';
 
-export { counterFunc, counter };
+export { counter, counterEpic, counterReducer };

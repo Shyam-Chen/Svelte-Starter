@@ -64,18 +64,18 @@ export const SECONDARY_CONFIG = {
 };
 
 export const APP_CONFIG = Object.assign({}, PRIMARY_CONFIG, {
-  input: join(SOURCE_ROOT, 'app.js'),
-  sourcemap: !env.prod
+  entry: join(SOURCE_ROOT, 'app.js'),
+  sourceMap: !env.prod
 });
 
 export const TEST_CONFIG = Object.assign({}, PRIMARY_CONFIG, {
-  sourcemap: 'inline'
+  sourceMap: 'inline'
 });
 
 export const POLYFILLS_CONFIG = Object.assign({}, SECONDARY_CONFIG, {
-  input: join(SOURCE_ROOT, 'polyfills.js')
+  entry: join(SOURCE_ROOT, 'polyfills.js')
 });
 
 export const VENDOR_CONFIG = Object.assign({}, SECONDARY_CONFIG, {
-  input: join(SOURCE_ROOT, 'vendor.js')
+  entry: join(SOURCE_ROOT, 'vendor.js')
 });

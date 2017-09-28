@@ -326,7 +326,7 @@ const counterEpic = combineEpics(incrementIfOddEpic);
 
 const counter = handleActions({
   [INCREMENT](state) {
-    return state.update('counter', value => value + 1);
+    return state.update('value', value => value + 1);
   }
 }, INITIAL);
 
