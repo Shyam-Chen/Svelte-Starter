@@ -182,7 +182,7 @@ newComponent('ex-2', { title: 'Title 2', content: 'Content 2' });
 // src/pages/new-route/new-route.js
 import { template as _ } from 'lodash';
 
-import { layout } from '../../components/layout';
+import { layout } from '~/components/layout';
 
 export const newRoute = () => {
   page('/ex', () => {
@@ -210,16 +210,23 @@ import axios from 'axios';
 
 const API_LIST = 'https://web-go-demo.herokuapp.com/__/list';
 
-axios.get(text ? `${API_LIST}?text=${text}` : API_LIST)
+axios.get(API_LIST)
   .then(res => console.log(res.data))
   .then(() => console.log('done'));
 
-axios.post(API_LIST, { text: 'Web GO' })
+let searchText = 'a';
+axios.get(`${API_LIST}?text=${searchText}`)
+  .then(res => console.log(res.data))
+  .then(() => console.log('done'));
+
+let addText = 'Web GO';
+axios.post(API_LIST, { text: addText })
   .then(res => console.log(res.data))
   .then(() => console.log('done'));
 
 let putListId = '5943881e058f440012d4ae47';
-axios.put(`${API_LIST}/${putListId}`, { text: 'Web GO' })
+let updateText = 'Web GO';
+axios.put(`${API_LIST}/${putListId}`, { text: updateText })
   .then(res => console.log(res.data))
   .then(() => console.log('done'));
 
@@ -241,10 +248,65 @@ const client = new ApolloClient({
   })
 });
 
+// Query
 client.query({
     query: gql`
       {
         list {
+          _id
+          text
+        }
+      }
+    `
+  })
+  .then(res => console.log(res.data));
+
+let searchText = 'a';
+client.query({
+    query: gql`
+      {
+        list(text: ${searchText}) {
+          _id
+          text
+        }
+      }
+    `
+  })
+  .then(res => console.log(res.data));
+
+// Mutation
+let addText = 'Web GO';
+client.query({
+    query: gql`
+      mutation {
+        addText(text: ${addText}) {
+          _id
+          text
+        }
+      }
+    `
+  })
+  .then(res => console.log(res.data));
+
+let editListId = '5943881e058f440012d4ae47';
+let updateText = 'Web GO';
+client.query({
+    query: gql`
+      mutation {
+        updateText(_id: ${editListId}, text: ${updateText}) {
+          _id
+          text
+        }
+      }
+    `
+  })
+  .then(res => console.log(res.data));
+
+let deleteListId = '594388af058f440012d4ae49';
+client.query({
+    query: gql`
+      mutation {
+        deleteText(_id: ${deleteListId}) {
           _id
           text
         }
