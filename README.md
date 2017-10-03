@@ -248,10 +248,9 @@ const client = new ApolloClient({
   })
 });
 
-// Query
 client.query({
     query: gql`
-      {
+      query {
         list {
           _id
           text
@@ -264,8 +263,8 @@ client.query({
 let searchText = 'a';
 client.query({
     query: gql`
-      {
-        list(text: ${searchText}) {
+      query {
+        list(text: "${searchText}") {
           _id
           text
         }
@@ -274,12 +273,11 @@ client.query({
   })
   .then(res => console.log(res.data));
 
-// Mutation
 let addText = 'Web GO';
-client.query({
-    query: gql`
+client.mutate({
+    mutation: gql`
       mutation {
-        addText(text: ${addText}) {
+        addText(text: "${addText}") {
           _id
           text
         }
@@ -290,10 +288,10 @@ client.query({
 
 let editListId = '5943881e058f440012d4ae47';
 let updateText = 'Web GO';
-client.query({
-    query: gql`
+client.mutate({
+    mutation: gql`
       mutation {
-        updateText(_id: ${editListId}, text: ${updateText}) {
+        updateText(_id: "${editListId}", text: "${updateText}") {
           _id
           text
         }
@@ -303,10 +301,10 @@ client.query({
   .then(res => console.log(res.data));
 
 let deleteListId = '594388af058f440012d4ae49';
-client.query({
-    query: gql`
+client.mutate({
+    mutation: gql`
       mutation {
-        deleteText(_id: ${deleteListId}) {
+        deleteText(_id: "${deleteListId}") {
           _id
           text
         }
