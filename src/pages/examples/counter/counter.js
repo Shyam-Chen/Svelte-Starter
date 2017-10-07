@@ -1,10 +1,9 @@
 import { template as _ } from 'lodash';
-
-import { store } from '~/root';
+import { autorun } from 'mobx';
 
 import template from './counter.html';
 import style from './counter.css';
-import { increment, decrement, incrementAsync, decrementAsync, incrementIfOdd, incrementIfEven } from './actions';
+import { store } from './store';
 
 const imports = { style };
 
@@ -13,19 +12,12 @@ export default () => {
     document.querySelector('#app')
       .innerHTML = _(template, { imports })();
 
-    const render = () => {
-      const { counter } = store.getState();
-      document.querySelector('#value').innerHTML = counter.get('value');
-    };
+    autorun(() => {
+      document.querySelector('#value').innerHTML = store.value;
+      document.querySelector('#evenOrOdd').innerHTML = store.evenOrOdd;
+    });
 
-    store.subscribe(render);
-    render();
-
-    document.querySelector('#increment').onclick = () => store.dispatch(increment());
-    document.querySelector('#decrement').onclick = () => store.dispatch(decrement());
-    document.querySelector('#incrementAsync').onclick = () => store.dispatch(incrementAsync());
-    document.querySelector('#decrementAsync').onclick = () => store.dispatch(decrementAsync());
-    document.querySelector('#incrementIfOdd').onclick = () => store.dispatch(incrementIfOdd());
-    document.querySelector('#incrementIfEven').onclick = () => store.dispatch(incrementIfEven());
+    document.querySelector('#increment').onclick =  () => store.increment();
+    document.querySelector('#decrement').onclick =  () => store.decrement();
   });
 };

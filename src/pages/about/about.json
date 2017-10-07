@@ -12,7 +12,7 @@
       "Object relational mapping with Sequelize.",
       "Utility functions with Lodash.",
       "Reactive extensions with ReactiveX.",
-      "State container with Redux.",
+      "Scalable state management with MobX.",
       "Immutable collections with Immutable.",
       "Data visualizations with D3.",
       "3D scene graph with Three.",

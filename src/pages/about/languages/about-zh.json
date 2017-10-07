@@ -12,7 +12,7 @@
       "物件關聯映射使用 Sequelize",
       "實用的函式使用 Lodash",
       "反應式的擴充使用 ReactiveX",
-      "狀態容器使用 Redux",
+      "可擴展的狀態管理使用 MobX",
       "不變的集合使用 Immutable",
       "資料視覺化使用 D3",
       "3D 場景圖使用 Three",
