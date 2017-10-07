@@ -41,6 +41,7 @@
     "immutable": "3.8.1",
     "lodash-es": "4.17.4",
     "material-components-web": "0.22.0",
+    "mobx": "3.3.1",
     "page": "1.7.1",
     "redux": "3.7.2",
     "redux-actions": "2.2.1",

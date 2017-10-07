@@ -16,7 +16,7 @@ This seed repository provides the following features:
 * [x] Backend cloud services with [**Firebase**](https://firebase.google.com/).
 * [x] Utility functions with [**Lodash**](https://lodash.com/).
 * [x] Reactive extensions with [**ReactiveX**](http://reactivex.io/).
-* [x] State container with [**Redux**](http://redux.js.org/).
+* [ ] State management with [**MobX**](https://mobx.js.org/).
 * [x] Immutable collections with [**Immutable**](http://facebook.github.io/immutable-js/).
 * [x] Data visualizations with [**D3**](https://d3js.org/).
 * [x] 3D scene graph with [**Three**](https://threejs.org/).
@@ -574,6 +574,7 @@ $ yarn deploy
 ## Known Issues
 
 * ---------- **P0: Critical** ----------
+* [Refactor] Migrate from Redux to MobX
 * [Feature] Server-side Rendering with Cloud Functions
 * [Feature] Prerenders static `.html` pages with `pre-render`
 * [Enhancement] Offline Google Analytics
