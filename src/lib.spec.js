@@ -2,13 +2,14 @@
 import { lowerFirst, pad } from 'lodash';
 
 // ReactiveX
-import { Observable, Subject } from 'rxjs';
-import { timer, of } from 'rxjs/observable';
-import { mapTo, combineAll } from 'rxjs/operator';
+// import { Observable, Subject } from 'rxjs';
+// import { timer, of } from 'rxjs/observable';
+// import { mapTo, combineAll } from 'rxjs/operator';
+// import { Observable } from 'rxjs/Observable';
+// import 'rxjs/add/observable/interval';
 
-// Redux
-import { combineReducers, createStore, applyMiddleware } from 'redux';
-import { combineEpics, createEpicMiddleware } from 'redux-observable';
+// MobX
+import { observable, action, autorun } from 'mobx';
 
 // Immutable
 import { Map, Set } from 'immutable';
@@ -33,22 +34,27 @@ describe('Test', () => {
 
   describe('ReactiveX', () => {
     it('should be able to use', () => {
-      expect(Observable).toBeDefined();
-      expect(Subject).toBeDefined();
-      expect(timer).toBeDefined();
-      expect(of).toBeDefined();
-      expect(mapTo).toBeDefined();
-      expect(combineAll).toBeDefined();
+      // expect(Observable).toBeDefined();
+      // expect(Subject).toBeDefined();
+      // expect(timer).toBeDefined();
+      // expect(of).toBeDefined();
+      // expect(mapTo).toBeDefined();
+      // expect(combineAll).toBeDefined();
+      // Observable.interval(0)
+      //   .subscribe(value => console.log(value));
     });
 
-    // it('should be able to use', () => {
-    //   Observable::timer(2000)
+    // it('should be able to use', done => {
+    //   Observable::timer(1000)
     //     ::mapTo(Observable::of('Hello', 'World'))
     //     ::combineAll()
-    //     .subscribe(value => console.log(value));
+    //     .subscribe(value => {
+    //       expect(value).toBeDefined();
+    //       done();
+    //     });
     // });
 
-    // it('should be able to use', () => {
+    // it('should be able to use', done => {
     //   const source$ = new Observable(observer => {
     //     observer.next(1);
     //     observer.next(2);
@@ -57,21 +63,18 @@ describe('Test', () => {
     //   });
     //
     //   source$::observeOn(Scheduler.async)
-    //     .subscribe(
-    //       value => console.log(value),
-    //       error => console.error(error),
-    //       () => console.log('done')
-    //     );
+    //     .subscribe(value => {
+    //       expect(value).toBeDefined();
+    //       done();
+    //     });
     // });
   });
 
-  describe('Redux', () => {
+  describe('MobX', () => {
     it('should be able to use', () => {
-      expect(combineReducers).toBeDefined();
-      expect(createStore).toBeDefined();
-      expect(applyMiddleware).toBeDefined();
-      expect(combineEpics).toBeDefined();
-      expect(createEpicMiddleware).toBeDefined();
+      expect(observable).toBeDefined();
+      expect(action).toBeDefined();
+      expect(autorun).toBeDefined();
     });
   });
 

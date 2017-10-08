@@ -21,7 +21,7 @@ import POSTCSS_CONFIG from './postcss';
 import BABEL_CONFIG from './babel';
 
 import { SOURCE_ROOT } from '../constants';
-import { lodash, reactivex } from '../utils';
+import { lodash/* , reactivex */ } from '../utils';
 
 export const PRIMARY_CONFIG = {
   format: 'iife',
@@ -32,17 +32,12 @@ export const PRIMARY_CONFIG = {
     url({ limit: 32 * 1024 }),
     json(),
     lodash(),
-    reactivex(),
+    // reactivex(),
     babel(BABEL_CONFIG),
     globals(),
     builtins(),
     resolve({ jsnext: true, browser: true }),
-    commonjs({
-      include: 'node_modules/**',
-      namedExports: {
-        'node_modules/immutable/dist/immutable.js': Object.keys(require('immutable'))
-      }
-    }),
+    commonjs({ include: 'node_modules/**' }),
     replace({ 'process.env.NODE_ENV': JSON.stringify(env.prod ? 'production' : 'development') }),
     (env.prod ? uglify() : noop())
   ]

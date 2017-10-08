@@ -1,23 +1,38 @@
 import { template as _ } from 'lodash';
-import { autorun } from 'mobx';
+import { observable, action, autorun } from 'mobx';
 
 import template from './counter.html';
 import style from './counter.css';
-import { store } from './store';
 
 const imports = { style };
 
 export default () => {
   page('/examples/counter', () => {
-    document.querySelector('#app')
-      .innerHTML = _(template, { imports })();
+    const store = observable({
+      value: 0,
 
-    autorun(() => {
-      document.querySelector('#value').innerHTML = store.value;
-      document.querySelector('#evenOrOdd').innerHTML = store.evenOrOdd;
+      increment: action(() => store.value++),
+      decrement: action(() => store.value--),
+      incrementAsync: action(() => setTimeout(() => store.increment(), 1000)),
+      incrementIfOdd: action(() => {
+        if (Math.abs(store.value % 2) === 1) {
+          store.increment();
+        }
+      }),
+
+      get evenOrOdd() {
+        return store.value % 2 === 0 ? 'even' : 'odd';
+      }
     });
 
-    document.querySelector('#increment').onclick =  () => store.increment();
-    document.querySelector('#decrement').onclick =  () => store.decrement();
+    autorun(() => {
+      document.querySelector('#app')
+        .innerHTML = _(template, { imports })({ store });
+
+      document.querySelector('#increment').onclick = () => store.increment();
+      document.querySelector('#decrement').onclick = () => store.decrement();
+      document.querySelector('#incrementAsync').onclick = () => store.incrementAsync();
+      document.querySelector('#incrementIfOdd').onclick = () => store.incrementIfOdd();
+    });
   });
 };

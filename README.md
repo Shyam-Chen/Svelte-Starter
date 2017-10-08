@@ -574,7 +574,6 @@ $ yarn deploy
 ## Known Issues
 
 * ---------- **P0: Critical** ----------
-* [Refactor] Migrate from Redux to MobX
 * [Feature] Server-side Rendering with Cloud Functions
 * [Feature] Prerenders static `.html` pages with `pre-render`
 * [Enhancement] Offline Google Analytics

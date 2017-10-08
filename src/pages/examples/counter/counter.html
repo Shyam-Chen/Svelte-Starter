@@ -1,9 +1,11 @@
 <div>
-  Clicked: <span id="value"></span> times, value is <span id="evenOrOdd"></span>.
-  <button id="increment">Increment</button>
-  <button id="decrement">Decrement</button>
+  Clicked: ${store.value} times, value is ${store.evenOrOdd}.
+  <button id="increment" class="mdc-button mdc-button--raised">Increment</button>
+  <button id="decrement" class="mdc-button mdc-button--raised">Decrement</button>
+  <button id="incrementAsync" class="mdc-button mdc-button--raised">Increment (Async)</button>
+  <button id="incrementIfOdd" class="mdc-button mdc-button--raised">Increment (If Odd)</button>
 </div>
 
 <div>
-  <a href="javascript: history.back()">Go Back</a>
+  <a class="mdc-button mdc-button--raised" href="javascript: history.back()">Go Back</a>
 </div>

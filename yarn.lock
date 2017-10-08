@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@firebase/webchannel-wrapper@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.2.1.tgz#2c4dbc15edd1de4f656d543a6f512ded7978ef72"
+
 "@google-cloud/common@^0.13.0":
   version "0.13.3"
   resolved "https://registry.yarnpkg.com/@google-cloud/common/-/common-0.13.3.tgz#d73ee3fa511f29ffbcc44667898685709e9fec8c"
@@ -339,13 +343,13 @@
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@material/typography/-/typography-0.3.0.tgz#f828c2d3215bfd66c58072709b4260c64125390a"
 
+"@types/async@2.0.42":
+  version "2.0.42"
+  resolved "https://registry.yarnpkg.com/@types/async/-/async-2.0.42.tgz#51cd1cc76b9fe487f5759f3eadd6f74074b99b81"
+
 "@types/core-js@^0.9.41":
   version "0.9.43"
   resolved "https://registry.yarnpkg.com/@types/core-js/-/core-js-0.9.43.tgz#65d646c5e8c0cd1bdee37065799f9d3d48748253"
-
-"@types/graphql@0.10.2":
-  version "0.10.2"
-  resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-0.10.2.tgz#d7c79acbaa17453b6681c80c34b38fcb10c4c08c"
 
 "@types/mkdirp@^0.3.29":
   version "0.3.29"
@@ -539,27 +543,42 @@ anymatch@^1.3.0:
     arrify "^1.0.0"
     micromatch "^2.1.5"
 
-apollo-client@1.9.3:
-  version "1.9.3"
-  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-1.9.3.tgz#37000b3c801f4571b7b089739e696a158896aeab"
+apollo-cache@^0.2.0-beta.2:
+  version "0.2.0-beta.2"
+  resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-0.2.0-beta.2.tgz#d3e5668810d03a730db4e3e326a0a3050d2d813f"
   dependencies:
-    apollo-link-core "^0.5.0"
-    graphql "^0.10.0"
-    graphql-anywhere "^3.0.1"
-    graphql-tag "^2.0.0"
-    redux "^3.4.0"
-    symbol-observable "^1.0.2"
-    whatwg-fetch "^2.0.0"
-  optionalDependencies:
-    "@types/graphql" "0.10.2"
+    apollo-utilities "^0.2.0-beta.2"
 
-apollo-link-core@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/apollo-link-core/-/apollo-link-core-0.5.0.tgz#dc87da1aaa63b029321ae70938dc26257f5ab8c6"
+apollo-client@2.0.0-beta.3:
+  version "2.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.0.0-beta.3.tgz#39e1f269bb862fc4391fc634357a8e27f8ed01e4"
   dependencies:
-    graphql "^0.10.3"
-    graphql-tag "^2.4.2"
-    zen-observable-ts "^0.4.0"
+    apollo-cache "^0.2.0-beta.2"
+    apollo-link "0.6.1-beta.6"
+    apollo-link-dedup "0.4.1-beta.6"
+    apollo-utilities "^0.2.0-beta.2"
+    graphql "^0.11.0"
+    symbol-observable "^1.0.2"
+  optionalDependencies:
+    "@types/async" "2.0.42"
+
+apollo-link-dedup@0.4.1-beta.6:
+  version "0.4.1-beta.6"
+  resolved "https://registry.yarnpkg.com/apollo-link-dedup/-/apollo-link-dedup-0.4.1-beta.6.tgz#089a54711cc93436c82a1dc5602f31308ce8f230"
+  dependencies:
+    graphql "^0.10.5"
+
+apollo-link@0.6.1-beta.6:
+  version "0.6.1-beta.6"
+  resolved "https://registry.yarnpkg.com/apollo-link/-/apollo-link-0.6.1-beta.6.tgz#29c8e52c71ffea09f776413655d185e3b59f0f2e"
+  dependencies:
+    apollo-utilities "^0.2.0-beta.0"
+    graphql "^0.11.3"
+    zen-observable-ts "^0.4.3-beta.4"
+
+apollo-utilities@^0.2.0-beta.0, apollo-utilities@^0.2.0-beta.2:
+  version "0.2.0-beta.2"
+  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-0.2.0-beta.2.tgz#95b61e00fa0cb67f6af65921484bca33114d55e1"
 
 aproba@^1.0.3:
   version "1.1.1"
@@ -2744,9 +2763,13 @@ cycle@1.0.x:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/cycle/-/cycle-1.0.3.tgz#21e80b2be8580f98b468f379430662b046c34ad2"
 
-d3-array@1, d3-array@1.2.0, d3-array@^1.2.0:
+d3-array@1, d3-array@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-1.2.0.tgz#147d269720e174c4057a7f42be8b0f3f2ba53108"
+
+d3-array@1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-1.2.1.tgz#d1ca33de2f6ac31efadb8e050a021d7e2396d5dc"
 
 d3-axis@1.0.8:
   version "1.0.8"
@@ -2792,9 +2815,9 @@ d3-drag@1:
     d3-dispatch "1"
     d3-selection "1"
 
-d3-drag@1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/d3-drag/-/d3-drag-1.1.1.tgz#b5155304433b18ba38726b2184d0098e820dc64b"
+d3-drag@1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/d3-drag/-/d3-drag-1.2.1.tgz#df8dd4c502fb490fc7462046a8ad98a5c479282d"
   dependencies:
     d3-dispatch "1"
     d3-selection "1"
@@ -2819,9 +2842,9 @@ d3-ease@1, d3-ease@1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/d3-ease/-/d3-ease-1.0.3.tgz#68bfbc349338a380c44d8acc4fbc3304aa2d8c0e"
 
-d3-force@1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/d3-force/-/d3-force-1.0.6.tgz#ea7e1b7730e2664cd314f594d6718c57cc132b79"
+d3-force@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/d3-force/-/d3-force-1.1.0.tgz#cebf3c694f1078fcc3d4daf8e567b2fbd70d4ea3"
   dependencies:
     d3-collection "1"
     d3-dispatch "1"
@@ -2832,9 +2855,9 @@ d3-format@1, d3-format@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/d3-format/-/d3-format-1.2.0.tgz#6b480baa886885d4651dc248a8f4ac9da16db07a"
 
-d3-geo@1.6.4:
-  version "1.6.4"
-  resolved "https://registry.yarnpkg.com/d3-geo/-/d3-geo-1.6.4.tgz#f20e1e461cb1845f5a8be55ab6f876542a7e3199"
+d3-geo@1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/d3-geo/-/d3-geo-1.8.1.tgz#50615c33454487e350db71059f84f71cda2dd983"
   dependencies:
     d3-array "1"
 
@@ -2889,13 +2912,6 @@ d3-scale@1.0.6:
     d3-time "1"
     d3-time-format "2"
 
-d3-selection-multi@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/d3-selection-multi/-/d3-selection-multi-1.0.1.tgz#cd6c25413d04a2cb97470e786f2cd877f3e34f58"
-  dependencies:
-    d3-selection "1"
-    d3-transition "1"
-
 d3-selection@1, d3-selection@1.1.0, d3-selection@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/d3-selection/-/d3-selection-1.1.0.tgz#1998684896488f839ca0372123da34f1d318809c"
@@ -2943,9 +2959,9 @@ d3-voronoi@1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/d3-voronoi/-/d3-voronoi-1.1.2.tgz#1687667e8f13a2d158c80c1480c5a29cb0d8973c"
 
-d3-zoom@1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/d3-zoom/-/d3-zoom-1.5.0.tgz#8417de9a077f98f9ce83b1998efb8ee12b4db26e"
+d3-zoom@1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/d3-zoom/-/d3-zoom-1.6.0.tgz#eb645b07fd0c37acc8b36b88476b781ed277b40e"
   dependencies:
     d3-dispatch "1"
     d3-drag "1"
@@ -2953,23 +2969,23 @@ d3-zoom@1.5.0:
     d3-selection "1"
     d3-transition "1"
 
-d3@4.10.2:
-  version "4.10.2"
-  resolved "https://registry.yarnpkg.com/d3/-/d3-4.10.2.tgz#d401b2bc0372a77e6822f278c0e4b4090206babd"
+d3@4.11.0:
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/d3/-/d3-4.11.0.tgz#15ce99ec33e6941718cfd8fb826071b4fb7c48cb"
   dependencies:
-    d3-array "1.2.0"
+    d3-array "1.2.1"
     d3-axis "1.0.8"
     d3-brush "1.0.4"
     d3-chord "1.0.4"
     d3-collection "1.0.4"
     d3-color "1.0.3"
     d3-dispatch "1.0.3"
-    d3-drag "1.1.1"
+    d3-drag "1.2.1"
     d3-dsv "1.0.7"
     d3-ease "1.0.3"
-    d3-force "1.0.6"
+    d3-force "1.1.0"
     d3-format "1.2.0"
-    d3-geo "1.6.4"
+    d3-geo "1.8.1"
     d3-hierarchy "1.1.5"
     d3-interpolate "1.1.5"
     d3-path "1.0.5"
@@ -2986,7 +3002,7 @@ d3@4.10.2:
     d3-timer "1.0.7"
     d3-transition "1.1.0"
     d3-voronoi "1.1.2"
-    d3-zoom "1.5.0"
+    d3-zoom "1.6.0"
 
 d@1:
   version "1.0.0"
@@ -3081,10 +3097,6 @@ decompress-response@^3.2.0:
   resolved "https://registry.yarnpkg.com/decompress-response/-/decompress-response-3.3.0.tgz#80a4dd323748384bfa248083622aedec982adff3"
   dependencies:
     mimic-response "^1.0.0"
-
-deep-diff@^0.3.5:
-  version "0.3.8"
-  resolved "https://registry.yarnpkg.com/deep-diff/-/deep-diff-0.3.8.tgz#c01de63efb0eec9798801d40c7e0dae25b582c84"
 
 deep-eql@^0.1.3:
   version "0.1.3"
@@ -4104,10 +4116,11 @@ firebase@2.x.x:
   dependencies:
     faye-websocket ">=0.6.0"
 
-firebase@4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/firebase/-/firebase-4.4.0.tgz#cffa34964c38ae24157ec930dbe147816fd8e3f4"
+firebase@4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/firebase/-/firebase-4.5.0.tgz#e0973a9803b74c4c9d73d19f874712e6e9d16ba7"
   dependencies:
+    "@firebase/webchannel-wrapper" "^0.2.1"
     dom-storage "^2.0.2"
     faye-websocket "0.9.3"
     jsonwebtoken "^7.3.0"
@@ -4687,25 +4700,17 @@ graceful-fs@~1.2.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/graceful-readlink/-/graceful-readlink-1.0.1.tgz#4cafad76bc62f02fa039b2f94e9a3dd3a391a725"
 
-graphql-anywhere@^3.0.1:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-3.1.0.tgz#3ea0d8e8646b5cee68035016a9a7557c15c21e96"
-
-graphql-tag@^2.0.0, graphql-tag@^2.4.2:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.4.2.tgz#6a63297d8522d03a2b72d26f1b239aab343840cd"
-
-graphql@^0.10.0:
-  version "0.10.3"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.10.3.tgz#c313afd5518e673351bee18fb63e2a0e487407ab"
-  dependencies:
-    iterall "^1.1.0"
-
-graphql@^0.10.3:
+graphql@^0.10.5:
   version "0.10.5"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.10.5.tgz#c9be17ca2bdfdbd134077ffd9bbaa48b8becd298"
   dependencies:
     iterall "^1.1.0"
+
+graphql@^0.11.0, graphql@^0.11.3:
+  version "0.11.7"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.11.7.tgz#e5abaa9cb7b7cccb84e9f0836bf4370d268750c6"
+  dependencies:
+    iterall "1.1.3"
 
 group-array@^0.3.0:
   version "0.3.3"
@@ -5211,6 +5216,10 @@ immutable@3.8.1, immutable@^3.7.6:
   version "3.8.1"
   resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.1.tgz#200807f11ab0f72710ea485542de088075f68cd2"
 
+immutable@4.0.0-rc.7:
+  version "4.0.0-rc.7"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-4.0.0-rc.7.tgz#50b4ad60e02ac5c71ebb19ad72577b08ed4ab736"
+
 imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
@@ -5297,7 +5306,7 @@ interpret@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.0.3.tgz#cbc35c62eeee73f19ab7b10a801511401afc0f90"
 
-invariant@^2.2.0, invariant@^2.2.1, invariant@^2.2.2:
+invariant@^2.2.0, invariant@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360"
   dependencies:
@@ -5625,6 +5634,10 @@ isurl@^1.0.0-alpha5:
 items@2.x.x:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/items/-/items-2.1.1.tgz#8bd16d9c83b19529de5aea321acaada78364a198"
+
+iterall@1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.1.3.tgz#1cbbff96204056dde6656e2ed2e2226d0e6d72c9"
 
 iterall@^1.1.0:
   version "1.1.1"
@@ -6131,10 +6144,6 @@ locate-path@^2.0.0:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
 
-lodash-es@4.17.4, lodash-es@^4.17.4, lodash-es@^4.2.1:
-  version "4.17.4"
-  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.4.tgz#dcc1d7552e150a0640073ba9cb31d70f032950e7"
-
 lodash._basecopy@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/lodash._basecopy/-/lodash._basecopy-3.0.1.tgz#8da0e6a876cf344c0ad8a54882111dd3c5c7ca36"
@@ -6341,7 +6350,7 @@ lodash@3.7.x:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.7.0.tgz#3678bd8ab995057c07ade836ed2ef087da811d45"
 
-lodash@4.17.4, lodash@^4.0.0, lodash@^4.1.0, lodash@^4.11.1, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.5.0, lodash@^4.6.1, lodash@^4.8.2, lodash@~4.17.2:
+lodash@4.17.4, lodash@^4.0.0, lodash@^4.1.0, lodash@^4.11.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.5.0, lodash@^4.6.1, lodash@^4.8.2, lodash@~4.17.2:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -6384,7 +6393,7 @@ long@~3:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/long/-/long-3.2.0.tgz#d821b7138ca1cb581c172990ef14db200b5c474b"
 
-loose-envify@^1.0.0, loose-envify@^1.1.0:
+loose-envify@^1.0.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.3.1.tgz#d1a8ad33fa9ce0e713d65fdd0ac8b748d478c848"
   dependencies:
@@ -8664,47 +8673,6 @@ reduce-function-call@^1.0.1, reduce-function-call@^1.0.2:
   dependencies:
     balanced-match "^0.4.2"
 
-reduce-reducers@^0.1.0:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/reduce-reducers/-/reduce-reducers-0.1.2.tgz#fa1b4718bc5292a71ddd1e5d839c9bea9770f14b"
-
-redux-actions@2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/redux-actions/-/redux-actions-2.2.1.tgz#d64186b25649a13c05478547d7cd7537b892410d"
-  dependencies:
-    invariant "^2.2.1"
-    lodash "^4.13.1"
-    lodash-es "^4.17.4"
-    reduce-reducers "^0.1.0"
-
-redux-logger@3.0.6:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/redux-logger/-/redux-logger-3.0.6.tgz#f7555966f3098f3c88604c449cf0baf5778274bf"
-  dependencies:
-    deep-diff "^0.3.5"
-
-redux-observable@0.16.0:
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/redux-observable/-/redux-observable-0.16.0.tgz#dc431d0f47a9c3af232639d6bdd70d80c1b620d9"
-
-redux@3.7.2:
-  version "3.7.2"
-  resolved "https://registry.yarnpkg.com/redux/-/redux-3.7.2.tgz#06b73123215901d25d065be342eb026bc1c8537b"
-  dependencies:
-    lodash "^4.2.1"
-    lodash-es "^4.2.1"
-    loose-envify "^1.1.0"
-    symbol-observable "^1.0.3"
-
-redux@^3.4.0:
-  version "3.7.1"
-  resolved "https://registry.yarnpkg.com/redux/-/redux-3.7.1.tgz#bfc535c757d3849562ead0af18ac52122cd7268e"
-  dependencies:
-    lodash "^4.2.1"
-    lodash-es "^4.2.1"
-    loose-envify "^1.1.0"
-    symbol-observable "^1.0.3"
-
 regenerate@^1.2.1:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.3.2.tgz#d1941c67bad437e1be76433add5b385f95b19260"
@@ -8889,10 +8857,6 @@ require-uncached@^1.0.3:
 requires-port@1.x.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
-
-reselect@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/reselect/-/reselect-3.0.1.tgz#efdaa98ea7451324d092b2b2163a6a1d7a9a2147"
 
 reserved-words@^0.1.1:
   version "0.1.1"
@@ -9297,9 +9261,9 @@ rx@4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/rx/-/rx-4.1.0.tgz#a5f13ff79ef3b740fe30aa803fb09f98805d4782"
 
-rxjs-es@5.0.0-beta.12:
-  version "5.0.0-beta.12"
-  resolved "https://registry.yarnpkg.com/rxjs-es/-/rxjs-es-5.0.0-beta.12.tgz#cf161b173f5086feec113b82c4d95187b2f11c43"
+rxjs@5.4.3:
+  version "5.4.3"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.4.3.tgz#0758cddee6033d68e0fd53676f0f3596ce3d483f"
   dependencies:
     symbol-observable "^1.0.1"
 
@@ -10105,7 +10069,7 @@ sw-toolbox@3.6.0, sw-toolbox@^3.4.0:
     path-to-regexp "^1.0.1"
     serviceworker-cache-polyfill "^4.0.0"
 
-symbol-observable@^1.0.1, symbol-observable@^1.0.2, symbol-observable@^1.0.3:
+symbol-observable@^1.0.1, symbol-observable@^1.0.2:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
 
@@ -10726,10 +10690,6 @@ weinre@^2.0.0-pre-I0Z7U9OV:
     nopt "3.0.x"
     underscore "1.7.x"
 
-whatwg-fetch@^2.0.0:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
-
 when@^3.7.7:
   version "3.7.8"
   resolved "https://registry.yarnpkg.com/when/-/when-3.7.8.tgz#c7130b6a7ea04693e842cdc9e7a1f2aa39a39f82"
@@ -11043,9 +11003,9 @@ yeast@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
 
-zen-observable-ts@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/zen-observable-ts/-/zen-observable-ts-0.4.0.tgz#a74bc9fe59747948a577bd513d438e70fcfae7e2"
+zen-observable-ts@^0.4.3-beta.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/zen-observable-ts/-/zen-observable-ts-0.4.4.tgz#c244c71eaebef79a985ccf9895bc90307a6e9712"
 
 zip-stream@~0.6.0:
   version "0.6.0"
