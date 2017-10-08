@@ -239,22 +239,18 @@ axios.delete(`${API_LIST}/${deleteListId}`)
 4. Example of GraphQL
 
 ```js
-import ApolloClient, { createNetworkInterface } from 'apollo-client';
+import { ApolloClient, HttpLink, InMemoryCache } from 'apollo-client';
 import gql from 'graphql-tag';
 
 const client = new ApolloClient({
-  networkInterface: createNetworkInterface({
-    uri: 'https://web-go-demo.herokuapp.com/__/graphql'
-  })
+  link: new HttpLink({ uri: 'https://web-go-demo.herokuapp.com/__/graphql' }),
+  cache: new InMemoryCache()
 });
 
 client.query({
     query: gql`
-      query {
-        list {
-          _id
-          text
-        }
+      query List {
+        list { _id text }
       }
     `
   })
@@ -263,11 +259,8 @@ client.query({
 let searchText = 'a';
 client.query({
     query: gql`
-      query {
-        list(text: "${searchText}") {
-          _id
-          text
-        }
+      query List {
+        list(text: "${searchText}") { _id text }
       }
     `
   })
@@ -276,11 +269,8 @@ client.query({
 let addText = 'Web GO';
 client.mutate({
     mutation: gql`
-      mutation {
-        addText(text: "${addText}") {
-          _id
-          text
-        }
+      mutation List {
+        addText(text: "${addText}") { _id text }
       }
     `
   })
@@ -290,11 +280,8 @@ let editListId = '5943881e058f440012d4ae47';
 let updateText = 'Web GO';
 client.mutate({
     mutation: gql`
-      mutation {
-        updateText(_id: "${editListId}", text: "${updateText}") {
-          _id
-          text
-        }
+      mutation List {
+        updateText(_id: "${editListId}", text: "${updateText}") { _id text }
       }
     `
   })
@@ -303,11 +290,8 @@ client.mutate({
 let deleteListId = '594388af058f440012d4ae49';
 client.mutate({
     mutation: gql`
-      mutation {
-        deleteText(_id: "${deleteListId}") {
-          _id
-          text
-        }
+      mutation List {
+        deleteText(_id: "${deleteListId}") { _id text }
       }
     `
   })
@@ -514,10 +498,7 @@ $ yarn deploy
 │   ├── app.css
 │   ├── app.js
 │   ├── index.html
-│   ├── lib.spec.js
 │   ├── polyfills.js  -> polyfills, shims, prevendor ...
-│   ├── root.css  -> root variables, root mixins, custom selectors ...
-│   ├── root.js  -> root epics, root reducers, configure store ...
 │   └── vendor.js  -> third-party libraries ...
 ├── tools
 │   ├── config
