@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/Shyam-Chen/Frontend-Starter-Kit#readme",
   "dependencies": {
-    "apollo-client": "2.0.0-beta.3",
+    "apollo-client": "1.9.3",
     "axios": "0.16.2",
     "core-js": "2.5.1",
     "d3": "4.11.0",

@@ -239,12 +239,13 @@ axios.delete(`${API_LIST}/${deleteListId}`)
 4. Example of GraphQL
 
 ```js
-import { ApolloClient, HttpLink, InMemoryCache } from 'apollo-client';
+import ApolloClient, { createNetworkInterface } from 'apollo-client';
 import gql from 'graphql-tag';
 
 const client = new ApolloClient({
-  link: new HttpLink({ uri: 'https://web-go-demo.herokuapp.com/__/graphql' }),
-  cache: new InMemoryCache()
+  networkInterface: createNetworkInterface({
+    uri: 'https://web-go-demo.herokuapp.com/__/graphql'
+  })
 });
 
 client.query({
@@ -536,15 +537,14 @@ $ yarn deploy
 * ---------- **P0: Critical** ----------
 * [Feature] Server-side Rendering with Cloud Functions
 * [Feature] Prerenders static `.html` pages with `pre-render`
-* [Enhancement] Offline Google Analytics
 * ---------- **P1: Urgent** ----------
+* [Enhancement] Offline Google Analytics
 * [Enhancement] Real Flow types
 * [Enhancement] Use more Reshape plugins
+* ---------- **P2: Required** ----------
 * [Feature] HTTP mocking with `nock`
 * [Feature] Add code coverage reports
 * [Feature] Add unit tests for Cloud Functions with Jest
-* ---------- **P2: Required** ----------
-* [Bug] `apollo-client` can't import
 * ---------- **P3: Important** ----------
 * [Example] Do more examples
 * [Example] Write more tests
