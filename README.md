@@ -314,7 +314,7 @@ client.mutate({
   .then(res => console.log(res.data));
 ```
 
-5. Example of Sockets
+5. Example of Socket
 
 ```js
 import io from 'socket.io-client';
@@ -357,56 +357,39 @@ Observable::timer(2000)
   // ["World"]
 ```
 
-8. Example of Redux
+8. Example of MobX
 
 ```js
-import { filter, map } from 'rxjs/operator';
-import { combineReducers, createStore, applyMiddleware } from 'redux';
-import { combineEpics, createEpicMiddleware } from 'redux-observable';
-import { handleActions } from 'redux-actions';
-import { Map } from 'immutable';
+import { observable, action, autorun } from 'mobx';
 
-const INITIAL = Map({ value: 0 });
+const store = observable({
+  value: 0,
 
-const INCREMENT = '[Counter] INCREMENT';
-const INCREMENT_IF_ODD = '[Counter] INCREMENT_IF_ODD';
+  increment: action(() => store.value++),
+  decrement: action(() => store.value--),
+  incrementAsync: action(() => setTimeout(() => store.increment(), 1000)),
+  incrementIfOdd: action(() => {
+    if (Math.abs(store.value % 2) === 1) {
+      store.increment();
+    }
+  }),
 
-const increment = () => ({ type: INCREMENT });
-const incrementIfOdd = () => ({ type: INCREMENT_IF_ODD });
-
-const incrementIfOddEpic = (action$, store) => {
-  const { counter } = store.getState();
-
-  return action$.ofType(INCREMENT_IF_ODD)
-    ::filter(() => counter.get('value') % 2 === 1)
-    ::map(increment);
-};
-
-const counterEpic = combineEpics(incrementIfOddEpic);
-
-const counter = handleActions({
-  [INCREMENT](state) {
-    return state.update('value', value => value + 1);
+  get evenOrOdd() {
+    return store.value % 2 === 0 ? 'even' : 'odd';
   }
-}, INITIAL);
-
-const rootEpic = combineEpics(counterEpic);
-const rootReducer = combineReducers({ counter });
-
-const store = createStore(
-  rootReducer,
-  applyMiddleware(
-    createEpicMiddleware(rootEpic)
-  )
-);
-
-store.subscribe(() => {
-  const { counter } = store.getState();
-  console.log(counter.get('value'));
 });
 
-store.dispatch(increment());  // 1
-store.dispatch(incrementIfOdd());  // 1 -> 2
+autorun(() => {
+  console.log(store.value, store.evenOrOdd);  // 0, even
+  store.increment();  // 0 -> 1
+  console.log(store.value, store.evenOrOdd);  // 1, odd
+  store.incrementAsync();  // 1 -> 2
+  store.incrementAsync();  // 2 -> 3
+  console.log(store.value, store.evenOrOdd);  // 3, odd
+  store.incrementIfOdd();  // 3 -> 4
+  store.incrementIfOdd();  // 4 -> 4
+  onsole.log(store.value, store.evenOrOdd);  // 4, even
+});
 ```
 
 9. Example of Immutable
@@ -523,12 +506,8 @@ $ yarn deploy
 ├── src
 │   ├── assets  -> audios, datas, fonts, images, videos ...
 │   ├── pages
-│   │   └── <container|component>
-│   │       ├── constants.js -> action types ...
-│   │       ├── actions.js  -> action creators ...
-│   │       ├── epics.{js,.spec.js}  -> side effects ...
-│   │       ├── reducer.{js,.spec.js}  -> reducer function ...
-│   │       ├── <feature>.{html,css,js,json,spec.js,e2e-spec.js}  -> feature component ...
+│   │   └── <feature>
+│   │       ├── <feature>.{html,css,js,json,spec.js,e2e-spec.js}
 │   │       └── index.js
 │   ├── shared  -> shared components ...
 │   ├── utils  -> utility functions ...
@@ -584,9 +563,9 @@ $ yarn deploy
 * [Feature] Add code coverage reports
 * [Feature] Add unit tests for Cloud Functions with Jest
 * ---------- **P2: Required** ----------
-* [Bug] `rxjs` can't import
 * [Bug] `axios` can't import
 * [Bug] `socket.io-client` can't import
+* [Bug] `rxjs` can't import
 * ---------- **P3: Important** ----------
 * [Example] Do more examples
 * [Example] Write more tests
