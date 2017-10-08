@@ -1,0 +1,7 @@
+<div>
+  <ul class="mdc-list mdc-list--dense mdc-elevation--z2">
+    <% [].forEach.call(store.dataset, function(item) { %>
+      <li class="mdc-list-item"><%- item.primary %> - <%- item.accent %></li>
+    <% }); %>
+  </ul>
+</div>

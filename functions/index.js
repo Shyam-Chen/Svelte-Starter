@@ -1,24 +1,7 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 
-const express = require('express');
-
 admin.initializeApp(functions.config().firebase);
-
-const app = express();
-
-app.engine('html', () => {
-  // TODO
-});
-
-app.set('view engine', 'html');
-app.set('views', 'public')
-
-app.use('/', express.static('public', { index: false }));
-
-app.get('*', (req, res) => {
-  res.render('../public/index.html', { req, res });
-});
 
 /**
  * @example
@@ -35,6 +18,3 @@ exports.addMessage = functions.https
         res.redirect(303, snapshot.ref);
       });
   });
-
-// TODO: server-side rendering
-// exports.app = functions.https.onRequest(app);

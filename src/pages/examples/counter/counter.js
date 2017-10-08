@@ -9,8 +9,14 @@ const imports = { style };
 export default () => {
   page('/examples/counter', () => {
     const store = observable({
+      /**
+       * @name observable
+       */
       value: 0,
 
+      /**
+       * @name action
+       */
       increment: action(() => store.value++),
       decrement: action(() => store.value--),
       incrementAsync: action(() => setTimeout(() => store.increment(), 1000)),
@@ -20,6 +26,9 @@ export default () => {
         }
       }),
 
+      /**
+       * @name computed
+       */
       get evenOrOdd() {
         return store.value % 2 === 0 ? 'even' : 'odd';
       }
