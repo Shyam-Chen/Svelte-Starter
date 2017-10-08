@@ -7,8 +7,6 @@ import url from 'rollup-plugin-url';
 import json from 'rollup-plugin-json';
 import babel from 'rollup-plugin-babel';
 import buble from 'rollup-plugin-buble';
-import globals from 'rollup-plugin-node-globals';
-import builtins from 'rollup-plugin-node-builtins';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
@@ -34,8 +32,6 @@ export const PRIMARY_CONFIG = {
     lodash(),
     // reactivex(),
     babel(BABEL_CONFIG),
-    globals(),
-    builtins(),
     resolve({ jsnext: true, browser: true }),
     commonjs({ include: 'node_modules/**' }),
     replace({ 'process.env.NODE_ENV': JSON.stringify(env.prod ? 'production' : 'development') }),
@@ -49,8 +45,8 @@ export const SECONDARY_CONFIG = {
   plugins: [
     postcss({ plugins: [cssnano()] }),
     buble(),
-    globals(),
-    builtins(),
+    // globals(),
+    // builtins(),
     resolve({ jsnext: true, browser: true }),
     commonjs({ include: 'node_modules/**' }),
     replace({ eval: '[eval][0]' }),

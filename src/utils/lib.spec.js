@@ -2,11 +2,9 @@
 import { lowerFirst, pad } from 'lodash';
 
 // ReactiveX
-// import { Observable, Subject } from 'rxjs';
-// import { timer, of } from 'rxjs/observable';
-// import { mapTo, combineAll } from 'rxjs/operator';
-// import { Observable } from 'rxjs/Observable';
-// import 'rxjs/add/observable/interval';
+import { Observable } from 'rxjs';
+import { timer, of } from 'rxjs/observable';
+import { mapTo, combineAll } from 'rxjs/operator';
 
 // MobX
 import { observable, action, autorun } from 'mobx';
@@ -21,7 +19,7 @@ import { transition, active } from 'd3-transition';
 // Three
 import { Scene, WebGLRenderer } from 'three';
 
-describe('Test', () => {
+describe('Libraries', () => {
   describe('Lodash', () => {
     it('should be able to use', () => {
       expect(lowerFirst).toBeDefined();
@@ -33,41 +31,21 @@ describe('Test', () => {
   });
 
   describe('ReactiveX', () => {
-    it('should be able to use', () => {
-      // expect(Observable).toBeDefined();
-      // expect(Subject).toBeDefined();
-      // expect(timer).toBeDefined();
-      // expect(of).toBeDefined();
-      // expect(mapTo).toBeDefined();
-      // expect(combineAll).toBeDefined();
-      // Observable.interval(0)
-      //   .subscribe(value => console.log(value));
+    it('should be able to use', done => {
+      expect(Observable).toBeDefined();
+      expect(timer).toBeDefined();
+      expect(of).toBeDefined();
+      expect(mapTo).toBeDefined();
+      expect(combineAll).toBeDefined();
+
+      Observable::timer(2000)
+        ::mapTo(Observable::of('Hello', 'World'))
+        ::combineAll()
+        .subscribe(value => {
+          expect(value).toBeDefined();
+          done();
+        });
     });
-
-    // it('should be able to use', done => {
-    //   Observable::timer(1000)
-    //     ::mapTo(Observable::of('Hello', 'World'))
-    //     ::combineAll()
-    //     .subscribe(value => {
-    //       expect(value).toBeDefined();
-    //       done();
-    //     });
-    // });
-
-    // it('should be able to use', done => {
-    //   const source$ = new Observable(observer => {
-    //     observer.next(1);
-    //     observer.next(2);
-    //     observer.next(3);
-    //     observer.complete();
-    //   });
-    //
-    //   source$::observeOn(Scheduler.async)
-    //     .subscribe(value => {
-    //       expect(value).toBeDefined();
-    //       done();
-    //     });
-    // });
   });
 
   describe('MobX', () => {
