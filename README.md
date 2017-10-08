@@ -545,6 +545,7 @@ $ yarn deploy
 * [Feature] Add unit tests for Cloud Functions with Jest
 * ---------- **P2: Required** ----------
 * [Bug] `axios` can't import
+* [Bug] `apollo-client` can't import
 * [Bug] `socket.io-client` can't import
 * [Bug] `rxjs` can't import
 * ---------- **P3: Important** ----------
