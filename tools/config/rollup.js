@@ -1,25 +1,23 @@
 import { join } from 'path';
 import { env, noop } from 'gulp-util';
-
 import reshape from 'rollup-plugin-reshape';
 import postcss from 'rollup-plugin-postcss';
 import url from 'rollup-plugin-url';
 import json from 'rollup-plugin-json';
 import babel from 'rollup-plugin-babel';
-import buble from 'rollup-plugin-buble';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
 import uglify from 'rollup-plugin-uglify';
-
+import buble from 'rollup-plugin-buble';
 import cssnano from 'cssnano';
+
+import { SOURCE_ROOT } from '../constants';
+import { lodash } from '../utils';
 
 import RESHAPE_CONFIG from './reshape';
 import POSTCSS_CONFIG from './postcss';
 import BABEL_CONFIG from './babel';
-
-import { SOURCE_ROOT } from '../constants';
-import { lodash/* , reactivex */ } from '../utils';
 
 export const PRIMARY_CONFIG = {
   format: 'iife',
@@ -30,7 +28,6 @@ export const PRIMARY_CONFIG = {
     url({ limit: 32 * 1024 }),
     json(),
     lodash(),
-    // reactivex(),
     babel(BABEL_CONFIG),
     resolve({ jsnext: true, browser: true }),
     commonjs({ include: 'node_modules/**' }),
@@ -45,8 +42,6 @@ export const SECONDARY_CONFIG = {
   plugins: [
     postcss({ plugins: [cssnano()] }),
     buble(),
-    // globals(),
-    // builtins(),
     resolve({ jsnext: true, browser: true }),
     commonjs({ include: 'node_modules/**' }),
     replace({ eval: '[eval][0]' }),

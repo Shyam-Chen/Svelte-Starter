@@ -7,13 +7,3 @@ export const lodash = () => {
     }
   };
 };
-
-export const reactivex = () => {
-  return new class ReactiveX {
-    resolveId(id) {
-      if (id.startsWith('rxjs') && !id.startsWith('rxjs-es')) {
-        return `node_modules/rxjs-es/${id.replace('rxjs/', '')}.js`;
-      }
-    }
-  };
-};
