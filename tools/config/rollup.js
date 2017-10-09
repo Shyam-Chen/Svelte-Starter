@@ -9,6 +9,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
 import uglify from 'rollup-plugin-uglify';
+import istanbul from 'rollup-plugin-istanbul';
 import buble from 'rollup-plugin-buble';
 import cssnano from 'cssnano';
 
@@ -55,8 +56,11 @@ export const APP_CONFIG = Object.assign({}, PRIMARY_CONFIG, {
 });
 
 export const TEST_CONFIG = Object.assign({}, PRIMARY_CONFIG, {
-  // TODO: update plugin
-  sourceMap: 'inline'
+  sourceMap: 'inline',
+  plugins: [
+    ...PRIMARY_CONFIG['plugins'],
+    istanbul({ exclude: join(SOURCE_ROOT, '**/*.spec.js') })
+  ]
 });
 
 export const POLYFILLS_CONFIG = Object.assign({}, SECONDARY_CONFIG, {

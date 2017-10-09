@@ -543,7 +543,6 @@ $ yarn deploy
 * [Enhancement] Use more Reshape plugins
 * ---------- **P2: Required** ----------
 * [Feature] HTTP mocking with `nock`
-* [Feature] Add code coverage reports
 * [Feature] Add unit tests for Cloud Functions with Jest
 * ---------- **P3: Important** ----------
 * [Example] Do more examples

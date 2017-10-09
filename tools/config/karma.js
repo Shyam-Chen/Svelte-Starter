@@ -18,7 +18,10 @@ module.exports = config => {
     },
     prerollupPreprocessor: SECONDARY_CONFIG,
     rollupPreprocessor: TEST_CONFIG,
-    reporters: ['mocha'],
+    reporters: ['mocha', 'coverage-istanbul'],
+    coverageIstanbulReporter: {
+      reports: ['html', /* 'lcovonly', */ 'text-summary']
+    },
     port: TEST_PORT,
     colors: true,
     logLevel: config.LOG_INFO,
