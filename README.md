@@ -3,6 +3,7 @@
 :icecream: A boilerplate for :star2: HTML5 :star2:, Material, Firebase, Gulp, Rollup, Babel, Reshape, and PostCSS.
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Frontend-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Frontend-Starter-Kit)
+[![Coverage Status](https://coveralls.io/repos/github/Shyam-Chen/Frontend-Starter-Kit/badge.svg?branch=master)](https://coveralls.io/github/Shyam-Chen/Frontend-Starter-Kit?branch=master)
  //
 [![dependencies Status](https://david-dm.org/Shyam-Chen/Frontend-Starter-Kit/status.svg)](https://david-dm.org/Shyam-Chen/Frontend-Starter-Kit)
 [![devDependencies Status](https://david-dm.org/Shyam-Chen/Frontend-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Frontend-Starter-Kit?type=dev)
@@ -542,6 +543,7 @@ $ yarn deploy
 * [Enhancement] Real Flow types
 * [Enhancement] Use more Reshape plugins
 * ---------- **P2: Required** ----------
+* [Bug] Coverage report can't use lcovonly
 * [Feature] HTTP mocking with `nock`
 * [Feature] Add unit tests for Cloud Functions with Jest
 * ---------- **P3: Important** ----------
