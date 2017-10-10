@@ -8,6 +8,9 @@ import template from './users.html';
 import style from './users.css';
 
 export const users = (page: string): void => {
+  const $ = (selector: string): HTMLElement => document.querySelector(selector);
+  const $$ = (selector: string): HTMLElement[] => document.querySelectorAll(selector);
+
   // pagination
   // firebase.database()
   //   .ref('users')
@@ -22,28 +25,28 @@ export const users = (page: string): void => {
   firebase.database()
     .ref('users')
     .on('value', (snapshot): void => {
-      document.querySelector(`#users[data-${page}]`)
+      $(`#users[data-${page}]`)
         .innerHTML = _(template, { imports: { style, snapshot } })();
 
         const bodyEl = document.body;
 
-        const search = document.querySelector('#search');
+        const search = $('#search');
 
-        const dialogEditEl = document.querySelector('#dialog-edit');
+        const dialogEditEl = $('#dialog-edit');
         const dialogEdit = new mdDialog.MDCDialog(dialogEditEl);
-        const name = document.querySelector('#edit-name');
-        const email = document.querySelector('#edit-email');
-        const message = document.querySelector('#edit-message');
-        const save = document.querySelector('#edit-save');
+        const name = $('#edit-name');
+        const email = $('#edit-email');
+        const message = $('#edit-message');
+        const save = $('#edit-save');
 
-        const dialogDeleteEl = document.querySelector('#dialog-delete');
+        const dialogDeleteEl = $('#dialog-delete');
         const dialogDelete = new mdDialog.MDCDialog(dialogDeleteEl);
-        const confirm = document.querySelector('#delete-confirm');
+        const confirm = $('#delete-confirm');
 
         search.onkeyup = (): void => {
-          const input = document.querySelector('#search');
+          const input = $('#search');
           const filter = input.value.toUpperCase();
-          const tbody = document.querySelector('#users-table > tbody');
+          const tbody = $('#users-table > tbody');
           const tr = tbody.querySelectorAll('tr');
 
           for (let i = 0; i < tr.length; i++) {
@@ -72,7 +75,7 @@ export const users = (page: string): void => {
         });
 
         [].forEach.call(
-          document.querySelectorAll('.mdc-button[data-edit]'),
+          $$('.mdc-button[data-edit]'),
           editButton => {
             editButton.onclick = (): void => {
               dialogEdit.show();
@@ -92,7 +95,7 @@ export const users = (page: string): void => {
         );
 
         [].forEach.call(
-          document.querySelectorAll('.mdc-button[data-delete]'),
+          $$('.mdc-button[data-delete]'),
           deleteButton => {
             deleteButton.onclick = (): void => {
               dialogDelete.show();
@@ -108,12 +111,12 @@ export const users = (page: string): void => {
         );
 
         [].forEach.call(
-          document.querySelectorAll('.mdc-button'),
+          $$('.mdc-button'),
           ripple => mdRipple.MDCRipple.attachTo(ripple)
         );
 
         [].forEach.call(
-          document.querySelectorAll('.mdc-textfield'),
+          $$('.mdc-textfield'),
           textfield => mdTextfield.MDCTextfield.attachTo(textfield)
         );
     });

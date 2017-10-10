@@ -1,20 +1,6 @@
-<div class="mdc-toolbar mdc-toolbar--fixed">
-  <div class="mdc-toolbar__row">
-    <div class="mdc-toolbar__section mdc-toolbar__section--align-start">
+<include src="./src/pages/examples/_includes/location-back.html" />
 
-        <a href="javascript: history.back()" class="mdc-toolbar__icon--menu">
-          <i class="material-icons">arrow_back</i>
-        </a>
-
-
-      <span class="mdc-toolbar__title catalog-title">Examples</span>
-    </div>
-  </div>
-</div>
-
-<div style="padding: 32px"></div>
-
-<div>
+<div style="margin: 1rem">
   Clicked: ${store.value} times, value is ${store.evenOrOdd}.
   <button id="increment" class="mdc-button mdc-button--raised">Increment</button>
   <button id="decrement" class="mdc-button mdc-button--raised">Decrement</button>
