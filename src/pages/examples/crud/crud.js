@@ -9,20 +9,18 @@ const imports = { style };
 
 export default () => {
   page('/examples/crud', () => {
+    const INITIAL = [
+      { id: 4, primary: 'Vanilla', accent: 'Cordova' },
+      { id: 3, primary: 'Angular', accent: 'Ionic' },
+      { id: 2, primary: 'React', accent: 'React Native' },
+      { id: 1, primary: 'Vue', accent: 'Weex' }
+    ];
+
     const store = observable({
       /**
        * @name observable
        */
-      dataset: [
-        { id: 4, primary: 'Vanilla', accent: 'Cordova' },
-        { id: 3, primary: 'Angular', accent: 'Ionic' },
-        { id: 2, primary: 'React', accent: 'React Native' },
-        { id: 1, primary: 'Vue', accent: 'Weex' }
-      ],
-      addData: { primary: '', accent: '' },
-      searchData: { primary: '', accent: '' },
-      editData: { id: 0, primary: '', accent: '' },
-      deleteData: { id: 0 },
+      dataset: [...INITIAL],
 
       /**
        * @name action
@@ -34,7 +32,7 @@ export default () => {
       searchItem: action((primary, accent) => {
         const searchResult = [];
 
-        store.dataset = store.dataset.filter(item => {
+        store.dataset = INITIAL.filter(item => {
           const _primary = item.primary.toLowerCase().indexOf(primary.toLowerCase());
           const _accent = item.accent.toLowerCase().indexOf(accent.toLowerCase());
 
@@ -61,13 +59,20 @@ export default () => {
 
       $('#app').innerHTML = _(template, { imports })({ store });
 
-      $('#add').onclick = () => {
+      $('#add-button').onclick = () => {
         const primary = $('#add-primary').value;
         const accent = $('#add-accent').value;
 
         if (primary && accent) {
           store.addItem(primary, accent);
         }
+      };
+
+      $('#search-button').onclick = () => {
+        const primary = $('#search-primary').value;
+        const accent = $('#search-accent').value;
+
+        store.searchItem(primary, accent);
       };
 
       [].forEach.call(
