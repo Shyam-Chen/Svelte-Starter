@@ -50,12 +50,12 @@ export default () => {
     });
 
     autorun(() => {
-      document.querySelector('#app')
-        .innerHTML = _(template, { imports })({ store });
+      const $ = (selector: string): HTMLElement => document.querySelector(selector);
+
+      $('#app').innerHTML = _(template, { imports })({ store });
 
       const createClickEvent = (name, func) =>
-        document.querySelector(`#${name}`)
-          .addEventListener('click', func);
+        $(`#${name}`).addEventListener('click', func);
 
       createClickEvent('increment', store.increment);
       createClickEvent('decrement', store.decrement);

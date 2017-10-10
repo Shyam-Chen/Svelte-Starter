@@ -9,19 +9,21 @@ import style from './admin.css';
 import { users } from './users';
 
 export const admin = (): void => {
-  page('/admin', () => {
-    document.querySelector('#app')
-      .innerHTML = _(template, { imports: { style } })();
+  page('/admin', (): void => {
+    const $ = (selector: string): HTMLElement => document.querySelector(selector);
+    const $$ = (selector: string): HTMLElement[] => document.querySelectorAll(selector);
 
-    const adminEmail = document.querySelector('#admin-email');
-    const adminPassword = document.querySelector('#admin-password');
-    const adminSignIn = document.querySelector('#admin-sign-in');
-    const adminSignOut = document.querySelector('#admin-sign-out');
+    $('#app').innerHTML = _(template, { imports: { style } })();
 
-    const signOutContent = document.querySelector('#sign-out-content');
-    const signInContent = document.querySelectorAll('[data-sign-in]');
+    const adminEmail = $('#admin-email');
+    const adminPassword = $('#admin-password');
+    const adminSignIn = $('#admin-sign-in');
+    const adminSignOut = $('#admin-sign-out');
 
-    const loginToastEl = document.querySelector('#login-toast');
+    const signOutContent = $('#sign-out-content');
+    const signInContent = $$('[data-sign-in]');
+
+    const loginToastEl = $('#login-toast');
     const loginToast = new mdSnackbar.MDCSnackbar(loginToastEl);
 
     adminSignIn.onclick = (): void => {
@@ -29,12 +31,12 @@ export const admin = (): void => {
         .signInWithEmailAndPassword(adminEmail.value, adminPassword.value)
         .then(() => {
           [].forEach.call(
-            document.querySelectorAll('.mdc-textfield__input'),
+            $$('.mdc-textfield__input'),
             textfieldInput => textfieldInput.value = ''
           );
 
           [].forEach.call(
-            document.querySelectorAll('.mdc-textfield__label'),
+            $$('.mdc-textfield__label'),
             textfieldLabel => textfieldLabel.classList.remove('mdc-textfield__label--float-above')
           );
         })
@@ -73,12 +75,12 @@ export const admin = (): void => {
       });
 
     [].forEach.call(
-      document.querySelectorAll('.mdc-button'),
+      $$('.mdc-button'),
       ripple => mdRipple.MDCRipple.attachTo(ripple)
     );
 
     [].forEach.call(
-      document.querySelectorAll('.mdc-textfield'),
+      $$('.mdc-textfield'),
       textfield => mdTextfield.MDCTextfield.attachTo(textfield)
     );
   });

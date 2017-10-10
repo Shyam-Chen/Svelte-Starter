@@ -55,7 +55,8 @@ export default () => {
     });
 
     autorun(() => {
-      const $ = selector => document.querySelector(selector);
+      const $ = (selector: string): HTMLElement => document.querySelector(selector);
+      const $$ = (selector: string): HTMLElement[] => document.querySelectorAll(selector);
 
       $('#app').innerHTML = _(template, { imports })({ store });
 
@@ -76,7 +77,7 @@ export default () => {
       };
 
       [].forEach.call(
-        document.querySelectorAll('.mdc-textfield'),
+        $$('.mdc-textfield'),
         textfield => mdTextfield.MDCTextfield.attachTo(textfield)
       );
     });
