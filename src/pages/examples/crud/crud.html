@@ -1,3 +1,15 @@
+<div style="margin: 1rem">
+  <div class="mdc-textfield" style="margin-right: .5rem">
+    <input type="text" id="add-primary" class="mdc-textfield__input">
+    <label class="mdc-textfield__label" for="primary">Primary</label>
+  </div>
+  <div class="mdc-textfield" style="margin-right: .5rem">
+    <input type="text" id="add-accent" class="mdc-textfield__input">
+    <label class="mdc-textfield__label" for="accent">Accent</label>
+  </div>
+  <button type="button" name="button" id="add" class="mdc-button mdc-button--raised">Add</button>
+</div>
+
 <div>
   <ul class="mdc-list mdc-list--dense mdc-elevation--z2">
     <% [].forEach.call(store.dataset, function(item) { %>

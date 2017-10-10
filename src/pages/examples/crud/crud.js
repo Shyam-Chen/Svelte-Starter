@@ -1,3 +1,4 @@
+import { __moduleExports as mdTextfield } from '@material/textfield/dist/mdc.textfield';
 import { template as _ } from 'lodash';
 import { observable, action, autorun } from 'mobx';
 
@@ -34,7 +35,6 @@ export default () => {
         const searchResult = [];
 
         store.dataset = store.dataset.filter(item => {
-          // TODO: indexOf -> find
           const _primary = item.primary.toLowerCase().indexOf(primary.toLowerCase());
           const _accent = item.accent.toLowerCase().indexOf(accent.toLowerCase());
 
@@ -57,8 +57,23 @@ export default () => {
     });
 
     autorun(() => {
-      document.querySelector('#app')
-        .innerHTML = _(template, { imports })({ store });
+      const $ = selector => document.querySelector(selector);
+
+      $('#app').innerHTML = _(template, { imports })({ store });
+
+      $('#add').onclick = () => {
+        const primary = $('#add-primary').value;
+        const accent = $('#add-accent').value;
+
+        if (primary && accent) {
+          store.addItem(primary, accent);
+        }
+      };
+
+      [].forEach.call(
+        document.querySelectorAll('.mdc-textfield'),
+        textfield => mdTextfield.MDCTextfield.attachTo(textfield)
+      );
     });
   });
 };
