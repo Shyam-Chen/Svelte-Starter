@@ -59,7 +59,12 @@ export const TEST_CONFIG = Object.assign({}, PRIMARY_CONFIG, {
   sourceMap: 'inline',
   plugins: [
     ...PRIMARY_CONFIG['plugins'],
-    istanbul({ exclude: join(SOURCE_ROOT, '**/*.spec.js') })
+    istanbul({
+      exclude: [
+        'node_modules/**',
+        join(SOURCE_ROOT, '**/*.spec.js')
+      ]
+    })
   ]
 });
 
