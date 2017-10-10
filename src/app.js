@@ -1,9 +1,9 @@
 import './app.css';
 
-// import { Observable } from 'rxjs';
-// import { forkJoin } from 'rxjs/observable';
+import { Observable } from 'rxjs';
+import { forkJoin } from 'rxjs/observable';
 
-// import { load } from './utils';
+import load from '~/utils/load/load';
 
 import { home } from './pages/home';
 import { about } from './pages/about';
@@ -12,15 +12,19 @@ import { examples } from './pages/examples';
 import { admin } from './pages/admin';
 import { notfound } from './pages/not-found';
 
-// Observable::forkJoin(
-//     load('https://fonts.googleapis.com/css?family=Indie+Flower'),
-//     load('https://fonts.googleapis.com/icon?family=Material+Icons'),
-//   )
-//   .subscribe(result => {
-//     const style = document.createElement('style');
-//     style.innerHTML = result;
-//     document.head.appendChild(style);
-//   });
+Observable::forkJoin(
+    load('https://fonts.googleapis.com/css?family=Indie+Flower'),
+    load('https://fonts.googleapis.com/icon?family=Material+Icons')
+  )
+  .subscribe(result => {
+    const style = document.createElement('style');
+
+    for (let i = 0; i < result.length; i++) {
+      style.innerHTML += result[i];
+    }
+
+    document.head.appendChild(style);
+  });
 
 firebase.initializeApp({
   apiKey: 'AIzaSyDBA0yVS0JuIqGaoN9nafvPFxPSVgmxwnw',

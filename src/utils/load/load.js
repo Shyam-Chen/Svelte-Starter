@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
  *   });
  */
 
-export const load = (url: string): Observable<string> => {
+export default (url: string): Observable<string> => {
   return new Observable(observer => {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url);

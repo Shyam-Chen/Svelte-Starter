@@ -2408,7 +2408,7 @@ cosmiconfig@^2.1.3:
     parse-json "^2.2.0"
     require-from-string "^1.1.0"
 
-coveralls@^3.0.0:
+coveralls@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/coveralls/-/coveralls-3.0.0.tgz#22ef730330538080d29b8c151dc9146afde88a99"
   dependencies:
