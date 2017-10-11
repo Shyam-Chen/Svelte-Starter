@@ -1,13 +1,12 @@
 import { template as _ } from 'lodash';
 
-import { home } from './home';
+import { layout } from '~/shared/layout';
+import logo from '~/assets/images/logo.png';
 
-import { layout } from '../../shared/layout';
-import logo from '../../assets/images/logo.png';
-
-import template from './home.html';
-import style from './home.css';
-import data from './home.json';
+import { home } from '../home';
+import template from '../home.html';
+import style from '../home.css';
+import data from '../_languages/home.json';
 
 describe('Home', () => {
   it('should be defined', () => {

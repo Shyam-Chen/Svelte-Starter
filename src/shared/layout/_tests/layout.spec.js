@@ -1,12 +1,11 @@
 import { template as _ } from 'lodash';
 
-import logo from '../../assets/images/touch/ms-touch-icon-144x144-precomposed.png';
+import logo from '~/assets/images/touch/ms-touch-icon-144x144-precomposed.png';
 
-import template from './layout.html';
-import style from './layout.css';
-import data from './layout.json';
-
-import { layout } from './layout';
+import { layout } from '../layout';
+import template from '../layout.html';
+import style from '../layout.css';
+import data from '../_languages/layout.json';
 
 describe('Layout', () => {
   describe('Template', () => {

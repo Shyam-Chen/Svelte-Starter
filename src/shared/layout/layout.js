@@ -6,9 +6,9 @@ import logo from '~/assets/images/touch/ms-touch-icon-144x144-precomposed.png';
 
 import template from './layout.html';
 import style from './layout.css';
-import data from './layout.json';
-import dataZh from './languages/layout-zh.json';
-import dataJa from './languages/layout-ja.json';
+import data from './_languages/layout.json';
+import dataZh from './_languages/layout-zh.json';
+import dataJa from './_languages/layout-ja.json';
 
 /**
  * @example

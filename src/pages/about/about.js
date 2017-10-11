@@ -4,9 +4,9 @@ import { layout } from '~/shared/layout';
 
 import template from './about.html';
 import style from './about.css';
-import data from './about.json';
-import dataZh from './languages/about-zh.json';
-import dataJa from './languages/about-ja.json';
+import data from './_languages/about.json';
+import dataZh from './_languages/about-zh.json';
+import dataJa from './_languages/japanese.json';
 
 const imports = { style };
 

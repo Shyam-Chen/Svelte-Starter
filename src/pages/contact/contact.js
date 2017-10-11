@@ -7,9 +7,9 @@ import { layout } from '~/shared/layout';
 
 import template from './contact.html';
 import style from './contact.css';
-import data from './contact.json';
-import dataZh from './languages/contact-zh.json';
-import dataJa from './languages/contact-ja.json';
+import data from './_languages/contact.json';
+import dataZh from './_languages/contact-zh.json';
+import dataJa from './_languages/contact-ja.json';
 
 const imports = { style };
 

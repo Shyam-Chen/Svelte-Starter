@@ -1,12 +1,11 @@
 import { template as _ } from 'lodash';
 
-import { layout } from '../../shared/layout';
+import { layout } from '~/shared/layout';
 
-import template from './about.html';
-import style from './about.css';
-import data from './about.json';
-
-import { about } from './about';
+import { about } from '../about';
+import template from '../about.html';
+import style from '../about.css';
+import data from '../_languages/about.json';
 
 describe('About', () => {
   it('should be defined', () => {
