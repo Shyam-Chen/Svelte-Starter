@@ -14,19 +14,22 @@ import dataJa from './languages/contact-ja.json';
 const imports = { style };
 
 const common = (language: string = 'en'): void => {
-  const name = document.querySelector('#name');
-  const email = document.querySelector('#email');
-  const comment = document.querySelector('#comment');
-  const sendButton = document.querySelector('#send-button');
+  const $ = (selector: string): HTMLElement => document.querySelector(selector);
+  const $$ = (selector: string): HTMLElement[] => document.querySelectorAll(selector);
 
-  const sendToastEl = document.querySelector('#send-toast');
+  const name = $('#name');
+  const email = $('#email');
+  const comment = $('#comment');
+  const sendButton = $('#send-button');
+
+  const sendToastEl = $('#send-toast');
   const sendToast = new mdSnackbar.MDCSnackbar(sendToastEl);
 
   firebase.auth()
-    .onAuthStateChanged(user => {
+    .onAuthStateChanged((user: { uid: string }): void => {
       if (user) {
         sendButton.onclick = (): void => {
-          const textfieldInputs = document.querySelectorAll('.mdc-textfield__input');
+          const textfieldInputs = $$('.mdc-textfield__input');
           const empty = [].filter.call(textfieldInputs, textfieldInput => textfieldInput.value === '');
 
           if (!empty.length) {
@@ -40,7 +43,7 @@ const common = (language: string = 'en'): void => {
             );
 
             [].forEach.call(
-              document.querySelectorAll('.mdc-textfield__label'),
+              $$('.mdc-textfield__label'),
               textfieldLabel => textfieldLabel.classList.remove('mdc-textfield__label--float-above')
             );
 
@@ -59,12 +62,12 @@ const common = (language: string = 'en'): void => {
     });
 
   [].forEach.call(
-    document.querySelectorAll('.mdc-button'),
+    $$('.mdc-button'),
     button => mdRipple.MDCRipple.attachTo(button)
   );
 
   [].forEach.call(
-    document.querySelectorAll('.mdc-textfield'),
+    $$('.mdc-textfield'),
     textfield => mdTextfield.MDCTextfield.attachTo(textfield)
   );
 };
