@@ -539,11 +539,13 @@ $ yarn deploy
 * [Feature] Server-side Rendering with Cloud Functions
 * [Feature] Prerenders static `.html` pages with `pre-render`
 * ---------- **P1: Urgent** ----------
+* [Refactor] Migrate from Travis to Circle
 * [Enhancement] Offline Google Analytics
 * [Enhancement] Real Flow types
 * [Enhancement] Use more Reshape plugins
 * ---------- **P2: Required** ----------
 * [Bug] Coverage report can't use lcovonly
+* [Feature] Test coverage integration with Codecov
 * [Feature] HTTP mocking with `nock`
 * [Feature] Add unit tests for Cloud Functions with Jest
 * ---------- **P3: Important** ----------
