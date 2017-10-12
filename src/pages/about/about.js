@@ -4,26 +4,19 @@ import { layout } from '~/shared/layout';
 
 import template from './about.html';
 import style from './about.css';
-import data from './_languages/about.json';
-import dataZh from './_languages/about-zh.json';
-import dataJa from './_languages/japanese.json';
+import english from './_languages/english.json';
+import chinese from './_languages/chinese.json';
+import japanese from './_languages/japanese.json';
 
-const imports = { style };
+export default (): void => {
+  const imports = { style };
 
-export const about = (): void => {
-  page('/about', () => {
-    layout(_(template, { imports })(data), 'about');
-  });
+  page('/about', () => layout(_(template, { imports })(english), 'about'));
 
-  page('/en/about', () => {
-    layout(_(template, { imports })(data), 'about');
-  });
-
-  page('/zh/about', () => {
-    layout(_(template, { imports })(dataZh), 'about', 'zh');
-  });
-
-  page('/ja/about', () => {
-    layout(_(template, { imports })(dataJa), 'about', 'ja');
-  });
+  /**
+   * @name internationalization
+   */
+  page('/en/about', () => layout(_(template, { imports })(english), 'about', 'en'));
+  page('/zh/about', () => layout(_(template, { imports })(chinese), 'about', 'zh'));
+  page('/ja/about', () => layout(_(template, { imports })(japanese), 'about', 'ja'));
 };
