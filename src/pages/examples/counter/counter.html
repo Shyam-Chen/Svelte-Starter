@@ -1,7 +1,10 @@
 <include src="./src/pages/examples/_includes/location.html" />
 
 <div style="margin: 1rem">
-  Clicked: ${store.value} times, value is ${store.evenOrOdd}.
+  <p class="mdc-typography--body1">
+    Clicked: ${store.value} times, value is ${store.evenOrOdd}.
+  </p>
+
   <button id="increment" class="mdc-button mdc-button--raised">Increment</button>
   <button id="decrement" class="mdc-button mdc-button--raised">Decrement</button>
   <button id="incrementAsync" class="mdc-button mdc-button--raised">Increment (Async)</button>

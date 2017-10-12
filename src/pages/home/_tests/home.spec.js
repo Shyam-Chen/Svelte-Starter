@@ -6,7 +6,7 @@ import logo from '~/assets/images/logo.png';
 import { home } from '../home';
 import template from '../home.html';
 import style from '../home.css';
-import data from '../_languages/home.json';
+import english from '../_languages/english.json';
 
 describe('Home', () => {
   it('should be defined', () => {
@@ -20,7 +20,7 @@ describe('Home', () => {
   it('should be able to work', () => {
     page('/', () => {
       const imports = { style, image: { logo } };
-      layout(_(template, { imports })(data), 'home');
+      layout(_(template, { imports })(english), 'home');
     });
   });
 });

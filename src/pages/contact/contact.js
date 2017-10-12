@@ -7,9 +7,9 @@ import { layout } from '~/shared/layout';
 
 import template from './contact.html';
 import style from './contact.css';
-import data from './_languages/contact.json';
-import dataZh from './_languages/contact-zh.json';
-import dataJa from './_languages/contact-ja.json';
+import english from './_languages/english.json';
+import chinese from './_languages/chinese.json';
+import japanese from './_languages/japanese.json';
 
 const imports = { style };
 
@@ -74,22 +74,22 @@ const common = (language: string = 'en'): void => {
 
 export const contact = (): void => {
   page('/contact', () => {
-    layout(_(template, { imports })(data), 'contact');
+    layout(_(template, { imports })(english), 'contact');
     common();
   });
 
   page('/en/contact', () => {
-    layout(_(template, { imports })(data), 'contact');
+    layout(_(template, { imports })(english), 'contact', 'en');
     common();
   });
 
   page('/zh/contact', () => {
-    layout(_(template, { imports })(dataZh), 'contact', 'zh');
+    layout(_(template, { imports })(chinese), 'contact', 'zh');
     common('zh');
   });
 
   page('/ja/contact', () => {
-    layout(_(template, { imports })(dataJa), 'contact', 'ja');
+    layout(_(template, { imports })(japanese), 'contact', 'ja');
     common('ja');
   });
 };

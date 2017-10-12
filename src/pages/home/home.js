@@ -6,9 +6,9 @@ import logo from '~/assets/images/logo.png';
 
 import template from './home.html';
 import style from './home.css';
-import data from './_languages/home.json';
-import dataZh from './_languages/home-zh.json';
-import dataJa from './_languages/home-ja.json';
+import english from './_languages/english.json';
+import chinese from './_languages/chinese.json';
+import japanese from './_languages/japanese.json';
 
 const imports = {
   style,
@@ -31,22 +31,22 @@ export const home = (): void => {
   }
 
   page('/', () => {
-    layout(_(template, { imports })(data), 'home');
+    layout(_(template, { imports })(english), 'home');
     common();
   });
 
   page('/en', () => {
-    layout(_(template, { imports })(data), 'home');
+    layout(_(template, { imports })(english), 'home', 'en');
     common();
   });
 
   page('/zh', () => {
-    layout(_(template, { imports })(dataZh), 'home', 'zh');
+    layout(_(template, { imports })(chinese), 'home', 'zh');
     common();
   });
 
   page('/ja', () => {
-    layout(_(template, { imports })(dataJa), 'home', 'ja');
+    layout(_(template, { imports })(japanese), 'home', 'ja');
     common();
   });
 };
