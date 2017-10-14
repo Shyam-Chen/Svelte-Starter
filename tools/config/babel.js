@@ -1,4 +1,8 @@
-export default {
+import { join } from 'path';
+
+import { SOURCE_ROOT } from '../constants';
+
+export const BABEL_CONFIG = {
   babelrc: false,
   presets: [
     [
@@ -12,6 +16,7 @@ export default {
     'flow'
   ],
   plugins: [
+
     'external-helpers',
     'transform-function-bind',
     'transform-object-rest-spread',
@@ -49,3 +54,21 @@ export default {
   ],
   exclude: 'node_modules/**'
 };
+
+export const BABEL_CONFIG_TEST = Object.assign(
+  {},
+  BABEL_CONFIG,
+  {
+    plugins: [
+      ...BABEL_CONFIG['plugins'],
+      [
+        'istanbul', {
+          'exclude': [
+            'node_modules/**',
+            join(SOURCE_ROOT, '**/*.spec.js')
+          ]
+        }
+      ]
+    ]
+  }
+);

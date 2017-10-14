@@ -20,7 +20,7 @@ module.exports = config => {
     rollupPreprocessor: TEST_CONFIG,
     reporters: ['mocha', 'coverage-istanbul'],
     coverageIstanbulReporter: {
-      reports: ['html', /* 'lcovonly', */ 'text-summary']
+      reports: ['html', 'lcovonly', 'text-summary']
     },
     port: TEST_PORT,
     colors: true,

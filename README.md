@@ -3,7 +3,7 @@
 :icecream: A boilerplate for :star2: HTML5 :star2:, Material, Firebase, Gulp, Rollup, Babel, Reshape, and PostCSS.
 
 [![Build Status](https://travis-ci.org/Shyam-Chen/Frontend-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Frontend-Starter-Kit)
-[![Coverage Status](https://coveralls.io/repos/github/Shyam-Chen/Frontend-Starter-Kit/badge.svg?branch=master)](https://coveralls.io/github/Shyam-Chen/Frontend-Starter-Kit?branch=master)
+[![Coverage Status](https://img.shields.io/codecov/c/github/Shyam-Chen/Frontend-Starter-Kit/master.svg)](https://codecov.io/gh/Shyam-Chen/Frontend-Starter-Kit)
  //
 [![dependencies Status](https://david-dm.org/Shyam-Chen/Frontend-Starter-Kit/status.svg)](https://david-dm.org/Shyam-Chen/Frontend-Starter-Kit)
 [![devDependencies Status](https://david-dm.org/Shyam-Chen/Frontend-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Frontend-Starter-Kit?type=dev)
