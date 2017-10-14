@@ -8,7 +8,7 @@
       "後端雲端服務使用 Firebase",
       "應用程式伺服器框架使用 Express",
       "資料查詢語言使用 GraphQL",
-      "物件模型映射使用 Mongoose",
+      "物件文件映射使用 Mongoose",
       "物件關聯映射使用 Sequelize",
       "實用的函式使用 Lodash",
       "反應式的擴充使用 ReactiveX",

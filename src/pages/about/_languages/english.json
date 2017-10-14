@@ -8,7 +8,7 @@
       "Backend cloud services with Firebase.",
       "Application server framework with Express.",
       "Data query language with GraphQL.",
-      "Object modeling mapping with Mongoose.",
+      "Object document mapping with Mongoose.",
       "Object relational mapping with Sequelize.",
       "Utility functions with Lodash.",
       "Reactive extensions with ReactiveX.",
