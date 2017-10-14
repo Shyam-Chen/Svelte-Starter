@@ -2,7 +2,7 @@ import { join } from 'path';
 
 import { SOURCE_ROOT } from '../constants';
 
-export const BABEL_CONFIG = {
+export const BABEL_CONFIG_APP = {
   babelrc: false,
   presets: [
     [
@@ -16,7 +16,6 @@ export const BABEL_CONFIG = {
     'flow'
   ],
   plugins: [
-
     'external-helpers',
     'transform-function-bind',
     'transform-object-rest-spread',
@@ -57,10 +56,10 @@ export const BABEL_CONFIG = {
 
 export const BABEL_CONFIG_TEST = Object.assign(
   {},
-  BABEL_CONFIG,
+  BABEL_CONFIG_APP,
   {
     plugins: [
-      ...BABEL_CONFIG['plugins'],
+      ...BABEL_CONFIG_APP['plugins'],
       [
         'istanbul', {
           'exclude': [

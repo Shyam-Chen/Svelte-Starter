@@ -8,7 +8,6 @@ import simplevars from 'postcss-simple-vars';
 import conditionals from 'postcss-conditionals';
 import pfor from 'postcss-for';
 import each from 'postcss-each';
-// import pwhile from 'postcss-while';
 import definefunction from 'postcss-define-function';
 import modules from 'postcss-modules';
 import cssnano from 'cssnano';
@@ -29,7 +28,6 @@ export default {
     conditionals(),
     pfor(),
     each(),
-    // pwhile(),
     definefunction(),
     modules({
       getJSON(id, tokens) {

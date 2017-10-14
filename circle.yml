@@ -1,0 +1,49 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8
+
+    working_directory: ~/Backend-Starter-Kit
+
+    branches:
+      only:
+        - master
+
+    steps:
+      - checkout
+
+      - setup_remote_docker
+
+      - run:
+          name: Build the image
+          command: docker-compose up -d
+
+      - run:
+          name: Build the application
+          command: docker-compose exec app yarn prod
+
+      - run:
+          name: Static code analysis
+          command: docker-compose exec app yarn lint
+
+      - run:
+          name: Unit testing
+          command: docker-compose exec app yarn unit
+
+      - run:
+          name: End-to-End testing
+          command: |
+            docker-compose exec app yarn gulp -- webdriver
+            docker-compose exec app yarn e2e
+
+      - run:
+          name: Test coverage integration
+          command: docker-compose exec app yarn codecov -- --token=${CODECOV_TOKEN}
+
+      - deploy:
+          name: Deploy to Firebase
+          command: |
+            docker-compose exec app bash -c "cd functions && yarn install"
+            docker-compose exec app yarn deploy -- --token ${FIREBASE_TOKEN}

@@ -1,4 +1,4 @@
-FROM buildpack-deps:jessie-scm
+FROM buildpack-deps:jessie
 
 ENV HOME /Frontend-Starter-Kit
 

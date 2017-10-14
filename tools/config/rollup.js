@@ -18,7 +18,7 @@ import { lodash } from '../utils';
 
 import RESHAPE_CONFIG from './reshape';
 import POSTCSS_CONFIG from './postcss';
-import { BABEL_CONFIG, BABEL_CONFIG_TEST } from './babel';
+import { BABEL_CONFIG_APP, BABEL_CONFIG_TEST } from './babel';
 
 export const APP_CONFIG = {
   input: join(SOURCE_ROOT, 'app.js'),
@@ -31,7 +31,7 @@ export const APP_CONFIG = {
     url({ limit: 32 * 1024 }),
     json(),
     lodash(),
-    babel(BABEL_CONFIG),
+    babel(BABEL_CONFIG_APP),
     resolve({ jsnext: true, browser: true }),
     commonjs({ include: 'node_modules/**' }),
     replace({ 'process.env.NODE_ENV': JSON.stringify(env.prod ? 'production' : 'development') }),
@@ -56,7 +56,8 @@ export const TEST_CONFIG = {
   ]
 };
 
-export const SECONDARY_CONFIG = {
+export const POLYFILLS_CONFIG = {
+  input: join(SOURCE_ROOT, 'polyfills.js'),
   format: 'es',
   context: 'window',
   plugins: [
@@ -69,14 +70,8 @@ export const SECONDARY_CONFIG = {
   ]
 };
 
-export const POLYFILLS_CONFIG = Object.assign(
-  {},
-  SECONDARY_CONFIG,
-  { input: join(SOURCE_ROOT, 'polyfills.js') }
-);
-
 export const VENDOR_CONFIG = Object.assign(
   {},
-  SECONDARY_CONFIG,
+  POLYFILLS_CONFIG,
   { input: join(SOURCE_ROOT, 'vendor.js') }
 );
