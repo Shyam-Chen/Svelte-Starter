@@ -1,5 +1,5 @@
 /**
- * @name Design
+ * @name CSS
  */
 import '@material/button/dist/mdc.button.css';
 import '@material/card/dist/mdc.card.css';
@@ -27,19 +27,10 @@ import '@material/toolbar/dist/mdc.toolbar.css';
 import '@material/typography/dist/mdc.typography.css';
 
 /**
- * @name Application
+ * @name JavaScript
  */
 import 'firebase/firebase-auth';
 import 'firebase/firebase-database';
 // import 'firebase/firebase-storage';
 // import 'firebase/firebase-messaging';
-
-/**
- * @name Router
- */
 import 'page/page';
-
-/**
- * @name Others
- */
-// import 'd3-selection-multi';

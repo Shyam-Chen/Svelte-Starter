@@ -486,27 +486,28 @@ $ yarn deploy
 
 ```
 .
-├── functions  -> server-side rules ...
+├── functions  -> server-side rules
 ├── public  -> client-side public
-├── scripts  -> shell scripts ...
 ├── src
-│   ├── assets  -> audios, datas, fonts, images, videos ...
+│   ├── assets  -> audios, datas, fonts, images, videos
 │   ├── pages
 │   │   └── <feature>
-│   │       ├── <feature>.{html,css,js,json,spec.js,e2e-spec.js}
+│   │       ├── _tests
+│   │       │   └── <feature>.{spec,e2e-spec}.js
+│   │       ├── <feature>.{html,css,js}
 │   │       └── index.js
-│   ├── shared  -> shared components ...
-│   ├── utils  -> utility functions ...
+│   ├── shared  -> shared components
+│   ├── utils  -> utility functions
 │   ├── app.css
 │   ├── app.js
 │   ├── index.html
-│   ├── polyfills.js  -> polyfills, shims, prevendor ...
-│   └── vendor.js  -> third-party libraries ...
+│   ├── polyfills.js  -> shims, prevendor
+│   └── vendor.js  -> third-party libraries
 ├── tools
 │   ├── config
 │   │   └── {babel,karma,postcss,protractor,reshape,rollup}.js
 │   ├── rules
-│   │   └── database.rules.json,storage.rules
+│   │   └── database.json,storage
 │   ├── tasks
 │   │   └── {app,build,chunkhash,copy,e2e,entrypoint,lint,polyfills,precache,serve,sitemap,unit,vendor,watch}.js
 │   ├── utils
@@ -522,10 +523,10 @@ $ yarn deploy
 ├── .gitignore
 ├── .htmlhintrc
 ├── .stylelintrc
-├── .travis.yml
 ├── Dockerfile
 ├── LICENSE
 ├── README.md
+├── circle.yml
 ├── docker-compose.yml
 ├── firebase.json
 ├── gulpfile.babel.js
