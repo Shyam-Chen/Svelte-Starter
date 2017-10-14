@@ -1,5 +1,5 @@
 const { TEST_PORT } = require('../constants');
-const { TEST_CONFIG, SECONDARY_CONFIG } = require('./rollup');
+const { TEST_CONFIG, PREROLLUP_CONFIG } = require('./rollup');
 
 module.exports = config => {
   config.set({
@@ -16,7 +16,7 @@ module.exports = config => {
       'src/vendor.js': ['prerollup'],
       'src/**/*.spec.js': ['rollup']
     },
-    prerollupPreprocessor: SECONDARY_CONFIG,
+    prerollupPreprocessor: PREROLLUP_CONFIG,
     rollupPreprocessor: TEST_CONFIG,
     reporters: ['mocha', 'coverage-istanbul'],
     coverageIstanbulReporter: {

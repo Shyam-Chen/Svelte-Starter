@@ -2,7 +2,7 @@
 
 :icecream: A boilerplate for :star2: HTML5 :star2:, Material, Firebase, Gulp, Rollup, Babel, Reshape, and PostCSS.
 
-[![Build Status](https://travis-ci.org/Shyam-Chen/Frontend-Starter-Kit.svg?branch=master)](https://travis-ci.org/Shyam-Chen/Frontend-Starter-Kit)
+[![Build Status](https://img.shields.io/circleci/project/Shyam-Chen/Frontend-Starter-Kit/master.svg)](https://circleci.com/gh/Shyam-Chen/Frontend-Starter-Kit)
 [![Coverage Status](https://img.shields.io/codecov/c/github/Shyam-Chen/Frontend-Starter-Kit/master.svg)](https://codecov.io/gh/Shyam-Chen/Frontend-Starter-Kit)
  //
 [![dependencies Status](https://david-dm.org/Shyam-Chen/Frontend-Starter-Kit/status.svg)](https://david-dm.org/Shyam-Chen/Frontend-Starter-Kit)
@@ -539,14 +539,10 @@ $ yarn deploy
 * [Feature] Server-side Rendering with Cloud Functions
 * [Feature] Prerenders static `.html` pages with `pre-render`
 * ---------- **P1: Urgent** ----------
-* [Refactor] Migrate from Travis to Circle
 * [Enhancement] Offline Google Analytics
 * [Enhancement] Real Flow types
 * [Enhancement] Use more Reshape plugins
 * ---------- **P2: Required** ----------
-* [Bug] Coverage report can't use lcovonly
-* [Feature] Test coverage integration with Codecov
-* [Feature] HTTP mocking with `nock`
 * [Feature] Add unit tests for Cloud Functions with Jest
 * ---------- **P3: Important** ----------
 * [Example] Do more examples

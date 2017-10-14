@@ -56,8 +56,7 @@ export const TEST_CONFIG = {
   ]
 };
 
-export const POLYFILLS_CONFIG = {
-  input: join(SOURCE_ROOT, 'polyfills.js'),
+export const PREROLLUP_CONFIG = {
   format: 'es',
   context: 'window',
   plugins: [
@@ -70,8 +69,14 @@ export const POLYFILLS_CONFIG = {
   ]
 };
 
+export const POLYFILLS_CONFIG = Object.assign(
+  {},
+  PREROLLUP_CONFIG,
+  { input: join(SOURCE_ROOT, 'polyfills.js') }
+);
+
 export const VENDOR_CONFIG = Object.assign(
   {},
-  POLYFILLS_CONFIG,
+  PREROLLUP_CONFIG,
   { input: join(SOURCE_ROOT, 'vendor.js') }
 );
