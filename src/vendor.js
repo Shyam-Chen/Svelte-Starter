@@ -1,5 +1,5 @@
 /**
- * @name CSS
+ * @name css
  */
 import '@material/button/dist/mdc.button.css';
 import '@material/card/dist/mdc.card.css';
@@ -27,7 +27,7 @@ import '@material/toolbar/dist/mdc.toolbar.css';
 import '@material/typography/dist/mdc.typography.css';
 
 /**
- * @name JavaScript
+ * @name js
  */
 import 'firebase/firebase-auth';
 import 'firebase/firebase-database';

@@ -32,9 +32,10 @@ This seed repository provides the following features:
 * [x] HTML static code analyzer with [**HTMLHint**](http://htmlhint.com/).
 * [x] CSS static code analyzer with [**StyleLint**](https://stylelint.io/).
 * [x] JavaScript static code analyzer with [**ESLint**](https://eslint.org).
-* [x] Testing framework with [**Jasmine**](https://jasmine.github.io/).
-* [x] Unit tests with [**Karma**](http://karma-runner.github.io/).
-* [x] End-to-end tests with [**Protractor**](http://www.protractortest.org/).
+* [ ] Unit testing with [**Jest**](https://github.com/facebook/jest).
+* [x] Test coverage integration with [**Codecov**](https://codecov.io/).
+* [x] End-to-end testing framework with [**Jasmine**](https://jasmine.github.io/).
+* [x] End-to-end test runner with [**Protractor**](http://www.protractortest.org/).
 * ---------- **Environments** ----------
 * [x] Client-side platform with [**HTML5**](https://platform.html5.org/).
 * [x] Operating system with [**Linux**](https://www.linux.org/).
@@ -43,7 +44,7 @@ This seed repository provides the following features:
 * [x] Code repository with [**GitHub**](https://github.com/).
 * [x] Fast and deterministic builds with [**Yarn**](https://yarnpkg.com/).
 * [x] Software container with [**Docker**](https://www.docker.com/).
-* [x] Continuous integration with [**Travis**](https://travis-ci.org/).
+* [x] Continuous integration with [**CircleCI**](https://circleci.com/).
 
 ## Table of Contents
 
@@ -537,6 +538,7 @@ $ yarn deploy
 ## Known Issues
 
 * ---------- **P0: Critical** ----------
+* [Refactor] Migrate from Jasmine/Karma to Jest
 * [Feature] Server-side Rendering with Cloud Functions
 * [Feature] Prerenders static `.html` pages with `pre-render`
 * ---------- **P1: Urgent** ----------
@@ -544,7 +546,7 @@ $ yarn deploy
 * [Enhancement] Real Flow types
 * [Enhancement] Use more Reshape plugins
 * ---------- **P2: Required** ----------
-* [Feature] Add unit tests for Cloud Functions with Jest
+* [Feature] Add unit tests for Cloud Functions
 * ---------- **P3: Important** ----------
 * [Example] Do more examples
 * [Example] Write more tests

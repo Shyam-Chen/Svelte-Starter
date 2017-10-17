@@ -19,7 +19,7 @@
       "安全的憑證使用 JWT",
       "第三方憑證使用 Passport",
       "即時雙向通信使用 Socket",
-      "訊息佇列使用 RabbitMQ"
+      "內存資料結構存儲使用 Redis"
     ]
   },
   "TOOLS": {
@@ -35,12 +35,12 @@
       "HTML 靜態程式碼分析使用 HTMLHint",
       "CSS 靜態程式碼分析使用 StyleLint",
       "JavaScript 靜態程式碼分析使用 ESLint",
-      "測試框架使用 Jasmine",
-      "單元測試使用 Karma",
-      "端對端測試使用 Protractor",
+      "單元測試使用 Jest",
+      "測試覆蓋率整合使用 Codecov",
+      "端對端測試框架使用 Jasmine",
+      "端對端測試執行器使用 Protractor",
       "自動重新啟動應用程式使用 Nodemon",
-      "保持應用程式持續運作使用 PM2",
-      "後端測試框架使用 Jest"
+      "保持應用程式持續運作使用 PM2"
     ]
   },
   "ENVIRONMENTS": {
@@ -56,12 +56,12 @@
       "雲端應用程式託管使用 Heroku",
       "雲端 NoSQL 資料庫託管使用 mLab",
       "雲端 SQL 資料庫託管使用 ElephantSQL",
-      "雲端訊息佇列服務使用 CloudAMQP",
+      "雲端內存快取託管使用 RedisLabs",
       "雲端日誌服務使用 Papertrail",
       "雲端監控服務使用 UptimeRobot",
       "反向代理和快取使用 Nginx",
       "軟體容器使用 Docker",
-      "持續整合使用 Travis"
+      "持續整合使用 CircleCI"
     ]
   }
 }
