@@ -5,10 +5,8 @@ import axios from 'axios';
 import template from './rest.html';
 import style from './rest.css';
 
-const imports = { style };
-
-export default () => {
-  page('/examples/rest', () => {
+export default (parent: string) => {
+  page(`${parent}/rest`, () => {
     const API_LIST = 'https://web-go-demo.herokuapp.com/__/list';
 
     const store = observable({
@@ -40,7 +38,7 @@ export default () => {
     autorun(() => {
       const $ = (selector: string): HTMLElement => document.querySelector(selector);
 
-      $('#app').innerHTML = _(template, { imports })({ store });
+      $('#app').innerHTML = _(template, { imports: { style } })({ store });
 
       $('#search-button').onclick = () => {
 

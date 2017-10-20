@@ -5,10 +5,8 @@ import { observable, action, autorun } from 'mobx';
 import template from './crud.html';
 import style from './crud.css';
 
-const imports = { style };
-
-export default () => {
-  page('/examples/crud', () => {
+export default (parent: string) => {
+  page(`${parent}/crud`, () => {
     const INITIAL = [
       { id: 4, primary: 'Vanilla', accent: 'Cordova' },
       { id: 3, primary: 'Angular', accent: 'Ionic' },
@@ -60,7 +58,7 @@ export default () => {
       const $ = (selector: string): HTMLElement => document.querySelector(selector);
       const $$ = (selector: string): HTMLElement[] => document.querySelectorAll(selector);
 
-      $('#app').innerHTML = _(template, { imports })({ store });
+      $('#app').innerHTML = _(template, { imports: { style } })({ store });
 
       $('#add-button').onclick = () => {
         const primary = $('#add-primary').value;

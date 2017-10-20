@@ -6,10 +6,8 @@ import gql from 'graphql-tag';
 import template from './graphql.html';
 import style from './graphql.css';
 
-const imports = { style };
-
-export default () => {
-  page('/examples/graphql', () => {
+export default (parent: string) => {
+  page(`${parent}/graphql`, () => {
     const client = new ApolloClient({
       networkInterface: createNetworkInterface({
         uri: 'https://web-go-demo.herokuapp.com/__/graphql'
@@ -51,7 +49,7 @@ export default () => {
     autorun(() => {
       const $ = (selector: string): HTMLElement => document.querySelector(selector);
 
-      $('#app').innerHTML = _(template, { imports })({ store });
+      $('#app').innerHTML = _(template, { imports: { style } })({ store });
 
       $('#search-button').onclick = () => {
 

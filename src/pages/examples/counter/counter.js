@@ -8,10 +8,8 @@ import { observable, action, autorun } from 'mobx';
 import template from './counter.html';
 import style from './counter.css';
 
-const imports = { style };
-
-export default () => {
-  page('/examples/counter', () => {
+export default (parent: string) => {
+  page(`${parent}/counter`, () => {
     const store = observable({
       /**
        * @name observable
@@ -54,7 +52,7 @@ export default () => {
       const $ = (selector: string): HTMLElement => document.querySelector(selector);
       const $$ = (selector: string): HTMLElement[] => document.querySelectorAll(selector);
 
-      $('#app').innerHTML = _(template, { imports })({ store });
+      $('#app').innerHTML = _(template, { imports: { style } })({ store });
 
       const createClickEvent = (name, func) =>
         $(`#${name}`).addEventListener('click', func);

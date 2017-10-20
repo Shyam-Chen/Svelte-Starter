@@ -10,12 +10,20 @@ import template from './examples.html';
 import style from './examples.css';
 
 export const examples = (): void => {
-  page('/examples', (): void => {
+  const pathname = '/examples';
+
+  page(pathname, (): void => {
     const store = observable({
+      /**
+       * @name observable
+       */
       pathname: location.pathname,
 
+      /**
+       * @name computed
+       */
       get location(): boolean {
-        return store.pathname === '/examples' || store.pathname === '/examples/';
+        return store.pathname === pathname || store.pathname === `${pathname}/`;
       }
     });
 
@@ -25,8 +33,8 @@ export const examples = (): void => {
     });
   });
 
-  counter();
-  crud();
-  rest();
-  graphql();
+  counter(pathname);
+  crud(pathname);
+  rest(pathname);
+  graphql(pathname);
 };
