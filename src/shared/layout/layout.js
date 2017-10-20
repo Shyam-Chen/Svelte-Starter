@@ -6,9 +6,9 @@ import logo from '~/assets/images/touch/ms-touch-icon-144x144-precomposed.png';
 
 import template from './layout.html';
 import style from './layout.css';
-import data from './_languages/layout.json';
-import dataZh from './_languages/layout-zh.json';
-import dataJa from './_languages/layout-ja.json';
+import english from './_languages/english.json';
+import chinese from './_languages/chinese.json';
+import japanese from './_languages/japanese.json';
 
 /**
  * @example
@@ -22,9 +22,9 @@ export const layout = (content: string, page: string, language: string = 'en'): 
 
   const app = $('#app');
   const imports = { style, image: { logo } };
-  language === 'en' ? app.innerHTML = _(template, { imports })(data) : noop();
-  language === 'zh' ? app.innerHTML = _(template, { imports })(dataZh) : noop();
-  language === 'ja' ? app.innerHTML = _(template, { imports })(dataJa) : noop();
+  language === 'en' ? app.innerHTML = _(template, { imports })(english) : noop();
+  language === 'zh' ? app.innerHTML = _(template, { imports })(chinese) : noop();
+  language === 'ja' ? app.innerHTML = _(template, { imports })(japanese) : noop();
 
   const enAnchor = $('#en');
   const zhAnchor = $('#zh');

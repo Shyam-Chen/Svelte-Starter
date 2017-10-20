@@ -18,8 +18,8 @@
       <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3">
         <h2 class="mdc-typography--title">${ RESOURCES }</h2>
         <ul class="${ style.footerList }">
-          <li><a href="https://developers.google.com/web/tools/" class="${ style.footerLink }">Tools</a></li>
-          <li><a href="https://developers.google.com/web/updates/" class="${ style.footerLink }">Updates</a></li>
+          <li><a href="https://developers.google.com/training/web/" class="${ style.footerLink }">${TRAINING}</a></li>
+          <li><a href="https://developers.google.com/training/certification/mobile-web-specialist/" class="${ style.footerLink }">${CERTIFICATION}</a></li>
         </ul>
       </section>
 
@@ -27,7 +27,7 @@
         <h2 class="mdc-typography--title">${ LANGUAGES }</h2>
         <ul class="${ style.footerList }">
           <% var languages = [['en', 'English'], ['zh', '中文'], ['ja', '日本語']]; %>
-          <% [].forEach.call(languages, function(language) { %>
+          <% [].forEach.call(languages, function (language) { %>
             <li>
               <a href="javascript: void 0" id="<%- language[0] %>" class="${ style.footerLink }"><%- language[1] %></a>
             </li>
