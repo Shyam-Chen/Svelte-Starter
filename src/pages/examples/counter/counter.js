@@ -31,14 +31,14 @@ export default () => {
           ::delay(1000)
           .subscribe(() => store.decrement())
       ),
-      incrementIfOdd: action(() => {
-        if (Math.abs(store.value % 2) === 1) {
+      incrementIfEven: action(() => {
+        if (store.value % 2 === 0) {
           store.increment();
         }
       }),
-      decrementIfEven: action(() =>
+      decrementIfOdd: action(() =>
         Observable::of(null)
-          ::filter(() => store.value % 2 === 0)
+          ::filter(() => Math.abs(store.value % 2) === 1)
           .subscribe(() => store.decrement())
       ),
 
@@ -63,8 +63,8 @@ export default () => {
       createClickEvent('decrement', store.decrement);
       createClickEvent('incrementAsync', store.incrementAsync);
       createClickEvent('decrementAsync', store.decrementAsync);
-      createClickEvent('incrementIfOdd', store.incrementIfOdd);
-      createClickEvent('decrementIfEven', store.decrementIfEven);
+      createClickEvent('incrementIfEven', store.incrementIfEven);
+      createClickEvent('decrementIfOdd', store.decrementIfOdd);
 
       [].forEach.call(
         $$('.mdc-button'),
