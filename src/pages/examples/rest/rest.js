@@ -1,0 +1,51 @@
+import { template as _ } from 'lodash';
+import { observable, action, autorun } from 'mobx';
+import axios from 'axios';
+
+import template from './rest.html';
+import style from './rest.css';
+
+const imports = { style };
+
+export default () => {
+  page('/examples/rest', () => {
+    const API_LIST = 'https://web-go-demo.herokuapp.com/__/list';
+
+    const store = observable({
+      /**
+       * @name observable
+       */
+      dataset: [],
+      searchData: { text: '' },
+
+      /**
+       * @name action
+       */
+      searchItem: action(() => {
+        axios.get(API_LIST)
+          .then(({ data }) => {
+            store.dataset = data;
+            store.searchData['text'] = '';
+          });
+      }),
+
+      /**
+       * @name computed
+       */
+       get total(): number {
+         return store.dataset.length;
+       }
+    });
+
+    autorun(() => {
+      const $ = (selector: string): HTMLElement => document.querySelector(selector);
+
+      $('#app').innerHTML = _(template, { imports })({ store });
+
+      $('#search-button').onclick = () => {
+
+        store.searchItem();
+      };
+    });
+  });
+};

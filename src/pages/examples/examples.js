@@ -3,6 +3,8 @@ import { observable, autorun } from 'mobx';
 
 import { counter } from './counter';
 import { crud } from './crud';
+import { rest } from './rest';
+import { graphql } from './graphql';
 
 import template from './examples.html';
 import style from './examples.css';
@@ -25,4 +27,6 @@ export const examples = (): void => {
 
   counter();
   crud();
+  rest();
+  graphql();
 };
