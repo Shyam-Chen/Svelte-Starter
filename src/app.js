@@ -3,15 +3,12 @@ import './app.css';
 import { Observable } from 'rxjs';
 import { forkJoin } from 'rxjs/observable';
 
-import load from '~/utils/load/load';
+import pages from '~/pages';
+import { load } from '~/utils';
 
-import { home } from './pages/home';
-import { about } from './pages/about';
-import { contact } from './pages/contact';
-import { examples } from './pages/examples';
-import { admin } from './pages/admin';
-import { notfound } from './pages/not-found';
-
+/**
+ * @name load-fonts
+ */
 Observable::forkJoin(
     load('https://fonts.googleapis.com/css?family=Indie+Flower'),
     load('https://fonts.googleapis.com/icon?family=Material+Icons')
@@ -26,6 +23,9 @@ Observable::forkJoin(
     document.head.appendChild(style);
   });
 
+/**
+ * @name firebase-config
+ */
 firebase.initializeApp({
   apiKey: 'AIzaSyDBA0yVS0JuIqGaoN9nafvPFxPSVgmxwnw',
   authDomain: 'web-go-demo.firebaseapp.com',
@@ -35,6 +35,9 @@ firebase.initializeApp({
   messagingSenderId: '584431831746'
 });
 
+/**
+ * @name service-worker
+ */
 if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost')) {
   navigator.serviceWorker
     .register('service-worker.js')
@@ -63,17 +66,19 @@ if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || wi
     });
 }
 
-home();
-about();
-contact();
-examples();
-admin();
-notfound();
-page();
+/**
+ * @name bootstrap-app
+ */
+pages();
 
-// if (process.env.NODE_ENV === 'production') {
-//   window.preprender = async path => {
-//     history.push(path);
-//     return document.documentElement.outerHTML;
-//   };
-// }
+/**
+ * @name pre-render
+ * @param {string} path - route name
+ * @returns {HTMLElement} - rendered html
+ */
+if (process.env.NODE_ENV === 'production') {
+  window.prerender = (path: string): HTMLElement => {
+    history.push(path);
+    return document.documentElement.outerHTML;
+  };
+}

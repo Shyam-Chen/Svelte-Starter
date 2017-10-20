@@ -13,8 +13,6 @@ if (
     '/examples/counter',
     '/examples/crud',
     '/examples/rest',
-    '/examples/graphql',
-    '/examples/data-table',
-    '/examples/form-controls'
+    '/examples/graphql'
   ]);
 }

@@ -1,9 +1,9 @@
 /**
- * @name Shims
+ * @name shims
  */
 import 'core-js/client/shim';
 
 /**
- * @name Prevendor
+ * @name pre-vendor
  */
 import 'firebase/firebase-app';

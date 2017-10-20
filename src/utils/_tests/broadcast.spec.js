@@ -1,4 +1,4 @@
-import { Broadcast } from './broadcast';
+import { Broadcast } from '../broadcast';
 
 describe('Broadcast', () => {
   it('action', () => {
