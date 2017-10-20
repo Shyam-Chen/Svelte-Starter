@@ -51,7 +51,9 @@ export default () => {
       /**
        * @name computed
        */
-      // ...
+       get total(): number {
+         return store.dataset.length;
+       }
     });
 
     autorun(() => {

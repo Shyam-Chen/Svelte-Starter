@@ -1,3 +1,4 @@
+import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
 import { template as _ } from 'lodash';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs/observable';
@@ -44,13 +45,14 @@ export default () => {
       /**
        * @name computed
        */
-      get evenOrOdd() {
+      get evenOrOdd(): string {
         return store.value % 2 === 0 ? 'even' : 'odd';
       }
     });
 
     autorun(() => {
       const $ = (selector: string): HTMLElement => document.querySelector(selector);
+      const $$ = (selector: string): HTMLElement[] => document.querySelectorAll(selector);
 
       $('#app').innerHTML = _(template, { imports })({ store });
 
@@ -63,6 +65,11 @@ export default () => {
       createClickEvent('decrementAsync', store.decrementAsync);
       createClickEvent('incrementIfOdd', store.incrementIfOdd);
       createClickEvent('decrementIfEven', store.decrementIfEven);
+
+      [].forEach.call(
+        $$('.mdc-button'),
+        ripple => mdRipple.MDCRipple.attachTo(ripple)
+      );
     });
   });
 };

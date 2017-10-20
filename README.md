@@ -552,4 +552,4 @@ $ yarn deploy
 * [Example] Write more tests
 * ---------- **P4: Nice to have** ----------
 * [Feature] Remove unused CSS with PurifyCSS
-* [Feature] Integration with Hot Module Replacement (`rollup-plugin-hmr`)
+* [Feature] Integration with Hot Module Replacement
