@@ -72,13 +72,22 @@ if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || wi
 pages();
 
 /**
- * @name pre-render
- * @param {string} path - route name
- * @returns {HTMLElement} - rendered html
+ * @name prod-env
  */
 if (process.env.NODE_ENV === 'production') {
+  /**
+   * @name pre-render
+   * @param {string} path - route name
+   * @returns {HTMLElement} - rendered html
+   */
   window.prerender = (path: string): HTMLElement => {
     history.push(path);
     return document.documentElement.outerHTML;
   };
+
+  /**
+   * @name error-tracking
+   */
+  Raven.config('https://5f5c195e793f4195ab580790f04d074e@sentry.io/233631')
+    .install();
 }

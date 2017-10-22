@@ -12,7 +12,8 @@
   },
   "globals": {
     "firebase": true,
-    "page": true
+    "page": true,
+    "Raven": true
   },
   "extends": "eslint:recommended",
   "parser": "babel-eslint",
