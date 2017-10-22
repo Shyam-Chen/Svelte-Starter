@@ -57,8 +57,8 @@
       "Cloud NoSQL database hosting with mLab.",
       "Cloud SQL database hosting with ElephantSQL.",
       "Cloud memory cache hosting with RedisLabs.",
-      "Cloud logging services with Papertrail.",
-      "Cloud monitoring services with UptimeRobot.",
+      "Error tracking with Sentry.",
+      "API workflow with Postman.",
       "Reverse proxy and caching with Nginx.",
       "Software container with Docker.",
       "Continuous integration with CircleCI."
