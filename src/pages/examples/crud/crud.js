@@ -2,6 +2,8 @@ import { __moduleExports as mdTextfield } from '@material/textfield/dist/mdc.tex
 import { template as _ } from 'lodash';
 import { observable, action, autorun } from 'mobx';
 
+import { $, $$ } from '~/utils';
+
 import template from './crud.html';
 import style from './crud.css';
 
@@ -55,9 +57,6 @@ export default (parent: string) => {
     });
 
     autorun(() => {
-      const $ = (selector: string): HTMLElement => document.querySelector(selector);
-      const $$ = (selector: string): HTMLElement[] => document.querySelectorAll(selector);
-
       $('#app').innerHTML = _(template, { imports: { style } })({ store });
 
       $('#add-button').onclick = () => {

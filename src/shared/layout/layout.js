@@ -3,6 +3,7 @@ import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
 import { template as _, noop } from 'lodash';
 
 import logo from '~/assets/images/touch/ms-touch-icon-144x144-precomposed.png';
+import { $, $$ } from '~/utils';
 
 import template from './layout.html';
 import style from './layout.css';
@@ -17,9 +18,6 @@ import japanese from './_languages/japanese.json';
  */
 
 export const layout = (content: string, page: string, language: string = 'en'): void => {
-  const $ = (selector: string): HTMLElement => document.querySelector(selector);
-  const $$ = (selector: string): HTMLElement[] => document.querySelectorAll(selector);
-
   const app = $('#app');
   const imports = { style, image: { logo } };
   language === 'en' ? app.innerHTML = _(template, { imports })(english) : noop();

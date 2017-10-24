@@ -1,5 +1,11 @@
-export { Broadcast } from './broadcast';
+/**
+ * @name classes
+ */
+export * from './broadcast';
 
-export { default as load } from './load';
-
+/**
+ * @name functions
+ */
+export * from './query';
+export * from './load';
 export * from './tags';

@@ -5,6 +5,8 @@ import { of } from 'rxjs/observable';
 import { delay, filter } from 'rxjs/operator';
 import { observable, action, autorun } from 'mobx';
 
+import { $, $$ } from '~/utils';
+
 import template from './counter.html';
 import style from './counter.css';
 
@@ -49,9 +51,6 @@ export default (parent: string) => {
     });
 
     autorun(() => {
-      const $ = (selector: string): HTMLElement => document.querySelector(selector);
-      const $$ = (selector: string): HTMLElement[] => document.querySelectorAll(selector);
-
       $('#app').innerHTML = _(template, { imports: { style } })({ store });
 
       const createClickEvent = (name, func) =>

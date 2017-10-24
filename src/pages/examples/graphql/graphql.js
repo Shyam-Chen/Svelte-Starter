@@ -3,6 +3,8 @@ import { observable, action, autorun } from 'mobx';
 import ApolloClient, { createNetworkInterface } from 'apollo-client';
 import gql from 'graphql-tag';
 
+import { $ } from '~/utils';
+
 import template from './graphql.html';
 import style from './graphql.css';
 
@@ -47,8 +49,6 @@ export default (parent: string) => {
     });
 
     autorun(() => {
-      const $ = (selector: string): HTMLElement => document.querySelector(selector);
-
       $('#app').innerHTML = _(template, { imports: { style } })({ store });
 
       $('#search-button').onclick = () => {

@@ -1,13 +1,14 @@
 import { template as _ } from 'lodash';
 import { observable, autorun } from 'mobx';
 
+import { $ } from '~/utils';
+
+import template from './examples.html';
+import style from './examples.css';
 import { counter } from './counter';
 import { crud } from './crud';
 import { rest } from './rest';
 import { graphql } from './graphql';
-
-import template from './examples.html';
-import style from './examples.css';
 
 export const examples = (): void => {
   const pathname = '/examples';
@@ -28,8 +29,7 @@ export const examples = (): void => {
     });
 
     autorun((): void => {
-      document.querySelector('#app')
-        .innerHTML = _(template, { imports: { style } })({ store });
+      $('#app').innerHTML = _(template, { imports: { style } })({ store });
     });
   });
 

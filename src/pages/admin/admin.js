@@ -1,8 +1,9 @@
 import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
 import { __moduleExports as mdTextfield } from '@material/textfield/dist/mdc.textfield';
 import { __moduleExports as mdSnackbar } from '@material/snackbar/dist/mdc.snackbar';
-
 import { template as _ } from 'lodash';
+
+import { $, $$ } from '~/utils';
 
 import template from './admin.html';
 import style from './admin.css';
@@ -10,9 +11,6 @@ import { users } from './users';
 
 export const admin = (): void => {
   page('/admin', (): void => {
-    const $ = (selector: string): HTMLElement => document.querySelector(selector);
-    const $$ = (selector: string): HTMLElement[] => document.querySelectorAll(selector);
-
     $('#app').innerHTML = _(template, { imports: { style } })();
 
     const adminEmail = $('#admin-email');

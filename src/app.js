@@ -4,14 +4,14 @@ import { Observable } from 'rxjs';
 import { forkJoin } from 'rxjs/observable';
 
 import pages from '~/pages';
-import { load } from '~/utils';
+import { load$ } from '~/utils';
 
 /**
  * @name load-fonts
  */
 Observable::forkJoin(
-    load('https://fonts.googleapis.com/css?family=Indie+Flower'),
-    load('https://fonts.googleapis.com/icon?family=Material+Icons')
+    load$('https://fonts.googleapis.com/css?family=Indie+Flower'),
+    load$('https://fonts.googleapis.com/icon?family=Material+Icons')
   )
   .subscribe(result => {
     const style = document.createElement('style');

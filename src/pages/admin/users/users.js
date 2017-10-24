@@ -1,16 +1,14 @@
 import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
 import { __moduleExports as mdDialog } from '@material/dialog/dist/mdc.dialog';
 import { __moduleExports as mdTextfield } from '@material/textfield/dist/mdc.textfield';
-
 import { template as _ } from 'lodash';
+
+import { $, $$ } from '~/utils';
 
 import template from './users.html';
 import style from './users.css';
 
 export const users = (page: string): void => {
-  const $ = (selector: string): HTMLElement => document.querySelector(selector);
-  const $$ = (selector: string): HTMLElement[] => document.querySelectorAll(selector);
-
   // pagination
   // firebase.database()
   //   .ref('users')

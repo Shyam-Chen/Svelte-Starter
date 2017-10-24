@@ -4,6 +4,7 @@ import { __moduleExports as mdSnackbar } from '@material/snackbar/dist/mdc.snack
 import { template as _, noop } from 'lodash';
 
 import { layout } from '~/shared/layout';
+import { $, $$ } from '~/utils';
 
 import template from './contact.html';
 import style from './contact.css';
@@ -14,9 +15,6 @@ import japanese from './_languages/japanese.json';
 const imports = { style };
 
 const common = (language: string = 'en'): void => {
-  const $ = (selector: string): HTMLElement => document.querySelector(selector);
-  const $$ = (selector: string): HTMLElement[] => document.querySelectorAll(selector);
-
   const name = $('#name');
   const email = $('#email');
   const comment = $('#comment');

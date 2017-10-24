@@ -1,8 +1,9 @@
 import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
 import { template as _ } from 'lodash';
 
-import { layout } from '~/shared/layout';
 import logo from '~/assets/images/logo.png';
+import { layout } from '~/shared/layout';
+import { $$ } from '~/utils';
 
 import template from './home.html';
 import style from './home.css';
@@ -19,7 +20,7 @@ const imports = {
 
 const common = (): void => {
   [].forEach.call(
-    document.querySelectorAll('.mdc-button'),
+    $$('.mdc-button'),
     ripple => mdRipple.MDCRipple.attachTo(ripple)
   );
 };
