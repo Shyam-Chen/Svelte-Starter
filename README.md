@@ -134,18 +134,16 @@ $ yarn run gulp -- <TASK_NAME> --prod --watch --serve
 ```html
 <!-- src/shared/new-component/new-component.html -->
 <div class="${ style.card }">
-  <div class="${ style.card__title }">${ title }</div>
-  <div class="${ style.card__content }">${ content }</div>
+  <div class="${ style.cardTitle }">${ title }</div>
+  <div class="${ style.cardContent }">${ content }</div>
 </div>
 ```
 
-```scss
+```css
 // src/shared/new-component/new-component.css
-.card {
-  // ...
-  &__title { /* ... */ }
-  &__content { /* ... */ }
-}
+.card { /* ... */ }
+.cardTitle { /* ... */ }
+.cardContent { /* ... */ }
 ```
 
 ```js
