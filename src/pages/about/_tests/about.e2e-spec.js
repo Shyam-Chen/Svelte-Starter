@@ -9,7 +9,7 @@ describe('About', () => {
   });
 
   it('Table head', () => {
-    const el = browser.driver.findElement(by.css('h3.mdc-typography--subheading1'));
+    const el = browser.driver.findElement(by.css('h3.mdc-typography--subheading2'));
     expect(el.getText()).toEqual('Essentials');
   });
 

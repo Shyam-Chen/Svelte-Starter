@@ -2,6 +2,10 @@
   max-width: 839px;
 }
 
+.card {
+  background: #FFFFFF;
+}
+
 .cardMedia {
   background-image: url('images/background.jpg');
   background-size: cover;

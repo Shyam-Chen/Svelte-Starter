@@ -1,3 +1,12 @@
 .lists {
   max-width: 1140px;
 }
+
+.ul {
+  background: #FFFFFF;
+}
+
+.li {
+  white-space: normal;
+  line-height: 1rem;
+}
