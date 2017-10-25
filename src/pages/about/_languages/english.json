@@ -35,7 +35,7 @@
       "CSS static code analyzer with StyleLint.",
       "JavaScript static code analyzer with ESLint.",
       "Type annotations with Flow.",
-      "Testing framework with Jasmine."
+      "Testing framework with Jasmine.",
       "Unit test runner with Karma.",
       "End-to-end test runner with Protractor.",
       "Backend unit testing with Jest.",
