@@ -15,6 +15,7 @@
     "reinstall": "yarn cache clean && git clean -dfx -e '.*' && yarn install",
     "deploy": "firebase deploy",
     "gulp": "gulp",
+    "flow": "flow",
     "codecov": "codecov",
     "webdriver": "gulp webdriver",
     "predev": "rimraf public",

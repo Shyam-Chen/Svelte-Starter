@@ -140,7 +140,7 @@ $ yarn run gulp -- <TASK_NAME> --prod --watch --serve
 ```
 
 ```css
-// src/shared/new-component/new-component.css
+/* src/shared/new-component/new-component.css */
 .card { /* ... */ }
 .cardTitle { /* ... */ }
 .cardContent { /* ... */ }
