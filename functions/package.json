@@ -1,9 +1,0 @@
-{
-  "name": "Web-GO",
-  "description": "Professional templates for modern web development with ECMAScript, HTML5, Node.js, and Docker.",
-  "dependencies": {
-    "express": "4.15.5",
-    "firebase-admin": "5.3.0",
-    "firebase-functions": "0.6.3"
-  }
-}

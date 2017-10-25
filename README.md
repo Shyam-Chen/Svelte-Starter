@@ -32,10 +32,10 @@ This seed repository provides the following features:
 * [x] HTML static code analyzer with [**HTMLHint**](http://htmlhint.com/).
 * [x] CSS static code analyzer with [**StyleLint**](https://stylelint.io/).
 * [x] JavaScript static code analyzer with [**ESLint**](https://eslint.org).
-* [ ] Unit testing with [**Jest**](https://github.com/facebook/jest).
-* [x] Test coverage integration with [**Codecov**](https://codecov.io/).
-* [x] End-to-end testing framework with [**Jasmine**](https://jasmine.github.io/).
+* [x] Testing framework with [**Jasmine**](https://jasmine.github.io/).
+* [x] Unit test with [**Karma**](https://karma-runner.github.io/).
 * [x] End-to-end test runner with [**Protractor**](http://www.protractortest.org/).
+* [x] Test coverage integration with [**Codecov**](https://codecov.io/).
 * ---------- **Environments** ----------
 * [x] Client-side platform with [**HTML5**](https://platform.html5.org/).
 * [x] Operating system with [**Linux**](https://www.linux.org/).
@@ -56,7 +56,6 @@ This seed repository provides the following features:
 * [Using Libraries](#using-libraries)
 * [All Commands](#all-commands)
 * [Directory Structure](#directory-structure)
-* [Known Issues](#known-issues)
 
 ## Getting Started
 
@@ -489,7 +488,6 @@ $ yarn deploy
 
 ```
 .
-├── functions  -> server-side rules
 ├── public  -> client-side public
 ├── src
 │   ├── assets  -> audios, datas, fonts, images, videos
@@ -536,20 +534,3 @@ $ yarn deploy
 ├── package.json
 └── yarn.lock
 ```
-
-## Known Issues
-
-* ---------- **P0: Critical** ----------
-* [Refactor] Migrate from Jasmine/Karma to Jest
-* [Feature] Server-side Rendering with Cloud Functions
-* [Feature] Prerenders static `.html` pages with `pre-render`
-* ---------- **P1: Urgent** ----------
-* [Enhancement] Offline Google Analytics
-* ---------- **P2: Required** ----------
-* [Feature] Add unit tests for Cloud Functions
-* ---------- **P3: Important** ----------
-* [Example] Do more examples
-* [Example] Write more tests
-* ---------- **P4: Nice to have** ----------
-* [Feature] Remove unused CSS with PurifyCSS
-* [Feature] Integration with Hot Module Replacement
