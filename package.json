@@ -7,7 +7,7 @@
     "test": "gulp unit --watch",
     "dev": "gulp --watch --serve",
     "prod": "gulp --prod",
-    "lint": "gulp lint",
+    "lint": "gulp lint && flow",
     "unit": "gulp unit",
     "e2e": "gulp e2e",
     "render": "cross-env NODE_ENV=production node tools/render.js",

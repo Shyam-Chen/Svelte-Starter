@@ -27,15 +27,14 @@ This seed repository provides the following features:
 * [x] HTML transformations with [**Reshape**](https://reshape.ml/).
 * [x] Future CSS features with [**PostCSS**](http://postcss.org/).
 * [x] Next generation JavaScript with [**Babel**](https://babeljs.io/).
-* [x] Type annotations with [**Flow**](https://flow.org/).
 * [x] Synchronised browser with [**BrowserSync**](https://browsersync.io/).
 * [x] HTML static code analyzer with [**HTMLHint**](http://htmlhint.com/).
 * [x] CSS static code analyzer with [**StyleLint**](https://stylelint.io/).
 * [x] JavaScript static code analyzer with [**ESLint**](https://eslint.org).
+* [x] Type annotations with [**Flow**](https://flow.org/).
 * [x] Testing framework with [**Jasmine**](https://jasmine.github.io/).
 * [x] Unit test with [**Karma**](https://karma-runner.github.io/).
 * [x] End-to-end test runner with [**Protractor**](http://www.protractortest.org/).
-* [x] Test coverage integration with [**Codecov**](https://codecov.io/).
 * ---------- **Environments** ----------
 * [x] Client-side platform with [**HTML5**](https://platform.html5.org/).
 * [x] Operating system with [**Linux**](https://www.linux.org/).

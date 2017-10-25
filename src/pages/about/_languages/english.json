@@ -30,15 +30,15 @@
       "HTML transformations with Reshape.",
       "Future CSS features with PostCSS.",
       "Next generation JavaScript with Babel.",
-      "Type annotations with Flow.",
       "Synchronised browser with BrowserSync.",
       "HTML static code analyzer with HTMLHint.",
       "CSS static code analyzer with StyleLint.",
       "JavaScript static code analyzer with ESLint.",
-      "Unit testing with Jest.",
-      "Test coverage integration with Codecov.",
-      "End-to-end testing framework with Jasmine.",
+      "Type annotations with Flow.",
+      "Testing framework with Jasmine."
+      "Unit test runner with Karma.",
       "End-to-end test runner with Protractor.",
+      "Backend unit testing with Jest.",
       "Automatically restart application with Nodemon.",
       "Keeping application alive with PM2."
     ]
