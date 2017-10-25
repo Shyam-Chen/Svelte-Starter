@@ -44,7 +44,7 @@ This seed repository provides the following features:
 * [x] Code repository with [**GitHub**](https://github.com/).
 * [x] Fast and deterministic builds with [**Yarn**](https://yarnpkg.com/).
 * [x] Error tracking with [**Sentry**](https://sentry.io/).
-* [ ] API workflow with [**Postman**](https://www.getpostman.com/).
+* [x] API workflow with [**Postman**](https://www.getpostman.com/).
 * [x] Software container with [**Docker**](https://www.docker.com/).
 * [x] Continuous integration with [**CircleCI**](https://circleci.com/).
 
@@ -504,7 +504,7 @@ $ yarn deploy
 │   ├── app.css
 │   ├── app.js
 │   ├── index.html
-│   ├── polyfills.js  -> shims, prevendor
+│   ├── polyfills.js  -> shims, pre-vendor
 │   └── vendor.js  -> third-party libraries
 ├── tools
 │   ├── config
@@ -545,8 +545,6 @@ $ yarn deploy
 * [Feature] Prerenders static `.html` pages with `pre-render`
 * ---------- **P1: Urgent** ----------
 * [Enhancement] Offline Google Analytics
-* [Enhancement] Real Flow types
-* [Enhancement] Use more Reshape plugins
 * ---------- **P2: Required** ----------
 * [Feature] Add unit tests for Cloud Functions
 * ---------- **P3: Important** ----------

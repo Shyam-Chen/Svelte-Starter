@@ -35,7 +35,7 @@ jobs:
       - run:
           name: End-to-end testing
           command: |
-            docker-compose exec app yarn gulp -- webdriver
+            docker-compose exec app yarn webdriver
             docker-compose exec app yarn e2e
 
       - run:

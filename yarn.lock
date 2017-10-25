@@ -841,9 +841,9 @@ aws4@^1.2.1:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
 
-axios@0.16.2:
-  version "0.16.2"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.16.2.tgz#ba4f92f17167dfbab40983785454b9ac149c3c6d"
+axios@0.17.0:
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.17.0.tgz#7da747916db803f761651d6091d708789b953c6a"
   dependencies:
     follow-redirects "^1.2.3"
     is-buffer "^1.1.5"
@@ -2132,12 +2132,12 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-codecov@2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/codecov/-/codecov-2.3.1.tgz#7dda945cd58a1f6081025b5b03ee01a2ef20f86e"
+codecov@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/codecov/-/codecov-3.0.0.tgz#c273b8c4f12945723e8dc9d25803d89343e5f28e"
   dependencies:
     argv "0.0.2"
-    request "2.77.0"
+    request "2.81.0"
     urlgrey "0.4.4"
 
 color-convert@^0.5.2:
@@ -4614,8 +4614,8 @@ graphql-anywhere@^3.0.1:
   resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-3.1.0.tgz#3ea0d8e8646b5cee68035016a9a7557c15c21e96"
 
 graphql-tag@^2.0.0, graphql-tag@^2.4.2:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.4.2.tgz#6a63297d8522d03a2b72d26f1b239aab343840cd"
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.5.0.tgz#b43bfd8b5babcd2c205ad680c03e98b238934e0f"
 
 graphql@^0.10.0, graphql@^0.10.3:
   version "0.10.5"
@@ -5588,8 +5588,8 @@ items@2.x.x:
   resolved "https://registry.yarnpkg.com/items/-/items-2.1.1.tgz#8bd16d9c83b19529de5aea321acaada78364a198"
 
 iterall@^1.1.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.1.1.tgz#f7f0af11e9a04ec6426260f5019d9fcca4d50214"
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.1.3.tgz#1cbbff96204056dde6656e2ed2e2226d0e6d72c9"
 
 jasmine-core@2.8.0:
   version "2.8.0"
@@ -6706,9 +6706,9 @@ no-case@^2.2.0:
   dependencies:
     lower-case "^1.1.1"
 
-nock@9.0.22:
-  version "9.0.22"
-  resolved "https://registry.yarnpkg.com/nock/-/nock-9.0.22.tgz#f6eb8ea58c6232dead857484370c2e46f010a087"
+nock@9.0.25:
+  version "9.0.25"
+  resolved "https://registry.yarnpkg.com/nock/-/nock-9.0.25.tgz#0eb26c8a1f602919eaa5b488cd99cfa34b259390"
   dependencies:
     chai ">=1.9.2 <4.0.0"
     debug "^2.2.0"
@@ -7759,9 +7759,9 @@ postcss-modules-values@1.3.0:
     icss-replace-symbols "^1.1.0"
     postcss "^6.0.1"
 
-postcss-modules@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-modules/-/postcss-modules-1.0.0.tgz#d4b00c55f3437a1f94ba4624b5584af1e11314d0"
+postcss-modules@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/postcss-modules/-/postcss-modules-1.1.0.tgz#c9f94f76ff6addf7c35b842e69ed442118156bb0"
   dependencies:
     css-modules-loader-core "^1.1.0"
     generic-names "^1.0.2"
@@ -8662,31 +8662,6 @@ request@2.76.0:
     tough-cookie "~2.3.0"
     tunnel-agent "~0.4.1"
 
-request@2.77.0:
-  version "2.77.0"
-  resolved "https://registry.yarnpkg.com/request/-/request-2.77.0.tgz#2b00d82030ededcc97089ffa5d8810a9c2aa314b"
-  dependencies:
-    aws-sign2 "~0.6.0"
-    aws4 "^1.2.1"
-    caseless "~0.11.0"
-    combined-stream "~1.0.5"
-    extend "~3.0.0"
-    forever-agent "~0.6.1"
-    form-data "~2.1.1"
-    har-validator "~2.0.6"
-    hawk "~3.1.3"
-    http-signature "~1.1.0"
-    is-typedarray "~1.0.0"
-    isstream "~0.1.2"
-    json-stringify-safe "~5.0.1"
-    mime-types "~2.1.7"
-    node-uuid "~1.4.7"
-    oauth-sign "~0.8.1"
-    qs "~6.3.0"
-    stringstream "~0.0.4"
-    tough-cookie "~2.3.0"
-    tunnel-agent "~0.4.1"
-
 request@2.81.0, request@2.x, request@^2.58.0, request@^2.72.0, request@^2.74.0, request@^2.78.0, request@^2.79.0, request@^2.81.0:
   version "2.81.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.81.0.tgz#c6928946a0e06c5f8d6f8a9333469ffda46298a0"
@@ -9123,9 +9098,9 @@ rx@4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/rx/-/rx-4.1.0.tgz#a5f13ff79ef3b740fe30aa803fb09f98805d4782"
 
-rxjs@5.5.0:
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.0.tgz#26d8f3866eb700e247e0728a147c3d628993d812"
+rxjs@5.5.1:
+  version "5.5.1"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.1.tgz#ef980a6ad7438c74e3b0f0d1e6f1493e385997fd"
   dependencies:
     symbol-observable "^1.0.1"
 
@@ -9420,9 +9395,9 @@ socket.io-client@1.7.3:
     socket.io-parser "2.3.1"
     to-array "0.1.4"
 
-socket.io-client@2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/socket.io-client/-/socket.io-client-2.0.3.tgz#6caf4aff9f85b19fd91b6ce13d69adb564f8873b"
+socket.io-client@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/socket.io-client/-/socket.io-client-2.0.4.tgz#0918a552406dc5e540b380dcd97afc4a64332f8e"
   dependencies:
     backo2 "1.0.2"
     base64-arraybuffer "0.1.5"
