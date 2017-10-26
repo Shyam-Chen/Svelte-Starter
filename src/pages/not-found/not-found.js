@@ -1,3 +1,5 @@
+// @flow
+
 import { template as _ } from 'lodash';
 
 import { $ } from '~/utils';
@@ -5,7 +7,7 @@ import { $ } from '~/utils';
 import template from './not-found.html';
 import style from './not-found.css';
 
-export const notfound = (): void => {
+export default (): void => {
   page('*', () => {
     $('#app').innerHTML = _(template, { imports: { style } })();
   });

@@ -1,6 +1,6 @@
 import { template as _ } from 'lodash';
 
-import { notfound } from '../not-found';
+import notfound from '../not-found';
 import template from '../not-found.html';
 import style from '../not-found.css';
 
