@@ -6,7 +6,7 @@
       </div>
     </header>
     <nav class="mdc-temporary-drawer__content mdc-list-group" id="mobile-menu">
-      <div class="mdc-list">
+      <nav class="mdc-list">
         <a class="mdc-list-item mdc-theme--primary" onclick="page.redirect('${ LINK[0][0] }'); document.body.style.overflowY = 'auto'" style="box-sizing: border-box">
           <span class="${ style.link }">
             <svg fill="#3F51B5" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -34,7 +34,18 @@
           </span>
           ${ LINK[2][1] }
         </a>
-      </div>
+      </nav>
+
+      <hr class="mdc-list-divider">
+
+      <nav class="mdc-list">
+        <a class="mdc-list-item" onclick="page.redirect('/examples'); document.body.style.overflowY = 'auto'">
+          <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">description</i>Examples
+        </a>
+        <a class="mdc-list-item" onclick="page.redirect('/admin'); document.body.style.overflowY = 'auto'">
+          <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">verified_user</i>Admin
+        </a>
+      </nav>
     </nav>
   </nav>
 </nav>
