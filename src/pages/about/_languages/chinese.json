@@ -58,7 +58,7 @@
       "雲端 SQL 資料庫託管使用 ElephantSQL",
       "雲端內存快取託管使用 RedisLabs",
       "錯誤追蹤使用 Sentry",
-      "API 工作流使用 Postman",
+      "API 工作流使用 Insomnia",
       "反向代理和快取使用 Nginx",
       "軟體容器使用 Docker",
       "持續整合使用 CircleCI"

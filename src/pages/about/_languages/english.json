@@ -58,7 +58,7 @@
       "Cloud SQL database hosting with ElephantSQL.",
       "Cloud memory cache hosting with RedisLabs.",
       "Error tracking with Sentry.",
-      "API workflow with Postman.",
+      "API workflow with Insomnia.",
       "Reverse proxy and caching with Nginx.",
       "Software container with Docker.",
       "Continuous integration with CircleCI."

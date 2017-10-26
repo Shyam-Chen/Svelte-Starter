@@ -43,7 +43,6 @@ This seed repository provides the following features:
 * [x] Code repository with [**GitHub**](https://github.com/).
 * [x] Fast and deterministic builds with [**Yarn**](https://yarnpkg.com/).
 * [x] Error tracking with [**Sentry**](https://sentry.io/).
-* [x] API workflow with [**Postman**](https://www.getpostman.com/).
 * [x] Software container with [**Docker**](https://www.docker.com/).
 * [x] Continuous integration with [**CircleCI**](https://circleci.com/).
 
