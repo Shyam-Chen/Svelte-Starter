@@ -10,24 +10,24 @@ import { crud } from './crud';
 import { rest } from './rest';
 import { graphql } from './graphql';
 
+const pathname = '/examples';
+
+export const store = observable({
+  /**
+   * @name observable
+   */
+  pathname: location.pathname,
+
+  /**
+   * @name computed
+   */
+  get location(): boolean {
+    return store.pathname === pathname || store.pathname === `${pathname}/`;
+  }
+});
+
 export const examples = (): void => {
-  const pathname = '/examples';
-
   page(pathname, (): void => {
-    const store = observable({
-      /**
-       * @name observable
-       */
-      pathname: location.pathname,
-
-      /**
-       * @name computed
-       */
-      get location(): boolean {
-        return store.pathname === pathname || store.pathname === `${pathname}/`;
-      }
-    });
-
     autorun((): void => {
       $('#app').innerHTML = _(template, { imports: { style } })({ store });
     });
