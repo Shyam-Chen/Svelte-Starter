@@ -68,12 +68,4 @@ body {
       background-color: #EEEEEE;
     }
   }
-
-  & .mdc-list.mdc-list--dense {
-    padding: 16px;
-  }
-
-  & .mdc-list--dense .mdc-list-item {
-    line-height: 1rem;
-  }
 }

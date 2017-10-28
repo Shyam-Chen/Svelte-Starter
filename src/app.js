@@ -7,25 +7,23 @@ import pages from '~/pages';
 import { load$ } from '~/utils';
 
 /**
- * @name load-fonts
+ * @name initialize-app
  */
+
 Observable::forkJoin(
-    load$('https://fonts.googleapis.com/css?family=Indie+Flower'),
     load$('https://fonts.googleapis.com/icon?family=Material+Icons')
   )
   .subscribe(result => {
     const style = document.createElement('style');
 
-    for (let i = 0; i < result.length; i++) {
-      style.innerHTML += result[i];
-    }
+    [].forEach.call(
+      result,
+      (item, index) => style.innerHTML += result[index]
+    );
 
     document.head.appendChild(style);
   });
 
-/**
- * @name firebase-config
- */
 firebase.initializeApp({
   apiKey: 'AIzaSyDBA0yVS0JuIqGaoN9nafvPFxPSVgmxwnw',
   authDomain: 'web-go-demo.firebaseapp.com',
@@ -35,10 +33,10 @@ firebase.initializeApp({
   messagingSenderId: '584431831746'
 });
 
-/**
- * @name service-worker
- */
-if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || window.location.hostname === 'localhost')) {
+if (
+  'serviceWorker' in navigator &&
+  (window.location.protocol === 'https:' || window.location.hostname === 'localhost')
+) {
   navigator.serviceWorker
     .register('service-worker.js')
     .then(registration => {
@@ -66,28 +64,14 @@ if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || wi
     });
 }
 
-/**
- * @name bootstrap-app
- */
-pages();
+window.prerender = path => {
+  history.push(path);
+  return document.documentElement.outerHTML;
+};
 
-/**
- * @name prod-env
- */
 if (process.env.NODE_ENV === 'production') {
-  /**
-   * @name pre-render
-   * @param {string} path - route name
-   * @returns {HTMLElement} - rendered html
-   */
-  window.prerender = (path: string): HTMLElement => {
-    history.push(path);
-    return document.documentElement.outerHTML;
-  };
-
-  /**
-   * @name error-tracking
-   */
-  Raven.config('https://5f5c195e793f4195ab580790f04d074e@sentry.io/233631')
-    .install();
+  Raven.config('https://70484e0dda784a1081081ca9c8237792@sentry.io/236866').install();
+  Raven.context(() => pages());
+} else {
+  pages();
 }
