@@ -1,3 +1,5 @@
+// @flow
+
 import { template as _ } from 'lodash';
 import { observable, autorun } from 'mobx';
 

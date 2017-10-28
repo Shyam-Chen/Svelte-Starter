@@ -1,3 +1,5 @@
+// @flow
+
 import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
 import { template as _ } from 'lodash';
 import { Observable } from 'rxjs';
@@ -48,9 +50,9 @@ export const store = observable({
   }
 });
 
-export default (parent: string) => {
-  page(`${parent}/counter`, () => {
-    autorun(() => {
+export default (parent: string): void => {
+  page(`${parent}/counter`, (): void => {
+    autorun((): void => {
       $('#app').innerHTML = _(template, { imports: { style } })({ store });
 
       const createClickEvent = (name, func) =>
