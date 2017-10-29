@@ -15,9 +15,7 @@ export default (): void => {
 
   page('/about', () => layout(_(template, { imports })(english), 'about'));
 
-  /**
-   * @name internationalization
-   */
+  // internationalization
   page('/en/about', () => layout(_(template, { imports })(english), 'about', 'en'));
   page('/zh/about', () => layout(_(template, { imports })(chinese), 'about', 'zh'));
   page('/ja/about', () => layout(_(template, { imports })(japanese), 'about', 'ja'));

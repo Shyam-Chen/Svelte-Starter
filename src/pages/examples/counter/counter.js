@@ -13,8 +13,10 @@ import template from './counter.html';
 import style from './counter.css';
 
 export const store = observable({
+  // observable
   value: 0,
 
+  // action
   increment: action(() => store.value++),
   decrement: action(() => store.value--),
   incrementAsync: action(() =>
@@ -36,6 +38,7 @@ export const store = observable({
       .subscribe(() => store.decrement())
   ),
 
+  // computed
   get evenOrOdd(): string {
     return store.value % 2 === 0 ? 'even' : 'odd';
   }

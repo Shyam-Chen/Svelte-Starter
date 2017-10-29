@@ -17,8 +17,10 @@ export const INITIAL = [
 ];
 
 export const store = observable({
+  // observable
   dataset: [...INITIAL],
 
+  // action
   addItem: action((primary, accent) => {
     const id = store.dataset.reduce((maxId, item) => Math.max(item.id, maxId), -1) + 1;
     store.dataset = [{ id, primary, accent }, ...store.dataset];
@@ -42,9 +44,10 @@ export const store = observable({
 
   }),
 
-   get total(): number {
-     return store.dataset.length;
-   }
+  // computed
+  get total(): number {
+    return store.dataset.length;
+  }
 });
 
 export const render = (): void => {

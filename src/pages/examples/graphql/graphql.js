@@ -15,15 +15,11 @@ export const client = new ApolloClient({
 });
 
 export const store = observable({
-  /**
-   * @name observable
-   */
+  // observable
   dataset: [],
   searchData: { text: '' },
 
-  /**
-   * @name action
-   */
+  // action
   searchItem: action(() => {
     client.query({
         query: gql`
@@ -38,12 +34,10 @@ export const store = observable({
       });
   }),
 
-  /**
-   * @name computed
-   */
-   get total(): number {
-     return store.dataset.length;
-   }
+  // computed
+  get total(): number {
+    return store.dataset.length;
+  }
 });
 
 export const render = (): void => {

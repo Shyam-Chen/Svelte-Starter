@@ -10,15 +10,11 @@ import style from './rest.css';
 export const API_LIST = 'https://web-go-demo.herokuapp.com/__/list';
 
 export const store = observable({
-  /**
-   * @name observable
-   */
+  // observable
   dataset: [],
   searchData: { text: '' },
 
-  /**
-   * @name action
-   */
+  // action
   searchItem: action(() => {
     axios.get(API_LIST)
       .then(({ data }) => {
@@ -27,12 +23,10 @@ export const store = observable({
       });
   }),
 
-  /**
-   * @name computed
-   */
-   get total(): number {
-     return store.dataset.length;
-   }
+  // computed
+  get total(): number {
+    return store.dataset.length;
+  }
 });
 
 export const render = (): void => {
