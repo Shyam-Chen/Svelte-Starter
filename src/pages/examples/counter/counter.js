@@ -13,14 +13,8 @@ import template from './counter.html';
 import style from './counter.css';
 
 export const store = observable({
-  /**
-   * @name observable
-   */
   value: 0,
 
-  /**
-   * @name action
-   */
   increment: action(() => store.value++),
   decrement: action(() => store.value--),
   incrementAsync: action(() =>
@@ -42,33 +36,29 @@ export const store = observable({
       .subscribe(() => store.decrement())
   ),
 
-  /**
-   * @name computed
-   */
   get evenOrOdd(): string {
     return store.value % 2 === 0 ? 'even' : 'odd';
   }
 });
 
-export default (parent: string): void => {
-  page(`${parent}/counter`, (): void => {
-    autorun((): void => {
-      $('#app').innerHTML = _(template, { imports: { style } })({ store });
+export const render = (): void => {
+  $('#app').innerHTML = _(template, { imports: { style } })({ store });
 
-      const createClickEvent = (name, func) =>
-        $(`#${name}`).addEventListener('click', func);
+  const createClickEvent = (name, func) =>
+    $(`#${name}`).addEventListener('click', func);
 
-      createClickEvent('increment', store.increment);
-      createClickEvent('decrement', store.decrement);
-      createClickEvent('incrementAsync', store.incrementAsync);
-      createClickEvent('decrementAsync', store.decrementAsync);
-      createClickEvent('incrementIfEven', store.incrementIfEven);
-      createClickEvent('decrementIfOdd', store.decrementIfOdd);
+  createClickEvent('increment', store.increment);
+  createClickEvent('decrement', store.decrement);
+  createClickEvent('incrementAsync', store.incrementAsync);
+  createClickEvent('decrementAsync', store.decrementAsync);
+  createClickEvent('incrementIfEven', store.incrementIfEven);
+  createClickEvent('decrementIfOdd', store.decrementIfOdd);
 
-      [].forEach.call(
-        $$('.mdc-button'),
-        ripple => mdRipple.MDCRipple.attachTo(ripple)
-      );
-    });
-  });
+  [].forEach.call(
+    $$('.mdc-button'),
+    ripple => mdRipple.MDCRipple.attachTo(ripple)
+  );
 };
+
+export default (parent: string): void =>
+  page(`${parent}/counter`, (): void => autorun(render));
