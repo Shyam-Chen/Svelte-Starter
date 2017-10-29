@@ -1,10 +1,10 @@
-import crud, { INITIAL, store, component } from '../crud';
+import crud, { INITIAL, store, render } from '../crud';
 
 describe('CRUD', () => {
   it('should be defined', () => {
     expect(crud).toBeDefined();
     expect(INITIAL).toBeDefined();
     expect(store).toBeDefined();
-    expect(component).toBeDefined();
+    expect(render).toBeDefined();
   });
 });
