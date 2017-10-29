@@ -11,12 +11,10 @@ import { DIST_ROOT } from '../constants';
 import { APP_CONFIG } from '../config/rollup';
 import { CompileError } from '../utils';
 
+let cache;
 gulp.task('app', () => {
-  let cache;
-  APP_CONFIG.cache = cache;
-
-  return rollup(APP_CONFIG)
-    .on('bundle', bundle => cache = bundle)
+  return rollup({ ...APP_CONFIG, cache })
+    .on('bundle', bundle => { cache = bundle })
     .on('error', CompileError.handle)
     .pipe(source('app.js'))
     .pipe(buffer())
