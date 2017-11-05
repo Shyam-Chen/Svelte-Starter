@@ -13,6 +13,7 @@ export const store = observable({
   // observable
   dataset: [],
   searchData: { text: '' },
+  loading: false,
 
   // action
   searchItem: action(() => {
@@ -20,12 +21,18 @@ export const store = observable({
       .then(({ data }) => {
         store.dataset = data;
         store.searchData['text'] = '';
+      })
+      .then(() => {
+        store.loading = false;
       });
   }),
 
   // computed
   get total(): number {
     return store.dataset.length;
+  },
+  get progress(): boolean {
+    return store.loading ? '' : 'none';
   }
 });
 
@@ -34,6 +41,7 @@ export const render = (): void => {
 
   $('#search-button').onclick = () => {
     store.searchItem();
+    store.loading = true;
   };
 };
 

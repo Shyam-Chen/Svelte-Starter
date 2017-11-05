@@ -1,38 +1,40 @@
 <include src="./src/pages/examples/_includes/location.html" />
 
-<div style="margin: 1rem">
-  <div class="mdc-textfield" style="margin-right: .5rem">
-    <input type="text" id="search-primary" class="mdc-textfield__input">
-    <label class="mdc-textfield__label" for="primary">Primary</label>
+<div style="padding: 1rem">
+  <div>
+    <div class="mdc-textfield" style="margin-right: .5rem">
+      <input type="text" id="search-primary" class="mdc-textfield__input">
+      <label class="mdc-textfield__label" for="primary">Primary</label>
+    </div>
+    <div class="mdc-textfield" style="margin-right: .5rem">
+      <input type="text" id="search-accent" class="mdc-textfield__input">
+      <label class="mdc-textfield__label" for="accent">Accent</label>
+    </div>
+    <button type="button" name="button" id="search-button" class="mdc-button mdc-button--raised">Search</button>
   </div>
-  <div class="mdc-textfield" style="margin-right: .5rem">
-    <input type="text" id="search-accent" class="mdc-textfield__input">
-    <label class="mdc-textfield__label" for="accent">Accent</label>
-  </div>
-  <button type="button" name="button" id="search-button" class="mdc-button mdc-button--raised">Search</button>
-</div>
 
-<div style="margin: 1rem">
-  <div class="mdc-textfield" style="margin-right: .5rem">
-    <input type="text" id="add-primary" class="mdc-textfield__input">
-    <label class="mdc-textfield__label" for="primary">Primary</label>
+  <div>
+    <div class="mdc-textfield" style="margin-right: .5rem">
+      <input type="text" id="add-primary" class="mdc-textfield__input">
+      <label class="mdc-textfield__label" for="primary">Primary</label>
+    </div>
+    <div class="mdc-textfield" style="margin-right: .5rem">
+      <input type="text" id="add-accent" class="mdc-textfield__input">
+      <label class="mdc-textfield__label" for="accent">Accent</label>
+    </div>
+    <button type="button" name="button" id="add-button" class="mdc-button mdc-button--raised">Add</button>
   </div>
-  <div class="mdc-textfield" style="margin-right: .5rem">
-    <input type="text" id="add-accent" class="mdc-textfield__input">
-    <label class="mdc-textfield__label" for="accent">Accent</label>
-  </div>
-  <button type="button" name="button" id="add-button" class="mdc-button mdc-button--raised">Add</button>
-</div>
 
-<div class="mdc-elevation--z2" style="margin: .5rem 1rem; max-width: 22rem">
-  <div style="padding: 1rem 0 0 1rem">Total: ${store.total}</div>
-  <ul class="mdc-list mdc-list--dense">
-    <% [].forEach.call(store.dataset, function(item) { %>
-      <li class="mdc-list-item">
-        <span style="margin-right: .75rem"><%- item.primary %> - <%- item.accent %></span>
-        <button type="button" name="button" class="mdc-button mdc-theme--secondary" style="margin-right: .75rem">Delete</button>
-        <button type="button" name="button" class="mdc-button">Edit</button>
-      </li>
-    <% }); %>
-  </ul>
+  <div class="mdc-elevation--z2" style="margin: 1rem 0; max-width: 22rem">
+    <div style="padding: 1rem 0 0 1rem">Total: ${store.total}</div>
+    <ul class="mdc-list mdc-list--dense">
+      <% [].forEach.call(store.dataset, function(item) { %>
+        <li class="mdc-list-item">
+          <span style="margin-right: .75rem"><%- item.primary %> - <%- item.accent %></span>
+          <button type="button" name="button" class="mdc-button mdc-theme--secondary" style="margin-right: .75rem">Delete</button>
+          <button type="button" name="button" class="mdc-button">Edit</button>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
 </div>

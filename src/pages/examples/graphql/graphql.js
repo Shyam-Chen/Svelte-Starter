@@ -18,10 +18,12 @@ export const store = observable({
   // observable
   dataset: [],
   searchData: { text: '' },
+  loading: false,
 
   // action
   searchItem: action(() => {
-    client.query({
+    client
+      .query({
         query: gql`
           query List {
             list { _id text }
@@ -31,12 +33,18 @@ export const store = observable({
       .then(({ data }) => {
         store.dataset = data['list'];
         store.searchData['text'] = '';
+      })
+      .then(() => {
+        store.loading = false;
       });
   }),
 
   // computed
   get total(): number {
     return store.dataset.length;
+  },
+  get progress(): boolean {
+    return store.loading ? '' : 'none';
   }
 });
 
@@ -45,6 +53,7 @@ export const render = (): void => {
 
   $('#search-button').onclick = () => {
     store.searchItem();
+    store.loading = true;
   };
 };
 
