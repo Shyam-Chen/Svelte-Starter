@@ -1,27 +1,27 @@
 <section class="mdc-layout-grid">
   <div class="mdc-layout-grid__inner flexbox flexbox--center">
-    <h1 class="mdc-typography--display1 mdc-theme--primary">${ CONTACT }</h1>
+    <h1 class="mdc-typography--display1 mdc-theme--primary">${CONTACT}</h1>
   </div>
 
   <div class="mdc-layout-grid__inner flexbox flexbox--center">
-    <h3 class="mdc-typography--title">${ TITLE }</h3>
+    <h3 class="mdc-typography--title">${TITLE}</h3>
   </div>
 </section>
 
 <div class="flexbox flexbox--center">
-  <div class="mdc-card ${ style.card }">
-    <form class="flexbox--column ${ style.form }">
+  <div class="mdc-card ${style.card}">
+    <form class="flexbox--column ${style.form}">
       <div class="mdc-textfield">
-        <input id="name" class="mdc-textfield__input ${ style.input }" type="text" required>
-        <label class="mdc-textfield__label" for="name">${ NAME }</label>
+        <input id="name" class="mdc-textfield__input ${style.input}" type="text">
+        <label class="mdc-textfield__label" for="name">${NAME}</label>
       </div>
       <div class="mdc-textfield">
-        <input id="email" class="mdc-textfield__input ${ style.input }" type="text" required>
-        <label class="mdc-textfield__label" for="email">${ EMAIL }</label>
+        <input id="email" class="mdc-textfield__input ${style.input}" type="text">
+        <label class="mdc-textfield__label" for="email">${EMAIL}</label>
       </div>
       <div class="mdc-textfield mdc-textfield--textarea">
-        <textarea id="comment" class="mdc-textfield__input ${ style.input }" type="text" rows="5" required></textarea>
-        <label class="mdc-textfield__label" for="comment">${ COMMENT }</label>
+        <textarea id="comment" class="mdc-textfield__input ${style.input}" type="text" rows="5"></textarea>
+        <label class="mdc-textfield__label" for="comment">${COMMENT}</label>
       </div>
       <br>
       <button type="button" aria-label="Send" id="send-button" class="mdc-button mdc-button--raised">
