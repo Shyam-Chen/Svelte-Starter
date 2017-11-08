@@ -131,9 +131,9 @@ $ yarn run gulp -- <TASK_NAME> --prod --watch --serve
 
 ```html
 <!-- src/shared/new-component/new-component.html -->
-<div class="${ style.card }">
-  <div class="${ style.cardTitle }">${ title }</div>
-  <div class="${ style.cardContent }">${ content }</div>
+<div class="${style.card}">
+  <div class="${style.cardTitle}">${title}</div>
+  <div class="${style.cardContent}">${content}</div>
 </div>
 ```
 
@@ -247,7 +247,8 @@ const client = new ApolloClient({
   })
 });
 
-client.query({
+client
+  .query({
     query: gql`
       query List {
         list { _id text }
@@ -257,7 +258,8 @@ client.query({
   .then(res => console.log(res.data));
 
 let searchText = 'a';
-client.query({
+client
+  .query({
     query: gql`
       query List {
         list(text: "${searchText}") { _id text }
@@ -267,7 +269,8 @@ client.query({
   .then(res => console.log(res.data));
 
 let addText = 'Web GO';
-client.mutate({
+client
+  .mutate({
     mutation: gql`
       mutation List {
         addText(text: "${addText}") { _id text }
@@ -278,7 +281,8 @@ client.mutate({
 
 let editListId = '5943881e058f440012d4ae47';
 let updateText = 'Web GO';
-client.mutate({
+client
+  .mutate({
     mutation: gql`
       mutation List {
         updateText(_id: "${editListId}", text: "${updateText}") { _id text }
@@ -288,7 +292,8 @@ client.mutate({
   .then(res => console.log(res.data));
 
 let deleteListId = '594388af058f440012d4ae49';
-client.mutate({
+client
+  .mutate({
     mutation: gql`
       mutation List {
         deleteText(_id: "${deleteListId}") { _id text }
@@ -305,7 +310,7 @@ import io from 'socket.io-client';
 
 const socket = io('https://web-go-demo.herokuapp.com/');
 
-socket.on('connect', () => console.log('WS: Accept a connection.'));
+socket.on('connect', () => console.log('Accept a connection.'));
 
 socket.on('A', data => {
   console.log(data);
@@ -484,7 +489,8 @@ $ yarn deploy
 
 ```
 .
-├── public  -> client-side public
+├── flow-typed  -> module types
+├── functions  -> cloud functions
 ├── src
 │   ├── assets  -> audios, datas, fonts, images, videos
 │   ├── pages
