@@ -7,6 +7,8 @@
     <title>Web GO</title>
     <meta name="description" content="Professional templates for modern web development with ECMAScript, HTML5, Node.js, and Docker.">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Web app manifest -->
     <link rel="manifest" href="manifest.json">
 
     <!-- Disable tap highlight on IE -->
@@ -30,14 +32,19 @@
     <!-- Color the status bar on mobile devices -->
     <meta name="theme-color" content="#2F3BA2">
 
-    <base href="${ APP_BASE }">
-    ${ PRELOAD_POLYFILLS }
-    ${ PRELOAD_VENDOR }
-    ${ PRELOAD_APP }
+    <!-- Specifies the base URL for all relative URLs -->
+    <base href="${APP_BASE}">
+
+    <!-- Preloading content -->
+    ${PRELOAD_POLYFILLS}
+    ${PRELOAD_VENDOR}
+    ${PRELOAD_APP}
   </head>
   <body>
     <div id="app"></div>
     <noscript>Your browser does not support JavaScript!</noscript>
+
+    <!-- Google Analytics -->
     <script defer>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -46,9 +53,13 @@
       ga('create', 'UA-84381641-2', 'auto');
       ga('send', 'pageview');
     </script>
+
+    <!-- Error tracking -->
     <script defer src="https://cdn.ravenjs.com/3.19.1/raven.min.js" crossorigin="anonymous"></script>
-    ${ POLYFILLS_SCRIPT }
-    ${ VENDOR_SCRIPT }
-    ${ APP_SCRIPT }
+
+    <!-- Web app js files -->
+    ${POLYFILLS_SCRIPT}
+    ${VENDOR_SCRIPT}
+    ${APP_SCRIPT}
   </body>
 </html>
