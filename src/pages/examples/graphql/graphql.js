@@ -31,8 +31,8 @@ export const store = observable({
         `
       })
       .then(({ data }) => {
-        store.dataset = data['list'];
-        store.searchData['text'] = '';
+        store.dataset = data.list;
+        store.searchData.text = '';
       })
       .then(() => {
         store.loading = false;

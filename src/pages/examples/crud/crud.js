@@ -26,22 +26,16 @@ export const store = observable({
     store.dataset = [{ id, primary, accent }, ...store.dataset];
   }),
   searchItem: action((primary, accent) => {
-    const searchResult = [];
-
-    store.dataset = INITIAL.filter(item => {
-      const _primary = item.primary.toLowerCase().indexOf(primary.toLowerCase());
-      const _accent = item.accent.toLowerCase().indexOf(accent.toLowerCase());
-
-      if (_primary !== -1 && _accent !== -1) {
-        return searchResult.push(item);
-      }
-    });
+    store.dataset = INITIAL.filter(item =>
+      (item.primary.toLowerCase().indexOf(primary.toLowerCase()) !== -1) &&
+      (item.accent.toLowerCase().indexOf(accent.toLowerCase()) !== -1)
+    );
   }),
   editItem: action(() => {
-
+    // ...
   }),
   deleteItem: action(() => {
-
+    // ...
   }),
 
   // computed

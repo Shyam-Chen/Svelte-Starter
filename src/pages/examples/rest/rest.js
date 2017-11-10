@@ -20,7 +20,7 @@ export const store = observable({
     axios.get(API_LIST)
       .then(({ data }) => {
         store.dataset = data;
-        store.searchData['text'] = '';
+        store.searchData.text = '';
       })
       .then(() => {
         store.loading = false;

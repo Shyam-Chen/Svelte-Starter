@@ -54,7 +54,7 @@ export const admin = (): void => {
 
     firebase.auth()
       .onAuthStateChanged(user => {
-        let currentUID;
+        let currentUID = null;
 
         if (user && currentUID === user.uid) return;
 

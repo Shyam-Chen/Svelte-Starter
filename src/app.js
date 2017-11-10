@@ -10,7 +10,8 @@ import { load$ } from '~/utils';
  * @name initialize-app
  */
 
-Observable::forkJoin(
+Observable
+  ::forkJoin(
     load$('https://fonts.googleapis.com/icon?family=Material+Icons')
   )
   .subscribe(result => {
@@ -45,6 +46,7 @@ if (
           const { installing } = registration;
 
           installing.onstatechange = () => {
+            /* eslint-disable indent */
             switch (installing.state) {
               case 'installed':
                 registration.update();
@@ -54,7 +56,10 @@ if (
                 break;
               case 'redundant':
                 throw new Error('The installing service worker became redundant.');
+              default:
+                console.log('Service Worker');
             }
+            /* eslint-enable indent */
           };
         }
       };
