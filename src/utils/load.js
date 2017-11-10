@@ -9,8 +9,9 @@ import { Observable } from 'rxjs';
  */
 
 export const load$ = (url: string): Observable<string> => {
+  const xhr = new XMLHttpRequest();
+
   return new Observable(observer => {
-    const xhr = new XMLHttpRequest();
     xhr.open('GET', url);
     xhr.onload = () => {
       if (xhr.status === 200) {

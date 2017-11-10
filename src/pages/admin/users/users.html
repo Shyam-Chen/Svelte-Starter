@@ -8,8 +8,7 @@
             <label for="search-name" class="mdc-textfield__label">Search</label>
           </div>
 
-          <!-- not yet -->
-          <div class="mdc-textfield">
+          <!-- <div class="mdc-textfield">
             <input type="text" id="search-name" class="mdc-textfield__input">
             <label for="search-name" class="mdc-textfield__label">Name</label>
           </div>
@@ -22,9 +21,9 @@
           <div class="mdc-textfield">
             <input type="text" id="search-message" class="mdc-textfield__input">
             <label for="search-name" class="mdc-textfield__label">Message</label>
-          </div>
+          </div> -->
 
-          <button type="button" class="mdc-button mdc-button--accent">Search</button>
+          <!-- <button type="button" class="mdc-button mdc-button--accent">Search</button> -->
         </th>
       </tr>
       <tr>
@@ -35,7 +34,7 @@
       </tr>
     </thead>
     <tbody>
-      <% snapshot.forEach(function(childSnapshot) { %>
+      <% snapshot.forEach(function (childSnapshot) { %>
         <tr>
           <td><%- childSnapshot.val().name %></td>
           <td><%- childSnapshot.val().email %></td>
@@ -52,10 +51,9 @@
         </tr>
       <% }); %>
     </tbody>
-    <tfoot>
+    <!-- <tfoot>
       <tr>
         <td colspan="4">
-          <!-- not yet -->
           <span>Page: 1</span>
           <span>Rows per page: 10</span>
           <span>1 - 10 of 9453</span>
@@ -63,7 +61,7 @@
           <button type="button" class="mdc-button mdc-button--accent" id="next-page">Next</button>
         </td>
       </tr>
-    </tfoot>
+    </tfoot> -->
   </table>
 </div>
 

@@ -15,16 +15,12 @@ import { graphql } from './graphql';
 const pathname = '/examples';
 
 export const store = observable({
-  /**
-   * @name observable
-   */
+  // observable
   pathname: location.pathname,
 
-  /**
-   * @name computed
-   */
+  // computed
   get location(): boolean {
-    return store.pathname === pathname || store.pathname === `${pathname}/`;
+    return (store.pathname === pathname) || (store.pathname === `${pathname}/`);
   }
 });
 

@@ -19,8 +19,7 @@ export class Broadcast {
   }
 
   broadcast(key: any, data?: any): void {
-    this.eventBusinessLogic
-      .next({ key, data });
+    this.eventBusinessLogic.next({ key, data });
   }
 
   on<T>(key: any): Observable<T> {
