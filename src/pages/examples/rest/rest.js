@@ -19,7 +19,7 @@ export const store = observable({
   searchItem: action(() => {
     axios.get(API_LIST)
       .then(({ data }) => {
-        store.dataset = data;
+        store.dataset = data.reverse();
         store.searchData.text = '';
       })
       .then(() => {

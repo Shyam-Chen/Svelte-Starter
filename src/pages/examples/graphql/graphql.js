@@ -40,6 +40,9 @@ export const store = observable({
   }),
 
   // computed
+  get list() {
+    return store.dataset.reverse();
+  },
   get total(): number {
     return store.dataset.length;
   },
