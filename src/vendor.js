@@ -30,7 +30,6 @@ import '@material/typography/dist/mdc.typography.css';
  * @name js
  */
 import 'firebase/firebase-auth';
-import 'firebase/firebase-database';
+import 'firebase/firebase-firestore';
 // import 'firebase/firebase-storage';
-// import 'firebase/firebase-messaging';
 import 'page/page';

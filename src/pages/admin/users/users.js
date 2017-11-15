@@ -9,20 +9,10 @@ import template from './users.html';
 import style from './users.css';
 
 export const users = (page: string): void => {
-  // pagination
-  // firebase.database()
-  //   .ref('users')
-  //   .orderByKey()
-  //   .limitToFirst(5)
-  //   .startAt('-KqC5w9AgVqHFQLBKN4P')
-  //   .on('value', (snapshot): void => {
-  //     console.log(snapshot.val());
-  //     console.log(snapshot.val()['-KqC5w9AgVqHFQLBKN4P']);
-  //   });
-
-  firebase.database()
-    .ref('users')
-    .on('value', (snapshot): void => {
+  firebase.firestore()
+    .collection('users')
+    .get()
+    .then(snapshot => {
       $(`#users[data-${page}]`)
         .innerHTML = _(template, { imports: { style, snapshot } })();
 
@@ -35,11 +25,11 @@ export const users = (page: string): void => {
       const name = $('#edit-name');
       const email = $('#edit-email');
       const message = $('#edit-message');
-      const save = $('#edit-save');
+      // const save = $('#edit-save');
 
       const dialogDeleteEl = $('#dialog-delete');
       const dialogDelete = new mdDialog.MDCDialog(dialogDeleteEl);
-      const confirm = $('#delete-confirm');
+      // const confirm = $('#delete-confirm');
 
       search.onkeyup = (): void => {
         const input = $('#search');
@@ -83,11 +73,13 @@ export const users = (page: string): void => {
             email.value = editButton.dataset.editEmail;
             message.value = editButton.dataset.editMessage;
 
-            save.onclick = (): void => {
-              firebase.database()
-                .ref(`users/${editButton.dataset.edit}`)
-                .update({ name: name.value, email: email.value, message: message.value });
-            };
+            // save.onclick = (): void => {
+            //   firebase.firestore()
+            //     .collection('users')
+            //     .doc()
+            //     // .ref(`users/${editButton.dataset.edit}`)
+            //     .update({ name: name.value, email: email.value, message: message.value });
+            // };
           };
         }
       );
@@ -99,11 +91,11 @@ export const users = (page: string): void => {
             dialogDelete.show();
             bodyEl.style.overflowY = 'hidden';
 
-            confirm.onclick = (): void => {
-              firebase.database()
-                .ref(`users/${deleteButton.dataset.delete}`)
-                .remove();
-            };
+            // confirm.onclick = (): void => {
+            //   firebase.database()
+            //     .ref(`users/${deleteButton.dataset.delete}`)
+            //     .remove();
+            // };
           };
         }
       );

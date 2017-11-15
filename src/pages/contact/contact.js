@@ -31,9 +31,10 @@ const common = (language: string = 'en'): void => {
           const empty = [].filter.call(textfieldInputs, textfieldInput => textfieldInput.value === '');
 
           if (!empty.length) {
-            firebase.database()
-              .ref('users')
-              .push({ id: user.uid, name: name.value, email: email.value, message: comment.value });
+            firebase.firestore()
+              .collection('users')
+              .add({ id: user.uid, name: name.value, email: email.value, message: comment.value })
+              .catch(error => console.error(`Error adding document: ${error}`));
 
             [].forEach.call(
               textfieldInputs,

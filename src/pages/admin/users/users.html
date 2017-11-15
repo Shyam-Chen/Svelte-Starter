@@ -36,17 +36,19 @@
     <tbody>
       <% snapshot.forEach(function (childSnapshot) { %>
         <tr>
-          <td><%- childSnapshot.val().name %></td>
-          <td><%- childSnapshot.val().email %></td>
-          <td><%- childSnapshot.val().message %></td>
+          <td><%- childSnapshot.data().name %></td>
+          <td><%- childSnapshot.data().email %></td>
+          <td><%- childSnapshot.data().message %></td>
           <td>
-            <button type="button" class="mdc-button mdc-button--primary"
-              data-edit="<%- childSnapshot.key %>"
-              data-edit-name="<%- childSnapshot.val().name %>"
-              data-edit-email="<%- childSnapshot.val().email %>"
-              data-edit-message="<%- childSnapshot.val().message %>"
-            >Edit</button>
-            <button type="button" class="mdc-button mdc-button--primary" data-delete="<%- childSnapshot.key %>">Delete</button>
+            <button type="button" class="mdc-button"
+              data-edit="<%- childSnapshot.id %>"
+              data-edit-name="<%- childSnapshot.data().name %>"
+              data-edit-email="<%- childSnapshot.data().email %>"
+              data-edit-message="<%- childSnapshot.data().message %>"
+            >
+              Edit
+            </button>
+            <button type="button" class="mdc-button" data-delete="<%- childSnapshot.id %>">Delete</button>
           </td>
         </tr>
       <% }); %>
