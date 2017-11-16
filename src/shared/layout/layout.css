@@ -23,7 +23,7 @@
 }
 
 .link {
-  padding: 0 16px;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
 }
@@ -47,8 +47,8 @@
 }
 
 .footer {
-  margin: 48px 0 0;
-  padding: 16px 40px;
+  margin: 3rem 0 0;
+  padding: 1rem;
   color: #FFFFFF;
   background: #1A237E;
 }

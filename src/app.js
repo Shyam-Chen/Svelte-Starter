@@ -10,6 +10,7 @@ import { load$ } from '~/utils';
  * @name initialize-app
  */
 
+// fonts or icons
 Observable
   ::forkJoin(
     load$('https://fonts.googleapis.com/icon?family=Material+Icons')
@@ -25,6 +26,7 @@ Observable
     document.head.appendChild(style);
   });
 
+// firebase config
 firebase.initializeApp({
   apiKey: 'AIzaSyDBA0yVS0JuIqGaoN9nafvPFxPSVgmxwnw',
   authDomain: 'web-go-demo.firebaseapp.com',
@@ -34,6 +36,7 @@ firebase.initializeApp({
   messagingSenderId: '584431831746'
 });
 
+// service worker
 if (
   'serviceWorker' in navigator &&
   (window.location.protocol === 'https:' || window.location.hostname === 'localhost')
@@ -69,11 +72,7 @@ if (
     });
 }
 
-window.prerender = path => {
-  history.push(path);
-  return document.documentElement.outerHTML;
-};
-
+// bootstrap
 if (process.env.NODE_ENV === 'production') {
   Raven.config('https://70484e0dda784a1081081ca9c8237792@sentry.io/236866').install();
   Raven.context(() => pages());
