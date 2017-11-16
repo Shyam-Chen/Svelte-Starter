@@ -36,9 +36,9 @@
     <base href="${APP_BASE}">
 
     <!-- Preloading content -->
-    ${PRELOAD_POLYFILLS}
-    ${PRELOAD_VENDOR}
-    ${PRELOAD_APP}
+    <%= PRELOAD_POLYFILLS %>
+    <%= PRELOAD_VENDOR %>
+    <%= PRELOAD_APP %>
   </head>
   <body>
     <div id="app"></div>
@@ -58,8 +58,8 @@
     <script defer src="https://cdn.ravenjs.com/3.19.1/raven.min.js" crossorigin="anonymous"></script>
 
     <!-- Web app js files -->
-    ${POLYFILLS_SCRIPT}
-    ${VENDOR_SCRIPT}
-    ${APP_SCRIPT}
+    <%= POLYFILLS_SCRIPT %>
+    <%= VENDOR_SCRIPT %>
+    <%= APP_SCRIPT %>
   </body>
 </html>
