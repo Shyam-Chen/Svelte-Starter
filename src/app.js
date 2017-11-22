@@ -27,14 +27,7 @@ Observable
   });
 
 // firebase config
-firebase.initializeApp({
-  apiKey: 'AIzaSyDBA0yVS0JuIqGaoN9nafvPFxPSVgmxwnw',
-  authDomain: 'web-go-demo.firebaseapp.com',
-  databaseURL: 'https://web-go-demo.firebaseio.com',
-  projectId: 'web-go-demo',
-  storageBucket: 'web-go-demo.appspot.com',
-  messagingSenderId: '584431831746'
-});
+firebase.initializeApp(process.env.FIREBASE_CONFIG);
 
 // service worker
 if (
@@ -74,7 +67,7 @@ if (
 
 // bootstrap
 if (process.env.NODE_ENV === 'production') {
-  Raven.config('https://70484e0dda784a1081081ca9c8237792@sentry.io/236866').install();
+  Raven.config(process.env.SENTRY_URL).install();
   Raven.context(() => pages());
 } else {
   pages();

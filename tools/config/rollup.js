@@ -12,7 +12,7 @@ import uglify from 'rollup-plugin-uglify';
 import buble from 'rollup-plugin-buble';
 import cssnano from 'cssnano';
 
-import { SOURCE_ROOT } from '../constants';
+import { APP_ENV, SOURCE_ROOT } from '../constants';
 import { lodash } from '../utils';
 
 import RESHAPE_CONFIG from './reshape';
@@ -33,7 +33,11 @@ export const APP_CONFIG = {
     babel(BABEL_CONFIG_APP),
     resolve({ jsnext: true, browser: true }),
     commonjs({ include: 'node_modules/**' }),
-    replace({ 'process.env.NODE_ENV': JSON.stringify(env.prod ? 'production' : 'development') }),
+    replace({
+      'process.env.NODE_ENV': JSON.stringify(env.prod ? 'production' : 'development'),
+      'process.env.FIREBASE_CONFIG': JSON.stringify(APP_ENV.FIREBASE_CONFIG),
+      'process.env.SENTRY_URL': JSON.stringify(APP_ENV.SENTRY_URL)
+    }),
     (env.prod ? uglify() : noop())
   ]
 };
