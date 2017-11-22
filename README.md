@@ -111,15 +111,22 @@ $ docker-compose rm -fs
 
 ## Configuration
 
-1. Application configuration
+1. Environment
 
 ```js
+// tools/constants.js
 export const DEV_PORT = 8000;
 export const TEST_PORT = 8080;
 export const APP_BASE = '/';
 ```
 
-2. Environment configuration
+2. Manifest file
+
+```js
+// src/assets/datas/manifest.json
+```
+
+3. Command line
 
 ```bash
 $ yarn run gulp -- <TASK_NAME> --prod --watch --serve
