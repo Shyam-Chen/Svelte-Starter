@@ -4,13 +4,13 @@ import plumber from 'gulp-plumber';
 import template from 'gulp-template';
 import { stream } from 'browser-sync';
 
-import { APP_BASE, SOURCE_ROOT, DIST_ROOT } from '../constants';
+import { INDEX_ENV, SOURCE_ROOT, DIST_ROOT } from '../constants';
 
 gulp.task('entrypoint', () => {
   return gulp.src(join(SOURCE_ROOT, 'index.html'))
     .pipe(plumber())
     .pipe(template({
-      APP_BASE,
+      ...INDEX_ENV,
       PRELOAD_POLYFILLS: '<link rel="preload" href="polyfills.js" as="script">',
       PRELOAD_VENDOR: '<link rel="preload" href="vendor.js" as="script">',
       PRELOAD_APP: '<link rel="preload" href="app.js" as="script">',

@@ -9,11 +9,11 @@ gulp.task('build', done => {
       'chunkhash', 'sitemap', 'precache',
       done
     );
-  } else {
-    return runsequence(
-      ['copy', 'entrypoint', 'app', 'vendor', 'polyfills'],
-      'precache',
-      done
-    );
   }
+
+  return runsequence(
+    ['copy', 'entrypoint', 'app', 'vendor', 'polyfills'],
+    'precache',
+    done
+  );
 });

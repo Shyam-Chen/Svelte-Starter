@@ -1,14 +1,14 @@
 import { join } from 'path';
 
 export const SITE_URL = 'https://web-go-demo.firebaseapp.com/';
-export const APP_BASE = '/';
+
+export const INDEX_ENV = {
+  APP_BASE: '/',
+  GOOGLE_ANALYTICS: 'UA-84381641-2'
+};
 
 export const APP_ENV = {
-  TITLE: 'Web GO',
-  DESCRIPTION: '',
-  BASE: '/',
-  GOOGLE_ANALYTICS: 'UA-84381641-2',
-  firebase: {
+  FIREBASE_CONFIG: {
     apiKey: 'AIzaSyDBA0yVS0JuIqGaoN9nafvPFxPSVgmxwnw',
     authDomain: 'web-go-demo.firebaseapp.com',
     databaseURL: 'https://web-go-demo.firebaseio.com',
@@ -16,7 +16,7 @@ export const APP_ENV = {
     storageBucket: 'web-go-demo.appspot.com',
     messagingSenderId: '584431831746'
   },
-  sentry: 'https://70484e0dda784a1081081ca9c8237792@sentry.io/236866'
+  SENTRY_URL: 'https://70484e0dda784a1081081ca9c8237792@sentry.io/236866'
 };
 
 export const DEV_PORT = 8000;
