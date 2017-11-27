@@ -49,6 +49,7 @@ This seed repository provides the following features:
 ## Table of Contents
 
 * [Getting Started](#getting-started)
+* [Example List](#example-list)
 * [Dockerization](#dockerization)
 * [Configuration](#configuration)
 * [Using Libraries](#using-libraries)
@@ -88,6 +89,12 @@ $ yarn test
 $ git remote add upstream https://github.com/Shyam-Chen/Frontend-Starter-Kit.git
 $ git pull upstream master
 ```
+
+## Example List
+
+* [x] Service Workers (`sw-precache`)
+* [x] Preload Content
+* [ ] Pre-renders (`rendertron`)
 
 ## Dockerization
 
