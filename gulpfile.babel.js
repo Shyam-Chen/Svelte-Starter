@@ -12,7 +12,7 @@ gulp.task('default', done => {
     return runsequence('build', 'watch', done);
   } else if (!env.watch) {
     return runsequence('build', 'serve', done);
-  } else {
-    return runsequence('build', 'watch', 'serve', done);
   }
+
+  return runsequence('build', 'watch', 'serve', done);
 });

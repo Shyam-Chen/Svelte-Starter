@@ -92,6 +92,7 @@ $ git pull upstream master
 
 ## Example List
 
+* [ ] Lazy Loading
 * [x] Service Workers (`sw-precache`)
 * [x] Preload Content
 * [ ] Pre-renders (`rendertron`)
@@ -118,13 +119,10 @@ $ docker-compose rm -fs
 
 ## Configuration
 
-1. Environment
+1. Environment variables
 
 ```js
 // tools/constants.js
-export const DEV_PORT = 8000;
-export const TEST_PORT = 8080;
-export const APP_BASE = '/';
 ```
 
 2. Manifest file
