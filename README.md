@@ -95,7 +95,9 @@ $ git pull upstream master
 * [ ] Lazy Loading
 * [x] Service Workers (`sw-precache`)
 * [x] Preload Content
-* [ ] Pre-renders (`rendertron`)
+* [ ] Metadata
+* [ ] Prerenders static HTML (`rendertron`)
+* [ ] Server-side Rendering (Cloud Functions)
 
 ## Dockerization
 
