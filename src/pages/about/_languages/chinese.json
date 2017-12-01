@@ -35,12 +35,12 @@
       "CSS 靜態程式碼分析使用 StyleLint",
       "JavaScript 靜態程式碼分析使用 ESLint",
       "型別註釋使用 Flow",
-      "測試框架使用 Jasmine",
-      "單元測試執行器使用 Karma",
-      "端對端測試執行器使用 Protractor",
-      "後端單元測試使用 Jest",
+      "測試平台使用 Jest",
+      "端對端測試使用 Puppeteer",
       "自動重新啟動應用程式使用 Nodemon",
-      "保持應用程式持續運作使用 PM2"
+      "保持應用程式持續運作使用 PM2",
+      "錯誤追蹤使用 Sentry",
+      "API 工作流使用 Insomnia"
     ]
   },
   "ENVIRONMENTS": {
@@ -57,9 +57,9 @@
       "雲端 NoSQL 資料庫託管使用 mLab",
       "雲端 SQL 資料庫託管使用 ElephantSQL",
       "雲端內存快取託管使用 RedisLabs",
-      "錯誤追蹤使用 Sentry",
-      "API 工作流使用 Insomnia",
-      "反向代理和快取使用 Nginx",
+      "監控服務使用 UptimeRobot",
+      "日誌管理服務使用 Papertrail",
+      "HTTP/2 Web 伺服器使用 Caddy",
       "軟體容器使用 Docker",
       "持續整合使用 CircleCI"
     ]

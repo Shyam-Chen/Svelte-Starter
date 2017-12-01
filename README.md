@@ -32,9 +32,9 @@ This seed repository provides the following features:
 * [x] CSS static code analyzer with [**StyleLint**](https://stylelint.io/).
 * [x] JavaScript static code analyzer with [**ESLint**](https://eslint.org).
 * [x] Type annotations with [**Flow**](https://flow.org/).
-* [x] Testing framework with [**Jasmine**](https://jasmine.github.io/).
-* [x] Unit test with [**Karma**](https://karma-runner.github.io/).
-* [x] End-to-end test runner with [**Protractor**](http://www.protractortest.org/).
+* [ ] Testing platform with [**Jest**](http://facebook.github.io/jest/).
+* [ ] E2E testing with [**Puppeteer**](https://github.com/GoogleChrome/puppeteer).
+* [x] Error tracking with [**Sentry**](https://sentry.io/).
 * ---------- **Environments** ----------
 * [x] Client-side platform with [**HTML5**](https://platform.html5.org/).
 * [x] Operating system with [**Linux**](https://www.linux.org/).
@@ -42,7 +42,6 @@ This seed repository provides the following features:
 * [x] Version control with [**Git**](https://git-scm.com/).
 * [x] Code repository with [**GitHub**](https://github.com/).
 * [x] Fast and deterministic builds with [**Yarn**](https://yarnpkg.com/).
-* [x] Error tracking with [**Sentry**](https://sentry.io/).
 * [x] Software container with [**Docker**](https://www.docker.com/).
 * [x] Continuous integration with [**CircleCI**](https://circleci.com/).
 

@@ -43,7 +43,7 @@
     "firebase": "4.6.2",
     "immutable": "4.0.0-rc.9",
     "lodash-es": "4.17.4",
-    "material-components-web": "0.26.0",
+    "material-components-web": "0.24.0",
     "mobx": "3.3.2",
     "page": "1.7.1",
     "rxjs": "5.5.2",

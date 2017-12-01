@@ -35,12 +35,12 @@
       "CSS static code analyzer with StyleLint.",
       "JavaScript static code analyzer with ESLint.",
       "Type annotations with Flow.",
-      "Testing framework with Jasmine.",
-      "Unit test runner with Karma.",
-      "End-to-end test runner with Protractor.",
-      "Backend unit testing with Jest.",
+      "Testing platform with Jest.",
+      "E2E testing with Puppeteer.",
       "Automatically restart application with Nodemon.",
-      "Keeping application alive with PM2."
+      "Keeping application alive with PM2.",
+      "Error tracking with Sentry.",
+      "API workflow with Insomnia."
     ]
   },
   "ENVIRONMENTS": {
@@ -57,9 +57,9 @@
       "Cloud NoSQL database hosting with mLab.",
       "Cloud SQL database hosting with ElephantSQL.",
       "Cloud memory cache hosting with RedisLabs.",
-      "Error tracking with Sentry.",
-      "API workflow with Insomnia.",
-      "Reverse proxy and caching with Nginx.",
+      "Monitoring service with UptimeRobot.",
+      "Log management service with Papertrail.",
+      "HTTP/2 web server with Caddy.",
       "Software container with Docker.",
       "Continuous integration with CircleCI."
     ]
