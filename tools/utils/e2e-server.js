@@ -10,9 +10,9 @@ export class Protractor {
     app.use(express.static(root));
     app.use(fallback('index.html', { root }));
 
-    return new Promise(resolve => {
+    return new Promise(fulfill => {
       const server = app.listen(port, () => {
-        resolve(server);
+        fulfill(server);
       });
     });
   }

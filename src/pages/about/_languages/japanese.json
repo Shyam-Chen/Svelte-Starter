@@ -25,8 +25,7 @@
   "TOOLS": {
     "TITLE": "ツール",
     "CONTENT": [
-      "Gulp を使用したシステムを構築",
-      "Rollup を使用したモジュールバンドラ",
+      "Webpack を使用したモジュールバンドラ",
       "Reshape を使用した HTML 変換",
       "PostCSS を使用した今後の CSS 機能",
       "Babel を使用した次世代 JavaScript",
@@ -37,6 +36,7 @@
       "Flow を使用したタイプ注釈",
       "Jest を使用したテストプラットフォーム",
       "Puppeteer を使用したエンドツーエンドのテスト",
+      "Codecov を使用したテストカバレッジの統合 with Codecov",
       "Nodemon を使用したアプリケーションの自動再起動",
       "PM2 を使用したアプリケーションを生かし続ける",
       "Sentry を使用したエラートラッキング",

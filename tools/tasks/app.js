@@ -11,7 +11,8 @@ import { DIST_ROOT } from '../constants';
 import { APP_CONFIG } from '../config/rollup';
 import { CompileError } from '../utils';
 
-let cache;
+let cache = null;
+
 gulp.task('app', () => {
   return rollup({ ...APP_CONFIG, cache })
     .on('bundle', bundle => { cache = bundle })

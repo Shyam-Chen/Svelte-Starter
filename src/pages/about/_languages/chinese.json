@@ -25,8 +25,7 @@
   "TOOLS": {
     "TITLE": "工具",
     "CONTENT": [
-      "建置系統使用 Gulp",
-      "模組捆綁器使用 Rollup",
+      "模組捆綁器使用 Webpack",
       "HTML 變形使用 Reshape",
       "未來的 CSS 特性使用 PostCSS",
       "下一代的 JavaScript 使用 Babel",
@@ -37,6 +36,7 @@
       "型別註釋使用 Flow",
       "測試平台使用 Jest",
       "端對端測試使用 Puppeteer",
+      "測試覆蓋率整合使用 Codecov",
       "自動重新啟動應用程式使用 Nodemon",
       "保持應用程式持續運作使用 PM2",
       "錯誤追蹤使用 Sentry",
