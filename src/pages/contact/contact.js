@@ -1,6 +1,6 @@
-import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
-import { __moduleExports as mdTextfield } from '@material/textfield/dist/mdc.textfield';
-import { __moduleExports as mdSnackbar } from '@material/snackbar/dist/mdc.snackbar';
+import { MDCRipple } from '@material/ripple';
+import { MDCTextField } from '@material/textfield';
+import { MDCSnackbar } from '@material/snackbar';
 import { template as _, noop } from 'lodash';
 
 import { layout } from '~/shared/layout';
@@ -21,7 +21,7 @@ const common = (language: string = 'en'): void => {
   const sendButton = $('#send-button');
 
   const sendToastEl = $('#send-toast');
-  const sendToast = new mdSnackbar.MDCSnackbar(sendToastEl);
+  const sendToast = new MDCSnackbar(sendToastEl);
 
   firebase.auth()
     .onAuthStateChanged((user: { uid: string }): void => {
@@ -62,12 +62,12 @@ const common = (language: string = 'en'): void => {
 
   [].forEach.call(
     $$('.mdc-button'),
-    button => mdRipple.MDCRipple.attachTo(button)
+    button => MDCRipple.attachTo(button)
   );
 
   [].forEach.call(
-    $$('.mdc-textfield'),
-    textfield => mdTextfield.MDCTextfield.attachTo(textfield)
+    $$('.mdc-text-field'),
+    textfield => MDCTextField.attachTo(textfield)
   );
 };
 

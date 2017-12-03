@@ -1,6 +1,6 @@
-import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
-import { __moduleExports as mdTextfield } from '@material/textfield/dist/mdc.textfield';
-import { __moduleExports as mdSnackbar } from '@material/snackbar/dist/mdc.snackbar';
+import { MDCRipple } from '@material/ripple';
+import { MDCTextField } from '@material/textfield';
+import { MDCSnackbar } from '@material/snackbar';
 import { template as _ } from 'lodash';
 
 import { $, $$ } from '~/utils';
@@ -22,20 +22,20 @@ export const admin = (): void => {
     const signInContent = $$('[data-sign-in]');
 
     const loginToastEl = $('#login-toast');
-    const loginToast = new mdSnackbar.MDCSnackbar(loginToastEl);
+    const loginToast = new MDCSnackbar(loginToastEl);
 
     adminSignIn.onclick = (): void => {
       firebase.auth()
         .signInWithEmailAndPassword(adminEmail.value, adminPassword.value)
         .then(() => {
           [].forEach.call(
-            $$('.mdc-textfield__input'),
+            $$('.mdc-text-field__input'),
             textfieldInput => textfieldInput.value = ''
           );
 
           [].forEach.call(
-            $$('.mdc-textfield__label'),
-            textfieldLabel => textfieldLabel.classList.remove('mdc-textfield__label--float-above')
+            $$('.mdc-text-field__label'),
+            textfieldLabel => textfieldLabel.classList.remove('mdc-text-field__label--float-above')
           );
         })
         .catch(error => {
@@ -74,12 +74,12 @@ export const admin = (): void => {
 
     [].forEach.call(
       $$('.mdc-button'),
-      ripple => mdRipple.MDCRipple.attachTo(ripple)
+      ripple => MDCRipple.attachTo(ripple)
     );
 
     [].forEach.call(
-      $$('.mdc-textfield'),
-      textfield => mdTextfield.MDCTextfield.attachTo(textfield)
+      $$('.mdc-text-field'),
+      textfield => MDCTextField.attachTo(textfield)
     );
   });
 };

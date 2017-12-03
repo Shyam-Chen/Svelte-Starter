@@ -1,14 +1,12 @@
-import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
-import { __moduleExports as mdDialog } from '@material/dialog/dist/mdc.dialog';
-import { __moduleExports as mdTextfield } from '@material/textfield/dist/mdc.textfield';
+import { MDCRipple } from '@material/ripple';
+import { MDCDialog } from '@material/dialog';
+import { MDCTextField } from '@material/textfield';
 import { template as _ } from 'lodash';
 
 import { $, $$ } from '~/utils';
 
 import template from './users.html';
 import style from './users.css';
-
-// TODO: Integration with MobX
 
 export const users = (page: string): void => {
   firebase.firestore()
@@ -23,14 +21,14 @@ export const users = (page: string): void => {
       const search = $('#search');
 
       const dialogEditEl = $('#dialog-edit');
-      const dialogEdit = new mdDialog.MDCDialog(dialogEditEl);
+      const dialogEdit = new MDCDialog(dialogEditEl);
       const name = $('#edit-name');
       const email = $('#edit-email');
       const message = $('#edit-message');
       const save = $('#edit-save');
 
       const dialogDeleteEl = $('#dialog-delete');
-      const dialogDelete = new mdDialog.MDCDialog(dialogDeleteEl);
+      const dialogDelete = new MDCDialog(dialogDeleteEl);
       const confirm = $('#delete-confirm');
 
       search.onkeyup = (): void => {
@@ -107,12 +105,12 @@ export const users = (page: string): void => {
 
       [].forEach.call(
         $$('.mdc-button'),
-        ripple => mdRipple.MDCRipple.attachTo(ripple)
+        ripple => MDCRipple.attachTo(ripple)
       );
 
       [].forEach.call(
-        $$('.mdc-textfield'),
-        textfield => mdTextfield.MDCTextfield.attachTo(textfield)
+        $$('.mdc-text-field'),
+        textfield => MDCTextField.attachTo(textfield)
       );
     });
 };

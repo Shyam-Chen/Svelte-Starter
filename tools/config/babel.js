@@ -51,7 +51,10 @@ export const BABEL_CONFIG_APP = {
       }
     ]
   ],
-  exclude: 'node_modules/**'
+  include: [
+    'node_modules/@material/**',
+    join(SOURCE_ROOT, '**')
+  ]
 };
 
 export const BABEL_CONFIG_TEST = Object.assign(
@@ -59,7 +62,7 @@ export const BABEL_CONFIG_TEST = Object.assign(
   BABEL_CONFIG_APP,
   {
     plugins: [
-      ...BABEL_CONFIG_APP['plugins'],
+      ...BABEL_CONFIG_APP.plugins,
       [
         'istanbul', {
           'exclude': [

@@ -1,5 +1,5 @@
-import { __moduleExports as mdDrawer } from '@material/drawer/dist/mdc.drawer';
-import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
+import { MDCTemporaryDrawer } from '@material/drawer';
+import { MDCRipple } from '@material/ripple';
 import { template as _, noop } from 'lodash';
 
 import logo from '~/assets/images/touch/ms-touch-icon-144x144-precomposed.png';
@@ -36,7 +36,7 @@ export const layout = (content: string, page: string, language: string = 'en'): 
   const drawerDesktopEl = $('.mdc-permanent-drawer[data-desktop]');
   const drawerMobileEl = $('.mdc-temporary-drawer[data-mobile]');
 
-  const drawerMobile = new mdDrawer.MDCTemporaryDrawer(drawerMobileEl);
+  const drawerMobile = new MDCTemporaryDrawer(drawerMobileEl);
 
   $('#menu').onclick = (): void => {
     if (window.innerWidth <= 599) {
@@ -52,7 +52,7 @@ export const layout = (content: string, page: string, language: string = 'en'): 
 
   [].forEach.call(
     $$('a.mdc-list-item'),
-    ripple => mdRipple.MDCRipple.attachTo(ripple)
+    ripple => MDCRipple.attachTo(ripple)
   );
 
   $('#content').innerHTML = content;

@@ -1,6 +1,6 @@
 // @flow
 
-import { __moduleExports as mdRipple } from '@material/ripple/dist/mdc.ripple';
+import { MDCRipple } from '@material/ripple';
 import { template as _ } from 'lodash';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs/observable';
@@ -59,7 +59,7 @@ export const render = (): void => {
 
   [].forEach.call(
     $$('.mdc-button'),
-    ripple => mdRipple.MDCRipple.attachTo(ripple)
+    ripple => MDCRipple.attachTo(ripple)
   );
 };
 

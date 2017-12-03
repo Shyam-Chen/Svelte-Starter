@@ -1,6 +1,6 @@
 // @flow
 
-import { __moduleExports as mdTextfield } from '@material/textfield/dist/mdc.textfield';
+import { MDCTextField } from '@material/textfield';
 import { template as _ } from 'lodash';
 import { observable, action, autorun } from 'mobx';
 
@@ -64,8 +64,8 @@ export const render = (): void => {
   };
 
   [].forEach.call(
-    $$('.mdc-textfield'),
-    textfield => mdTextfield.MDCTextfield.attachTo(textfield)
+    $$('.mdc-text-field'),
+    textfield => MDCTextField.attachTo(textfield)
   );
 };
 
