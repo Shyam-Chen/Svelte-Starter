@@ -1,6 +1,6 @@
 import puppeteer from 'puppeteer';
 
-import { TEST_ENV, TEST_URL } from './env';
+import { TEST_ENV, TEST_URL, CONFIG } from './env';
 
 describe('About', () => {
   let server = null;
@@ -10,19 +10,10 @@ describe('About', () => {
   TEST_ENV === 'CI' && (server = require('./server'));
 
   beforeAll(async () => {
-    const width = 1280;
-    const height = 800;
-
-    const launch = {
-      headless: false,
-      slowMo: 80,
-      args: [`--window-size=${width},${height}`, '--no-sandbox']
-    };
-
     TEST_ENV === 'CI' && await server;
-    browser = await puppeteer.launch(launch);
+    browser = await puppeteer.launch(CONFIG.LAUNCG);
     page = await browser.newPage();
-    await page.setViewport({ width, height });
+    await page.setViewport(CONFIG.VIEWPORT);
   });
 
   afterAll(async () => {
