@@ -80,7 +80,7 @@
     // no-sequences
     // no-throw-literal
     "no-unmodified-loop-condition": "error",
-    "no-unused-expressions": ["error", { "allowTernary": true }],
+    // "no-unused-expressions": ["error", { "allowTernary": true }],
     "no-useless-call": "error",
     "no-useless-concat": "error",
     "no-useless-return": "error",

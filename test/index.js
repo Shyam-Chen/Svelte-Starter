@@ -8,6 +8,6 @@ const root = join(__dirname, '../public');
 app.use(express.static(root));
 app.use(history('index.html', { root }));
 
-const server = app.listen(process.env.PORT || 3000);
+const server = app.listen(8000);
 
 export default server;

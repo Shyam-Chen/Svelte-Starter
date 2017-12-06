@@ -39,6 +39,10 @@ jobs:
             docker-compose exec app yarn e2e
 
       - run:
+          name: End-to-end testing
+          command: docker-compose exec app yarn jest
+
+      - run:
           name: Test coverage integration
           command: docker-compose exec app yarn codecov -- --token=${CODECOV_TOKEN}
 
