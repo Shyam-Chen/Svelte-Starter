@@ -1,11 +1,13 @@
 import puppeteer from 'puppeteer';
 
+import { TEST_ENV, TEST_URL } from './env';
+
 describe('Home', () => {
   let server = null;
   let browser = null;
   let page = null;
 
-  process.env.TEST === 'CI' && (server = require('./'));
+  TEST_ENV === 'CI' && (server = require('./server'));
 
   beforeAll(async () => {
     const width = 1280;
@@ -17,7 +19,7 @@ describe('Home', () => {
       args: [`--window-size=${width},${height}`, '--no-sandbox']
     };
 
-    process.env.TEST === 'CI' && await server;
+    TEST_ENV === 'CI' && await server;
     browser = await puppeteer.launch(launch);
     page = await browser.newPage();
     await page.setViewport({ width, height });
@@ -25,11 +27,11 @@ describe('Home', () => {
 
   afterAll(async () => {
     await browser.close();
-    process.env.TEST === 'CI' && await server.close();
+    TEST_ENV === 'CI' && await server.close();
   });
 
   beforeEach(async () => {
-    await page.goto('http://localhost:8000');
+    await page.goto(TEST_URL);
   });
 
   it('should display title', async () => {

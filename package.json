@@ -20,7 +20,7 @@
     "webdriver": "gulp webdriver",
     "predev": "rimraf public",
     "preprod": "rimraf public",
-    "jest": "jest"
+    "jest": "jest --forceExit"
   },
   "repository": {
     "type": "git",
