@@ -91,12 +91,36 @@ $ git pull upstream master
 
 ## Example List
 
+* [x] Counter
+  * [x] State Management (`mobx`)
+  * [x] Asynchronous
+    * [x] Thunk
+    * [x] Observable (`rxjs`)
+* [ ] CRUD
+  * [x] Static
+  * [ ] REST (`axios`)
+  * [ ] GraphQL (`apollo-client`)
+* [ ] Form Controls
+  * [ ] Template-driven
+  * [ ] Reactive Forms (`rxjs`)
+* [ ] Data Table
+  * [ ] Static
+  * [ ] REST (`axios`)
+  * [ ] GraphQL (`apollo-client`)
+* [ ] Authorization
+  * [ ] REST (`axios`)
+  * [ ] GraphQL (`apollo-client`)
+* [x] Internationalization
+* [ ] Data Chart
+  * [ ] SVG & Canvas (`d3`)
+  * [ ] WebGL (`three`)
+* [ ] WebSockets (`socket.io-client`)
+* [x] Preload Content
 * [ ] Lazy Loading
 * [x] Service Workers (`sw-precache`)
-* [x] Preload Content
 * [ ] Metadata
 * [ ] Prerenders static HTML (`rendertron`)
-* [ ] Server-side Rendering (Cloud Functions)
+* [ ] Server-side Rendering (`firebase-functions`)
 
 ## Dockerization
 
