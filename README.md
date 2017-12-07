@@ -32,7 +32,7 @@ This seed repository provides the following features:
 * [x] JavaScript static code analyzer with [**ESLint**](https://eslint.org).
 * [x] Type annotations with [**Flow**](https://flow.org/).
 * [ ] Testing platform with [**Jest**](http://facebook.github.io/jest/).
-* [ ] E2E testing with [**Puppeteer**](https://github.com/GoogleChrome/puppeteer).
+* [x] E2E testing with [**Puppeteer**](https://github.com/GoogleChrome/puppeteer).
 * [x] Test coverage integration with [**Codecov**](https://codecov.io/).
 * [x] Error tracking with [**Sentry**](https://sentry.io/).
 * ---------- **Environments** ----------
@@ -115,8 +115,12 @@ $ git pull upstream master
   * [ ] SVG & Canvas (`d3`)
   * [ ] WebGL (`three`)
 * [ ] WebSockets (`socket.io-client`)
+* [ ] Hot Module Replacement
+* [x] Tree Shaking
 * [x] Preload Content
+* [ ] Code Splitting
 * [ ] Lazy Loading
+* [x] Caching
 * [x] Service Workers (`sw-precache`)
 * [ ] Metadata
 * [ ] Prerenders static HTML (`rendertron`)
