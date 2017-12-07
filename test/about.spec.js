@@ -1,13 +1,11 @@
 import puppeteer from 'puppeteer';
 
 import { TEST_ENV, TEST_URL, CONFIG } from './env';
+import server from './server';
 
 describe('About', () => {
-  let server = null;
   let browser = null;
   let page = null;
-
-  TEST_ENV === 'CI' && (server = require('./server'));
 
   beforeAll(async () => {
     TEST_ENV === 'CI' && await server;
