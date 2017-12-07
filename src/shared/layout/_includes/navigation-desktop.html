@@ -1,14 +1,17 @@
-<nav class="mdc-permanent-drawer ${style.drawer}" data-desktop>
+<nav class="mdc-permanent-drawer <%= style.drawer %>" data-desktop>
   <div class="mdc-list-group">
     <nav class="mdc-list">
-      <a class="mdc-list-item" href="${LINK[0][0]}">
-        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">home</i>${LINK[0][1]}
+      <a class="mdc-list-item" href="<%= LINK[0][0] %>">
+        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">home</i>
+        <%= LINK[0][1] %>
       </a>
-      <a class="mdc-list-item" href="${LINK[1][0]}">
-        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">info</i>${LINK[1][1]}
+      <a class="mdc-list-item" href="<%= LINK[1][0] %>">
+        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">info</i>
+        <%= LINK[1][1] %>
       </a>
-      <a class="mdc-list-item" href="${LINK[2][0]}">
-        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">contacts</i>${LINK[2][1]}
+      <a class="mdc-list-item" href="<%= LINK[2][0] %>">
+        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">contacts</i>
+        <%= LINK[2][1] %>
       </a>
     </nav>
 

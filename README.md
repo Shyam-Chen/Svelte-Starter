@@ -112,7 +112,8 @@ $ git pull upstream master
   * [ ] GraphQL (`apollo-client`)
 * [x] Internationalization
 * [ ] Data Chart
-  * [ ] SVG & Canvas (`d3`)
+  * [ ] SVG (`d3`)
+  * [ ] Canvas (`d3`)
   * [ ] WebGL (`three`)
 * [ ] WebSockets (`socket.io-client`)
 * [ ] Hot Module Replacement

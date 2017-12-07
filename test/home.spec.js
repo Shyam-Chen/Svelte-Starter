@@ -1,7 +1,6 @@
 import puppeteer from 'puppeteer';
 
 import { TEST_ENV, TEST_URL, CONFIG } from './env';
-
 import server from './server';
 
 describe('Home', () => {
