@@ -1,4 +1,4 @@
-import { contact } from '../contact';
+import { contact } from './contact';
 
 describe('Contact', () => {
   it('should be defined', () => {

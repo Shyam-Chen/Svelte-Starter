@@ -3,10 +3,10 @@ import { template as _ } from 'lodash';
 import { layout } from '~/shared/layout';
 import logo from '~/assets/images/logo.png';
 
-import { home } from '../home';
-import template from '../home.html';
-import style from '../home.css';
-import english from '../_languages/english.json';
+import { home } from './home';
+import template from './home.html';
+import style from './home.css';
+import english from './_languages/english.json';
 
 describe('Home', () => {
   it('should be defined', () => {

@@ -1,8 +1,8 @@
 import { template as _ } from 'lodash';
 
-import notfound from '../not-found';
-import template from '../not-found.html';
-import style from '../not-found.css';
+import notfound from './not-found';
+import template from './not-found.html';
+import style from './not-found.css';
 
 describe('Not Found', () => {
   it('should be defined', () => {

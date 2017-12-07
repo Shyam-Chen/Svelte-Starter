@@ -9,7 +9,6 @@
     "prod": "gulp --prod",
     "lint": "gulp lint",
     "unit": "gulp unit",
-    "e2e": "gulp e2e",
     "reset": "git reset --hard HEAD && git clean -df",
     "reinstall": "yarn cache clean && git clean -dfx -e '.*' && yarn install",
     "deploy": "firebase deploy",
@@ -17,10 +16,10 @@
     "flow": "flow",
     "typed": "flow-typed install",
     "codecov": "codecov",
-    "webdriver": "gulp webdriver",
     "predev": "rimraf public",
     "preprod": "rimraf public",
-    "jest": "jest --forceExit"
+    "go": "jest \"src/.*\\.js$\" --coverage",
+    "e2e": "jest \"test/.*\\.js$\" --forceExit"
   },
   "repository": {
     "type": "git",
@@ -134,11 +133,5 @@
     "sw-toolbox": "3.6.0",
     "vinyl-buffer": "1.0.0",
     "vinyl-source-stream": "1.1.0"
-  },
-  "jest": {
-    "testPathIgnorePatterns": [
-      "<rootDir>/node_modules/",
-      "<rootDir>/src/"
-    ]
   }
 }

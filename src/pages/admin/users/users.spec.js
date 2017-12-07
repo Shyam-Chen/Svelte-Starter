@@ -1,4 +1,4 @@
-import { users } from '../users';
+import { users } from './users';
 
 describe('Users', () => {
   it('should be defined', () => {

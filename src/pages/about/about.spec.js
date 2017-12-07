@@ -2,12 +2,12 @@ import { template as _ } from 'lodash';
 
 import { layout } from '~/shared/layout';
 
-import about from '../about';
-import template from '../about.html';
-import style from '../about.css';
-import english from '../_languages/english.json';
-import chinese from '../_languages/chinese.json';
-import japanese from '../_languages/japanese.json';
+import about from './about';
+import template from './about.html';
+import style from './about.css';
+import english from './_languages/english.json';
+import chinese from './_languages/chinese.json';
+import japanese from './_languages/japanese.json';
 
 describe('About', () => {
   it('should be defined', () => {
