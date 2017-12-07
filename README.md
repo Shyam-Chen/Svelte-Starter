@@ -127,6 +127,11 @@ $ git pull upstream master
 * [ ] Prerenders static HTML (`rendertron`)
 * [ ] Server-side Rendering (`firebase-functions`)
 
+Advanced:
+
+* Cordova - Android, iOS, & Windows
+* Electron - Windows, macOS, & Linux
+
 ## Dockerization
 
 1. Build and run the Container
