@@ -48,7 +48,7 @@ This seed repository provides the following features:
 ## Table of Contents
 
 * [Getting Started](#getting-started)
-* [Example List](#example-list)
+* [Practical Examples](#practical-examples)
 * [Dockerization](#dockerization)
 * [Configuration](#configuration)
 * [Using Libraries](#using-libraries)
@@ -89,7 +89,7 @@ $ git remote add upstream https://github.com/Shyam-Chen/Frontend-Starter-Kit.git
 $ git pull upstream master
 ```
 
-## Example List
+## Practical Examples
 
 * [x] Counter
   * [x] State Management (`mobx`)
@@ -107,25 +107,19 @@ $ git pull upstream master
   * [ ] Static
   * [ ] REST (`axios`)
   * [ ] GraphQL (`apollo-client`)
+* [x] Globalization
+  * [x] Internationalization
+  * [x] Localization
 * [ ] Authorization
   * [ ] REST (`axios`)
   * [ ] GraphQL (`apollo-client`)
-* [x] Internationalization
 * [ ] Data Chart
   * [ ] SVG (`d3`)
   * [ ] Canvas (`d3`)
   * [ ] WebGL (`three`)
-* [ ] WebSockets (`socket.io-client`)
-* [ ] Hot Module Replacement
-* [x] Tree Shaking
-* [x] Preload Content
-* [ ] Code Splitting
-* [ ] Lazy Loading
-* [x] Caching
-* [x] Service Workers (`sw-precache`)
-* [ ] Metadata
-* [ ] Prerenders static HTML (`rendertron`)
-* [ ] Server-side Rendering (`firebase-functions`)
+* [ ] Realtime
+  * [ ] WebSockets (`socket.io-client`)
+  * [ ] GraphQL Subscriptions  (`subscriptions-transport-ws`)
 
 Advanced:
 
