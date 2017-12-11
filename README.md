@@ -40,7 +40,6 @@ This seed repository provides the following features:
 * [x] Operating system with [**Linux**](https://www.linux.org/).
 * [x] Text editor with [**Atom**](https://atom.io/).
 * [x] Version control with [**Git**](https://git-scm.com/).
-* [x] Code repository with [**GitHub**](https://github.com/).
 * [x] Fast and deterministic builds with [**Yarn**](https://yarnpkg.com/).
 * [x] Software container with [**Docker**](https://www.docker.com/).
 * [x] Continuous integration with [**CircleCI**](https://circleci.com/).
@@ -120,11 +119,6 @@ $ git pull upstream master
 * [ ] Realtime
   * [ ] WebSockets (`socket.io-client`)
   * [ ] GraphQL Subscriptions  (`subscriptions-transport-ws`)
-
-Advanced:
-
-* Cordova - Android, iOS, & Windows
-* Electron - Windows, macOS, & Linux
 
 ## Dockerization
 

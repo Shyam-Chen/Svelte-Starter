@@ -51,15 +51,15 @@
       "作業系統使用 Linux",
       "文字編輯器使用 Atom",
       "版本控制使用 Git",
-      "程式碼儲存庫使用 GitHub.",
       "快速且確定性的建置使用 Yarn",
       "雲端應用程式託管使用 Heroku",
       "雲端 NoSQL 資料庫託管使用 mLab",
+      "雲端儲存‎託管使用 Filestack",
       "雲端 SQL 資料庫託管使用 ElephantSQL",
       "雲端內存快取託管使用 RedisLabs",
       "監控服務使用 UptimeRobot",
       "日誌管理服務使用 Papertrail",
-      "HTTP/2 Web 伺服器使用 Caddy",
+      "效能和安全性使用 Cloudflare",
       "軟體容器使用 Docker",
       "持續整合使用 CircleCI"
     ]
