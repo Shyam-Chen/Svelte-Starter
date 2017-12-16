@@ -65,7 +65,9 @@ if (
     });
 }
 
-// bootstrap
+/**
+ * @name bootstrap-app
+ */
 if (process.env.NODE_ENV === 'production') {
   Raven.config(process.env.SENTRY_URL).install();
   Raven.context(() => pages());
