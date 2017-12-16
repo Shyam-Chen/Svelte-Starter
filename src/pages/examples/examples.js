@@ -7,10 +7,12 @@ import { $ } from '~/utils';
 
 import template from './examples.html';
 import style from './examples.css';
-import { counter } from './counter';
+
 import { crud } from './crud';
 import { rest } from './rest';
 import { graphql } from './graphql';
+
+import { playground } from './playground';
 
 const pathname = '/examples';
 
@@ -27,12 +29,13 @@ export const store = observable({
 export const examples = (): void => {
   page(pathname, (): void => {
     autorun((): void => {
-      $('#app').innerHTML = _(template, { imports: { style } })({ store });
+      $('#app').innerHTML = _(template, { imports: { style } })({ store, pathname });
     });
   });
 
-  counter(pathname);
   crud(pathname);
   rest(pathname);
   graphql(pathname);
+
+  playground(pathname);
 };

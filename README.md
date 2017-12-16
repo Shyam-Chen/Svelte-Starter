@@ -90,12 +90,7 @@ $ git pull upstream master
 
 ## Practical Examples
 
-* [x] Counter
-  * [x] State Management (`mobx`)
-  * [x] Asynchronous
-    * [x] Thunk
-    * [x] Observable (`rxjs`)
-* [ ] CRUD
+* [ ] CRUD Operations
   * [x] Static
   * [ ] REST (`axios`)
   * [ ] GraphQL (`apollo-client`)
