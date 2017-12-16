@@ -1,4 +1,4 @@
-import crud, { INITIAL, store, render } from '../crud';
+import crud, { INITIAL, store, render } from './crud';
 
 describe('CRUD', () => {
   it('should be defined', () => {

@@ -6,7 +6,7 @@
     "CONTENT": [
       "User interface components with Material.",
       "Backend cloud services with Firebase.",
-      "Application server framework with Express.",
+      "API routing with Express.",
       "Data query language with GraphQL.",
       "Object document mapping with Mongoose.",
       "Object relational mapping with Sequelize.",

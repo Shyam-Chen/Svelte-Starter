@@ -6,7 +6,7 @@
     "CONTENT": [
       "使用者介面元件使用 Material",
       "後端雲端服務使用 Firebase",
-      "應用程式伺服器框架使用 Express",
+      "API 路由使用 Express",
       "資料查詢語言使用 GraphQL",
       "物件文件映射使用 Mongoose",
       "物件關聯映射使用 Sequelize",

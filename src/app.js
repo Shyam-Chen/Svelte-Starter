@@ -32,7 +32,7 @@ firebase.initializeApp(process.env.FIREBASE_CONFIG);
 // service worker
 if (
   'serviceWorker' in navigator &&
-  (window.location.protocol === 'https:' || window.location.hostname === 'localhost')
+  (location.protocol === 'https:' || location.hostname === 'localhost')
 ) {
   navigator.serviceWorker
     .register('service-worker.js')
