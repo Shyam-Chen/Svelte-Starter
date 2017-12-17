@@ -1,7 +1,7 @@
 // @flow
 
 import { template as _ } from 'lodash';
-import { observable, action, autorun } from 'mobx';
+import { observable, autorun } from 'mobx';
 
 import { $ } from '~/utils';
 
@@ -12,11 +12,7 @@ import style from './playground.css';
 
 const pathname = '/playground';
 
-export const store = observable({
-  foo: action(() => {
-    // ...
-  })
-});
+export const store = observable({});
 
 export const render = (route: string) =>
   autorun((): void => {
