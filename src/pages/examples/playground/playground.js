@@ -18,12 +18,15 @@ export const store = observable({
   })
 });
 
-export const render = (): void => {
-  $('#app').innerHTML = _(template, { imports: { style } })({ store });
-};
+export const render = (route: string) =>
+  autorun((): void => {
+    $('#app').innerHTML = _(template, { imports: { style } })({ store, route });
+  });
 
 export default (parent: string): void => {
-  page(`${parent}/playground`, (): void => autorun(render));
+  const route = parent + pathname;
 
-  counter(`${parent}${pathname}`);
+  page(route, (): void => render(route));
+
+  counter(route);
 };
