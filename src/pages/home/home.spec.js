@@ -13,10 +13,6 @@ describe('Home', () => {
     expect(home).toBeDefined();
   });
 
-  it('should be a function', () => {
-    expect(typeof home).toBe('function');
-  });
-
   it('should be able to work', () => {
     page('/', () => {
       const imports = { style, image: { logo } };

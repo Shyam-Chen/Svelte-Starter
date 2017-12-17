@@ -9,10 +9,6 @@ describe('Not Found', () => {
     expect(notfound).toBeDefined();
   });
 
-  it('should be a function', () => {
-    expect(typeof notfound).toBe('function');
-  });
-
   it('should be able to work', () => {
     const dummyElement = document.createElement('div');
     document.querySelector = jasmine.createSpy('HTML Element').and.returnValue(dummyElement);

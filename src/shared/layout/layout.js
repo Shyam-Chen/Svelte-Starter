@@ -52,7 +52,10 @@ export const layout = (content: string, page: string, language: string = 'en'): 
 
   [].forEach.call(
     $$('a.mdc-list-item'),
-    ripple => MDCRipple.attachTo(ripple)
+    ripple => {
+      MDCRipple.attachTo(ripple);
+      window.scrollTo(0, 0);
+    }
   );
 
   $('#content').innerHTML = content;

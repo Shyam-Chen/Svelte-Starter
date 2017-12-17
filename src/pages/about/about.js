@@ -15,8 +15,15 @@ export default (): void => {
 
   page('/about', () => layout(_(template, { imports })(english), 'about'));
 
-  // internationalization
-  page('/en/about', () => layout(_(template, { imports })(english), 'about', 'en'));
-  page('/zh/about', () => layout(_(template, { imports })(chinese), 'about', 'zh'));
-  page('/ja/about', () => layout(_(template, { imports })(japanese), 'about', 'ja'));
+  const i18n = [
+    ['en', english],
+    ['zh', chinese],
+    ['ja', japanese]
+  ];
+
+  for (let i = 0, cache = i18n.length; i < cache; i++) {
+    page(`/${i18n[i][0]}/about`, () =>
+      layout(_(template, { imports })(i18n[i][1]), 'about', i18n[i][0])
+    );
+  }
 };

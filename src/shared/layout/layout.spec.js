@@ -31,10 +31,6 @@ describe('Layout', () => {
     expect(layout).toBeDefined();
   });
 
-  it('should be a function', () => {
-    expect(typeof layout).toBe('function');
-  });
-
   it('should be able to work', () => {
     const dummyElement = document.createElement('div');
     document.querySelector = jasmine.createSpy('HTML Element').and.returnValue(dummyElement);
