@@ -11,43 +11,45 @@ import english from './_languages/english.json';
 import chinese from './_languages/chinese.json';
 import japanese from './_languages/japanese.json';
 
-const imports = {
-  style,
-  image: {
-    logo
-  }
-};
-
-const common = (): void => {
-  [].forEach.call(
-    $$('.mdc-button'),
-    ripple => MDCRipple.attachTo(ripple)
-  );
-};
-
 export const home = (): void => {
   if (location.pathname === '/') {
     if (/zh/.test(navigator.language)) page.redirect('/zh');
     if (/ja/.test(navigator.language)) page.redirect('/ja');
   }
 
+  const imports = {
+    style,
+    image: {
+      logo
+    }
+  };
+
+  const common = (): void => {
+    [].forEach.call(
+      $$('.mdc-button'),
+      ripple => MDCRipple.attachTo(ripple)
+    );
+  };
+
   page('/', () => {
     layout(_(template, { imports })(english), 'home');
     common();
   });
 
-  page('/en', () => {
-    layout(_(template, { imports })(english), 'home', 'en');
-    common();
-  });
+  const i18n = [
+    ['en', english],
+    ['zh', chinese],
+    ['ja', japanese]
+  ];
 
-  page('/zh', () => {
-    layout(_(template, { imports })(chinese), 'home', 'zh');
-    common();
-  });
+  const routes = (data, ...funcs) => {
+    for (let i = 0, cache = data.length; i < cache; i++) {
+      page(`/${data[i][0]}`, () => {
+        layout(_(template, { imports })(data[i][1]), 'home', data[i][0]);
+        funcs.forEach(func => func());
+      });
+    }
+  };
 
-  page('/ja', () => {
-    layout(_(template, { imports })(japanese), 'home', 'ja');
-    common();
-  });
+  routes(i18n, common);
 };
