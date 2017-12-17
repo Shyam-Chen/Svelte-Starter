@@ -25,14 +25,40 @@
     <button type="button" name="button" id="add-button" class="mdc-button mdc-button--raised">Add</button>
   </div>
 
+  <div>
+    <div class="mdc-text-field" style="margin-right: .5rem">
+      <input type="text" id="edit-primary" class="mdc-text-field__input">
+      <label class="mdc-text-field__label" for="primary">Primary</label>
+    </div>
+    <div class="mdc-text-field" style="margin-right: .5rem">
+      <input type="text" id="edit-accent" class="mdc-text-field__input">
+      <label class="mdc-text-field__label" for="accent">Accent</label>
+    </div>
+    <button type="button" name="button" id="edit-save" class="mdc-button mdc-button--raised">Save</button>
+  </div>
+
   <div class="mdc-elevation--z2" style="margin: 1rem 0; max-width: 22rem">
     <div style="padding: 1rem 0 0 1rem">Total: <%= store.total %></div>
     <ul class="mdc-list mdc-list--dense">
       <% [].forEach.call(store.dataset, function (item) { %>
         <li class="mdc-list-item">
           <span style="margin-right: .75rem"><%- item.primary %> - <%- item.accent %></span>
-          <button type="button" name="button" class="mdc-button mdc-theme--secondary" style="margin-right: .75rem">Delete</button>
-          <button type="button" name="button" class="mdc-button">Edit</button>
+          <button
+            type="button" name="button"
+            class="mdc-button mdc-theme--secondary" style="margin-right: .75rem"
+            data-delete="<%- item.id %>"
+          >
+            Delete
+          </button>
+          <button
+            type="button" name="button"
+            class="mdc-button"
+            data-edit="<%- item.id %>"
+            data-edit-primary="<%- item.primary %>"
+            data-edit-accent="<%- item.accent %>"
+          >
+            Edit
+          </button>
         </li>
       <% }); %>
     </ul>

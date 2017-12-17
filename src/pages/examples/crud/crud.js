@@ -31,11 +31,11 @@ export const store = observable({
       (item.accent.toLowerCase().indexOf(accent.toLowerCase()) !== -1)
     );
   }),
-  editItem: action(() => {
-    // ...
+  editItem: action((id, primary, accent) => {
+    store.dataset = [...store.dataset.map(item => item.id === Number(id) ? { ...item, primary, accent } : item)];
   }),
-  deleteItem: action(() => {
-    // ...
+  deleteItem: action(id => {
+    store.dataset = [...store.dataset.filter(item => item.id !== Number(id))];
   }),
 
   // computed
@@ -51,9 +51,7 @@ export const render = (): void => {
     const primary = $('#add-primary').value;
     const accent = $('#add-accent').value;
 
-    if (primary && accent) {
-      store.addItem(primary, accent);
-    }
+    if (primary && accent) store.addItem(primary, accent);
   };
 
   $('#search-button').onclick = () => {
@@ -62,6 +60,38 @@ export const render = (): void => {
 
     store.searchItem(primary, accent);
   };
+
+  [].forEach.call(
+    $$('.mdc-button[data-delete]'),
+    deleteButton => {
+      deleteButton.onclick = (): void => {
+        const id = deleteButton.dataset.delete;
+        store.deleteItem(id);
+      };
+    }
+  );
+
+  [].forEach.call(
+    $$('.mdc-button[data-edit]'),
+    editButton => {
+      const editPrimary = $('#edit-primary');
+      const editAccent = $('#edit-accent');
+      const editSave = $('#edit-save');
+
+      editButton.onclick = (): void => {
+        const id = editButton.dataset.edit;
+        const primary = editButton.dataset.editPrimary;
+        const accent = editButton.dataset.editAccent;
+
+        editPrimary.value = primary;
+        editAccent.value = accent;
+
+        editSave.onclick = (): void => {
+          store.editItem(id, editPrimary.value, editAccent.value);
+        };
+      };
+    }
+  );
 
   [].forEach.call(
     $$('.mdc-text-field'),
