@@ -101,9 +101,9 @@ $ git pull upstream master
   * [ ] Static
   * [ ] REST (`axios`)
   * [ ] GraphQL (`apollo-client`)
-* [x] Globalization
-  * [x] Internationalization
-  * [x] Localization
+* [ ] Globalization
+  * [ ] Internationalization
+  * [ ] Localization
 * [ ] Authorization
   * [ ] REST (`axios`)
   * [ ] GraphQL (`apollo-client`)
@@ -114,6 +114,11 @@ $ git pull upstream master
 * [ ] Realtime
   * [ ] WebSockets (`socket.io-client`)
   * [ ] GraphQL Subscriptions  (`subscriptions-transport-ws`)
+* [ ] Playground
+  * [x] Counter
+    * [x] State Management (`mobx`)
+    * [x] Asynchronous (`rxjs`)
+  * [ ] ...
 
 ## Dockerization
 
@@ -161,17 +166,23 @@ $ yarn run gulp -- <TASK_NAME> --prod --watch --serve
 
 ```html
 <!-- src/shared/new-component/new-component.html -->
-<div class="<%= style.card %>">
-  <div class="<%= style.cardTitle %>"><%= title %></div>
-  <div class="<%= style.cardContent %>"><%= content %></div>
+<div class="<%= style['card'] %>">
+  <div class="<%= style['card-title'] %>"><%= title %></div>
+  <div class="<%= style['card-content'] %>"><%= content %></div>
+</div>
+
+<div class="<%= style['card'] %>">
+  <div class="<%= style['card-title'] %> <%= style['card-title--unfancy'] %>"><%= title %></div>
+  <div class="<%= style['card-content'] %>"><%= content %></div>
 </div>
 ```
 
 ```css
 /* src/shared/new-component/new-component.css */
-.card { /* ... */ }
-.cardTitle { /* ... */ }
-.cardContent { /* ... */ }
+.card { /* ... */ }  /* element */
+.card-title { /* ... */ }  /* element */
+.card-title--unfancy { /* ... */ }  /* modifier */
+.card-content { /* ... */ }  /* element */
 ```
 
 ```js
