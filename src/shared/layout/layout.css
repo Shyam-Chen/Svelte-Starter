@@ -32,10 +32,17 @@
   margin-left: 240px;
   transition: margin-left 1s;
   width: 100%;
+  height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
 
   @media (max-width: 599px) {
     margin-left: 0;
   }
+}
+
+.content {
+  flex: 1 0 auto;
 }
 
 .jsMain {
