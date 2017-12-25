@@ -7,29 +7,29 @@
 
       <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3">
         <h2 class="mdc-typography--title"><%= TECHNOLOGIES %></h2>
-        <ul class="<%= style.footerList %>">
-          <li><a href="https://www.ecma-international.org/publications/standards/Ecma-262.htm" class="<%= style.footerLink %>">ECMAScript</a></li>
-          <li><a href="https://www.w3.org/TR/html5/" class="<%= style.footerLink %>">HTML5</a></li>
-          <li><a href="https://nodejs.org/" class="<%= style.footerLink %>">Node.js</a></li>
-          <li><a href="https://www.docker.com/" class="<%= style.footerLink %>">Docker</a></li>
+        <ul class="<%= style['footer-list'] %>">
+          <li><a href="https://www.ecma-international.org/publications/standards/Ecma-262.htm" class="<%= style['footer-link'] %>">ECMAScript</a></li>
+          <li><a href="https://www.w3.org/TR/html5/" class="<%= style['footer-link'] %>">HTML5</a></li>
+          <li><a href="https://nodejs.org/" class="<%= style['footer-link'] %>">Node.js</a></li>
+          <li><a href="https://www.docker.com/" class="<%= style['footer-link'] %>">Docker</a></li>
         </ul>
       </section>
 
       <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3">
         <h2 class="mdc-typography--title"><%= RESOURCES %></h2>
-        <ul class="<%= style.footerList %>">
-          <li><a href="https://developers.google.com/training/web/" class="<%= style.footerLink %>"><%= TRAINING %></a></li>
-          <li><a href="https://developers.google.com/training/certification/mobile-web-specialist/" class="<%= style.footerLink %>"><%= CERTIFICATION %></a></li>
+        <ul class="<%= style['footer-list'] %>">
+          <li><a href="https://developers.google.com/training/web/" class="<%= style['footer-link'] %>"><%= TRAINING %></a></li>
+          <li><a href="https://developers.google.com/training/certification/mobile-web-specialist/" class="<%= style['footer-link'] %>"><%= CERTIFICATION %></a></li>
         </ul>
       </section>
 
       <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3">
         <h2 class="mdc-typography--title"><%= LANGUAGES %></h2>
-        <ul class="<%= style.footerList %>">
+        <ul class="<%= style['footer-list'] %>">
           <% var languages = [['en', 'English'], ['zh', '中文'], ['ja', '日本語']]; %>
           <% [].forEach.call(languages, function (language) { %>
             <li>
-              <a href="javascript: void 0" id="<%- language[0] %>" class="<%= style.footerLink %>"><%- language[1] %></a>
+              <a href="javascript: void 0" id="<%- language[0] %>" class="<%= style['footer-link'] %>"><%- language[1] %></a>
             </li>
           <% }); %>
         </ul>

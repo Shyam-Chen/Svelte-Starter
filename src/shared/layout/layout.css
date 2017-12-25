@@ -60,13 +60,13 @@
   background: #1A237E;
 }
 
-.footerList {
+.footer-list {
   list-style-type: none;
   padding: 0 0 1.5rem .75rem;
   margin: -.75rem 0 0;
 }
 
-.footerLink {
+.footer-link {
   color: #FFFFFF;
   text-decoration: none;
 }
