@@ -120,6 +120,11 @@ $ git pull upstream master
     * [x] Asynchronous (`rxjs`)
   * [ ] ...
 
+Cross-platform:
+
+* [Vanilla-Mobile-Starter](https://github.com/Vanilla-IceCream/Vanilla-Mobile-Starter)
+* [Vanilla-Desktop-Starter](https://github.com/Vanilla-IceCream/Vanilla-Desktop-Starter)
+
 ## Dockerization
 
 1. Build and run the Container
