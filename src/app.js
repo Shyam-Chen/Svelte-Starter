@@ -42,7 +42,6 @@ if (
           const { installing } = registration;
 
           installing.onstatechange = () => {
-            /* eslint-disable indent */
             switch (installing.state) {
               case 'installed':
                 registration.update();
@@ -55,7 +54,6 @@ if (
               default:
                 console.log('Service Worker');
             }
-            /* eslint-enable indent */
           };
         }
       };
