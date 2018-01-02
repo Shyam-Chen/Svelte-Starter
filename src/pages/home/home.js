@@ -36,20 +36,24 @@ export const home = (): void => {
     common();
   });
 
+  /**
+   * @name Globalization
+   */
+
   const i18n = [
     ['en', english],
     ['zh', chinese],
     ['ja', japanese]
   ];
 
-  const routes = (data, ...funcs) => {
-    for (let i = 0, cache = data.length; i < cache; i++) {
+  const l10n = (data, ...funcs) => {
+    for (let i = 0, l = data.length; i < l; i++) {
       page(`/${data[i][0]}`, () => {
         layout(_(template, { imports })(data[i][1]), 'home', data[i][0]);
-        funcs.forEach(func => func());
+        if (funcs) funcs.forEach(func => func());
       });
     }
   };
 
-  routes(i18n, common);
+  l10n(i18n, common);
 };

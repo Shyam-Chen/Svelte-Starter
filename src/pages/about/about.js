@@ -15,15 +15,24 @@ export default (): void => {
 
   page('/about', () => layout(_(template, { imports })(english), 'about'));
 
+  /**
+   * @name Globalization
+   */
+
   const i18n = [
     ['en', english],
     ['zh', chinese],
     ['ja', japanese]
   ];
 
-  for (let i = 0, cache = i18n.length; i < cache; i++) {
-    page(`/${i18n[i][0]}/about`, () =>
-      layout(_(template, { imports })(i18n[i][1]), 'about', i18n[i][0])
-    );
-  }
+  const l10n = (data, ...funcs) => {
+    for (let i = 0, l = data.length; i < l; i++) {
+      page(`/${i18n[i][0]}/about`, () => {
+        layout(_(template, { imports })(data[i][1]), 'about', data[i][0]);
+        if (funcs) funcs.forEach(func => func());
+      });
+    }
+  };
+
+  l10n(i18n);
 };
