@@ -13,7 +13,7 @@
 
 .drawer[data-desktop] {
   position: fixed;
-  overflow: auto;
+  overflow-y: auto;
   height: calc(100% - 64px);
   transition: margin-left .33s;
 
