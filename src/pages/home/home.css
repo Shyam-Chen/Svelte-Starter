@@ -1,18 +1,21 @@
-.section {
-  max-width: 839px;
+.cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 .card {
   background: #FFFFFF;
-}
+  width: 383.44px;
+  margin: 1rem;
 
-.cardMedia {
-  background-image: url('images/background.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 12.313rem;
-}
+  &-media {
+    background: url('images/background.jpg') no-repeat;
+    background-size: cover;
+    height: 12.313rem;
+  }
 
-.cardTitle {
-  color: #E8EAF6;
+  &-title {
+    color: #E8EAF6;
+  }
 }

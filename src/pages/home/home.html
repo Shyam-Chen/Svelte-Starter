@@ -12,13 +12,13 @@
   </div>
 </section>
 
-<section class="mdc-layout-grid <%= style.section %>">
+<section class="mdc-layout-grid">
   <h3 class="mdc-typography--subheading2 flexbox--center"><%= SUBTITLE %></h3>
 
-  <div class="mdc-layout-grid__inner">
+  <div class="mdc-layout-grid__inner <%= style['cards'] %>">
     <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-8-tablet mdc-card <%= style.card %>">
-      <section class="mdc-card__media <%= style.cardMedia %>">
-        <h1 class="mdc-card__title mdc-card__title--large <%= style.cardTitle %>">Frontend Starter Kit</h1>
+      <section class="mdc-card__media <%= style['card-media'] %>">
+        <h1 class="mdc-card__title mdc-card__title--large <%= style['card-title'] %>">Frontend Starter Kit</h1>
       </section>
       <section class="mdc-card__supporting-text">
         <%= CONTENT.WEB %>
@@ -29,8 +29,8 @@
     </section>
 
     <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-8-tablet mdc-card <%= style.card %>">
-      <section class="mdc-card__media <%= style.cardMedia %>">
-        <h1 class="mdc-card__title mdc-card__title--large <%= style.cardTitle %>">Backend Starter Kit</h1>
+      <section class="mdc-card__media <%= style['card-media'] %>">
+        <h1 class="mdc-card__title mdc-card__title--large <%= style['card-title'] %>">Backend Starter Kit</h1>
       </section>
       <section class="mdc-card__supporting-text">
         <%= CONTENT.BACKEND %>

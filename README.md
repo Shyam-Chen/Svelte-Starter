@@ -190,10 +190,14 @@ $ yarn run gulp -- <TASK_NAME> --prod --watch --serve
   &-title {  // element
     // ...
 
-    &--unfancy { /* ... */ }  // modifier
+    &--unfancy {  // modifier
+      // ...
+    }
   }
 
-  &-content { /* ... */ }  // element
+  &-content {  // element
+    // ...
+  }
 }
 ```
 
