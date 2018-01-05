@@ -14,6 +14,19 @@ export const client = new ApolloClient({
   })
 });
 
+/**
+ * BUG: https://github.com/apollographql/apollo-link/issues/248
+ * apollo-client v2.x
+ */
+// import { ApolloClient } from 'apollo-client';
+// import { HttpLink } from 'apollo-link-http';
+// import { InMemoryCache } from 'apollo-cache-inmemory';
+
+// export const client = new ApolloClient({
+//   link: new HttpLink({ uri: 'https://web-go-demo.herokuapp.com/__/graphql' }),
+//   cache: new InMemoryCache()
+// });
+
 export const store = observable({
   // observable
   dataset: [],
