@@ -182,12 +182,19 @@ $ yarn run gulp -- <TASK_NAME> --prod --watch --serve
 </div>
 ```
 
-```css
+```styl
 /* src/shared/new-component/new-component.css */
-.card { /* ... */ }  /* element */
-.card-title { /* ... */ }  /* element */
-.card-title--unfancy { /* ... */ }  /* modifier */
-.card-content { /* ... */ }  /* element */
+.card {  // element
+  // ...
+
+  &-title {  // element
+    // ...
+
+    &--unfancy { /* ... */ }  // modifier
+  }
+
+  &-content { /* ... */ }  // element
+}
 ```
 
 ```js

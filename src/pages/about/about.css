@@ -2,11 +2,11 @@
   max-width: 1140px;
 }
 
-.ul {
+.list {
   background: #FFFFFF;
-}
 
-.li {
-  white-space: normal;
-  line-height: 1rem;
+  &-item {
+    white-space: normal;
+    line-height: 1rem;
+  }
 }

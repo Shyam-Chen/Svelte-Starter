@@ -3,6 +3,7 @@ import pimport from 'postcss-import';
 import cssnext from 'postcss-cssnext';
 import rucksack from 'rucksack-css';
 import url from 'postcss-url';
+import nested from 'postcss-nested';
 import extend from 'postcss-extend';
 import simplevars from 'postcss-simple-vars';
 import conditionals from 'postcss-conditionals';
@@ -23,6 +24,7 @@ export default {
     cssnext({ warnForDuplicates: false }),
     rucksack({ autoprefixer: true }),
     url({ url: 'inline', maxSize: 32, basePath: ASSETS_ROOT }),
+    nested(),
     extend(),
     simplevars(),
     conditionals(),

@@ -58,15 +58,15 @@
   padding: 1rem;
   color: #FFFFFF;
   background: #1A237E;
-}
 
-.footer-list {
-  list-style-type: none;
-  padding: 0 0 1.5rem .75rem;
-  margin: -.75rem 0 0;
-}
+  &-list {
+    list-style-type: none;
+    padding: 0 0 1.5rem .75rem;
+    margin: -.75rem 0 0;
+  }
 
-.footer-link {
-  color: #FFFFFF;
-  text-decoration: none;
+  &-link {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
 }

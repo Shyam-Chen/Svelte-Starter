@@ -8,31 +8,31 @@
   </div>
 </section>
 
-<section class="mdc-layout-grid <%= style.lists %>">
+<section class="mdc-layout-grid <%= style['lists'] %>">
   <div class="mdc-layout-grid__inner">
     <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
       <h3 class="mdc-typography--subheading2"><%= ESSENTIALS.TITLE %></h3>
-      <ul class="mdc-list mdc-list--dense mdc-elevation--z2 <%= style.ul %>">
+      <ul class="mdc-list mdc-list--dense mdc-elevation--z2 <%= style['list'] %>">
         <% [].forEach.call(ESSENTIALS.CONTENT, function (item) { %>
-          <li class="mdc-list-item <%= style.li %>"><%- item %></li>
+          <li class="mdc-list-item <%= style['list-item'] %>"><%- item %></li>
         <% }); %>
       </ul>
     </section>
 
     <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
       <h3 class="mdc-typography--subheading2"><%= TOOLS.TITLE %></h3>
-      <ul class="mdc-list mdc-list--dense mdc-elevation--z2 <%= style.ul %>">
+      <ul class="mdc-list mdc-list--dense mdc-elevation--z2 <%= style['list'] %>">
         <% [].forEach.call(TOOLS.CONTENT, function (item) { %>
-          <li class="mdc-list-item <%= style.li %>"><%- item %></li>
+          <li class="mdc-list-item <%= style['list-item'] %>"><%- item %></li>
         <% }); %>
       </ul>
     </section>
 
     <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4">
       <h3 class="mdc-typography--subheading2"><%= ENVIRONMENTS.TITLE %></h3>
-      <ul class="mdc-list mdc-list--dense mdc-elevation--z2 <%= style.ul %>">
+      <ul class="mdc-list mdc-list--dense mdc-elevation--z2 <%= style['list'] %>">
         <% [].forEach.call(ENVIRONMENTS.CONTENT, function (item) { %>
-          <li class="mdc-list-item <%= style.li %>"><%- item %></li>
+          <li class="mdc-list-item <%= style['list-item'] %>"><%- item %></li>
         <% }); %>
       </ul>
     </section>
