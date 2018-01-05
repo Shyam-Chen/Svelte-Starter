@@ -9,19 +9,70 @@
     <button type="button" name="button" id="search-button" class="mdc-button mdc-button--raised">Search</button>
   </div>
 
+  <div>
+    <div class="mdc-text-field" style="margin-right: .5rem">
+      <input type="text" id="add-text" class="mdc-text-field__input">
+      <label class="mdc-text-field__label" for="primary">Text</label>
+    </div>
+    <button type="button" name="button" id="add-button" class="mdc-button mdc-button--raised">Add</button>
+  </div>
+
   <div class="mdc-elevation--z2" style="margin: 1rem 0">
     <div style="padding: 1rem 0 0 1rem">Total: <%= store.total %></div>
     <ul class="mdc-list mdc-list--dense">
       <% [].forEach.call(store.dataset, function (item) { %>
         <li class="mdc-list-item">
           <span style="margin-right: .75rem"><%- item.text %></span>
-          <button type="button" name="button" class="mdc-button mdc-theme--secondary" style="margin-right: .75rem">Delete</button>
+          <button type="button" name="button" class="mdc-button mdc-theme--secondary" style="margin-right: .75rem" data-delete="<%- item._id %>">Delete</button>
           <button type="button" name="button" class="mdc-button">Edit</button>
         </li>
       <% }); %>
     </ul>
   </div>
 </div>
+
+<aside id="dialog-delete" class="mdc-dialog">
+  <div class="mdc-dialog__surface">
+    <header class="mdc-dialog__header">
+      <h2 class="mdc-dialog__header__title">Delete</h2>
+    </header>
+    <section class="mdc-dialog__body">
+      Are you sure you want to delete it?
+    </section>
+    <footer class="mdc-dialog__footer">
+      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>
+      <button type="button" id="delete-confirm" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">Confirm</button>
+    </footer>
+  </div>
+  <div class="mdc-dialog__backdrop"></div>
+</aside>
+
+<aside id="dialog-edit" class="mdc-dialog">
+  <div class="mdc-dialog__surface">
+    <header class="mdc-dialog__header">
+      <h2 class="mdc-dialog__header__title">Edit</h2>
+    </header>
+
+    <section class="mdc-dialog__body">
+      <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+          <div class="mdc-layout-grid__cell">
+            <div class="mdc-text-field">
+              <label class="mdc-text-field__label" for="edit-text">Text</label>
+              <input type="text" class="mdc-text-field__input" id="edit-text">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mdc-dialog__footer">
+      <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Cancel</button>
+      <button type="button" id="edit-save" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">Save</button>
+    </footer>
+  </div>
+  <div class="mdc-dialog__backdrop"></div>
+</aside>
 
 <aside class="<%= style.progress %>" style="display: <%= store.progress %>">
   <h1>Loading...</h1>

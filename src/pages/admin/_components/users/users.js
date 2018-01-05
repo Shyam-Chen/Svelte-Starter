@@ -92,7 +92,6 @@ export const users = (page: string): void => {
             bodyEl.style.overflowY = 'hidden';
 
             confirm.onclick = (): void => {
-              console.log(123);
               firebase.firestore()
                 .collection('users')
                 .doc(deleteButton.dataset.delete)
