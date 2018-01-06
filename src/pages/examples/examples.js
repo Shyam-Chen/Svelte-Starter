@@ -8,10 +8,7 @@ import { $ } from '~/utils';
 import template from './examples.html';
 import style from './examples.css';
 
-import { crud } from './crud';
-import { rest } from './rest';
-import { graphql } from './graphql';
-
+import { crud, rest, graphql } from './crud-operations';
 import { playground } from './playground';
 
 const pathname = '/examples';

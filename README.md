@@ -92,7 +92,7 @@ $ git pull upstream master
 
 * [ ] CRUD Operations
   * [x] Static
-  * [ ] REST (`axios`)
+  * [x] REST (`axios`)
   * [ ] GraphQL (`apollo-client`)
 * [ ] Form Controls
   * [ ] Template-driven
