@@ -24,7 +24,7 @@
         <li class="mdc-list-item">
           <span style="margin-right: .75rem"><%- item.text %></span>
           <button type="button" name="button" class="mdc-button mdc-theme--secondary" style="margin-right: .75rem" data-delete="<%- item._id %>">Delete</button>
-          <button type="button" name="button" class="mdc-button">Edit</button>
+          <button type="button" name="button" class="mdc-button" data-edit="<%- item._id %>" data-edit-text="<%- item.text %>">Edit</button>
         </li>
       <% }); %>
     </ul>
@@ -59,7 +59,7 @@
           <div class="mdc-layout-grid__cell">
             <div class="mdc-text-field">
               <label class="mdc-text-field__label" for="edit-text">Text</label>
-              <input type="text" class="mdc-text-field__input" id="edit-text">
+              <input type="text" class="mdc-text-field__input" id="edit-text" value=" ">
             </div>
           </div>
         </div>

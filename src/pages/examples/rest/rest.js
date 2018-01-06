@@ -52,8 +52,10 @@ export const store = observable({
       })
       .catch(error => console.error(error));
   }),
-  editItem: action(item => {
-    axios.put(`${API_LIST}/${item._id}`, { text: item.text })
+  editItem: action((_id, text) => {
+    store.loading = true;
+
+    axios.put(`${API_LIST}/${_id}`, { text })
       .then(() => {
         store.editData.dialog = false;
         store.searchItem();
@@ -85,12 +87,6 @@ export const render = (): void => {
 
   const dialogDeleteEl = $('#dialog-delete');
   const dialogDelete = new MDCDialog(dialogDeleteEl);
-  const confirm = $('#delete-confirm');
-
-  [dialogDelete].forEach((dialog): void => {
-    dialog.listen('MDCDialog:accept', () => document.body.style.overflowY = 'auto');
-    dialog.listen('MDCDialog:cancel', () => document.body.style.overflowY = 'auto');
-  });
 
   [].forEach.call(
     $$('.mdc-button[data-delete]'),
@@ -99,13 +95,44 @@ export const render = (): void => {
         dialogDelete.show();
         document.body.style.overflowY = 'hidden';
 
-        confirm.onclick = (): void => {
+        $('#delete-confirm').onclick = (): void => {
           const _id = deleteButton.dataset.delete;
           store.deleteItem(_id);
         };
       };
     }
   );
+
+  const dialogEditEl = $('#dialog-edit');
+  const dialogEdit = new MDCDialog(dialogEditEl);
+
+  [].forEach.call(
+    $$('.mdc-button[data-edit]'),
+    editButton => {
+      editButton.onclick = (): void => {
+        dialogEdit.show();
+        document.body.style.overflowY = 'hidden';
+
+        const text = $('#edit-text');
+
+        text.value = editButton.dataset.editText;
+
+        $('#edit-save').onclick = (): void => {
+          const _id = editButton.dataset.edit;
+          store.editItem(_id, text.value);
+        };
+      };
+    }
+  );
+
+  /**
+   * @name MDC
+   */
+
+  [dialogDelete].forEach((dialog: MDCDialog): void => {
+    dialog.listen('MDCDialog:accept', () => document.body.style.overflowY = 'auto');
+    dialog.listen('MDCDialog:cancel', () => document.body.style.overflowY = 'auto');
+  });
 
   [].forEach.call(
     $$('.mdc-text-field'),
