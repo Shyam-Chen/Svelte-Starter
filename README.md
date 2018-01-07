@@ -488,7 +488,7 @@ exSvgEl.selectAll('rect')
 ```js
 import { PerspectiveCamera, Scene, BoxGeometry, MeshBasicMaterial, Mesh, WebGLRenderer } from 'three';
 
-let camera, scene, renderer, geometry, material, mesh;
+let [camera, scene, renderer, geometry, material, mesh] = [];
 
 const init = () => {
   camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
