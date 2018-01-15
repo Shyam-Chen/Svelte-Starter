@@ -22,6 +22,8 @@ export const APP_ENV = {
 export const DEV_PORT = 8000;
 export const TEST_PORT = 8080;
 
+export const PROXY_URL = 'http://localhost:3000/'
+
 export const SOURCE_ROOT = join(__dirname, '../src');
 export const DIST_ROOT = join(__dirname, '../public');
 
