@@ -18,7 +18,7 @@ This seed repository provides the following features:
 * [x] Utility functions with [**Lodash**](https://lodash.com/).
 * [x] Reactive extensions with [**ReactiveX**](http://reactivex.io/).
 * [x] Scalable state management with [**MobX**](https://mobx.js.org/).
-* [x] Immutable collections with [**Immutable**](http://facebook.github.io/immutable-js/).
+* [ ] Immutable collections with [**Immer**](https://github.com/mweststrate/immer).
 * [x] Data visualizations with [**D3**](https://d3js.org/).
 * [x] 3D scene graph with [**Three**](https://threejs.org/).
 * ---------- **Tools** ----------
@@ -122,8 +122,8 @@ $ git pull upstream master
 
 Cross-platform:
 
-* [Vanilla-Mobile-Starter](https://github.com/Vanilla-IceCream/Vanilla-Mobile-Starter)
-* [Vanilla-Desktop-Starter](https://github.com/Vanilla-IceCream/Vanilla-Desktop-Starter)
+* [Vanilla-Cordova-Starter](https://github.com/Vanilla-IceCream/Vanilla-Cordova-Starter)
+* [Vanilla-Electron-Starter](https://github.com/Vanilla-IceCream/Vanilla-Electron-Starter)
 
 ## Dockerization
 
