@@ -11,12 +11,15 @@ interface MetaDefinition {
 }
 
 /**
- *
+ * @example
+ * addTag({ name: 'description', content: 'This is my great description.' });
  */
 
-export const addTag = (tag: MetaDefinition, forceCreation?: boolean = false): HTMLMetaElement | null => {
-  console.log(tag, forceCreation);
-  document.querySelectorAll('head')[0].appendChild(`<meta name="${tag}" content="${tag}">`);
+export const addTag = (tag: MetaDefinition): void => {
+  const meta: HTMLMetaElement = document.createElement('meta');
+  const node: Node<MetaDefinition> = Object.assign(meta, { ...tag });
+
+  document.querySelectorAll('head')[0].appendChild(node);
 };
 
 /**

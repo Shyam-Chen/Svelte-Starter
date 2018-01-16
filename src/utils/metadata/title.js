@@ -1,5 +1,6 @@
 /**
- *
+ * @example
+ * getTitle();
  */
 
 export const getTitle = (): string => {
