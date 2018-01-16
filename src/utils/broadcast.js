@@ -8,7 +8,12 @@ interface BroadcastEvent {
 
 /**
  * @example
+ * const b$ = new Broadcast();
  *
+ * b$.broadcast('thing', { foo: 'bar' });
+ *
+ * b$.on('thing')
+ *   .subscribe(data => console.log(data));
  */
 
 export class Broadcast {

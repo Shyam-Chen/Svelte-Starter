@@ -22,13 +22,6 @@ export const addTag = (tag: MetaDefinition): void => {
   document.querySelectorAll('head')[0].appendChild(node);
 };
 
-/**
- * @example
- * addTags([
- *   { name: 'description', content: 'This is my great description.' }
- * ]);
- */
-
 export const addTags = (tags: MetaDefinition[], forceCreation?: boolean = false): HTMLMetaElement[] => {
   console.log(tags, forceCreation);
 };

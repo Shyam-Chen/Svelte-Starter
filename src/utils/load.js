@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 
 /**
  * @example
- * load('...')
+ * load$('...')
  *   .subscribe(result => {
  *     // ...
  *   });
