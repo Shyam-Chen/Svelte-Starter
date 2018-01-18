@@ -4,8 +4,7 @@ import { TEST_ENV, TEST_URL, CONFIG } from './env';
 import server from './server';
 
 describe('Not Found', () => {
-  let browser = null;
-  let page = null;
+  let [browser, page] = [];
 
   beforeAll(async () => {
     TEST_ENV === 'CI' && await server;
