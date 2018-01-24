@@ -18,7 +18,7 @@
     "codecov": "codecov",
     "predev": "rimraf public",
     "preprod": "rimraf public",
-    "unit2": "jest \"src/pages/not-found/.*\\.js$\" --coverage",
+    "unit2": "jest \"src/.*\\.js$\" --coverage",
     "e2e": "jest \"test/.*\\.js$\" --forceExit",
     "e2e:ci": "cross-env TEST_ENV=CI jest \"test/.*\\.js$\" --forceExit"
   },

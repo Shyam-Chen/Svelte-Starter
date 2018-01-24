@@ -30,7 +30,7 @@ jobs:
 
       - run:
           name: Unit testing
-          command: docker-compose exec app yarn unit
+          command: docker-compose exec app yarn unit2
 
       - run:
           name: End-to-end testing
