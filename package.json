@@ -18,7 +18,7 @@
     "codecov": "codecov",
     "predev": "rimraf public",
     "preprod": "rimraf public",
-    "unit:not-yet": "jest \"src/.*\\.js$\" --coverage",
+    "unit2": "jest \"src/pages/not-found/.*\\.js$\" --coverage",
     "e2e": "jest \"test/.*\\.js$\" --forceExit",
     "e2e:ci": "cross-env TEST_ENV=CI jest \"test/.*\\.js$\" --forceExit"
   },
@@ -54,6 +54,7 @@
   "devDependencies": {
     "babel-core": "6.26.0",
     "babel-eslint": "8.2.1",
+    "babel-jest": "22.1.0",
     "babel-plugin-external-helpers": "6.22.0",
     "babel-plugin-istanbul": "4.1.5",
     "babel-plugin-root-import": "5.1.0",
