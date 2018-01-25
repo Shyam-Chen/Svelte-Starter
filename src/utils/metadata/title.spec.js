@@ -10,12 +10,12 @@ describe('Title', () => {
 
   it('getTitle', async () => {
     const value = await getTitle();
-    expect(value).toBe('Web GO');
+    expect(value).toEqual('Web GO');
   });
 
   it('setTitle', async () => {
     await setTitle('Front-end');
     const value = await getTitle();
-    expect(value).toBe('Front-end');
+    expect(value).toEqual('Front-end');
   });
 });
