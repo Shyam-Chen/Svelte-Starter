@@ -46,6 +46,7 @@
     "material-components-web": "0.27.0",
     "mobx": "3.4.1",
     "page": "1.7.1",
+    "raven-js": "3.22.1",
     "rxjs": "5.5.6",
     "socket.io-client": "2.0.4",
     "subscriptions-transport-ws": "0.9.5",

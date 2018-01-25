@@ -2,6 +2,7 @@ import './app.css';
 
 import { Observable } from 'rxjs';
 import { forkJoin } from 'rxjs/observable';
+import Raven from 'raven-js';
 
 import pages from '~/pages';
 import { load$ } from '~/utils';
