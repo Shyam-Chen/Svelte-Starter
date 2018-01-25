@@ -22,8 +22,8 @@ This seed repository provides the following features:
 * [x] Data visualizations with [**D3**](https://d3js.org/).
 * [x] 3D scene graph with [**Three**](https://threejs.org/).
 * ---------- **Tools** ----------
-* [ ] Module bundler with [**Webpack**](https://webpack.js.org/).
-* [x] HTML transformations with [**Reshape**](https://reshape.ml/).
+* [ ] Module bundler with [**Parcel**](https://parceljs.org/).
+* [ ] HTML transformations with [**PostHTML**](https://github.com/posthtml/posthtml).
 * [x] Future CSS features with [**PostCSS**](http://postcss.org/).
 * [x] Next generation JavaScript with [**Babel**](https://babeljs.io/).
 * [x] Synchronised browser with [**BrowserSync**](https://browsersync.io/).
@@ -31,7 +31,7 @@ This seed repository provides the following features:
 * [x] CSS static code analyzer with [**StyleLint**](https://stylelint.io/).
 * [x] JavaScript static code analyzer with [**ESLint**](https://eslint.org).
 * [x] Type annotations with [**Flow**](https://flow.org/).
-* [ ] Testing platform with [**Jest**](http://facebook.github.io/jest/).
+* [x] Testing platform with [**Jest**](http://facebook.github.io/jest/).
 * [x] E2E testing with [**Puppeteer**](https://github.com/GoogleChrome/puppeteer).
 * [x] Test coverage integration with [**Codecov**](https://codecov.io/).
 * [x] Error tracking with [**Sentry**](https://sentry.io/).
