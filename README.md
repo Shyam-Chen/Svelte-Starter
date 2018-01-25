@@ -51,7 +51,6 @@ This seed repository provides the following features:
 * [Dockerization](#dockerization)
 * [Configuration](#configuration)
 * [Using Libraries](#using-libraries)
-* [All Commands](#all-commands)
 * [Directory Structure](#directory-structure)
 
 ## Getting Started
@@ -67,25 +66,35 @@ $ cd <PROJECT_NAME>
 
 ```bash
 $ yarn install
+
+# then install types
+$ yarn typed
 ```
 
 3. Run the Application
 
 ```bash
 $ yarn start
+# or
+$ yarn dev
 ```
 
 4. Run the Test
 
 ```bash
+# unit testing
 $ yarn test
-```
+# or
+$ yarn unit
 
-5. Stay up-to-date
+# lint the code
+$ yarn lint
 
-```bash
-$ git remote add upstream https://github.com/Shyam-Chen/Frontend-Starter-Kit.git
-$ git pull upstream master
+# check the type
+$ yarn flow
+
+# e2e testing
+$ yarn e2e  # need to run `yarn dev` first
 ```
 
 ## Practical Examples
@@ -524,22 +533,6 @@ animate();
 
 ```html
 <div id="ex"></div>
-```
-
-## All Commands
-
-```bash
-$ yarn dev
-$ yarn prod
-
-$ yarn lint
-$ yarn unit
-$ yarn e2e
-
-$ yarn reset
-$ yarn reinstall
-
-$ yarn deploy
 ```
 
 ## Directory Structure
