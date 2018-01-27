@@ -66,12 +66,12 @@
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@firebase/app-types/-/app-types-0.1.1.tgz#1b794e101c779310763b1bfce8c24e7728fb9a91"
 
-"@firebase/app@0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@firebase/app/-/app-0.1.6.tgz#0418c110a6155c19de57a433a59eeeba6feb224f"
+"@firebase/app@0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@firebase/app/-/app-0.1.7.tgz#2fb780b583db48a0594ccb77e5e33018a59bb18e"
   dependencies:
     "@firebase/app-types" "0.1.1"
-    "@firebase/util" "0.1.6"
+    "@firebase/util" "0.1.7"
 
 "@firebase/auth-types@0.1.1":
   version "0.1.1"
@@ -87,23 +87,23 @@
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@firebase/database-types/-/database-types-0.1.1.tgz#601b8040191766777b785c1675eac34ce57c669c"
 
-"@firebase/database@0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@firebase/database/-/database-0.1.7.tgz#ed7b964646c79fdcb175f59a6d38d632dd0354f1"
+"@firebase/database@0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@firebase/database/-/database-0.1.8.tgz#96124078f2a1afeeb10e2dee085ebe4c07ad0551"
   dependencies:
     "@firebase/database-types" "0.1.1"
-    "@firebase/util" "0.1.6"
+    "@firebase/util" "0.1.7"
     faye-websocket "0.11.1"
 
-"@firebase/firestore-types@0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@firebase/firestore-types/-/firestore-types-0.1.1.tgz#c711a0dcc440cdc668662b6017b1f730cc124586"
+"@firebase/firestore-types@0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@firebase/firestore-types/-/firestore-types-0.2.1.tgz#f2f35856b283a521c64ac4fa45d140010037e046"
 
-"@firebase/firestore@0.2.3":
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/@firebase/firestore/-/firestore-0.2.3.tgz#1d0bc56319b9eb17db449d85d47cd46290604dc5"
+"@firebase/firestore@0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@firebase/firestore/-/firestore-0.3.1.tgz#2fa3e78a6375335af4f4a2da55793ccc919c9296"
   dependencies:
-    "@firebase/firestore-types" "0.1.1"
+    "@firebase/firestore-types" "0.2.1"
     "@firebase/webchannel-wrapper" "0.2.6"
     grpc "^1.7.1"
 
@@ -111,12 +111,12 @@
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@firebase/messaging-types/-/messaging-types-0.1.1.tgz#66d61d800081b3f7e4d26f1f8523f0a307e37730"
 
-"@firebase/messaging@0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@firebase/messaging/-/messaging-0.1.7.tgz#81e0b60ae74a890eafe85130047c28f2ba2ec55a"
+"@firebase/messaging@0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@firebase/messaging/-/messaging-0.1.8.tgz#42a990d87f90c86b4ab1cefac1a5bbded2ecc9dd"
   dependencies:
     "@firebase/messaging-types" "0.1.1"
-    "@firebase/util" "0.1.6"
+    "@firebase/util" "0.1.7"
 
 "@firebase/polyfill@0.1.4":
   version "0.1.4"
@@ -134,9 +134,9 @@
   dependencies:
     "@firebase/storage-types" "0.1.1"
 
-"@firebase/util@0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@firebase/util/-/util-0.1.6.tgz#cfcb537f7ba46054f2aa2b06c6cc2b63ce754e4a"
+"@firebase/util@0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@firebase/util/-/util-0.1.7.tgz#efe5f119ae6449f66dd286c7cbdccfed090ad274"
 
 "@firebase/webchannel-wrapper@0.2.6":
   version "0.2.6"
@@ -835,6 +835,10 @@ array-equal@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/array-equal/-/array-equal-1.0.0.tgz#8c2a5ef2472fd9ea742b04c77a75093ba2757c93"
 
+array-filter@~0.0.0:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/array-filter/-/array-filter-0.0.1.tgz#7da8cf2e26628ed732803581fd21f67cacd2eeec"
+
 array-find-index@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/array-find-index/-/array-find-index-1.0.2.tgz#df010aa1287e164bbda6f9723b0a96a1ec4187a1"
@@ -846,6 +850,14 @@ array-flatten@1.1.1, array-flatten@^1.0.0:
 array-flatten@2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/array-flatten/-/array-flatten-2.1.1.tgz#426bb9da84090c1838d812c8150af20a8331e296"
+
+array-map@~0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/array-map/-/array-map-0.0.0.tgz#88a2bab73d1cf7bcd5c1b118a003f66f665fa662"
+
+array-reduce@~0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/array-reduce/-/array-reduce-0.0.0.tgz#173899d3ffd1c7d9383e4479525dbe278cab5f2b"
 
 array-slice@^0.2.3:
   version "0.2.3"
@@ -1569,7 +1581,7 @@ babel-runtime@^6.18.0, babel-runtime@^6.22.0:
     core-js "^2.4.0"
     regenerator-runtime "^0.10.0"
 
-babel-runtime@^6.23.0, babel-runtime@^6.26.0:
+babel-runtime@^6.23.0, babel-runtime@^6.26.0, babel-runtime@^6.9.2:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -2131,7 +2143,7 @@ charenc@~0.0.1:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/charenc/-/charenc-0.0.2.tgz#c0a1d2f3a7092e03774bfa83f14c0fc5790a8667"
 
-chokidar@1.7.0:
+chokidar@1.7.0, chokidar@^1.6.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-1.7.0.tgz#798e689778151c8076b4b360e5edd28cda2bb468"
   dependencies:
@@ -2618,6 +2630,22 @@ cosmiconfig@^2.1.3:
     os-homedir "^1.0.1"
     parse-json "^2.2.0"
     require-from-string "^1.1.0"
+
+cpx@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/cpx/-/cpx-1.5.0.tgz#185be018511d87270dedccc293171e37655ab88f"
+  dependencies:
+    babel-runtime "^6.9.2"
+    chokidar "^1.6.0"
+    duplexer "^0.1.1"
+    glob "^7.0.5"
+    glob2base "^0.0.12"
+    minimatch "^3.0.2"
+    mkdirp "^0.5.1"
+    resolve "^1.1.7"
+    safe-buffer "^5.0.1"
+    shell-quote "^1.6.1"
+    subarg "^1.0.0"
 
 crc32-stream@^2.0.0:
   version "2.0.0"
@@ -3417,7 +3445,7 @@ duplexer3@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
 
-duplexer@~0.1.1:
+duplexer@^0.1.1, duplexer@~0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/duplexer/-/duplexer-0.1.1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"
 
@@ -4233,15 +4261,15 @@ firebase@2.x.x:
   dependencies:
     faye-websocket ">=0.6.0"
 
-firebase@4.8.2:
-  version "4.8.2"
-  resolved "https://registry.yarnpkg.com/firebase/-/firebase-4.8.2.tgz#5c6878afe2199c382b4a7bde56a21d1bcb4421d3"
+firebase@4.9.0:
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/firebase/-/firebase-4.9.0.tgz#b0e0345438fcd38bea9d0d7e5ac896fe09f4c80a"
   dependencies:
-    "@firebase/app" "0.1.6"
+    "@firebase/app" "0.1.7"
     "@firebase/auth" "0.3.2"
-    "@firebase/database" "0.1.7"
-    "@firebase/firestore" "0.2.3"
-    "@firebase/messaging" "0.1.7"
+    "@firebase/database" "0.1.8"
+    "@firebase/firestore" "0.3.1"
+    "@firebase/messaging" "0.1.8"
     "@firebase/polyfill" "0.1.4"
     "@firebase/storage" "0.1.6"
     dom-storage "^2.0.2"
@@ -5390,9 +5418,11 @@ ignore@^3.3.3:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.3.tgz#432352e57accd87ab3110e82d3fea0e47812156d"
 
-immer@0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/immer/-/immer-0.7.0.tgz#926200dcf5453815e477b2470a49137e9201df1b"
+immer@0.8.5:
+  version "0.8.5"
+  resolved "https://registry.yarnpkg.com/immer/-/immer-0.8.5.tgz#181e85c3f83c464ed8eb410f2c5cdf9801f04f85"
+  dependencies:
+    cpx "^1.5.0"
 
 immutable@3.8.2:
   version "3.8.2"
@@ -7577,9 +7607,9 @@ package-json@^2.0.0:
     registry-url "^3.0.3"
     semver "^5.1.0"
 
-page@1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/page/-/page-1.7.1.tgz#3886c147b895487783759b37e800a11213bc38ed"
+page@1.8.3:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/page/-/page-1.8.3.tgz#cc46fd6e614f5a60ebc68d0e0e3570301dae7c0e"
   dependencies:
     path-to-regexp "~1.2.1"
 
@@ -9923,6 +9953,15 @@ setprototypeof@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.1.0.tgz#d0bd85536887b6fe7c0d818cb962d9d91c54e656"
 
+shell-quote@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/shell-quote/-/shell-quote-1.6.1.tgz#f4781949cce402697127430ea3b3c5476f481767"
+  dependencies:
+    array-filter "~0.0.0"
+    array-map "~0.0.0"
+    array-reduce "~0.0.0"
+    jsonify "~0.0.0"
+
 shelljs@0.3.x:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.3.0.tgz#3596e6307a781544f591f37da618360f31db57b1"
@@ -10405,6 +10444,12 @@ stylelint@^8.0.0:
     sugarss "^1.0.0"
     svg-tags "^1.0.0"
     table "^4.0.1"
+
+subarg@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/subarg/-/subarg-1.0.0.tgz#f62cf17581e996b48fc965699f54c06ae268b8d2"
+  dependencies:
+    minimist "^1.1.0"
 
 subscriptions-transport-ws@0.9.5:
   version "0.9.5"

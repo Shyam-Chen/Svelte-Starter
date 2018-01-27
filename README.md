@@ -15,6 +15,7 @@ This seed repository provides the following features:
 * ---------- **Essentials** ----------
 * [x] User interface components with [**Material**](https://material.io/).
 * [x] Backend cloud services with [**Firebase**](https://firebase.google.com/).
+* [x] Routing and navigation with [**Page**](http://visionmedia.github.io/page.js/).
 * [x] Utility functions with [**Lodash**](https://lodash.com/).
 * [x] Reactive extensions with [**ReactiveX**](http://reactivex.io/).
 * [x] Scalable state management with [**MobX**](https://mobx.js.org/).
@@ -104,7 +105,7 @@ $ yarn e2e  # need to run `yarn dev` first
   * [x] REST (`axios`)
   * [ ] GraphQL (`apollo-client`)
 * [ ] Form Controls
-  * [ ] Template-driven
+  * [ ] Template-driven (`mobx`)
   * [ ] Reactive Forms (`rxjs`)
 * [ ] Data Table
   * [ ] Static
