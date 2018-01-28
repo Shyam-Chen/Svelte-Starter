@@ -6,6 +6,7 @@
     "CONTENT": [
       "User interface components with Material.",
       "Backend cloud services with Firebase.",
+      "Routing and navigation with Page.",
       "API routing with Express.",
       "Data query language with GraphQL.",
       "Object document mapping with Mongoose.",
@@ -13,11 +14,11 @@
       "Utility functions with Lodash.",
       "Reactive extensions with ReactiveX.",
       "Scalable state management with MobX.",
-      "Immutable collections with Immutable.",
+      "Immutable collections with Immer.",
       "Data visualizations with D3.",
       "3D scene graph with Three.",
       "Secure authentication with JWT.",
-      "Third-party authentication with Passport.",
+      "Authenticate requests with Passport.",
       "Real-time bidirectional communication with Socket.",
       "In-memory data structure store with Redis."
     ]
@@ -25,8 +26,8 @@
   "TOOLS": {
     "TITLE": "Tools",
     "CONTENT": [
-      "Module bundler with Webpack.",
-      "HTML transformations with Reshape.",
+      "Module bundler with Parcel.",
+      "HTML transformations with PostHTML.",
       "Future CSS features with PostCSS.",
       "Next generation JavaScript with Babel.",
       "Synchronised browser with BrowserSync.",
@@ -35,7 +36,8 @@
       "JavaScript static code analyzer with ESLint.",
       "Type annotations with Flow.",
       "Testing platform with Jest.",
-      "E2E testing with Puppeteer.",
+      "UI testing with Puppeteer.",
+      "HTTP testing with Supertest.",
       "Test coverage integration with Codecov.",
       "Automatically restart application with Nodemon.",
       "Keeping application alive with PM2.",
@@ -51,6 +53,7 @@
       "Operating system with Linux.",
       "Text editor with Atom.",
       "Version control with Git.",
+      "Code repository with GitHub.",
       "Fast and deterministic builds with Yarn.",
       "Cloud application hosting with Heroku.",
       "Cloud NoSQL database hosting with mLab.",

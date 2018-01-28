@@ -6,6 +6,7 @@
     "CONTENT": [
       "使用者介面元件使用 Material",
       "後端雲端服務使用 Firebase",
+      "路由和導覽列使用 Page",
       "API 路由使用 Express",
       "資料查詢語言使用 GraphQL",
       "物件文件映射使用 Mongoose",
@@ -13,11 +14,11 @@
       "實用的函式使用 Lodash",
       "反應式的擴充使用 ReactiveX",
       "可擴展的狀態管理使用 MobX",
-      "不變的集合使用 Immutable",
+      "不變的集合使用 Immer",
       "資料視覺化使用 D3",
       "3D 場景圖使用 Three",
       "安全的憑證使用 JWT",
-      "第三方憑證使用 Passport",
+      "憑證請求使用 Passport",
       "即時雙向通信使用 Socket",
       "內存資料結構存儲使用 Redis"
     ]
@@ -25,8 +26,8 @@
   "TOOLS": {
     "TITLE": "工具",
     "CONTENT": [
-      "模組捆綁器使用 Webpack",
-      "HTML 變形使用 Reshape",
+      "模組捆綁器使用 Parcel",
+      "HTML 變換使用 PostHTML",
       "未來的 CSS 特性使用 PostCSS",
       "下一代的 JavaScript 使用 Babel",
       "同步瀏覽器使用 BrowserSync",
@@ -35,7 +36,8 @@
       "JavaScript 靜態程式碼分析使用 ESLint",
       "型別註釋使用 Flow",
       "測試平台使用 Jest",
-      "端對端測試使用 Puppeteer",
+      "UI 測試使用 Puppeteer",
+      "HTTP 測試使用 Supertest",
       "測試覆蓋率整合使用 Codecov",
       "自動重新啟動應用程式使用 Nodemon",
       "保持應用程式持續運作使用 PM2",
@@ -51,6 +53,7 @@
       "作業系統使用 Linux",
       "文字編輯器使用 Atom",
       "版本控制使用 Git",
+      "程式碼儲存庫使用 GitHub",
       "快速且確定性的建置使用 Yarn",
       "雲端應用程式託管使用 Heroku",
       "雲端 NoSQL 資料庫託管使用 mLab",
