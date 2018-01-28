@@ -157,22 +157,26 @@ $ docker-compose rm -fs
 
 ## Configuration
 
-1. Environment variables
+Default configuration
 
 ```js
 // tools/constants.js
-```
+export const INDEX_ENV = {
+  APP_BASE: '/',
+  GOOGLE_ANALYTICS: 'UA-84381641-2'
+};
 
-2. Manifest file
-
-```js
-// src/assets/datas/manifest.json
-```
-
-3. Command line
-
-```bash
-$ yarn run gulp -- <TASK_NAME> --prod --watch --serve
+export const APP_ENV = {
+  FIREBASE_CONFIG: {
+    apiKey: 'AIzaSyDBA0yVS0JuIqGaoN9nafvPFxPSVgmxwnw',
+    authDomain: 'web-go-demo.firebaseapp.com',
+    databaseURL: 'https://web-go-demo.firebaseio.com',
+    projectId: 'web-go-demo',
+    storageBucket: 'web-go-demo.appspot.com',
+    messagingSenderId: '584431831746'
+  },
+  SENTRY_URL: 'https://70484e0dda784a1081081ca9c8237792@sentry.io/236866'
+};
 ```
 
 ## Using Libraries
@@ -281,7 +285,7 @@ axios.get(API_LIST)
   .then(() => console.log('done'));
 
 let searchText = 'a';
-axios.get(`${API_LIST}?text=${searchText}`)
+axios.get(API_LIST, { params: { text: searchText } })
   .then(res => console.log(res.data))
   .then(() => console.log('done'));
 
@@ -370,12 +374,12 @@ client
   .then(res => console.log(res.data));
 ```
 
-5. Example of Socket
+5. Example of Socket Client
 
 ```js
 import io from 'socket.io-client';
 
-const socket = io('https://web-go-demo.herokuapp.com/');
+const socket = io('wss://web-go-demo.herokuapp.com/');
 
 socket.on('connect', () => console.log('Accept a connection.'));
 
@@ -385,7 +389,23 @@ socket.on('A', data => {
 });
 ```
 
-6. Example of Lodash
+6. Example of GraphQL Subscriptions
+
+```js
+import { SubscriptionClient } from 'subscriptions-transport-ws';
+import ApolloClient from 'apollo-client';
+
+const client = new SubscriptionClient(
+  'wss://web-go-demo.herokuapp.com/__/graphql',
+  { reconnect: true }
+);
+
+const apolloClient = new ApolloClient({
+  networkInterface: client
+});
+```
+
+7. Example of Lodash
 
 ```js
 import { lowerFirst, pad } from 'lodash';
@@ -398,7 +418,7 @@ Observable::of(lowerFirst('Hello'), pad('World', 5))
   // World
 ```
 
-7. Example of ReactiveX
+8. Example of ReactiveX
 
 ```js
 import { Observable } from 'rxjs';
@@ -413,7 +433,7 @@ Observable::timer(2000)
   // ["World"]
 ```
 
-8. Example of MobX
+9. Example of MobX
 
 ```js
 import { observable, action, autorun } from 'mobx';
@@ -448,23 +468,26 @@ autorun(() => {
 });
 ```
 
-9. Example of Immutable
+10. Example of Immer
 
 ```js
-import { Observable } from 'rxjs';
-import { from } from 'rxjs/observable';
-import { map } from 'rxjs/operator';
-import { Set } from 'immutable';
+import produce from 'immer';
 
-Observable::from(Set([1, 2, 3]))
-  ::map(value => value * 2)
-  .subscribe(value => console.log(value));
-  // 2
-  // 4
-  // 6
+const baseState = [
+  { label: 'Babel', done: true },
+  { label: 'Flow', done: false }
+];
+
+const nextState = produce(baseState, draftState => {
+  draftState.push({ label: 'TypeScript' });
+  draftState[1].done = true;
+});
+
+baseState.length;  // 2
+nextState.length;  // 3
 ```
 
-10. Example of D3
+11. Example of D3
 
 ```js
 import { select } from 'd3-selection';
@@ -493,7 +516,7 @@ exSvgEl.selectAll('rect')
 <div id="ex"></div>
 ```
 
-11. Example of Three
+12. Example of Three
 
 ```js
 import { PerspectiveCamera, Scene, BoxGeometry, MeshBasicMaterial, Mesh, WebGLRenderer } from 'three';
