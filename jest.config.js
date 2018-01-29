@@ -9,7 +9,7 @@ module.exports = {
   transform: {
     '^.+\\.js$': 'babel-jest'
   },
-  transformIgnorePatterns: [
-    'node_modules/(?!@material)/'
-  ]
+  // transformIgnorePatterns: [
+  //   'node_modules/(?!@material)/'
+  // ]
 };
