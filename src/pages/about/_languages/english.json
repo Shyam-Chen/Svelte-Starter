@@ -16,7 +16,7 @@
       "Scalable state management with MobX.",
       "Immutable collections with Immer.",
       "Data visualizations with D3.",
-      "3D scene graph with Three.",
+      "3D scene graphs with Three.",
       "Secure authentication with JWT.",
       "Authenticate requests with Passport.",
       "Real-time bidirectional communication with Socket.",

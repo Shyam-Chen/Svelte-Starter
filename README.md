@@ -21,7 +21,7 @@ This seed repository provides the following features:
 * [x] Scalable state management with [**MobX**](https://mobx.js.org/).
 * [ ] Immutable collections with [**Immer**](https://github.com/mweststrate/immer).
 * [x] Data visualizations with [**D3**](https://d3js.org/).
-* [x] 3D scene graph with [**Three**](https://threejs.org/).
+* [x] 3D scene graphs with [**Three**](https://threejs.org/).
 * ---------- **Tools** ----------
 * [ ] Module bundler with [**Parcel**](https://parceljs.org/).
 * [ ] HTML transformations with [**PostHTML**](https://github.com/posthtml/posthtml).
@@ -33,7 +33,7 @@ This seed repository provides the following features:
 * [x] JavaScript static code analyzer with [**ESLint**](https://eslint.org).
 * [x] Type annotations with [**Flow**](https://flow.org/).
 * [x] Testing platform with [**Jest**](http://facebook.github.io/jest/).
-* [x] E2E testing with [**Puppeteer**](https://github.com/GoogleChrome/puppeteer).
+* [x] UI testing with [**Puppeteer**](https://github.com/GoogleChrome/puppeteer).
 * [x] Test coverage integration with [**Codecov**](https://codecov.io/).
 * [x] Error tracking with [**Sentry**](https://sentry.io/).
 * ---------- **Environments** ----------
@@ -41,6 +41,7 @@ This seed repository provides the following features:
 * [x] Operating system with [**Linux**](https://www.linux.org/).
 * [x] Text editor with [**Atom**](https://atom.io/).
 * [x] Version control with [**Git**](https://git-scm.com/).
+* [x] Code repository with [**GitHub**](https://github.com/).
 * [x] Fast and deterministic builds with [**Yarn**](https://yarnpkg.com/).
 * [x] Software container with [**Docker**](https://www.docker.com/).
 * [x] Continuous integration with [**CircleCI**](https://circleci.com/).
@@ -132,8 +133,8 @@ $ yarn e2e  # need to run `yarn dev` first
 
 Cross-platform:
 
-* [Vanilla-Cordova-Starter](https://github.com/Vanilla-IceCream/Vanilla-Cordova-Starter)
-* [Vanilla-Electron-Starter](https://github.com/Vanilla-IceCream/Vanilla-Electron-Starter)
+* [Cordova](https://github.com/Vanilla-IceCream/Cordova)
+* [Electron](https://github.com/Vanilla-IceCream/Electron)
 
 ## Dockerization
 
