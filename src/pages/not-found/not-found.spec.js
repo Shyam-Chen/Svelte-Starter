@@ -10,8 +10,11 @@ describe('Not Found', () => {
   });
 
   it('should be able to work', () => {
-    const dummyElement = document.createElement('div');
-    document.querySelector = jasmine.createSpy('HTML Element').and.returnValue(dummyElement);
+    Object.defineProperty(document, 'querySelector', {
+      value() {
+        return '<div id="app"></div>';
+      }
+    });
 
     page('*', () => {
       document.querySelector('#app')

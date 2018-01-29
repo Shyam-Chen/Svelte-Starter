@@ -7,13 +7,11 @@
     "node": true,
     "commonjs": true,
     "es6": true,
-    "jasmine": true,
-    "protractor": true
+    "jest": true
   },
   "globals": {
     "firebase": true,
-    "page": true,
-    "Raven": true
+    "page": true
   },
   "extends": "eslint:recommended",
   "parser": "babel-eslint",
