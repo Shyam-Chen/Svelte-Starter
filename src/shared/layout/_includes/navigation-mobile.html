@@ -1,22 +1,23 @@
-<nav class="mdc-temporary-drawer <%= style.drawer %>" data-mobile style="z-index: 10">
-  <div class="mdc-temporary-drawer__drawer">
-    <header class="mdc-temporary-drawer__header">
-      <div class="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary mdc-typography--title">
+<nav class="mdc-drawer mdc-drawer--temporary <%= style.drawer %>" data-mobile style="z-index: 10">
+  <div class="mdc-drawer__drawer">
+    <header class="mdc-drawer__header">
+      <div class="mdc-drawer__header-content mdc-theme--text-primary-on-primary mdc-theme--primary-bg">
         <%= TITLE %>
       </div>
     </header>
-    <div class="mdc-temporary-drawer__content mdc-list-group" id="mobile-menu">
+
+    <div class="mdc-drawer__content mdc-list-group" id="mobile-menu">
       <nav class="mdc-list">
         <a class="mdc-list-item" onclick="page.redirect('<%= LINK[0][0] %>'); document.body.style.overflowY = 'auto'">
-          <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">home</i>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
           <%= LINK[0][1] %>
         </a>
         <a class="mdc-list-item" onclick="page.redirect('<%= LINK[1][0] %>'); document.body.style.overflowY = 'auto'">
-          <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">info</i>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">info</i>
           <%= LINK[1][1] %>
         </a>
         <a class="mdc-list-item" onclick="page.redirect('<%= LINK[2][0] %>'); document.body.style.overflowY = 'auto'">
-          <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">contacts</i>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">contacts</i>
           <%= LINK[2][1] %>
         </a>
       </nav>
@@ -25,11 +26,11 @@
 
       <nav class="mdc-list">
         <a class="mdc-list-item" onclick="page.redirect('/examples'); document.body.style.overflowY = 'auto'">
-          <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">code</i>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">code</i>
           Examples
         </a>
         <a class="mdc-list-item" onclick="page.redirect('/admin'); document.body.style.overflowY = 'auto'">
-          <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">verified_user</i>
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">verified_user</i>
           Admin
         </a>
       </nav>

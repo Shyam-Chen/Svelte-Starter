@@ -33,8 +33,8 @@ export const layout = (content: string, page: string, language: string = 'en'): 
 
   const bodyEl = $('body');
   const mainEl = $('main');
-  const drawerDesktopEl = $('.mdc-permanent-drawer[data-desktop]');
-  const drawerMobileEl = $('.mdc-temporary-drawer[data-mobile]');
+  const drawerDesktopEl = $('.mdc-drawer--permanent[data-desktop]');
+  const drawerMobileEl = $('.mdc-drawer--temporary[data-mobile]');
 
   const drawerMobile = new MDCTemporaryDrawer(drawerMobileEl);
 
