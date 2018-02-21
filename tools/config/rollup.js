@@ -36,7 +36,8 @@ export const APP_CONFIG = {
     replace({
       'process.env.NODE_ENV': JSON.stringify(env.prod ? 'production' : 'development'),
       'process.env.FIREBASE_CONFIG': JSON.stringify(APP_ENV.FIREBASE_CONFIG),
-      'process.env.SENTRY_URL': JSON.stringify(APP_ENV.SENTRY_URL)
+      'process.env.SENTRY_URL': JSON.stringify(APP_ENV.SENTRY_URL),
+      'process.env.FUNC_URL': JSON.stringify(APP_ENV.FUNC_URL)
     }),
     (env.prod ? uglify() : noop())
   ]
