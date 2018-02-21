@@ -17,12 +17,14 @@ jobs:
       - setup_remote_docker
 
       - run:
-          name: Build the image
+          name: Start up containers
           command: docker-compose up -d
 
       - run:
           name: Build the application
-          command: docker-compose exec app yarn prod
+          command: |
+            docker-compose exec app yarn prod
+            docker-compose exec app yarn build:func
 
       - run:
           name: Static code analysis
@@ -41,7 +43,7 @@ jobs:
           command: docker-compose exec app yarn codecov -- --token=${CODECOV_TOKEN}
 
       - deploy:
-          name: Deploy to Firebase
+          name: Deploy the application
           command: |
             docker-compose exec app bash -c "cd functions && yarn install"
             docker-compose exec app yarn deploy -- --token ${FIREBASE_TOKEN}

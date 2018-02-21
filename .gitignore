@@ -1,5 +1,6 @@
 node_modules
 npm
 public
+functions
 coverage
 *.log
