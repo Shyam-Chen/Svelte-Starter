@@ -27,20 +27,10 @@ jobs:
             docker-compose exec app yarn build:func
 
       - run:
-          name: Static code analysis
-          command: docker-compose exec app yarn lint
-
-      - run:
-          name: Unit testing
-          command: docker-compose exec app yarn unit
-
-      - run:
-          name: End-to-end testing
-          command: docker-compose exec app yarn e2e
-
-      - run:
-          name: Test coverage integration
-          command: docker-compose exec app yarn codecov -- --token=${CODECOV_TOKEN}
+          name: Test the application
+          command: |
+            docker-compose exec app yarn test
+            docker-compose exec app yarn codecov -- --token=${CODECOV_TOKEN}
 
       - deploy:
           name: Deploy the application

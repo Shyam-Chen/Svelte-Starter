@@ -4,7 +4,7 @@
   "description": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, Reshape, and PostCSS.",
   "scripts": {
     "start": "gulp --watch --serve",
-    "test": "jest \"src/.*\\.js$\" \"test/.*\\.js$\" --coverage --forceExit",
+    "test": "gulp lint && jest \"src/.*\\.js$\" \"test/.*\\.js$\" --coverage --forceExit",
     "dev": "gulp --watch --serve",
     "prod": "gulp --prod",
     "lint": "gulp lint",

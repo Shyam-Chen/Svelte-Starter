@@ -1,5 +1,5 @@
 import puppeteer from 'puppeteer';
-import faker from 'faker';
+// import faker from 'faker';
 
 import { TEST_ENV, TEST_URL, CONFIG } from './env';
 import server from './server';
@@ -28,8 +28,8 @@ describe('Contact', () => {
     expect(text).toMatch('Contact');
   });
 
-  it('nice', async () => {
-    const name = await page.$('#name');
-    console.log(name);
-  });
+  // it('nice', async () => {
+  //   const name = await page.$('#name');
+  //   console.log(name);
+  // });
 });
