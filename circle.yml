@@ -1,6 +1,7 @@
 version: 2
 
 jobs:
+
   build:
     docker:
       - image: circleci/node:8
@@ -26,16 +27,16 @@ jobs:
             docker-compose exec app yarn test
             docker-compose exec app yarn codecov --token=${CODECOV_TOKEN}
 
-      - deploy:
+      - run:
           name: Deploy the application
-          branch: develop
           command: |
-            docker-compose exec app yarn firebase use staging
-            docker-compose exec app yarn deploy --token ${FIREBASE_TOKEN}
-
-      - deploy:
-          name: Deploy the application
-          branch: master
-          command: |
-            docker-compose exec app yarn firebase use production
-            docker-compose exec app yarn deploy --token ${FIREBASE_TOKEN}
+            if [ "${CIRCLE_BRANCH}" == "develop" ]; then
+              docker-compose exec app yarn firebase use default --token ${FIREBASE_TOKEN}
+              docker-compose exec app yarn deploy --token ${FIREBASE_TOKEN}
+            elif [ "${CIRCLE_BRANCH}" == "staging" ]; then
+              docker-compose exec app yarn firebase use staging --token ${FIREBASE_TOKEN}
+              docker-compose exec app yarn deploy --token ${FIREBASE_TOKEN}
+            elif [ "${CIRCLE_BRANCH}" == "master" ]; then
+              docker-compose exec app yarn firebase use production --token ${FIREBASE_TOKEN}
+              docker-compose exec app yarn deploy --token ${FIREBASE_TOKEN}
+            fi
