@@ -5,11 +5,7 @@ jobs:
     docker:
       - image: circleci/node:8
 
-    working_directory: ~/Backend-Starter-Kit
-
-    branches:
-      only:
-        - master
+    working_directory: ~/Frontend-Starter-Kit
 
     steps:
       - checkout
@@ -22,18 +18,24 @@ jobs:
 
       - run:
           name: Build the application
-          command: |
-            docker-compose exec app yarn prod
-            docker-compose exec app yarn build:func
+          command: docker-compose exec app yarn prod
 
       - run:
           name: Test the application
           command: |
             docker-compose exec app yarn test
-            docker-compose exec app yarn codecov -- --token=${CODECOV_TOKEN}
+            docker-compose exec app yarn codecov --token=${CODECOV_TOKEN}
 
       - deploy:
           name: Deploy the application
+          branch: develop
           command: |
-            docker-compose exec app bash -c "cd functions && yarn install"
-            docker-compose exec app yarn deploy -- --token ${FIREBASE_TOKEN}
+            docker-compose exec app yarn firebase use staging
+            docker-compose exec app yarn deploy --token ${FIREBASE_TOKEN}
+
+      - deploy:
+          name: Deploy the application
+          branch: master
+          command: |
+            docker-compose exec app yarn firebase use production
+            docker-compose exec app yarn deploy --token ${FIREBASE_TOKEN}
