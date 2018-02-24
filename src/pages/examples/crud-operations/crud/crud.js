@@ -1,6 +1,7 @@
 // @flow
 
 import { MDCTextField } from '@material/textfield';
+import page from 'page';
 import { template as _ } from 'lodash';
 import { observable, action, autorun } from 'mobx';
 

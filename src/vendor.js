@@ -4,6 +4,7 @@
 import '@material/button/dist/mdc.button.css';
 import '@material/card/dist/mdc.card.css';
 // import '@material/checkbox/dist/mdc.checkbox.css';
+// import '@material/chips/dist/mdc.chips.css';
 import '@material/dialog/dist/mdc.dialog.css';
 import '@material/drawer/dist/mdc.drawer.css';
 import '@material/elevation/dist/mdc.elevation.css';
@@ -30,6 +31,7 @@ import '@material/typography/dist/mdc.typography.css';
  * @name js
  */
 import 'firebase/firebase-auth';
+// import 'firebase/firebase-database';
 import 'firebase/firebase-firestore';
 // import 'firebase/firebase-storage';
-import 'page/page';
+// import 'firebase/firebase-messaging';

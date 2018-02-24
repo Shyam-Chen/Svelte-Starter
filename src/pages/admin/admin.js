@@ -1,6 +1,7 @@
 import { MDCRipple } from '@material/ripple';
 import { MDCTextField } from '@material/textfield';
 import { MDCSnackbar } from '@material/snackbar';
+import page from 'page';
 import { template as _ } from 'lodash';
 
 import { $, $$ } from '~/utils';

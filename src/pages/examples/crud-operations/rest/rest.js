@@ -1,5 +1,6 @@
 import { MDCTextField } from '@material/textfield';
 import { MDCDialog } from '@material/dialog';
+import page from 'page';
 import { template as _ } from 'lodash';
 import { observable, action, autorun } from 'mobx';
 import axios from 'axios';

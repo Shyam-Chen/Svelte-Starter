@@ -1,6 +1,7 @@
 import { MDCRipple } from '@material/ripple';
 import { MDCTextField } from '@material/textfield';
 import { MDCSnackbar } from '@material/snackbar';
+import page from 'page';
 import { template as _, noop } from 'lodash';
 
 import { layout } from '~/shared/layout';
@@ -27,7 +28,7 @@ const common = (language: string = 'en'): void => {
     .onAuthStateChanged((user: { uid: string }): void => {
       if (user) {
         sendButton.onclick = (): void => {
-          const textfieldInputs = $$('.mdc-textfield__input');
+          const textfieldInputs = $$('.mdc-text-field__input');
           const empty = [].filter.call(textfieldInputs, textfieldInput => textfieldInput.value === '');
 
           if (!empty.length) {
@@ -42,8 +43,8 @@ const common = (language: string = 'en'): void => {
             );
 
             [].forEach.call(
-              $$('.mdc-textfield__label'),
-              textfieldLabel => textfieldLabel.classList.remove('mdc-textfield__label--float-above')
+              $$('.mdc-text-field__label'),
+              textfieldLabel => textfieldLabel.classList.remove('mdc-text-field__label--float-above')
             );
 
             language === 'en' ? sendToast.show({ message: 'Thanks for your comment.' }) : noop();

@@ -1,6 +1,7 @@
 // @flow
 
 import { MDCRipple } from '@material/ripple';
+import page from 'page';
 import { template as _ } from 'lodash';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs/observable';

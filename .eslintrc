@@ -10,8 +10,7 @@
     "jest": true
   },
   "globals": {
-    "firebase": true,
-    "page": true
+    "firebase": true
   },
   "extends": "eslint:recommended",
   "parser": "babel-eslint",

@@ -1,5 +1,6 @@
 // @flow
 
+import page from 'page';
 import { template as _ } from 'lodash';
 
 import { $ } from '~/utils';

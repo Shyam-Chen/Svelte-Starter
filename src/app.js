@@ -11,7 +11,7 @@ import { load$ } from '~/utils';
  * @name initialize-app
  */
 
-// fonts or icons
+// fonts or icons or themes
 Observable
   ::forkJoin(
     load$('https://fonts.googleapis.com/icon?family=Material+Icons')
@@ -23,6 +23,13 @@ Observable
       result,
       (item, index) => style.innerHTML += result[index]
     );
+
+    style.innerHTML += `
+      :root {
+        --mdc-theme-primary: #3F51B5;
+        --mdc-theme-accent: #E91E63;
+      }
+    `;
 
     document.head.appendChild(style);
   });

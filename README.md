@@ -48,11 +48,11 @@ This seed repository provides the following features:
 
 Here are some related seed repositories:
 
-* ---------- **HTML5** ----------
+* ---------- **Client-side** ----------
 * [Frontend Starter Kit](https://github.com/Shyam-Chen/Frontend-Starter-Kit)
 * Cordova Mobile Starter
 * Electron Desktop Starter
-* ---------- **Node.js** ----------
+* ---------- **Server-side** ----------
 * [Backend Starter Kit](https://github.com/Shyam-Chen/Backend-Starter-Kit)
 * [Firebase Functions Starter](https://github.com/Shyam-Chen/Firebase-Functions-Starter)
 * Kubernetes Engine Starter
