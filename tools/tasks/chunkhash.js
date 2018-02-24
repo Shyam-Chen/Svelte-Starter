@@ -3,7 +3,7 @@ import gulp from 'gulp';
 import template from 'gulp-template';
 import htmlmin from 'gulp-htmlmin';
 
-import { INDEX_ENV, SOURCE_ROOT, DIST_ROOT } from '../constants';
+import { INDEX_ENV, SOURCE_ROOT, DIST_ROOT } from '../env';
 import { InjectService } from '../utils';
 
 gulp.task('chunkhash', () => {

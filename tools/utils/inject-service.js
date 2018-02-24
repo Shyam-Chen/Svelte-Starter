@@ -2,7 +2,7 @@ import { join, basename } from 'path';
 import gulp from 'gulp';
 import inject from 'gulp-inject';
 
-import { DIST_ROOT } from '../constants';
+import { DIST_ROOT } from '../env';
 
 export class InjectService {
   static preload(fileName) {

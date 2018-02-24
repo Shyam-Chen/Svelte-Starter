@@ -1,7 +1,7 @@
 {
   "name": "Frontend-Starter-Kit",
   "version": "1.0.0",
-  "description": "A boilerplate for HTML5, Material, Firebase, Gulp, Rollup, Babel, Reshape, and PostCSS.",
+  "description": "A boilerplate for HTML5, Material, Firebase, Parcel, Babel, PostHTML, and PostCSS.",
   "scripts": {
     "start": "gulp --watch --serve",
     "test": "gulp lint && jest \"src/.*\\.js$\" \"test/.*\\.js$\" --coverage --forceExit",

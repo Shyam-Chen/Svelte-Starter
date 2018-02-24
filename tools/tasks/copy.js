@@ -1,7 +1,7 @@
 import { join } from 'path';
 import gulp from 'gulp';
 
-import { ASSETS_ROOT, DIST_ROOT } from '../constants';
+import { ASSETS_ROOT, DIST_ROOT } from '../env';
 
 gulp.task('copy', () => {
   return gulp

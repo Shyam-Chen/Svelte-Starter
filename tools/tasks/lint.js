@@ -4,7 +4,7 @@ import htmlhint from 'gulp-htmlhint';
 import stylelint from 'gulp-stylelint';
 import eslint from 'gulp-eslint';
 
-import { SOURCE_ROOT } from '../constants';
+import { SOURCE_ROOT } from '../env';
 
 gulp.task('lint-html', () => {
   return gulp.src(join(SOURCE_ROOT, '**/*.html'))

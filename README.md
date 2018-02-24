@@ -1,6 +1,6 @@
 # Frontend Starter Kit
 
-:icecream: A boilerplate for :star2: HTML5 :star2:, Material, Firebase, Gulp, Rollup, Babel, Reshape, and PostCSS.
+:icecream: A boilerplate for HTML5, Material, Firebase, Parcel, Babel, PostHTML, and PostCSS.
 
 [![Build Status](https://img.shields.io/circleci/project/Shyam-Chen/Frontend-Starter-Kit/master.svg)](https://circleci.com/gh/Shyam-Chen/Frontend-Starter-Kit)
 [![Coverage Status](https://img.shields.io/codecov/c/github/Shyam-Chen/Frontend-Starter-Kit/master.svg)](https://codecov.io/gh/Shyam-Chen/Frontend-Starter-Kit)
@@ -19,7 +19,7 @@ This seed repository provides the following features:
 * [x] Utility functions with [**Lodash**](https://lodash.com/).
 * [x] Reactive extensions with [**ReactiveX**](http://reactivex.io/).
 * [x] Scalable state management with [**MobX**](https://mobx.js.org/).
-* [ ] Immutable collections with [**Immer**](https://github.com/mweststrate/immer).
+* [x] Immutable collections with [**Immer**](https://github.com/mweststrate/immer).
 * [x] Data visualizations with [**D3**](https://d3js.org/).
 * [x] 3D scene graphs with [**Three**](https://threejs.org/).
 * ---------- **Tools** ----------
@@ -167,7 +167,7 @@ $ docker-compose rm -fs
 Default configuration
 
 ```js
-// tools/constants.js
+// tools/env.js
 export const SITE_URL = process.env.SITE_URL || 'https://web-go-demo.firebaseapp.com';
 export const FUNC_URL = process.env.FUNC_URL || 'https://us-central1-web-go-demo.cloudfunctions.net';
 
@@ -300,24 +300,19 @@ axios.get(API_LIST)
   .then(res => console.log(res.data))
   .then(() => console.log('done'));
 
-let searchText = 'a';
-axios.get(API_LIST, { params: { text: searchText } })
+axios.get(API_LIST, { params: { text: 'a' } })
   .then(res => console.log(res.data))
   .then(() => console.log('done'));
 
-let addText = 'Web GO';
-axios.post(API_LIST, { text: addText })
+axios.post(API_LIST, { text: 'Web GO' })
   .then(res => console.log(res.data))
   .then(() => console.log('done'));
 
-let putListId = '5943881e058f440012d4ae47';
-let updateText = 'Web GO';
-axios.put(`${API_LIST}/${putListId}`, { text: updateText })
+axios.put(`${API_LIST}/5943881e058f440012d4ae47`, { text: 'Web GO' })
   .then(res => console.log(res.data))
   .then(() => console.log('done'));
 
-let deleteListId = '594388af058f440012d4ae49';
-axios.delete(`${API_LIST}/${deleteListId}`)
+axios.delete(`${API_LIST}/594388af058f440012d4ae49`)
   .then(res => console.log(res.data))
   .then(() => console.log('done'));
 ```
@@ -344,46 +339,41 @@ client
   })
   .then(res => console.log(res.data));
 
-let searchText = 'a';
 client
   .query({
     query: gql`
       query List {
-        list(text: "${searchText}") { _id text }
+        list(text: "a") { _id text }
       }
     `
   })
   .then(res => console.log(res.data));
 
-let addText = 'Web GO';
 client
   .mutate({
     mutation: gql`
       mutation List {
-        addText(text: "${addText}") { _id text }
+        addText(text: "Web GO") { _id text }
       }
     `
   })
   .then(res => console.log(res.data));
 
-let editListId = '5943881e058f440012d4ae47';
-let updateText = 'Web GO';
 client
   .mutate({
     mutation: gql`
       mutation List {
-        updateText(_id: "${editListId}", text: "${updateText}") { _id text }
+        updateText(_id: "5943881e058f440012d4ae47", text: "Web GO") { _id text }
       }
     `
   })
   .then(res => console.log(res.data));
 
-let deleteListId = '594388af058f440012d4ae49';
 client
   .mutate({
     mutation: gql`
       mutation List {
-        deleteText(_id: "${deleteListId}") { _id text }
+        deleteText(_id: "594388af058f440012d4ae49") { _id text }
       }
     `
   })
@@ -580,33 +570,37 @@ animate();
 ```
 .
 ├── flow-typed  -> module types
-├── functions  -> cloud functions
 ├── src
-│   ├── assets  -> audios, datas, fonts, images, videos
+│   ├── assets  -> audios, datas, fonts, images, styles, videos
 │   ├── pages
 │   │   └── <feature>
-│   │       ├── _tests
-│   │       │   └── <feature>.{spec,e2e-spec}.js
-│   │       ├── <feature>.{html,css,js}
+│   │       ├── _languages  -> internationalization
+│   │       ├── _includes  -> lite components
+│   │       │   └── <feature>.html
+│   │       ├── _components  -> feature components
+│   │       │   └── <feature>
+│   │       │       ├── <feature>.{html,css,js,spec.js}
+│   │       │       └── index.js
+│   │       ├── _<custom> -> private object
+│   │       ├── <feature>.{html,css,js,spec.js}
 │   │       └── index.js
 │   ├── shared  -> shared components
 │   ├── utils  -> utility functions
-│   ├── app.css
 │   ├── app.js
 │   ├── index.html
 │   ├── polyfills.js  -> shims, pre-vendor
 │   └── vendor.js  -> third-party libraries
+├── test  -> E2E testing
 ├── tools
 │   ├── config
-│   │   └── {babel,karma,postcss,protractor,reshape,rollup}.js
+│   │   └── {babel,postcss,reshape,rollup}.js
 │   ├── rules
 │   │   └── database.json,storage
 │   ├── tasks
-│   │   └── {app,build,chunkhash,copy,e2e,entrypoint,lint,polyfills,precache,serve,sitemap,unit,vendor,watch}.js
+│   │   └── {app,build,chunkhash,copy,entrypoint,lint,polyfills,precache,serve,sitemap,vendor,watch}.js
 │   ├── utils
-│   │   └── {e2e-server,handle-errors,index,inject-service,resolve-id,service-worker}.js
-│   ├── constants.js
-│   └── render.js
+│   │   └── {empty-mapper,handle-errors,index,inject-service,resolve-id,service-worker,setup-files}.js
+│   └── env.js
 ├── .babelrc
 ├── .editorconfig
 ├── .eslintrc
@@ -623,6 +617,7 @@ animate();
 ├── docker-compose.yml
 ├── firebase.json
 ├── gulpfile.babel.js
+├── jest.config.js
 ├── package.json
 └── yarn.lock
 ```

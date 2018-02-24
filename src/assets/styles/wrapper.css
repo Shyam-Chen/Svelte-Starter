@@ -1,0 +1,7 @@
+@custom-media --xsmall-screen (width <= 600px);
+@custom-media --small-screen (width > 600px) and (width <= 960px);
+@custom-media --medium-screen (width > 960px) and (width <= 1280px);
+@custom-media --large-screen (width > 1280px) and (width <= 1920px);
+@custom-media --xlarge-screen (width > 1920px);
+
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;

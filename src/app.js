@@ -1,4 +1,4 @@
-import './app.css';
+import '~/assets/styles/global.css';
 
 import { Observable } from 'rxjs';
 import { forkJoin } from 'rxjs/observable';
@@ -27,7 +27,7 @@ Observable
     style.innerHTML += `
       :root {
         --mdc-theme-primary: #3F51B5;
-        --mdc-theme-accent: #E91E63;
+        --mdc-theme-secondary: #E91E63;
       }
     `;
 

@@ -13,7 +13,7 @@ import definefunction from 'postcss-define-function';
 import modules from 'postcss-modules';
 import cssnano from 'cssnano';
 
-import { ASSETS_ROOT } from '../constants';
+import { ASSETS_ROOT } from '../env';
 
 const cssExportMap = {};
 

@@ -1,19 +1,19 @@
-html {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  flex-flow: column;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  min-height: 100%;
-  background: #FAFAFA;
-}
-
 :global {
-  & .flexbox {
+  html {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    flex-flow: column;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100%;
+    background: #FAFAFA;
+  }
+
+  .flexbox {
     display: flex;
 
     &--row {
@@ -30,7 +30,7 @@ body {
     }
   }
 
-  & .md-table {
+  .md-table {
     border-collapse: collapse;
     white-space: nowrap;
     background: #fff;

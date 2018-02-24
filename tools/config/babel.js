@@ -1,6 +1,6 @@
 import { join } from 'path';
 
-import { SOURCE_ROOT } from '../constants';
+import { SOURCE_ROOT } from '../env';
 
 export const BABEL_CONFIG_APP = {
   babelrc: false,

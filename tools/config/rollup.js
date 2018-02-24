@@ -12,7 +12,7 @@ import uglify from 'rollup-plugin-uglify';
 import buble from 'rollup-plugin-buble';
 import cssnano from 'cssnano';
 
-import { APP_ENV, SOURCE_ROOT } from '../constants';
+import { APP_ENV, SOURCE_ROOT } from '../env';
 import { lodash } from '../utils';
 
 import RESHAPE_CONFIG from './reshape';

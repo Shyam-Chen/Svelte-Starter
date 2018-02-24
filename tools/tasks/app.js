@@ -7,7 +7,7 @@ import buffer from 'vinyl-buffer';
 import rev from 'gulp-rev';
 import { stream } from 'browser-sync';
 
-import { DIST_ROOT } from '../constants';
+import { DIST_ROOT } from '../env';
 import { APP_CONFIG } from '../config/rollup';
 import { CompileError } from '../utils';
 

@@ -4,7 +4,7 @@ import plumber from 'gulp-plumber';
 import template from 'gulp-template';
 import { stream } from 'browser-sync';
 
-import { INDEX_ENV, SOURCE_ROOT, DIST_ROOT } from '../constants';
+import { INDEX_ENV, SOURCE_ROOT, DIST_ROOT } from '../env';
 
 gulp.task('entrypoint', () => {
   return gulp.src(join(SOURCE_ROOT, 'index.html'))

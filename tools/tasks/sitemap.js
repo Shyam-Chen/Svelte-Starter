@@ -2,7 +2,7 @@ import { join } from 'path';
 import gulp from 'gulp';
 import sitemap from 'gulp-sitemap';
 
-import { SITE_URL, SOURCE_ROOT, DIST_ROOT } from '../constants';
+import { SITE_URL, SOURCE_ROOT, DIST_ROOT } from '../env';
 
 gulp.task('sitemap', () => {
   return gulp
