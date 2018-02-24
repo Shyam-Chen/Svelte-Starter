@@ -10,4 +10,4 @@ flow-typed/
 [lints]
 
 [options]
-module.name_mapper='.*\(.css\)' -> 'empty/object'
+module.name_mapper='^.*[.](jpg|JPG|gif|GIF|png|PNG|less|LESS|css|CSS|html|pug)' -> 'empty/object'

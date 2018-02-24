@@ -1,3 +1,4 @@
+import page from 'page';
 import { template as _ } from 'lodash';
 
 import notfound from './not-found';

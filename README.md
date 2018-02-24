@@ -49,13 +49,13 @@ This seed repository provides the following features:
 Here are some related seed repositories:
 
 * ---------- **Client-side** ----------
-* [Frontend Starter Kit](https://github.com/Shyam-Chen/Frontend-Starter-Kit)
-* Cordova Mobile Starter
-* Electron Desktop Starter
+* [Frontend Starter Kit](https://github.com/Shyam-Chen/Frontend-Starter-Kit) - Make for Progressive Web Apps.
+* Cordova Mobile Starter - Make for Cross-platform Mobile Apps.
+* Electron Desktop Starter - Make for Cross-platform Desktop Apps.
 * ---------- **Server-side** ----------
-* [Backend Starter Kit](https://github.com/Shyam-Chen/Backend-Starter-Kit)
-* [Firebase Functions Starter](https://github.com/Shyam-Chen/Firebase-Functions-Starter)
-* Kubernetes Engine Starter
+* [Backend Starter Kit](https://github.com/Shyam-Chen/Backend-Starter-Kit) - Make for Flexible Cloud Platform.
+* [Firebase Functions Starter](https://github.com/Shyam-Chen/Firebase-Functions-Starter) - Make for Serverless Cloud Functions.
+* Kubernetes Engine Starter - Make for Cloud Infrastructure Container.
 
 ## Table of Contents
 
