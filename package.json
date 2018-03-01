@@ -9,7 +9,7 @@
     "prestart": "rimraf public",
     "pretest": "rimraf coverage",
     "prebuild": "rimraf public",
-    "postinstall": "flow-typed install",
+    "typed": "flow-typed install",
     "gulp": "gulp",
     "codecov": "codecov",
     "firebase": "firebase"

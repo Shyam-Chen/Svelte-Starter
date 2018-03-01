@@ -1,4 +1,4 @@
-export const TEST_ENV = process.env.TEST_ENV || null;
+export const TEST_ENV = process.env.TEST_ENV || '';
 export const TEST_PORT = process.env.TEST_PORT || 8000;
 export const TEST_URL = `http://localhost:${TEST_PORT}`;
 
@@ -10,11 +10,11 @@ export const CONFIG = (() => {
     LAUNCG: {
       headless: false,
       slowMo: 80,
-      args: [`--window-size=${width},${height}`, '--no-sandbox']
+      args: [`--window-size=${width},${height}`, '--no-sandbox'],
     },
     VIEWPORT: {
       width,
-      height
-    }
+      height,
+    },
   };
 })();

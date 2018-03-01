@@ -90,7 +90,7 @@ $ yarn start
 4. Test the Application
 
 ```bash
-$ yarn test  # e2e testing needs to run `yarn start` first
+$ yarn test
 ```
 
 5. Build the application
