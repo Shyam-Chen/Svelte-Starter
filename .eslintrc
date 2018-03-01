@@ -1,7 +1,7 @@
 {
   "plugins": [
     "flowtype",
-    "flowtype-errors"
+    // "flowtype-errors"
   ],
   "env": {
     "browser": true,
@@ -32,8 +32,9 @@
   "rules": {
     // Plugins
     "import/prefer-default-export": "off",  // TODO
-    "flowtype-errors/show-errors": "error",
-    "flowtype-errors/show-warnings": "warning",
+    // "flowtype-errors/show-errors": "error",
+    // "flowtype-errors/show-warnings": "warning",
+    // "flowtype-errors/enforce-min-coverage": ["error", 50]
 
     // Possible Errors
 
@@ -46,7 +47,7 @@
 
     // Stylistic Issues
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-    "object-curly-newline": ["error", { "consistent": true }]
+    "object-curly-newline": ["error", { "consistent": true }],
 
     // JS.Next
 
