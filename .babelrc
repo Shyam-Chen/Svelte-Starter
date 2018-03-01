@@ -22,10 +22,9 @@
     ],
     [
       "transform-imports", {
-        "rxjs": {
-          "transform": "rxjs/${member}",
-          "preventFullImport": true,
-          "skipDefaultConversion": true
+        "lodash": {
+          "transform": "lodash/${member}",
+          "preventFullImport": true
         },
         "rxjs/observable": {
           "transform": "rxjs/observable/${member}",

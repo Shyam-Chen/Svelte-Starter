@@ -19,24 +19,23 @@ export const store = observable({
 export default (): void => {
   const imports = { style };
 
-  page('/about', () =>
+  page('/about', () => {
     autorun(() => {
       layout(_(template, { imports })({ ...english, store }), 'about');
-    })
-  );
-
+    });
+  });
 
   const i18n = [
     ['en', english],
     ['zh', chinese],
-    ['ja', japanese]
+    ['ja', japanese],
   ];
 
   for (let i = 0, l = i18n.length; i < l; i++) {
-    page(`/${i18n[i][0]}/about`, (): void =>
+    page(`/${i18n[i][0]}/about`, (): void => {
       autorun((): void => {
         layout(_(template, { imports })({ ...i18n[i][1], store }), 'about', i18n[i][0]);
-      })
-    );
+      });
+    });
   }
 };

@@ -13,15 +13,15 @@ import { load$ } from '~/utils';
 
 // fonts or icons or themes
 Observable
-  ::forkJoin(
-    load$('https://fonts.googleapis.com/icon?family=Material+Icons')
-  )
-  .subscribe(result => {
+  ::forkJoin(load$('https://fonts.googleapis.com/icon?family=Material+Icons'))
+  .subscribe((result) => {
     const style = document.createElement('style');
 
     [].forEach.call(
       result,
-      (item, index) => style.innerHTML += result[index]
+      (item, index) => {
+        style.innerHTML += result[index];
+      },
     );
 
     style.innerHTML += `
@@ -40,11 +40,11 @@ firebase.initializeApp(process.env.FIREBASE_CONFIG);
 // service worker
 if (
   'serviceWorker' in navigator &&
-  (location.protocol === 'https:' || location.hostname === 'localhost')
+  (window.location.protocol === 'https:' || window.location.hostname === 'localhost')
 ) {
   navigator.serviceWorker
     .register('service-worker.js')
-    .then(registration => {
+    .then((registration) => {
       registration.onupdatefound = () => {
         if (navigator.serviceWorker.controller) {
           const { installing } = registration;
@@ -55,7 +55,7 @@ if (
                 registration.update();
                 break;
               case 'activated':
-                location.reload();
+                window.location.reload();
                 break;
               case 'redundant':
                 throw new Error('The installing service worker became redundant.');
@@ -66,7 +66,7 @@ if (
         }
       };
     })
-    .catch(error => {
+    .catch((error) => {
       console.error('Error during service worker registration:', error);
     });
 }

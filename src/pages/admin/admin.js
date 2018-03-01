@@ -32,15 +32,15 @@ export const admin = (): void => {
         .then(() => {
           [].forEach.call(
             $$('.mdc-text-field__input'),
-            textfieldInput => textfieldInput.value = ''
+            (textfieldInput) => { textfieldInput.value = ''; },
           );
 
           [].forEach.call(
             $$('.mdc-text-field__label'),
-            textfieldLabel => textfieldLabel.classList.remove('mdc-text-field__label--float-above')
+            textfieldLabel => textfieldLabel.classList.remove('mdc-text-field__label--float-above'),
           );
         })
-        .catch(error => {
+        .catch((error) => {
           loginToast.show({ message: error.message });
         });
     };
@@ -48,14 +48,14 @@ export const admin = (): void => {
     adminSignOut.onclick = (): void => {
       firebase.auth().signOut();
       signOutContent.style.display = '';
-      [].forEach.call(signInContent, content => content.style.display = 'none');
+      [].forEach.call(signInContent, (content) => { content.style.display = 'none'; });
     };
 
     signOutContent.style.display = '';
-    [].forEach.call(signInContent, content => content.style.display = 'none');
+    [].forEach.call(signInContent, (content) => { content.style.display = 'none'; });
 
     firebase.auth()
-      .onAuthStateChanged(user => {
+      .onAuthStateChanged((user) => {
         let currentUID = null;
 
         if (user && currentUID === user.uid) return;
@@ -66,7 +66,7 @@ export const admin = (): void => {
           currentUID = user.uid;
 
           signOutContent.style.display = 'none';
-          [].forEach.call(signInContent, content => content.style.display = '');
+          [].forEach.call(signInContent, (content) => { content.style.display = ''; });
 
           users('admin');
         } else {
@@ -76,12 +76,12 @@ export const admin = (): void => {
 
     [].forEach.call(
       $$('.mdc-button'),
-      ripple => MDCRipple.attachTo(ripple)
+      ripple => MDCRipple.attachTo(ripple),
     );
 
     [].forEach.call(
       $$('.mdc-text-field'),
-      textfield => MDCTextField.attachTo(textfield)
+      textfield => MDCTextField.attachTo(textfield),
     );
   });
 };

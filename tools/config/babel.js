@@ -33,11 +33,6 @@ export const BABEL_CONFIG_APP = {
           transform: 'lodash/${member}',
           preventFullImport: true
         },
-        'rxjs': {
-          transform: 'rxjs/${member}',
-          preventFullImport: true,
-          skipDefaultConversion: true
-        },
         'rxjs/observable': {
           transform: 'rxjs/observable/${member}',
           preventFullImport: true,

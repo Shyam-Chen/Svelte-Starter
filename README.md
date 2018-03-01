@@ -50,8 +50,8 @@ Here are some related seed repositories:
 
 * ---------- **Client-side** ----------
 * [Frontend Starter Kit](https://github.com/Shyam-Chen/Frontend-Starter-Kit) - Make for Progressive Web Apps.
-* [Cordova Mobile Starter](https://github.com/Shyam-Chen/Cordova-Mobile-Starter) - Make for Cross-platform Mobile Apps.
-* [Electron Desktop Starter](https://github.com/Shyam-Chen/Electron-Desktop-Starter) - Make for Cross-platform Desktop Apps.
+* [Cordova Phonegap Starter](https://github.com/Shyam-Chen/Cordova-Phonegap-Starter) - Make for Cross-platform Mobile Apps.
+* [Electron Chromium Starter](https://github.com/Shyam-Chen/Electron-Chromium-Starter) - Make for Cross-platform Desktop Apps.
 * ---------- **Server-side** ----------
 * [Backend Starter Kit](https://github.com/Shyam-Chen/Backend-Starter-Kit) - Make for Flexible Cloud Platform.
 * [Firebase Functions Starter](https://github.com/Shyam-Chen/Firebase-Functions-Starter) - Make for Serverless Cloud Functions.
@@ -79,35 +79,31 @@ $ cd <PROJECT_NAME>
 
 ```bash
 $ yarn install
-
-# then install types
-$ yarn typed
 ```
 
 3. Run the Application
 
 ```bash
 $ yarn start
-# or
-$ yarn dev
 ```
 
-4. Run the Test
+4. Test the Application
 
 ```bash
-# unit testing
-$ yarn test
-# or
-$ yarn unit
+$ yarn test  # e2e testing needs to run `yarn start` first
+```
 
-# lint the code
-$ yarn lint
+5. Build the application
 
-# check the type
-$ yarn flow
+```bash
+$ yarn build
+```
 
-# e2e testing
-$ yarn e2e  # need to run `yarn dev` first
+6. Deploy the application
+
+```bash
+$ yarn firebase use <PROJECT_ENV>
+$ yarn firebase deploy
 ```
 
 ## Practical Examples
@@ -171,11 +167,13 @@ Default configuration
 export const SITE_URL = process.env.SITE_URL || 'https://web-go-demo.firebaseapp.com';
 export const FUNC_URL = process.env.FUNC_URL || 'https://us-central1-web-go-demo.cloudfunctions.net';
 
+// for index.html
 export const INDEX_ENV = {
   APP_BASE: process.env.APP_BASE || '/',
   GOOGLE_ANALYTICS: process.env.GOOGLE_ANALYTICS || 'UA-84381641-2'
 };
 
+// for app.js
 export const APP_ENV = {
   FIREBASE_CONFIG: {
     apiKey: process.env.FIREBASE_KEY || 'AIzaSyDBA0yVS0JuIqGaoN9nafvPFxPSVgmxwnw',

@@ -14,7 +14,7 @@ describe('Not Found', () => {
     Object.defineProperty(document, 'querySelector', {
       value() {
         return '<div id="app"></div>';
-      }
+      },
     });
 
     page('*', () => {
