@@ -10,7 +10,7 @@ import { $, $$ } from '~/utils';
 import template from './rest.html';
 import style from './rest.css';
 
-export const API_LIST = 'https://web-go-demo.herokuapp.com/__/list';
+export const API_LIST = 'https://web-go-demo.herokuapp.com/__/text-list';
 
 export const store = observable({
   // observable
@@ -22,7 +22,7 @@ export const store = observable({
   loading: false,
 
   // action
-  searchItem: action(text => {
+  searchItem: action((text) => {
     store.loading = true;
 
     axios.get(text ? `${API_LIST}?text=${text}` : API_LIST)
@@ -33,7 +33,7 @@ export const store = observable({
       })
       .catch(error => console.error(error));
   }),
-  addItem: action(text => {
+  addItem: action((text) => {
     store.loading = true;
 
     axios.post(API_LIST, { text })
@@ -43,7 +43,7 @@ export const store = observable({
       })
       .catch(error => console.error(error));
   }),
-  deleteItem: action(_id => {
+  deleteItem: action((_id) => {
     store.loading = true;
 
     axios.delete(`${API_LIST}/${_id}`)
@@ -70,7 +70,7 @@ export const store = observable({
   },
   get progress(): boolean {
     return store.loading ? '' : 'none';
-  }
+  },
 });
 
 export const render = (): void => {
@@ -91,7 +91,7 @@ export const render = (): void => {
 
   [].forEach.call(
     $$('.mdc-button[data-delete]'),
-    deleteButton => {
+    (deleteButton) => {
       deleteButton.onclick = (): void => {
         dialogDelete.show();
         document.body.style.overflowY = 'hidden';
@@ -109,7 +109,7 @@ export const render = (): void => {
 
   [].forEach.call(
     $$('.mdc-button[data-edit]'),
-    editButton => {
+    (editButton) => {
       editButton.onclick = (): void => {
         dialogEdit.show();
         document.body.style.overflowY = 'hidden';

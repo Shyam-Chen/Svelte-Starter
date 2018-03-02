@@ -33,7 +33,7 @@
     // Plugins
     "import/prefer-default-export": "off",  // TODO
     // "flowtype-errors/show-errors": "error",
-    // "flowtype-errors/show-warnings": "warning",
+    // "flowtype-errors/show-warnings": "warn",
     // "flowtype-errors/enforce-min-coverage": ["error", 50]
 
     // Possible Errors
