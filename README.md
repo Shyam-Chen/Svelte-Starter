@@ -572,14 +572,13 @@ animate();
 │   ├── assets  -> audios, datas, fonts, images, styles, videos
 │   ├── pages
 │   │   └── <feature>
-│   │       ├── _languages  -> internationalization
-│   │       ├── _includes  -> lite components
-│   │       │   └── <feature>.html
 │   │       ├── _components  -> feature components
 │   │       │   └── <feature>
 │   │       │       ├── <feature>.{html,css,js,spec.js}
 │   │       │       └── index.js
-│   │       ├── _<custom> -> private object
+│   │       ├── _languages  -> internationalization
+│   │       ├── _templates  -> lite components
+│   │       │   └── <feature>.html
 │   │       ├── <feature>.{html,css,js,spec.js}
 │   │       └── index.js
 │   ├── shared  -> shared components
