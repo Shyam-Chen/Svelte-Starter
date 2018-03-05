@@ -2,10 +2,15 @@
   "HOME": "首頁",
   "TITLE": "歡迎來到 Web GO",
   "DESCRIPTION": "Web GO 遵循 <a href=\"https://developers.google.com/web/fundamentals/\">Web Fundamentals</a> 中概述的最佳實踐",
-  "SUBTITLE": "樣板程式碼",
-  "CONTENT": {
-    "WEB": "HTML5、Material、Firebase、Gulp、Rollup、Babel、Reshape 和 PostCSS 的樣板",
-    "BACKEND": "Node.js、Express、Mongoose、Heroku、mLab、Nodemon、PM2 和 Babel 的樣板"
-  },
+  "BOILERPLATE_CODE": "樣板程式碼",
+  "RELATED_BOILERPLATES": "相關的樣板",
+  "CARD_TEXT": [
+    "為漸進式網頁應用程式而做",
+    "為彈性的雲端平台而做",
+    "為跨平台手機應用程式而做",
+    "為跨平台桌機應用程式而做",
+    "為無伺服雲端函式而做",
+    "為容器化雲端基礎架構而做"
+  ],
   "GET_STARTED": "立馬開始"
 }

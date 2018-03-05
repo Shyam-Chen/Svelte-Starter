@@ -2,10 +2,15 @@
   "HOME": "ホーム",
   "TITLE": "Web GO へようこそ",
   "DESCRIPTION": "Web GO は、<a href=\"https://developers.google.com/web/fundamentals/\">Web Fundamentals</a> で説明されているベストプラクティスに従います",
-  "SUBTITLE": "定型文コード",
-  "CONTENT": {
-    "WEB": "HTML5、Material、Firebase、Gulp、Rollup、Babel、Reshape と PostCSS のための定型文",
-    "BACKEND": "Node.js、Express、Mongoose、Heroku、mLab、Nodemon、PM2 と Babel のための定型文"
-  },
+  "BOILERPLATE_CODE": "定型文コード",
+  "RELATED_BOILERPLATES": "関連する定型文",
+  "CARD_TEXT": [
+    "プログレッシブウェブアプリのために作る",
+    "フレキシブルなクラウドプラットフォームのために作る",
+    "クロスプラットフォームのモバイルアプリのために作る",
+    "クロスプラットフォームのデスクトップアプリケーションのために作る",
+    "サーバーレスクラウド関数のために作る",
+    "コンテナ化されたクラウドインフラストラクチャのために作る"
+  ],
   "GET_STARTED": "開始する"
 }

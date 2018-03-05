@@ -13,7 +13,7 @@ import chinese from './_languages/chinese.json';
 import japanese from './_languages/japanese.json';
 
 export const home = (): void => {
-  if (location.pathname === '/') {
+  if (window.location.pathname === '/') {
     if (/zh/.test(navigator.language)) page.redirect('/zh');
     if (/ja/.test(navigator.language)) page.redirect('/ja');
   }
@@ -21,14 +21,14 @@ export const home = (): void => {
   const imports = {
     style,
     image: {
-      logo
-    }
+      logo,
+    },
   };
 
   const common = (): void => {
     [].forEach.call(
       $$('.mdc-button'),
-      ripple => MDCRipple.attachTo(ripple)
+      ripple => MDCRipple.attachTo(ripple),
     );
   };
 
@@ -44,7 +44,7 @@ export const home = (): void => {
   const i18n = [
     ['en', english],
     ['zh', chinese],
-    ['ja', japanese]
+    ['ja', japanese],
   ];
 
   const l10n = (data, ...funcs) => {
