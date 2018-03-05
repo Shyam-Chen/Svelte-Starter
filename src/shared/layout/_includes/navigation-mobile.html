@@ -8,15 +8,15 @@
 
     <div class="mdc-drawer__content mdc-list-group" id="mobile-menu">
       <nav class="mdc-list">
-        <a class="mdc-list-item" onclick="page.redirect('<%= LINK[0][0] %>'); document.body.style.overflowY = 'auto'">
+        <a class="mdc-list-item" href="<%= LINK[0][0] %>">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
           <%= LINK[0][1] %>
         </a>
-        <a class="mdc-list-item" onclick="page.redirect('<%= LINK[1][0] %>'); document.body.style.overflowY = 'auto'">
+        <a class="mdc-list-item" href="<%= LINK[1][0] %>">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">info</i>
           <%= LINK[1][1] %>
         </a>
-        <a class="mdc-list-item" onclick="page.redirect('<%= LINK[2][0] %>'); document.body.style.overflowY = 'auto'">
+        <a class="mdc-list-item" href="<%= LINK[2][0] %>">
           <i class="material-icons mdc-list-item__graphic" aria-hidden="true">contacts</i>
           <%= LINK[2][1] %>
         </a>

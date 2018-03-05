@@ -1,3 +1,5 @@
+// @flow
+
 import { MDCTemporaryDrawer } from '@material/drawer';
 import { MDCRipple } from '@material/ripple';
 import { template as _, noop } from 'lodash';
@@ -47,15 +49,15 @@ export const layout = (content: string, page: string, language: string = 'en'): 
     }
   };
 
-  drawerMobileEl.addEventListener('MDCTemporaryDrawer:open', () => bodyEl.style.overflowY = 'hidden');
-  drawerMobileEl.addEventListener('MDCTemporaryDrawer:close', () => bodyEl.style.overflowY = 'auto');
+  drawerMobileEl.addEventListener('MDCTemporaryDrawer:open', () => { bodyEl.style.overflowY = 'hidden'; });
+  drawerMobileEl.addEventListener('MDCTemporaryDrawer:close', () => { bodyEl.style.overflowY = 'auto'; });
 
   [].forEach.call(
     $$('a.mdc-list-item'),
-    ripple => {
+    (ripple) => {
       MDCRipple.attachTo(ripple);
       window.scrollTo(0, 0);
-    }
+    },
   );
 
   $('#content').innerHTML = content;
