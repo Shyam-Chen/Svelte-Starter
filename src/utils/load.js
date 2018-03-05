@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 
 /**
  * @example
@@ -7,11 +7,10 @@ import { Observable } from 'rxjs';
  *     // ...
  *   });
  */
-
 export const load$ = (url: string): Observable<string> => {
   const xhr = new XMLHttpRequest();
 
-  return new Observable(observer => {
+  return new Observable((observer) => {
     xhr.open('GET', url);
     xhr.onload = () => {
       if (xhr.status === 200) {

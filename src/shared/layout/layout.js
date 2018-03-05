@@ -15,12 +15,11 @@ import japanese from './_languages/japanese.json';
 
 /**
  * @example
- * import { layout } from '../../components/layout';
+ * import { layout } from '~/shared/layout';
  * layout(_(template, { imports })(data), 'home');
  */
-
 export const layout = (content: string, page: string, language: string = 'en'): void => {
-  const app = $('#app');
+  const app = $('#app-root');
   const imports = { style, image: { logo } };
   language === 'en' ? app.innerHTML = _(template, { imports })(english) : noop();
   language === 'zh' ? app.innerHTML = _(template, { imports })(chinese) : noop();

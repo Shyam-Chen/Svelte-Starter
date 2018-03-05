@@ -36,7 +36,7 @@
 //     document.querySelector = jasmine.createSpy('HTML Element').and.returnValue(dummyElement);
 //
 //     const imports = { style, image: { logo } };
-//     document.querySelector('#app').innerHTML = _(template, { imports })(english);
+//     document.querySelector('#app-root').innerHTML = _(template, { imports })(english);
 //     document.querySelector('#content').innerHTML = `<p>Content</p>`;
 //   });
 // });

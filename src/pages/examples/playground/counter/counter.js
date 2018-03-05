@@ -42,11 +42,11 @@ export const store = observable({
   // computed
   get evenOrOdd(): string {
     return store.value % 2 === 0 ? 'even' : 'odd';
-  }
+  },
 });
 
 export const render = (): void => {
-  $('#app').innerHTML = _(template, { imports: { style } })({ store });
+  $('#app-root').innerHTML = _(template, { imports: { style } })({ store });
 
   const createClickEvent = (name, func) =>
     $(`#${name}`).addEventListener('click', func);
@@ -60,7 +60,7 @@ export const render = (): void => {
 
   [].forEach.call(
     $$('.mdc-button'),
-    ripple => MDCRipple.attachTo(ripple)
+    ripple => MDCRipple.attachTo(ripple),
   );
 };
 

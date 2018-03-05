@@ -17,7 +17,7 @@ export const store = observable({});
 
 export const render = (route: string) =>
   autorun((): void => {
-    $('#app').innerHTML = _(template, { imports: { style } })({ store, route });
+    $('#app-root').innerHTML = _(template, { imports: { style } })({ store, route });
 
     // -
 

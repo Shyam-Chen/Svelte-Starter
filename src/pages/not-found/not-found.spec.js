@@ -18,7 +18,7 @@ describe('Not Found', () => {
     });
 
     page('*', () => {
-      document.querySelector('#app')
+      document.querySelector('#app-root')
         .innerHTML = _(template, { imports: { style } })();
     });
   });

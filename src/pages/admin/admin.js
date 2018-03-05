@@ -13,7 +13,7 @@ import style from './admin.css';
 
 export const admin = (): void => {
   page('/admin', (): void => {
-    $('#app').innerHTML = _(template, { imports: { style } })();
+    $('#app-root').innerHTML = _(template, { imports: { style } })();
 
     const adminEmail = $('#admin-email');
     const adminPassword = $('#admin-password');

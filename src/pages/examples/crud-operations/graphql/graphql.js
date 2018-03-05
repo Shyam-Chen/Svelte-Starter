@@ -66,7 +66,7 @@ export const store = observable({
 });
 
 export const render = (): void => {
-  $('#app').innerHTML = _(template, { imports: { style } })({ store });
+  $('#app-root').innerHTML = _(template, { imports: { style } })({ store });
 
   $('#search-button').onclick = () => {
     store.searchItem();

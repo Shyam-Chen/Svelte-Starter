@@ -10,6 +10,6 @@ import style from './not-found.css';
 
 export default (): void => {
   page('*', () => {
-    $('#app').innerHTML = _(template, { imports: { style } })();
+    $('#app-root').innerHTML = _(template, { imports: { style } })();
   });
 };

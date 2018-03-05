@@ -17,18 +17,18 @@ const pathname = '/examples';
 
 export const store = observable({
   // observable
-  pathname: location.pathname,
+  pathname: window.location.pathname,
 
   // computed
   get location(): boolean {
     return (store.pathname === pathname) || (store.pathname === `${pathname}/`);
-  }
+  },
 });
 
 export const examples = (): void => {
   page(pathname, (): void => {
     autorun((): void => {
-      $('#app').innerHTML = _(template, { imports: { style } })({ store, pathname });
+      $('#app-root').innerHTML = _(template, { imports: { style } })({ store, pathname });
     });
   });
 

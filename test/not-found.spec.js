@@ -23,7 +23,7 @@ describe('Not Found', () => {
   });
 
   it('should display title', async () => {
-    const text = await page.$eval('#app div:first-of-type', el => el.textContent);
+    const text = await page.$eval('div:first-of-type', el => el.textContent);
     expect(text).toMatch('404');
   });
 });
