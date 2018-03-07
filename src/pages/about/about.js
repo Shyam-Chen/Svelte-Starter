@@ -12,9 +12,7 @@ import english from './_languages/english.json';
 import chinese from './_languages/chinese.json';
 import japanese from './_languages/japanese.json';
 
-export const store = observable({
-  // TODO: languages
-});
+export const store = observable({});
 
 export default (): void => {
   const imports = { style };

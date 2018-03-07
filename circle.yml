@@ -32,11 +32,11 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "develop" ]; then
               docker-compose exec app yarn firebase use default --token ${FIREBASE_TOKEN}
-              docker-compose exec app yarn firebase deploy --token ${FIREBASE_TOKEN}
+              docker-compose exec app yarn firebase deploy --only hosting,database,storage,firestore --token ${FIREBASE_TOKEN}
             elif [ "${CIRCLE_BRANCH}" == "staging" ]; then
               docker-compose exec app yarn firebase use staging --token ${FIREBASE_TOKEN}
-              docker-compose exec app yarn firebase deploy --token ${FIREBASE_TOKEN}
+              docker-compose exec app yarn firebase deploy --only hosting,database,storage,firestore --token ${FIREBASE_TOKEN}
             elif [ "${CIRCLE_BRANCH}" == "master" ]; then
               docker-compose exec app yarn firebase use production --token ${FIREBASE_TOKEN}
-              docker-compose exec app yarn firebase deploy --token ${FIREBASE_TOKEN}
+              docker-compose exec app yarn firebase deploy --only hosting,database,storage,firestore --token ${FIREBASE_TOKEN}
             fi

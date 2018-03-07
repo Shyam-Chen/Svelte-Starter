@@ -52,6 +52,11 @@ export const layout = (content: string, page: string, language: string = 'en'): 
   drawerMobileEl.addEventListener('MDCTemporaryDrawer:close', () => { bodyEl.style.overflowY = 'auto'; });
 
   [].forEach.call(
+    drawerMobileEl.querySelectorAll('a.mdc-list-item'),
+    () => { bodyEl.style.overflowY = 'auto'; },
+  );
+
+  [].forEach.call(
     $$('a.mdc-list-item'),
     (ripple) => {
       MDCRipple.attachTo(ripple);
