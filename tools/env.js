@@ -18,7 +18,12 @@ export const APP_ENV = {
     messagingSenderId: process.env.FIREBASE_MESSAGING || '584431831746',
   },
   SENTRY_URL: process.env.SENTRY_URL || 'https://70484e0dda784a1081081ca9c8237792@sentry.io/236866',
-  FUNC_URL,
+};
+
+export const INJECT_APP = {
+  'process.env.FUNC_URL': JSON.stringify(FUNC_URL),
+  'process.env.FIREBASE_CONFIG': JSON.stringify(APP_ENV.FIREBASE_CONFIG),
+  'process.env.SENTRY_URL': JSON.stringify(APP_ENV.SENTRY_URL),
 };
 
 export const DEV_PORT = process.env.DEV_PORT || 8000;

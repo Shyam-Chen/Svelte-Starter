@@ -60,7 +60,7 @@ if (
               case 'redundant':
                 throw new Error('The installing service worker became redundant.');
               default:
-                console.log('Service Worker');
+                break;
             }
           };
         }
