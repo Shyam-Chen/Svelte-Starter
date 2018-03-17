@@ -1,5 +1,5 @@
 import { crud } from './crud';
 import { rest } from './rest';
-import { graphql } from './graphql';
+// import { graphql } from './graphql';
 
-export { crud, rest, graphql };
+export { crud, rest, /* graphql */ };

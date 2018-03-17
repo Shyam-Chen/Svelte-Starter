@@ -9,7 +9,7 @@ import { $ } from '~/utils';
 import template from './examples.html';
 import style from './examples.css';
 
-import { crud, rest, graphql } from './crud-operations';
+import { crud, rest, /* graphql */ } from './crud-operations';
 import { playground } from './playground';
 import { dataChart } from './data-chart';
 
@@ -34,7 +34,7 @@ export const examples = (): void => {
 
   crud(pathname);
   rest(pathname);
-  graphql(pathname);
+  // graphql(pathname);
 
   dataChart(pathname);
 
