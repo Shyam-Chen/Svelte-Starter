@@ -11,7 +11,7 @@ import style from './examples.css';
 
 import { crud, rest, /* graphql */ } from './crud-operations';
 import { playground } from './playground';
-import { dataChart } from './data-chart';
+// import { dataChart } from './data-chart';
 
 const pathname = '/examples';
 
@@ -36,7 +36,7 @@ export const examples = (): void => {
   rest(pathname);
   // graphql(pathname);
 
-  dataChart(pathname);
+  // dataChart(pathname);
 
   playground(pathname);
 };

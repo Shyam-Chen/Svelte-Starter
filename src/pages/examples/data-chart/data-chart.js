@@ -3,7 +3,7 @@
 import page from 'page';
 import { template as _ } from 'lodash';
 import { observable, autorun } from 'mobx';
-import { scaleOrdinal, arc, pie, select } from 'd3';
+// import { scaleOrdinal, arc, pie, select } from 'd3';
 // import { PerspectiveCamera, Scene, BoxGeometry, MeshBasicMaterial, Mesh, WebGLRenderer } from 'three';
 
 import { $ } from '~/utils';
@@ -21,49 +21,49 @@ export const render = (route: string) =>
 
     // -
 
-    const data = [27, 38, 74];
-
-    const width = 500;
-    const height = 500;
-    const radius = Math.min(width, height) / 2;
-
-    const color = scaleOrdinal()
-      .range(['#E91E63', '#9C27B0', '#2196F3']);
-
-    const _arc = arc()
-      .outerRadius(radius - 10)
-      .innerRadius(0);
-
-    const labelArc = arc()
-      .outerRadius(radius - 40)
-      .innerRadius(radius - 40);
-
-    const _pie = pie()
-      .sort(null)
-      .value(d => d);
-
-    const svg = select('#pie')
-      .append('svg')
-      .attr('width', width)
-      .attr('height', height)
-      .append('g')
-      .attr('transform', `translate(${width / 2}, ${height / 2})`);
-
-    const g = svg
-      .selectAll('.arc')
-      .data(_pie(data))
-      .enter()
-      .append('g')
-      .attr('class', 'arc');
-
-    g.append('path')
-      .attr('d', _arc)
-      .style('fill', d => color(d.data));
-
-    g.append('text')
-      .attr('transform', d => `translate(${labelArc.centroid(d)})`)
-      .attr('dy', '.35em')
-      .text(d => d.data);
+    // const data = [27, 38, 74];
+    //
+    // const width = 500;
+    // const height = 500;
+    // const radius = Math.min(width, height) / 2;
+    //
+    // const color = scaleOrdinal()
+    //   .range(['#E91E63', '#9C27B0', '#2196F3']);
+    //
+    // const _arc = arc()
+    //   .outerRadius(radius - 10)
+    //   .innerRadius(0);
+    //
+    // const labelArc = arc()
+    //   .outerRadius(radius - 40)
+    //   .innerRadius(radius - 40);
+    //
+    // const _pie = pie()
+    //   .sort(null)
+    //   .value(d => d);
+    //
+    // const svg = select('#pie')
+    //   .append('svg')
+    //   .attr('width', width)
+    //   .attr('height', height)
+    //   .append('g')
+    //   .attr('transform', `translate(${width / 2}, ${height / 2})`);
+    //
+    // const g = svg
+    //   .selectAll('.arc')
+    //   .data(_pie(data))
+    //   .enter()
+    //   .append('g')
+    //   .attr('class', 'arc');
+    //
+    // g.append('path')
+    //   .attr('d', _arc)
+    //   .style('fill', d => color(d.data));
+    //
+    // g.append('text')
+    //   .attr('transform', d => `translate(${labelArc.centroid(d)})`)
+    //   .attr('dy', '.35em')
+    //   .text(d => d.data);
 
     // -
 
