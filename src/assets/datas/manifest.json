@@ -8,20 +8,36 @@
   "display": "standalone",
   "icons": [
     {
-      "src": "apple-touch-icon.png",
-      "sizes": "152x152",
+      "src": "icon-32x32.png",
+      "sizes": "32x32",
       "type": "image/png"
     }, {
-      "src": "chrome-touch-icon-192x192.png",
-      "sizes": "192x192",
+      "src": "icon-64x64.png",
+      "sizes": "64x64",
       "type": "image/png"
     }, {
       "src": "icon-128x128.png",
       "sizes": "128x128",
       "type": "image/png"
     }, {
-      "src": "ms-touch-icon-144x144-precomposed.png",
+      "src": "icon-144x144.png",
       "sizes": "144x144",
+      "type": "image/png"
+    }, {
+      "src": "icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    }, {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }, {
+      "src": "icon-200x200.png",
+      "sizes": "200x200",
+      "type": "image/png"
+    }, {
+      "src": "icon-256x256.png",
+      "sizes": "256x256",
       "type": "image/png"
     }, {
       "src": "icon-512x512.png",

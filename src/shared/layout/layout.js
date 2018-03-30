@@ -4,7 +4,7 @@ import { MDCTemporaryDrawer } from '@material/drawer';
 import { MDCRipple } from '@material/ripple';
 import { template as _, noop } from 'lodash';
 
-import logo from '~/assets/images/touch/ms-touch-icon-144x144-precomposed.png';
+import logo from '~/assets/images/logo.svg';
 import { $, $$ } from '~/utils';
 
 import template from './layout.html';

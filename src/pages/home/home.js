@@ -2,7 +2,7 @@ import { MDCRipple } from '@material/ripple';
 import page from 'page';
 import { template as _ } from 'lodash';
 
-import logo from '~/assets/images/logo.png';
+import logo from '~/assets/images/logo.svg';
 import { layout } from '~/shared/layout';
 import { $$ } from '~/utils';
 
