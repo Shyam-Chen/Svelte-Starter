@@ -60,7 +60,6 @@ Here are some related seed repositories:
 ## Table of Contents
 
 * [Getting Started](#getting-started)
-* [Practical Examples](#practical-examples)
 * [Dockerization](#dockerization)
 * [Configuration](#configuration)
 * [Using Libraries](#using-libraries)
@@ -105,38 +104,6 @@ $ yarn build
 $ yarn firebase use <PROJECT_ENV>
 $ yarn firebase deploy
 ```
-
-## Practical Examples
-
-* [ ] CRUD Operations
-  * [x] Static
-  * [x] REST (`axios`)
-  * [ ] GraphQL (`apollo-client`)
-* [ ] Form Controls
-  * [ ] Template-driven (`mobx`)
-  * [ ] Reactive Forms (`rxjs`)
-* [ ] Data Table
-  * [ ] Static
-  * [ ] REST (`axios`)
-  * [ ] GraphQL (`apollo-client`)
-* [ ] Globalization
-  * [ ] Internationalization
-  * [ ] Localization
-* [ ] Authorization
-  * [ ] REST (`axios`)
-  * [ ] GraphQL (`apollo-client`)
-* [ ] Data Chart
-  * [ ] SVG (`d3`)
-  * [ ] Canvas (`d3`)
-  * [ ] WebGL (`three`)
-* [ ] Realtime
-  * [ ] WebSockets (`socket.io-client`)
-  * [ ] GraphQL Subscriptions  (`subscriptions-transport-ws`)
-* [ ] Playground
-  * [x] Counter
-    * [x] State Management (`mobx`)
-    * [x] Asynchronous (`rxjs`)
-  * [ ] ...
 
 ## Dockerization
 

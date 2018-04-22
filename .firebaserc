@@ -1,7 +1,6 @@
 {
   "projects": {
-    "default": "web-go-demo",
-    "staging": "web-go-demo",
+    "development": "web-go-demo",
     "production": "web-go-demo"
   }
 }
