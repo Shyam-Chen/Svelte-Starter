@@ -1,3 +1,5 @@
+// @flow
+
 interface MetaDefinition {
   charset?: string;
   content?: string;
