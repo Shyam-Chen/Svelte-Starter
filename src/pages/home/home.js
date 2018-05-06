@@ -1,5 +1,8 @@
+// @flow
+
 import { MDCRipple } from '@material/ripple';
 import page from 'page';
+import headful from 'headful';
 import { template as _ } from 'lodash';
 
 import logo from '~/assets/images/logo.svg';
@@ -33,6 +36,7 @@ export const home = (): void => {
   };
 
   page('/', () => {
+    headful({ title: 'Web GO' });
     layout(_(template, { imports })(english), 'home');
     common();
   });
@@ -50,6 +54,7 @@ export const home = (): void => {
   const l10n = (data, ...funcs) => {
     for (let i = 0, l = data.length; i < l; i++) {
       page(`/${data[i][0]}`, () => {
+        headful({ title: 'Web GO', lang: data[i][0] });
         layout(_(template, { imports })(data[i][1]), 'home', data[i][0]);
         if (funcs) funcs.forEach(func => func());
       });

@@ -8,4 +8,3 @@ export * from './broadcast';
  */
 export * from './query';
 export * from './load';
-export * from './metadata';

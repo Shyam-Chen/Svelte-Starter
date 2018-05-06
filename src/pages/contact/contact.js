@@ -2,6 +2,7 @@ import { MDCRipple } from '@material/ripple';
 import { MDCTextField } from '@material/textfield';
 import { MDCSnackbar } from '@material/snackbar';
 import page from 'page';
+import headful from 'headful';
 import { template as _, noop } from 'lodash';
 
 import { layout } from '~/shared/layout';
@@ -74,21 +75,25 @@ const common = (language: string = 'en'): void => {
 
 export const contact = (): void => {
   page('/contact', () => {
+    headful({ title: 'Contact - Web GO' });
     layout(_(template, { imports })(english), 'contact');
     common();
   });
 
   page('/en/contact', () => {
+    headful({ title: 'Contact - Web GO', lang: 'en' });
     layout(_(template, { imports })(english), 'contact', 'en');
     common();
   });
 
   page('/zh/contact', () => {
+    headful({ title: '聯繫 - Web GO', lang: 'zh' });
     layout(_(template, { imports })(chinese), 'contact', 'zh');
     common('zh');
   });
 
   page('/ja/contact', () => {
+    headful({ title: 'コンタクト - Web GO', lang: 'ja' });
     layout(_(template, { imports })(japanese), 'contact', 'ja');
     common('ja');
   });
