@@ -3,14 +3,10 @@
   "version": "1.0.0",
   "description": "A boilerplate for HTML5, Material, Firebase, Parcel, Babel, PostHTML, and PostCSS.",
   "scripts": {
-    "start": "gulp --watch --serve",
+    "start": "rimraf public && gulp --watch --serve",
     "test": "jest \"src/.*\\.js$\" \"test/.*\\.js$\" --coverage --forceExit",
-    "build": "gulp --prod",
-    "prestart": "rimraf public",
-    "pretest": "rimraf coverage",
-    "prebuild": "rimraf public",
+    "build": "rimraf public && gulp --prod",
     "typed": "flow-typed install",
-    "gulp": "gulp",
     "codecov": "codecov",
     "firebase": "firebase"
   },
