@@ -16,12 +16,12 @@ This seed repository provides the following features:
 * [x] User interface components with [**Material**](https://material.io/).
 * [x] Backend cloud services with [**Firebase**](https://firebase.google.com/).
 * [x] Routing and navigation with [**Page**](http://visionmedia.github.io/page.js/).
+* [x] Scalable state management with [**MobX**](https://mobx.js.org/).
 * [x] Utility functions with [**Lodash**](https://lodash.com/).
 * [x] Reactive extensions with [**ReactiveX**](http://reactivex.io/).
-* [x] Scalable state management with [**MobX**](https://mobx.js.org/).
-* [x] Immutable collections with [**Immer**](https://github.com/mweststrate/immer).
-* [x] Data visualizations with [**D3**](https://d3js.org/).
-* [x] 3D scene graphs with [**Three**](https://threejs.org/).
+* [x] Data visualizations with [**ECharts**](https://ecomfe.github.io/echarts-doc/public/en/index.html).
+* [x] Real-time bidirectional communication with [**Socket**](https://socket.io/).
+* [x] Machine learning with [**TensorFlow**](https://js.tensorflow.org/).
 * ---------- **Tools** ----------
 * [ ] Module bundler with [**Parcel**](https://parceljs.org/).
 * [ ] HTML transformations with [**PostHTML**](https://github.com/posthtml/posthtml).
@@ -35,11 +35,8 @@ This seed repository provides the following features:
 * [x] Testing platform with [**Jest**](http://facebook.github.io/jest/).
 * [x] UI testing with [**Puppeteer**](https://github.com/GoogleChrome/puppeteer).
 * [x] Test coverage integration with [**Codecov**](https://codecov.io/).
-* [x] Error tracking with [**Sentry**](https://sentry.io/).
 * ---------- **Environments** ----------
 * [x] Client-side platform with [**HTML5**](https://platform.html5.org/).
-* [x] Operating system with [**Linux**](https://www.linux.org/).
-* [x] Text editor with [**Atom**](https://atom.io/).
 * [x] Version control with [**Git**](https://git-scm.com/).
 * [x] Code repository with [**GitHub**](https://github.com/).
 * [x] Fast and deterministic builds with [**Yarn**](https://yarnpkg.com/).

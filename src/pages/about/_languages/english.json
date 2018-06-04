@@ -7,20 +7,18 @@
       "User interface components with Material.",
       "Backend cloud services with Firebase.",
       "Routing and navigation with Page.",
+      "Scalable state management with MobX.",
       "API routing with Express.",
       "Data query language with GraphQL.",
       "Object document mapping with Mongoose.",
       "Object relational mapping with Sequelize.",
       "Utility functions with Lodash.",
       "Reactive extensions with ReactiveX.",
-      "Scalable state management with MobX.",
-      "Immutable collections with Immer.",
-      "Data visualizations with D3.",
-      "3D scene graphs with Three.",
-      "Secure authentication with JWT.",
+      "Data visualizations with ECharts.",
       "Authenticate requests with Passport.",
       "Real-time bidirectional communication with Socket.",
-      "In-memory data structure store with Redis."
+      "In-memory data structure store with Redis.",
+      "Machine learning with TensorFlow."
     ]
   },
   "TOOLS": {
@@ -40,9 +38,7 @@
       "HTTP testing with Supertest.",
       "Test coverage integration with Codecov.",
       "Automatically restart application with Nodemon.",
-      "Keeping application alive with PM2.",
-      "Error tracking with Sentry.",
-      "API workflow with Insomnia."
+      "Keeping application alive with PM2."
     ]
   },
   "ENVIRONMENTS": {
@@ -50,8 +46,6 @@
     "CONTENT": [
       "Client-side platform with HTML5.",
       "Server-side platform with Node.",
-      "Operating system with Linux.",
-      "Text editor with Atom.",
       "Version control with Git.",
       "Code repository with GitHub.",
       "Fast and deterministic builds with Yarn.",
