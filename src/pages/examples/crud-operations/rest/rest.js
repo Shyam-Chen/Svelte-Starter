@@ -1,3 +1,5 @@
+// @flow
+
 import { MDCTextField } from '@material/textfield';
 import { MDCDialog } from '@material/dialog';
 import page from 'page';
@@ -25,8 +27,8 @@ export const store = observable({
   searchItem: action((text) => {
     store.loading = true;
 
-    axios.get(text ? `${API_LIST}?text=${text}` : API_LIST)
-      .then(({ data }) => {
+    axios.get(API_LIST, { params: { text } })
+      .then(({ data: { data } }) => {
         store.loading = false;
         store.dataset = data.reverse();
         store.searchData.text = '';
@@ -68,7 +70,7 @@ export const store = observable({
   get total(): number {
     return store.dataset.length;
   },
-  get progress(): boolean {
+  get progress(): string {
     return store.loading ? '' : 'none';
   },
 });
@@ -101,7 +103,7 @@ export const render = (): void => {
           store.deleteItem(_id);
         };
       };
-    }
+    },
   );
 
   const dialogEditEl = $('#dialog-edit');
@@ -123,7 +125,7 @@ export const render = (): void => {
           store.editItem(_id, text.value);
         };
       };
-    }
+    },
   );
 
   /**
@@ -137,7 +139,7 @@ export const render = (): void => {
 
   [].forEach.call(
     $$('.mdc-text-field'),
-    textfield => MDCTextField.attachTo(textfield)
+    textfield => MDCTextField.attachTo(textfield),
   );
 };
 
