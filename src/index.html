@@ -33,7 +33,7 @@
     <meta name="theme-color" content="#2F3BA2">
 
     <!-- Specifies the base URL for all relative URLs -->
-    <base href="<%= APP_BASE %>">
+    <base href="<%= process.env.APP_BASE %>">
 
     <!-- Preloading content -->
     <%= PRELOAD_POLYFILLS %>
@@ -50,7 +50,7 @@
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', '<%= GOOGLE_ANALYTICS %>', 'auto');
+      ga('create', '<%= process.env.GOOGLE_ANALYTICS %>', 'auto');
       ga('send', 'pageview');
     </script>
 

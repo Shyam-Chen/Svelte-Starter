@@ -2,7 +2,9 @@ import { join } from 'path';
 import gulp from 'gulp';
 import sitemap from 'gulp-sitemap';
 
-import { SITE_URL, SOURCE_ROOT, DIST_ROOT } from '../env';
+import * as env from '../../src/env';
+
+import { SOURCE_ROOT, DIST_ROOT } from '../constants';
 
 gulp.task('sitemap', () => {
   return gulp
@@ -12,7 +14,7 @@ gulp.task('sitemap', () => {
       `!${join(SOURCE_ROOT, 'pages/admin/**/*.html')}`
     ])
     .pipe(sitemap({
-      siteUrl: SITE_URL,
+      siteUrl: env.SITE_URL,
       getLoc(siteUrl, loc, entry) {
         if (/\/home.html/g.test(entry.file)) return `${siteUrl}`;
         return `${siteUrl}${entry.file.replace(/\/[a-z]+.html/g, '')}`;

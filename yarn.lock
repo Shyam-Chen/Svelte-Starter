@@ -9202,6 +9202,10 @@ private@^0.1.6, private@^0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/private/-/private-0.1.7.tgz#68ce5e8a1ef0a23bb570cc28537b5332aba63ef1"
 
+process-envify@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/process-envify/-/process-envify-0.1.3.tgz#4d6f676306dc7b7b90bc961a59a301d6f53e4a28"
+
 process-nextick-args@^1.0.6, process-nextick-args@~1.0.6:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-1.0.7.tgz#150e20b756590ad3f91093f25a4f2ad8bff30ba3"

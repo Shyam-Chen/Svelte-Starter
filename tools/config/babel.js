@@ -1,6 +1,6 @@
 import { join } from 'path';
 
-import { SOURCE_ROOT } from '../env';
+import { SOURCE_ROOT } from '../constants';
 
 export const BABEL_CONFIG_APP = {
   babelrc: false,
@@ -51,21 +51,3 @@ export const BABEL_CONFIG_APP = {
     join(SOURCE_ROOT, '**')
   ]
 };
-
-export const BABEL_CONFIG_TEST = Object.assign(
-  {},
-  BABEL_CONFIG_APP,
-  {
-    plugins: [
-      ...BABEL_CONFIG_APP.plugins,
-      [
-        'istanbul', {
-          'exclude': [
-            'node_modules/**',
-            join(SOURCE_ROOT, '**/*.spec.js')
-          ]
-        }
-      ]
-    ]
-  }
-);

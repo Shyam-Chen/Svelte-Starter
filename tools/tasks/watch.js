@@ -1,7 +1,7 @@
 import { join } from 'path';
 import gulp from 'gulp';
 
-import { SOURCE_ROOT } from '../env';
+import { SOURCE_ROOT } from '../constants';
 
 gulp.task('watch', () => {
   gulp.watch([

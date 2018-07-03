@@ -3,13 +3,17 @@ import gulp from 'gulp';
 import template from 'gulp-template';
 import htmlmin from 'gulp-htmlmin';
 
-import { INDEX_ENV, SOURCE_ROOT, DIST_ROOT } from '../env';
+import envify from 'process-envify';
+
+import * as _env from '../../src/env';
+
+import { SOURCE_ROOT, DIST_ROOT } from '../constants';
 import { InjectService } from '../utils';
 
 gulp.task('chunkhash', () => {
   return gulp.src(join(SOURCE_ROOT, 'index.html'))
     .pipe(template({
-      ...INDEX_ENV,
+      ...envify(_env),
       PRELOAD_POLYFILLS: '<!-- prepolyfills:js --><!-- endinject -->',
       PRELOAD_VENDOR: '<!-- prevendor:js --><!-- endinject -->',
       PRELOAD_APP: '<!-- preapp:js --><!-- endinject -->',
