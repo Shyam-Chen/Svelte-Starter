@@ -1,3 +1,5 @@
+# :warning: This starter kit will be migrated from Vanilla to Vue.
+
 # Frontend Starter Kit
 
 :icecream: A boilerplate for HTML5, Material, Firebase, Parcel, Babel, PostHTML, and PostCSS.
