@@ -6,10 +6,8 @@ module.exports = {
   setupFiles: [
     '<rootDir>/tools/utils/setup-files.js',
   ],
+  testURL: 'http://localhost/',
   transform: {
     '^.+\\.js$': 'babel-jest',
   },
-  // transformIgnorePatterns: [
-  //   'node_modules/(?!@material)/'
-  // ]
 };

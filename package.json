@@ -1,5 +1,5 @@
 {
-  "name": "Frontend-Starter-Kit",
+  "name": "frontend-starter-kit",
   "version": "1.0.0",
   "description": "A boilerplate for HTML5, Material, Firebase, Parcel, Babel, PostHTML, and PostCSS.",
   "scripts": {
