@@ -1,6 +1,6 @@
 FROM node:8
 
-ENV HOME /Frontend-Starter-Kit
+ENV HOME /Vanilla-Play
 
 WORKDIR ${HOME}
 ADD . $HOME

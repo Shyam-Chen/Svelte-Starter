@@ -1,12 +1,12 @@
-# Frontend Starter Kit
+# Vanilla Play
 
 :icecream: A boilerplate for HTML5, Material, Firebase, Parcel, Babel, PostHTML, and PostCSS.
 
-[![Build Status](https://img.shields.io/circleci/project/Shyam-Chen/Frontend-Starter-Kit/master.svg)](https://circleci.com/gh/Shyam-Chen/Frontend-Starter-Kit)
-[![Coverage Status](https://img.shields.io/codecov/c/github/Shyam-Chen/Frontend-Starter-Kit/master.svg)](https://codecov.io/gh/Shyam-Chen/Frontend-Starter-Kit)
+[![Build Status](https://img.shields.io/circleci/project/Shyam-Chen/Vanilla-Play/master.svg)](https://circleci.com/gh/Shyam-Chen/Vanilla-Play)
+[![Coverage Status](https://img.shields.io/codecov/c/github/Shyam-Chen/Vanilla-Play/master.svg)](https://codecov.io/gh/Shyam-Chen/Vanilla-Play)
  //
-[![dependencies Status](https://david-dm.org/Shyam-Chen/Frontend-Starter-Kit/status.svg)](https://david-dm.org/Shyam-Chen/Frontend-Starter-Kit)
-[![devDependencies Status](https://david-dm.org/Shyam-Chen/Frontend-Starter-Kit/dev-status.svg)](https://david-dm.org/Shyam-Chen/Frontend-Starter-Kit?type=dev)
+[![dependencies Status](https://david-dm.org/Shyam-Chen/Vanilla-Play/status.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Play)
+[![devDependencies Status](https://david-dm.org/Shyam-Chen/Vanilla-Play/dev-status.svg)](https://david-dm.org/Shyam-Chen/Vanilla-Play?type=dev)
 
 [Live Demo](https://web-go-demo.firebaseapp.com/)
 
@@ -43,17 +43,6 @@ This seed repository provides the following features:
 * [x] Software container with [**Docker**](https://www.docker.com/).
 * [x] Continuous integration with [**CircleCI**](https://circleci.com/).
 
-Here are some related seed repositories:
-
-* ---------- **Client-side** ----------
-* [Web Starter Kit](https://github.com/Shyam-Chen/Frontend-Starter-Kit) - Make for Progressive Web Apps.
-* [Mobile Starter Kit](https://github.com/Shyam-Chen/Mobile-Starter-Kit) - Make for Cross-platform Mobile Apps.
-* [Desktop Starter Kit](https://github.com/Shyam-Chen/Desktop-Starter-Kit) - Make for Cross-platform Desktop Apps.
-* ---------- **Server-side** ----------
-* [Platform Starter Kit](https://github.com/Shyam-Chen/Backend-Starter-Kit) - Make for Flexible Cloud Platform.
-* [Functions Starter Kit](https://github.com/Shyam-Chen/Functions-Starter-Kit) - Make for Serverless Cloud Functions.
-* [Infrastructure Starter Kit](https://github.com/Shyam-Chen/Infrastructure-Starter-Kit) - Make for Containerized Cloud Infrastructure.
-
 ## Table of Contents
 
 * [Getting Started](#getting-started)
@@ -67,7 +56,7 @@ Here are some related seed repositories:
 1. Clone this Boilerplate
 
 ```bash
-$ git clone --depth 1 https://github.com/Shyam-Chen/Frontend-Starter-Kit.git <PROJECT_NAME>
+$ git clone --depth 1 https://github.com/Shyam-Chen/Vanilla-Play.git <PROJECT_NAME>
 $ cd <PROJECT_NAME>
 ```
 
