@@ -1,8 +1,5 @@
 {
-  "plugins": [
-    "flowtype",
-    "flowtype-errors"
-  ],
+  "plugins": [],
   "env": {
     "browser": true,
     "node": true,
@@ -10,12 +7,9 @@
     "es6": true,
     "jest": true
   },
-  "globals": {
-    "firebase": true
-  },
+  "globals": {},
   "extends": [
-    "airbnb-base",
-    "plugin:flowtype/recommended"
+    "airbnb-base"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
@@ -31,10 +25,7 @@
   },
   "rules": {
     // Plugins
-    "import/prefer-default-export": "off",  // TODO
-    "flowtype-errors/show-errors": "error",
-    "flowtype-errors/show-warnings": "warn",
-    "flowtype-errors/enforce-min-coverage": ["error", 50],
+    "import/prefer-default-export": "off",
 
     // Possible Errors
 

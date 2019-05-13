@@ -1,6 +1,6 @@
 # Vanilla Play
 
-:icecream: A boilerplate for HTML5, Material, Firebase, Parcel, Babel, PostHTML, and PostCSS.
+:icecream: A boilerplate for Svelte, Material, Babel, and PostCSS.
 
 [![Build Status](https://img.shields.io/circleci/project/Shyam-Chen/Vanilla-Play/master.svg)](https://circleci.com/gh/Shyam-Chen/Vanilla-Play)
 [![Coverage Status](https://img.shields.io/codecov/c/github/Shyam-Chen/Vanilla-Play/master.svg)](https://codecov.io/gh/Shyam-Chen/Vanilla-Play)
