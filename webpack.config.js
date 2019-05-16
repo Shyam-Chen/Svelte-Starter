@@ -2,14 +2,13 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlPlugin = require('script-ext-html-webpack-plugin');
-const { VueLoaderPlugin } = require('vue-loader');
 const CopyPlugin = require('copy-webpack-plugin');
-const { GenerateSW } = require('workbox-webpack-plugin');
-const PurgecssPlugin = require('purgecss-webpack-plugin');
-const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
-const SitemapPlugin = require('sitemap-webpack-plugin').default;
+// const { GenerateSW } = require('workbox-webpack-plugin');
+// const PurgecssPlugin = require('purgecss-webpack-plugin');
+// const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
+// const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const envify = require('process-envify');
-const glob = require('glob-all');
+// const glob = require('glob-all');
 
 const env = require('./env');
 const pkg = require('./package');
@@ -74,9 +73,8 @@ module.exports = ({ prod = false } = {}) => ({
     ].filter(Boolean),
   },
   resolve: {
-    extensions: ['.mjs', '.js', '.vue'],
+    extensions: ['.mjs', '.js', '.svelte'],
     alias: {
-      vue$: 'vue/dist/vue.esm.js',
       '~': SOURCE_ROOT,
     },
   },
@@ -102,7 +100,6 @@ module.exports = ({ prod = false } = {}) => ({
         chunks: 'all',
       },
     }),
-    new VueLoaderPlugin(),
     new CopyPlugin([
       {
         from: 'assets/**/*',
@@ -112,37 +109,37 @@ module.exports = ({ prod = false } = {}) => ({
     ]),
     !prod && new webpack.HotModuleReplacementPlugin(),
     prod && new webpack.optimize.AggressiveSplittingPlugin(),
-    prod && new GenerateSW({
-      exclude: [/\.(?:png|jpg|jpeg|svg)$/],
-      skipWaiting: true,
-      clientsClaim: true,
-      runtimeCaching: [
-        {
-          urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
-          handler: 'cacheFirst',
-        },
-        {
-          urlPattern: new RegExp(env.SITE_URL),
-          handler: 'staleWhileRevalidate',
-          options: {
-            cacheableResponse: {
-              statuses: [0, 200],
-            },
-          },
-        },
-      ],
-      navigateFallback: '/',
-      navigateFallbackWhitelist: [/^(?!\/__).*/],
-      cacheId: pkg.name,
-    }),
-    prod && new PurgecssPlugin({
-      paths: glob.sync([
-        path.join(SOURCE_ROOT, './app/**/*.vue'),
-      ]),
-      whitelist: ['html', 'body'],
-    }),
-    prod && new RobotstxtPlugin(),
-    prod && new SitemapPlugin(env.SITE_URL, [{ path: '/' }]),
+    // prod && new GenerateSW({
+    //   exclude: [/\.(?:png|jpg|jpeg|svg)$/],
+    //   skipWaiting: true,
+    //   clientsClaim: true,
+    //   runtimeCaching: [
+    //     {
+    //       urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+    //       handler: 'cacheFirst',
+    //     },
+    //     {
+    //       urlPattern: new RegExp(env.SITE_URL),
+    //       handler: 'staleWhileRevalidate',
+    //       options: {
+    //         cacheableResponse: {
+    //           statuses: [0, 200],
+    //         },
+    //       },
+    //     },
+    //   ],
+    //   navigateFallback: '/',
+    //   navigateFallbackWhitelist: [/^(?!\/__).*/],
+    //   cacheId: pkg.name,
+    // }),
+    // prod && new PurgecssPlugin({
+    //   paths: glob.sync([
+    //     path.join(SOURCE_ROOT, './app/**/*.vue'),
+    //   ]),
+    //   whitelist: ['html', 'body'],
+    // }),
+    // prod && new RobotstxtPlugin(),
+    // prod && new SitemapPlugin(env.SITE_URL, [{ path: '/' }]),
   ].filter(Boolean),
   optimization: {
     splitChunks: {
