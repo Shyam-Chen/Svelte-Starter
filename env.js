@@ -1,19 +1,13 @@
-export const NODE_ENV = process.env.NODE_ENV || 'development';
+function Environments() {
+  this.NODE_ENV = process.env.NODE_ENV || 'development';
 
-export const SITE_URL = process.env.SITE_URL || 'https://web-go-demo.firebaseapp.com';
-export const FUNC_URL = process.env.FUNC_URL || 'https://us-central1-web-go-demo.cloudfunctions.net';
+  this.HOST_NAME = process.env.HOST_NAME || '0.0.0.0';
+  this.SITE_PORT = process.env.SITE_PORT || 8000;
+  this.SITE_URL = process.env.SITE_URL || `http://${this.HOST_NAME}:${this.SITE_PORT}`;
+  this.APP_BASE = process.env.APP_BASE || '/';
 
-export const APP_BASE = process.env.APP_BASE || '/';
+  this.GOOGLE_ANALYTICS = process.env.GOOGLE_ANALYTICS || 'UA-84381641-2';
+  this.SENTRY_DSN = process.env.SENTRY_DSN || null;
+}
 
-export const FIREBASE_CONFIG = {
-  apiKey: process.env.FIREBASE_KEY || 'AIzaSyDBA0yVS0JuIqGaoN9nafvPFxPSVgmxwnw',
-  authDomain: process.env.FIREBASE_DOMAIN || 'web-go-demo.firebaseapp.com',
-  databaseURL: process.env.FIREBASE_PROJECT || 'https://web-go-demo.firebaseio.com',
-  projectId: process.env.FIREBASE_DATABASE || 'web-go-demo',
-  storageBucket: process.env.FIREBASE_STORAGE || 'web-go-demo.appspot.com',
-  messagingSenderId: process.env.FIREBASE_MESSAGING || '584431831746',
-};
-
-export const GOOGLE_ANALYTICS = process.env.GOOGLE_ANALYTICS || 'UA-84381641-2';
-
-export const SENTRY_URL = process.env.SENTRY_URL || 'https://70484e0dda784a1081081ca9c8237792@sentry.io/236866';
+module.exports = new Environments();

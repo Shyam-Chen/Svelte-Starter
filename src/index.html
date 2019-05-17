@@ -1,77 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web GO</title>
-    <meta name="description" content="Professional templates for modern web development with ECMAScript, HTML5, Node.js, and Docker.">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-    <!-- Web app manifest -->
-    <link rel="manifest" href="manifest.json">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oh My Svelte</title>
+  <meta name="description" content="Building scalable web apps from Web Fundamentals to Firebase Platform and then to Google Cloud.">
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
 
-    <!-- Disable tap highlight on IE -->
-    <meta name="msapplication-tap-highlight" content="no">
+  <!-- Fonts and icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Web GO">
-    <link rel="icon" sizes="192x192" href="icon-192x192.png">
+  <!-- Open graph protocol -->
+  <meta property="og:title" content="Oh My Svelte">
+  <meta property="og:description" content="Building scalable web apps from Web Fundamentals to Firebase Platform and then to Google Cloud.">
+  <meta property="og:image" content="/assets/images/icon-256x256.png">
 
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Web GO">
-    <link rel="apple-touch-icon" href="icon-152x152.png">
+  <!-- Web app manifest -->
+  <link rel="manifest" href="/assets/datas/manifest.json">
 
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="icon-144x144.png">
-    <meta name="msapplication-TileColor" content="#2F3BA2">
+  <!-- Add to homescreen for Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Oh My Svelte">
+  <link rel="icon" sizes="192x192" href="/assets/images/icon-192x192.png">
 
-    <!-- Color the status bar on mobile devices -->
-    <meta name="theme-color" content="#2F3BA2">
+  <!-- Add to homescreen for iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Oh My Svelte">
+  <link rel="apple-touch-icon" href="/assets/images/icon-152x152.png">
 
-    <!-- Specifies the base URL for all relative URLs -->
-    <base href="<%= process.env.APP_BASE %>">
+  <!-- Add to home screen for Windows -->
+  <meta name="msapplication-TileImage" content="/assets/images/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
 
-    <!-- Preloading content -->
-    <%= PRELOAD_POLYFILLS %>
-    <%= PRELOAD_VENDOR %>
-    <%= PRELOAD_APP %>
-  </head>
-  <body>
-    <div id="app-root"></div>
-    <noscript>Your browser does not support JavaScript!</noscript>
+  <!-- Color the status bar on mobile devices -->
+  <meta name="theme-color" content="#1E88E5">
+</head>
 
-    <!-- Google Analytics -->
-    <script defer>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', '<%= process.env.GOOGLE_ANALYTICS %>', 'auto');
-      ga('send', 'pageview');
-    </script>
+<body>
+  <noscript>This is your fallback content in case JavaScript fails to load.</noscript>
+  <div id="app-root"></div>
+</body>
 
-    <!-- Structured data -->
-    <!-- <script type="application/ld+json">
-      {
-        "@context": "http://schema.org",
-        "@type": "Organization",
-        "url": "http://www.example.com",
-        "name": "Unlimited Ball Bearings Corp.",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+1-401-555-1212",
-          "contactType": "Customer service"
-        }
-      }
-    </script> -->
-
-    <!-- Web app js files -->
-    <%= POLYFILLS_SCRIPT %>
-    <%= VENDOR_SCRIPT %>
-    <%= APP_SCRIPT %>
-  </body>
 </html>

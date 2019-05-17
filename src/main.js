@@ -1,7 +1,7 @@
 import App from './App';
 
 const app = new App({
-  target: '#app-root',
+  target: document.querySelector('#app-root'),
 });
 
 window.app = app;

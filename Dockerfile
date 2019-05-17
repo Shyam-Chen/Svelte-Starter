@@ -1,6 +1,6 @@
-FROM node:8
+FROM node:10
 
-ENV HOME /Vanilla-Play
+ENV HOME /Svelte-Play
 
 WORKDIR ${HOME}
 ADD . $HOME
