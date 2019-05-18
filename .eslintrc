@@ -24,7 +24,6 @@
   },
   "rules": {
     // Plugins
-    "import/prefer-default-export": "off",
 
     // Possible Errors
 
