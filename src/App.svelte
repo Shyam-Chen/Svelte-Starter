@@ -1,14 +1,5 @@
-<h1>Hello {name}!</h1>
-<p>123</p>
+<HelloWorld />
 
 <script>
-const name = 'world';
+import HelloWorld from '~/hello-world/HelloWorld';
 </script>
-
-<style>
-p {
-  color: purple;
-  font-family: 'Comic Sans MS';
-  font-size: 2em;
-}
-</style>

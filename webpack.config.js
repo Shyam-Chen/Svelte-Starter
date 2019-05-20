@@ -11,7 +11,7 @@ const envify = require('process-envify');
 // const glob = require('glob-all');
 
 const env = require('./env');
-const pkg = require('./package');
+// const pkg = require('./package');
 
 const SOURCE_ROOT = path.join(__dirname, 'src');
 const DISTRIBUTION_ROOT = path.join(__dirname, 'public');
