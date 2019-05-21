@@ -21,8 +21,9 @@
   "author": "Shyam Chen",
   "license": "MIT",
   "dependencies": {
-    "core-js": "^3.0.1",
-    "svelte": "^3.2.2"
+    "core-js": "^3.1.1",
+    "svelte": "^3.4.2",
+    "svero": "^0.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
@@ -53,8 +54,8 @@
     "svelte-loader": "^2.13.3",
     "svelte-testing-library": "^1.6.0",
     "url-loader": "^1.1.2",
-    "webpack": "^4.31.0",
+    "webpack": "^4.32.0",
     "webpack-cli": "^3.3.2",
-    "webpack-dev-server": "^3.3.1"
+    "webpack-dev-server": "^3.4.1"
   }
 }

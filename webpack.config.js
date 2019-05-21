@@ -30,7 +30,6 @@ module.exports = ({ prod = false } = {}) => ({
     rules: [
       {
         test: /\.svelte$/,
-        exclude: /node_modules/,
         loader: 'svelte-loader',
       },
       {
