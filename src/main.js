@@ -1,3 +1,4 @@
+import './assets/styles/global.css';
 import App from './App';
 
 const app = new App({

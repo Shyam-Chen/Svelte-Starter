@@ -21,8 +21,8 @@
   "author": "Shyam Chen",
   "license": "MIT",
   "dependencies": {
-    "core-js": "^3.1.1",
-    "svelte": "^3.4.2",
+    "core-js": "^3.1.4",
+    "svelte": "^3.5.1",
     "svero": "^0.5.0"
   },
   "devDependencies": {

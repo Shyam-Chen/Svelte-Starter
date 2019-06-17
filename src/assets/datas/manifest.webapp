@@ -1,6 +1,6 @@
 {
-  "name": "Web GO",
-  "description": "Professional templates for modern web development with ECMAScript, HTML5, Node.js, and Docker.",
+  "name": "Svelte Play",
+  "description": "Professional templates for modern web development with ECMAScript, HTML5, Node.js, and Linux.",
   "launch_path": "/",
   "icons": {
     "128": "icon-128x128.png"

@@ -1,6 +1,6 @@
 {
-  "name": "Web GO",
-  "short_name": "Web GO",
+  "name": "Svelte Play",
+  "short_name": "Svelte Play",
   "start_url": "/",
   "theme_color": "#2F3BA2",
   "background_color": "#3E4EB8",

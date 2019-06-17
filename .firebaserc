@@ -1,6 +1,7 @@
 {
   "projects": {
-    "development": "web-go-demo",
-    "production": "web-go-demo"
+    "development": "svelte-by-example-dev",
+    "staging": "svelte-by-example-stage",
+    "production": "svelte-by-example-prod"
   }
 }
