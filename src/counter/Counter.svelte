@@ -1,6 +1,6 @@
 <div>
   Clicked: <strong>{$count}</strong> times,
-  value is <strong>{$count % 2 === 0 ? 'even' : 'odd'}</strong>.
+  value is <strong>{evenOrOdd}</strong>.
 </div>
 
 <button on:click={count.increment}>+</button>
@@ -9,4 +9,7 @@
 
 <script>
 import { count } from './store.js';
+
+// the `$:` means 're-run whenever these values change'
+$: evenOrOdd = $count % 2 === 0 ? 'even' : 'odd';
 </script>

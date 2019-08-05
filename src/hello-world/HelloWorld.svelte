@@ -2,8 +2,6 @@
 
 <script>
 const message = 'Hello, World!';
-
-export const router = {};
 </script>
 
 <style>

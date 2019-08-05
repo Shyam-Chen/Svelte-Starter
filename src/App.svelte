@@ -1,6 +1,8 @@
-<Link href="/">Home</Link>
-<Link href="/hello-world">Hello World</Link>
-<Link href="/counter">Counter</Link>
+<ul>
+  <li><Link href="/">Home</Link></li>
+  <li><Link href="/hello-world">Hello World</Link></li>
+  <li><Link href="/counter">Counter</Link></li>
+</ul>
 
 <script>
 import { Link, Router, Route } from 'svero';
