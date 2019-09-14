@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A boilerplate for Svelte, Material, Babel, and PostCSS.",
   "engines": {
-    "node": "10"
+    "node": "11"
   },
   "scripts": {
     "start": "cross-env BABEL_ENV=app webpack-dev-server --progress",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shyam-Chen/Svelte-Play.git"
+    "url": "git+https://github.com/Mbuendia/Svelte-Starter.git"
   },
   "author": "Shyam Chen",
   "license": "MIT",
