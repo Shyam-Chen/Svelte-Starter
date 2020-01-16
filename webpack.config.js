@@ -4,11 +4,8 @@ const HtmlPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlPlugin = require('script-ext-html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 // const { GenerateSW } = require('workbox-webpack-plugin');
-// const PurgecssPlugin = require('purgecss-webpack-plugin');
-// const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
-// const SitemapPlugin = require('sitemap-webpack-plugin').default;
+// const RobotstxtPlugin = require('robotstxt-webpack-plugin');
 const envify = require('process-envify');
-// const glob = require('glob-all');
 
 const env = require('./env');
 // const pkg = require('./package');
@@ -131,32 +128,19 @@ module.exports = ({ prod = false } = {}) => ({
     //   navigateFallbackWhitelist: [/^(?!\/__).*/],
     //   cacheId: pkg.name,
     // }),
-    // prod && new PurgecssPlugin({
-    //   paths: glob.sync([
-    //     path.join(SOURCE_ROOT, './app/**/*.vue'),
-    //   ]),
-    //   whitelist: ['html', 'body'],
-    // }),
     // prod && new RobotstxtPlugin(),
-    // prod && new SitemapPlugin(env.SITE_URL, [{ path: '/' }]),
   ].filter(Boolean),
   optimization: {
+    runtimeChunk: 'single',
     splitChunks: {
+      chunks: 'all',
+      maxInitialRequests: Infinity,
+      minSize: 0,
       cacheGroups: {
-        common: {
-          name: 'common',
-          chunks: 'initial',
-          minChunks: 2,
-        },
         vendor: {
           test: /[\\/]node_modules[\\/]/,
-          name: 'vendor',
-          chunks: 'all',
         },
       },
-    },
-    runtimeChunk: {
-      name: 'manifest',
     },
   },
   devServer: {

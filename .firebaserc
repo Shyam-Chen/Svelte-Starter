@@ -1,7 +1,0 @@
-{
-  "projects": {
-    "development": "svelte-by-example-dev",
-    "staging": "svelte-by-example-stage",
-    "production": "svelte-by-example-prod"
-  }
-}

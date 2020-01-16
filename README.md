@@ -4,6 +4,8 @@
 
 ## Getting Started
 
+Follow steps to execute this boilerplate.
+
 1. Clone this boilerplate
 
 ```bash
@@ -20,5 +22,17 @@ $ yarn install
 3. Start a local server
 
 ```bash
-$ yarn start
+$ yarn serve
+```
+
+4. Compile and bundle code
+
+```bash
+$ yarn build
+```
+
+5. Runs unit tests
+
+```bash
+$ yarn unit
 ```
