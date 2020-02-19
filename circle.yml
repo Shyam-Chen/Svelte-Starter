@@ -1,39 +1,21 @@
-version: 2
+version: 2.1
+
+executors:
+  svelte-starter:
+    docker:
+      - image: circleci/node:12
 
 jobs:
-
-  build:
-    docker:
-      - image: circleci/node:10
-
-    working_directory: ~/Svelte-Play
-
+  test:
+    executor: svelte-starter
     steps:
       - checkout
-
       - setup_remote_docker
-
       - run:
-          name: Start up containers
+          name: Combat preparation
           command: docker-compose up -d
-
-      - run:
-          name: Build the application
-          command: docker-compose exec app yarn build
-
       - run:
           name: Test the application
           command: |
-            docker-compose exec app yarn test
-            docker-compose exec app yarn codecov --token=${CODECOV_TOKEN}
-
-      - run:
-          name: Deploy the application
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "develop" ]; then
-              docker-compose exec app yarn firebase use development --token ${FIREBASE_TOKEN}
-              docker-compose exec app yarn firebase deploy --only hosting --token ${FIREBASE_TOKEN}
-            elif [ "${CIRCLE_BRANCH}" == "master" ]; then
-              docker-compose exec app yarn firebase use production --token ${FIREBASE_TOKEN}
-              docker-compose exec app yarn firebase deploy --only hosting --token ${FIREBASE_TOKEN}
-            fi
+            docker-compose exec app yarn unit
+            docker-compose exec app yarn _codecov -t $CODECOV_TOKEN

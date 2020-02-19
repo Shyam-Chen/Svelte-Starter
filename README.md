@@ -1,4 +1,4 @@
-# Svelte Play
+# Svelte Starter
 
 :icecream: A boilerplate for Svelte, Material, Babel, and PostCSS.
 
@@ -9,7 +9,7 @@ Follow steps to execute this boilerplate.
 1. Clone this boilerplate
 
 ```bash
-$ git clone --depth 1 https://github.com/Shyam-Chen/Svelte-Play.git <PROJECT_NAME>
+$ git clone --depth 1 https://github.com/Shyam-Chen/Svelte-Starter.git <PROJECT_NAME>
 $ cd <PROJECT_NAME>
 ```
 
