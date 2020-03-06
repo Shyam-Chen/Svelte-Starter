@@ -14,8 +14,35 @@ jobs:
       - run:
           name: Combat preparation
           command: docker-compose up -d
+      # - run:
+      #   name: Check the code
+      #   command: |
+      #     docker-compose exec default yarn lint
       - run:
           name: Test the application
           command: |
             docker-compose exec app yarn unit
             docker-compose exec app yarn _codecov -t $CODECOV_TOKEN
+      # - run:
+      #   name: End-to-end UI tests
+      #   command: |
+      #     docker-compose exec default sh -c "sleep 10"
+      #     docker-compose exec default yarn e2e
+
+.
+workflows:
+  version: 2
+
+  parallel-test:
+    jobs:
+      - test
+
+  # weekly-regression:
+  #   triggers:
+  #     - schedule:
+  #         cron: '0 13 * * 1'
+  #         filters:
+  #           branches:
+  #             only: develop
+  #   jobs:
+  #     - test
