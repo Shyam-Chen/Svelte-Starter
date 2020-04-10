@@ -1,5 +1,5 @@
 {
-  "plugins": [],
+  "plugins": ["svelte3"],
   "env": {
     "browser": true,
     "node": true,
@@ -22,8 +22,15 @@
       }
     }
   },
+  "overrides": [
+    {
+      "files": ["**/*.svelte"],
+      "processor": "svelte3/svelte3"
+    }
+  ],
   "rules": {
     // Plugins
+    "prettier/prettier": "error",
 
     // Possible Errors
 
