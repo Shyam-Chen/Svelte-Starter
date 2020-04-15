@@ -29,7 +29,6 @@ jobs:
       #     docker-compose exec default sh -c "sleep 10"
       #     docker-compose exec default yarn e2e
 
-.
 workflows:
   version: 2
 
