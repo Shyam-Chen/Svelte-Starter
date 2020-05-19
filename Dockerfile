@@ -1,6 +1,6 @@
 FROM node:12
 
-ENV HOME /Svelte-Play
+ENV HOME /Svelte-Starter
 
 WORKDIR ${HOME}
 ADD . $HOME
@@ -26,6 +26,7 @@ RUN \
   apt-get purge --auto-remove -y curl
 # -- puppeteer
 
-RUN yarn install
+RUN \
+  yarn install --frozen-lockfile
 
 EXPOSE 8000 8080
