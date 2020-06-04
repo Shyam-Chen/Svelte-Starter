@@ -1,13 +1,18 @@
 <script>
-import { Link, Router, Route } from 'svero';
+import Router from 'svelte-spa-router';
+import { ChunkGenerator } from 'svelte-spa-chunk';
+import ChunkComponent from 'svelte-spa-chunk/Chunk';
 
 import Home from '~/home/Home';
-import HelloWorld from '~/hello-world/HelloWorld';
-import Counter from '~/counter/Counter';
+
+const Chunk = ChunkGenerator(ChunkComponent);
+
+const routes = {
+  '/': Home,
+  '/hello-world': Chunk(()=> import('~/hello-world/HelloWorld')),
+  '/counter': Chunk(()=> import('~/counter/Counter')),
+  '*': Home,
+};
 </script>
 
-<Router>
-  <Route path="/" component={Home} />
-  <Route path="/hello-world" component={HelloWorld} />
-  <Route path="/counter" component={Counter} />
-</Router>
+<Router {routes} />

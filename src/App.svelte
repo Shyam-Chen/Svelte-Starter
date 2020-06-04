@@ -1,13 +1,13 @@
 <script>
-import { Link } from 'svero';
+import { link } from 'svelte-spa-router';
 
 import Router from '~/core/Router';
 </script>
 
-<Router />
-
 <ul>
-  <li><Link href="/">Home</Link></li>
-  <li><Link href="/hello-world">Hello World</Link></li>
-  <li><Link href="/counter">Counter</Link></li>
+  <li><a href="/" use:link>Home</a></li>
+  <li><a href="/hello-world" use:link>Hello World</a></li>
+  <li><a href="/counter" use:link>Counter</a></li>
 </ul>
+
+<Router />
