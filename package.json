@@ -2,9 +2,6 @@
   "name": "svelte-starter",
   "version": "1.0.0",
   "description": "A boilerplate for Svelte, Material, Babel, and PostCSS.",
-  "engines": {
-    "node": "14"
-  },
   "scripts": {
     "serve": "cross-env BABEL_ENV=app webpack-dev-server --progress",
     "build": "rimraf public && cross-env BABEL_ENV=app webpack --env.prod",
@@ -20,10 +17,10 @@
   "author": "Shyam Chen",
   "license": "MIT",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "core-js": "^3.1.4",
     "svelte": "^3.22.3",
-    "svelte-spa-chunk": "^2.0.0",
-    "svelte-spa-router": "^2.1.0"
+    "svelte-routing": "^1.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",

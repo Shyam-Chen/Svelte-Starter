@@ -2,6 +2,16 @@
 
 :icecream: A boilerplate for Svelte, Material, Babel, and PostCSS.
 
+## Table of Contents
+
+- [Getting Started](#getting-started)
+- Key Features
+- Dockerization
+- Configuration
+- Directory Structure
+- [Microservices](#microservices)
+- Frequently Asked Questions
+
 ## Getting Started
 
 Follow steps to execute this boilerplate.
@@ -36,3 +46,9 @@ $ yarn build
 ```bash
 $ yarn unit
 ```
+
+## Microservices
+
+> Techniques, strategies and recipes for building a **modern web app** with **multiple teams** that can **ship features independently**.
+
+See [Client-side Micro-Fullstack](https://github.com/Shyam-Chen/Micro-Fullstack/tree/master/client) for instructions on how to create microservices from source.

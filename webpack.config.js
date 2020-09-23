@@ -22,6 +22,10 @@ module.exports = ({ prod = false } = {}) => ({
     filename: prod ? '[name].[hash].js' : '[name].js',
     chunkFilename: prod ? '[id].[chunkhash].js' : '[name].js',
     publicPath: '/',
+    // for microservices
+    // library: `${pkg.name}-[name]`,
+    // libraryTarget: 'umd',
+    // jsonpFunction: `webpackJsonp_${pkg.name}`,
   },
   module: {
     rules: [
@@ -144,6 +148,10 @@ module.exports = ({ prod = false } = {}) => ({
     },
   },
   devServer: {
+    // for microservices
+    // headers: {
+    //   'Access-Control-Allow-Origin': '*',
+    // },
     contentBase: DISTRIBUTION_ROOT,
     historyApiFallback: true,
     host: env.HOST_NAME,
