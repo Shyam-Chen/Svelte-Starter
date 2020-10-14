@@ -1,9 +1,9 @@
 <script>
   import { Router, Link, Route } from 'svelte-routing';
 
-  import Home from '~/home/Home';
-  import HelloWorld from '~/hello-world/HelloWorld';
-  import Counter from '~/counter/Counter';
+  import Home from '~/shell/home/Home';
+  import HelloWorld from '~/shell/hello-world/HelloWorld';
+  import Counter from '~/shell/counter/Counter';
 </script>
 
 <Route path="">

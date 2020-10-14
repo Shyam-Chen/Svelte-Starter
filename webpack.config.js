@@ -5,6 +5,7 @@ const ScriptExtHtmlPlugin = require('script-ext-html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 // const { GenerateSW } = require('workbox-webpack-plugin');
 // const RobotstxtPlugin = require('robotstxt-webpack-plugin');
+const sveltePreprocess = require('svelte-preprocess');
 const envify = require('process-envify');
 
 const env = require('./env');
@@ -31,7 +32,14 @@ module.exports = ({ prod = false } = {}) => ({
     rules: [
       {
         test: /\.svelte$/,
-        loader: 'svelte-loader',
+        use: [
+          {
+            loader: 'svelte-loader',
+            options: {
+              preprocess: sveltePreprocess(),
+            },
+          },
+        ],
       },
       {
         test: /\.js$/,

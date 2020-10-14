@@ -55,6 +55,7 @@
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",
     "svelte-loader": "^2.13.3",
+    "svelte-preprocess": "^4.5.1",
     "svelte-testing-library": "^1.6.0",
     "url-loader": "^1.1.2",
     "webpack": "^4.41.5",

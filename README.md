@@ -18,33 +18,45 @@ Follow steps to execute this boilerplate.
 
 1. Clone this boilerplate
 
-```bash
+```sh
 $ git clone --depth 1 https://github.com/Shyam-Chen/Svelte-Starter.git <PROJECT_NAME>
 $ cd <PROJECT_NAME>
 ```
 
 2. Install dependencies
 
-```bash
+```sh
 $ yarn install
 ```
 
 3. Start a local server
 
-```bash
+```sh
 $ yarn serve
 ```
 
 4. Compile and bundle code
 
-```bash
+```sh
 $ yarn build
 ```
 
-5. Runs unit tests
+5. Check code quality
 
-```bash
+```sh
+$ yarn lint
+```
+
+6. Run unit tests
+
+```sh
 $ yarn unit
+```
+
+7. Run end-to-end tests
+
+```sh
+$ yarn e2e
 ```
 
 ## Microservices
