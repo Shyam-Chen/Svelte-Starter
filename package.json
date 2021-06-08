@@ -19,8 +19,8 @@
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "core-js": "^3.1.4",
-    "svelte": "^3.22.3",
-    "svelte-routing": "^1.4.2"
+    "svelte": "^3.38.2",
+    "svelte-navigator": "^3.1.5"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",

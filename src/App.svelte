@@ -1,5 +1,5 @@
 <script>
-  import { Router, Link, Route } from 'svelte-routing';
+  import { Router, Link } from 'svelte-navigator';
 
   import RouterOutlet from '~/core/RouterOutlet';
 

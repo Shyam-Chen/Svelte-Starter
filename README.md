@@ -97,6 +97,7 @@ This seed repository provides the following features:
 
 - ---------- **Essentials** ----------
 - [x] [Svelte](https://github.com/sveltejs/svelte)
+- [x] [Svelte Navigator](https://github.com/mefechoel/svelte-navigator)
 - ---------- **Tools** ----------
 - [ ] [Vite](https://github.com/vitejs/vite)
 - [ ] [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss)

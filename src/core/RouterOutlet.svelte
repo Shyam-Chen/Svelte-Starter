@@ -1,14 +1,22 @@
 <script>
-  import { Router, Link, Route } from 'svelte-routing';
+  import { Route } from 'svelte-navigator';
 
   import Home from '~/shell/home/Home';
-  import HelloWorld from '~/shell/hello-world/HelloWorld';
-  import Counter from '~/shell/counter/Counter';
+
+  import LazyRoute from './LazyRoute';
+
+  const HelloWorld = () => import('~/shell/hello-world/HelloWorld');
+  const Counter = () => import('~/shell/counter/Counter');
 </script>
 
 <Route path="">
   <Home />
 </Route>
 
-<Route path="hello-world" component={HelloWorld} />
-<Route path="counter" component={Counter} />
+<LazyRoute path="hello-world" component={HelloWorld} delayMs={500}>
+  <h4>Loading...</h4>
+</LazyRoute>
+
+<LazyRoute path="counter" component={Counter} delayMs={500}>
+  <h4>Loading...</h4>
+</LazyRoute>
