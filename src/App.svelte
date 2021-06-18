@@ -1,7 +1,7 @@
 <script>
   import { Router, Link } from 'svelte-navigator';
 
-  import RouterOutlet from '~/core/RouterOutlet';
+  import RouterOutlet from '~/core/router/RouterOutlet';
 
   const basepath = '/';
 </script>

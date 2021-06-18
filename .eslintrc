@@ -1,5 +1,5 @@
 {
-  "plugins": ["svelte3"],
+  "plugins": ["prettier", "svelte3"],
   "env": {
     "browser": true,
     "node": true,
@@ -8,9 +8,7 @@
     "jest": true
   },
   "globals": {},
-  "extends": [
-    "airbnb-base"
-  ],
+  "extends": ["airbnb-base", "prettier"],
   "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module"
@@ -24,7 +22,7 @@
   },
   "overrides": [
     {
-      "files": ["**/*.svelte"],
+      "files": ["./src/**/*.svelte"],
       "processor": "svelte3/svelte3"
     }
   ],
@@ -43,9 +41,8 @@
 
     // Stylistic Issues
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-    "object-curly-newline": ["error", { "consistent": true }],
+    "object-curly-newline": ["error", { "consistent": true }]
 
     // JS.Next
-
   }
 }
