@@ -1,21 +1,20 @@
 {
   "name": "svelte-starter",
   "version": "1.0.0",
-  "description": "A boilerplate for Svelte, Material, Babel, and PostCSS.",
+  "private": true,
   "scripts": {
     "serve": "cross-env BABEL_ENV=app webpack-dev-server --progress",
     "build": "rimraf public && cross-env BABEL_ENV=app webpack --env.prod",
-    "lint": "eslint 'src/**/*.{js,svelte}' && stylelint 'src/**/*.{css,svelte}'",
-    "unit": "cross-env BABEL_ENV=test JEST_ENV=app jest \"src/.*\\.js$\" --coverage --forceExit",
-    "e2e": "cross-env BABEL_ENV=test JEST_ENV=e2e jest \"src/.*\\.js$\" --forceExit",
+    "lint": "eslint 'src/**/*.{svelte,js}' && stylelint 'src/**/*.{svelte,css}'",
+    "unit": "jest --coverage",
+    "preview": "caddy run",
+    "setup": "cd e2e && pnpm install",
+    "e2e": "cd e2e && pnpm test",
+    "meas": "cd e2e && pnpm perf",
+    "active": "cd mock/requests && pnpm install",
+    "mock": "cd mock/requests && pnpm serve",
     "_codecov": "codecov"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Shyam-Chen/Svelte-Starter.git"
-  },
-  "author": "Shyam Chen",
-  "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "core-js": "^3.1.4",

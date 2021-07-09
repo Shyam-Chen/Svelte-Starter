@@ -18,19 +18,19 @@ Follow steps to execute this boilerplate.
 ### Install dependencies
 
 ```sh
-$ yarn install
+$ pnpm install
 ```
 
 ### Compiles and hot-reloads for development
 
 ```sh
-$ yarn serve
+$ pnpm serve
 ```
 
 ### Compiles and minifies for production
 
 ```sh
-$ yarn build
+$ pnpm build
 ```
 
 ### Lints and fixes files
@@ -38,7 +38,7 @@ $ yarn build
 Files: `src/**/*.{js,css,svelte}`
 
 ```sh
-$ yarn lint
+$ pnpm lint
 ```
 
 ### Runs unit tests
@@ -46,7 +46,7 @@ $ yarn lint
 Files: `src/**/*.spec.js`
 
 ```sh
-$ yarn unit
+$ pnpm unit
 ```
 
 ### Runs end-to-end tests
@@ -55,13 +55,13 @@ Files: `e2e/**/*.spec.js`
 
 ```sh
 # Before running the `e2e` command, make sure to run the following commands.
-$ yarn build
-$ yarn preview
+$ pnpm build
+$ pnpm preview
 
 # If it's not setup, run it.
-$ yarn setup
+$ pnpm setup
 
-$ yarn e2e
+$ pnpm e2e
 ```
 
 ### Measures site's URLs
@@ -70,13 +70,13 @@ Files: `e2e/**/*.meas.js`
 
 ```sh
 # Before running the `meas` command, make sure to run the following commands.
-$ yarn build
-$ yarn preview
+$ pnpm build
+$ pnpm preview
 
 # If it's not setup, run it.
-$ yarn setup
+$ pnpm setup
 
-$ yarn meas
+$ pnpm meas
 ```
 
 ### Mock requests
@@ -85,9 +85,9 @@ $ yarn meas
 
 ```sh
 # If it's not active, run it.
-$ yarn active
+$ pnpm active
 
-$ yarn mock
+$ pnpm mock
 ```
 
 ## Key Features
@@ -100,7 +100,7 @@ This seed repository provides the following features:
 - [x] [Svelte Navigator](https://github.com/mefechoel/svelte-navigator)
 - ---------- **Tools** ----------
 - [ ] [Vite](https://github.com/vitejs/vite)
-- [ ] [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss)
+- [ ] [Windi CSS](https://github.com/windicss/windicss)
 - [ ] [Iconify](https://github.com/iconify/iconify)
 - [ ] [Workbox](https://github.com/GoogleChrome/workbox)
 - [ ] [ESLint](https://github.com/eslint/eslint)
@@ -110,7 +110,7 @@ This seed repository provides the following features:
 - [ ] [Lighthouse](https://github.com/GoogleChrome/lighthouse)
 - ---------- **Environments** ----------
 - [x] [Node.js](https://nodejs.org/en/)
-- [x] [Yarn](https://classic.yarnpkg.com/lang/en/)
+- [x] [Pnpm](https://pnpm.io/)
 - [ ] [Caddy](https://caddyserver.com/)
 - [ ] [Netlify](https://www.netlify.com/)
 
