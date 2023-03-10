@@ -1,48 +1,20 @@
 {
-  "plugins": ["prettier", "svelte3"],
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+  "plugins": ["svelte3", "@typescript-eslint"],
+  "ignorePatterns": ["*.cjs"],
+  "overrides": [{ "files": ["*.svelte"], "processor": "svelte3/svelte3" }],
+  "settings": {
+    "svelte3/typescript": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2020
+  },
   "env": {
     "browser": true,
-    "node": true,
-    "commonjs": true,
-    "es6": true,
-    "jest": true
-  },
-  "globals": {},
-  "extends": ["airbnb-base", "prettier"],
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "sourceType": "module"
-  },
-  "settings": {
-    "import/resolver": {
-      "webpack": {
-        "config": "webpack.config.js"
-      }
-    }
-  },
-  "overrides": [
-    {
-      "files": ["./src/**/*.svelte"],
-      "processor": "svelte3/svelte3"
-    }
-  ],
-  "rules": {
-    // Plugins
-    "prettier/prettier": "error",
-
-    // Possible Errors
-
-    // Best Practices
-    "no-param-reassign": ["error", { "props": false }],
-
-    // Variables
-
-    // Node.js and CommonJS
-
-    // Stylistic Issues
-    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-    "object-curly-newline": ["error", { "consistent": true }]
-
-    // JS.Next
+    "es2017": true,
+    "node": true
   }
 }

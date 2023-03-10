@@ -1,121 +1,38 @@
-# Svelte Starter
+# create-svelte
 
-:icecream: A boilerplate for Svelte, Tailwind, Iconify, Babel, and PostCSS.
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-## Table of Contents
+## Creating a project
 
-- [Project Setup](#project-setup)
-- [Key Features](#key-features)
-- Dockerization
-- Configuration
-- Directory Structure
-- [Microservices](#microservices)
+If you're seeing this, you've probably already done this step. Congrats!
 
-## Project Setup
+```bash
+# create a new project in the current directory
+npm create svelte@latest
 
-Follow steps to execute this boilerplate.
-
-### Install dependencies
-
-```sh
-$ pnpm install
+# create a new project in my-app
+npm create svelte@latest my-app
 ```
 
-### Compiles and hot-reloads for development
+## Developing
 
-```sh
-$ pnpm serve
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
 ```
 
-### Compiles and minifies for production
+## Building
 
-```sh
-$ pnpm build
+To create a production version of your app:
+
+```bash
+npm run build
 ```
 
-### Lints and fixes files
+You can preview the production build with `npm run preview`.
 
-Files: `src/**/*.{js,css,svelte}`
-
-```sh
-$ pnpm lint
-```
-
-### Runs unit tests
-
-Files: `src/**/*.spec.js`
-
-```sh
-$ pnpm unit
-```
-
-### Runs end-to-end tests
-
-Files: `e2e/**/*.spec.js`
-
-```sh
-# Before running the `e2e` command, make sure to run the following commands.
-$ pnpm build
-$ pnpm preview
-
-# If it's not setup, run it.
-$ pnpm setup
-
-$ pnpm e2e
-```
-
-### Measures site's URLs
-
-Files: `e2e/**/*.meas.js`
-
-```sh
-# Before running the `meas` command, make sure to run the following commands.
-$ pnpm build
-$ pnpm preview
-
-# If it's not setup, run it.
-$ pnpm setup
-
-$ pnpm meas
-```
-
-### Mock requests
-
-[`mock/requests`](./mock/requests) is a fork of [Koa-Starter](https://github.com/Shyam-Chen/Koa-Starter) that was made easy and quick way to run mock APIs locally.
-
-```sh
-# If it's not active, run it.
-$ pnpm active
-
-$ pnpm mock
-```
-
-## Key Features
-
-This seed repository provides the following features:
-
-
-- ---------- **Essentials** ----------
-- [x] [Svelte](https://github.com/sveltejs/svelte)
-- [x] [Svelte Navigator](https://github.com/mefechoel/svelte-navigator)
-- ---------- **Tools** ----------
-- [ ] [Vite](https://github.com/vitejs/vite)
-- [ ] [Windi CSS](https://github.com/windicss/windicss)
-- [ ] [Iconify](https://github.com/iconify/iconify)
-- [ ] [Workbox](https://github.com/GoogleChrome/workbox)
-- [ ] [ESLint](https://github.com/eslint/eslint)
-- [ ] [Prettier](https://github.com/prettier/prettier)
-- [ ] [Jest](https://github.com/facebook/jest)
-- [ ] [Playwright](https://github.com/microsoft/playwright)
-- [ ] [Lighthouse](https://github.com/GoogleChrome/lighthouse)
-- ---------- **Environments** ----------
-- [x] [Node.js](https://nodejs.org/en/)
-- [x] [Pnpm](https://pnpm.io/)
-- [ ] [Caddy](https://caddyserver.com/)
-- [ ] [Netlify](https://www.netlify.com/)
-
-## Microservices
-
-> Techniques, strategies and recipes for building a **modern web app** with **multiple teams** that can **ship features independently**.
-
-See [Micro-Fullstack's Micro Frontends](https://github.com/Shyam-Chen/Micro-Fullstack/tree/main/mfe) for instructions on how to create microservices from source code.
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
