@@ -1,7 +1,8 @@
 {
   "name": "my-app",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
@@ -11,6 +12,9 @@
     "test:unit": "vitest",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write ."
+  },
+  "dependencies": {
+    "@unocss/reset": "^0.50.4"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^2.0.0",
@@ -29,9 +33,5 @@
     "unocss": "^0.50.4",
     "vite": "^4.0.0",
     "vitest": "^0.25.3"
-  },
-  "type": "module",
-  "dependencies": {
-    "@unocss/reset": "^0.50.4"
   }
 }
