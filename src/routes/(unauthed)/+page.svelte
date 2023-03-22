@@ -16,6 +16,8 @@
 
   const myForm = {} as MyForm;
 
+  // valdn
+
   let result = {};
 
   const signIn = async () => {
@@ -45,11 +47,13 @@
   };
 
   const schema = z.object({
-    username: z.string().nonempty({ message: 'Required' }),
+    username: z
+      .string({ required_error: 'This is a required field' })
+      .nonempty({ message: 'This is a required field' }),
     startDate: z
       .string()
       .optional()
-      .refine((val) => !(!val && myForm.endDate), { message: 'Required' }),
+      .refine((val) => !(!val && myForm.endDate), { message: 'This is a required field' }),
     endDate: z
       .string()
       .optional()
@@ -58,23 +62,19 @@
           if (!val && myForm.startDate) return false;
           return true;
         },
-        { message: 'Required' },
+        { message: 'This is a required field' },
       ),
     table: z.array(z.object({ field: z.string().nonempty() })).optional(),
   });
 
-  const submit = () => {
+  const validate = (target: any) => {
     errors = {};
 
-    // console.log('myForm =', myForm);
+    const parsed = schema.safeParse(target);
 
-    const t = schema.safeParse(myForm);
-
-    if (!t.success) {
-      // console.log(t.error.issues);
-
-      for (let i = 0; i < t.error.issues.length; i++) {
-        const issue = t.error.issues[i];
+    if (!parsed.success) {
+      for (let i = 0; i < parsed.error.issues.length; i++) {
+        const issue = parsed.error.issues[i];
 
         errors[
           issue.path.reduce((acc, cur) => {
@@ -84,25 +84,49 @@
         ] = issue.message;
       }
     }
+
+    return parsed.success;
   };
+
+  let trigger = false;
+
+  const submit = () => {
+    trigger = true;
+
+    if (validate(myForm)) {
+      //
+    }
+  };
+
+  const reset = () => {
+    trigger = false;
+    errors = {};
+  };
+
+  $: trigger && validate(myForm);
 </script>
 
 <div>
   <div class="text-3xl font-bold">My Form</div>
 
-  <div>
+  <div class="form-field">
     <label for="username" class="form-label">Username:</label>
     <input id="username" type="text" class="form-control" bind:value={myForm.username} />
+
     <div class="text-red-500">{errors.username ? errors.username : ''}</div>
   </div>
 
-  <div>
+  <div class="flex gap-2">
     Date:
-    <input type="date" class="form-control" bind:value={myForm.startDate} />
+    <div>
+      <input type="date" class="form-control" bind:value={myForm.startDate} />
+      <div class="text-red-500">{errors.startDate ? errors.startDate : ''}</div>
+    </div>
     ~
-    <input type="date" class="form-control" bind:value={myForm.endDate} />
-    <div class="text-red-500">{errors.startDate ? errors.startDate : ''}</div>
-    <div class="text-red-500">{errors.endDate ? errors.endDate : ''}</div>
+    <div>
+      <input type="date" class="form-control" bind:value={myForm.endDate} />
+      <div class="text-red-500">{errors.endDate ? errors.endDate : ''}</div>
+    </div>
   </div>
 
   <div>
@@ -115,7 +139,9 @@
             <td>{idx}</td>
             <td>
               <input type="text" bind:value={field} class="form-control" />
-              <div class="text-red-500">{errors[`table[${idx}].field`] ? errors[`table[${idx}].field`] : ''}</div>
+              <div class="text-red-500">
+                {errors[`table[${idx}].field`] ? errors[`table[${idx}].field`] : ''}
+              </div>
             </td>
             <td>
               <button class="border border-blue-500" on:click={() => del(idx)}>Del</button>
@@ -127,6 +153,7 @@
   </div>
 
   <button class="button primary" on:click={submit}>Submit</button>
+  <button class="button primary" on:click={reset}>Reset</button>
 
   <pre>{JSON.stringify(errors, null, 2)}</pre>
 </div>
@@ -145,6 +172,10 @@ Password: <input type="password" class="border border-blue-500" bind:value={pass
 
 <style lang="scss">
   $primary-color: 'blue';
+
+  .form-field {
+    @apply my-2;
+  }
 
   .form-label {
     color: $primary-color;
