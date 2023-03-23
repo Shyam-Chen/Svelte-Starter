@@ -1,14 +1,16 @@
 <script lang="ts">
+  import { z } from 'zod';
+
   import { browser } from '$app/environment';
   import { goto } from '$app/navigation';
-
-  import { z } from 'zod';
+  import TextField from '$lib/components/TextField.svelte';
 
   let username = '';
   let password = '';
 
   interface MyForm {
     username?: string;
+    email?: string;
     startDate?: string;
     endDate?: string;
     table?: Array<{ field?: string }>;
@@ -49,22 +51,28 @@
   const schema = z.object({
     username: z
       .string({ required_error: 'This is a required field' })
-      .nonempty({ message: 'This is a required field' }),
+      .nonempty('This is a required field'),
+    email: z
+      .string({ required_error: 'This is a required field' })
+      .email('')
+      .nonempty('This is a required field'),
     startDate: z
       .string()
       .optional()
-      .refine((val) => !(!val && myForm.endDate), { message: 'This is a required field' }),
+      .refine((val) => !(!val && myForm.endDate), 'This is a required field'),
     endDate: z
       .string()
       .optional()
-      .refine(
-        (val) => {
-          if (!val && myForm.startDate) return false;
-          return true;
-        },
-        { message: 'This is a required field' },
-      ),
-    table: z.array(z.object({ field: z.string().nonempty() })).optional(),
+      .refine((val) => !(myForm.startDate && !val), 'This is a required field'),
+    table: z
+      .array(
+        z.object({
+          field: z
+            .string({ required_error: 'This is a required field' })
+            .nonempty('This is a required field'),
+        }),
+      )
+      .optional(),
   });
 
   const validate = (target: any) => {
@@ -98,38 +106,52 @@
     }
   };
 
-  const reset = () => {
-    trigger = false;
-    errors = {};
-  };
+  // const reset = () => {
+  //   trigger = false;
+  //   errors = {};
+  // };
 
-  $: trigger && validate(myForm);
+  $: validate(myForm);
 </script>
 
 <div>
   <div class="text-3xl font-bold">My Form</div>
 
-  <div class="form-field">
-    <label for="username" class="form-label">Username:</label>
-    <input id="username" type="text" class="form-control" bind:value={myForm.username} />
+  <div class="grid grid-cols-2 gap-4">
+    <TextField
+      label="Username:"
+      bind:value={myForm.username}
+      touched={trigger}
+      errorMessage={errors.username}
+    />
+    <TextField
+      label="Email:"
+      bind:value={myForm.email}
+      touched={trigger}
+      errorMessage={errors.email}
+    />
 
-    <div class="text-red-500">{errors.username ? errors.username : ''}</div>
+    <div class="flex flex-col">
+      Date Range:
+      <div class="flex items-baseline gap-2">
+        <TextField
+          type="date"
+          bind:value={myForm.startDate}
+          touched={trigger}
+          errorMessage={errors.startDate}
+        />
+        ~
+        <TextField
+          type="date"
+          bind:value={myForm.endDate}
+          touched={trigger}
+          errorMessage={errors.endDate}
+        />
+      </div>
+    </div>
   </div>
 
-  <div class="flex gap-2">
-    Date:
-    <div>
-      <input type="date" class="form-control" bind:value={myForm.startDate} />
-      <div class="text-red-500">{errors.startDate ? errors.startDate : ''}</div>
-    </div>
-    ~
-    <div>
-      <input type="date" class="form-control" bind:value={myForm.endDate} />
-      <div class="text-red-500">{errors.endDate ? errors.endDate : ''}</div>
-    </div>
-  </div>
-
-  <div>
+  <div class="my-4">
     <button class="button primary" on:click={add}>Add</button>
 
     <table>
@@ -153,7 +175,7 @@
   </div>
 
   <button class="button primary" on:click={submit}>Submit</button>
-  <button class="button primary" on:click={reset}>Reset</button>
+  <!-- <button class="button primary" on:click={reset}>Reset</button> -->
 
   <pre>{JSON.stringify(errors, null, 2)}</pre>
 </div>
@@ -168,19 +190,9 @@ Username:
 />
 Password: <input type="password" class="border border-blue-500" bind:value={password} />
 
-<button class="border border-blue-500" on:click={signIn}>Sign in</button>
+<button class="button primary" on:click={signIn}>Sign in</button>
 
 <style lang="scss">
-  $primary-color: 'blue';
-
-  .form-field {
-    @apply my-2;
-  }
-
-  .form-label {
-    color: $primary-color;
-  }
-
   .form-control {
     @apply border border-blue-500 rounded focus\:outline-0 focus\:ring-2 focus\:ring-blue-400;
   }

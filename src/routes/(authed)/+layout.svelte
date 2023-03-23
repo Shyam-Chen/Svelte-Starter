@@ -7,8 +7,8 @@
 	if (browser) {
 		if (!localStorage.getItem('accessToken')) goto('/');
 
-		const expiresIn = localStorage.getItem('expiresIn');
-		if (expiresIn && new Date().toISOString() >= expiresIn) goto('/');
+		// const expiresIn = localStorage.getItem('expiresIn');
+		// if (expiresIn && new Date().toISOString() >= expiresIn) goto('/');
 	}
 </script>
 
