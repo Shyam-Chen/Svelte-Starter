@@ -2,7 +2,10 @@
   import { z } from 'zod';
 
   import TextField from '$lib/components/TextField.svelte';
+  import Button from '$lib/components/Button.svelte';
   import UseSchema from '$lib/composables/UseSchema.svelte';
+
+  let success = false;
 
   const schema = z.object({
     name: z
@@ -17,16 +20,28 @@
 
   const submit = () => {
     touched = true;
+
+    console.log('success', success);
+
+    if (success) {
+      console.log('passed', form);
+    }
   };
 </script>
 
-<UseSchema {schema} {form} bind:valdn />
+<UseSchema bind:success {schema} {form} bind:valdn />
 
 <div>Dashboard</div>
 
-<TextField label="Name" {touched} bind:value={form.name} errorMessage={valdn.name} />
+<div class="max-w-100 p-6 shadow-md">
+  <TextField label="Name" {touched} bind:value={form.name} errorMessage={valdn.name} />
+
+  <div class="mt-6">
+    <Button on:click={submit}>Submit</Button>
+  </div>
+</div>
+
 
 <pre>{JSON.stringify(form, null, 2)}</pre>
 <pre>{JSON.stringify(valdn, null, 2)}</pre>
 
-<button class="border border-blue-500" on:click={submit}>Submit</button>

@@ -2,6 +2,7 @@
   import { createEventDispatcher } from 'svelte';
   import type { ZodSchema } from 'zod';
 
+  export let success: boolean;
   export let schema: ZodSchema;
   export let form: Record<string, unknown>;
   export let valdn: Record<string, unknown>;
@@ -27,6 +28,7 @@
     }
 
     dispatch('valdn', valdn);
+    dispatch('success', (success = parsed.success));
     return parsed.success;
   };
 

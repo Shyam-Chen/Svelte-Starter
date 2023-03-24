@@ -111,6 +111,14 @@
   //   errors = {};
   // };
 
+  if (browser) {
+    const sse = new EventSource('/api/sse');
+
+    sse.addEventListener('message', (e) => {
+      console.log('message =', e.data);
+    });
+  }
+
   $: validate(myForm);
 </script>
 
