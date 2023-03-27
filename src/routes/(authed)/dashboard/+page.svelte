@@ -31,17 +31,21 @@
 
 <UseSchema bind:success {schema} {form} bind:valdn />
 
-<div>Dashboard</div>
+<div class="page">
+  <div>Dashboard</div>
 
-<div class="max-w-100 p-6 shadow-md">
-  <TextField label="Name" {touched} bind:value={form.name} errorMessage={valdn.name} />
+  <div class="max-w-100 p-6 shadow-md">
+    <TextField label="Name" {touched} bind:value={form.name} errorMessage={valdn.name} />
 
-  <div class="mt-6">
     <Button on:click={submit}>Submit</Button>
   </div>
+
+  <pre>{JSON.stringify(form, null, 2)}</pre>
+  <pre>{JSON.stringify(valdn, null, 2)}</pre>
 </div>
 
-
-<pre>{JSON.stringify(form, null, 2)}</pre>
-<pre>{JSON.stringify(valdn, null, 2)}</pre>
-
+<style lang="scss">
+  .page :global(.button) {
+    --at-apply: mt-6;
+  }
+</style>

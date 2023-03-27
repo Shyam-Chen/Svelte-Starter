@@ -30,15 +30,15 @@
 
 <style lang="scss">
   .form-field {
-    @apply flex flex-col w-full;
+    --at-apply:  flex flex-col w-full;
   }
 
   .form-label {
-    @apply mb-1 empty\:hidden;
+    --at-apply:  mb-1 empty:hidden;
   }
 
   .form-control {
-    @apply border border-blue-500 rounded focus\:outline-0 focus\:ring-2 focus\:ring-blue-400;
-    @apply px-2 py-1;
+    --at-apply:  border border-blue-500 rounded focus:outline-0 focus:ring-2 focus:ring-blue-400;
+    --at-apply:  px-2 py-1;
   }
 </style>

@@ -202,21 +202,21 @@ Password: <input type="password" class="border border-blue-500" bind:value={pass
 
 <style lang="scss">
   .form-control {
-    @apply border border-blue-500 rounded focus\:outline-0 focus\:ring-2 focus\:ring-blue-400;
+    --at-apply: border border-blue-500 rounded focus:outline-0 focus:ring-2 focus:ring-blue-400;
   }
 
   .button {
-    @apply flex justify-center items-center gap-2 px-6 py-2 border rounded uppercase text-sm font-medium;
-    @apply shadow-md hover\:shadow-lg;
-    @apply focus\:outline-none focus\:ring-2 focus\:ring-blue-400 focus\:shadow-lg;
+    --at-apply: flex justify-center items-center gap-2 px-6 py-2 border rounded uppercase text-sm font-medium;
+    --at-apply: shadow-md hover:shadow-lg;
+    --at-apply: focus:outline-none focus:ring-2 focus:ring-blue-400 focus:shadow-lg;
   }
 
   .primary {
-    @apply bg-blue-600 text-blueGray-200 border-blue-600;
+    --at-apply: bg-blue-600 text-blueGray-200 border-blue-600;
 
-    //   @apply hover\:text-blueGray-300 hover\:bg-blue-700;
-    //   @apply dark\:hover\:text-blueGray-300 dark\:hover\:bg-blue-700;
+    --at-apply: hover:text-blueGray-300 hover:bg-blue-700;
+    --at-apply: dark:hover:text-blueGray-300 dark:hover:bg-blue-700;
 
-    //   @apply active\:bg-blue-400 dark\:active:bg-blue-800;
+    --at-apply: active:bg-blue-400 dark:active:bg-blue-800;
   }
 </style>
