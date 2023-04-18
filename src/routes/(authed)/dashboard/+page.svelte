@@ -37,15 +37,9 @@
   <div class="max-w-100 p-6 shadow-md">
     <TextField label="Name" {touched} bind:value={form.name} errorMessage={valdn.name} />
 
-    <Button on:click={submit}>Submit</Button>
+    <Button class="mt-6" on:click={submit}>Submit</Button>
   </div>
 
   <pre>{JSON.stringify(form, null, 2)}</pre>
   <pre>{JSON.stringify(valdn, null, 2)}</pre>
 </div>
-
-<style lang="scss">
-  .page :global(.button) {
-    --at-apply: mt-6;
-  }
-</style>

@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<button class="button" {...$$restProps} on:click><slot /></button>
+<button class="button {$$props.class}" on:click><slot /></button>
 
 <style lang="scss">
   .button {
