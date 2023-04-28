@@ -20,7 +20,7 @@
   "devDependencies": {
     "@iconify-json/material-symbols": "^1.1.35",
     "@sveltejs/adapter-node": "^1.2.3",
-    "@sveltejs/kit": "^1.13.0",
+    "@sveltejs/kit": "^1.15.9",
     "@types/lodash": "^4.14.191",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
