@@ -1,45 +1,46 @@
 <script lang="ts">
+  import { writable } from 'svelte/store';
   import { z } from 'zod';
 
   import TextField from '$lib/components/TextField.svelte';
   import Button from '$lib/components/Button.svelte';
-  import UseSchema from '$lib/composables/UseSchema.svelte';
+  import useSchema from '$lib/composables/useSchema';
 
-  let success = false;
+  const form = writable<{ name?: string; email?: string }>({});
+  const valdn = writable<Record<string, string>>({});
 
-  const schema = z.object({
-    name: z
-      .string({ required_error: 'This is a required field' })
-      .nonempty('This is a required field'),
-  });
+  const msgs = {
+    required: 'This is a required field',
+  };
 
-  const form = {} as z.infer<typeof schema>;
-  let valdn = {} as Record<string, string>;
-
-  let touched = false;
+  const schema = useSchema(
+    z.object({
+      name: z.string({ required_error: msgs.required }).nonempty(msgs.required),
+      email: z.string({ required_error: msgs.required }).nonempty(msgs.required),
+    }),
+    form,
+    valdn,
+  );
 
   const submit = () => {
-    touched = true;
-
-    console.log('success', success);
-
-    if (success) {
-      console.log('passed', form);
+    if (schema.validate()) {
+      console.log('passed', $form);
     }
   };
 </script>
-
-<UseSchema bind:success {schema} {form} bind:valdn />
 
 <div class="page">
   <div>Dashboard</div>
 
   <div class="max-w-100 p-6 shadow-md">
-    <TextField label="Name" {touched} bind:value={form.name} errorMessage={valdn.name} />
+    <div class="flex flex-col gap-3">
+      <TextField label="Name" bind:value={$form.name} errorMessage={$valdn.name} />
+      <TextField label="Email" bind:value={$form.email} errorMessage={$valdn.email} />
+    </div>
 
     <Button class="mt-6" on:click={submit}>Submit</Button>
   </div>
 
-  <pre>{JSON.stringify(form, null, 2)}</pre>
-  <pre>{JSON.stringify(valdn, null, 2)}</pre>
+  <pre>{JSON.stringify($form, null, 2)}</pre>
+  <pre>{JSON.stringify($valdn, null, 2)}</pre>
 </div>
