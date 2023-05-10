@@ -1,17 +1,27 @@
 import type { ZodSchema } from 'zod';
 import type { Writable } from 'svelte/store';
 
-export default (schema: ZodSchema, form: Writable<any>, valdn: Writable<any>) => {
-  let _form: any;
+const debounce = (fn: any, ms = 300) => {
+  let timeoutId: ReturnType<typeof setTimeout>;
 
+  return function (this: any, ...args: any[]) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => fn.apply(this, args), ms);
+  };
+};
+
+export default (schema: ZodSchema, form: Writable<any>, valdn: Writable<any>) => {
   let watch = false;
+
+  const debouncing = debounce(() => {
+    validate();
+  });
+
+  let _form: any;
 
   form.subscribe((val) => {
     _form = val;
-
-    if (watch) {
-      validate();
-    }
+    if (watch) debouncing();
   });
 
   function validate() {
