@@ -3,6 +3,6 @@
   import 'uno.css';
 </script>
 
-<div class="p-4">
+<div class="flex justify-center items-center min-h-screen">
   <slot />
 </div>

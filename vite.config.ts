@@ -1,6 +1,6 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vitest/config';
-import { presetUno, presetIcons, transformerDirectives, extractorSvelte } from 'unocss';
+import { presetUno, presetIcons, transformerDirectives } from 'unocss';
 import unocss from 'unocss/vite';
 
 export default defineConfig({
@@ -8,7 +8,6 @@ export default defineConfig({
     unocss({
       presets: [presetUno(), presetIcons()],
       transformers: [transformerDirectives()],
-      extractors: [extractorSvelte],
     }),
     sveltekit(),
   ],
