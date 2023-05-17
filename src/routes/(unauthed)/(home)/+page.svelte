@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { writable } from 'svelte/store';
   import { useSchema } from 'svelte-formor';
   import { z } from 'zod';
@@ -41,6 +42,23 @@
       goto('/dashboard');
     }
   };
+
+  let time = '';
+
+  function subscribe() {
+    const sse = new EventSource('/api/sse');
+
+    sse.onmessage = (evt) => {
+      time = JSON.parse(evt.data);
+    };
+
+    return () => sse.close();
+  }
+
+  onMount(() => {
+    const unsubscribe = subscribe();
+    return () => unsubscribe();
+  });
 </script>
 
 <div class="page">
@@ -59,7 +77,9 @@
     <Button class="mt-6" on:click={submit}>Submit</Button>
   </div>
 
-  <div class="mt-4">
+  <div class="text-center my-2">{time}</div>
+
+  <div>
     <pre>{JSON.stringify($form, null, 2)}</pre>
     <pre>{JSON.stringify($valdn, null, 2)}</pre>
   </div>

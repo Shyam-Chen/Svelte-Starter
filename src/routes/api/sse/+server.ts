@@ -1,12 +1,19 @@
 import type { RequestHandler } from './$types';
 
-function writeEvent(source: any): string {
+interface MessageEvent {
+  id?: string;
+  event?: string;
+  data: string | object;
+  retry?: number;
+}
+
+function writeMessage(event: MessageEvent): string {
   let payload = '';
 
-  if (source.id) payload += `id: ${source.id}\n`;
-  if (source.event) payload += `event: ${source.event}\n`;
-  if (source.data) payload += `data: ${JSON.stringify(source.data)}\n`;
-  if (source.retry) payload += `retry: ${source.retry}\n`;
+  if (event.id) payload += `id: ${event.id}\n`;
+  if (event.event) payload += `event: ${event.event}\n`;
+  if (event.data) payload += `data: ${JSON.stringify(event.data)}\n`;
+  if (event.retry) payload += `retry: ${event.retry}\n`;
   if (!payload) return '';
   payload += '\n';
 
@@ -14,13 +21,23 @@ function writeEvent(source: any): string {
 }
 
 export const GET = (async () => {
+  let timer: ReturnType<typeof setInterval>;
+
   const stream = new ReadableStream({
     start(controller) {
-      controller.enqueue(writeEvent({ id: 1, event: 'message', data: { foo: 'bar ' } }));
+      timer = setInterval(() => {
+        controller.enqueue(
+          writeMessage({
+            id: String(timer),
+            event: 'message',
+            data: new Date().toLocaleString(),
+          }),
+        );
+      }, 1000);
     },
-    // cancel() {
-    //   // ...
-    // },
+    cancel() {
+      clearInterval(timer);
+    },
   });
 
   return new Response(stream, {
