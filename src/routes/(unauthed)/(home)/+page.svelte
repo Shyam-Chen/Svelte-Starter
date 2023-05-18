@@ -29,7 +29,7 @@
     if (schema.validate()) {
       console.log('passed', $form);
 
-      const response = await fetch('/api/auth', {
+      const response = await fetch('/api/auth/sign-in', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({ ...$form }),
