@@ -1,7 +1,4 @@
 <script lang="ts">
-  import '@unocss/reset/tailwind.css';
-  import 'uno.css';
-
   import { browser } from '$app/environment';
   import { goto } from '$app/navigation';
   import TopAppBar from '$lib/components/TopAppBar.svelte';
