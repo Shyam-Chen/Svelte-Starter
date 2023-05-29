@@ -43,7 +43,7 @@
     }
   };
 
-  let time = '';
+  let time = new Date().toLocaleString();
 
   function subscribe() {
     const sse = new EventSource('/api/sse');

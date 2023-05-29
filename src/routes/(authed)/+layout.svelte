@@ -13,6 +13,12 @@
 
 <TopAppBar />
 
-<div class="pt-16">
+<div class="container mx-auto px-4 pt-16 min-h-screen">
+  <ul>
+    <li><a href="/users/eduardo" class="text-yellow-500">/users/eduardo</a></li>
+    <li><a href="/users/eduardo/profile" class="text-red-500">/users/eduardo/profile</a></li>
+    <li><a href="/users/eduardo/posts" class="text-blue-500">/users/eduardo/posts</a></li>
+  </ul>
+
   <slot />
 </div>
