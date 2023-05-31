@@ -1,35 +1,40 @@
 <script lang="ts">
   import { onMount } from 'svelte';
 
-  import { enhance } from '$app/forms';
   import { invalidate } from '$app/navigation';
   import TextField from '$lib/components/TextField.svelte';
   import Button from '$lib/components/Button.svelte';
+  import request from '$lib/utils/request';
 
-  import type { PageData, ActionData } from './$types';
+  import type { PageData } from './$types';
 
   export let data: PageData;
 
-  export let form: ActionData;
-
-  let user: string = '';
-
-  $: if (form?.join && !user) set_user();
-
-  function set_user() {
-    user = form?.user;
-  }
+  let user = '';
+  let name = '';
+  let message = '';
 
   function subscribe() {
-    const sse = new EventSource('/dashboard');
+    const sse = new EventSource('/api/chats');
     sse.onmessage = () => invalidate('chats');
     return () => sse.close();
   }
 
   onMount(subscribe);
+
+  async function send() {
+    await request('/chats/send', { method: 'POST', body: { name: user, message } });
+    message = '';
+  }
+
+  async function join() {
+    await request('/chats', { method: 'POST', body: { name } });
+    user = name;
+    name = '';
+  }
 </script>
 
-<main>
+<main class="mt-20">
   <p>
     Open in <a href="/dashboard" target="_blank" rel="noopener noreferrer" class="underline"
       >new tab</a
@@ -38,6 +43,7 @@
 
   <fieldset>
     <legend>Chat Room</legend>
+
     <section>
       <article>
         {#each data.chats as chat}
@@ -46,7 +52,7 @@
           {:else}
             <p>
               <strong>{chat.user}</strong>
-              {#if chat.user === form?.user}
+              {#if chat.user === user}
                 <em>(you)</em>
               {/if}
               : {chat.message}
@@ -59,36 +65,11 @@
     </section>
 
     {#if user}
-      <form
-        action="?/send"
-        method="post"
-        on:reset={() => console.log('reset')}
-        use:enhance={() =>
-          ({ form, result, update }) => {
-            if (result.type === 'success') {
-              const message_input = form.elements.namedItem('message');
-              if (message_input instanceof HTMLInputElement) {
-                message_input.value = '';
-                return;
-              }
-            }
-            update();
-          }}
-      >
-        <input type="text" name="name" value={user} hidden />
-        <TextField type="text" name="message" placeholder="Type your message" autofocus required />
-        <Button>Send</Button>
-      </form>
+      <TextField bind:value={message} placeholder="Type your message" autofocus required />
+      <Button on:click={send}>Send</Button>
     {:else}
-      <form action="?/join" method="post" use:enhance>
-        <TextField type="text" name="name" placeholder="Your name" required />
-        <Button>Join</Button>
-      </form>
-    {/if}
-
-    {#if form?.message}
-      <br />
-      <em>{form?.message}</em>
+      <TextField bind:value={name} placeholder="Your name" required />
+      <Button on:click={join}>Join</Button>
     {/if}
   </fieldset>
 </main>

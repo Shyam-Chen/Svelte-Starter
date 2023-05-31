@@ -16,6 +16,7 @@
     "fast-jwt": "^2.2.3",
     "lodash": "^4.17.21",
     "mongodb": "^5.5.0",
+    "ofetch": "^1.0.1",
     "pbkdf2-passworder": "^1.0.1",
     "svelte-formor": "^0.1.0",
     "zod": "^3.21.4"

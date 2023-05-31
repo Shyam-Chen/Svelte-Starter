@@ -18,6 +18,7 @@ export const chat_events: ChatEvent[] = [];
 
 export function send_chat(chat: Chat) {
   chats.push(chat);
+
   for (const event of chat_events) {
     event.notify();
   }

@@ -1,5 +1,7 @@
+import { json, error } from '@sveltejs/kit';
+
 import type { RequestHandler } from './$types';
-import { ChatEvent, chat_events } from './data';
+import { ChatEvent, chat_events, send_chat } from '$lib/server/chat-emitter';
 
 export const GET: RequestHandler = () => {
   const event = new ChatEvent();
@@ -24,4 +26,13 @@ export const GET: RequestHandler = () => {
       Connection: 'keep-alive',
     },
   });
+};
+
+export const POST: RequestHandler = async ({ request }) => {
+  const { name } = await request.json();
+
+  if (!name) throw error(400, { message: 'Please fill your name!' });
+
+  send_chat({ user: name, message: '', type: 'join' });
+  return json({ user: name, join: true });
 };
