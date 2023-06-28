@@ -1,5 +1,12 @@
 <script lang="ts">
+  import type { HTMLInputAttributes } from 'svelte/elements';
   import uniqueId from 'lodash/uniqueId';
+
+  interface $$Props extends HTMLInputAttributes {
+    label?: string;
+    value?: string;
+    errorMessage?: string;
+  }
 
   export let label = '';
   export let value = '';

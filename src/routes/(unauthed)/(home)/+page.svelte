@@ -64,7 +64,7 @@
 <div class="page">
   <div class="min-w-100 p-6 shadow-md">
     <div class="flex flex-col gap-3">
-      <TextField label="Email" bind:value={$form.email} errorMessage={$valdn.email} />
+      <TextField label="Email" bind:value={$form.email} errorMessage={$valdn.email} autocomplete="off" />
 
       <TextField
         label="Password"

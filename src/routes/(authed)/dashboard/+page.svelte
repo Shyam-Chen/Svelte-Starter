@@ -65,10 +65,10 @@
     </section>
 
     {#if user}
-      <TextField bind:value={message} placeholder="Type your message" autofocus required />
+      <TextField bind:value={message} placeholder="Type your message" autofocus required autocomplete="off" />
       <Button on:click={send}>Send</Button>
     {:else}
-      <TextField bind:value={name} placeholder="Your name" required />
+      <TextField bind:value={name} placeholder="Your name" required autocomplete="off" />
       <Button on:click={join}>Join</Button>
     {/if}
   </fieldset>
