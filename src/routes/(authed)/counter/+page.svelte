@@ -19,8 +19,8 @@
   <div class="mt-20">
     <div>Count: {$state.count}</div>
     <div>Double Count: {$doubleCount}</div>
-    <Button on:click={increment}>Increment</Button>
-    <Button on:click={reset}>Reset</Button>
+    <Button onclick={increment}>Increment</Button>
+    <Button onclick={reset}>Reset</Button>
 
     <hr />
 

@@ -6,5 +6,5 @@
 
 <div class="user">
   <h2 class="text-2xl">User {data.params.username}</h2>
-  <slot />
+  <slot></slot>
 </div>

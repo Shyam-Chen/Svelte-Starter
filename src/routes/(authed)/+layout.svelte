@@ -24,5 +24,5 @@
     <li><a href="/counter" class="text-purple-500">Counter</a></li>
   </ul>
 
-  <slot />
+  <slot></slot>
 </div>

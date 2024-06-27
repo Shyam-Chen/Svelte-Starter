@@ -11,6 +11,9 @@ export default defineConfig({
     }),
     sveltekit(),
   ],
+  ssr: {
+    noExternal: ['svelte-formor'],
+  },
   test: {
     include: ['src/**/*.{test,spec}.{js,ts}'],
   },

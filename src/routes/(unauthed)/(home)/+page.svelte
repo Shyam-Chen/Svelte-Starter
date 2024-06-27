@@ -1,38 +1,48 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { writable } from 'svelte/store';
   import { useSchema } from 'svelte-formor';
-  import { z } from 'zod';
+  import * as v from 'valibot';
 
   import { browser } from '$app/environment';
   import { goto } from '$app/navigation';
   import TextField from '$lib/components/TextField.svelte';
   import Button from '$lib/components/Button.svelte';
 
-  const form = writable<{ email?: string; password?: string }>({});
-  const valdn = writable<Record<string, string>>({});
+  interface Form {
+    email?: string;
+    password?: string;
+  }
 
-  const msgs = {
+  let form = $state<Form>({});
+  let valdn = $state<Partial<Record<keyof Form, string>>>({});
+
+  let locale = $state({
     required: 'This is a required field',
-  };
+    email: `This must be a valid email`,
+  });
 
-  const schema = useSchema(
-    z.object({
-      email: z.string({ required_error: msgs.required }).nonempty(msgs.required),
-      password: z.string({ required_error: msgs.required }).nonempty(msgs.required),
-    }),
-    form,
-    valdn,
+  const schema = $derived(
+    useSchema(
+      v.object({
+        email: v.nullish(
+          v.pipe(v.string(), v.minLength(1, locale.required), v.email(locale.email)),
+          '',
+        ),
+        password: v.nullish(v.pipe(v.string(), v.minLength(1, locale.required)), ''),
+      }),
+      form,
+      valdn,
+    ),
   );
 
   const submit = async () => {
     if (schema.validate()) {
-      console.log('passed', $form);
+      console.log('passed', form);
 
       const response = await fetch('/api/auth/sign-in', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ ...$form }),
+        body: JSON.stringify({ ...form }),
       });
 
       await response.json();
@@ -43,7 +53,7 @@
     }
   };
 
-  let time = new Date().toLocaleString();
+  let time = $state(new Date().toLocaleString());
 
   function subscribe() {
     const sse = new EventSource('/api/sse');
@@ -64,23 +74,28 @@
 <div class="page">
   <div class="min-w-100 p-6 shadow-md">
     <div class="flex flex-col gap-3">
-      <TextField label="Email" bind:value={$form.email} errorMessage={$valdn.email} autocomplete="off" />
+      <TextField
+        label="Email"
+        bind:value={form.email}
+        errorMessage={valdn.email}
+        autocomplete="off"
+      />
 
       <TextField
         label="Password"
         type="password"
-        bind:value={$form.password}
-        errorMessage={$valdn.password}
+        bind:value={form.password}
+        errorMessage={valdn.password}
       />
     </div>
 
-    <Button class="mt-6" on:click={submit}>Submit</Button>
+    <Button class="mt-6" onclick={submit}>Submit</Button>
   </div>
 
   <div class="text-center my-2">{time}</div>
 
   <div>
-    <pre>{JSON.stringify($form, null, 2)}</pre>
-    <pre>{JSON.stringify($valdn, null, 2)}</pre>
+    <pre>{JSON.stringify(form, null, 2)}</pre>
+    <pre>{JSON.stringify(valdn, null, 2)}</pre>
   </div>
 </div>

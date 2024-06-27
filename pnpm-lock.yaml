@@ -27,14 +27,11 @@ importers:
         specifier: 1.0.1
         version: 1.0.1
       svelte-formor:
-        specifier: 0.1.0
-        version: 0.1.0
+        specifier: 0.2.0
+        version: 0.2.0
       valibot:
         specifier: 0.35.0
         version: 0.35.0
-      zod:
-        specifier: 3.23.8
-        version: 3.23.8
     devDependencies:
       '@iconify-json/material-symbols':
         specifier: 1.1.82
@@ -1931,8 +1928,8 @@ packages:
       svelte:
         optional: true
 
-  svelte-formor@0.1.0:
-    resolution: {integrity: sha512-0L46/D0ivlbrleNWAAQBYeDJL/W7XbkY0UFEvP3XZ+krpcRtA3HskhX1ECHNVx4III5+uNjayU4+cI/2H2lKDA==}
+  svelte-formor@0.2.0:
+    resolution: {integrity: sha512-sm/kcpv8uttksZziOaTILPX/YjQ1g1w1NaF2YTKpmr8vxiHhTkU9w937HUuXpRRT1P09eToSEd6xbm8yXT3BNw==}
 
   svelte-hmr@0.16.0:
     resolution: {integrity: sha512-Gyc7cOS3VJzLlfj7wKS0ZnzDVdv3Pn2IuVeJPk9m2skfhcu5bq3wtIZyQGggr7/Iim5rH5cncyQft/kRLupcnA==}
@@ -2188,9 +2185,6 @@ packages:
 
   zimmerframe@1.1.2:
     resolution: {integrity: sha512-rAbqEGa8ovJy4pyBxZM70hg4pE6gDgaQ0Sl9M3enG3I0d6H4XSAM3GeNGLKnsBpuijUow064sf7ww1nutC5/3w==}
-
-  zod@3.23.8:
-    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
 
 snapshots:
 
@@ -4095,7 +4089,7 @@ snapshots:
     optionalDependencies:
       svelte: 5.0.0-next.166
 
-  svelte-formor@0.1.0: {}
+  svelte-formor@0.2.0: {}
 
   svelte-hmr@0.16.0(svelte@5.0.0-next.166):
     dependencies:
@@ -4330,5 +4324,3 @@ snapshots:
   yocto-queue@1.0.0: {}
 
   zimmerframe@1.1.2: {}
-
-  zod@3.23.8: {}

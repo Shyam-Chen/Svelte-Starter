@@ -1,13 +1,11 @@
 <script lang="ts">
-  import type { HTMLButtonAttributes } from 'svelte/elements';
+  // import type { HTMLButtonAttributes } from 'svelte/elements';
 
-  interface $$Props extends HTMLButtonAttributes {
-    // ...
-  }
+  let { class: classname, children, ...others } = $props();
 </script>
 
-<button type="button" class="button {$$props.class}" on:click {...$$restProps}>
-  <slot />
+<button type="button" class="button {classname}" {...others}>
+  {@render children()}
 </button>
 
 <style lang="scss">
