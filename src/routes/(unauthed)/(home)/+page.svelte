@@ -77,7 +77,7 @@
       <TextField
         label="Email"
         bind:value={form.email}
-        errorMessage={valdn.email}
+        invalid={valdn.email}
         autocomplete="off"
       />
 
@@ -85,7 +85,7 @@
         label="Password"
         type="password"
         bind:value={form.password}
-        errorMessage={valdn.password}
+        invalid={valdn.password}
       />
     </div>
 

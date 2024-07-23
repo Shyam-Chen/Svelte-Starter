@@ -6,10 +6,10 @@
     children?: Snippet;
   }
 
-  let { class: classname, children, ...others }: Props = $props();
+  let { class: classname, children, ...attrs }: Props = $props();
 </script>
 
-<button type="button" class="button {classname}" {...others}>
+<button type="button" class="button {classname}" {...attrs}>
   {@render children?.()}
 </button>
 
