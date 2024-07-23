@@ -5,9 +5,9 @@
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "prettier --plugin-search-dir . --check . && eslint .",
-    "check": "svelte-check",
-    "unit": "vitest",
+    "lint": "eslint src",
+    "check": "svelte-kit sync && svelte-check",
+    "test": "vitest run",
     "e2e": "cd e2e && pnpm e2e"
   },
   "dependencies": {
