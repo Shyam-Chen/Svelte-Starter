@@ -1,11 +1,16 @@
 <script lang="ts">
-  // import type { HTMLButtonAttributes } from 'svelte/elements';
+  import type { Snippet } from 'svelte';
+  import type { HTMLButtonAttributes } from 'svelte/elements';
 
-  let { class: classname, children, ...others } = $props();
+  interface Props extends HTMLButtonAttributes {
+    children?: Snippet;
+  }
+
+  let { class: classname, children, ...others }: Props = $props();
 </script>
 
 <button type="button" class="button {classname}" {...others}>
-  {@render children()}
+  {@render children?.()}
 </button>
 
 <style lang="scss">
@@ -13,7 +18,6 @@
     @apply inline-flex justify-center items-center vertical-middle;
     @apply w-full min-w-16 px-4 py-1.5 rounded shadow;
     @apply text-sm;
-
-    @apply text-white bg-blue-500;
+    @apply text-white bg-blue-500 hover:bg-blue-600;
   }
 </style>
