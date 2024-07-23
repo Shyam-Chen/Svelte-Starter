@@ -1,13 +1,11 @@
 {
-  "name": "e2e",
   "private": true,
+  "type": "module",
   "scripts": {
     "e2e": "playwright test"
   },
-  "dependencies": {
-    "@playwright/test": "^1.45.0"
-  },
   "devDependencies": {
-    "playwright": "^1.45.0"
+    "@playwright/test": "1.45.2",
+    "@types/node": "20.14.11"
   }
 }
