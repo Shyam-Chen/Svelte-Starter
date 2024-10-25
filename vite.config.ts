@@ -11,6 +11,13 @@ export default defineConfig({
     }),
     sveltekit(),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern',
+      },
+    },
+  },
   ssr: {
     noExternal: ['svelte-formor'],
   },

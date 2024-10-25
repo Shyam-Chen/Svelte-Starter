@@ -8,11 +8,15 @@
 
   import type { PageData } from './$types';
 
-  export let data: PageData;
+  interface Props {
+    data: PageData;
+  }
 
-  let user = '';
-  let name = '';
-  let message = '';
+  let { data }: Props = $props();
+
+  let user = $state('');
+  let name = $state('');
+  let message = $state('');
 
   function subscribe() {
     const sse = new EventSource('/api/chats');

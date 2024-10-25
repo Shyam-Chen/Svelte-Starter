@@ -3,6 +3,14 @@
   import { goto } from '$app/navigation';
   import TopAppBar from '$lib/components/TopAppBar.svelte';
 
+  import type { Snippet } from 'svelte';
+
+  interface Props {
+    children?: Snippet;
+  }
+
+  let { children }: Props = $props();
+
   if (browser) {
     if (!localStorage.getItem('accessToken')) goto('/');
 
@@ -24,5 +32,5 @@
     <li><a href="/counter" class="text-purple-500">Counter</a></li>
   </ul>
 
-  <slot></slot>
+  {@render children?.()}
 </div>

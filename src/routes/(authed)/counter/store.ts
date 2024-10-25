@@ -10,6 +10,8 @@ const data = {
 
 const initial = cloneDeep(data);
 
+export const initialized = writable(false);
+
 export const state = writable(data);
 
 export const doubleCount = derived(state, ($state) => $state.count * 2);

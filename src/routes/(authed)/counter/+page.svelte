@@ -4,18 +4,16 @@
   import TextField from '$lib/components/TextField.svelte';
   import Button from '$lib/components/Button.svelte';
 
-  import { state, doubleCount, increment, reset, initialize } from './store';
-
-  let initialized = false;
+  import { initialized, state, doubleCount, increment, reset, initialize } from './store';
 
   initialize();
 
   onMount(() => {
-    initialized = true;
+    $initialized = true;
   });
 </script>
 
-{#if initialized}
+{#if $initialized}
   <div class="mt-20">
     <div>Count: {$state.count}</div>
     <div>Double Count: {$doubleCount}</div>

@@ -1,6 +1,13 @@
 <script lang="ts">
   import '@unocss/reset/tailwind.css';
   import 'uno.css';
+  import type { Snippet } from 'svelte';
+
+  interface Props {
+    children?: Snippet;
+  }
+
+  let { children }: Props = $props();
 </script>
 
 <svelte:head>
@@ -14,5 +21,5 @@
 </svelte:head>
 
 <div class="h-full font-sans text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-950">
-  <slot></slot>
+  {@render children?.()}
 </div>
