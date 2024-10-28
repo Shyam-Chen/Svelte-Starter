@@ -1,7 +1,12 @@
+<script lang="ts" module>
+  let id = 0;
+</script>
+
 <script lang="ts">
+  id += 1;
+
   import type { Snippet } from 'svelte';
   import type { HTMLInputAttributes } from 'svelte/elements';
-  import uniqueId from 'lodash/uniqueId';
 
   interface Props extends HTMLInputAttributes {
     label?: string;
@@ -18,13 +23,11 @@
     children,
     ...attrs
   }: Props = $props();
-
-  const uid = uniqueId('uid-');
 </script>
 
 <div class="form-field">
-  <label for={uid} class="form-label">{label}</label>
-  <input id={uid} bind:value class="form-control" {...attrs} />
+  <label for={`s-${id}`} class="form-label">{label}</label>
+  <input id={`s-${id}`} bind:value class="form-control" {...attrs} />
 
   {#if invalid}
     <div class="text-red-500 text-sm mt-1">{invalid}</div>

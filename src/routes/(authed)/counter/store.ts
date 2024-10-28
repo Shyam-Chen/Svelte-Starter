@@ -1,5 +1,4 @@
 import { writable, derived, get } from 'svelte/store';
-import cloneDeep from 'lodash/cloneDeep';
 
 import { browser } from '$app/environment';
 
@@ -8,7 +7,7 @@ const data = {
   text: '',
 };
 
-const initial = cloneDeep(data);
+const initial = structuredClone(data);
 
 export const initialized = writable(false);
 
@@ -22,7 +21,7 @@ export const increment = () => {
 };
 
 export const reset = () => {
-  state.set(cloneDeep(initial));
+  state.set(structuredClone(initial));
 };
 
 export const initialize = () => {
@@ -30,7 +29,7 @@ export const initialize = () => {
     const counter = sessionStorage.getItem('counter');
 
     if (counter) {
-      state.set(cloneDeep(JSON.parse(counter)));
+      state.set(structuredClone(JSON.parse(counter)));
     }
 
     state.subscribe((value) => {
